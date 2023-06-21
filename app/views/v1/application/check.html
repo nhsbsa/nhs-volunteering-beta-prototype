@@ -1,8 +1,7 @@
 {% extends 'layout.html' %}
 
 <!-- some custom css for the home page only -->
-{% set containerClasses = 'app-width-container--full' %}
-{% set mainClasses = 'app-main-wrapper--no-padding app-homepage' %}
+
 
 {% block pageTitle %}
   The NHS website - NHS
@@ -95,125 +94,160 @@
 {% endblock %}
 
 
-
-
 <!-- Homepage content -->
 {% block content %}
 
-<!-- hero image and "We're here for you" content -->
-<section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description">
-    <script>
-      function randomImage() {
-          var images =[
-            "/images/nhsuk/homepage/IS_0818_homepage_hero_2_831416400.width-1000.jpg",
-            "/images/nhsuk/homepage/IS_0818_homepage_hero_3_913783962.width-1000.jpg",
-            "/images/nhsuk/homepage/AS_0818_homepage_hero_4_169974765.width-1000.jpg",
-            "/images/nhsuk/homepage/A_0818_homepage_hero_5_KRK6T6.width-1000.jpg",
-            "/images/nhsuk/homepage/S_0818_homepage_hero_1_F0147446.width-1000.jpg",
-          ];
-          var size = images.length;
-          var x = Math.floor(size * Math.random());
-          var element = document.getElementsByClassName('nhsuk-hero--image');
-          if (element.length > 0) {
-              element[0].style["background-image"] = "url(" + images[x] + ")";
-          }
-      }
-      document.addEventListener("DOMContentLoaded", randomImage);
-  </script>
-   <div class="nhsuk-hero__overlay">
-    <div class="nhsuk-width-container">
-      <div class="nhsuk-grid-row nhsuk-u-padding-bottom-3">
-        <div class="nhsuk-grid-column-two-thirds">
-          <div class="nhsuk-hero-content">
-            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Welcome to NHS volunteering</h1>
-            <p class="nhsuk-body-m nhsuk-u-margin-bottom-2">This is where your journey to becoming part of the NHS family starts.</p>
-            <p class="nhsuk-body-m nhsuk-u-margin-bottom-0">Discover the many ways you can have an impact on the experience of patients, their families and medical staff.</p>
-            <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-    </div>
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-three-quarters">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="motivations">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
   </div>
-</section>
 
+  <h1>Check your answers before sending your application</h1>
 
-<!-- Calls to action -->
-<section class="nhsuk-section">
-  <div class="nhsuk-width-container">
-    <div class="nhsuk-grid-row nhsuk-u-margin-top-3">
-        <div class="nhsuk-grid-column-one-half app-section__content">
-          <h2>Search for an opportunity</h2>
-          <p>Use your postcode and other criteria to find volunteering opportunities near you.</p>
-          <div class="nhsuk-action-link">
-            <a class="nhsuk-action-link__link" href="postcode-search">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-              </svg>
-              <span class="nhsuk-action-link__text">Go to search</span>
-            </a>
-          </div>
-      </div>
-      <div class="nhsuk-grid-column-one-half app-section__content">
-        <h2>Browse volunteering opportunity types </h2>
-        <p>There are many ways you can help. Find out what the different opportunities are and what they entail.</p>
-        <div class="nhsuk-action-link">
-          <a class="nhsuk-action-link__link" href="view-types">
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-            </svg>
-            <span class="nhsuk-action-link__text">View types of opportunity</span>
-          </a>
-        </div>
-      </div>
+  <h2>Personal details</h2>
+  <dl class="nhsuk-summary-list">
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+  
+        <a href="#">
+          Change<span class="nhsuk-u-visually-hidden"> name</span>
+        </a>
+  
+      </dd>
+  
     </div>
-  </div>
-</section>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Date of birth
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        15 March 1984
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+  
+        <a href="#">
+          Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+        </a>
+  
+      </dd>
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Address
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        73 Roman Rd<br>Leeds<br> LS2 5ZN
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+  
+        <a href="#">
+          Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+        </a>
+  
+      </dd>
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Contact preference
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>Email</p>
+        <p>karen.francis@example.com</p>
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+  
+        <a href="#">
+          Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+        </a>
+  
+      </dd>
+  
+    </div>
+  
+  </dl>
 
+  <h2>Your application answers</h2>
+  <dl class="nhsuk-summary-list">
 
-
-<!-- Being a volunteer -->
-<section class="nhsuk-section">
-  <div class="nhsuk-width-container">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-half app-section__content">
-        <div class="nhsuk-u-reading-width">
-          <h2>What it is like to be an NHS volunteer</h2>
-          <p>As an NHS volunteer, you get to make a positive contribution to the experience of patients and their families.</p>
-
-        <p>There are many reasons why you may decide to volunteer within the NHS volunteer.&nbsp;</p>
-
-        <p>You may find it rewarding to do something for the benefit of your local community. It will give you a sense of accomplishment and a positive outlook on life. You will be doing something worthwhile and meaningful to you.&nbsp;</p>
-
-        <p>Whether you are studying or reconsidering your career, volunteering can help you make a decision on your future goals.</p>
-
-        <p>Whatever your reason, you will get support from dedicated teams who welcome volunteers from all walks of life and backgrounds.</p>
-        </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Your availability
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>I wish to discuss my availability with the volunteering service team</p>
+        <p>I can only do 2 hours on a Tuesday and 2 hours on Thursday due to child care</p>
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+  
+        <a href="#">
+          Change<span class="nhsuk-u-visually-hidden"> name</span>
+        </a>
+  
+      </dd>
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        About you
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       <p>I have volunteered as a patient companion at Newham University Hospital for the past 5 years. I have recently moved home and I would like to continue volunteering in my new area. I consider myself a compassionate person and I enjoy spending time with people who need some warmth in their lives. In my previous role, I very much enjoyed meeting new people and helping brighten up their days. I also love the outdoors. My family and I usually go for long Sunday walks exploring our local woodland. I would like to use my skills and friendly disposition to support medical staff and patients at your hospital. </p>
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+  
+        <a href="#">
+          Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+        </a>
+  
+      </dd>
+  
+    </div>
+  
    
-     
-      </div>
+ 
+  
+  </dl>
 
-      <div class="nhsuk-grid-column-one-half app-section__content">
-        <div class="nhsuk-card  nhsuk-card--clickable  ">
-          <img class="nhsuk-card__img" src="/images/image2-with-play-overlay.jpg" alt="">
-          <div class="nhsuk-card__content">
-            <h3 class="nhsuk-card__heading"><a class="nhsuk-link--no-visited-state" href="">
-              Hear it from our volunteers</a></h3>
-              <p>
-                <small><strong>Read transcript</strong></small> &nbsp; <small><strong>Audio visual description</strong></small> &nbsp; <small><strong>Subtitles</strong></small>
-              </p>
-            <p class="nhsuk-card__description">Watch a group of current NHS volunteers talk about the highs and lows of being a volunteer.<br><br>
+<p>By sending this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-              We have asked medical staff and patients about the value volunteers can bring.
+  <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="submitted">
+  Send application
+  </a>
+  
 
-              </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
+</div>
+</div>
+
+
 
 
 

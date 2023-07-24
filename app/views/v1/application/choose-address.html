@@ -48,7 +48,7 @@
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="dob">
+    <a class="nhsuk-back-link__link" href="address">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
@@ -56,45 +56,67 @@
   </div>
 
   <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 7</span>
-   Find your address</h1>
+   Select your address</h1>
+   <p>4 addresses found for '12' and 'LS1 1PA'</p>
 
-    <form action="choose-address" method="post">
-  <div class="nhsuk-form-group">
-    
-    <label class="nhsuk-label" for="input-width-20">
-     House number or name
-    </label>
-    <div class="nhsuk-hint" id="example-with-hint-text-hint">
-      For example, 12 or Flat 8B
-    </div>
-    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
-  </div>
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="input-width-20">
-     UK Postcode
-    </label>
-    <div class="nhsuk-hint" id="example-with-hint-text-hint">
-      For example, LS1 2PA
-    </div>
-    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
-  </div>
-
- 
-<p class="nhsuk-u-margin-top-6"><a href="manual-address">Enter my address manually</a></p>
+    <form action="email" method="post">
 
 
-<details class="nhsuk-details nhsuk-u-margin-top-6">
-  <summary class="nhsuk-details__summary">
-    <span class="nhsuk-details__summary-text">
-      If you do not have a fixed address
-    </span>
-  </summary>
-  <div class="nhsuk-details__text">
-    <p><a href="">Go back to the opportunity listing</a> and contact the recruiter.</p>
-   
+      <div class="nhsuk-form-group">
 
-  </div>
-</details>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+            <p class="nhsuk-fieldset__heading">
+              Select one
+            </p>
+          </legend>
+      
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-divider-1" name="example-divider" type="radio" value="nhsuk-login">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-divider-1">
+              12 Mayfair Close, Leeds, LS1 1PA
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-divider-2" name="example-divider" type="radio" value="government-verify">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-divider-2">
+                12a Mayfair Close, Leeds, LS1 1PA
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-divider-2" name="example-divider" type="radio" value="government-verify">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-divider-2">
+                12b Mayfair Close, Leeds, LS1 1PA
+              </label>
+            </div>
+      
+               
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-divider-2" name="example-divider" type="radio" value="government-verify">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-divider-2">
+                122 Mayfair Close, Leeds, LS1 1PA
+              </label>
+            </div>
+            <div class="nhsuk-radios__divider">or</div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-divider-4" name="example-divider" type="radio" value="create-account">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-divider-4">
+                My address is not listed here
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      
+      </div>
+
+
+
 
   
 

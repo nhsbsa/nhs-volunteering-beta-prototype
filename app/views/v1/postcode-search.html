@@ -56,11 +56,12 @@
   </div>
 
   <h1>Search for a volunteering opportunity near me</h1>
+  <form action="results" method="post">
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="input-width-10">
       Enter a postcode in England
     </label>
-    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="postcode" type="text" value="{{ data['postcode'] }}">
   </div>
 
   <div class="nhsuk-form-group">
@@ -73,32 +74,32 @@
       <div class="nhsuk-radios">
   
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="3" {{ checked("radius", "3") }} >
           <label class="nhsuk-label nhsuk-radios__label" for="example-1">
             Up to 3 miles
           </label>
         </div>
   
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="5" {{ checked("radius", "5") }}>
           <label class="nhsuk-label nhsuk-radios__label" for="example-1">
             Up to 5 miles
           </label>
         </div>
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+          <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="10" {{ checked("radius", "10") }}>
           <label class="nhsuk-label nhsuk-radios__label" for="example-2">
             Up to 10 miles
           </label>
         </div>
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+          <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="20" {{ checked("radius", "20") }}>
           <label class="nhsuk-label nhsuk-radios__label" for="example-2">
             Up to 20 miles
           </label>
         </div>
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+          <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="30" {{ checked("radius", "30") }}>
           <label class="nhsuk-label nhsuk-radios__label" for="example-2">
             Up to 30 miles
           </label>
@@ -109,10 +110,10 @@
   
   </div>
 
-  <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">
+  <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">
     Search
-  </a>
-  
+  </button>
+</form>
 
 
 

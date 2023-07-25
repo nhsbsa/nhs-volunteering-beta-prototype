@@ -34,7 +34,7 @@
 
     </div>
   </div>
-  
+ 
 </header>
 {% endblock %}
 
@@ -48,73 +48,51 @@
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="/availability">
+    <a class="nhsuk-back-link__link" href="dob">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
       Go back</a>
   </div>
 
-  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 7 </span>
-    What motivates you to apply for this opportunity?</h1>
+  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 7</span>
+    What is your address?</h1>
 
-   <div class="nhsuk-do-dont-list">
-    <h3 class="nhsuk-do-dont-list__label">Do tell us about</h3>
-    <ul class="nhsuk-list nhsuk-list--tick" role="list">
-      <li>
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
-          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-        </svg>
-        what makes you a good volunteer
-      </li>
-      <li>
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
-          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-        </svg>
-        what experience you bring to this opportunity
-      </li>
-      <li>
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
-          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-        </svg>
-        your interests and hobbies
-      </li>
-    </ul>
+    <form action="email" method="post">
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-20">
+     Address line 1
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
   </div>
-  
-  <div class="nhsuk-do-dont-list">
-    <h3 class="nhsuk-do-dont-list__label">Tips on how to write your answer</h3>
-    <ul class="nhsuk-list nhsuk-list--tick" role="list">
-      <li>
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
-          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-        </svg>
-        keep it informal - this is your moment to show your qualities and character
-      </li>
-      <li>
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
-          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-        </svg>
-        use bullet points to break up your answer
-      </li>
-      <li>
-        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
-          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-        </svg>
-        keep it short and simple - it shouldn't feel like writing a job application
-      </li>
-    </ul>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-20">
+     Address line 2 (optional)
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+  </div>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-20">
+     Town or city
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
   </div>
 
 
-    <form action="check" method="post">
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Use this section to talk about why you want to become a volunteer
-        </label>
-      
-        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-      </div>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-20">
+    County (optional)
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+  </div>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-10">
+     Postcode
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+  </div>
 
 <button class="nhsuk-button" type="submit">Continue</button>
 </form>

@@ -55,46 +55,50 @@
       Go back</a>
   </div>
 
-  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of </span>
-    What is your address?</h1>
+  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 7</span>
+   Find your address</h1>
 
-    <form action="email" method="post">
+    <form action="choose-address" method="post">
   <div class="nhsuk-form-group">
+    
     <label class="nhsuk-label" for="input-width-20">
-     Address line 1
+     House number or name
     </label>
+    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+      For example, 12 or Flat 8B
+    </div>
     <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
   </div>
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="input-width-20">
-     Address line 2 (optional)
+     UK Postcode
     </label>
-    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
-  </div>
-
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="input-width-20">
-     Town or city
-    </label>
-    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
-  </div>
-
-
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="input-width-20">
-    County (optional)
-    </label>
-    <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
-  </div>
-
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="input-width-10">
-     Postcode
-    </label>
+    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+      For example, LS1 2PA
+    </div>
     <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
   </div>
 
-<button class="nhsuk-button" type="submit">Continue</button>
+ 
+<p class="nhsuk-u-margin-top-6"><a href="manual-address">Enter my address manually</a></p>
+
+
+<details class="nhsuk-details nhsuk-u-margin-top-6">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If you do not have a fixed address
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p><a href="">Go back to the opportunity listing</a> and contact the recruiter.</p>
+   
+
+  </div>
+</details>
+
+  
+
+<button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
 </form>
 
 </div>

@@ -1,0 +1,497 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-three-quarters">
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="/">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+<h1>Volunteer designs</h1>
+
+  <h2>Homepage and postcode search</h2>
+ 
+
+  <table role="table" class="nhsuk-table-responsive">
+    <caption class="nhsuk-table__caption">Homepage and Postcode search <span class="nhsuk-tag">In development</span></caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Page
+        </th>
+        <th role="columnheader" class="" scope="col">
+         Page type
+        </th>
+        <th role="columnheader" class="" scope="col">
+         Link
+        </th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Page </span> Homepage
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Link </span><a href="homepage">Link to page</a>
+        </td>
+      </tr>
+
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Page </span> Postcode search
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Link </span><a href="postcode-search">Link to page</a>
+        </td>
+        </tr>
+
+        <tr role="row" class="nhsuk-table__row">
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Page </span>Postcode missing
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Page type </span><span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/postcode-missing">Link to page</a>
+          </td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Page </span>Radius missing
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Page type </span><span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Link </span> <a href="form-errors/radius-missing">Link to page</a>
+            </td>
+            </tr>
+
+            <tr role="row" class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Page </span>Both postcode and radius missing
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Page type </span><span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/postcode-all-errors">Link to page</a>
+              </td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Page </span>Invalid postcode format
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Page type </span><span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+                </td>
+                <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/postcode-invalid">Link to page</a>
+                </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Page </span>Outside of England postcode used
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Page type </span><span class="nhsuk-tag nhsuk-tag--grey">Unhappy path page</span>
+                  </td>
+                  <td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Link </span><a href="error-path/outside-england">Link to page</a>
+                  </td>
+                  </tr>
+    </tbody>
+  </table>
+
+
+<hr>
+
+<h2>Homepage related sections</h2>
+<div class="nhsuk-u-margin-bottom-8">
+<table role="table" class="nhsuk-table-responsive">
+  <caption class="nhsuk-table__caption">Role categories <span class="nhsuk-tag nhsuk-tag--yellow">Ready for handover - Skeleton</span></caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Page
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Page type
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Link
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Role category - Blank
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="homepage">Link to page</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<table role="table" class="nhsuk-table-responsive">
+  <caption class="nhsuk-table__caption">What it's like to be a volunteer <span class="nhsuk-tag nhsuk-tag--orange">With design and content</span></caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Page
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Page type
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Link
+      </th>
+    </tr>
+  </thead>
+ 
+</table>
+<hr>
+<h2>Apply for an opportunity sections</h2>
+<table role="table" class="nhsuk-table-responsive">
+  <caption class="nhsuk-table__caption">Personal details <span class="nhsuk-tag nhsuk-tag--yellow">Ready for handover - Skeleton</span></caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Page
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Page type
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Link
+      </th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> What is your name
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="application/name">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Name missing
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/name-missing">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Find your address
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="application/address">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Find your address - missing fields
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/find-address-missing">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Find your address - invalid postcode
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/find-address-invalid-postcode">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Choose address from list
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="application/choose-address">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Choose address - not selected
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/choose-address-not-selected">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Enter address manually
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--grey">Unhappy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="application/manual-address">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Enter address - fields missing
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/enter-address-missing">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> What is your email address
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="application/email">Link to page</a>
+      </td>
+    </tr>
+
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Email address - all missing
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/email-missing">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Email address - not a match
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/email-not-match">Link to page</a>
+      </td>
+    </tr>
+
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Provide your phone number
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--blue">Happy path page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="application/phone">Link to page</a>
+      </td>
+    </tr>
+
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Phone number - option not selected
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/phone-not-selected">Link to page</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page </span> Phone number - not entered
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Page type </span> <span class="nhsuk-tag nhsuk-tag--red">Error page</span>
+      </td>
+      <td role="cell" class="nhsuk-table__cell">
+        <span class="nhsuk-table-responsive__heading">Link </span><a href="form-errors/phone-not-input">Link to page</a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<div class="nhsuk-u-margin-top-9">
+  <table role="table" class="nhsuk-table-responsive">
+    <caption class="nhsuk-table__caption">Application questions <span class="nhsuk-tag nhsuk-tag--orange">User research</span></caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Page
+        </th>
+        <th role="columnheader" class="" scope="col">
+         Page type
+        </th>
+        <th role="columnheader" class="" scope="col">
+         Link
+        </th>
+      </tr>
+    </thead>
+    </table>
+</div>
+
+<div class="nhsuk-u-margin-top-9">
+  <table role="table" class="nhsuk-table-responsive">
+    <caption class="nhsuk-table__caption">Confirmation <span class="nhsuk-tag nhsuk-tag--orange">User research</span></caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Page
+        </th>
+        <th role="columnheader" class="" scope="col">
+         Page type
+        </th>
+        <th role="columnheader" class="" scope="col">
+         Link
+        </th>
+      </tr>
+    </thead>
+    </table>
+</div>
+<hr>
+<h2>Policies</h2>
+<table role="table" class="nhsuk-table-responsive">
+  <caption class="nhsuk-table__caption">Footer policies <span class="nhsuk-tag nhsuk-tag--white">Not started</span></caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Page
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Page type
+      </th>
+      <th role="columnheader" class="" scope="col">
+       Link
+      </th>
+    </tr>
+  </thead>
+  </table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

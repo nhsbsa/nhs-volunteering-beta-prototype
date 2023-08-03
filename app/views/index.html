@@ -3,7 +3,7 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout_vol_header.html' %}
 <!-- 
   In /views/layout.html you can:
     - change the header and footer 
@@ -12,7 +12,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  NHS volunteering
+  NHS Volunteering
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -29,7 +29,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
       <!-- Change the page title here -->
       <h1>
@@ -45,55 +45,61 @@
       </p>
 
       <hr>
+</div>
+</div>
 
-      <h2>
-        Volunteers
-      </h2>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
 
-      <h3>Sprint 1</h3>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li><a href="v1/homepage">NHS volunteering homepage</a></li>
-        <li><a href="v1/postcode-search">Postcode search</a></li>
-        <li><a href="v1/form-errors/postcode-missing">Postcode missing error</a></li>
-        <li><a href="v1/form-errors/radius-missing">Radius missing error</a></li>
-        <li><a href="v1/form-errors/postcode-all-errors">Both postcode and radius missing error</a></li>
-        <li><a href="v1/form-errors/postcode-invalid">Invalid postcode</a></li>
-        <li><a href="/v1/error-path/outside-england">Outside of England postcode used</a></li>
-      </ul>
+    <div class="nhsuk-card nhsuk-card--clickable" style="min-height: 250px;">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/v1/sub-index-vol">Volunteer prototypes</a>
+        </h2>
+        <p class="nhsuk-card__description">Prototypes and journeys for the volunteer</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+
+    <div class="nhsuk-card nhsuk-card--clickable" style="min-height: 250px;">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/v1/sub-index-rec">Recruiter prototypes</a>
+        </h2>
+        <p class="nhsuk-card__description">Prototypes and journeys for the recruiter service</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="nhsuk-grid-column-one-third">
+
+    <div class="nhsuk-card nhsuk-card--clickable" style="min-height: 250px;">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/v1/sub-index-bsa">BSA admin prototypes</a>
+        </h2>
+        <p class="nhsuk-card__description">Prototypes and journeys for the BSA admins</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+      
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h2>Iterations</h2>
+    <p class="nhsuk-body"><a href="/v1/homepage">Iteration 1: Full journey from homepage - Used in Sprint 4 UR</a></p>
+    </div>
+    </div>
+   
 
       
-      
-      
-
-      
-
-      <hr>
-
-      <h2>
-       Recruiters
-      </h2>
-
-      <h3>Sprint 3</h3>
-      <ul class="nhs-list nhsuk-list--bullet">
-        <li><a href="bsa-admin/organisation">Create recruiter/organisation - NHS BSA</a></li>
-        <li><a href="bsa-admin/organisation-error">Selected organisation missing - error</a></li>
-        <li><a href="bsa-admin/details-error">Recruiter details missing - error</a></li>
-        <li><a href="bsa-admin/email-error">Recruiter email incorrect - error</a></li>
-        <li><a href="bsa-admin/email-confirmed-error">Recruiter email must match - error</a></li>
-        <li><a href="bsa-admin/telephone-error">Recruiter telephone incorrect - error</a></li>
-        <li><a href="bsa-admin/service-error">Service down/registration unsuccessful - error page</a></li>
-        <li><a href="bsa-admin/start">Start page - for backlog</a></li>
-      </ul>
-
-<hr>
-      <h2>
-     Custom components or patterns
-       </h2>
- 
       
 
       <!-- End of content -->
 
-    </div>
-  </div>
+    
 {% endblock %}

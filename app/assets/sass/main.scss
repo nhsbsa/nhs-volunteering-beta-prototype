@@ -19,3 +19,30 @@ margin-bottom: 30px;
 .role-type-image {
     width: 100%;
 }
+
+// styling for what-its-like.html
+
+.app-what-its-like {
+  .nhsuk-section:nth-of-type(2), .nhsuk-section:nth-of-type(4) {
+    background: #fff;
+  }
+  padding-bottom: 0;
+}
+
+// styling for meet-our-volunteers.html
+
+
+@media (min-width: 48.0625em) {
+  .app-meet-our-volunteers {
+    .nhsuk-card__description {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 40px;
+    }
+    img {
+      align-self: center;
+    }
+  }
+}
+
+

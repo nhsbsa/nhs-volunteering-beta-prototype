@@ -1,0 +1,199 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-half">
+  
+    <div class="nhsuk-back-link">
+  
+      <a class="nhsuk-back-link__link" href="/v1/view-types">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back</a>
+   
+    </div>
+  
+  
+  <h1>Assist with leisure activities</h1>
+  <p class="nhsuk-body-l">You'll assist with the delivery of recreational activities for the well-being of patients. </p>
+  </div>
+
+  <div class="nhsuk-grid-column-one-half">
+    <figure class="nhsuk-image role-type-image">
+      <img class="nhsuk-image__img" src="/images/nhsuk/homepage/S_0818_homepage_hero_1_F0147446.width-1000.jpg" alt="placeholder image" width="250" height="150">
+      <figcaption class="nhsuk-image__caption">
+        Caption for image
+      </figcaption>
+    </figure>
+  </div>
+
+ </div>
+ 
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+      <h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">
+        Opportunities that might interest you
+        
+      </h2>
+   
+    <ul class="nhsuk-list nhsuk-list--bullet nhsuk-card__description">
+      <li>Hospital radio volunteer</li>
+      <li>Gardening volunteer</li>
+      <li>Arts and crafts activities volunteer</li>
+      <li>Patient wellbeing volunteer</li>
+      <li>Volunteer musician</li>
+      
+    </ul>
+    </div>
+  </div>
+
+  <div class="nhsuk-card nhsuk-card--feature">
+    <div class="nhsuk-card__content nhsuk-card__content--feature">
+      <h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">
+       What your day could look like
+        
+      </h2>
+   
+    <ul class="nhsuk-list nhsuk-list--bullet nhsuk-card__description">
+      <li>Playing games with patients</li>
+      <li>Engage patients in nail painting, drawing or other activities</li>
+      <li>Encouraging patients to take part in arts and crafts activities</li>
+      <li>Helping maintain the garden areas around the site</li>
+      <li>Running the radio station to provide music and general entertainment</li>
+    </ul>
+    </div>
+  </div>
+  
+  <div class="nhsuk-do-dont-list">
+    <h3 class="nhsuk-do-dont-list__label">Consider these opportunities if you</h3>
+    <ul class="nhsuk-list nhsuk-list--tick" role="list">
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+       Enjoy direct contact with people from diverse backgrounds
+      </li>
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        Are not an expert in arts and crafts but you enjoy them
+      </li>
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        Want to use your good communication and interpersonal skills
+      </li>
+    </ul>
+  </div>
+
+  <details class="nhsuk-details nhsuk-u-margin-bottom-6">
+    <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+       What you will not have to do
+      </span>
+    </summary>
+    <div class="nhsuk-details__text">
+    <p>You may be in direct contact with patients but you won't engage in any clinical or therapeutic work. </p>
+  <p>You won't have to perform any tasks that require any medical expertise or training. Those tasks will remain under the responsibility of trained health and social care professionals.</p>
+    </div>
+  </details>
+  
+  <div class="nhsuk-action-link">
+    <a class="nhsuk-action-link__link" href="/v1/postcode-search">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+      <span class="nhsuk-action-link__text">Go back to search for opportunities</span>
+    </a>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

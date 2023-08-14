@@ -1,0 +1,173 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/templates/start-page",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">Create the listing for your opportunity</h1>
+
+      <form action="/templates/check-your-answers" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <h2 class="nhsuk-label-wrapper">
+            Tell us about who you are looking for
+          </h2>
+          <div class="nhsuk-hint" id="r1-preview-with-hint-text-hint">
+            This will show on the opportunity listing under <strong>am I the right person for this?</strong>
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nhsuk-body">You need to include:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>any required experience, qualification or training</li>
+              <li>the type of person you are looking for</li>
+              <li>any age limitations</li>
+              <li>anything relating to the opportunity that might impact people with access needs</li>
+              <li>if the opportunity requires access to an electronic device and the level of skills needed</li>
+            </ul>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nhsuk-body">This opportunity will suit someone friendly, approachable and enthusiastic.</p>
+                <p class="nhsuk-body">You don't need any previous experience, qualifications or training. All you need is to:</p>
+                <ul>
+                  <li>have good people skills and want to chat with people</li>
+                  <li>be reliable and be good at time keeping</li>
+                  <li>enjoy the outdoors</li>
+                  <li>be 16 or over</li>
+                  <li>you need access to a telephone (for remote opportunities)</li>
+                </ul>
+                <p class="nhsuk-body">This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer with us.</p>
+
+              </div>
+            </details>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="r1-preview">
+              Tell us about who you are looking for
+            </label>
+            <textarea class="nhsuk-textarea" id="r1-preview" name="r1-preview" rows="5" aria-describedby="r1-preview-hint"></textarea>
+          </div>
+
+          
+        </div>
+
+        <div class="nhsuk-form-group">
+          <h2 class="nhsuk-label-wrapper">
+            Add an overview of the application process
+          </h2>
+          <div class="nhsuk-hint" id="r1-summary-with-hint-text-hint">
+            This will show on the opportunity listing under <strong>what happens after you register with us</strong>.
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nhsuk-body">You need to include:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>how and when you'll get in touch with the applicant</li>
+              <li>what happens after</li>
+              <li>a list of the checks they will have to go through</li>
+            </ul>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example for a specific opportunity
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nhsuk-body">We'll get in touch with you when we review your request. This might take a few weeks.</p>
+                <p class="nhsuk-body">After that, we may book in a chat to get to know you a bit more and walk you through the process.</p>
+
+              </div>
+            </details>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example for a generic opportunity
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nhsuk-body">We'll get in touch with you when we review your request. This might take a few weeks.</p>
+                <p class="nhsuk-body">After that, we will get in touch with you to discuss which roles are available and how you may support us.</p>
+                <p class="nhsuk-body">We may book in a chat to get to know you a bit more and walk you through the process.</p>
+              </div>
+            </details>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example if you recruit in cohorts or at specific times
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nhsuk-body">We welcome new volunteers at certain times during the year.</p>
+                <p class="nhsuk-body">We'll get in touch with you when we review the registration list.</p>
+                <p class="nhsuk-body">We'll then discuss which roles are available and how you can support us.</p>
+              </div>
+            </details>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Examples of checks for all types of opportunities 
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nsuk-body">To become a volunteer, you will need to:</p>
+                <ul>
+                  <li>provide proof of identity and some utility bills</li>
+                  <li>go through a standard or enhanced Disclosure and Barring Service (DBS) and occupational health checks</li>
+                  <li>prove your right to work in the UK</li>
+                  <li>provide details of your work history</li>
+                  <li>give the details of two referees</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="r1-summary">
+              Add the overview of the application process
+            </label>
+            <textarea class="nhsuk-textarea" id="r1-summary" name="r1-summary" rows="5" aria-describedby="r1-summary-hint"></textarea>
+          </div>
+
+          
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Advertise your volunteering opportunities
+      </h1>
+
+      <p class="nhsuk-u-margin-bottom-7">Use this page to track all of the tasks required before you can advertise your
+        opportunity.</p>
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Walk and talk volunteer</h2>
+      <p class="nhsuk-body">You have completed 1 of 4 sections.</p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Set the reference number
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/reference-number" aria-describedby="practice-details-not-started">
+                  Change the reference number
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-details-not-started">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Create an opportunity listing
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="create-an-opportunity" aria-describedby="company-information-completed">
+                  Add a preview and a summary
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/overview-looking-for" aria-describedby="contact-details-completed">
+                  Add a person specification and the application process
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="contact-details-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Select if the opportunity is remote
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Add locations 
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Add availability requirements
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Set the contact details
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Select application settings
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Decide how you want to receive applications
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Control the listing visibility
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Review application questions
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Publish the listing
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#">
+                  Check your answers and preview the listing
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+    </div>  
+
+  </div>
+{% endblock %}

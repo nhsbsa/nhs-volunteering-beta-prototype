@@ -31,17 +31,33 @@ margin-bottom: 30px;
 // styling for meet-our-volunteers.html
 
 
-@media (min-width: 48.0625em) {
-  .app-meet-our-volunteers {
-    .nhsuk-card__description {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      column-gap: 40px;
-    }
-    img {
-      align-self: center;
-    }
-  }
+.nhsuk-card__meet-vols .nhsuk-card__heading  {
+  grid-area: title;
 }
 
+.nhsuk-card__meet-vols .nhsuk-card__description  {
+  grid-area: sidebar;
+}
 
+.nhsuk-card__meet-vols .nhsuk-card__description__meet-vols  {
+  grid-area: content;
+}
+
+.nhsuk-card__meet-vols .nhsuk-card__content {
+  display: grid;
+  grid-template-areas: 
+  "title"
+  "sidebar"
+  "content";
+}
+
+@media (min-width: 48.0625em) {
+  .nhsuk-card__meet-vols .nhsuk-card__content {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px auto;
+    grid-template-areas: 
+    "title content"
+    "sidebar content";
+
+  }
+}

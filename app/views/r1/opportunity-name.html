@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "/templates/start-page",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/templates/check-your-answers" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="example-heading">
+              Enter a title for the opportunity listing
+            </label>
+          </h1>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            This is how we will list this opportunity on this service.
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nhsuk-body">You need to write your title like this:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>Walk and talk volunteer- if the listing is for a specific opportunity</li>
+              <li>Volunteer at St. James Hospital - if this is a generic listing for all your opportunities</li>
+            </ul>
+          </div>
+
+          <input class="nhsuk-input" id="example-heading" name="example-heading" type="text">
+
+          
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

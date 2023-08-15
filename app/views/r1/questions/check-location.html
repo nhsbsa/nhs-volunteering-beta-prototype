@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-top-4">
+        Check locations
+      </h1>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Location 1"
+            },
+            value: {
+              html: "Airedale Hospital <br>
+              Steeton Road <br>
+              BD23 2PF"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Location 2"
+            },
+            value: {
+              html: "Bradford Royal Infirmary <br>
+              Daisy Hill <br>
+              BD4 4AK"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <a href="../task-list-fixed" class="nhsuk-button">
+        Save and continue
+      </a>
+    <p class="nhsuk-body">              
+      <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+    </p>
+
+    </div>
+  </div>
+{% endblock %}

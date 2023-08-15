@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../task-list-fixed",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="../task-list-fixed" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+      
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Review the application questions
+              </h1>
+            </legend>
+
+            <p class="nhsukbody">All applications through this service will ask applicants to provide:</p>
+            <ul>
+                <li>their full name</li>
+                <li>their date of birth</li>
+                <li>their address</li>
+                <li>their contact details such as email or phone number</li>
+                <li>a short statement about their motivation to volunteer</li>
+                <li>their availability</li>
+            </ul>
+
+            <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>You can select more application questions later</p>
+            </div>
+      
+            <div class="nhsuk-checkboxes">
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  I understand and agree to include these questions in the application
+                </label>
+              </div>
+      
+            </div>
+          </fieldset>
+      
+        </div>
+      
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+       </p>
+
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

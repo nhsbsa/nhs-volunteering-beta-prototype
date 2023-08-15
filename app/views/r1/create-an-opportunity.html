@@ -1,7 +1,15 @@
-{% extends 'layout.html' %}
+{% extends 'layout_vol_header.html' %}
 
 {% block pageTitle %}
     Create an opportunity listing
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "task-list-fixed",
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
 {% endblock %}
 
 {% block content %}

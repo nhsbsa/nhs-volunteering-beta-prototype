@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout_vol_header.html' %}
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
@@ -20,7 +20,15 @@
       <p class="nhsuk-u-margin-bottom-7">Use this page to track all of the tasks required before you can advertise your
         opportunity.</p>
 
-      <h2 class="nhsuk-heading nhsuk-heading-m">Walk and talk volunteer</h2>
+      <h2 class="nhsuk-heading nhsuk-heading-m">
+        {% if data['r1-opportunity-name'] %}
+        {{ data['r1-opportunity-name'] }}
+        {% else %}
+        Walk and talk volunteer
+        {% endif %}
+      </h2>
+
+      
       <p class="nhsuk-body">You have completed 1 of 4 sections.</p>
 
       <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">

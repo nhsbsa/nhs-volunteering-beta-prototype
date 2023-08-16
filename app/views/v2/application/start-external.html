@@ -1,0 +1,131 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="/v2/volunteering/role-profile-1">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1>Continue your registration on the organisation's website</h1>
+
+  <h2 class="nhsuk-heading-s">What to expect on their website</h2>
+
+  <p>The registration process can vary across NHS organisations. You may need to apply using one of the following methods:
+  </p>
+<ul class="nhsuk-list nhsuk-list--bullet">
+  <li>complete an application form on their website</li>
+  <li>apply via email</li>
+  <li>call the relevant contact to express your interest to volunteer</li>
+  <li>complete a paper form</li>
+  <li>email to request information on any opportunities available</li>
+</ul>
+
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>You may be asked to create an account on their website.
+    </p>
+  </div>
+
+
+<details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If you need help with doing things online
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p>If you prefer to apply using other methods, volunteering teams can offer paper forms or help you complete the online form.
+    </p>
+    <p>Continue to the organisation's website to see how they can support you and how to contact them.</p>
+   
+  </div>
+</details>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" href="https://app.betterimpact.com/Application?OrganizationGuid=66c5b9d6-86ee-4753-b130-eb80558cd041&ApplicationFormNumber=1">Continue to the organisation's website</a>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

@@ -2,7 +2,7 @@
 
 <!-- some custom css for what its like volunteer -->
 {% set containerClasses = 'app-width-container--full' %}
-{% set mainClasses = 'app-what-its-like' %}
+{% set mainClasses = 'app-meet-our-volunteers' %}
 
 
 {% block pageTitle %}
@@ -42,7 +42,7 @@
       <ul class="nhsuk-grid-row nhsuk-card-group">
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
       
-          <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card">
             <div class="nhsuk-card__content">
               <h3 class="nhsuk-card__heading nhsuk-heading-s">
                 Volunteering helps you as much as those you support
@@ -54,7 +54,7 @@
         </li>
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
       
-          <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card">
             <div class="nhsuk-card__content">
               <h3 class="nhsuk-card__heading nhsuk-heading-s">
                 It's my way of giving back to the community
@@ -66,7 +66,7 @@
         </li>
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
       
-          <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card">
             <div class="nhsuk-card__content">
               <h3 class="nhsuk-card__heading nhsuk-heading-s">
                 There is a lot of support available
@@ -87,24 +87,33 @@
 <section class="nhsuk-section">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-half app-section__content">
-        <img class="nhsuk-card__img role-type-image" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="">
-      </div>
-      <div class="nhsuk-grid-column-one-half app-section__content">
-        <h2 class="nhsuk-heading">Meet our volunteers</h2>
-        <p class="nhsuk-body">Our volunteers join us from all groups and communities. They contribute in many ways and for different reasons.
-        </p>
-
-        <p class="nhsuk-body">No two experiences are the same but they all make a huge difference to patients and NHS staff.</p>
-        <p class="nhsuk-body">Meet some of our amazing volunteers and learn what they do and why.  </p>
-        <div class="nhsuk-action-link">
-          <a class="nhsuk-action-link__link" href="meet-our-volunteers">
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-            </svg>
-            <span class="nhsuk-action-link__text">Read our volunteers' stories</span>
-          </a>
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-card nhsuk-card__meet-vols">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-l">
+              Jane's story
+            </h2>
+            <div class="nhsuk-card_description">
+              <img class="nhsuk-card__img" style="max-width: 70%;" src="https://assets.nhs.uk/prod/images/A_0218_exercise-main_FKW1X7.width-690.jpg" alt="" >
+              <p class="nhsuk-body nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-0"><strong>Age:</strong> 45 to 64 years old</p>
+              <p class="nhsuk-body"><strong>Volunteers at:</strong> a community mental health hospital in Greenwich <br> <strong>As a:</strong> gardening volunteer<br> <strong>From:</strong> May 2023</p>
+            </div>
+            <div class="nhsuk-card__description__meet-vols">
+              <p class="nhsuk-body"><strong>Why I volunteer:</strong>  I signed up to volunteer because I love gardening but live in an apartment. 
+                <p class="nhsuk-body">My fellow gardeners are people I probably wouldn't have met and I really enjoy their company. My physical and mental health benefit far more than I imagined they would. Working in a garden is very satisfying because we get to see the fruits of our labour and we get to see the positive impact it has for the patients.</p>
+                <p class="nhsuk-body"><strong>My typical day:</strong> I volunteer with two other volunteers to maintain the garden. We meet for a quick cup of tea first. A typical session is about two hours. The patients like to interact so there is often an opportunity to draw on their knowledge and experience to inform our focus in the garden.</p>
+                <p class="nhsuk-body"><strong>My one advice to you is:</strong> I find volunteering gives me personal satisfaction far more than merely donating to causes. It really great to do something small but see the impact it can have on others. </p>
+                <div class="nhsuk-action-link">
+                  <a class="nhsuk-action-link__link" href="meet-our-volunteers">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Read other volunteer stories</span>
+                  </a>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -114,9 +123,9 @@
 <section class="nhsuk-section">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full app-section__content">
+      <div class="nhsuk-grid-column-full">
         <div class="nhsuk-do-dont-list">
-          <h3 class="nhsuk-do-dont-list__label">Things our volunteers want you to know</h3>
+          <h2 class="nhsuk-do-dont-list__label">Things our volunteers want you to know</h2>
           <ul class="nhsuk-list nhsuk-list--bullet" role="list">
             <li>
               You do not need experience to volunteer with the NHS
@@ -146,32 +155,54 @@
 <section class="nhsuk-section">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-one-half app-section__content">
-        <h2>Search for an opportunity</h2>
-        <p>Use your postcode and other criteria to find volunteering opportunities near you.</p>
-        <div class="nhsuk-action-link">
-          <a class="nhsuk-action-link__link" href="postcode-search">
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-            </svg>
-            <span class="nhsuk-action-link__text">Go to search</span>
-          </a>
-        </div>
-    </div>
-    <div class="nhsuk-grid-column-one-half app-section__content">
-      <h2>Browse opportunity types </h2>
-      <p>There are many ways you can help. Find out what the different opportunities are and what they entail.</p>
-      <div class="nhsuk-action-link">
-        <a class="nhsuk-action-link__link" href="view-types">
-          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-          </svg>
-          <span class="nhsuk-action-link__text">Browse opportunity types</span>
-        </a>
+      <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Search for an opportunity
+                </h2>
+                <p>Use your postcode and other criteria to find volunteering opportunities near you.</p>
+                <div class="nhsuk-action-link">
+                  <a class="nhsuk-action-link__link" href="postcode-search">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Go to search</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </li>
+
+          <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  Browse opportunity types
+                </h2>
+                <p>There are many ways you can help. Find out what the different opportunities are and what they entail.</p>
+                <div class="nhsuk-action-link">
+                  <a class="nhsuk-action-link__link" href="view-types">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Browse opportunity types</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </li>
+
+        </ul>
       </div>
-    </div>
     </div>
   </div>
 </section>

@@ -39,7 +39,7 @@
     
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
         <li>
-          <a href="#exceeding-error">Support must be 500 characters or less</a>
+          <a href="#availability-symbols-error">Support must only include numbers, letters a to z, and special characters such us hyphens, spaces, apostrophes and full stops. </a>
         </li>
     
         
@@ -71,23 +71,17 @@
 
 
     <form action="../application/motivations" method="post">
-
-      <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
-
-        <div class="nhsuk-form-group nhsuk-form-group--error">
-          <label class="nhsuk-label" for="exceeding">
-            Tell us about what support you need (optional)
-          </label>
-          <span class="nhsuk-error-message" id="exceeding-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Support must be 500 characters or less
-          </span>
-          <textarea class="nhsuk-textarea nhsuk-textarea--error nhsuk-js-character-count nhsuk-textarea--error" id="exceeding" name="exceeding-characters" rows="5" aria-describedby="exceeding-hint exceeding-error">500 characters is between 71 words and 125 words with spaces included in the character count. If spaces are not included in the character count, then 500 characters is between 83 words and 167 words. Just so you know 00 characters is between 71 words and 125 words with spaces included in the character count. If spaces are not included in the character count, then 500 characters is between 83 words and 167 words, and if spaces are not included in the character count, then 500 characters is between 83 words and 167 words.</textarea>
-        </div>
       
-        <div class="nhsuk-hint nhsuk-character-count__message" id="exceeding-info">
-          You can enter up to 500 characters
-        </div>
-      
+      <div class="nhsuk-form-group nhsuk-form-group--error">
+        <label class="nhsuk-label" for="example">
+          Tell us about what support you need (optional)
+
+        </label>
+        <span class="nhsuk-error-message" id="availability-symbols-error">
+          <span class="nhsuk-u-visually-hidden">Error:</span> Availability must only include numbers, letters a to z, and special characters such us hyphens, spaces, apostrophes and full stops. 
+        </span>
+        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+        <p class="nhsuk-hint">You have 500 characters remaining</p>
       </div>
 
 <button class="nhsuk-button" type="submit">Continue</button>

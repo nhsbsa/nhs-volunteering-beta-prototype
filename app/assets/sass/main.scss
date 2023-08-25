@@ -22,12 +22,6 @@ margin-bottom: 30px;
 
 // styling for what-its-like.html
 
-.app-what-its-like {
-  .nhsuk-section:nth-of-type(2), .nhsuk-section:nth-of-type(4) {
-    background: #fff;
-  }
-}
-
 // styling for meet-our-volunteers.html
 
 
@@ -54,7 +48,7 @@ margin-bottom: 30px;
 @media (min-width: 48.0625em) {
   .nhsuk-card__meet-vols .nhsuk-card__content {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 100px auto;
+    grid-template-rows: 60px auto;
     grid-template-areas: 
     "title content"
     "sidebar content";

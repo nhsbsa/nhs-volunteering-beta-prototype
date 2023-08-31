@@ -50,76 +50,70 @@
   <form action="../application/address" method="post">
     <div class="nhsuk-form-group nhsuk-form-group--error">
 
-      <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-          <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l nhsuk-caption--top">Step 2 of 8</span>
-            What is your age?
-          </h1>
-        </legend>
+      <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 2 of 8</span>
+        What is your age?</h1>
+    
         <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
           We will only use this information to find the right opportunity for you.
         </div>
+
+      <fieldset class="nhsuk-fieldset">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+          <p class="nhsuk-fieldset__heading">
+            Select one option
+          </p>
+        </legend>
       
         <div class="nhsuk-radios">
           <span class="nhsuk-error-message" id="age-not-selected-error">
             <span class="nhsuk-u-visually-hidden">Error:</span> Select one option for your age
           </span>
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            <input class="nhsuk-radios__input" id="age-range-1" name="example" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="age-range-1">
             Under 16 years
             </label>
           </div>
     
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-            16 to 18
+            <input class="nhsuk-radios__input" id="age-range-2" name="example" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="age-range-2">
+            16 to 17
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="age-range-3" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="age-range-3">
+            18 to 20
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-            19 to 24
+            <input class="nhsuk-radios__input" id="age-range-4" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="age-range-4">
+            21 years and over
             </label>
           </div>
 
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-            25 to 44
-            </label>
-          </div>
+          <div class="nhsuk-radios__divider">or</div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-           45 to 59
+            <input class="nhsuk-radios__input" id="age-range-5" name="example-divider" type="radio" value="create-account">
+            <label class="nhsuk-label nhsuk-radios__label" for="age-range-5">
+              Prefer not to say
             </label>
           </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-           60 to 74
-            </label>
-          </div>
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-           75 years and over
-            </label>
-          </div>
+    
     
         </div>
       </fieldset>
     
     </div>
 
-<button class="nhsuk-button" type="submit">Continue</button>
-</form>
+    <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+  </form>
 
 </div>
 

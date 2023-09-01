@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "../task-list-fixed",
+    "href": "overview-process",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -20,7 +20,7 @@
 
       
 
-      <form action="../task-list-fixed" method="post" class="form">
+      <form action="/remote-answer" method="post" class="form">
 
         <div class="nhsuk-form-group">
 
@@ -39,15 +39,15 @@
               <div class="nhsuk-radios">
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  <input class="nhsuk-radios__input" id="r1-remote-1" name="r1-remote" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r1-remote-1">
                     Yes
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  <input class="nhsuk-radios__input" id="r1-remote-2" name="r1-remote" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r1-remote-2">
                     No
                   </label>
                 </div>

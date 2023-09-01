@@ -5,6 +5,22 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
+  // remote - then go to address if 'no'
+
+  router.post('/remote-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r1remote = req.session.data['r1-remote']
+  
+    if (r1remote === 'yes') {
+      res.redirect('/r1/questions/address')
+    } else {
+      res.redirect('/r1/questions/availability')
+    }
+  })
+  
+  module.exports = router;
+
 // choose address - if "the address is not listed here"
 
 router.post('/choose-address-answer', function (req, res) {
@@ -43,7 +59,7 @@ router.post('/contact-details-answer', function (req, res) {
   if (r1contactDetails === 'yes') {
     res.redirect('/r1/questions/contact-details-change')
   } else {
-    res.redirect('/r1/task-list-fixed')
+    res.redirect('/r1/questions/support-volunteers')
   }
 })
 

@@ -1,9 +1,17 @@
-{% extends 'layout.html' %}
+{% extends 'layout_vol_header.html' %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Check your answers template - NHS.UK prototype kit
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "address",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -12,7 +20,7 @@
 
       
 
-      <h1 class=" nhsuk-heading nhsuk-heading-l nhsuk-u-margin-top-4">
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
         <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
         Check locations
       </h1>
@@ -60,7 +68,7 @@
         ]
       }) }}
 
-      <a href="../task-list-fixed" class="nhsuk-button">
+      <a href="availability" class="nhsuk-button">
         Save and continue
       </a>
       <p class="nhsuk-body">              

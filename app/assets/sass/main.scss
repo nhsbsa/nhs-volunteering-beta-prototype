@@ -48,6 +48,7 @@ margin-bottom: 30px;
 @media (min-width: 48.0625em) {
   .nhsuk-card__meet-vols .nhsuk-card__content {
     grid-template-columns: 50% 50%;
+    grid-gap: 20px;
     grid-template-rows: 60px auto;
     grid-template-areas: 
     "title content"

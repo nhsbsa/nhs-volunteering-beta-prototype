@@ -1,0 +1,80 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "address",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Check locations
+      </h1>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Location 1"
+            },
+            value: {
+              html: "Airedale Hospital <br>
+              Steeton Road <br>
+              BD23 2PF"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Location 2"
+            },
+            value: {
+              html: "Bradford Royal Infirmary <br>
+              Daisy Hill <br>
+              BD4 4AK"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <a href="availability" class="nhsuk-button">
+        Save and continue
+      </a>
+      <p class="nhsuk-body">              
+        <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

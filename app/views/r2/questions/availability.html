@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "check-location",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <form action="contact-details" method="post" class="form">
+
+        <h1 class="nhsuk-heading nhsuk-heading-l" for="example">
+          <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+            What availability are you looking for?
+        </h1>
+        <div class="nhsuk-hint" id="example-hint">
+            This will show on the <strong>opportunity preview</strong> and the <strong>listing</strong>.
+        </div>
+
+        <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nhsuk-body">You need to include:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>hour slots available and duration of shifts</li>
+              <li>available days</li>
+            </ul>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Examples
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <ul>
+                  <li>shifts are available from 8am to 1pm, Mondays to Fridays</li>
+                  <li>shifts are three hours per week on Tuesdays or Thursdays</li>
+                  <li>a variety of shifts are available</li>
+                </ul>
+
+              </div>
+            </details>
+          </div>  
+
+        <div class="nhsuk-form-group">
+
+            <label for="example" class="nhsuk-label">Enter the availability</label>
+            
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+          </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

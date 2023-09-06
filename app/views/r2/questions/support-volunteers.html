@@ -1,0 +1,60 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "contact-details",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="../task-list-fixed" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <h1 class="nhsuk-heading nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+            Who will support the volunteers?
+          </h1>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            This will show on the <strong>listing</strong>.
+
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nusk-body">You do not need to name a specific person. We recommend using the job title of the person usually responsible for looking after volunteers, such as "Volunteer coordinator" or "Volunteer manager".</p>
+          </div>
+
+          <label class="nhsuk-label" for="r1-opportunity-name">
+            Enter a title
+          </label>
+          <input class="nhsuk-input" id="r1-opportunity-name" name="r1-opportunity-name" type="text">
+
+          
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

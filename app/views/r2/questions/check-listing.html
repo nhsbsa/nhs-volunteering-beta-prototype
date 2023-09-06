@@ -1,0 +1,331 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../task-list-fixed",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading nhsuk-heading-l nhsuk-u-margin-top-4">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Publish the listing </span>
+        Check your answer before publishing your listing
+      </h1>
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Listing set up</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Title"
+            },
+            value: {
+              text: "Walk and talk volunteer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Title"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Reference number"
+            },
+            value: {
+              text: "18420957-AT"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Listing details</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Preview"
+            },
+            value: {
+              html: "Main responsibilities: encourage people to take part in walking activities around the site and help them along the way 
+              <br>
+              <br>
+              Everyone is welcome to volunteer but we would encourage people to do it long-term"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Title"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Summary"
+            },
+            value: {
+              html: "You will support our mental health services team with the running of the walk and talk activity.
+              <br>
+              <br>
+              You will:
+              <br>
+              <br>
+              <li>encourage people to take part in this therapeutic and social activity</li>
+              <li>meet and greet people as they arrive</li>
+              <li>direct walkers along the designated route</li>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Person specification"
+            },
+            value: {
+              html: "This opportunity will suit someone friendly, approachable and enthusiastic.
+              <br>
+              <br>
+              You don't need any previous experience, qualifications or training. All you need is to:
+              <br>
+              <br>
+              <li>have good people skills and want to chat with people</li>
+              <li>be reliable and be good at time keeping</li>
+              <li>enjoy the outdoors</li>
+              <li>be 16 or over</li>
+              <br>
+              <br>
+              This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer with us.
+              "
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Application process"
+            },
+            value: {
+              html: "We'll get in touch with you when we review your request. This might take a few weeks.
+              <br>
+              <br>
+              After that, we may book in a chat to get to know you a bit more and walk you through the process.
+              <br>
+              <br>
+              To become a volunteer, you may need to:
+              <br>
+              <br>
+              <li>provide proof of identity and some utility bills</li>
+              <li>go through a standard or enhanced Disclosure and Barring Service (DBS) and occupational health checks</li>
+              <li>prove your right to work in the UK</li>
+              <li>provide details of your work history</li>
+              <li>give the details of two referees</li>
+              "
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Location 1"
+            },
+            value: {
+              html: "Airedale Hospital <br>
+              Steeton Road <br>
+              BD23 2PF"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Location 2"
+            },
+            value: {
+              html: "Bradford Royal Infirmary <br>
+              Daisy Hill <br>
+              BD4 4AK"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Availability"
+            },
+            value: {
+              text: "Shifts are available from 8am to 1pm, Monday to Friday"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: " <strong>Email: </strong>j.pearson@email.nhs.uk 
+              <br> <strong>Phone number: </strong>01234 555666 "
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Application settings</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "How you want to receive applications"
+            },
+            value: {
+              text: "Yes, I want to receive applications through NHS Volunteering"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              html: "Listing visbility
+                    <br>
+                    <br>
+                    Closing date
+                    "
+            },
+            value: {
+              html: "I want to set a closing date
+                    <br>
+                    <br>
+                    19/11/2023"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Application questions"
+            },
+            value: {
+              text: "I understand and agree to include these questions in the application"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <a href="#" class="nhsuk-button nhsuk-u-margin-right-4">
+        Publish listing
+      </a>
+      <a href="../preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+        Preview listing
+      </a>
+      <p class="nhsuk-body">              
+        <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

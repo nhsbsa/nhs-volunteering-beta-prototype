@@ -1,0 +1,76 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "overview-process",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <form action="/remote-answer" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+                  Is this opportunity remote?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                This means that the volunteer can do it from their home via a phone, laptop or tablet.
+              </div>
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r1-remote-1" name="r1-remote" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r1-remote-1">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r1-remote-2" name="r1-remote" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r1-remote-2">
+                    No
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

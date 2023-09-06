@@ -17,7 +17,11 @@ margin-bottom: 30px;
 }
 
 .role-type-image {
-    width: 100%;
+    width: auto;
+    height: auto;
+    img {
+      object-fit: cover;
+    }
 }
 
 // styling for what-its-like.html

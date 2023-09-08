@@ -123,7 +123,7 @@ router.post('/r2-contact-details-answer', function (req, res) {
   if (r2contactDetails === 'yes') {
     res.redirect('/r2/questions/contact-details-change')
   } else {
-    res.redirect('/r2/questions/support-volunteers')
+    res.redirect('/r2/task-list-fixed')
   }
 })
 

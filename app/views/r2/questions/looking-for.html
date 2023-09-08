@@ -69,7 +69,17 @@
             <label class="nhsuk-label" for="r2-preview">
               Tell us about who you are looking for
             </label>
-            <textarea class="nhsuk-textarea" id="r2-preview" name="r2-preview" rows="5" aria-describedby="r2-preview-hint"></textarea>
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+              <div class="nhsuk-form-group ">
+                <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+                </p>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
+              </p>
+              </div>
+            </div>
           </div>
 
           

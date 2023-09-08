@@ -1,0 +1,105 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "create-an-opportunity",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add a preview
+      </h1>
+
+      <form action="summary" method="post" class="form">
+
+        <div class="nhsuk-form-group ">
+          <h2 class="nhsuk-label-wrapper"> 
+            <label class="nhsuk-label nhsuk-label--m" for="jobDescription">
+              Introduce the role
+            </label>
+          </h2>
+          <span class="nhsuk-hint">
+            <p>Give a short summary of the role and why this person should work for you. Potential applicants will read this first so inform, engage and excite.</p>
+          
+            
+          </span>
+           
+          <div class="trumbowyg-box trumbowyg-editor-visible trumbowyg-en trumbowyg"><div class="trumbowyg-button-pane"><div class="trumbowyg-button-group "><button type="button" class="trumbowyg-undo-button " title="Undo (Cmd + Z)" tabindex="-1"><svg><use xlink:href="#trumbowyg-undo"></use></svg></button><button type="button" class="trumbowyg-redo-button " title="Redo (Cmd + Y)" tabindex="-1"><svg><use xlink:href="#trumbowyg-redo"></use></svg></button></div><div class="trumbowyg-button-group "><button type="button" class="trumbowyg-strong-button " title="Strong (Cmd + B)" tabindex="-1"><svg><use xlink:href="#trumbowyg-strong"></use></svg></button><button type="button" class="trumbowyg-em-button " title="Emphasis (Cmd + I)" tabindex="-1"><svg><use xlink:href="#trumbowyg-em"></use></svg></button></div><div class="trumbowyg-button-group "><button type="button" class="trumbowyg-unorderedList-button" title="Unordered list" tabindex="-1"><svg><use xlink:href="#trumbowyg-unordered-list"></use></svg></button><button type="button" class="trumbowyg-orderedList-button" title="Ordered list" tabindex="-1"><svg><use xlink:href="#trumbowyg-ordered-list"></use></svg></button></div></div><div class="trumbowyg-editor" contenteditable="true" dir="ltr" spellcheck="false"><span style="font-size: 19px;"><br></span></div><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: -2px; left: -2px; pointer-events: none; z-index: auto;" class="dnXmp"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: -2px; left: -2px; pointer-events: none; z-index: auto;" class="dnXmp"></grammarly-extension><textarea class="text-editor nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1500 trumbowyg-textarea" tabindex="-1" style="height: 260px;"></textarea><div class="trumbowyg-overlay"></div></div>
+          <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining">
+              You have <span class="nhsuk-character-count-remaining">1500</span> characters remaining
+          </p>
+          <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" style="display: none;">
+              You have <span class="nhsuk-character-count-toomany"></span> characters too many
+          </p>
+  
+        </div>
+  
+
+        
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/trumbowyg.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.18.0/ui/trumbowyg.min.css">
+  <script>$('.text-editor').trumbowyg({
+    btns: [
+    //  ['viewHTML'],
+      ['undo', 'redo'], // Only supported in Blink browsers
+      ['formatting'],
+      ['strong', 'em'],
+      ['unorderedList', 'orderedList'],
+  //    ['underline', 'strong', 'em', 'del'],
+  //    ['superscript', 'subscript'],
+  //    ['link'],
+  //    ['insertImage'],
+  //    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+  //    ['horizontalRule'],
+  //    ['removeformat'],
+  //    ['fullscreen']
+    ],
+    autogrow: true
+  });</script>
+  <script>$('.text-editor-2').trumbowyg({
+    btns: [
+    ['undo', 'redo'], // Only supported in Blink browsers
+  //  ['formatting'],
+    ['strong', 'em'],
+    ['unorderedList', 'orderedList'],
+  //    ['underline', 'strong', 'em', 'del'],
+  //    ['superscript', 'subscript'],
+  //    ['link'],
+  //    ['insertImage'],
+  //    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+  //    ['horizontalRule'],
+  //    ['removeformat'],
+  //    ['fullscreen']
+    ],
+    autogrow: true
+  });</script>
+  <script src="/js/character-count.js"></script>
+
+{% endblock %}

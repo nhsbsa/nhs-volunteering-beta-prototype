@@ -20,7 +20,7 @@
 
       
 
-      <form action="listing-visibility" method="post" class="form">
+      <form action="closing-date" method="post" class="form">
 
         <div class="nhsuk-form-group">
 
@@ -31,8 +31,18 @@
                     Do you want to receive applications through this service?
                 </h1>
               </legend>
+
+              <div class="nhsuk-hint">
+                <p class="nhsuk-body">You can select if you want to receive applications though NHS Volunteering or an external link to:</p>
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>your recruitment system</li>
+                    <li>your organisation's website</li>
+                    <li>a digital form</li>
+                    <li>a document</li>
+                  </ul>
+              </div>
           
-            <div class="nhsuk-radios nhsuk-radios--conditional">
+            <div class="nhsuk-radios nhsuk-radios--conditional nhsuk-u-margin-top-6">
           
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="r2-receive-apps-2" name="r2-receive-apps" type="radio" value="no">
@@ -44,7 +54,7 @@
                 <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="r2-receive-apps-1" name="r2-receive-apps" type="radio" value="r2-receive-apps" aria-controls="conditional-r2-receive-apps-1" aria-expanded="false">
                     <label class="nhsuk-label nhsuk-radios__label" for="r2-receive-apps-1">
-                        No, I want to link to an application form on a different system
+                      No, I want to use an external link
                     </label>
                 </div>
             
@@ -52,7 +62,7 @@
             
                     <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="r2-receive-apps-text">
-                        Enter the link to the application form
+                      Enter the external link where you want to receive applications
                     </label>
                     <input class="nhsuk-input" id="r2-receive-apps-text" name="r2-receive-apps-text" type="text">
                     </div>

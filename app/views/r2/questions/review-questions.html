@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "listing-visibility",
+    "href": "recieve-applications",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -19,7 +19,7 @@
     <div class="nhsuk-grid-column-two-thirds">
       
 
-      <form action="../task-list-fixed" method="post" class="form">
+      <form action="application-limits" method="post" class="form">
 
         <div class="nhsuk-form-group">
       
@@ -34,11 +34,12 @@
             <p class="nhsukbody">All applications through this service will ask applicants to provide:</p>
             <ul>
                 <li>their full name</li>
-                <li>their date of birth</li>
+                <li>if they are under 16 or above</li>
                 <li>their address</li>
-                <li>their contact details such as email or phone number</li>
-                <li>a short statement about their motivation to volunteer</li>
+                <li>their contact details such as email and phone number</li>
                 <li>their availability</li>
+                <li>any support they might need</li>
+                <li>a short statement about their motivation to volunteer</li>
             </ul>
       
             <div class="nhsuk-checkboxes">

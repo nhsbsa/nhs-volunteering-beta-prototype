@@ -20,34 +20,37 @@
 
       <form action="remote" method="post" class="form">
 
-        <div class="nhsuk-form-group">
-          <h1 class="nhsuk-heading nhsuk-heading-l">
-            <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
-            Who will support the volunteers?
-          </h1>
-          <div class="nhsuk-hint" id="example-with-hint-text-hint">
-            This will show on the <strong>listing</strong>.
+        <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="200">
+          <div class="nhsuk-form-group">
+            <h1 class="nhsuk-heading nhsuk-heading-l">
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+              Who will support the volunteers?
+            </h1>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+              This will show on the <strong>listing</strong>.
 
+            </div>
+
+            <div class="nhsuk-do-dont-list">
+              <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+              <p class="nhsuk-body">You can use the job title of:</p>
+              <ul>
+                <li>the person who looks after volunteers at your organisation, such as the volunteer coordinator or manager</li>
+                <li>the member of staff who the volunteer will report to while on duty such as the ward manager</li>
+              </ul>
+              <p class="nhsuk-body">You do not need to name a specific person.</p>
+            </div>
+
+            <label class="nhsuk-label" for="r2-opportunity-name">
+              Enter a title
+            </label>
+            <input class="nhsuk-input nhsuk-js-character-count" id="r2-opportunity-name" name="r2-opportunity-name" type="text">
+            <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">
+              You can enter up to 50 characters
+            </div>
+            
           </div>
-
-          <div class="nhsuk-do-dont-list">
-            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
-            <p class="nhsuk-body">You can use the job title of:</p>
-            <ul>
-              <li>the person who looks after volunteers at your organisation, such as the volunteer coordinator or manager</li>
-              <li>the member of staff who the volunteer will report to while on duty such as the ward manager</li>
-            </ul>
-            <p class="nhsuk-body">You do not need to name a specific person.</p>
-          </div>
-
-          <label class="nhsuk-label" for="r2-opportunity-name">
-            Enter a title
-          </label>
-          <input class="nhsuk-input" id="r2-opportunity-name" name="r2-opportunity-name" type="text">
-
-          
         </div>
-
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Save and continue
         </button>

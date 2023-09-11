@@ -6,6 +6,14 @@
   Task list
 {% endblock %}
 
+{% block outerContent %}
+  {{ backLink({
+    "href": "index",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
 
 {% block content %}
 
@@ -135,15 +143,7 @@
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="questions/closing-date">
-                  Control the listing visibility
-                </a>
-              </span>
-              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="questions/review-questions">
-                  Review application questions
+                  Set a closing date
                 </a>
               </span>
               <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
@@ -157,15 +157,18 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="questions/check-listing">
                   Check your answers and preview the listing
-                </a>
               </span>
               <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Cannot start yet</strong>
             </li>
           </ul>
         </li>
       </ol>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="background-color:	#d5281b">
+        Archive listing
+      </button>
+
 
     </div>  
 

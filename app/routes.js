@@ -127,5 +127,19 @@ router.post('/r2-contact-details-answer', function (req, res) {
   }
 })
 
+  // recieve applications - if "answer is yes"
+
+  router.post('/recieve-applications-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r2recieveApplications = req.session.data['r2-receive-apps']
+  
+    if (r2recieveApplications === 'yes') {
+      res.redirect('/r2/questions/review-questions')
+    } else {
+      res.redirect('/r2/questions/closing-date')
+    }
+  })
+
 module.exports = router;
 

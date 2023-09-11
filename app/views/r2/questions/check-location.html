@@ -25,58 +25,63 @@
         Check locations
       </h1>
 
-      {{ summaryList({
-        rows: [
-          {
-            key: {
-              text: "Location 1"
-            },
-            value: {
-              html: "Airedale Hospital <br>
-              Steeton Road <br>
-              BD23 2PF"
-            },
-            actions: {
-              items: [
-                {
-                  href: "manual-address",
-                  text: "Change",
-                  visuallyHiddenText: "Location 1"
-                },
-                {
-                  href: "#",
-                  text: "Remove",
-                  visuallyHiddenText: "Location 2"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Location 2"
-            },
-            value: {
-              html: "Bradford Royal Infirmary <br>
-              Daisy Hill <br>
-              BD4 4AK"
-            },
-            actions: {
-              items: [
-                {
-                  href: "manual-address",
-                  text: "Change",
-                  visuallyHiddenText: "Location 2"
-                },
-                {
-                  href: "#",
-                  text: "Remove",
-                  visuallyHiddenText: "Location 2"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Location 1
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Airedale Hospital
+            <br>
+            Steeton Road 
+            <br>
+            BD23 2PF
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="manual-address">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="#">Remove<span class="nhsuk-u-visually-hidden">Remove location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Location 2
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Bradford Royal Infirmary
+            <br>
+            Daisy Hill
+            <br>
+            BD4 4AK 
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="manual-address">Change<span class="nhsuk-u-visually-hidden"> Change location 2</span></a>
+              </li>
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="#">Remove<span class="nhsuk-u-visually-hidden">Remove location 2</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
 
       <a href="availability" class="nhsuk-button">
         Save and continue

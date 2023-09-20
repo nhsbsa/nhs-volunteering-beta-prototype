@@ -1,0 +1,198 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "manage-live",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-three-quarters">
+
+  <h1>Walk and talk volunteer <br> 11425523 </h1>
+
+  <p class="nhsuk-body"><strong>Date received:</strong> 14 June 2023</p>
+
+  <p class="nhsuk-body"><a href="#">Download application</a></p>
+
+  <h2>Answers</h2>
+  <dl class="nhsuk-summary-list">
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Karen Francis
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Age
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       21 years and over
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Address
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        73 Roman Road<br>Leeds<br> LS2 5ZN
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Email address
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+     
+        <p>karen.francis@example.com</p>
+      </dd>
+  
+  
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Phone number
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+     
+        <p>Not provided</p>
+      </dd>
+  
+  
+    </div>
+  
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Your availability
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>I can volunteer from 10am to 12pm on a Tuesday and from 11am to 1pm on Thursday.</p>
+      </dd>
+  
+  
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+      Support needed
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>I prefer to talk on the phone instead of writing things down</p>
+        
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        About you
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       <p>I have volunteered as a patient companion at Newham University Hospital for the past 5 years. I have recently moved home and I would like to continue volunteering in my new area. I consider myself a compassionate person and I enjoy spending time with people who need some warmth in their lives. In my previous role, I very much enjoyed meeting new people and helping brighten up their days. I also love the outdoors. My family and I usually go for long Sunday walks exploring our local woodland. I would like to use my skills and friendly disposition to support medical staff and patients at your hospital. </p>
+      </dd>
+  
+  
+    </div>
+  
+   
+ 
+  
+  </dl>
+  
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

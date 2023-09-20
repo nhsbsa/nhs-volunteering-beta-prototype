@@ -1,0 +1,107 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "create-an-opportunity",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add a preview
+      </h1>
+
+      <form action="summary" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-hint" id="r3-preview-with-hint-text-hint">
+            This will show on the <strong>search results</strong>.
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nhsuk-body">You need to:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>include main responsibilities or explain that you have a range of opportunities and responsibilities</li>
+              <li>show that you welcome everyone to volunteer</li>
+            </ul>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example for a specific opportunity
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <ul>
+                  <li>Main responsibilities: to encourage people to take part in walking activities around the site and help them along the way</li>
+                  <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+                </ul>
+
+              </div>
+            </details>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example for a generic opportunity
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <ul>
+                  <li>Opportunities and responsibilities depend on the organisation's needs</li>
+                  <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+                </ul>
+
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="r3-preview">
+              Enter the preview
+            </label>
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+              <div class="nhsuk-form-group ">
+                <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+                </p>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
+              </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+    
+
+        
+
+      </form>
+
+    </div>
+  </div>
+  
+
+{% endblock %}

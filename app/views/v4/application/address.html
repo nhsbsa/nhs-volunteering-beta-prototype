@@ -14,6 +14,7 @@
 
 
 
+
 <!-- Homepage content -->
 {% block content %}
 
@@ -23,29 +24,57 @@
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="email">
+    <a class="nhsuk-back-link__link" href="age">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
       Go back</a>
   </div>
 
-  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 5 of 8 </span>
-   Enter your telephone number (optional)</h1>
-<p class="nhsuk-hint">We will only use these details to contact you about this opportunity.</p>
-    <form action="availability" method="post">
+  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 8</span>
+   Find your address</h1>
+
+    <form action="choose-address" method="post">
   <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="input-width-50">
-    Telephone number (optional)
+    
+    <label class="nhsuk-label" for="input-width-20">
+     House number or name
     </label>
-    <input class="nhsuk-input nhsuk-input--width-50" id="input-width-50" name="test-width-50" type="text">
-
-
-   
-   
+    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+      For example, 12 or Flat 8B
+    </div>
+    <input class="nhsuk-input nhsuk-input--width-20" id="v4-volunteer-house" name="v4-volunteer-house" type="text" value="{{ data['v4-volunteer-house'] }}">
+  </div>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-20">
+     UK postcode
+    </label>
+    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+      For example, LS2 7UE
+    </div>
+    <input class="nhsuk-input nhsuk-input--width-10" id="v4-volunteer-postcode" name="v4-volunteer-postcode" type="text" value="{{ data['v4-volunteer-postcode'] }}">
   </div>
 
-<button class="nhsuk-button" type="submit">Continue</button>
+ 
+<p class="nhsuk-u-margin-top-6"><a href="manual-address">Enter my address manually</a></p>
+
+
+<details class="nhsuk-details nhsuk-u-margin-top-6">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If you do not have a fixed address
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p><a href="">Go back to the opportunity page</a> and contact the organisation to discuss your options.</p>
+   
+
+  </div>
+</details>
+
+  
+
+<button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Find address</button>
 </form>
 
 </div>

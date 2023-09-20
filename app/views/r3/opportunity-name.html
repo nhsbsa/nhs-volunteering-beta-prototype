@@ -1,0 +1,61 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "start-page",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="task-list-fixed" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <h1 class="nhsuk-heading nhsuk-heading-l">
+            Enter a title for the opportunity listing
+          </h1>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+            This is how people will see this opportunity on this service.
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h3 class="nhsuk-do-dont-list__label">Guidance</h3>
+            <p class="nhsuk-body">You need to write your title like this:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>Walk and talk volunteer- if the listing is for a specific opportunity</li>
+              <li>Volunteer at St. James Hospital - if this is a generic listing for all your opportunities</li>
+            </ul>
+          </div>
+          
+          <label class="nhsuk-label" for="r3-opportunity-name">
+            Enter a title
+          </label>
+          <input class="nhsuk-input" id="r3-opportunity-name" name="r3-opportunity-name" type="text">
+          <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">
+            You can enter up to 50 characters
+          </div>
+          
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

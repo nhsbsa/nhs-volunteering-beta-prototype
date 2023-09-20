@@ -141,5 +141,101 @@ router.post('/r2-contact-details-answer', function (req, res) {
     }
   })
 
+
+// ROUTES FOR V4 of Volunteering
+
+  // choose address - if answer is 'my address is not on the list'
+
+  router.post('/select-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const v4selectAddress = req.session.data['v4-select-address']
+  
+    if (v4selectAddress === 'My address is not on this list') {
+      res.redirect('/v4/application/manual-address')
+    } else {
+      res.redirect('/v4/application/email')
+    }
+  })
+  
+
+// r3 BRANCHING
+
+// Add your routes here - above the module.exports line
+
+  // remote - then go to address if 'no'
+
+  router.post('/r3-remote-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r3remote = req.session.data['r3-remote']
+  
+    if (r3remote === 'no') {
+      res.redirect('/r3/questions/address')
+    } else {
+      res.redirect('/r3/questions/availability')
+    }
+  })
+  
+  module.exports = router;
+
+// choose address - if "the address is not listed here"
+
+router.post('/r3-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r3chooseAddress = req.session.data['r3-choose-address']
+  
+    if (r3chooseAddress === 'not-listed') {
+      res.redirect('/r3/questions/manual-address')
+    } else {
+      res.redirect('/r3/questions/another-location')
+    }
+  })
+
+// add another location - if "answer is yes"
+
+router.post('/r3-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r3anotherLocation = req.session.data['r3-another-location']
+  
+    if (r3anotherLocation === 'yes') {
+      res.redirect('/r3/questions/address')
+    } else {
+      res.redirect('/r3/questions/check-location')
+    }
+  })
+
+  // contact details - if "answer is yes"
+
+router.post('/r3-contact-details-answer', function (req, res) {
+
+  // Get the answer from session data
+  const r3contactDetails = req.session.data['r3-contact-details']
+
+  if (r3contactDetails === 'yes') {
+    res.redirect('/r3/questions/contact-details-change')
+  } else {
+    res.redirect('/r3/task-list-fixed')
+  }
+})
+
+  // recieve applications - if "answer is yes"
+
+  router.post('/recieve-applications-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r3recieveApplications = req.session.data['r3-receive-apps']
+  
+    if (r3recieveApplications === 'yes') {
+      res.redirect('/r3/questions/review-questions')
+    } else {
+      res.redirect('/r3/questions/closing-date')
+    }
+  })  
+
 module.exports = router;
+
+
 

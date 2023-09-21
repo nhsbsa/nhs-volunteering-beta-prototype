@@ -37,7 +37,7 @@
   <h2>Personal details</h2>
   <dl class="nhsuk-summary-list">
 
-    {{data|dump}}
+    <!--{{data|dump}}-->
 
     <div class="nhsuk-summary-list__row">
       <dt class="nhsuk-summary-list__key">
@@ -80,7 +80,7 @@
        Address
       </dt>
       <dd class="nhsuk-summary-list__value">
-        73 Roman Road<br>Leeds<br> LS2 5ZN
+        {{ data['v4-select-address'] }}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -99,7 +99,7 @@
       </dt>
       <dd class="nhsuk-summary-list__value">
      
-        <p>karen.francis@example.com</p>
+        <p>{{ data['v4-volunteer-email-confirmation'] }}</p>
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -118,7 +118,11 @@
       </dt>
       <dd class="nhsuk-summary-list__value">
      
+        {% if data['v4-volunteer-phone'] %}
+        <p>{{ data['v4-volunteer-phone'] }}</p>
+        {% else %}
         <p>Not provided</p>
+        {% endif %}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -141,7 +145,7 @@
        Your availability
       </dt>
       <dd class="nhsuk-summary-list__value">
-        <p>I can volunteer from 10am to 12pm on a Tuesday and from 11am to 1pm on Thursday.</p>
+        <p>{{ data['v4-volunteer-availability']}}</p>
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -159,7 +163,7 @@
       Support needed
       </dt>
       <dd class="nhsuk-summary-list__value">
-        <p>I prefer to talk on the phone instead of writing things down</p>
+        <p>{{ data['v4-volunteer-support'] }}</p>
         
       </dd>
   
@@ -178,7 +182,7 @@
         About you
       </dt>
       <dd class="nhsuk-summary-list__value">
-       <p>I have volunteered as a patient companion at Newham University Hospital for the past 5 years. I have recently moved home and I would like to continue volunteering in my new area. I consider myself a compassionate person and I enjoy spending time with people who need some warmth in their lives. In my previous role, I very much enjoyed meeting new people and helping brighten up their days. I also love the outdoors. My family and I usually go for long Sunday walks exploring our local woodland. I would like to use my skills and friendly disposition to support medical staff and patients at your hospital. </p>
+       <p>{{ data['v4-volunteer-motivations'] }}</p>
       </dd>
   
       <dd class="nhsuk-summary-list__actions">

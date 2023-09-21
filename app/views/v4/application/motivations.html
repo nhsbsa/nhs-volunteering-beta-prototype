@@ -96,17 +96,24 @@
     </div>
   </details>
     <form action="check" method="post">
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Tell us why you want to become a volunteer
-        </label>
+
+      <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="v4-volunteer-motivations">
+            Tell us why you want to become a volunteer
+          </label>
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v4-volunteer-motivations" name="v4-volunteer-motivations" rows="5" aria-describedby="v4-volunteer-motivations-hint">{{ data['v4-volunteer-motivations']}}</textarea>
+        </div>
       
-        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-        <p class="nhsuk-hint">You have 500 characters remaining</p>
+        <div class="nhsuk-hint nhsuk-character-count__message" id="v4-volunteer-motivations-info">
+          You can enter up to 500 characters
+        </div>
+      
       </div>
 
-<button class="nhsuk-button" type="submit">Continue</button>
-</form>
+      <button class="nhsuk-button" type="submit">Continue</button>
+    </form>
 
 </div>
 

@@ -21,22 +21,19 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading nhsuk-heading-l">
-        Advertise your volunteering opportunities
-      </h1>
-
-      <p class="nhsuk-u-margin-bottom-7">You can save your progress and return to it later.</p>
-
-      <p class="nhsuk-u-margin-bottom-7">You need to complete all tasks before you can advertise your opportunity.</p>
-      
-      <h2 class="nhsuk-heading nhsuk-heading-m">
-        {% if data['r3-opportunity-name'] %}
-        {{ data['r3-opportunity-name'] }}
+      <h1 class="nhsuk-heading nhsuk-heading-xl">
+        <span class="nhsuk-caption-xl nhsuk-caption--top">Reference number 18420957-AT</span>
+        {% if data['r2-opportunity-name'] %}
+        {{ data['r2-opportunity-name'] }}
         {% else %}
         Walk and talk volunteer
         {% endif %}
-      </h2>
+        <span class="nhsuk-tag nhsuk-tag--yellow">Draft</span>
+      </h1>
 
+      <p>You can save your progress and return to it later.</p>
+
+      <p class="nhsuk-u-margin-bottom-7">You need to complete all tasks before you can advertise your opportunity.</p>
       
       <p class="nhsuk-body">You have completed 1 of 4 sections.</p>
 
@@ -64,7 +61,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="questions/create-an-opportunity" aria-describedby="company-information-completed">
+                <a href="questions/preview" aria-describedby="company-information-completed">
                   Add a preview
                 </a>
               </span>

@@ -207,14 +207,14 @@ router.post('/r3-another-location-answer', function (req, res) {
     }
   })
 
-  // contact details - if "answer is yes"
+  // contact details - if "answer is no"
 
 router.post('/r3-contact-details-answer', function (req, res) {
 
   // Get the answer from session data
   const r3contactDetails = req.session.data['r3-contact-details']
 
-  if (r3contactDetails === 'yes') {
+  if (r3contactDetails === 'no') {
     res.redirect('/r3/questions/contact-details-change')
   } else {
     res.redirect('/r3/task-list-fixed')

@@ -223,7 +223,7 @@ router.post('/r3-contact-details-answer', function (req, res) {
 
   // recieve applications - if "answer is yes"
 
-  router.post('/recieve-applications-answer', function (req, res) {
+  router.post('/r3-recieve-applications-answer', function (req, res) {
 
     // Get the answer from session data
     const r3recieveApplications = req.session.data['r3-receive-apps']
@@ -234,6 +234,20 @@ router.post('/r3-contact-details-answer', function (req, res) {
       res.redirect('/r3/questions/closing-date')
     }
   })  
+
+    // alt-closing-date-answer - if "answer is yes"
+
+    router.post('/r3-closing-date-answer', function (req, res) {
+
+      // Get the answer from session data
+      const r3closingDate = req.session.data['r3-closing-date']
+    
+      if (r3closingDate === 'yes') {
+        res.redirect('/r3/questions/alt-closing-date-answer')
+      } else {
+        res.redirect('/r3/task-list-fixed')
+      }
+    })  
 
 module.exports = router;
 

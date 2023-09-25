@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "create-an-opportunity",
+    "href": "../task-list-fixed",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -27,7 +27,7 @@
 
         <div class="nhsuk-form-group">
           <div class="nhsuk-hint" id="r3-preview-with-hint-text-hint">
-            This is a short overview of the opportunity. It will show on the <strong>potential volunteers search results</strong> with all the opportunities in the area.
+            This is a short overview of the opportunity. It will show on the <strong>potential volunteers search results</strong> with all the opportunities available.
           </div>
 
           <div class="nhsuk-do-dont-list">
@@ -47,10 +47,8 @@
                 </span>
               </summary>
               <div class="nhsuk-details__text">
-                <ul>
-                  <li>Main responsibilities: to encourage people to take part in walking activities around the site and help them along the way</li>
-                  <li>Shifts are available from 8am to 1pm, Mondays to Fridays</li>
-                </ul>
+                <p class="nhsuk-body">Main responsibilities: to encourage people to take part in walking activities around the site and help them along the way.</p>
+                <p class="nhsuk-body">Shifts are available from 8am to 1pm, Mondays to Fridays.</p>
 
               </div>
             </details>
@@ -62,11 +60,8 @@
                 </span>
               </summary>
               <div class="nhsuk-details__text">
-                <ul>
-                  <li>Opportunities and responsibilities depend on the organisation's needs</li>
-                  <li>A variety of shifts are available</li>
-                </ul>
-
+                <p class="nhsuk-body">Opportunities and responsibilities depend on the organisation's needs.</p>
+                <p class="nhsuk-body">A variety of shifts are available.</p>
               </div>
             </details>
 
@@ -80,18 +75,15 @@
                 <h2 class="nhsuk-link nhsuk-u-margin-bottom-2 nhsuk-link">Walk and talk volunteer</h2>
                 <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS3 8GL</strong></p>
                 <p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
-                <ul class="nhsuk-list nhsuk-list--bullet">
-                  <li>Main responsibilities: to encourage people to take part in walking activities around the site and help them along the way</li>
-                  <li>Shifts are available from 8am to 1pm, Monday to Friday</li>
-                </ul>
+                <p class="nhsuk-body">Main responsibilities: to encourage people to take part in walking activities around the site and help them along the way.</p>
+                <p class="nhsuk-body">Shifts are available from 8am to 1pm, Monday to Friday.</p>
+
 
                 <h2 class="nhsuk-link nhsuk-u-margin-bottom-2 nhsuk-link">Volunteer at St. James' Hospital</h2>
                 <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS3 8GL</strong></p>
                 <p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
-                <ul class="nhsuk-list nhsuk-list--bullet">
-                  <li>How you will support this organisation will vary according to their needs</li>
-                  <li>A variety of shifts are available</li>
-                </ul>
+                <p class="nhsuk-body">How you will support this organisation will vary according to their needs.</p>
+                <p class="nhsuk-body">A variety of shifts are available.</p>
               </div>
             </details>
           </div>
@@ -102,7 +94,8 @@
             </label>
             <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
               <div class="nhsuk-form-group ">
-                <textarea class="text-editor-2 nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
+                <!-- to enable rich text, add class of text-editor-2 to textarea element -->
+                <textarea rows="8" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-500"></textarea>
                 <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
                     You have <span class="nhsuk-character-count-remaining"></span> characters remaining
                 </p>

@@ -42,16 +42,13 @@
             <details class="nhsuk-details">
               <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
-                  > Examples for all types of opportunities 
+                  Examples for all types of opportunities 
                 </span>
               </summary>
               <div class="nhsuk-details__text">
-                <ul>
-                  <li>shifts are available from 8am to 1pm, Mondays to Fridays</li>
-                  <li>shifts are three hours per week on Tuesdays or Thursdays</li>
-                  <li>a variety of shifts are available</li>
-                </ul>
-
+                <p class="nhsuk-body">Shifts are available from 8am to 1pm, Mondays to Fridays.</p>
+                <p class="nhsuk-body">Shifts are three hours per week on Tuesdays or Thursdays.</p>
+                <p class="nhsuk-body">A variety of shifts are available.</p>
               </div>
             </details>
           </div>  
@@ -62,13 +59,22 @@
             <p class="nhsuk-body">Do not include anything relating to the minimum time commitment you require. </p>
           </div>  
 
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Do not</span>
+              Do not include anything relating to the minimum time commitment you require. 
+            </strong>
+          </div>
+
         <div class="nhsuk-form-group">
 
             <label for="example" class="nhsuk-label">Enter the availability</label>
             
             <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
               <div class="nhsuk-form-group ">
-                <textarea class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-100"></textarea>
+                <!-- to enable rich text, add class of text-editor-2 to textarea element -->
+                <textarea rows="4" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-100"></textarea>
                 <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
                     You have <span class="nhsuk-character-count-remaining"></span> characters remaining
                 </p>

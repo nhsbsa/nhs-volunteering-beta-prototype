@@ -231,7 +231,7 @@ router.post('/r3-contact-details-answer', function (req, res) {
     if (r3recieveApplications === 'yes') {
       res.redirect('/r3/questions/review-questions')
     } else {
-      res.redirect('/r3/questions/closing-date')
+      res.redirect('/r3/questions/alt-closing-date')
     }
   })  
 

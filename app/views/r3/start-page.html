@@ -4,6 +4,14 @@
   Start page template - NHS.UK prototype kit
 {% endblock %}
 
+{% block outerContent %}
+  {{ backLink({
+    "href": "index",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -49,7 +57,7 @@
 
     <ul>
     <li>a summary</li>
-    <li>details of the type of person you are looking for</li>
+    <li>the details of the type of person you are looking for</li>
     <li>an overview of your application process</li>
     <li>one or more locations, or select if this is a remote opportunity</li>
     <li>the availability you need</li>

@@ -76,11 +76,18 @@
     </div>
   
     <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
+      <dt class="nhsuk-summary-list__key f">
        Address
       </dt>
       <dd class="nhsuk-summary-list__value">
-        {{ data['v4-select-address'] }}
+
+        {% if data['v4-volunteer-address-line-1'] %}
+        <p> {{ data['v4-volunteer-address-line-1'] }}, {% if data ['v4-volunteer-address-line-2'] %} {{ data['v4-volunteer-address-line-2'] }}, {% endif %} {{ data['v4-volunteer-town'] }}, {% if data ['v4-volunteer-county'] %} {{ data['v4-volunteer-county'] }}, {% endif %} {{ data['v4-volunteer-postcode-2'] }}</p>
+        {% elif data['v4-select-address'] != "My address is not on this list" %}
+        <p>{{ data['v4-select-address'] }}</p>
+        {% else %}
+        <p> {{ data['v4-volunteer-address-line-1'] }}, {% if data ['v4-volunteer-address-line-2'] %} {{ data['v4-volunteer-address-line-2'] }}, {% endif %} {{ data['v4-volunteer-town'] }}, {% if data ['v4-volunteer-county'] %} {{ data['v4-volunteer-county'] }}, {% endif %} {{ data['v4-volunteer-postcode-2'] }}</p>
+        {% endif %}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">

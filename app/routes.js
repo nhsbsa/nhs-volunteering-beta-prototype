@@ -229,7 +229,7 @@ router.post('/r3-contact-details-answer', function (req, res) {
     const r3recieveApplications = req.session.data['r3-receive-apps']
   
     if (r3recieveApplications === 'yes') {
-      res.redirect('/r3/questions/review-questions')
+      res.redirect('/r3/questions/application-limits')
     } else {
       res.redirect('/r3/questions/alt-closing-date')
     }

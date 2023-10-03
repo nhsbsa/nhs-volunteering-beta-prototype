@@ -1,0 +1,126 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../task-list-fixed",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+        
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+           
+            <li>
+              <a href="#example-error-1">Enter an external link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form action="/r3-recieve-applications-answer" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <h1 class="nhsuk-heading-l">
+                <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+                Do you want to receive applications through this service? 
+              </h1>
+
+              <div class="nhsuk-hint">
+                <p class="nhsuk-body">You can select if you want to receive applications though NHS Volunteering or use an external link to:</p>
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>your recruitment system</li>
+                    <li>your organisation's website</li>
+                    <li>a digital form</li>
+                    <li>a document</li>
+                  </ul>
+              </div>
+              <div class="nhsuk-do-dont-list">
+                <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+                <p class="nhsuk-body">All applications through NHS Volunteering will ask applicants for:</p>
+                <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+                  <li>their full name</li>
+                  <li>confirmation that they are 16 and above</li>
+                  <li>their address</li>
+                  <li>their contact details such as email and phone number</li>
+                  <li>their availability</li>
+                  <li>any support they might need</li>
+                  <li>a short statement about their motivation to volunteer</li>
+                </ul>
+               
+              </div>
+
+            <div class="nhsuk-radios nhsuk-radios--conditional nhsuk-u-margin-top-6 ">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                Select one option
+              </legend>
+             
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r3-receive-apps-2" name="r3-receive-apps" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r3-receive-apps-2">
+                    Yes, I want to receive applications through NHS Volunteering
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                
+                    <input class="nhsuk-radios__input" id="r3-receive-apps-1" name="r3-receive-apps" type="radio" value="no" aria-controls="conditional-r3-receive-apps-1" aria-expanded="false">
+                    
+                    <label class="nhsuk-label nhsuk-radios__label" for="r3-receive-apps-1">
+                      No, I want to use an external link
+                    </label>
+                    
+                </div>
+            
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-r3-receive-apps-1">
+              
+                    <div class="nhsuk-form-group nhsuk-form-group--error">
+                    <label class="nhsuk-label" for="r3-receive-apps-text">
+                      Enter the external link where you want to receive applications
+                    </label>
+                    <span class="nhsuk-error-message" id="example-error-error">
+                      <span class="nhsuk-u-visually-hidden">Error:</span> Enter an external link
+                    </span>
+                    <input class="nhsuk-input" id="r3-receive-apps-text" name="r3-receive-apps-text" type="text">
+                    </div>
+            
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

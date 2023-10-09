@@ -37,8 +37,6 @@
 
       <form action="/r3-remote-answer" method="post" class="form">
 
-        <div class="nhsuk-form-group nhsuk-form-group--error">
-
             <fieldset class="nhsuk-fieldset">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                 <h1 class="nhsuk-fieldset__heading">
@@ -46,16 +44,27 @@
                   Is this opportunity remote?
                 </h1>
               </legend>
-
               <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
                 This means that volunteers can do it from their home via a phone, laptop or tablet.
               </div>
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>If your opportunity is remote, you may receive applications from outside of your recruitment area.</p>
+              </div>
+
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                  Select one option
+                </legend>
+
+            <div class="nhsuk-form-group nhsuk-form-group--error">
 
               <span class="nhsuk-error-message" id="example-error-error">
                 <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if this is a remote opportunity
               </span>
               
           
+              
               <div class="nhsuk-radios">
           
                 <div class="nhsuk-radios__item">
@@ -73,9 +82,9 @@
                 </div>
           
               </div>
+              </div>
             </fieldset>
-          
-          </div>
+        
 
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">

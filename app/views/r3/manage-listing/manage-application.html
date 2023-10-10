@@ -36,16 +36,36 @@
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">Warning</span>
-      This page does not include the applicant's personal information.
-<br>
-      To view their personal information, you can download the full application.
+      This page includes the applicant's personal<br> information.
+      
+     
+       
     </strong>
   </div>
 
   <h2>Application details</h2>
   <dl class="nhsuk-summary-list">
 
-
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       Karen Francis
+      </dd>
+  
+  
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Age
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       21 years and over
+      </dd>
+  
+  
+    </div>
   
     <div class="nhsuk-summary-list__row">
       <dt class="nhsuk-summary-list__key">
@@ -58,7 +78,17 @@
   
     </div>
   
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Email address
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+     
+        <p>karen@karen.com</p>
+      </dd>
   
+  
+    </div>
 
     <div class="nhsuk-summary-list__row">
       <dt class="nhsuk-summary-list__key">
@@ -112,7 +142,7 @@
   
   </dl>
   
-<button class="nhsuk-button">Download full application</button>
+<button class="nhsuk-button">Print this page</button>
 
 
 </div>
@@ -141,27 +171,7 @@
 
 
 <!-- NHS.UK footer -->
-{% block footer %}
-<footer role="contentinfo">
-  <div class="nhsuk-footer" id="nhsuk-footer">
-    <div class="nhsuk-width-container">
-      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
-      </ul>
-      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
-    </div>
-  </div>
-</footer>
-{% endblock %}
+
 
 
 <!-- JavaScript hack to do nothing if search button or link href="" clicked -->

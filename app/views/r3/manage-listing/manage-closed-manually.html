@@ -30,6 +30,19 @@
       </svg>
       Go back</a>
   </div>
+
+  <div class="nhsuk-card" style="border-color:	#005eb8; color:#005eb8;">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading">
+      Listing closed
+  
+      </h2>
+
+      
+      <p class="nhsuk-card__description nhsuk-body-m">Reference number: 13445-AB</p>
+      
+    </div>
+  </div>
   <h1 class="nhsuk-u-margin-bottom-3"><span class="nhsuk-caption-l">Listing reference number: 13445-AB</span> Patient experience volunteer <span class="nhsuk-tag nhsuk-tag--grey">Closed</span></h1>
   <p class="nhsuk-u-margin-bottom-1">Date published: 8 August 2023</p>
   <p>Date closed: 31 August 2023</p>
@@ -132,6 +145,27 @@
 
 
 <!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
 
 
 <!-- JavaScript hack to do nothing if search button or link href="" clicked -->

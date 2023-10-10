@@ -38,15 +38,11 @@
 
 
   
-  <div class="nhsuk-action-link nhsuk-u-margin-top-1">
-    <a class="nhsuk-action-link__link" href="https://app.betterimpact.com/Application?OrganizationGuid=66c5b9d6-86ee-4753-b130-eb80558cd041&ApplicationFormNumber=1">
-      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-        <path d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-      </svg>
-      <span class="nhsuk-action-link__text">Register with the organisation</span>
+
+    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="../application/start-external">
+      Register for this opportunity
     </a>
-  </div>
+
 
   <div class="nhsuk-card">
     <div class="nhsuk-card__content">
@@ -194,15 +190,10 @@
 </div>
 </details>
 
-<div class="nhsuk-action-link nhsuk-u-margin-top-6">
-  <a class="nhsuk-action-link__link" href="https://app.betterimpact.com/Application?OrganizationGuid=66c5b9d6-86ee-4753-b130-eb80558cd041&ApplicationFormNumber=1">
-    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-      <path d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-    </svg>
-    <span class="nhsuk-action-link__text">Register with the organisation</span>
+  <a class="nhsuk-button nhsuk-u-margin-top-1" data-module="nhsuk-button" type="submit" href="../application/start-external">
+    Register for this opportunity
   </a>
-</div>
+
 
 </div>
 </div>
@@ -228,30 +219,7 @@
 
 {% endblock %}
 
-
-<!-- NHS.UK footer -->
-{% block footer %}
-<footer role="contentinfo">
-  <div class="nhsuk-footer" id="nhsuk-footer">
-    <div class="nhsuk-width-container">
-      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
-        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
-      </ul>
-      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
-    </div>
-  </div>
-</footer>
-{% endblock %}
-
+ 
 
 <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
 {% block pageScripts %}

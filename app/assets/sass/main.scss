@@ -208,3 +208,10 @@ margin-bottom: 30px;
   border: 0 !important;
   white-space: nowrap !important;
 }
+
+.nhsuk-footer__list  {
+  column-count: 2;
+  .nhsuk-footer__list-item {
+    float: none;
+  }
+}

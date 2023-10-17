@@ -1,4 +1,5 @@
 {% extends 'layout_vol_header.html' %}
+
 <!-- some custom css for the home page only -->
 
 
@@ -11,6 +12,7 @@
   <link href="/css/nhsuk.css" rel="stylesheet">
 {% endblock %}
 
+<!-- NHS.UK header -->
 
 
 <!-- Homepage content -->
@@ -18,32 +20,49 @@
 
 
 <div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-column-full">
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="/r3/manage-listing/manage-live">
+    <a class="nhsuk-back-link__link" href="#">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
       Go back</a>
   </div>
- 
-
-  <h1>Are you sure you want to close this listing?</h1>
-  <p>This will remove your listing from the service. Potential volunteers will no longer see it.</p>
-  <p>You will need to create a new listing if you want to advertise the same opportunity.</p>
-<form action="/r3/manage-listing/manage-closed-manually">
-<button class="nhsuk-button" style="background-color:#d5281b; box-shadow: 0 4px 0 #212b32">Close listing</button>
-</form>
- 
 
 
 
-  
 
+<ul class="nhsuk-grid-row">
+  <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
 
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+          <a class="nhsuk-card__link" href="#">Terms and conditions for volunteers</a>
+        </h5>
 
+      </div>
+    </div>
+
+  </li>
+</ul>
+
+<ul class="nhsuk-grid-row">
+  <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+          <a class="nhsuk-card__link" href="#">Terms and conditions for recruiting organisations</a>
+        </h5>
+
+      </div>
+    </div>
+
+  </li>
+</ul>
 </div>
 </div>
 

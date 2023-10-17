@@ -159,18 +159,3 @@
 
 {% endblock %}
 
-
-<!-- NHS.UK footer -->
-
-
-
-<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
-{% block pageScripts %}
-<script>
-  $( document ).ready(function() {
-    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
-      e.preventDefault();
-    });
-  });
-</script>
-{% endblock %}

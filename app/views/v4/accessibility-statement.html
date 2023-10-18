@@ -111,7 +111,8 @@
   <p>We will make another assessment when the supplier contract is up for renewal, likely to be in the next twelve months [REQUIRES CONFIRMATION].</p>
 
   <h2 class="nhsuk-heading-l">What we are doing to improve accessibility</h2>
-  <p>Our accessibility roadmap [ADD LINK TO ROADMAP] shows how and when we plan to improve accessibility on this website.</p>
+  <p>We’re committed to making sure this website is compliant to WCAG 2.1 'AA' standard. </p>
+  <p>Our accessibility compliance statement will be reviewed every 6 months. Every new released website will be designed, built and tested to meet 'AA' standards by default.</p>
 
   <h2 class="nhsuk-heading-l">Preparation of this accessibility statement</h2>
   <p>This statement was prepared on 10 October 2023. It was last reviewed on 13 December 2023.</p>
@@ -158,18 +159,3 @@
 
 {% endblock %}
 
-
-<!-- NHS.UK footer -->
-
-
-
-<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
-{% block pageScripts %}
-<script>
-  $( document ).ready(function() {
-    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
-      e.preventDefault();
-    });
-  });
-</script>
-{% endblock %}

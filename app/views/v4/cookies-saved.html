@@ -24,12 +24,33 @@
 
   <div class="nhsuk-back-link">
 
+    <div class="nhsuk-error-summary info-status" id="cookie-preference-saved" aria-labelledby="error-summary-title" role="alert">
+      <p class="nhsuk-error-summary__title" id="error-summary-title">
+        We have saved your cookies settings
+      </p>
+      <div class="nhsuk-error-summary__body">
+        <p>
+          We'll ask you about your cookies preferences either:
+        </p>
+        <ul>
+          <li>
+            one year after you last saved your preferences
+          </li>
+          <li>
+            when we add new cookies or change the cookies we use
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <button class="nhsuk-back-link__link" onclick="history.back()">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
       Go back</button>
   </div>
+
+  
 
 <h1 class="nhsuk-heading-xl">Cookies</h1>
   <p>This website is run by NHS Business Services Authority on behalf of NHS England and will be referred to as ‘we’ from now on.</p>
@@ -130,39 +151,39 @@
     </div>
 
 
-  <form action="cookies-saved">
-    <div class="nhsuk-form-group">
-
-      <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-           Do you want to accept analytics cookies?
-        </legend>
-    
-        <div class="nhsuk-radios nhsuk-radios--inline">
-    
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-              Yes
-            </label>
+    <form action="cookies-saved">
+      <div class="nhsuk-form-group">
+  
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+             Do you want to accept analytics cookies?
+          </legend>
+      
+          <div class="nhsuk-radios nhsuk-radios--inline">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                Yes
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                No
+              </label>
+            </div>
+      
           </div>
-    
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-              No
-            </label>
-          </div>
-    
-        </div>
-      </fieldset>
-    
-         <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
-                Save cookies settings
-            </button>
-    
-    </div>
-  </form>
+        </fieldset>
+      
+           <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
+                  Save cookies settings
+              </button>
+      
+      </div>
+    </form>
 
 </div>
 </div>

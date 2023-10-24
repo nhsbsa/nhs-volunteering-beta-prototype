@@ -217,7 +217,7 @@ router.post('/r3-contact-details-answer', function (req, res) {
   if (r3contactDetails === 'no') {
     res.redirect('/r3/questions/contact-details-change')
   } else {
-    res.redirect('/r3/task-list-fixed')
+    res.redirect('/r3/task-list-section-1-completed')
   }
 })
 
@@ -245,7 +245,7 @@ router.post('/r3-contact-details-answer', function (req, res) {
       if (r3closingDate === 'yes') {
         res.redirect('/r3/questions/alt-closing-date-answer')
       } else {
-        res.redirect('/r3/task-list-fixed')
+        res.redirect('/r3/task-list-completed')
       }
     })  
 

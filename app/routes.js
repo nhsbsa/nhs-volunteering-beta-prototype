@@ -127,7 +127,7 @@ router.post('/r2-contact-details-answer', function (req, res) {
   }
 })
 
-  // recieve applications - if "answer is yes"
+  // receive applications - if "answer is yes"
 
   router.post('/recieve-applications-answer', function (req, res) {
 
@@ -221,7 +221,7 @@ router.post('/r3-contact-details-answer', function (req, res) {
   }
 })
 
-  // recieve applications - if "answer is yes"
+  // receive applications - if "answer is yes"
 
   router.post('/r3-recieve-applications-answer', function (req, res) {
 

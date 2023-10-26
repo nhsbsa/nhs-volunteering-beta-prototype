@@ -215,3 +215,45 @@ margin-bottom: 30px;
     float: none;
   }
 }
+
+//cookies 
+
+#nhsuk-cookie-banner .nhsuk-success-banner {
+  background-color: #007f3b;
+  color: #fff;
+  padding: 8px 0 8px 0;
+  position: relative;
+}
+
+#nhsuk-cookie-banner .nhsuk-success-banner p {
+  margin: 0;
+}
+
+#nhsuk-cookie-banner {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Frutiger W01,Arial,Sans-serif;
+}
+
+
+
+#nhsuk-cookie-banner p {
+  display: block;
+  margin-top: 0;
+}
+
+.top-banner {
+  padding: 16px 0;
+  background-color: #ffffff; }
+  .top-banner.info {
+    background-color: #f0f4f5; }
+
+.info-status {
+  border-color: #005EB8 !important;
+}
+
+.top-banner {
+  padding: 16px 0;
+  background-color: #ffffff; }
+  .top-banner.feedback {
+    background-color: #ffffff; }

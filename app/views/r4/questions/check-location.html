@@ -1,0 +1,134 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "address",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Check locations
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Location 1
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Airedale Hospital
+            <br>
+            Steeton Road 
+            <br>
+            BD23 2PF
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="manual-address">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="#">Remove<span class="nhsuk-u-visually-hidden">Remove location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Location 2
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Bradford Royal Infirmary
+            <br>
+            Daisy Hill
+            <br>
+            BD4 4AK 
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="manual-address">Change<span class="nhsuk-u-visually-hidden"> Change location 2</span></a>
+              </li>
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="#">Remove<span class="nhsuk-u-visually-hidden">Remove location 2</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+
+      <form action="/r4-another-location-answer" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Do you want to add another location for this opportunity?
+              </h2>
+            </legend>
+
+            <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+              All locations will show on the same <strong>opportunity listing</strong>.
+            </div>
+        
+            <div class="nhsuk-radios">
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="r4-another-location-1" name="r4-another-location" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="r4-another-location-1">
+                  Yes
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="r4-another-location-2" name="r4-another-location" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="r4-another-location-2">
+                  No
+                </label>
+              </div>
+        
+            </div>
+          </fieldset>
+        
+        </div>
+
+        
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+      </button>
+      <p class="nhsuk-body">              
+        <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

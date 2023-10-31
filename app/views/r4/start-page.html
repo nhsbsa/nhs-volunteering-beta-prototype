@@ -1,0 +1,90 @@
+{% extends 'layout_vol_header.html' %}
+
+{% block pageTitle %}
+  Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "index",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading nhsuk-heading-xl">
+        Advertise your volunteering opportunities
+      </h1>
+
+      <p>You can use this service if you want to:</p>
+
+      <ul>
+        <li>advertise your opportunities and receive applications through NHS Volunteering</li>
+        <li>advertise your opportunities and link to application forms on existing systems</li>
+      </ul>
+
+      <p class="nhsuk-body">You can advertise either:</p>
+
+      <ul>
+        <li>one or more specific opportunities</li>
+        <li>a generic listing for all your opportunities</li>
+      </ul>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p class="nhsuk-body">We refer to 'specific opportunity' to describe an opportunity with a defined title, requirements and responsibilities.</p>
+        <p class="nhsuk-body">A 'generic opportunity' is a broader listing that doesn't provide as much detail and it can include a range of opportunities.</p>
+      </div>
+
+
+      <h2 class="nhsuk-heading-l">The process</h2>
+
+      <p>The information you enter will create a listing that potential volunteers will see when they search for an opportunity.</p>
+      
+      <p>To advertise an opportunity, you will need to complete the following:</p>
+
+    <h3 class="nhsuk-heading-m">1. add a preview </h3>
+
+    <p>This is what potential volunteers will see first when they search for opportunities.</p>
+
+    <h3 class="nhsuk-heading-m">2. fill in the listing</h3>
+
+    <p>You will add:</p>
+
+    <ul>
+    <li>a summary</li>
+    <li>the details of the type of person you are looking for</li>
+    <li>an overview of your application process</li>
+    <li>one or more locations, or select if this is a remote opportunity</li>
+    <li>the availability you need</li>
+    <li>the contact details where you want to receive queries about the opportunity</li>
+    </ul>
+
+    <h3 class="nhsuk-heading-m">3. select the application settings</h3>
+
+    <p class="nhsuk-body">You can decide if you want to receive applications through this service or through an external link.</p>
+
+    <p class="nhsuk-body">You can set a closing date for this listing.</p>
+
+    <p class="nhsuk-body">If you receive applications through this service, you can also set a limit to the number of applications.</p>
+
+    <h3 class="nhsuk-heading-l">Reviewing and making changes</h3>
+
+    <p class="nhsuk-body">You can save your progress and continue later.</p>
+
+    <p class="nhsuk-body">You can also preview the listing before publishing.</p>
+
+     <p class="nhsuk-body">Once you publish the listing, you can still change the closing date and the number of applications you want to receive.</p>
+
+    <a href="opportunity-name" class="nhsuk-button">
+        Start
+    </a>
+
+    </div>
+
+  </div>
+{% endblock %}

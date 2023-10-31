@@ -1,0 +1,333 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+
+  <h1><span class="nhsuk-caption-xl">NHS Volunteering</span> Your dashboard</h1>
+
+  <a class="nhsuk-button" href="start-page">Advertise an opportunity</a>
+
+
+
+  {% if data['publish-walk-talk'] %}
+
+  <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6">
+    <caption class="nhsuk-table__caption-">Your listings</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Opportunity listing title
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Listing reference number
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Date created
+        </th>
+        <th role="columnheader" class="" scope="col">
+           Closing date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Status
+          </th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Volunteer at Broomfield Hospital</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>54914-AB
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>14 June 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>Not provided
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--yellow">Draft</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Walk and talk volunteer</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>54930-AB
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 June 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>19 November 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live">Opportunity listing title</span> Ward support volunteer</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>12240-AB
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>9 May 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>29 October 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Volunteer at Broomfield Hospital</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>17840-AB
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>5 May 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>29 October 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Hospital radio volunteer</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>77625-AB
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-closed">Opportunity listing title</span> Patient experience volunteer</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>13445-AB
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>3 February 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>18 August 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--grey">Closed</span>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% else %}
+
+  <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6">
+    <caption class="nhsuk-table__caption-">Your listings</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Title
+        </th>
+       
+        <th role="columnheader" class="" scope="col">
+          Date created
+        </th>
+        <th role="columnheader" class="" scope="col">
+           Closing date
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Status
+          </th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-draft">Opportunity listing title</span> Walk and talk volunteer</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>54930-AB</span>
+        </td>
+      
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 June 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>19 November 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--yellow">Draft</span>
+          </td>
+      </tr>
+
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Volunteer at Broomfield Hospital</a>
+
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>54914-AB</span>
+        </td>
+        
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 June 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>Not provided
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--yellow">Draft</span>
+          </td>
+      </tr>
+  
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live">Opportunity listing title</span> Ward support volunteer</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>12240-AB</span>
+        </td>
+      
+
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>9 May 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>29 October 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Volunteer at Broomfield Hospital</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>17840-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>5 May 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>29 October 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Hospital radio volunteer</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag">Live</span>
+          </td>
+      </tr>
+
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-closed">Opportunity listing title</span> Patient experience volunteer</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>13445-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>3 February 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>18 April 2023
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--grey">Closed</span>
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-closed">Opportunity listing title</span> Radio volunteer</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>13998-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>3 February 2023
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>Not provided
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--grey">Closed</span>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% endif %}
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

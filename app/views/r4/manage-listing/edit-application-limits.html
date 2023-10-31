@@ -1,0 +1,92 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "manage-live",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <form action="manage-live-limit-updated" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+                  Do you want to set an application limit?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">If you set a limit of applications as well as a closing date, you'll stop receiving responses if that limit is reached before the closing date.</div>
+
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                Select one option
+              </legend>
+          
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+          
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r4-application-limit" name="contact" type="radio" value="phone" aria-controls="conditional-r4-application-limit" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r4-application-limit">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-r4-application-limit">
+          
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="phone">
+                      Enter limit of applications
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="phone" name="phone" type="text">
+                  </div>
+          
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r4-application-limit-2" name="contact" type="radio" value="text" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r4-application-limit-2">
+                    No, I don't want to set an application limit
+                  </label>
+                </div>
+          
+              </div>
+
+              
+            </fieldset>
+          
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

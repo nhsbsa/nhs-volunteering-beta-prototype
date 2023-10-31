@@ -252,4 +252,97 @@ router.post('/r3-contact-details-answer', function (req, res) {
 module.exports = router;
 
 
+// r4 BRANCHING
+
+// Add your routes here - above the module.exports line
+
+  // remote - then go to address if 'no'
+
+  router.post('/r4-remote-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r4remote = req.session.data['r4-remote']
+  
+    if (r4remote === 'no') {
+      res.redirect('/r4/questions/address')
+    } else {
+      res.redirect('/r4/questions/availability')
+    }
+  })
+  
+  module.exports = router;
+
+// choose address - if "the address is not listed here"
+
+router.post('/r4-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r4chooseAddress = req.session.data['r4-choose-address']
+  
+    if (r4chooseAddress === 'not-listed') {
+      res.redirect('/r4/questions/manual-address')
+    } else {
+      res.redirect('/r4/questions/check-location')
+    }
+  })
+
+// add another location - if "answer is yes"
+
+router.post('/r4-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r4anotherLocation = req.session.data['r4-another-location']
+  
+    if (r4anotherLocation === 'yes') {
+      res.redirect('/r4/questions/address')
+    } else {
+      res.redirect('/r4/questions/availability')
+    }
+  })
+
+  // contact details - if "answer is no"
+
+router.post('/r4-contact-details-answer', function (req, res) {
+
+  // Get the answer from session data
+  const r4contactDetails = req.session.data['r4-contact-details']
+
+  if (r4contactDetails === 'no') {
+    res.redirect('/r4/questions/contact-details-change')
+  } else {
+    res.redirect('/r4/task-list-section-1-completed')
+  }
+})
+
+  // receive applications - if "answer is yes"
+
+  router.post('/r4-recieve-applications-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r4recieveApplications = req.session.data['r4-receive-apps']
+  
+    if (r4recieveApplications === 'yes') {
+      res.redirect('/r4/questions/application-limits')
+    } else {
+      res.redirect('/r4/questions/alt-closing-date')
+    }
+  })  
+
+    // alt-closing-date-answer - if "answer is yes"
+
+    router.post('/r4-closing-date-answer', function (req, res) {
+
+      // Get the answer from session data
+      const r4closingDate = req.session.data['r4-closing-date']
+    
+      if (r4closingDate === 'yes') {
+        res.redirect('/r4/questions/alt-closing-date-answer')
+      } else {
+        res.redirect('/r4/task-list-completed')
+      }
+    })  
+
+module.exports = router;
+
+
 

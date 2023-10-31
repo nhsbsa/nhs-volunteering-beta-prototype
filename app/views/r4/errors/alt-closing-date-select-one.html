@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "application-limits",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+        
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+           
+            <li>
+              <a href="#example-error-1">Select yes if you want to set a closing date</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form action="/r4-closing-date-answer" method="post" class="form">
+
+        <div class="nhsuk-form-group ">
+
+            <fieldset class="nhsuk-fieldset">
+              <h1 class="nhsuk-heading-l">
+                <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+                Do you want to set a closing date?
+              </h1>
+
+              <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                This will show as the last date to register for this opportunity.
+              </div>
+
+              <div class="nhsuk-do-dont-list">
+                <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+                <p class="nhsuk-body">You can change the closing date anytime, including after the listing is published.</p>
+                <p class="nhsuk-body">Once it closes, you will need to create a new listing if you want to advertise this opportunity again.</p>  
+              </div>
+            
+          
+              <div class="nhsuk-radios nhsuk-form-group--error">
+                <span class="nhsuk-error-message" id="example-error-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you want to set a closing date
+                </span>
+            
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                  Select one option
+                </legend>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r4-closing-date-1" name="r4-closing-date" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r4-closing-date-1">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r4-closing-date-2" name="r4-closing-date" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r4-closing-date-2">
+                    No, I don't want to set a closing date
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

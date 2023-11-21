@@ -342,6 +342,72 @@ router.post('/r4-contact-details-answer', function (req, res) {
       }
     })  
 
+// V5 Branching for EDI questions 
+
+// equality-questions - if answer is "yes"
+
+router.post('/v5-equality-questions-answer', function (req, res) {
+
+  // Get the answer from session data
+  const v5equalityQuestions = req.session.data['v5-equality-questions']
+
+  if (v5equalityQuestions === 'yes') {
+    res.redirect('/v5/edi/dob')
+  } else {
+    res.redirect('v4/application/submitted')
+  }
+})
+
+// health-conditions - if answer is "yes"
+
+router.post('/v5-health-conditions-answer', function (req, res) {
+
+  // Get the answer from session data
+  const v5healthConditions = req.session.data['v5-health-conditions']
+
+  if (v5healthConditions === 'yes') {
+    res.redirect('/v5/edi/day-activities')
+  } else {
+    res.redirect('v5/edi/ethnic-group')
+  }
+})
+
+// ethnic group branching
+
+router.post('/v5-ethnic-group-answer', function (req, res) {
+
+  // Get the answer from session data
+  const v5ethnicGroup = req.session.data['v5-ethnic-group']
+
+  if (v5ethnicGroup === 'white') {
+    res.redirect('/v5/edi/background-white')
+  } else if (v5ethnicGroup === 'mixed-multiple') {
+    res.redirect('v5/edi/background-mixed-multiple')
+  } else if (v5ethnicGroup === 'asian') {
+    res.redirect('v5/edi/background-asian')
+  } else if (v5ethnicGroup === 'black') {
+    res.redirect('v5/edi/background-black')
+  } else if (v5ethnicGroup === 'other-ethnic') {
+    res.redirect('v5/edi/background-arab')
+  } else {
+    res.redirect('v5/edi/religion')
+  }
+})
+
+// sex - if answer is "Male" or "Female"
+
+router.post('/v5-sex-answer', function (req, res) {
+
+  // Get the answer from session data
+  const v5sex = req.session.data['v5-sex']
+
+  if (v5sex != 'prefer-not-say') {
+    res.redirect('/v5/edi/gender-identity')
+  } else {
+    res.redirect('v5/edi/sexual-orientation')
+  }
+})
+
 module.exports = router;
 
 

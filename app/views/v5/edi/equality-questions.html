@@ -1,0 +1,100 @@
+
+
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+
+  
+
+  <h1 class="nhsuk-heading-l">We have sent your details to the organisation</h1>
+
+  <p class="nhsuk-body">Before you finish using the service, we’d like to ask some equality questions.</p>
+
+  <form action="/v5-equality-questions-answer" method="post">
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Do you want to answer the equality questions?
+        </legend>
+
+        <div class="nhsuk-hint">
+          <p>These questions are optional. We want to make sure that our service is accessible and beneficial to everyone. The information you provide will help us tailor our service to better meet the diverse needs of our users.</p>
+          <p>Your answers will not affect your registration.</p>
+        </div>
+      
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-equality-questions-1" name="v5-equality-questions" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-equality-questions-1">
+            Yes, answer the equality questions (takes 2 minutes)
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-equality-questions-2" name="v5-equality-questions" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-equality-questions-2">
+            No, skip the equality questions
+            </label>
+          </div>
+  
+    
+        </div>
+      </fieldset>
+    
+    </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Why do we ask these questions?
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p class="nhsuk-body">We only ask these questions to monitor who uses the service. We will share this information with NHS England for reporting and improvement purposes only.</p>
+      </div>
+    </details>
+
+  <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+</form>
+
+</div>
+
+
+{% endblock %}
+
+ 
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

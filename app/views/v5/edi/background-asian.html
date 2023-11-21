@@ -1,0 +1,134 @@
+
+
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="name">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+
+  <form action="" method="post">
+    
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Which of the following best describes your Asian or Asian British background?
+          </h1>
+        </legend>
+    
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-background-asian-1" name="v5-background-asian" type="radio" value="nhsuk-login">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-background-asian-1">
+              Indian
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-background-asian-2" name="v5-background-asian" type="radio" value="government-verify">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-background-asian-2">
+              Pakistani
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-background-asian-3" name="v5-background-asian" type="radio" value="nhsuk-login">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-background-asian-3">
+              Bangladeshi
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-background-asian-5" name="v5-background-asian" type="radio" value="nhsuk-login">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-background-asian-5">
+              Chinese
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-background-asian-4" name="v5-background-asian" type="radio" value="text" aria-controls="conditional-v5-background-asian-4" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-background-asian-4">
+              Any other asian background
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-v5-background-asian-4">
+    
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="mobile">
+                How would you describe your background (optional)
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+            </div>
+    
+          </div>
+
+          
+
+         
+          <div class="nhsuk-radios__divider">or</div>
+
+          
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v5-background-asian-4" name="v5-background-asian" type="radio" value="create-account">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-background-asian-4">
+              Prefer not to say
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+    
+    </div>
+
+  <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+</form>
+
+</div>
+
+
+{% endblock %}
+
+ 
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

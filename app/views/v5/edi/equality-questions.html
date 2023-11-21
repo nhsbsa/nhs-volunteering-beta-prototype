@@ -31,7 +31,7 @@
 
   <p class="nhsuk-body">Before you finish using the service, we’d like to ask some equality questions.</p>
 
-  <form action="address" method="post">
+  <form action="/v5-equality-questions-answer" method="post">
     <div class="nhsuk-form-group">
 
       <fieldset class="nhsuk-fieldset">
@@ -48,15 +48,15 @@
         <div class="nhsuk-radios">
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="v4-volunteer-age-1" name="v4-volunteer-age" type="radio" value="Under 16 years" {{ checked("v4-volunteer-age", "Under 16 years") }}>
-            <label class="nhsuk-label nhsuk-radios__label" for="v4-volunteer-age-1">
+            <input class="nhsuk-radios__input" id="v5-equality-questions-1" name="v5-equality-questions" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-equality-questions-1">
             Yes, answer the equality questions (takes 2 minutes)
             </label>
           </div>
     
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="v4-volunteer-age-2" name="v4-volunteer-age" type="radio" value="16 to 17" {{ checked("v4-volunteer-age", "16 to 17") }}>
-            <label class="nhsuk-label nhsuk-radios__label" for="v4-volunteer-age-2">
+            <input class="nhsuk-radios__input" id="v5-equality-questions-2" name="v5-equality-questions" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="v5-equality-questions-2">
             No, skip the equality questions
             </label>
           </div>

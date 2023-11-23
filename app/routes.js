@@ -388,7 +388,7 @@ router.post('/v5-ethnic-group-answer', function (req, res) {
   } else if (v5ethnicGroup === 'black') {
     res.redirect('v5/edi/background-black')
   } else if (v5ethnicGroup === 'other-ethnic') {
-    res.redirect('v5/edi/background-arab')
+    res.redirect('v5/edi/background-other')
   } else {
     res.redirect('v5/edi/religion')
   }

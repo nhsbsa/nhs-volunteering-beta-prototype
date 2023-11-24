@@ -394,20 +394,6 @@ router.post('/v5-ethnic-group-answer', function (req, res) {
   }
 })
 
-// sex - if answer is "Male" or "Female"
-
-router.post('/v5-sex-answer', function (req, res) {
-
-  // Get the answer from session data
-  const v5sex = req.session.data['v5-sex']
-
-  if (v5sex != 'prefer-not-say') {
-    res.redirect('/v5/edi/gender-identity')
-  } else {
-    res.redirect('v5/edi/sexual-orientation')
-  }
-})
-
 module.exports = router;
 
 

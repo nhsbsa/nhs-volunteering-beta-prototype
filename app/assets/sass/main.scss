@@ -257,3 +257,54 @@ margin-bottom: 30px;
   background-color: #ffffff; }
   .top-banner.feedback {
     background-color: #ffffff; }
+
+// css for login page 
+
+.nhsuk-recruiter-login-container {
+  background-color: #005eb8;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  height: 100vh;
+  display: grid;
+  p {
+    font-size: 19px;
+    a {
+      font-size: 16px;
+      color:  #005eb8 ;
+    }
+  }
+  > div {
+    background-color: #fff;
+    place-self: center;
+    padding: 50px;
+    header {
+      display: grid;
+      place-items: center;
+    }
+    h1 {
+      font-weight: 400 !important;
+    }
+  }
+  button, input[type="submit"], input[type="reset"] {
+    background: #005EB8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 60px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  input {
+    height: 50px;
+    width: 450px;
+    display: block;
+    &:last-of-type {
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+    border-radius: 8px;
+    border: 1px grey solid;
+  }
+}
+

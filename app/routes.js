@@ -354,7 +354,7 @@ router.post('/v5-equality-questions-answer', function (req, res) {
   if (v5equalityQuestions === 'yes') {
     res.redirect('/v5/edi/dob')
   } else {
-    res.redirect('v4/application/submitted')
+    res.redirect('v5/edi/equality-questions-skip')
   }
 })
 

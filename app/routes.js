@@ -394,6 +394,20 @@ router.post('/v5-ethnic-group-answer', function (req, res) {
   }
 })
 
+  // BSA Admint - if "answer is Search"
+
+  router.post('/a1-recruiter-search-or-register-answer', function (req, res) {
+
+    // Get the answer from session data
+    const a1RecruiterSearchOrRegister = req.session.data['a1-recruiter-search-or-register']
+  
+  if (a1RecruiterSearchOrRegister === 'yes') {
+    res.redirect('/bsa-admin/a1/search-organisation')
+  } else {
+    res.redirect('/bsa-admin/organisation')
+  }
+})
+
 module.exports = router;
 
 

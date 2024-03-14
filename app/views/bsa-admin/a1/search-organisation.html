@@ -1,0 +1,100 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="search-or-register">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1>
+    Search for an organisation with NHS Volunteering 
+  </h1>
+
+  <p class="nhsuk-body">This service is for NHS Business Services Authority staff who want to search for an organisation with NHS Volunteering.</p>
+
+  <form action="organisation-result">
+    <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="bsa-admin-organisation">
+            Select the organisation you want to search for
+        </label>
+        <select class="nhsuk-select" id="bsa-admin-organisation" name="bsa-admin-organisation">
+          <option value="choose" selected>Select organisation</option>
+          <option value="Airedale NHS Foundation Trust">Airedale NHS Foundation Trust</option>
+          <option value="Alder Hey Children’s NHS Foundation Trust">Alder Hey Children’s NHS Foundation Trust</option>
+          <option value="Barts Health NHS Trust">Barts Health NHS Trust</option>
+          <option value="Calderdale and Huddersfield NHS Foundation Trust">Calderdale and Huddersfield NHS Foundation Trust</option>
+          <option value="Coventry and Warwickshire Partnership NHS Trust">Coventry and Warwickshire Partnership NHS Trust</option>
+          <option value="Dorset County Hospital NHS Foundation Trust">Dorset County Hospital NHS Foundation Trust</option>
+          <option value="East Cheshire NHS Trust">East Cheshire NHS Trust</option>
+          <option value="George Eliot Hospital NHS Trust">George Eliot Hospital NHS Trust</option>
+          <option value="Hampshire Hospitals NHS Foundation Trust">Hampshire Hospitals NHS Foundation Trust</option>
+          <option value="Homerton Healthcare NHS Foundation Trust">Homerton Healthcare NHS Foundation Trust</option>
+        </select>
+      </div>
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+    </button>
+  </form>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

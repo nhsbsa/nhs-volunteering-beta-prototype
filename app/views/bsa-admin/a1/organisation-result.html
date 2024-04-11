@@ -24,30 +24,30 @@
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="search-organisation">
+    <a class="nhsuk-back-link__link" href="results">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
       Go back</a>
   </div>
 
-  <h1 class="nhsuk-heading-l">Airedale NHS Foundation Trust</h1>
+  <h1 class="nhsuk-heading-l">Monkwearmouth Hospital</h1>
 
-  <h2 class="nhsuk-heading nhsuk-heading-m">Trust details</h2>
+  <h2 class="nhsuk-heading nhsuk-heading-m">Child organisation details</h2>
 
       {{ summaryList({
         rows: [  
         {
           key: {
-            text: "Has this trust been onboarded?"
+            text: "Parent organisation"
           },
           value: {
-            text: "Yes"
+            text: "Cumbria Northumberland Tyne and Wear NHS Foundation Trust"
           },
           actions: {
             items: [
               {
-                href: "organisation-onboarding-status",
+                href: "organisation-parent-org",
                 text: "Change",
                 visuallyHiddenText: "Location 1"
               }
@@ -56,15 +56,15 @@
         },
         {
           key: {
-            text: "URL"
+            text: "Name of child organisation"
           },
           value: {
-            text: "www.trustwebsite.com"
+            text: "Monkwearmouth Hospital"
           },
           actions: {
             items: [
               {
-                href: "organisation-url",
+                href: "organisation-name",
                 text: "Change",
                 visuallyHiddenText: "Location 2"
               }
@@ -73,15 +73,37 @@
         },
         {
           key: {
-            text: "Privacy policy"
+            text: "Is this an NHS organisation?"
           },
           value: {
-            text: "Lots of text showing a privacy policy"
+            text: "Yes"
           },
           actions: {
             items: [
               {
-                href: "organisation-privacy-policy",
+                href: "organisation-nhs-identifier",
+                text: "Change",
+                visuallyHiddenText: "Location 2"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "
+                   <p>Monkwearmouth Hospital</p>
+                   <p>Newcastle Road</p>
+                   <p>Sunderland</p>
+                   <p>SR5 1NB</p>
+                   <p>United Kingdom</p>"
+          },
+          actions: {
+            items: [
+              {
+                href: "organisation-address",
                 text: "Change",
                 visuallyHiddenText: "Location "
               }
@@ -90,90 +112,17 @@
         },
         {
             key: {
-              text: "About"
+              text: "URL"
             },
             value: {
-              html: "<p>At Airedale NHS Foundation Trust, we have a team of brilliant and valued volunteers who give their time to make a difference for patients and medical staff.</p>
-
-             <p>We have a dedicated team of staff who supports our volunteers from the start. We provide comprehensive induction and ongoing training. We can ensure you feel welcome and part of the team. We welcome applications from all sections of the community and are keen to diversify our volunteer workforce.</p>"
+              text: "https://www.cntw.nhs.uk/services/volunteering"
             },
             actions: {
               items: [
                 {
-                  href: "organisation-about",
+                  href: "organisation-url",
                   text: "Change",
                   visuallyHiddenText: "Location 1"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Contact Name"
-            },
-            value: {
-              text: "Matt Flegel"
-            },
-            actions: {
-              items: [
-                {
-                  href: "organisation-contact-name",
-                  text: "Change",
-                  visuallyHiddenText: "Location 2"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Contact Telephone Number"
-            },
-            value: {
-              text: 
-                    "07555 555 555"
-            },
-            actions: {
-              items: [
-                {
-                  href: "organisation-contact-telephone-number",
-                  text: "Change",
-                  visuallyHiddenText: "Location 3"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Contact Email Address"
-            },
-            value: {
-              text: 
-                    "matt.flegel@nhs.uk"
-            },
-            actions: {
-              items: [
-                {
-                  href: "organisation-contact-email-address",
-                  text: "",
-                  visuallyHiddenText: "Location 4"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Image"
-            },
-            value: {
-              text: 
-                    ""
-            },
-            actions: {
-              items: [
-                {
-                  href: "organisation-image",
-                  text: "",
-                  visuallyHiddenText: "Location 3"
                 }
               ]
             }
@@ -181,25 +130,8 @@
         ]
       }) }}
 
-
-      <h1 class="nhsuk-heading nhsuk-heading-l">Organisation sitting under this trust</h1>
-
-      <h2 class="nhsuk-heading nhsuk-heading-m" style="margin-top: 30px;">Organisation 1</h2>
-      <a href="organisation-view">View</a>
-
-      <h2 class="nhsuk-heading nhsuk-heading-m" style="margin-top: 30px;">Organisation 2</h2>
-      <a href="organisation-view">View</a>
-
-      <h2 class="nhsuk-heading nhsuk-heading-m" style="margin-top: 30px;">Organisation 3</h2>
-      <a href="organisation-view">View</a>
-
-      <h2 class="nhsuk-heading nhsuk-heading-m" style="margin-top: 30px;">Organisation 4</h2>
-      <a href="organisation-view">View</a>
-
-      <h2 class="nhsuk-heading nhsuk-heading-m" style="margin-top: 30px;">Organisation 5</h2>
-      <a href="organisation-view">View</a>
-
-            
+<p><a href="trust-result">Visit parent organisation page</a></p>
+ 
 </div>
 
 

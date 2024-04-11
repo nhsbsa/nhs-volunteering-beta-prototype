@@ -394,7 +394,7 @@ router.post('/v5-ethnic-group-answer', function (req, res) {
   }
 })
 
-  // BSA Admint - if "answer is Search"
+  // BSA Admin - if "answer is Search"
 
   router.post('/a1-recruiter-search-or-register-answer', function (req, res) {
 

@@ -35,32 +35,24 @@
     Search for a trust with NHS Volunteering 
   </h1>
 
-  <p class="nhsuk-body">This service is for NHS Business Services Authority staff who want to search for an organisation with NHS Volunteering.</p>
 
-  <form action="organisation-result">
+  <form action="results" method="post">
     <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="bsa-admin-organisation">
-            Select the trust you want to search for
-        </label>
-        <select class="nhsuk-select" id="bsa-admin-organisation" name="bsa-admin-organisation">
-          <option value="choose" selected>Select organisation</option>
-          <option value="Airedale NHS Foundation Trust">Airedale NHS Foundation Trust</option>
-          <option value="Alder Hey Children’s NHS Foundation Trust">Alder Hey Children’s NHS Foundation Trust</option>
-          <option value="Barts Health NHS Trust">Barts Health NHS Trust</option>
-          <option value="Calderdale and Huddersfield NHS Foundation Trust">Calderdale and Huddersfield NHS Foundation Trust</option>
-          <option value="Coventry and Warwickshire Partnership NHS Trust">Coventry and Warwickshire Partnership NHS Trust</option>
-          <option value="Dorset County Hospital NHS Foundation Trust">Dorset County Hospital NHS Foundation Trust</option>
-          <option value="East Cheshire NHS Trust">East Cheshire NHS Trust</option>
-          <option value="George Eliot Hospital NHS Trust">George Eliot Hospital NHS Trust</option>
-          <option value="Hampshire Hospitals NHS Foundation Trust">Hampshire Hospitals NHS Foundation Trust</option>
-          <option value="Homerton Healthcare NHS Foundation Trust">Homerton Healthcare NHS Foundation Trust</option>
-        </select>
-      </div>
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Continue
+      <label class="nhsuk-label" for="input-width-30">
+        Enter a trust or organisation
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-30" id="input-width-30" name="postcode" type="text" value="{{ data['postcode'] }}">
+    </div>
+  
+    <div class="nhsuk-form-group">
+  
+    
+    </div>
+  
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">
+      Search
     </button>
   </form>
-
 
 
 </div>

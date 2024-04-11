@@ -1,0 +1,60 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "organisation-result",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+        <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Airedale NHS Foundation Trust</span>
+            URL
+        </h1>
+
+        <form action="trust-url-check" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+          <div class="nhsuk-hint" id="a1-trust-url-hint-text">
+            This will show on the parent organisation summary under <strong>URL</strong>.
+          </div>
+
+          <div class="nhsuk-form-group">
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+              <div class="nhsuk-form-group ">
+                <label class="nhsuk-label" for="a1-trust-url">
+                  Enter a URL
+                </label>
+                <input class="nhsuk-input nhsuk-js-character-count" id="a1-trust-url" name="a1-trust-url" type="text">
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+    
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

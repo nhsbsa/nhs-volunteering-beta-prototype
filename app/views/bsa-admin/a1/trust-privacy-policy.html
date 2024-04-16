@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "organisation-result",
+    "href": "trust-result",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -23,7 +23,7 @@
             Privacy policy
         </h1>
 
-        <form action="" method="post" class="form">
+        <form action="trust-privacy-policy-check" method="post" class="form">
 
         <div class="nhsuk-form-group">
 
@@ -34,21 +34,12 @@
           
 
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="a1-organisation-result">
-              Enter the 'Privacy policy' information
-            </label>
             <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
               <div class="nhsuk-form-group ">
-                <!-- to enable rich text, add class of text-editor-2 to textarea element -->
-                <textarea rows="8" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000">
-Lots of text showing a privacy policy
-                </textarea>
-                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
-                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
-                </p>
-                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
-                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
-              </p>
+                <label class="nhsuk-label" for="a1-trust-url">
+                  Enter a link to the organisation's privacy policy
+                </label>
+                <input class="nhsuk-input nhsuk-js-character-count" id="a1-trust-url" name="a1-trust-url" type="text">
               </div>
             </div>
           </div>
@@ -57,7 +48,7 @@ Lots of text showing a privacy policy
         </div>
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Save and continue
+          Continue
         </button>
     
 

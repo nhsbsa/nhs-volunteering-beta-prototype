@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "trust-result",
+    "href": "trust-address",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -27,33 +27,46 @@
           This will show on the parent organisation summary under <strong>Address</strong>.
         </div>
 
-        <form action="trust-select-address" method="post">
+        <form action="trust-address-check" method="post">
           <div class="nhsuk-form-group">
-            
-            <label class="nhsuk-label" for="input-width-20">
-            Building number or name
+            <label class="nhsuk-label" for="input-width-50">
+             Address line 1
             </label>
-            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              For example, 12 or AA surgery
-            </div>
+            <input class="nhsuk-input nhsuk-input--width-50" id="input-width-20" name="test-width-20" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-50">
+             Address line 2 (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-50" id="input-width-20" name="test-width-20" type="text">
+          </div>
+        
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-20">
+             Town or city
+            </label>
             <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
           </div>
+        
+        
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-width-20">
-            Postcode
+            County (optional)
             </label>
-            <div class="nhsuk-hint" id="example-with-hint-text-hint">
-              For example, LS2 7UE
-            </div>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+        
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-10">
+             Postcode
+            </label>
             <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
           </div>
-      
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="Continue">Continue</button>
         
-        <p class="nhsuk-u-margin-top-6"><a href="trust-manual-address">Enter address manually</a></p>
-      
-        <button class="nhsuk-button nhsuk-u-margin-top-4" type="Continue">Find address</button>
-      
-      </form>
+        </form>
+
+          
 
     </div>
   </div>

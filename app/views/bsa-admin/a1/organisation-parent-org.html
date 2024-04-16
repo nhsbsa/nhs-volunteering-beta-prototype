@@ -31,7 +31,12 @@
             This will show on the child organisation summary under <strong>Parent organisation</strong>.
           </div>
 
-          <form action="details">
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Warning: </span>
+            <p>Changing the parent organisation will change where you find the child organisation.</p>
+          </div>
+
+          <form action="organisation-parent-org-check">
             <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="bsa-admin-organisation">
                     Select the parent organisation you want to assign this child organisation to
@@ -50,11 +55,12 @@
                   <option value="Homerton Healthcare NHS Foundation Trust">Homerton Healthcare NHS Foundation Trust</option>
                 </select>
               </div>
-              <button class="nhsuk-button" style="margin-top: 30px;" data-module="nhsuk-button" type="submit">
-                Save and continue
-            </button>
           </form>
-
+          <form action="organisation-parent-org-check">
+          <button class="nhsuk-button" style="margin-top: 30px;" data-module="nhsuk-button" type="submit">
+            Continue
+          </button>
+          </form>
           
         </div>
     

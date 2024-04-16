@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "trust-url",
+    "href": "trust-contact-telephone-number",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -19,7 +19,7 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-l">
-        <span class="nhsuk-caption-l nhsuk-caption--top">Submit changes to URL</span>
+        <span class="nhsuk-caption-l nhsuk-caption--top">Submit changes to 'Key contact telephone number'</span>
         Check your answers before submitting
       </h1>
 
@@ -27,23 +27,24 @@
 
       {{ summaryList({
         rows: [
-          {
-            key: {
-              text: "URL"
-            },
-            value: {
-              text: "www.trustwebsite.com"
-            },
-            actions: {
-              items: [
-                {
-                  href: "trust-url",
-                  text: "Change",
-                  visuallyHiddenText: "Title"
-                }
-              ]
-            }
+        {
+          key: {
+            text: "Key contact telephone number"
+          },
+          value: {
+            html: "07555 555 555
+            "
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-contact-telephone-number",
+                text: "Change",
+                visuallyHiddenText: "Location 1"
+              }
+            ]
           }
+        }
         ]
       }) }}
 

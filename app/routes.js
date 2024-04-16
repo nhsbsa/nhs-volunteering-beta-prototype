@@ -408,6 +408,21 @@ router.post('/v5-ethnic-group-answer', function (req, res) {
   }
 })
 
+// choose address - if "the address is not listed here"
+
+router.post('/a1-choose-address-answer', function (req, res) {
+
+  // Get the answer from session data
+  const a1chooseAddress = req.session.data['a1-trust-select-address']
+
+  if (a1chooseAddress === 'not-listed') {
+    res.redirect('/bsa-admin/a1/trust-manual-address')
+  } else {
+    res.redirect('/bsa-admin/a1/trust-address-check')
+  }
+})
+
+
 module.exports = router;
 
 

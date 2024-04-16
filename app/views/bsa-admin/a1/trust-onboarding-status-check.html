@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "trust-url",
+    "href": "trust-onboarding-status",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -19,7 +19,7 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-l">
-        <span class="nhsuk-caption-l nhsuk-caption--top">Submit changes to URL</span>
+        <span class="nhsuk-caption-l nhsuk-caption--top">Submit changes to 'Has this organisation been onboarded?'</span>
         Check your answers before submitting
       </h1>
 
@@ -29,15 +29,15 @@
         rows: [
           {
             key: {
-              text: "URL"
+              text: "Has this organisation been onboarded?"
             },
             value: {
-              text: "www.trustwebsite.com"
+              text: "No"
             },
             actions: {
               items: [
                 {
-                  href: "trust-url",
+                  href: "trust-onboarding-status",
                   text: "Change",
                   visuallyHiddenText: "Title"
                 }

@@ -163,24 +163,32 @@
           },
           {
             key: {
-              text: "Key Contact Name"
+              text: "Organisation logo"
             },
             value: {
-              text: "Matt Flegel"
+              href: 
+                    ""
             },
             actions: {
               items: [
                 {
-                  href: "trust-contact-name",
+                  href: "trust-org-logo",
                   text: "Change",
-                  visuallyHiddenText: "Location 2"
+                  visuallyHiddenText: "Location 3"
                 }
               ]
             }
-          },
+          }
+        ]
+      }) }}
+
+      <h1 class="nhsuk-heading nhsuk-heading-l">Contact information</h1>
+      <h2 class="nhsuk-heading nhsuk-heading-m">Matt Flegel</h2>
+      {{ summaryList({
+        rows: [  
           {
             key: {
-              text: "Key Contact Telephone Number"
+              text: "Telephone Number"
             },
             value: {
               text: 
@@ -190,7 +198,7 @@
               items: [
                 {
                   href: "trust-contact-telephone-number",
-                  text: "Change",
+                  text: "",
                   visuallyHiddenText: "Location 3"
                 }
               ]
@@ -198,7 +206,7 @@
           },
           {
             key: {
-              text: "Key Contact Email Address"
+              text: "Email Address"
             },
             value: {
               text: 
@@ -213,21 +221,45 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      }) }}
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Mike Wallace</h2>
+      {{ summaryList({
+        rows: [  
           {
             key: {
-              text: "Image"
+              text: "Telephone Number"
             },
             value: {
-              href: 
-                    ""
+              text: 
+                    "07555 555 555"
             },
             actions: {
               items: [
                 {
-                  href: "trust-image",
+                  href: "trust-contact-telephone-number",
                   text: "",
                   visuallyHiddenText: "Location 3"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email Address"
+            },
+            value: {
+              text: 
+                    "mike.wallace@nhs.uk"
+            },
+            actions: {
+              items: [
+                {
+                  href: "trust-contact-email-address",
+                  text: "",
+                  visuallyHiddenText: "Location 4"
                 }
               ]
             }
@@ -236,16 +268,34 @@
       }) }}
 
 
-      <h1 class="nhsuk-heading nhsuk-heading-l">Child organisations that belong to Cumbria Northumberland Tyne and Wear NHS Foundation Trust</h1>
+<h1 class="nhsuk-heading nhsuk-heading-l">Child organisations that belong to Cumbria Northumberland Tyne and Wear NHS Foundation Trust</h1>
 
-<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Monkwearmouth Hospital</a></h3>
-<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Newcastle Road, Sunderland, SR5 1NB</strong></p>
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Acklam Road Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Acklam Road, Middlesborough, TS5 4EE</strong></p>
 <p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
 
 <hr>
 
-<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">St. Nicholas Hospital</a></h3>
-<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Jubilee Road, Gosforth, Newcastle Upon Tyne, NE3 3XT</strong></p>
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Carleton Clinic</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Cumwhinton Drive, Carlisle, CA1 3SX</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Ferndene</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Moor Road, Prudhoe, Northumberland, NE42 5PB</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Hopewood Park</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Waterworks Road, Sunderland, SR2 0NB</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Monkwearmouth Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Newcastle Road, Sunderland, SR5 1NB</strong></p>
 <p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
 
 <hr>
@@ -262,8 +312,8 @@
 
 <hr>
 
-<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Ferndene</a></h3>
-<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Moor Road, Prudhoe, Northumberland, NE42 5PB</strong></p>
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">St. Nicholas Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Jubilee Road, Gosforth, Newcastle Upon Tyne, NE3 3XT</strong></p>
 <p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
 
 <hr>
@@ -271,25 +321,6 @@
 <h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Walkergate Park Hospital</a></h3>
 <p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Benfield Road, Newcastle Upon Tyne, NE6 4QD</strong></p>
 <p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
-
-<hr>
-
-<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Hopewood Park</a></h3>
-<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Waterworks Road, Sunderland, SR2 0NB</strong></p>
-<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
-
-<hr>
-
-<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Acklam Road Hospital</a></h3>
-<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Acklam Road, Middlesborough, TS5 4EE</strong></p>
-<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
-
-<hr>
-
-<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Carleton Clinic</a></h3>
-<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Cumwhinton Drive, Carlisle, CA1 3SX</strong></p>
-<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
-
             
 </div>
 

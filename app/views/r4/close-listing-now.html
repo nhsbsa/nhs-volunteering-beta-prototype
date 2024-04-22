@@ -33,8 +33,17 @@
   <h1>Are you sure you want to close this listing?</h1>
   <p>This will remove your listing from the service. Potential volunteers will no longer see it.</p>
   <p>You will need to create a new listing if you want to advertise the same opportunity.</p>
+  <div class="nhsuk-checkboxes">
+  <h3>Agree to close this listing</h3>
+    <div class="nhsuk-checkboxes__item">
+      <input class="nhsuk-checkboxes__input" id="delete-listing-consent" name="delete-listing-consent" type="checkbox" value="yes" aria-describedby="delete-listing-consent-yes">
+      <label class="nhsuk-label nhsuk-checkboxes__label" for="delete-listing-consent">
+        I understand that closing this listing will remove it from the service.
+      </label>
+    </div>
+
 <form action="/r4/manage-listing/manage-closed-manually">
-<button class="nhsuk-button" style="background-color:#d5281b; box-shadow: 0 4px 0 #212b32">Close listing</button>
+<button class="nhsuk-button" style="background-color:#d5281b; box-shadow: 0 4px 0 #212b32; margin-top: 30px;">Close listing</button>
 </form>
  
 

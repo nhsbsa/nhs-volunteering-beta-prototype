@@ -1,0 +1,40 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "trust-result",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+        <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</span>
+            Organisation logo
+        </h1>
+<p>The image you choose must:</p>
+<ul>
+  <li>not exceed 100kb in file size</li>
+  <li>be either a JPG file or PNG file</li>
+  <li>be no larger than 300x200 pixels</li>
+</ul>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+        </button>
+    
+
+    </div>
+  </div>
+
+{% endblock %}

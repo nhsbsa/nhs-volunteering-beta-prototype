@@ -342,6 +342,23 @@ router.post('/r4-contact-details-answer', function (req, res) {
       }
     })  
 
+
+// R5 Branching
+
+// alt-closing-date-answer - if "answer is yes"
+
+router.post('/r5-closing-date-answer', function (req, res) {
+
+  // Get the answer from session data
+  const r5closingDate = req.session.data['r5-closing-date']
+
+  if (r5closingDate === 'yes') {
+    res.redirect('/r5/manage-listing/questions/alt-closing-date-answer')
+  } else {
+    res.redirect('/r5/task-list-completed')
+  }
+})  
+
 // V5 Branching for EDI questions 
 
 // equality-questions - if answer is "yes"

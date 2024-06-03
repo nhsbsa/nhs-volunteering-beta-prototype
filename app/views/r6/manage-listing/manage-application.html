@@ -1,0 +1,185 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "manage-live",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+  <h1 class="nhsuk-u-margin-bottom-3"><span class="nhsuk-caption-l">Reference number: V-5r4-2WB</span> Walk and talk volunteer application </h1>
+  <p class="nhsuk-body"><strong>Date received:</strong> 14 June 2023</p>
+
+  <div class="govuk-warning-text nhsuk-u-margin-bottom-5">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      This page includes the applicant's personal<br> information.
+      
+     
+       
+    </strong>
+  </div>
+
+  <h2>Application details</h2>
+  <dl class="nhsuk-summary-list">
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       Karen Francis
+      </dd>
+  
+  
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Age
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       21 years and over
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Address
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        73 Roman Road<br>Leeds<br> LS2 5ZN
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Email address
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+     
+        <p>karen@karen.com</p>
+      </dd>
+  
+  
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Phone number
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+     
+        <p>Not provided</p>
+      </dd>
+  
+  
+    </div>
+  
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+       Your availability
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>I can volunteer from 10am to 12pm on a Tuesday and from 11am to 1pm on Thursday.</p>
+      </dd>
+  
+  
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+      Support needed
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        <p>I prefer to talk on the phone instead of writing things down</p>
+        
+      </dd>
+  
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        About you
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       <p>I have volunteered as a patient companion at Newham University Hospital for the past 5 years. I have recently moved home and I would like to continue volunteering in my new area. I consider myself a compassionate person and I enjoy spending time with people who need some warmth in their lives. In my previous role, I very much enjoyed meeting new people and helping brighten up their days. I also love the outdoors. My family and I usually go for long Sunday walks exploring our local woodland. I would like to use my skills and friendly disposition to support medical staff and patients at your hospital. </p>
+      </dd>
+  
+  
+    </div>
+  
+   
+ 
+  
+  </dl>
+  
+<button class="nhsuk-button">Print this page</button>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

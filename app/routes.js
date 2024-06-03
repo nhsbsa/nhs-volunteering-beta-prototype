@@ -442,5 +442,79 @@ router.post('/a1-choose-address-answer', function (req, res) {
 
 module.exports = router;
 
+// r6 BRANCHING
 
+// Add your routes here - above the module.exports line
+
+  // Edit Live Opportunity - remote - then go to address if 'no'
+
+  router.post('/r6-remote-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r6remote = req.session.data['r6-remote']
+  
+    if (r6remote === 'no') {
+      res.redirect('/r6/questions/address')
+    } else {
+      res.redirect('/r6/questions/edit-opportunity-interstitial')
+    }
+  })
+  
+  module.exports = router;
+
+// Edit Live Opportunity - choose address - if "the address is not listed here"
+
+router.post('/r6-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r6chooseAddress = req.session.data['r6-choose-address']
+  
+    if (r6chooseAddress === 'not-listed') {
+      res.redirect('/r6/questions/manual-address')
+    } else {
+      res.redirect('/r6/questions/check-location')
+    }
+  })
+
+// Edit Live Opportunity - add another location - if "answer is yes"
+
+router.post('/r6-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r6anotherLocation = req.session.data['r6-another-location']
+  
+    if (r6anotherLocation === 'yes') {
+      res.redirect('/r6/questions/address')
+    } else {
+      res.redirect('/r6/questions/edit-opportunity-interstitial')
+    }
+  })
+
+// Edit Live Opportunity - contact details - if "answer is no"
+
+router.post('/r6-contact-details-answer', function (req, res) {
+
+  // Get the answer from session data
+  const r6contactDetails = req.session.data['r6-contact-details']
+
+  if (r6contactDetails === 'no') {
+    res.redirect('/r6/questions/contact-details-change')
+  } else {
+    res.redirect('/r6/task-list-section-1-completed')
+  }
+})
+
+    // Edit Live Opportunity - alt-closing-date-answer - if "answer is yes"
+
+    router.post('/r6-closing-date-answer', function (req, res) {
+
+      // Get the answer from session data
+      const r6closingDate = req.session.data['r6-closing-date']
+    
+      if (r6closingDate === 'yes') {
+        res.redirect('/r6/questions/alt-closing-date-answer')
+      } else {
+        res.redirect('/r6/questions/edit-opportunity-interstitial')
+      }
+    })  
 

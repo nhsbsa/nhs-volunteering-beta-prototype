@@ -21,7 +21,18 @@
 
 <div class="nhsuk-grid-row">
 <div class="nhsuk-grid-column-full">
+  <div class="nhsuk-card" style="border-color:	#005eb8; color:#005eb8;">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading">
+        Listing deleted
+  
+      </h2>
 
+      <h3 class="nhsuk-heading-m">Walk and talk volunteer - Leeds Teaching Hospitals NHS Trust</h3>
+      <p class="nhsuk-card__description nhsuk-body-m"><strong>Reference number:</strong> 49208-AB</p>
+      
+    </div>
+  </div>
 
   <h1><span class="nhsuk-caption-xl">NHS Volunteering</span> Your dashboard</h1>
 
@@ -39,7 +50,7 @@
           Opportunity listing title
         </th>
         <th role="columnheader" class="" scope="col">
-          Listing reference number
+         Reference number
         </th>
         <th role="columnheader" class="" scope="col">
           Date created
@@ -59,7 +70,7 @@
           <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Volunteer at Broomfield Hospital</a>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>54914-AB
+          <span class="nhsuk-table-responsive__heading"> Reference number </span>54914-AB
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Date created </span>14 June 2023
@@ -75,7 +86,7 @@
           <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Walk and talk volunteer</a>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>54930-AB
+          <span class="nhsuk-table-responsive__heading"> Reference number </span>54930-AB
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Date created </span>13 June 2023
@@ -91,7 +102,7 @@
           <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live">Opportunity listing title</span> Ward support volunteer</a>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>12240-AB
+          <span class="nhsuk-table-responsive__heading"> Reference number </span>12240-AB
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Date created </span>9 May 2023
@@ -107,7 +118,7 @@
           <span class="nhsuk-table-responsive__heading"><a href="#">Opportunity listing title</span> Volunteer at Broomfield Hospital</a>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>17840-AB
+          <span class="nhsuk-table-responsive__heading"> Reference number </span>17840-AB
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Date created </span>5 May 2023
@@ -123,7 +134,7 @@
           <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Hospital radio volunteer</a>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>77625-AB
+          <span class="nhsuk-table-responsive__heading"> Reference number </span>77625-AB
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2023
@@ -140,7 +151,7 @@
           <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-closed">Opportunity listing title</span> Patient experience volunteer</a>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> Listing reference number </span>13445-AB
+          <span class="nhsuk-table-responsive__heading"> Reference number </span>13445-AB
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Date created </span>3 February 2023
@@ -271,21 +282,6 @@
             <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--grey">Closed</span>
           </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-closed-external">Opportunity listing title</span> Radio volunteer</a>
-          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>13998-AB</span>
-        </td>
-       
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Date created </span>3 February 2023
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Closing date </span>Not provided
-          </td>
-          <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading"> Status </span> <span class="nhsuk-tag nhsuk-tag--grey">Closed</span>
-          </td>
-      </tr>
     </tbody>
   </table>
 
@@ -318,7 +314,27 @@
 
 
 <!-- NHS.UK footer -->
-
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
 
 
 <!-- JavaScript hack to do nothing if search button or link href="" clicked -->

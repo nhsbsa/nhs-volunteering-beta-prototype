@@ -518,3 +518,16 @@ router.post('/r6-contact-details-answer', function (req, res) {
       }
     })  
 
+    // Edit Live Opportunity - receive applications - if "answer is yes"
+
+  router.post('/r6-recieve-applications-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r6recieveApplications = req.session.data['r6-receive-apps']
+  
+    if (r6recieveApplications === 'yes') {
+      res.redirect('/r6/questions/application-limits')
+    } else {
+      res.redirect('/r6/questions/edit-opportunity-interstitial')
+    }
+  })  

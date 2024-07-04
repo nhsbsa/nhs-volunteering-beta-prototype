@@ -1,0 +1,149 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "check-location-area-name",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add a radius
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area centre point
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds Art Gallery
+            <br>
+            The Headrow 
+            <br>
+            Leeds
+            <br>
+            LS1 3AB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="location-larger-area">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="check-location-area-name">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <form action="check-location-label" method="post">
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Choose the radius that you want our opportunity to cover
+              </h2>
+            </legend>
+
+            <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+              This is the distance a volunteer might need to travel to take part in this opportunity.
+            </div>
+            
+              <div class="nhsuk-form-group">
+            
+                <fieldset class="nhsuk-fieldset">
+              
+                  <div class="nhsuk-radios">
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="3" {{ checked("radius", "3") }} >
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                        Up to 3 miles
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="5" {{ checked("radius", "5") }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                        Up to 5 miles
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="10" {{ checked("radius", "10") }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        Up to 10 miles
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="20" {{ checked("radius", "20") }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        Up to 20 miles
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="30" {{ checked("radius", "30") }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        Up to 30 miles
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="30" {{ checked("radius", "30") }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        Up to 50 miles
+                      </label>
+                    </div>
+<div class="nhsuk-u-margin-top-5">
+                    <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">
+                      Save and continue
+                    </button>
+                    </div>
+              
+                  </div>
+                </fieldset>
+              
+              </div>
+            
+              
+            </form>
+
+            <p class="nhsuk-body">              
+              <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+            </p>
+    
+
+    </div>
+  </div>
+{% endblock %}

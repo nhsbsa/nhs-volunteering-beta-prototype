@@ -1,0 +1,81 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "location-larger-area",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add an area name
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area centre point
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds Art Gallery
+            <br>
+            The Headrow 
+            <br>
+            Leeds
+            <br>
+            LS1 3AB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="location-larger-area">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+
+      <form action="check-location-radius" method="post">
+
+        <div class="nhsuk-form-group">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+            <div class="nhsuk-form-group ">
+              <label class="nhsuk-label" for="a1-trust-url">
+                Enter a name for your area
+              </label>
+              <textarea rows="1" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000">
+
+            </textarea>
+            </div>
+          </div>
+        </div>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">
+          Save and continue
+        </button>
+              
+            </form>
+
+            <p class="nhsuk-body">              
+              <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+            </p>
+    
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "location",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="choose-address-larger-area" method="post">
+    
+        <div class="nhsuk-form-group">
+    
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+                Add a post code
+              </h1>
+            </legend>
+
+            <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+              The post code you enter will be used to set a radius which covers your flexible locations.
+            </div>
+
+            <div class="nhsuk-do-dont-list">
+              <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+              <p class="nhsuk-body">Your post code should be central to the flexible locations your opportunity covers.</p>
+              <p class="nhsuk-body">For example If you need a volunteer to work in flexible locations over Leeds then a post code like LS1 3AB could be used.</p>
+              <p class="nhsuk-body">The volunteer will not see a fixed address for this opportunity.</p>
+            </div>
+
+            
+        
+            
+              <div class="nhsuk-form-group">
+                
+                <label class="nhsuk-label" for="input-width-20">
+                Building number or name
+                </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, 12 or AA surgery
+                </div>
+                <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+              </div>
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="input-width-20">
+                Postcode
+                </label>
+                <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                  For example, LS2 7UE
+                </div>
+                <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+              </div>
+          
+            
+            <p class="nhsuk-u-margin-top-6"><a href="manual-address-larger-area">Enter address manually</a></p>
+          
+            <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Find address</button>
+            <p class="nhsuk-body">              
+              <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+            </p>
+          </fieldset>
+        
+        </div>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -531,3 +531,39 @@ router.post('/r6-contact-details-answer', function (req, res) {
       res.redirect('/r6/questions/edit-opportunity-interstitial')
     }
   })  
+
+// r8 BRANCHING
+
+// Add your routes here - above the module.exports line
+
+  // Create a Live Opportunity - Recruiter location improvements
+
+  router.post('/r8-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r8location = req.session.data['r8-location']
+  
+    if (r8location === 'postcode') {
+      res.redirect('/r8/questions/address')
+    } else if (r8location === 'area') {
+      res.redirect('r8/questions/location-larger-area')
+    } else {
+      res.redirect('r8/questions/availability')
+    }
+  })
+
+// Create a Live Opportunity - Recruiter location improvements - choose address - if "the address is not listed here"
+
+router.post('/r8-choose-address-answer', function (req, res) {
+
+// Get the answer from session data
+  const r8chooseAddress = req.session.data['r8-choose-address']
+
+  if (r8chooseAddress === 'not-listed') {
+    res.redirect('/r8/questions/manual-address-larger-area')
+  } else {
+    res.redirect('/r8/questions/check-location-area-name')
+  }
+})
+  
+  module.exports = router;

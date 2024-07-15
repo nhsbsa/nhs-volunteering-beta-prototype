@@ -1,0 +1,366 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Opportunity preview
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "manage-live",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+     
+        <h1 class="nhsuk-u-margin-bottom-0 nhsuk-heading nhsuk-heading-l">  
+          <span class="nhsuk-caption-l nhsuk-caption--top">Leeds Teaching Hospitals NHS Trust</span>
+            Ward support volunteer
+          </h1>
+              <p class="nhsuk-u-margin-top-0">Leeds, LS2 1AP</p>
+          
+            <div class="nhsuk-inset-text nhsuk-u-margin-bottom-4">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>The closing date for this opportunity is 20 September 2023.</p>
+            </div>
+            
+          
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                  Summary
+            
+                </h2>
+               <p>You will support our mental health services team with the running of this activity. You will help maintain and improve the well-being of patients with memory problems or dementia.</p>
+               <p>You will:</p>
+               <ol class="nhsuk-list nhsuk-list--number">
+                 <li>encourage people to take part in this therapeutic and social activity</li>
+                 <li>meet and greet people as they arrive</li>
+                 <li>help people to feel good about themselves</li>
+                 <li>direct walkers along the designated route</li>
+               </ol>
+              </div>
+            </div>
+          
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                  Am I the right person for this?
+            
+                </h2>
+          <p>This opportunity will suit someone friendly, approachable and enthusiastic.
+          </p>
+          <p>You don't need any previous experience, qualifications or training. All you need is to:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>have good people skills and want to chat with people</li>
+            <li>be reliable and be good at time keeping</li>
+            <li>enjoy the outdoors</li>
+            <li>be 16 or over</li>
+          </ul>
+          <p>This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer with us.</p>
+          
+          </div>
+          </div>
+          
+          
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+            
+              <table class="nhsuk-table">
+                <caption class="nhsuk-table__caption"> Useful information about the opportunity</caption>
+           
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Date posted:</td>
+                    <td class="nhsuk-table__cell ">10 June 2023</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Shifts available:</td>
+                    <td class="nhsuk-table__cell ">Three hours a week on a Tuesday or Thursday</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Reference number:</td>
+                    <td class="nhsuk-table__cell ">T18420957-AT</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Role location:</td>
+                    <td class="nhsuk-table__cell ">Leeds General Infirmary<br>
+                      Claredon Way<br>
+                     Leeds<br>
+                      LS2 1AP<br>
+                      </td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Who will support you</td>
+                    <td class="nhsuk-table__cell ">Volunteer Coordinator
+                    
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+          
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-s">
+                What happens after you register with us
+          
+              </h2>
+             <p>We'll get in touch with you when we review your request. This might take a few weeks.
+            </p>
+            <p>After that, we may book in a chat to get to know you a bit more and walk you through the process.</p>
+            <p>To become a volunteer, you may need to:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>provide proof of identity and some utility bills </li>
+              <li>go through a standard or enhanced Disclosure and Barring Service (DBS) and occupational health checks</li>
+              <li>prove your right to work in the UK</li>
+              <li>provide details of your work history</li>
+              <li>give the details of two referees</li>
+            </ul>
+            </div>
+          </div>
+          
+    
+  <h2>What is your name?</h2>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-50">Full name</label>
+    <input class="nhsuk-input nhsuk-input--width-50" id="v4-volunteer-name" name="v4-volunteer-name" type="text" value="{{ data['v4-volunteer-name'] }}">
+  </div>
+ <hr>
+
+ <h2>What is your age?</h2>
+ <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
+    We will only use this information to find the right opportunity for you.
+  </div>
+  <div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset">
+      <div class="nhsuk-checkboxes">
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="v4-volunteer-age-1" name="v4-volunteer-age" type="checkbox" value="Under 16 years" {{ checked("v4-volunteer-age", "Under 16 years") }}>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="v4-volunteer-age-1">
+          Under 16 years
+          </label>
+        </div>
+  
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="v4-volunteer-age-2" name="v4-volunteer-age" type="checkbox" value="16 to 17" {{ checked("v4-volunteer-age", "16 to 17") }}>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="v4-volunteer-age-2">
+          16 to 17
+          </label>
+        </div>
+  
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="v4-volunteer-age-3" name="v4-volunteer-age" type="checkbox" value="18 to 20" {{ checked("v4-volunteer-age", "18 to 20") }}>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="v4-volunteer-age-3">
+          18 to 20
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="v4-volunteer-age-4" name="v4-volunteer-age" type="checkbox" value="21 years and over" {{ checked("v4-volunteer-age", "21 years and over") }}>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="v4-volunteer-age-4">
+          21 years and over
+          </label>
+        </div>
+
+        <div class="nhsuk-checkboxes__divider">or</div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="v4-volunteer-age-5" name="v4-volunteer-age" type="checkbox" value="Prefer not to say" {{ checked("v4-volunteer-age", "Prefer not to say") }}>
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="v4-volunteer-age-5">
+            Prefer not to say
+          </label>
+        </div>
+  
+  
+      </div>
+    </fieldset>
+  
+  </div>
+
+  <hr>
+
+  <h2>What is your address?</h2>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="v4-volunteer-address-line-1">
+     Address line 1
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-50" id="v4-volunteer-address-line-1" name="v4-volunteer-address-line-1" type="text" value="{{ data['v4-volunteer-address-line-1'] }}">
+  </div>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="v4-volunteer-address-line-2">
+     Address line 2 (optional)
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-50" id="v4-volunteer-address-line-2" name="v4-volunteer-address-line-2" type="text" value="{{ data['v4-volunteer-address-line-2'] }}">
+  </div>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="v4-volunteer-town">
+     Town or city
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="v4-volunteer-town" name="v4-volunteer-town" type="text" value="{{ data['v4-volunteer-town'] }}">
+  </div>
+
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="v4-volunteer-county">
+    County (optional)
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="v4-volunteer-county" name="v4-volunteer-county" type="text" value="{{ data['v4-volunteer-county'] }}">
+  </div>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="v4-volunteer-postcode-2">
+     Postcode
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-10" id="v4-volunteer-postcode-2" name="v4-volunteer-postcode-2" type="text" value="{{ data['v4-volunteer-postcode-2'] }}">
+  </div>
+
+  <hr>
+
+  <h2>What is your email address?</h2>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-50">Email address</label>
+    <input class="nhsuk-input nhsuk-input--width-50" id="v4-volunteer-name" name="v4-volunteer-name" type="text" value="{{ data['v4-volunteer-name'] }}">
+  </div>
+ <hr>
+
+ <h2>What is your phone number? (optional)</h2>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-50">Phone number (optional)</label>
+    <input class="nhsuk-input nhsuk-input--width-50" id="v4-volunteer-name" name="v4-volunteer-name" type="text" value="{{ data['v4-volunteer-name'] }}">
+  </div>
+ <hr>
+
+ <h2>Tell us about your availability</h2>
+      <div class="nhsuk-hint" id="availability-hint">
+        <p>Include the days and times of when you are available. For example, every Thursday and Friday from 10 am to 1 pm.</p>
+      </div>
+
+      <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="v4-volunteer-availability">
+            What is your availability?
+          </label>
+          <textarea class="nhsuk-textarea" id="v4-volunteer-availability" name="v4-volunteer-availability" rows="5" aria-describedby="v4-volunteer-availability-hint">{{ data['v4-volunteer-availability']}}</textarea>
+        </div>
+      </div>
+<hr>
+
+<h2>Tell us about any support you might need (optional)</h2>
+      <div class="nhsuk-hint" id="availability-hint">
+        <p>We will use this information to ensure we can do our best to provide the support you need for your volunteering activities.</p>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card--feature">
+        <div class="nhsuk-card__content nhsuk-card__content--feature">
+          <h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">
+            Do tell us if you
+            
+          </h2>
+       
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-card__description">
+          <li>Prefer to have someone you know with you</li>
+          <li>Might find it difficult to prove your identity or address</li>
+          <li>May need an interpreter or prefer to talk on the phone</li>
+          <li>Need any other adjustments</li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="v4-volunteer-availability">
+            Tell us about what support you need (optional)
+          </label>
+          <textarea class="nhsuk-textarea" id="v4-volunteer-availability" name="v4-volunteer-availability" rows="5" aria-describedby="v4-volunteer-availability-hint">{{ data['v4-volunteer-availability']}}</textarea>
+        </div>
+      </div>
+<hr>
+
+<h2>What motivates you to apply for this opportunity?</h2>
+
+<div class="nhsuk-hint">We will use this information to help us find the right opportunity for you.</div>
+
+   <div class="nhsuk-do-dont-list">
+    <h3 class="nhsuk-do-dont-list__label">Do tell us about</h3>
+    <ul class="nhsuk-list nhsuk-list--tick" role="list">
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        What makes you a good volunteer
+      </li>
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        What experience you bring to this opportunity
+      </li>
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        Your interests and hobbies
+      </li>
+    </ul>
+  </div>
+  
+  <div class="nhsuk-do-dont-list">
+    <h3 class="nhsuk-do-dont-list__label">Tips on how to write your answer</h3>
+    <ul class="nhsuk-list nhsuk-list--tick" role="list">
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        Keep it informal - this is your moment to show your qualities and character
+      </li>
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        Break your answers into short sentences
+      </li>
+      <li>
+        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+          <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+        </svg>
+        Keep it short and simple - it shouldn't feel like writing a job application
+      </li>
+    </ul>
+  </div>
+    
+      <p>Write what you can. You may have an opportunity to discuss this again with the organisation.</p>
+      
+    <form action="check" method="post">
+
+      <div class="nhsuk-character-count">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="v4-volunteer-motivations">
+            Tell us why you want to become a volunteer
+          </label>
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v4-volunteer-motivations" name="v4-volunteer-motivations" rows="5" aria-describedby="v4-volunteer-motivations-hint">{{ data['v4-volunteer-motivations']}}</textarea>
+        </div>
+      
+      </div>
+
+
+      <p class="nhsuk-body">              
+        <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Go back to listing settings</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

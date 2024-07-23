@@ -1,0 +1,126 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="parent-code">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 8 </span>
+    Is your organisation an NHS organisation or a Non-NHS organisation?</h1>
+
+    <form action="parent-org-type" method="post">
+    
+      <div class="nhsuk-form-group">
+  
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
+            Select an option
+          </div>
+      
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="a2-parent-type-of-org-1" name="a2-parent-type-of-org" type="radio" value="nhsuk-login">
+              <label class="nhsuk-label nhsuk-radios__label" for="a2-parent-type-of-org-1">
+                NHS Organisation
+              </label>
+            </div>
+            <div class="nhsuk-radios__divider">or</div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="a2-parent-type-of-org-2" name="a2-parent-type-of-org" type="radio" value="text" aria-controls="conditional-a2-parent-type-of-org-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="a2-parent-type-of-org-2">
+                Non-NHS Organisation
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-a2-parent-type-of-org-2">
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  <p>Please can you confirm that:</p>
+                  <ul>
+                    <li>The roles to be advertised are delivering healthcare volunteering activities for an NHS or Local Authority commissioned or partnered service as evidenced by a Contract, Service Level Agreement, Partnership Agreement, Memorandum of Understanding or letter of confirmation from the contracting organisation.</li>
+                    <li>The organisation has a UK registration, e.g. via:</li>
+                    <ul>
+                      <li><a href="...">The Charity Commision</a></li>
+                      <li><a href="...">Companies House</a></li>
+                    </ul>
+                    <li>The roles being advertised are genuinely voluntary in nature (i.e. they do not receive remuneration beyond expenses, and they do not involve any contractual obligation on the part of the volunteer)</li>
+                  </ul>
+
+                </label>
+              </div>
+      
+            </div>
+      
+          </div>
+        </fieldset>
+      
+      </div>
+  
+    <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

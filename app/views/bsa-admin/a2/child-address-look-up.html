@@ -24,7 +24,7 @@
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="parent-address-look-up">
+    <a class="nhsuk-back-link__link" href="child-website">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
@@ -34,44 +34,33 @@
   <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 7</span>
     What is the address of the organisation?</h1>
 
-    <form action="parent-check-answers" method="post">
+    <form action="child-select-address" method="post">
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-50">
-         Address line 1
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-50" id="input-width-20" name="test-width-20" type="text">
-      </div>
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-50">
-         Address line 2 (optional)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-50" id="input-width-20" name="test-width-20" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
+        
         <label class="nhsuk-label" for="input-width-20">
-         Town or city
+        Building number or name
         </label>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+          For example, 12 or AA surgery
+        </div>
         <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
       </div>
-    
-    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="input-width-20">
-        County (optional)
+        Postcode
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-10">
-         Postcode
-        </label>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+          For example, LS2 7UE
+        </div>
         <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
       </div>
-      <button class="nhsuk-button nhsuk-u-margin-top-4" type="Continue">Continue</button>
+  
     
-    </form>
+    <p class="nhsuk-u-margin-top-6"><a href="child-manual-address">Enter address manually</a></p>
+  
+    <button class="nhsuk-button nhsuk-u-margin-top-4" type="Continue">Find address</button>
+  
+  </form>
 
 </div>
 

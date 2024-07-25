@@ -35,7 +35,7 @@
 
     <h2 class="nhsuk-heading nhsuk-heading-m">Organisation details</h2>
 
-    <form action="register-organisation-confirmation" method="post">
+    <form action="register-child-organisation-confirmation" method="post">
 
       {{ summaryList({
         rows: [  
@@ -44,7 +44,7 @@
             text: "How would you classify this organisation?"
           },
           value: {
-            text: "Parent organisation"
+            text: "Child organisation"
           },
           actions: {
             items: [
@@ -58,15 +58,32 @@
         },
         {
           key: {
-            text: "What is the name of the organisation?"
+            text: "Which organisation does the site sit underneath?"
           },
           value: {
-            text: "Springfield Teaching Hospitals"
+            text: "Leeds Teaching Hospitals NHS Trust"
           },
           actions: {
             items: [
               {
-                href: "parent-name",
+                href: "child-parent-org-association",
+                text: "Change",
+                visuallyHiddenText: "Overarching organisation"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is the name of the organisation?"
+          },
+          value: {
+            text: "Chapel Allerton Hospital"
+          },
+          actions: {
+            items: [
+              {
+                href: "child-name",
                 text: "Change",
                 visuallyHiddenText: "Organisation name"
               }
@@ -78,14 +95,14 @@
             text: "What is the unique business key for the organisation?"
           },
           value: {
-            text: "0145"
+            text: "0265"
           },
           actions: {
             items: [
               {
-                href: "parent-code",
+                href: "child-code",
                 text: "Change",
-                visuallyHiddenText: "Code"
+                visuallyHiddenText: "Business key"
               }
             ]
           }
@@ -100,26 +117,9 @@
           actions: {
             items: [
               {
-                href: "parent-nhs-org",
+                href: "child-nhs-org",
                 text: "Change",
                 visuallyHiddenText: "NHS Org"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "What type of organisation is this?"
-          },
-          value: {
-            text: "NHS Trust"
-          },
-          actions: {
-            items: [
-              {
-                href: "parent-org-type",
-                text: "Change",
-                visuallyHiddenText: "Organisation type"
               }
             ]
           }
@@ -135,7 +135,7 @@
           actions: {
             items: [
               {
-                href: "parent-ambulance-trust",
+                href: "child-ambulance-trust",
                 text: "Change",
                 visuallyHiddenText: "Ambulance trust"
               }
@@ -152,7 +152,7 @@
           actions: {
             items: [
               {
-                href: "parent-website",
+                href: "child-website",
                 text: "Change",
                 visuallyHiddenText: "Organisation website"
               }
@@ -173,7 +173,7 @@
           actions: {
             items: [
               {
-                href: "parent-address-look-up",
+                href: "child-address-look-up",
                 text: "Change",
                 visuallyHiddenText: "Location 1"
               }
@@ -186,8 +186,6 @@
       <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Submit</button>
     </form>
       </div>
-
-      
   
     
 

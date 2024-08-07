@@ -16,22 +16,29 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      
+    
 
         <h1 class="nhsuk-heading-l">
             <span class="nhsuk-caption-l nhsuk-caption--top">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</span>
             Organisation logo
         </h1>
-<p>The image you choose must:</p>
-<ul>
-  <li>not exceed 100kb in file size</li>
-  <li>be either a JPG file or PNG file</li>
-  <li>be no larger than 300x200 pixels</li>
-</ul>
-
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
+        <p>The image you choose must:</p>
+        <ul>
+          <li>not exceed 100kb in file size</li>
+          <li>be either a JPG file or PNG file</li>
+          <li>be no larger than 300x200 pixels</li>
+        </ul>
+    
+        <form action="trust-org-logo-confirmation" method="post">
+        <div class="nhsuk-form-group ">
+          <label class="nhsuk-label " for="internalDoc">
+            Upload a file
+          </label>
+            <input class="nhsuk-input nhsuk-input--width-20" style="border: none;" id="internalDoc" name="internalDoc" type="file" accept=".png,.jpg" autocomplete="off">
+        </div>
+        <button class="nhsuk-button" type="submit">Continue</button>
+    <p><a href="parent-check-answers">Skip this section</a></p>
+        </form>
     
 
     </div>

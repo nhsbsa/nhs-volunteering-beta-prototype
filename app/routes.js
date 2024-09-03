@@ -546,7 +546,7 @@ router.post('/r6-contact-details-answer', function (req, res) {
     if (r8location === 'postcode') {
       res.redirect('/r8/questions/address')
     } else if (r8location === 'area') {
-      res.redirect('r8/questions/location-larger-area')
+      res.redirect('r8/questions/check-location-area-name')
     } else {
       res.redirect('r8/questions/availability')
     }
@@ -562,7 +562,7 @@ router.post('/r8-choose-address-answer', function (req, res) {
   if (r8chooseAddress === 'not-listed') {
     res.redirect('/r8/questions/manual-address-larger-area')
   } else {
-    res.redirect('/r8/questions/check-location-area-name')
+    res.redirect('/r8/questions/check-location-final')
   }
 })
 

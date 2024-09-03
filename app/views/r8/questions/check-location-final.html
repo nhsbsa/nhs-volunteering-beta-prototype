@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "check-location-radius",
+    "href": "location-larger-area",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -27,27 +27,7 @@
 
       <dl class="nhsuk-summary-list">
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Area centre point
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Leeds Art Gallery
-            <br>
-            The Headrow 
-            <br>
-            Leeds
-            <br>
-            LS1 3AB
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <ul class="nhsuk-summary-list__actions-list">
-              <li class="nhsuk-summary-list__actions-list-item">
-                <a href="location-larger-area">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
-              </li>
-            </ul>
-          </dd>
-        </div>
+        
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Area
@@ -78,6 +58,27 @@
             </ul>
           </dd>
         </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area centre point
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds Art Gallery
+            <br>
+            The Headrow 
+            <br>
+            Leeds
+            <br>
+            LS1 3AB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="location-larger-area">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
 
       </dl>
       <details class="nhsuk-details nhsuk-expander">
@@ -88,9 +89,9 @@
         </summary>
         <div class="nhsuk-details__text">
       <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.8 miles away</p>
-<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="role-profile-2">Ambulance driver</a></h2>
-<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds</strong></p>
-<p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="role-profile-2">Community First Responder</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>East Kent</strong></p>
+<p class="nhsuk-u-margin-top-0">East Kent Hospitals University NHS Foundation Trust</p>
 
 <div class="nhsuk-card">
   <div class="nhsuk-card__content">
@@ -117,45 +118,4 @@
 
     </div>
   </div>
-{% endblock %}
-
-<!-- NHS.UK footer -->
-{% block footer %}
-
-<footer role="contentinfo">
-  <div class="nhsuk-footer-container">
-    <div class="nhsuk-width-container">
-      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-      <div class="nhsuk-footer">
-
-        <ul class="nhsuk-footer__list">
-
-          <li class="nhsuk-footer__list-item">
-            <a class="nhsuk-footer__list-item-link" href="#">Help and support</a>
-          </li>
-          <li class="nhsuk-footer__list-item">
-            <a class="nhsuk-footer__list-item-link" href="#">Terms and conditions</a>
-          </li>
-          <li class="nhsuk-footer__list-item">
-            <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
-          </li>
-          <li class="nhsuk-footer__list-item">
-            <a class="nhsuk-footer__list-item-link" href="#">Privacy</a>
-          </li>
-          <li class="nhsuk-footer__list-item">
-            <a class="nhsuk-footer__list-item-link" href="#">Cookies</a>
-          </li>
-        </ul>
-        <ul class="nhsuk-footer__list">
-          <li class="nhsuk-footer__list-item"><a href="https://nhsvb2cprod.b2clogin.com/nhsvb2cprod.onmicrosoft.com/b2c_1_nhs_volunteering_recruiter_sign-in/oauth2/v2.0/authorize?client_id=3b81f491-9500-40bc-ae67-6fed77530485&scope=openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fvolunteering.england.nhs.uk%2Frecruiter%2Fredirect&client-request-id=87cb715d-704b-4637-b6a8-6f016462537b&response_mode=query&response_type=code&x-client-SKU=msal.js.node&x-client-VER=2.1.0&x-client-OS=linux&x-client-CPU=x64&client_info=1&state=eyJhcHBTdGFnZSI6ImxvZ2luIn0%3D" class="nhsuk-footer__list-item-link">Sign in to advertise NHS Volunteer opportunities</a></li>
-        </ul>
-
-      </div>
-      <div>
-        <p class="nhsuk-footer__copyright">© Crown copyright</p>
-      </div>
-
-    </div>
-  </div>
-</footer>
 {% endblock %}

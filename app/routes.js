@@ -157,6 +157,22 @@ router.post('/r2-contact-details-answer', function (req, res) {
       res.redirect('/v4/application/email')
     }
   })
+
+// ROUTES FOR V6 of Volunteering
+
+  // choose address - if answer is 'my address is not on the list'
+
+  router.post('/v6-select-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const v4selectAddress = req.session.data['v6-select-address']
+  
+    if (v4selectAddress === 'My address is not on this list') {
+      res.redirect('/v6/application/manual-address')
+    } else {
+      res.redirect('/v6/application/phone')
+    }
+  })
   
 
 // r3 BRANCHING

@@ -30,11 +30,11 @@
       Go back</a>
   </div>
 
-  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 8</span>
+  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 3 of 7</span>
    Select your address</h1>
    <p>4 addresses found for '{{ data['v4-volunteer-house'] }}' and '{{ data['v4-volunteer-postcode'] }}'</p>
 
-    <form action="/select-address-answer" method="post">
+    <form action="/v6-select-address-answer" method="post">
 
 
       <div class="nhsuk-form-group">
@@ -49,21 +49,21 @@
           <div class="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="v4-select-address-1" name="v4-select-address" type="radio" value="{{ data['v4-volunteer-house'] }} Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}" {{ checked("v4-select-address", "{{ data['v4-volunteer-house'] }} Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}") }}>
+              <input class="nhsuk-radios__input" id="v6-select-address-1" name="v6-select-address" type="radio" value="{{ data['v6-volunteer-house'] }} Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}" {{ checked("v6-select-address", "{{ data['v6-volunteer-house'] }} Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}") }}>
               <label class="nhsuk-label nhsuk-radios__label" for="v4-select-address-1">
-                {{ data['v4-volunteer-house'] }} Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}
+                {{ data['v6-volunteer-house'] }} Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="v4-select-address-2" name="v4-select-address" type="radio" value="{{ data['v4-volunteer-house'] }}b Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}" {{ checked("v4-select-address", "{{ data['v4-volunteer-house'] }}b Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}") }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="v4-select-address-2">
-                {{ data['v4-volunteer-house'] }}b Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}
+              <input class="nhsuk-radios__input" id="v6-select-address-2" name="v6-select-address" type="radio" value="{{ data['v6-volunteer-house'] }}b Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}" {{ checked("v6-select-address", "{{ data['v6-volunteer-house'] }}b Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="v6-select-address-2">
+                {{ data['v6-volunteer-house'] }}b Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="v4-select-address-3" name="v4-select-address" type="radio" value=" {{ data['v4-volunteer-house'] }}c Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}" {{ checked("v4-select-address", "{{ data['v4-volunteer-house'] }}c Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}") }}>
+              <input class="nhsuk-radios__input" id="v6-select-address-3" name="v6-select-address" type="radio" value=" {{ data['v6-volunteer-house'] }}c Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}" {{ checked("v6-select-address", "{{ data['v6-volunteer-house'] }}c Mayfair Close, Leeds, {{ data['v6-volunteer-postcode'] }}") }}>
               <label class="nhsuk-label nhsuk-radios__label" for="v4-select-address-3">
                 {{ data['v4-volunteer-house'] }}c Mayfair Close, Leeds, {{ data['v4-volunteer-postcode'] }}
               </label>
@@ -71,16 +71,16 @@
       
                
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="v4-select-address-4" name="v4-select-address" type="radio" value="{{ data['v4-volunteer-house'] }} Mayfair Crescent, Leeds, {{ data['v4-volunteer-postcode'] }}" {{ checked("v4-select-address", "{{ data['v4-volunteer-house'] }} Mayfair Crescent, Leeds, {{ data['v4-volunteer-postcode'] }}") }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="v4-select-address-4">
-                {{ data['v4-volunteer-house'] }} Mayfair Crescent, Leeds, {{ data['v4-volunteer-postcode'] }}
+              <input class="nhsuk-radios__input" id="v6-select-address-4" name="v6-select-address" type="radio" value="{{ data['v6-volunteer-house'] }} Mayfair Crescent, Leeds, {{ data['v6-volunteer-postcode'] }}" {{ checked("v6-select-address", "{{ data['v6-volunteer-house'] }} Mayfair Crescent, Leeds, {{ data['v6-volunteer-postcode'] }}") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="v6-select-address-4">
+                {{ data['v6-volunteer-house'] }} Mayfair Crescent, Leeds, {{ data['v6-volunteer-postcode'] }}
               </label>
             </div>
             <div class="nhsuk-radios__divider">or</div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="v4-select-address-5" name="v4-select-address" type="radio" value="My address is not on this list" {{ checked("v4-select-address", "My address is not on this list") }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="v4-select-address-5">
+              <input class="nhsuk-radios__input" id="v6-select-address-5" name="v6-select-address" type="radio" value="My address is not on this list" {{ checked("v6-select-address", "My address is not on this list") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="v6-select-address-5">
                 My address is not on this list
               </label>
             </div>

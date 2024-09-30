@@ -1,4 +1,4 @@
-{% extends 'layout_vol_header_nhs_login.html' %}
+{% extends 'layout_vol_header.html' %}
 
 <!-- some custom css for the home page only -->
 
@@ -34,7 +34,7 @@
    Select your address</h1>
    <p>4 addresses found for '{{ data['v4-volunteer-house'] }}' and '{{ data['v4-volunteer-postcode'] }}'</p>
 
-    <form action="/select-address-answer" method="post">
+    <form action="/v7-select-address-answer" method="post">
 
 
       <div class="nhsuk-form-group">

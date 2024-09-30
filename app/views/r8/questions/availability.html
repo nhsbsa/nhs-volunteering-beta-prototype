@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "check-location",
+    "href": "location",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -23,7 +23,7 @@
       <form action="contact-details" method="post" class="form">
 
         <h1 class="nhsuk-heading nhsuk-heading-l" for="example">
-          <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
+          <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
             What availability are you looking for?
         </h1>
         <div class="nhsuk-hint" id="example-hint">
@@ -82,8 +82,12 @@
           </div>
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Update and return to task list
+           Save and continue
         </button>
+
+        <p class="nhsuk-body">              
+          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
 
         
 

@@ -1,4 +1,4 @@
-{% extends 'layout_vol_header_nhs_login.html' %}
+{% extends 'layout_vol_header.html' %}
 
 <!-- some custom css for the home page only -->
 
@@ -31,8 +31,7 @@
       Go back</a>
   </div>
 
-  <h1>Check your answers before 
-    submitting your registration</h1>
+  <h1>Check your answers before sending your application</h1>
 
   <h2>Personal details</h2>
   <dl class="nhsuk-summary-list">
@@ -186,7 +185,7 @@
   
     <div class="nhsuk-summary-list__row">
       <dt class="nhsuk-summary-list__key">
-        About you
+        Why you want to volunteer
       </dt>
       <dd class="nhsuk-summary-list__value">
        <p>{{ data['v4-volunteer-motivations'] }}</p>
@@ -233,7 +232,7 @@
   </div>
 
   <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="submitted">
-  Send registration
+  Send application
   </a>
   
 

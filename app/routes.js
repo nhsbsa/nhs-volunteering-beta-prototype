@@ -666,5 +666,75 @@ router.post('/a2-choose-nhs-org-answer', function (req, res) {
     res.redirect('/bsa-admin/a2/parent-declaration')
   }
 })
+
+// BSA Admin iteration - Sprint 35 - Register an organisation with image upload
+
+router.post('/a3-recruiter-search-or-register-answer', function (req, res) {
+
+  // Get the answer from session data
+  const a3RecruiterSearchOrRegister = req.session.data['a3-recruiter-search-or-register']
+
+  if (a3RecruiterSearchOrRegister === 'search') {
+    res.redirect('/bsa-admin/a3/search-organisation')
+  } else if (a3RecruiterSearchOrRegister === 'register-recruiter') {
+    res.redirect('/bsa-admin/organisation')
+  } else {
+    res.redirect('/bsa-admin/a3/register-organisation')
+  }
+})
+
+router.post('/a3-parent-or-child-org-answer', function (req, res) {
+
+  // Get the answer from session data
+  const a3RecruiterSearchOrRegister = req.session.data['a3-parent-or-child-org']
+
+  if (a3RecruiterSearchOrRegister === 'parent') {
+    res.redirect('/bsa-admin/a3/parent-name')
+  } else {
+    res.redirect('/bsa-admin/a3/child-parent-org-association')
+  }
+})
+
+// choose address - if "the address is not listed here"
+
+router.post('/a3-choose-address-answer', function (req, res) {
+
+  // Get the answer from session data
+  const a3chooseAddress = req.session.data['a3-parent-select-address']
+
+  if (a3chooseAddress === 'not-listed') {
+    res.redirect('/bsa-admin/a3/parent-manual-address')
+  } else {
+    res.redirect('/bsa-admin/a3/parent-org-logo')
+  }
+})
+
+// choose address - child organisation - if "the address is not listed here"
+
+router.post('/a3-child-choose-address-answer', function (req, res) {
+
+  // Get the answer from session data
+  const a3ChildchooseAddress = req.session.data['a3-child-select-address']
+
+  if (a3ChildchooseAddress === 'not-listed') {
+    res.redirect('/bsa-admin/a3/child-manual-address')
+  } else {
+    res.redirect('/bsa-admin/a3/child-check-answers')
+  }
+})
+
+// NHS or Non-NHS organisation
+
+router.post('/a3-choose-nhs-org-answer', function (req, res) {
+
+  // Get the answer from session data
+  const a3chooseNHSorg = req.session.data['a3-choose-nhs-org']
+
+  if (a3chooseNHSorg === 'nhs-org') {
+    res.redirect('/bsa-admin/a3/parent-org-type')
+  } else {
+    res.redirect('/bsa-admin/a3/parent-declaration')
+  }
+})
   
   module.exports = router;

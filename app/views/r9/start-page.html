@@ -1,0 +1,78 @@
+{% extends 'layout_vol_header.html' %}
+
+{% block pageTitle %}
+  Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "index",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading nhsuk-heading-xl">
+        Advertise your volunteering opportunities
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul>
+        <li>advertise your opportunities and receive applications through NHS Volunteering</li>
+        <li>advertise your opportunities and link to application forms on existing systems</li>
+      </ul>
+
+
+      <h2 class="nhsuk-heading-l">The process</h2>
+      
+      <p>To advertise an opportunity, you will need to complete the following steps.</p>
+
+  <h3 class="nhsuk-heading-m">1. Enter a title for your listing</h3>  
+
+    <h3 class="nhsuk-heading-m">2. Add a preview </h3>
+
+    <p>This is what potential volunteers will see first when they search for opportunities.</p>
+
+    <h3 class="nhsuk-heading-m">3. Fill in the listing</h3>
+
+    <p>You will add:</p>
+
+    <ul>
+    <li>a summary</li>
+    <li>the details of the type of person you are looking for</li>
+    <li>an overview of your application process</li>
+    <li>where the opportunity is, or if it's suitable for remote working</li>
+    <li>tags so that users can filter search results</li>
+    <li>the availability you need</li>
+    <li>the contact details where you want to receive queries about the opportunity</li>
+    </ul>
+
+    <h3 class="nhsuk-heading-m">4. Select the application settings</h3>
+
+    <p class="nhsuk-body">You can decide if you want to receive applications through this service or through an external link.</p>
+
+    <p class="nhsuk-body">You can set a closing date for this listing.</p>
+
+    <p class="nhsuk-body">If you receive applications through this service, you can also set a limit to the number of applications.</p>
+
+    <h3 class="nhsuk-heading-l">Reviewing and making changes</h3>
+
+    <p class="nhsuk-body">You can save your progress and continue later.</p>
+
+    <p class="nhsuk-body">You can also preview the listing before publishing.</p>
+
+     <p class="nhsuk-body">Once you publish the listing, you can still change the closing date and the number of applications you want to receive.</p>
+
+    <a href="opportunity-name" class="nhsuk-button">
+        Start
+    </a>
+
+    </div>
+
+  </div>
+{% endblock %}

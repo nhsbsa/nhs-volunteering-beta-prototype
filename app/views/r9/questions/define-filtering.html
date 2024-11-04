@@ -1,0 +1,145 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../task-list-fixed",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="availability" method="post">
+    
+        <div class="nhsuk-form-group">
+    
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+                Define your opportunity
+              </h1>
+            </legend>
+
+            <div class="nhsuk-do-dont-list">
+              <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+              <p class="nhsuk-body">Defining your opportunity will help volunteers in filtering opportunities that are relevant to them.</p>
+              <p class="nhsuk-body">For example, if you need a volunteer to be in possession of a valid UK driving licence, you can select 'You need to have a full UK driving licence'.</p>
+              <p class="nhsuk-body">The volunteer won't see how you define it, it only helps them in finding the relevant opportunities for themselves.</p>
+            </div>
+
+            <form action="check-location-final" method="post">
+
+              <div class="nhsuk-form-group">
+            
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            
+                  <div class="nhsuk-hint" id="example-hint">
+                    Select all options that are relevant to you.
+                  </div>
+            
+                  <div class="nhsuk-checkboxes">
+            
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                        The volunteer doesn't need any experience
+                      </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                        The volunteer needs to have a car
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                        The volunteer needs a UK driving licence
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        The volunteer wants to work in a garden
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        The volunteer wants to work in a garden
+                      </label>
+                    </div>
+            
+                  </div>
+                </fieldset>
+            
+              </div>
+      
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+                Save and continue
+              </button>
+            
+            </form>
+      
+      
+                  <p class="nhsuk-body">              
+                    <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+                  </p>
+  </div>
+
+{% endblock %}
+
+<!-- NHS.UK footer -->
+{% block footer %}
+
+<footer role="contentinfo">
+  <div class="nhsuk-footer-container">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <div class="nhsuk-footer">
+
+        <ul class="nhsuk-footer__list">
+
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="#">Help and support</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="#">Terms and conditions</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="#">Privacy</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="#">Cookies</a>
+          </li>
+        </ul>
+        <ul class="nhsuk-footer__list">
+          <li class="nhsuk-footer__list-item"><a href="https://nhsvb2cprod.b2clogin.com/nhsvb2cprod.onmicrosoft.com/b2c_1_nhs_volunteering_recruiter_sign-in/oauth2/v2.0/authorize?client_id=3b81f491-9500-40bc-ae67-6fed77530485&scope=openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fvolunteering.england.nhs.uk%2Frecruiter%2Fredirect&client-request-id=87cb715d-704b-4637-b6a8-6f016462537b&response_mode=query&response_type=code&x-client-SKU=msal.js.node&x-client-VER=2.1.0&x-client-OS=linux&x-client-CPU=x64&client_info=1&state=eyJhcHBTdGFnZSI6ImxvZ2luIn0%3D" class="nhsuk-footer__list-item-link">Sign in to advertise NHS Volunteer opportunities</a></li>
+        </ul>
+
+      </div>
+      <div>
+        <p class="nhsuk-footer__copyright">© Crown copyright</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+{% endblock %}

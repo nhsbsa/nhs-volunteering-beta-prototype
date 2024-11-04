@@ -1,0 +1,72 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+<!-- NHS.UK header -->
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <h1>We cannot find postcode 'XXXXXX'</h1>
+ 
+
+<p>Check you have entered a full English postcode and try again.</p>
+<p>If the postcode is real and we cannot find it, email <a href="mailto:nhsvolunteering@nhsbsa.nhs.uk">nhsvolunteering@nhsbsa.nhs.uk</a> for help using this service.</p>
+
+
+
+  
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

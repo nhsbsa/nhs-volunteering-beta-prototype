@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "summary",
+    "href": "opportunity-description",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -23,13 +23,10 @@
           There is a problem
         </h2>
         <div class="nhsuk-error-summary__body">
-        
           <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
             <li>
-              <a href="#r4-looking-for"> Enter the type of person you are looking for</a>
+              <a href="#name">Enter the type of person you are looking for</a>
             </li>
-        
-            
           </ul>
         </div>
       </div>
@@ -37,13 +34,13 @@
 
       <h1 class="nhsuk-heading-l">
         <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
-        Specify the type of person you are looking for
+        What type of person are you looking for?
       </h1>
 
       <form action="overview-process" method="post" class="form">
 
         <div class="nhsuk-form-group">
-          <div class="nhsuk-hint" id="r4-looking-for-with-hint-text-hint">
+          <div class="nhsuk-hint" id="r4-preview-with-hint-text-hint">
             This will show on the opportunity listing under <strong>am I the right person for this?</strong>
           </div>
 
@@ -83,14 +80,14 @@
           </div>
 
           <div class="nhsuk-form-group nhsuk-form-group--error">
-            <label class="nhsuk-label" for="r4-looking-for">
-              Enter the type of person you are looking for
+            <label class="nhsuk-label" for="r4-preview">
+              Enter what type of person you are looking for
             </label>
-            <span class="nhsuk-error-message" id="example-error-error">
-              <span class="nhsuk-u-visually-hidden">Error:</span> Enter what type of person you are looking for
+            <span class="nhsuk-error-message" id="name-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Enter the type of person you are looking fo
             </span>
             <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
-              <div class="nhsuk-form-group ">
+              <div class="nhsuk-form-group nhsuk-form-group--error">
                 <!-- to enable rich text, add class of text-editor-2 to textarea element -->
                 <textarea rows="8" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000"></textarea>
                 <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
@@ -109,10 +106,10 @@
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
           Save and continue
         </button>
-        <p class="nhsuk-body">              
-          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
-        </p>
         
+        <p class="nhsuk-body">              
+          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
 
       </form>
 

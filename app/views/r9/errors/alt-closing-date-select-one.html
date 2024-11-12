@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout_vol_header.html' %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
@@ -43,7 +43,7 @@
               </h1>
 
               <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
-                This will show as the last date to register for this opportunity.
+                This will show as the last date to apply for this opportunity.
               </div>
 
               <div class="nhsuk-do-dont-list">
@@ -54,13 +54,14 @@
             
           
               <div class="nhsuk-radios nhsuk-form-group--error">
-                <span class="nhsuk-error-message" id="example-error-error">
-                  <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you want to set a closing date
-                </span>
             
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
                   Select one option
                 </legend>
+
+                <span class="nhsuk-error-message" id="example-error-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you want to set a closing date
+                </span>
           
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="r4-closing-date-1" name="r4-closing-date" type="radio" value="yes">

@@ -738,3 +738,18 @@ router.post('/a3-choose-nhs-org-answer', function (req, res) {
 })
   
   module.exports = router;
+
+    // What kind of opportunity are you looking for? - if "answer is 'An opportunity near me'"
+
+router.post('/v7-opportunity-choice-answer', function (req, res) {
+
+  // Get the answer from session data
+  const v7OpportunitySelection = req.session.data['v7-opportunity-choice']
+
+  if (v7OpportunitySelection === 'yes') {
+    res.redirect('/v7/volunteering/postcode-search-v2')
+  } else {
+    res.redirect('/v7/volunteering/results_remote_opportunities')
+  }
+})
+

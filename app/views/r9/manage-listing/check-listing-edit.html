@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout_vol_header.html' %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
@@ -8,7 +8,7 @@
 
 {% block outerContent %}
   {{ backLink({
-    "href": "../task-list-completed",
+    "href": "../../task-list-completed",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -19,8 +19,8 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading nhsuk-heading-l nhsuk-u-margin-top-4">
-        <span class="nhsuk-caption-l nhsuk-caption--top">Publish the listing </span>
-        Check your answers before publishing your listing
+        <span class="nhsuk-caption-l nhsuk-caption--top">Re-publish the listing </span>
+        Check your answers before re-publishing your listing
       </h1>
 
       <h2 class="nhsuk-heading nhsuk-heading-m">Listing set up</h2>
@@ -32,7 +32,7 @@
               text: "Title"
             },
             value: {
-              text: "Walk and talk volunteer"
+              text: "Ward support volunteer"
             },
             actions: {
               items: [
@@ -56,7 +56,7 @@
               text: "Summary"
             },
             value: {
-              html: "<p>Main responsibilities: encourage people to take part in walking activities around the site and help them along the way.</p> 
+              html: "<p>Main responsibilities: Help out the nurses on the ward when needed.</p> 
               <p>Shifts are available from 8am to 1pm, Monday to Friday.</p>"
             },
             actions: {
@@ -75,8 +75,14 @@
             },
             value: {
               html: "
-              <p>You will support our mental health services team with the running of the walk and talk activity.</p>
-              <p>You will encourage people to take part in this therapeutic and social activity. You'll also meet and greet people as they arrive, and direct walkers along the designated route.</p>"
+              <p>You will support our mental health services team with the running of this activity. You will help maintain and improve the well-being of patients with memory problems or dementia.</p>
+              <p>You will:</p>
+              <ol>
+                <li>encourage people to take part in this therapeutic and social activity</li>
+                <li>meet and greet people as they arrive</li>
+                <li>help people to feel good about themselves</li>
+                <li>direct walkers along the designated route</li>
+              </ol>"
             },
             actions: {
               items: [
@@ -94,9 +100,13 @@
             },
             value: {
               html: "<p>This opportunity will suit someone friendly, approachable and enthusiastic.</p>
-              <p>You don't need any previous experience, qualifications or training. You should have good people skills and enjoy the outdoors. You need to be reliable and be good at time keeping. </p>
-              <p>You need to be 16 or over to volunteer with us. </p>
-              <p>You will need access to a telephone (for remote opportunities). </p>
+              <p>You don't need any previous experience, qualifications or training. All you need is to:</p>
+              <ul>
+              <li>have good people skills and want to chat with people</li>
+              <li>be reliable and be good at time keeping</li>
+              <li>enjoy the outdoors</li>
+              <li>be 16 or over</li>
+              </ul>
               <p>This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer with us.</p>              "
             },
             actions: {
@@ -115,12 +125,16 @@
             },
             value: {
               html: "
-              <p>We'll get in touch with you when we review your registration. This might take 2 weeks.</p>
-              <p>After that, we will book in a chat to get to know you a bit more and walk you through the process.</p>
-              <p>There will be different types of checks required before you can start volunteering.</p>
-              <p>You may need to provide proof of identity and address, and verify that you are eligible to volunteer in the UK. You may need to complete  a criminal records check via the Disclosure and Barring Service (DBS).</p>
-              <p>You may need to provide personal health and vaccination history information, and attend a health check.</p>
-              <p>We may ask to provide details of your work and volunteering history, including the details of some referees who we can contact in support of your application.</p>
+              <p>We'll get in touch with you when we review your request. This might take a few weeks.</p>
+              <p>After that, we may book in a chat to get to know you a bit more and walk you through the process.</p>
+              <p>To become a volunteer, you may need to:</p>
+              <ul>
+              <li>provide proof of identity and some utility bills</li>
+              <li>go through a standard or enhanced Disclosure and Barring Service (DBS) and occupational health checks</li>
+              <li>prove your right to work in the UK</li>
+              <li>provide details of your work history</li>
+              <li>give the details of two referees</li>
+              </ul>
               "
             },
             actions: {
@@ -138,7 +152,7 @@
               text: "Who will support the volunteer"
             },
             value: {
-              text: "Ward manager"
+              text: "	Volunteer Coordinator"
             },
             actions: {
               items: [
@@ -169,17 +183,15 @@
           },
           {
             key: {
-              text: "Location 1"
+              text: "Where is this opportunity?"
             },
             value: {
-              html: "Airedale Hospital <br>
-              Steeton Road <br>
-              BD23 2PF"
+              html: "An area with varying locations"
             },
             actions: {
               items: [
                 {
-                  href: "check-locations",
+                  href: "../edit-journey/broader-locations/location",
                   text: "Change",
                   visuallyHiddenText: "Location 1"
                 }
@@ -188,19 +200,57 @@
           },
           {
             key: {
-              text: "Location 2"
+              text: "Area"
             },
             value: {
-              html: "Bradford Royal Infirmary <br>
-              Daisy Hill <br>
-              BD4 4AK"
+              html: "Leeds"
             },
             actions: {
               items: [
                 {
-                  href: "check-locations",
+                  href: "../edit-journey/broader-locations/check-location-area-name",
                   text: "Change",
-                  visuallyHiddenText: "Location 2"
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Radius"
+            },
+            value: {
+              html: "10 miles"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/check-location-radius",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Area centre point"
+            },
+            value: {
+              html: "Leeds Art Gallery
+              <br>
+              The Headrow
+              <br>
+              Leeds
+              <br>
+              LS1 3AB"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/location-larger-area",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
                 }
               ]
             }
@@ -210,8 +260,8 @@
               text: "Availability"
             },
             value: {
-              html: "<p>Shifts are available from 8am to 1pm, Monday to Friday.</p>
-              <p>Everyone is welcome to volunteer but we would encourage people to do it long-term.</p>"
+              html: "<p>Three hours a week on a Tuesday or Thursday</p>
+              "
             },
             actions: {
               items: [
@@ -308,7 +358,7 @@
             },
             value: {
               text: 
-                    "19 November 2023"
+                    "15 July 2024"
             },
             actions: {
               items: [
@@ -323,24 +373,18 @@
         ]
       }) }}
 
-      <h2 class="nhsuk-heading">Before you update</h2>
+      <h2>Before you update this listing</h2>
+      <p>Check you are happy with the changes you have made to this live listing. After you update this listing any existing content you had befre will be replaced.</p>
 
-      <p class="nhsuk-body">Once this listing is live, you will only be able to change the closing date and the number of applications you want to receive.</p>
-
-      <form action="/r4/dashboard-success">
+      <form action="/r9/republish-listing-dashboard-success">
         <button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit">
-          Update the listing
+          Update listing
         </button> 
-        <a href="/r4/preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+        <a href="/r9/preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
           Preview listing
         </a>
       </form> 
-
-
-
-      <p class="nhsuk-body">              
-        <a href="../task-list-completed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
-      </p>
+      
 
     </div>
   </div>

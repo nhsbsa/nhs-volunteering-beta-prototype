@@ -183,18 +183,72 @@
           },
           {
             key: {
-              text: "Location 1"
+              text: "Where is this opportunity?"
             },
             value: {
-              html: "Leeds General Infirmary<br>
-              Claredon Way<br>
-              Leeds<br>
-              LS2 1AP"
+              html: "An area with varying locations"
             },
             actions: {
               items: [
                 {
-                  href: "check-locations",
+                  href: "../edit-journey/broader-locations/location",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Area"
+            },
+            value: {
+              html: "Leeds"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/check-location-area-name",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Radius"
+            },
+            value: {
+              html: "10 miles"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/check-location-radius",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Area centre point"
+            },
+            value: {
+              html: "Leeds Art Gallery
+              <br>
+              The Headrow
+              <br>
+              Leeds
+              <br>
+              LS1 3AB"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/location-larger-area",
                   text: "Change",
                   visuallyHiddenText: "Location 1"
                 }

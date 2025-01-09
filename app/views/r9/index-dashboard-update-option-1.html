@@ -1,0 +1,362 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+
+  <h1>Your dashboard</h1>
+
+  <p>You can use your dashboard to create, edit and reuse listings. You can also review your applications.</p>
+    
+    <h3>Your organisation is Mid and South Essex NHS Foundation Trust</h3>
+    <p><a href="recruiter-trust-details">View your organisation's details</a></p>
+    <p><a href="all-opportunities">View your organisation's opportunities (opens in a new tab)</a></p>  
+  
+  <div></div>
+
+  <a class="nhsuk-button", style="margin-top: 30px;", href="start-page">Create new listing</a>
+
+  <h2>Your listings</h2>
+
+  <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title">
+      Contents
+    </h2>
+  
+    <ul class="nhsuk-tabs__list">
+  
+      <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+        <a class="nhsuk-tabs__tab" href="#active">
+          Active
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="#closed">
+          Closed
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="#draft">
+          Draft
+        </a>
+      </li>
+  
+    </ul>
+  
+    <div class="nhsuk-tabs__panel" id="active">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Active</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Title
+            </th>
+           
+            <th role="columnheader" class="" scope="col">
+              Date created
+            </th>
+            <th role="columnheader" class="" scope="col">
+               Closing date
+              </th>
+    
+              <th role="columnheader" class="" scope="col">
+                Applications received 
+               </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+      
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live"></span> Volunteer at Basildon Hospital</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>12240-AB</span>
+            </td>
+          
+    
+            <td role="cell" class="nhsuk-table__cell">
+              9 May 2024
+            <td role="cell" class="nhsuk-table__cell">
+              29 October 2024
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                None
+              </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live"></span> Walk and talk volunteer</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>17840-AB</span>
+            </td>
+           
+            <td role="cell" class="nhsuk-table__cell">
+                5 May 2024
+            <td role="cell" class="nhsuk-table__cell">
+                29 October 2024
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                5
+              </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external"></span> Volunteer at Braintree Community Hospital</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+            </td>
+           
+            <td role="cell" class="nhsuk-table__cell">
+              13 March 2024
+            <td role="cell" class="nhsuk-table__cell">
+                30 September 2025
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                8
+              </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row"></tr>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external"></span> Volunteer at Southend University Hospital</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77626-AB</span>
+            </td>
+           
+            <td role="cell" class="nhsuk-table__cell">
+              13 March 2024
+            <td role="cell" class="nhsuk-table__cell">
+              30 September 2025
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+              12
+              </td>
+          </tr>
+          
+        </tbody>
+      </table>
+  
+    </div>
+  
+    <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="closed">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Closed</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Title
+            </th>
+           
+            <th role="columnheader" class="" scope="col">
+              Date created
+            </th>
+            <th role="columnheader" class="" scope="col">
+               Closing date
+              </th>
+    
+              <th role="columnheader" class="" scope="col">
+                Applications received 
+               </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+      
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live"></span> Gardening volunteer</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>14520-AB</span>
+            </td>
+          
+    
+            <td role="cell" class="nhsuk-table__cell">
+              9 May 2024
+            <td role="cell" class="nhsuk-table__cell">
+              29 October 2024
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                None
+              </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live"></span> Volunteer at Basildon Hospital</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>26492-AB</span>
+            </td>
+           
+            <td role="cell" class="nhsuk-table__cell">
+                5 May 2024
+            <td role="cell" class="nhsuk-table__cell">
+                29 October 2024
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                5
+              </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external"></span> Ward support volunteer</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>74322-AB</span>
+            </td>
+           
+            <td role="cell" class="nhsuk-table__cell">
+              13 March 2024
+            <td role="cell" class="nhsuk-table__cell">
+                30 September 2025
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                8
+              </td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row"></tr>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external"></span> Volunteer at Southend University Hospital</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>71843-AB</span>
+            </td>
+           
+            <td role="cell" class="nhsuk-table__cell">
+              13 March 2024
+            <td role="cell" class="nhsuk-table__cell">
+              30 September 2025
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+              12
+              </td>
+          </tr>
+          
+        </tbody>
+      </table>
+  
+    </div>
+  
+    <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="draft">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Draft</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Title
+            </th>
+           
+            <th role="columnheader" class="" scope="col">
+              Date created
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+      
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live"></span> Volunteer at Basildon Hospital</a>
+              <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>12240-AB</span>
+            </td>
+          
+    
+            <td role="cell" class="nhsuk-table__cell">
+              9 May 2024
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+  
+    </div>
+  
+    <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="past-year">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Past year</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Case manager
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Cases opened
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Cases closed
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">David Francis</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1380</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1472</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Paul Farmer</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1129</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1083</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Rita Patel</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1539</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1265</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

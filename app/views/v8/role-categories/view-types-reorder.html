@@ -1,0 +1,187 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-three-quarters">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="/v4/volunteering/index">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1>How you can help</h1>
+
+  <p class="nhsuk-body">These are some of the types of volunteering that may be available within the NHS. You will need to check what your local organisation offers.</p>
+
+
+
+ <div class="nhsuk-action-link">
+  <a class="nhsuk-action-link__link" href="../volunteering/search-what-do-you-want-to-do">
+    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    </svg>
+    <span class="nhsuk-action-link__text">Search for an opportunity</span>
+  </a>
+</div>
+
+</div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="community">Support your community</a>
+        </h2>
+        <p class="nhsuk-card__description">Become an active member of your community and make a positive impact on the health of your neighbours</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="patient-facing">Provide companionship and a warm welcome</a>
+        </h2>
+        <p class="nhsuk-card__description">Improve the comfort of patients when they walk through the door and during their stay</p>
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="leisure">Assist with patient recreation</a>
+        </h2>
+        <p class="nhsuk-card__description">Lift patients' spirits and enhance their experience through a range of creative activities</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="young-person">Volunteer as a young person</a>
+        </h2>
+        <p class="nhsuk-card__description">A range of roles tailored to young people aged under 18 wishing to kick start their volunteering journey</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="admin">Assist with admin tasks</a>
+        </h2>
+        <p class="nhsuk-card__description">Assist staff with general desk tasks to improve volunteering activities</p>
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="ppe">Help give patients a voice</a>
+        </h2>
+        <p class="nhsuk-card__description">Take part in engagement activities to make sure patient voices inform real changes for patients and staff</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="charity">Support NHS charities and fundraising</a>
+        </h2>
+        <p class="nhsuk-card__description">Join NHS charities that help support and fund services for our patients, visitors, and staff</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="remote">Take part in remote opportunities</a>
+        </h2>
+        <p class="nhsuk-card__description">Make a difference from a distance. You may need a phone or a computer and some basic tech skills</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="clinical">Support the delivery of clinical care</a>
+        </h2>
+        <p class="nhsuk-card__description">Contribute to activities that improve patients' physical and mental health</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+  <p><a href="../other-ways-to-help-the-nhs">Other ways you can help the NHS</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+ 
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

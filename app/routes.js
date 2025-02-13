@@ -753,3 +753,45 @@ router.post('/v7-opportunity-choice-answer', function (req, res) {
   }
 })
 
+// Create Live Opportunity - r9 - contact details - if "answer is no"
+
+router.post('/r9-contact-details-answer', function (req, res) {
+
+  // Get the answer from session data
+  const r6contactDetails = req.session.data['r9-contact-details']
+
+  if (r6contactDetails === 'no') {
+    res.redirect('/r9/questions/contact-details-change')
+  } else {
+    res.redirect('/r9/questions/tags')
+  }
+})
+
+ // Create Live Opportunity - r9 - receive applications - if "answer is yes"
+
+ router.post('/r9-receive-applications-answer', function (req, res) {
+
+  // Get the answer from session data
+  const r6recieveApplications = req.session.data['r9-receive-apps']
+
+  if (r6recieveApplications === 'yes') {
+    res.redirect('/r9/questions/application-limits')
+  } else {
+    res.redirect('/r9/questions/alt-closing-date')
+  }
+})  
+
+  // Edit Live Opportunity - alt-closing-date-answer - if "answer is yes"
+
+  router.post('/r9-closing-date-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r6closingDate = req.session.data['r9-closing-date']
+  
+    if (r6closingDate === 'yes') {
+      res.redirect('/r9/questions/alt-closing-date-answer')
+    } else {
+      res.redirect('/r9/task-list-completed')
+    }
+  })  
+

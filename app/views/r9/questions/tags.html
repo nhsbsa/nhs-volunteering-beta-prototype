@@ -35,45 +35,47 @@
               <p class="nhsuk-body">Adding tags to your opportunity listing will help volunteers in seeing highlighted information that's important for your opportunity.</p>
               <p class="nhsuk-body">For example, if you need a volunteer to see that no experience is required for your opportunity, you can select 'No exeperience needed'.</p>
               <p class="nhsuk-body">You can select up to 3 tags for your opportunity.</p>
-            </div>
+              <p class="nhsuk-body">Here's an example of what your opportunity tags look like to a volunteer.</p>
 
-            <details class="nhsuk-details nhsuk-expander" style="margin-top: 40px;">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  An example of what your opportunity tags look like to a volunteer
-                </span>
-              </summary>
               <div class="nhsuk-details__text">
-            <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.8 miles away</p>
-      <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="role-profile-2">Patient transport driver</a></h2>
-      <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds</strong></p>
-      <p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
-
-      <div class="nhsuk-u-margin-top-2">
-        <td class="nhsuk-table__cell" style="margin-top: -10px;">
-        <strong class="nhsuk-tag nhsuk-tag--blue">
-          Need own car
-        </strong>
-        </td>
-        <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px; padding-left: 30px;">
-          <strong class="nhsuk-tag nhsuk-tag--blue">
-            No experience needed
-          </strong>
-          </td>
-        
-      
-      <div class="nhsuk-card" style="margin-top: 20px;">
-        <div class="nhsuk-card__content">
-         <p>You will drive disabled, elderly, sick or vulnerable people to and from outpatient clinics, day care centres and routine hospital admissions.</p>
-         <p>You will need first aid training in case there is a medical emergency.</p>
-        </div>
-      </div>
+                <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.8 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="role-profile-2">Patient transport driver</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds</strong></p>
+          <p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
+    
+          <div class="nhsuk-u-margin-top-2">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+              Need a car
+            </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px; padding-left: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                No experience needed
+              </strong>
+              </td>
+              <div style="margin-top: 5px;">
+              <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px; padding-left: 30px;">
+                <strong class="nhsuk-tag nhsuk-tag--blue">
+                  Need a criminal record check
+                </strong>
+                </td>
               </div>
-              </details>
+            
+          
+          <div class="nhsuk-card" style="margin-top: 20px; margin-bottom: 0px;">
+            <div class="nhsuk-card__content">
+             <p>You will drive disabled, elderly, sick or vulnerable people to and from outpatient clinics, day care centres and routine hospital admissions.</p>
+            </div>
+          </div>
+                  </div>
+                  
+            </div>
+            </div>
 
             <form action="check-location-final" method="post">
 
-              <div class="nhsuk-form-group">
+              <div class="nhsuk-form-group" style="margin-top: 30px;">
             
                 <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
             
@@ -124,6 +126,15 @@
                         Suitable from age 16
                       </label>
                     </div>
+
+                    <div class="nhsuk-checkboxes__divider">or</div>
+
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input" id="symptoms-5" name="symptoms" type="checkbox" value="none" data-checkbox-exclusive data-checkbox-exclusive-group="symptoms-list">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-5">
+            I don't want to use any tags
+          </label>
+        </div>
             
                   </div>
                 </fieldset>

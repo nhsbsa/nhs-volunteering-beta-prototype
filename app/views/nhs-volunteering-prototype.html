@@ -1,0 +1,121 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page title here -->
+      <h1>
+       NHS volunteering Beta prototype
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version 1.0.0</span>
+      </h1>
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <p class="nhsuk-lede-text">
+        Prototypes for the Beta phase of NHS volunteering.
+      </p>
+
+      <hr>
+</div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
+
+    <div class="nhsuk-card nhsuk-card--clickable" style="min-height: 250px;">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/v1/sub-index-vol">Volunteer prototypes</a>
+        </h2>
+        <p class="nhsuk-card__description">Prototypes and journeys for the volunteer</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+
+    <div class="nhsuk-card nhsuk-card--clickable" style="min-height: 250px;">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/v1/sub-index-rec">Recruiter prototypes</a>
+        </h2>
+        <p class="nhsuk-card__description">Prototypes and journeys for the recruiter service</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="nhsuk-grid-column-one-third">
+
+    <div class="nhsuk-card nhsuk-card--clickable" style="min-height: 250px;">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/v1/sub-index-bsa">BSA admin prototypes</a>
+        </h2>
+        <p class="nhsuk-card__description">Prototypes and journeys for the BSA admins</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+      
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h2>Volunteer iterations</h2>
+    <p class="nhsuk-body"><a href="/v1/homepage">Iteration 1: Full journey from homepage - Used in Sprint 4 UR</a></p>
+    <p class="nhsuk-body"><a href="/v2/volunteering/index">Iteration 2: Full journey from homepage - Used in Sprint 5 UR</a></p>  
+    <p class="nhsuk-body"><a href="/v3/volunteering/index">Iteration 3: Full journey from homepage - What has been handed over to devs</a></p>  
+    <p class="nhsuk-body"><a href="/v4/volunteering/index">Iteration 4: Full journey from homepage - Accessibility testing</a></p>  
+    <p class="nhsuk-body"><a href="/v5/edi/check">Iteration 5: EDI, banners and policy pages</a></p>
+    <p class="nhsuk-body"><a href="/v6/volunteering/index">Iteration 6: NHS login journey</a></p> 
+    <p class="nhsuk-body"><a href="/v7/volunteering/index">Iteration 7: Opportunity tags and content updates</a></p>    
+  
+  <h2>Recruiter iterations</h2>
+  <p class="nhsuk-body"><a href="/r1/start-page">Iteration 1: Create an opportunity</a></p>
+  <p class="nhsuk-body"><a href="/r2/index">Iteration 2: Full recruiter journey</a></p>
+  <p class="nhsuk-body"><a href="/r3/index">Iteration 3: Full recruiter journey</a></p>
+  <p class="nhsuk-body"><a href="/r4/index">Iteration 4: Full recruiter journey</a></p>
+  <p class="nhsuk-body"><a href="/r5/index">Iteration 5: Full recruiter journey</a></p>
+  <p class="nhsuk-body"><a href="/r6/index">Iteration 6: Full recruiter journey</a></p>
+  <p class="nhsuk-body"><a href="/r7/index">Iteration 7: Full recruiter journey</a></p>
+  <p class="nhsuk-body"><a href="/r8/index">Iteration 8: Full recruiter journey</a></p>
+  </div>
+    </div>
+   
+
+      
+      
+
+      <!-- End of content -->
+
+    
+{% endblock %}

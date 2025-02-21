@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Volunteer Application - John Doe{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/listing-details" class="nhsuk-back-link">Back to Listing</a>
+
+  <!-- Highlight Important Information -->
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">Application Details</h2>
+    <p><strong>Reference number:</strong> REF-013</p>
+    <p><strong>Date received:</strong> 20 Feb 2025</p>
+  </div>
+
+  <h1 class="nhsuk-heading-xl">Volunteer Application - John Doe</h1>
+
+  <div class="nhsuk-inset-text">
+    <p>This page contains the applicant's personal information. Please handle it securely.</p>
+  </div>
+
+  <!-- Section: Contact Details -->
+  <h2 class="nhsuk-heading-l">Contact Details</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Name</dt>
+      <dd class="nhsuk-summary-list__value">John Doe</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Email address</dt>
+      <dd class="nhsuk-summary-list__value"><a href="mailto:johndoe@email.com">johndoe@email.com</a></dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Phone number</dt>
+      <dd class="nhsuk-summary-list__value"><a href="tel:07500123456">07500 123456</a></dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Address</dt>
+      <dd class="nhsuk-summary-list__value">
+        12 Green Street<br>
+        Manchester<br>
+        M4 1AB
+      </dd>
+    </div>
+  </dl>
+
+  <!-- Section: Availability & Support Needs -->
+  <h2 class="nhsuk-heading-l">Availability & Support Needs</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Availability</dt>
+      <dd class="nhsuk-summary-list__value">Monday to Wednesday, 10am - 4pm</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Support needed</dt>
+      <dd class="nhsuk-summary-list__value">Requires wheelchair accessibility and prefers email communication over phone calls.</dd>
+    </div>
+  </dl>
+
+  <!-- Section: Experience & Interests -->
+  <h2 class="nhsuk-heading-l">Experience & Interests</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Qualifications</dt>
+      <dd class="nhsuk-summary-list__value">
+        - First Aid Certified<br>
+        - Previous volunteer at a care home<br>
+        - Safeguarding training completed
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Interests</dt>
+      <dd class="nhsuk-summary-list__value">Enjoys working with elderly patients, interested in hospital support roles.</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">About you</dt>
+      <dd class="nhsuk-summary-list__value">
+        I have been volunteering for the past three years, providing support to elderly patients in a community setting.
+        I am passionate about helping others and believe my skills in patient engagement would be beneficial in this role.
+      </dd>
+    </div>
+  </dl>
+
+  <!-- ✅ Recruiter Notes Section -->
+  <h2 class="nhsuk-heading-m">Recruiter Notes</h2>
+  <form method="post">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="recruiter-notes">Add internal notes (optional)</label>
+      <textarea class="nhsuk-textarea" id="recruiter-notes" name="recruiter-notes" rows="4"></textarea>
+    </div>
+    <button class="nhsuk-button nhsuk-button--secondary" type="submit">Save Notes</button>
+  </form>
+
+  <!-- ✅ Actions with Confirmation Messages -->
+  <h2 class="nhsuk-heading-m">Actions</h2>
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/confirmation-approve" class="nhsuk-button">Approve</a>
+    <a href="/design-spike/confirmation-reject" class="nhsuk-button nhsuk-button--secondary">Reject</a>
+    <a href="#" class="nhsuk-button nhsuk-button--secondary">Print this page</a>
+    <a href="#" class="nhsuk-button nhsuk-button--secondary">Save as Draft</a>
+  </div>
+
+{% endblock %}

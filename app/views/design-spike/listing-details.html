@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Listing Details{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
+  
+  <h1 class="nhsuk-heading-xl">Listing Details</h1>
+
+  <h2 class="nhsuk-heading-m">Ward Volunteer</h2>
+  <p><strong>Application Ref:</strong> 12240-AB</p>
+  <p><strong>Closing Date:</strong> 30 Feb 2025</p>
+  <p><strong>Status:</strong> <span class="nhsuk-tag nhsuk-tag--blue">Live</span></p>
+  <p><strong>Description:</strong> Assist ward staff with non-clinical tasks, provide support to patients, and improve overall patient experience.</p>
+
+  <h2 class="nhsuk-heading-m">Actions</h2>
+  <a href="/listings/1/edit" class="nhsuk-button nhsuk-button--secondary">Edit Listing</a>
+  <a href="/listings/1/live" class="nhsuk-button nhsuk-button--secondary">View Live Listing</a>
+  <a href="/listings/1/close" class="nhsuk-button nhsuk-button--secondary">Close Listing</a>
+
+  <!-- ✅ Application Filters -->
+  <h2 class="nhsuk-heading-m">Manage Applications</h2>
+  <div class="nhsuk-button-group">
+    <a href="?filter=new" class="nhsuk-button nhsuk-button--secondary">New Applications</a>
+    <a href="?filter=reviewed" class="nhsuk-button nhsuk-button--secondary">Reviewed</a>
+    <a href="?filter=shortlisted" class="nhsuk-button nhsuk-button--secondary">Shortlisted</a>
+    <a href="?filter=archived" class="nhsuk-button nhsuk-button--secondary">Archived</a>
+  </div>
+
+  <form method="post">
+    <table class="nhsuk-table">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Applicant Name</th>
+          <th>Application Ref</th>
+          <th>Application Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><input type="checkbox"></td><td>John Doe</td><td>REF-013</td><td>13 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="/design-spike/volunteer-application">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+
+        <tr><td><input type="checkbox"></td><td>Mark Foster</td><td>REF-012</td><td>12 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="/applications/12">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>Emma Carter</td><td>REF-011</td><td>11 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="/applications/11">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>Daniel Wilson</td><td>REF-010</td><td>10 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="/applications/10">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="/design-spike/confirmation-delete" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>Olivia Scott</td><td>REF-009</td><td>09 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="/applications/9">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>James Brown</td><td>REF-008</td><td>08 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="/applications/8">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>Sarah Evans</td><td>REF-007</td><td>07 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="/applications/7">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>David Green</td><td>REF-006</td><td>06 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="/applications/6">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>Emily White</td><td>REF-005</td><td>05 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="/applications/5">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+        <tr><td><input type="checkbox"></td><td>Michael Johnson</td><td>REF-004</td><td>04 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="/applications/4">View</a> | <a href="#" class="nhsuk-link--danger">Archive</a> | <a href="#" class="nhsuk-link--danger">Delete</a></td></tr>
+      </tbody>
+    </table>
+
+    <button class="nhsuk-button" type="submit">Move Selected to Archive</button>
+  </form>
+
+{% endblock %}

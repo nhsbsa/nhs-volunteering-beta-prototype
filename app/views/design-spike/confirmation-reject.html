@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Confirm Rejection{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer-application" class="nhsuk-back-link">Back to Application</a>
+
+  <h1 class="nhsuk-heading-xl">Confirm Rejection</h1>
+
+  <div class="nhsuk-warning-callout nhsuk-warning-callout--urgent">
+    <h2 class="nhsuk-warning-callout__label">You're about to reject this application</h2>
+    <p>Rejecting this application will remove the applicant from the recruitment process.</p>
+    <p><strong>Name:</strong> John Doe</p>
+    <p><strong>Reference number:</strong> 12240-AB</p>
+    <p><strong>Note:</strong> This action is final and cannot be undone.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>The applicant will be removed from the system.</li>
+    <li>If this was a mistake, you will need to ask them to reapply.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/recruiter-dashboard" class="nhsuk-button nhsuk-button--red">Confirm and Reject</a>
+    <a href="/design-spike/volunteer-application" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </div>
+
+{% endblock %}

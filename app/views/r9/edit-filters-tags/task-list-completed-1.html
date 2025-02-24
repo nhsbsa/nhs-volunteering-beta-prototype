@@ -1,0 +1,177 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="/r6/index">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back to dashboard</a>
+      </div>
+
+      <h1><span class="nhsuk-caption-l">Reference number: 12240-AB</span> Ward support volunteer <span class="nhsuk-tag nhsuk-tag">Live</span></h1>
+
+      <p>Before you can publish any changes to this listing, you need to complete each section.</p>
+
+      <p>You have completed 3 of 4 sections.</p>
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Setting up a listing
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/new-name">
+                Edit the title
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Edit an opportunity listing
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/summary" aria-describedby="company-information-completed">
+                 Edit the summary
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/opportunity-description" aria-describedby="company-information-completed">
+                  Edit the description of the opportunity
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="questions/looking-for" aria-describedby="company-information-completed">
+                  Edit what type of person you are looking for
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/overview-process">
+                  Edit the overview of the application process
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/support-volunteers">
+                  Edit who will support the volunteer 
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/location">
+                  Edit locations
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/availability">
+                  Edit availability requirements 
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/contact-details">
+                  Edit the contact details
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="edit-tags">
+                  Edit tags
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="edit-search-filters">
+                  Edit search filters
+                </a>
+              </span>
+              <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Select application settings
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/application-limits">
+                  Decide how you want to receive applications
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./questions/alt-closing-date">
+                  Edit the closing date
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not started</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Update the listing
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./manage-listing/questions/check-listing">
+                  Check your answers and re-publish the listing
+                </a>
+              </span>
+              <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+  
+    </div>  
+
+  </div>
+{% endblock %}

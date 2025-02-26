@@ -186,7 +186,24 @@ router.post('/r2-contact-details-answer', function (req, res) {
     if (v4selectAddress === 'My address is not on this list') {
       res.redirect('/v7/application/manual-address')
     } else {
-      res.redirect('/v7/application/phone')
+      res.redirect('/v7/application/email')
+    }
+  })  
+
+
+  // ROUTES FOR V8 of Volunteering
+
+  // choose address - if answer is 'my address is not on the list'
+
+  router.post('/v8-select-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const v4selectAddress = req.session.data['v8-select-address']
+  
+    if (v4selectAddress === 'My address is not on this list') {
+      res.redirect('/v8/application/manual-address')
+    } else {
+      res.redirect('/v8/application/email')
     }
   })  
 
@@ -795,3 +812,16 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })  
 
+  // ROUTES FOR R9 user management MVP
+
+  router.post('/r9-delete-user-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r9DeleteUser = req.session.data['r9-delete-user']
+  
+    if (r9DeleteUser === 'no') {
+      res.redirect('/r9/user-management-mvp/manage-users')
+    } else {
+      res.redirect('/r9/user-management-mvp/manage-users-user-deleted')
+    }
+  })  

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Volunteer Application - Under Review{% endblock %}
+
+{% block content %}
+  <a href="/design-spike" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">📩 Volunteer Application - Under Review</h1>
+
+  <div class="nhsuk-inset-text">
+    <p>This is a simulated version of the email volunteers will receive when their application is under review.</p>
+  </div>
+
+  <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <p>Dear <strong>John Doe</strong>,</p>
+
+      <p>We wanted to update you on your application for the <strong>General Volunteer (Expression of Interest)</strong></p>
+
+      <p>Your application is currently <strong>under review</strong>, and we expect to provide a decision by <strong>15 March 2025</strong>.</p>
+
+      <h2 class="nhsuk-heading-m">What happens next?</h2>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>If your application is successful, we may invite you for an interview or request additional documents.</li>
+        <li>If you are not selected, we will notify you and suggest other volunteering opportunities.</li>
+      </ul>
+
+      <p>You can track your application’s progress at <a href="/design-spike/volunteer/application-check" class="nhsuk-link">check application status</a>.</p>
+
+      <p>If you have any questions, feel free to <a href="mailto:recruiter@nhs.uk" class="nhsuk-link">contact us</a>.</p>
+
+      <p>Thank you for your patience!</p>
+
+      <p><strong>Recruitment Team</strong><br>
+      NHS Volunteering Team</p>
+    </div>
+  </div>
+
+{% endblock %}

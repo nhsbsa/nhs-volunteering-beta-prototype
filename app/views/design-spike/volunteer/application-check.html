@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Check Your Volunteer Application Status{% endblock %}
+
+{% block content %}
+  <a href="/design-spike" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">Check your volunteer application status</h1>
+
+  <p class="nhsuk-body-l">
+    Enter your application reference number below to track the progress of your volunteer application.
+  </p>
+
+  <form method="post" action="/design-spike/application-status">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="application-reference">Application reference number</label>
+      <input class="nhsuk-input" id="application-reference" name="application-reference" type="text">
+    </div>
+    <a href="/design-spike/volunteer/application-status" class="nhsuk-button">Check Status</a>
+  </form>
+{% endblock %}

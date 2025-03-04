@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Application Status - NHS Volunteering{% endblock %}
+
+{% block content %}
+  <a href="/design-spike" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">Your Application Status</h1>
+
+  <p class="nhsuk-body-l">Check the progress of your volunteer application.</p>
+
+  <!-- ✅ Application Reference -->
+  <h2 class="nhsuk-heading-m">Application Details</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Application Reference</dt>
+      <dd class="nhsuk-summary-list__value">REF-013</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Volunteer Role</dt>
+      <dd class="nhsuk-summary-list__value">General Volunteer (Expression of Interest)</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Date Submitted</dt>
+      <dd class="nhsuk-summary-list__value">20 Feb 2025</dd>
+    </div>
+  </dl>
+
+  <!-- ✅ Application Progress Indicator -->
+  <h2 class="nhsuk-heading-m">Current Status</h2>
+  <div class="nhsuk-panel nhsuk-panel--confirmation">
+    <h3 class="nhsuk-panel__title">Your application is under review</h3>
+    <p class="nhsuk-panel__body">We aim to update you by <strong>15 March 2025</strong>.</p>
+  </div>
+
+  <!-- ✅ Next Steps Information -->
+  <h2 class="nhsuk-heading-m">What happens next?</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>Your application is currently being reviewed by our recruitment team.</li>
+    <li>If successful, we will match you to an available role and contact you with further details.</li>
+    <li>If we need more information, we will get in touch.</li>
+  </ul>
+
+  <!-- ✅ Contact Information -->
+  <h2 class="nhsuk-heading-m">Need help?</h2>
+  <p>If you have any questions about your application, please contact us at <a href="mailto:volunteer-support@nhs.uk" class="nhsuk-link">volunteer-support@nhs.uk</a>.</p>
+
+{% endblock %}

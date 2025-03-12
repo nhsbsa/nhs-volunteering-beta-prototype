@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Withdraw Your Volunteer Application{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer/v2/application-tracker" class="nhsuk-back-link">Back to Application Tracker</a>
+
+  <h1 class="nhsuk-heading-xl">Withdraw your volunteer application</h1>
+
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">Are you sure you want to withdraw your application?</h2>
+    <p>Withdrawing your application for the <strong>Ward Support Volunteer</strong> role means you will no longer be considered for this opportunity.</p>
+    <p>If you withdraw, you will need to submit a new application if you decide to apply again in the future.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>If you are unsure, you can return to your <a href="/design-spike/volunteer/v2/application-tracker" class="nhsuk-link">application status page</a>.</li>
+    <li>If you need help, please <a href="mailto:volunteering-support@nhs.uk" class="nhsuk-link">contact us</a>.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/volunteer/v2/withdraw-success" class="nhsuk-button nhsuk-button--red">Yes, Withdraw Application</a>
+    <a href="/design-spike/volunteer/v2/application-tracker" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </div>
+
+{% endblock %}

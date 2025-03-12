@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Track Your Volunteer Application{% endblock %}
+
+{% block content %}
+  <a href="/design-spike" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">Track your volunteer application</h1>
+
+  <p class="nhsuk-body-l">Below is the progress of your volunteer application.</p>
+
+  <h2 class="nhsuk-heading-m">Application Details</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Reference Number</dt>
+      <dd class="nhsuk-summary-list__value">VOL-12345</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Volunteer Role</dt>
+      <dd class="nhsuk-summary-list__value">Ward Support Volunteer</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Application Status</dt>
+      <dd class="nhsuk-summary-list__value">
+        <strong class="nhsuk-tag nhsuk-tag--blue">Under Review</strong>
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Submitted On</dt>
+      <dd class="nhsuk-summary-list__value">20 Feb 2025</dd>
+    </div>
+  </dl>
+
+  <h2 class="nhsuk-heading-m">Onboarding Progress</h2>
+  <ol class="nhsuk-list nhsuk-list--number">
+    <li class="nhsuk-u-font-weight-bold">
+      Application Submitted - <span class="nhsuk-tag nhsuk-tag--green">Completed</span>
+    </li>
+    <li class="nhsuk-u-font-weight-bold">
+      Application Under Review - <span class="nhsuk-tag nhsuk-tag--blue">In Progress</span>
+    </li>
+    <li>
+      DBS Check - <span class="nhsuk-tag nhsuk-tag--grey">Not Started</span>
+    </li>
+    <li>
+      References - <span class="nhsuk-tag nhsuk-tag--orange">Pending</span>
+    </li>
+    <li>
+      Application Approved - <span class="nhsuk-tag nhsuk-tag--grey">Not Yet</span>
+    </li>
+  </ol>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <p>Your application is being reviewed. We will contact you within 5 working days.</p>
+
+  <div class="nhsuk-inset-text">
+    <p>If it has been longer than expected and you would like an update, you can request one below.</p>
+  </div>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/volunteer/v2/request-update" class="nhsuk-button nhsuk-button--secondary">Request an Update</a>
+    <a href="/design-spike/volunteer/v2/withdraw-confirmation" class="nhsuk-button nhsuk-button--secondary nhsuk-button--red">Withdraw Application</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Manage Role - Ward Support Volunteer{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
+
+  <h1 class="nhsuk-heading-xl">Manage role - Ward support volunteer</h1>
+
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Created On</dt>
+      <dd class="nhsuk-summary-list__value">01 Mar 2025</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Closing Date</dt>
+      <dd class="nhsuk-summary-list__value">31 Mar 2025</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Status</dt>
+      <dd class="nhsuk-summary-list__value">
+        <select class="nhsuk-select" id="role-status" name="role-status">
+          <option value="live" selected>Live</option>
+          <option value="closed">Closed</option>
+        </select>
+      </dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Role description</h2>
+  <p>Assist ward staff with non-clinical tasks, support patients, and improve overall patient experience.</p>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/recruiter-v2/edit-role" class="nhsuk-button">Edit role</a>
+    <a href="/listings/1/close" class="nhsuk-button nhsuk-button--secondary">Close role</a>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Applications received (25)</h2>
+
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Application Ref</th>
+        <th>Application Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>REF-12345</strong></td>
+        <td>20 Mar 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
+        <td>
+          <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">View</a> | 
+          <a href="#" class="nhsuk-link">Shortlist</a> | 
+          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>REF-67890</strong></td>
+        <td>19 Mar 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--green">Shortlisted</span></td>
+        <td>
+          <a href="#" class="nhsuk-link">View</a> | 
+          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

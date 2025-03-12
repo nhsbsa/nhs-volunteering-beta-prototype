@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Verify Your Identity{% endblock %}
+
+{% block content %}
+  <!-- <a href="/design-spike/index" class="nhsuk-back-link">Back to Home</a> -->
+
+  <h1 class="nhsuk-heading-xl">Verify your identity</h1>
+
+  <p>To access your application, enter your email address to receive a one-time passcode (OTP).</p>
+
+  <form method="post" action="/design-spike/send-otp">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="email">Email address</label>
+      <input class="nhsuk-input" id="email" name="email" type="email" required>
+    </div>
+    <a href="/design-spike/volunteer/v3/mock-otp-email" class="nhsuk-button">Send OTP</a>
+  </form>
+
+  <p>You’ll receive an email or text message with your OTP. Enter it on the next page.</p>
+{% endblock %}

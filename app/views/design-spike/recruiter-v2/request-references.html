@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Request References{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/volunteer-profile-new" class="nhsuk-back-link">Back to Volunteer profile</a>
+
+  <h1 class="nhsuk-heading-xl">Request references</h1>
+
+  <p>All volunteers must provide two references. Please enter the referee details below and copy the email template to send via your email client.</p>
+
+  <form id="reference-form">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="referee-name">Referee name</label>
+      <input class="nhsuk-input" id="referee-name" name="referee-name" type="text" required>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="referee-email">Referee email</label>
+      <input class="nhsuk-input" id="referee-email" name="referee-email" type="email" required>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="referee-relationship">Relationship to volunteer</label>
+      <select class="nhsuk-select" id="referee-relationship" name="referee-relationship">
+        <option value="manager">Previous manager</option>
+        <option value="colleague">Colleague</option>
+        <option value="teacher">Teacher/Tutor</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="email-template">Select an email template:</label>
+      <select class="nhsuk-select" id="email-template" name="email-template" onchange="updateEmailPreview()">
+        <option value="standard" selected>Standard request</option>
+        <option value="urgent">Urgent follow-Up</option>
+        <option value="reminder">Gentle reminder</option>
+      </select>
+    </div>
+  </form>
+
+  <h2 class="nhsuk-heading-m">Email preview</h2>
+  <div class="nhsuk-card nhsuk-u-padding-3 nhsuk-u-background-color-light-grey" id="email-preview">
+    <p><strong>Subject:</strong> Reference Request for Volunteer Role</p>
+    <p>Dear [Referee Name],</p>
+    <p>[Volunteer Name] has listed you as a referee for their application to become a volunteer at [Organisation Name].</p>
+    <p>We would appreciate it if you could complete the attached reference form and return it to us at your earliest convenience.</p>
+    <p>Thank you for your time and support.</p>
+    <p>Best regards,<br>Recruitment Team</p>
+  </div>
+
+  <textarea id="email-text" class="nhsuk-textarea nhsuk-u-visually-hidden"></textarea>
+
+  <button class="nhsuk-button nhsuk-button--secondary" onclick="copyEmail()">Copy email</button>
+  <button class="nhsuk-button" onclick="confirmRequest()">Confirm & update status</button>
+  <a href="/design-spike/volunteer-profile-new" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+
+  <script>
+    function updateEmailPreview() {
+      let template = document.getElementById("email-template").value;
+      let preview = document.getElementById("email-preview");
+      let emailText = document.getElementById("email-text");
+      let name = document.getElementById("referee-name").value || "[Referee Name]";
+      let relationship = document.getElementById("referee-relationship").value || "the volunteer";
+      let volunteerName = "John Doe"; // Dynamically insert the volunteer’s name
+      let orgName = "NHS Trust"; // Dynamically insert organisation name
+
+      let emailTemplates = {
+        "standard": `
+        <p><strong>Subject:</strong> Reference Request for Volunteer Role</p>
+        <p>Dear ${name},</p>
+        <p>${volunteerName} has listed you as a referee for their application to become a volunteer at ${orgName}.</p>
+        <p>We would appreciate it if you could complete the attached reference form and return it to us at your earliest convenience.</p>
+        <p>Thank you for your time and support.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "urgent": `
+        <p><strong>Subject:</strong> URGENT: Reference Request for Volunteer Role</p>
+        <p>Dear ${name},</p>
+        <p>We urgently require a reference for ${volunteerName} in relation to their volunteer application at ${orgName}.</p>
+        <p>Please complete the attached reference form and return it as soon as possible.</p>
+        <p>Thank you for your assistance.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "reminder": `
+        <p><strong>Subject:</strong> Reminder: Reference Request for Volunteer Role</p>
+        <p>Dear ${name},</p>
+        <p>This is a friendly reminder that we are waiting for your reference for ${volunteerName}’s application to volunteer at ${orgName}.</p>
+        <p>We would greatly appreciate it if you could complete the attached reference form at your earliest convenience.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `
+      };
+
+      preview.innerHTML = emailTemplates[template];
+      emailText.value = emailTemplates[template].replace(/<\/?p>/g, "").replace(/<br>/g, "\n");
+    }
+
+    function copyEmail() {
+      let emailText = document.getElementById("email-text");
+      emailText.select();
+      document.execCommand("copy");
+      alert("Email copied to clipboard! Paste it into your email client.");
+    }
+
+    function confirmRequest() {
+      alert("Reference request sent! The status will now be updated to 'Requested'.");
+      window.location.href = "/design-spike/reference-requested";
+    }
+  </script>
+
+{% endblock %}

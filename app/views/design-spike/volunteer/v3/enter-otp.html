@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Enter Your OTP Code{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/verify-identity" class="nhsuk-back-link">Back</a>
+
+  <h1 class="nhsuk-heading-xl">Enter your One-Time Passcode</h1>
+
+  <p>We’ve sent a 6-digit code to your email or phone. Enter it below to verify your identity.</p>
+
+  <form method="post" action="/design-spike/verify-otp">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="otp">One-Time Passcode (OTP)</label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="otp" name="otp" type="text" maxlength="6" required>
+    </div>
+    <a href="/design-spike/volunteer/v3/application-tracker" class="nhsuk-button">Verify</a>
+  </form>
+
+  <p>Didn't receive a code? <a href="/design-spike/verify-identity">Request a new OTP</a>.</p>
+{% endblock %}

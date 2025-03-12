@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Candidate Shortlisted{% endblock %}
+
+{% block content %}
+  <!-- <a href="/design-spike/recruiter-dashboard" class="nhsuk-back-link">Back to Recruiter Dashboard</a> -->
+
+  <div class="nhsuk-panel nhsuk-panel--confirmation">
+    <h1 class="nhsuk-panel__title">Candidate shortlisted</h1>
+    <p class="nhsuk-body">John Doe has been successfully shortlisted for the Ward Volunteer role.</p>
+  </div>
+
+  <p>The application status has been updated to <strong>Shortlisted</strong>. You can now track shortlisted candidates in the recruiter dashboard.</p>
+
+  <a href="/design-spike/recruiter-v2/shortlist-management" class="nhsuk-button">Return to dashboard</a>
+
+{% endblock %}

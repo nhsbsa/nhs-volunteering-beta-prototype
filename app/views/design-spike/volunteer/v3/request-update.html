@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Request an Update{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/application-tracker" class="nhsuk-back-link">Back to Application Tracker</a>
+
+  <h1 class="nhsuk-heading-xl">Request an Update</h1>
+
+  <p>If you haven’t heard back about your application, you can email the recruitment team directly.</p>
+
+  <h2 class="nhsuk-heading-m">Step 1: Copy This Email</h2>
+
+  <div class="nhsuk-card nhsuk-u-padding-4 nhsuk-u-background-color-light-grey">
+    <p><strong>To:</strong> <a href="mailto:recruitment@nhs.uk">recruitment@nhs.uk</a></p>
+    <p><strong>Subject:</strong> Volunteer Application Update Request – John Doe</p>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+    <p>Dear Recruitment Team,</p>
+
+    <p>I recently applied for the <strong>Ward Volunteer</strong> role on <strong>10 April 2025</strong> and would like to check the status of my application.</p>
+
+    <p>Could you please provide an update on my application progress?</p>
+
+    <p>Thank you for your time.</p>
+
+    <p>Best regards,<br>John Doe<br><a href="mailto:johndoe@email.com">johndoe@email.com</a></p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Step 2: Open Your Email</h2>
+  <p>Click below to open your email app and paste the message.</p>
+
+  <a href="mailto:recruitment@nhs.uk?subject=Volunteer%20Application%20Update%20Request%20-%20John%20Doe&body=Dear%20Recruitment%20Team,%0D%0A%0D%0AI%20recently%20applied%20for%20the%20Ward%20Volunteer%20role%20on%2010%20April%202025%20and%20would%20like%20to%20check%20the%20status%20of%20my%20application.%0D%0A%0D%0ACould%20you%20please%20provide%20an%20update%20on%20my%20application%20progress?%0D%0A%0D%0AThank%20you%20for%20your%20time.%0D%0A%0D%0ABest%20regards,%0D%0AJohn%20Doe" 
+     class="nhsuk-button nhsuk-button--secondary">Open Email App</a>
+
+  <p>If the button doesn't work, open your email manually and paste the text.</p>
+
+{% endblock %}

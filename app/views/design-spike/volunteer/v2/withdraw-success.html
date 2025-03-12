@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Application Withdrawn{% endblock %}
+
+{% block content %}
+  <a href="/design-spike" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">Your volunteer application has been withdrawn</h1>
+
+  <div class="nhsuk-panel nhsuk-panel--confirmation">
+    <h2 class="nhsuk-panel__title">You have successfully withdrawn your application.</h2>
+  </div>
+
+  <p class="nhsuk-body-l">
+    Your application for the <strong>Ward Support Volunteer</strong> role has been withdrawn.  
+  </p>
+
+  <h2 class="nhsuk-heading-m">What happens next?</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>If you change your mind, you will need to submit a new application.</li>
+    <li>You can explore <a href="#" class="nhsuk-link">other volunteering opportunities</a>.</li>
+    <li>If you need assistance, please <a href="mailto:volunteering-support@nhs.uk" class="nhsuk-link">contact us</a>.</li>
+  </ul>
+
+  <a href="/design-spike" class="nhsuk-button">Return to Home</a>
+
+{% endblock %}

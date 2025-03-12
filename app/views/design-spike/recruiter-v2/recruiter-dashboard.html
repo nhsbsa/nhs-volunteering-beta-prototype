@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+  <h1 class="nhsuk-heading-xl">Recruiter dashboard</h1>
+
+  <p class="nhsuk-body-l">Manage volunteer opportunities, applications, and shortlisted candidates.</p>
+
+  <!-- 📌 Key Management Sections -->
+  <div class="nhsuk-grid-row">
+    
+    <!-- 📌 Applications Management -->
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">New applications</h2>
+          <p>You have <strong>5</strong> new applications awaiting review.</p>
+          <a href="/design-spike/recruiter-v2/applications-management" class="nhsuk-button nhsuk-button--secondary">View applications</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📌 Shortlist Management -->
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Shortlisted candidates</h2>
+          <p><strong>5</strong> candidates have been shortlisted for further review.</p>
+          <a href="/design-spike/recruiter-v2/shortlist-management" class="nhsuk-button nhsuk-button--secondary">Manage shortlist</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📌 Current Roles Management -->
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-heading-m">Manage volunteer roles</h2>
+          <p>View and manage all live and closed volunteer roles.</p>
+          <a href="/design-spike/manage-roles" class="nhsuk-button nhsuk-button--secondary">Manage roles</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 📌 List of Live Volunteer Roles -->
+  <h2 class="nhsuk-heading-l">Current volunteer roles</h2>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <table class="nhsuk-table">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Created on</th>
+            <th>Status</th>
+            <th>Applications</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ward volunteer</td>
+            <td>10 March 2025</td>
+            <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
+            <td>12</td>
+            <td>
+              <!-- <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-button nhsuk-button--secondary nhsuk-button--small">Manage role</a> -->
+              <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-link">Manage role</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Hospital reception volunteer</td>
+            <td>5 March 2025</td>
+            <td><span class="nhsuk-tag nhsuk-tag--grey">Closed</span></td>
+            <td>8</td>
+            <td>
+              <a href="#" class="nhsuk-link">Manage role</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

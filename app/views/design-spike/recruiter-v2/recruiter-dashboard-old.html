@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+  <h1 class="nhsuk-heading-xl">Recruiter Dashboard</h1>
+  <p class="nhsuk-body-l">Manage current volunteer roles and track new applications.</p>
+
+  <h2 class="nhsuk-heading-m">Current Roles</h2>
+  <p>These are the roles currently being managed.</p>
+
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Created On</th>
+        <th>Closing Date</th>
+        <th>Days Left</th>
+        <th>Status</th>
+        <th>Applications</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ward Support Volunteer</td>
+        <td>01 Mar 2025</td>
+        <td>31 Mar 2025</td>
+        <td>10 days</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
+        <td>25</td>
+        <td>
+          <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-link">Manage Role</a> | 
+          <a href="/design-spike/recruiter-v2/edit-role" class="nhsuk-link">Edit</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Community Support Volunteer</td>
+        <td>05 Mar 2025</td>
+        <td>05 Apr 2025</td>
+        <td>15 days</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
+        <td>32</td>
+        <td>
+          <a href="/listings/3" class="nhsuk-link">Manage Role</a> | 
+          <a href="/listings/3/edit" class="nhsuk-link">Edit</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Admin Volunteer</td>
+        <td>10 Jan 2025</td>
+        <td>20 Mar 2025</td>
+        <td>Closed</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Closed</span></td>
+        <td>12</td>
+        <td>
+          <a href="/listings/5" class="nhsuk-link">View Applications</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- New Applications Section (Grouped by Role) -->
+  <h2 class="nhsuk-heading-m">New Applications by Role</h2>
+  <p>These applications have been received in the last 7 days and are linked to current roles.</p>
+
+  <h3 class="nhsuk-heading-s">Ward Support Volunteer</h3>
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Application Ref</th>
+        <th>Application Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>REF-12345</strong></td>
+        <td>20 Mar 2025</td>
+        <td><a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">Review Application</a></td>
+      </tr>
+      <tr>
+        <td><strong>REF-67890</strong></td>
+        <td>19 Mar 2025</td>
+        <td><a href="/applications/2" class="nhsuk-link">Review Application</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="nhsuk-heading-s">Community Support Volunteer</h3>
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Application Ref</th>
+        <th>Application Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>REF-24680</strong></td>
+        <td>18 Mar 2025</td>
+        <td><a href="/applications/3" class="nhsuk-link">Review Application</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

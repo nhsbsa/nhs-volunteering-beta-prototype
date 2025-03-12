@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Edit Role - Ward Support Volunteer{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-back-link">Back to manage role</a>
+
+  <h1 class="nhsuk-heading-xl">Edit role - Ward support volunteer</h1>
+
+  <form method="post" action="/design-spike/role-updated">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="role-title">Role title</label>
+      <input class="nhsuk-input" id="role-title" name="role-title" type="text" value="Ward support volunteer">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="role-description">Role description</label>
+      <textarea class="nhsuk-textarea" id="role-description" name="role-description" rows="5">
+Assist ward staff with non-clinical tasks, support patients, and improve overall patient experience.
+      </textarea>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="closing-date">Closing date</label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="closing-date" name="closing-date" type="date" value="2025-03-31">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="role-status">Role Status</label>
+      <select class="nhsuk-select" id="role-status" name="role-status">
+        <option value="live" selected>Live</option>
+        <option value="closed">Closed</option>
+      </select>
+    </div>
+
+    <div class="nhsuk-button-group">
+      <!-- <button class="nhsuk-button" type="submit">Save Changes</button> -->
+      <a href="/design-spike/recruiter-v2/confirm-role-status" class="nhsuk-button">Save changes</a>
+      <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+    </div>
+  </form>
+
+{% endblock %}

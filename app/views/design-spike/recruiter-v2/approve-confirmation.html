@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Application Approved{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-back-link">Back to Application</a>
+
+  <h1 class="nhsuk-heading-xl">Application approved</h1>
+
+  <div class="nhsuk-panel nhsuk-panel--confirmation">
+    <h2 class="nhsuk-panel__title">John Doe has been approved</h2>
+    <p class="nhsuk-body">The application for the <strong>Ward Support Volunteer</strong> role has been successfully approved.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Next steps</h2>
+
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>A volunteer profile has been created for John Doe.</li>
+    <li>Start the DBS and reference check process.</li>
+    <li>Assign required training modules.</li>
+    <li>Send an official welcome email to the volunteer.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/recruiter-v2/volunteer-profile-new" class="nhsuk-button">View volunteer profile</a>
+    <a href="/design-spike/recruiter-dashboard" class="nhsuk-button nhsuk-button--secondary">Return to dashboard</a>
+  </div>
+
+{% endblock %}

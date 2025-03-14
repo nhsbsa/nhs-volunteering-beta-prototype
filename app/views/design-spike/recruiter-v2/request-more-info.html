@@ -3,7 +3,7 @@
 {% block pageTitle %}Request More Information{% endblock %}
 
 {% block content %}
-  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-back-link">Back to Application Review</a>
+  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-back-link">Back to application review</a>
 
   <h1 class="nhsuk-heading-xl">Request more information</h1>
 
@@ -46,18 +46,18 @@
     </div>
 
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="email-template">Select an Email Template:</label>
+      <label class="nhsuk-label" for="email-template">Select an email template:</label>
       <select class="nhsuk-select" id="email-template" name="email-template" onchange="updateEmailPreview()">
         <option value="standard" selected>Standard Request</option>
-        <option value="urgent">Urgent Follow-Up</option>
-        <option value="reminder">Gentle Reminder</option>
+        <option value="urgent">Urgent follow-up</option>
+        <option value="reminder">Gentle reminder</option>
       </select>
     </div>
   </form>
 
-  <h2 class="nhsuk-heading-m">Email Preview</h2>
+  <h2 class="nhsuk-heading-m">Email preview</h2>
   <div class="nhsuk-card nhsuk-u-padding-3 nhsuk-u-background-color-light-grey" id="email-preview">
-    <p><strong>Subject:</strong> Request for More Information</p>
+    <p><strong>Subject:</strong> Request for more information</p>
     <p>Dear John Doe,</p>
     <p>Thank you for your application to volunteer at NHS Trust.</p>
     <p>Before we can proceed with your application, we require some additional information. Please provide more details on your relevant experience.</p>
@@ -68,8 +68,8 @@
 
   <textarea id="email-text" class="nhsuk-textarea nhsuk-u-visually-hidden"></textarea>
 
-  <button class="nhsuk-button nhsuk-button--secondary" onclick="copyEmail()">Copy Email</button>
-  <button class="nhsuk-button" onclick="confirmRequest()">Confirm & Update Status</button>
+  <button class="nhsuk-button nhsuk-button--secondary" onclick="copyEmail()">Copy email</button>
+  <button class="nhsuk-button" onclick="confirmRequest()">Confirm & update status</button>
   <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
 
   <script>

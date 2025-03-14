@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}New Applications Notification{% endblock %}
+
+{% block content %}
+  <h1 class="nhsuk-heading-xl">Simulated email</h1>
+
+  <p>This is a preview of the email a recruiter receives when new applications arrive.</p>
+
+  <!-- 📌 Email Frame -->
+  <div class="nhsuk-card nhsuk-u-padding-4 nhsuk-u-background-color-light-grey">
+    <h2 class="nhsuk-heading-m">From: <span class="nhsuk-u-font-weight-normal">no-reply@nhsvolunteers.uk</span></h2>
+    <h2 class="nhsuk-heading-m">Subject: New applications for Walk and Talk Volunteer</h2>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+    <p>Dear <strong>Jane Doe</strong>,</p>
+
+    <p><strong>Notification of new applications</strong></p>
+
+    <p><strong>Role:</strong> Walk and Talk Volunteer</p>
+    <p><strong>Reference:</strong> V6PN-OP-90</p>
+    <p><strong>Location:</strong> Airedale General Hospital</p>
+    <p><strong>Number of applications:</strong> 3</p>
+
+    <div class="nhsuk-panel nhsuk-panel--confirmation">
+      <h2 class="nhsuk-panel__title">Review new applications</h2>
+      <p><a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-button">Sign in to your recruiter dashboard</a></p>
+    </div>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+    <p>Regards,</p>
+    <p><strong>NHS Volunteering team</strong></p>
+  </div>
+
+{% endblock %}

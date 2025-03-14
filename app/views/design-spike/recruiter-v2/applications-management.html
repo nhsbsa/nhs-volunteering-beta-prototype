@@ -5,7 +5,7 @@
 {% block content %}
   <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
 
-  <h1 class="nhsuk-heading-xl">Manage Applications</h1>
+  <h1 class="nhsuk-heading-xl">Manage applications</h1>
 
   <p>Review applications, filter by role or status, and take bulk actions.</p>
 
@@ -13,9 +13,9 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="filter-role">Filter by Role:</label>
+        <label class="nhsuk-label" for="filter-role">Filter by role:</label>
         <select class="nhsuk-select" id="filter-role" onchange="filterApplications()">
-          <option value="all" selected>All Roles</option>
+          <option value="all" selected>All roles</option>
           <option value="ward-volunteer">Ward Volunteer</option>
           <option value="hospital-reception">Hospital Reception Volunteer</option>
         </select>
@@ -24,7 +24,7 @@
 
     <div class="nhsuk-grid-column-one-third">
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="filter-status">Filter by Status:</label>
+        <label class="nhsuk-label" for="filter-status">Filter by status:</label>
         <select class="nhsuk-select" id="filter-status" onchange="filterApplications()">
           <option value="all" selected>All Statuses</option>
           <option value="new">New</option>
@@ -38,15 +38,15 @@
 
     <div class="nhsuk-grid-column-one-third">
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="bulk-action">Bulk Actions:</label>
+        <label class="nhsuk-label" for="bulk-action">Bulk actions:</label>
         <select class="nhsuk-select" id="bulk-action">
-          <option value="shortlist">Shortlist Selected</option>
-          <option value="approve">Approve Selected</option>
-          <option value="reject">Reject Selected</option>
-          <option value="request-info">Request More Info</option>
+          <option value="shortlist">Shortlist selected</option>
+          <option value="approve">Approve selected</option>
+          <option value="reject">Reject selected</option>
+          <option value="request-info">Request more info</option>
         </select>
       </div>
-      <button type="button" class="nhsuk-button" onclick="applyBulkAction()">Apply Action</button>
+      <button type="button" class="nhsuk-button" onclick="applyBulkAction()">Apply action</button>
     </div>
   </div>
 
@@ -55,9 +55,9 @@
     <thead>
       <tr>
         <th><input type="checkbox" id="select-all" onclick="toggleSelectAll()"></th>
-        <th>Applicant Name</th>
+        <th>Applicant name</th>
         <th>Role</th>
-        <th>Date Applied</th>
+        <th>Date applied</th>
         <th>Status</th>
         <th>Actions</th>
       </tr>
@@ -67,13 +67,13 @@
       <tr data-role="ward-volunteer" data-status="new">
         <td><input type="checkbox" class="applicant-checkbox"></td>
         <td>Jane Doe</td>
-        <td>Ward Volunteer</td>
+        <td>Walk and Talk volunteer</td>
         <td>10 April 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
         <td>
           <ul class="nhsuk-list">
-            <li><a href="#">Review</a></li>
-            <li><a href="#">Request More Info</a></li>
+            <li><a href="/design-spike/recruiter-v2/review-application">Review</a></li>
+            <li><a href="#">Request more info</a></li>
             <li><a href="#">Shortlist</a></li>
             <li><a href="#">Approve</a></li>
             <li><a href="#" class="nhsuk-link nhsuk-u-text-color-red">Reject</a></li>

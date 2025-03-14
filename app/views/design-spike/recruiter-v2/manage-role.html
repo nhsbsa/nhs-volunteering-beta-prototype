@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}Manage Role - Ward Support Volunteer{% endblock %}
+{% block pageTitle %}Manage Role - Walk and Talk Volunteer{% endblock %}
 
 {% block content %}
   <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
@@ -13,7 +13,7 @@
       <dd class="nhsuk-summary-list__value">01 Mar 2025</dd>
     </div>
     <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">Closing Date</dt>
+      <dt class="nhsuk-summary-list__key">Closing date</dt>
       <dd class="nhsuk-summary-list__value">31 Mar 2025</dd>
     </div>
     <div class="nhsuk-summary-list__row">
@@ -40,15 +40,17 @@
   <table class="nhsuk-table">
     <thead>
       <tr>
-        <th>Application Ref</th>
-        <th>Application Date</th>
+        <th>Applicant name</th>
+        <th>Reference</th>
+        <th>Date</th>
         <th>Status</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><strong>REF-12345</strong></td>
+        <td>Jane Doe</td>
+        <td>REF-12345</td>
         <td>20 Mar 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
         <td>
@@ -58,11 +60,23 @@
         </td>
       </tr>
       <tr>
-        <td><strong>REF-67890</strong></td>
+        <td>Jane Smith</td>
+        <td>REF-67890</td>
         <td>19 Mar 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--green">Shortlisted</span></td>
         <td>
           <a href="#" class="nhsuk-link">View</a> | 
+          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Ali Khan</td>
+        <td>REF-54321</td>
+        <td>18 Mar 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Under Review</span></td>
+        <td>
+          <a href="#" class="nhsuk-link">View</a> | 
+          <a href="#" class="nhsuk-link">Shortlist</a> | 
           <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a>
         </td>
       </tr>

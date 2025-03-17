@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Applications Management{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
+
+  <h1 class="nhsuk-heading-xl">Manage applications</h1>
+
+  <p>Review applications and take action.</p>
+
+  <!-- 📌 Filtering Section (All filters retained, but "New" is pre-selected) -->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="filter-role">Filter by role:</label>
+        <select class="nhsuk-select" id="filter-role">
+          <option value="all" selected>All Roles</option>
+          <option value="walk-talk">Walk and Talk Volunteer</option>
+          <option value="reception">Hospital Reception Volunteer</option>
+          <option value="ward">Ward Volunteer</option>
+        </select>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="filter-status">Filter by status:</label>
+        <select class="nhsuk-select" id="filter-status">
+          <option value="new" selected>New</option>
+          <option value="under-review">Under Review</option>
+          <option value="shortlisted">Shortlisted</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="filter-date">Filter by date applied:</label>
+        <input class="nhsuk-input nhsuk-u-width-one-half" id="filter-date" name="filter-date" type="date">
+      </div>
+    </div>
+  </div>
+
+  <!-- 📌 Applications Table (Only Showing 3 New Applications) -->
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Applicant name</th>
+        <th>Role</th>
+        <th>Date applied</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jane Doe</td>
+        <td>Walk and Talk Volunteer</td>
+        <td>10 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
+        <td><a href="/design-spike/recruiter-v2/review-application">Review</a></td>
+      </tr>
+      <tr>
+        <td>Ali Khan</td>
+        <td>Hospital Reception Volunteer</td>
+        <td>9 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
+        <td><a href="#">Review</a></td>
+      </tr>
+      <tr>
+        <td>Sophie Taylor</td>
+        <td>Ward Volunteer</td>
+        <td>8 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
+        <td><a href="#">Review</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

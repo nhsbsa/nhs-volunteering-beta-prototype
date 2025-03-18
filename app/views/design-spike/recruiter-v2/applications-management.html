@@ -50,83 +50,53 @@
     </div>
   </div>
 
-  <!-- 📌 Applications Table -->
-  <table class="nhsuk-table">
+  <!-- 📌 Applications Table with Sorting -->
+  <table class="nhsuk-table" id="applications-table">
     <thead>
       <tr>
         <th><input type="checkbox" id="select-all" onclick="toggleSelectAll()"></th>
-        <th>Applicant name</th>
-        <th>Role</th>
-        <th>Date applied</th>
-        <th>Status</th>
-        <th>Actions</th>
+        <th onclick="sortTable(0)" style="cursor: pointer;">Applicant Name <span id="arrow-0">▲</span></th>
+        <th onclick="sortTable(1)" style="cursor: pointer;">Role <span id="arrow-1">▲</span></th>
+        <th onclick="sortTable(2)" style="cursor: pointer;">Date Applied <span id="arrow-2">▲</span></th>
+        <th onclick="sortTable(3)" style="cursor: pointer;">Status <span id="arrow-3">▲</span></th>
       </tr>
     </thead>
-    <tbody id="applications-table">
+    <tbody>
       <!-- Sample Applications -->
       <tr data-role="ward-volunteer" data-status="new">
         <td><input type="checkbox" class="applicant-checkbox"></td>
-        <td>Jane Doe</td>
-        <td>Walk and Talk volunteer</td>
+        <td><a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">Jane Doe</a></td>
+        <td>Walk and Talk Volunteer</td>
         <td>10 April 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
-        <td>
-          <ul class="nhsuk-list">
-            <li><a href="/design-spike/recruiter-v2/review-application">Review</a></li>
-            <!-- <li><a href="#">Request more info</a></li>
-            <li><a href="#">Shortlist</a></li>
-            <li><a href="#">Approve</a></li>
-            <li><a href="#" class="nhsuk-link nhsuk-u-text-color-red">Reject</a></li> -->
-          </ul>
-        </td>
       </tr>
       <tr data-role="hospital-reception" data-status="reviewed">
         <td><input type="checkbox" class="applicant-checkbox"></td>
-        <td>John Smith</td>
+        <td><a href="#" class="nhsuk-link">John Smith</a></td>
         <td>Hospital Reception Volunteer</td>
         <td>8 April 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td>
-        <td>
-          <ul class="nhsuk-list">
-            <li><a href="#">View profile</a></li>
-            <!-- <li><a href="#">Shortlist</a></li>
-            <li><a href="#">Approve</a></li>
-            <li><a href="#" class="nhsuk-link nhsuk-u-text-color-red">Reject</a></li> -->
-          </ul>
-        </td>
       </tr>
       <tr data-role="ward-volunteer" data-status="shortlisted">
         <td><input type="checkbox" class="applicant-checkbox"></td>
-        <td>Emily Brown</td>
+        <td><a href="#" class="nhsuk-link">Emily Brown</a></td>
         <td>Ward Volunteer</td>
         <td>7 April 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--yellow">Shortlisted</span></td>
-        <td>
-          <ul class="nhsuk-list">
-            <li><a href="#">View profile</a></li>
-            <!-- <li><a href="#" class="nhsuk-link nhsuk-u-text-color-red">Reject</a></li> -->
-          </ul>
-        </td>
       </tr>
       <tr data-role="hospital-reception" data-status="approved">
         <td><input type="checkbox" class="applicant-checkbox"></td>
-        <td>Michael Lee</td>
+        <td><a href="#" class="nhsuk-link">Michael Lee</a></td>
         <td>Hospital Reception Volunteer</td>
         <td>5 April 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--green">Approved</span></td>
-        <td>
-          <ul class="nhsuk-list">
-            <li><a href="#">View profile</a></li>
-          </ul>
-        </td>
       </tr>
       <tr data-role="ward-volunteer" data-status="rejected">
         <td><input type="checkbox" class="applicant-checkbox"></td>
-        <td>Sophie Taylor</td>
+        <td><a href="#" class="nhsuk-link">Sophie Taylor</a></td>
         <td>Ward Volunteer</td>
         <td>3 April 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--red">Rejected</span></td>
-        <td>-</td>
       </tr>
     </tbody>
   </table>
@@ -160,7 +130,7 @@
     function filterApplications() {
       let selectedRole = document.getElementById('filter-role').value;
       let selectedStatus = document.getElementById('filter-status').value;
-      let rows = document.querySelectorAll('#applications-table tr');
+      let rows = document.querySelectorAll('#applications-table tbody tr');
 
       rows.forEach(row => {
         let roleMatch = (selectedRole === "all" || row.getAttribute('data-role') === selectedRole);
@@ -168,6 +138,22 @@
 
         row.style.display = (roleMatch && statusMatch) ? "" : "none";
       });
+    }
+
+    function sortTable(columnIndex) {
+      let table = document.getElementById("applications-table");
+      let rows = Array.from(table.rows).slice(1);
+      let currentArrow = document.getElementById("arrow-" + columnIndex);
+      let isAscending = currentArrow.innerText === "▲";
+
+      let sortedRows = rows.sort((rowA, rowB) => {
+        let cellA = rowA.cells[columnIndex].innerText.toLowerCase();
+        let cellB = rowB.cells[columnIndex].innerText.toLowerCase();
+        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      });
+
+      currentArrow.innerText = isAscending ? "▼" : "▲";
+      sortedRows.forEach(row => table.appendChild(row));
     }
   </script>
 

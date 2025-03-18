@@ -3,13 +3,14 @@
 {% block pageTitle %}Manage Role - Walk and Talk Volunteer{% endblock %}
 
 {% block content %}
-  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Go back</a>
 
-  <h1 class="nhsuk-heading-xl">Walk and Talk volunteer</h1>
+  <h1 class="nhsuk-heading-xl">Walk and Talk Volunteer</h1>
 
+  <!-- 📌 Role Details Section -->
   <div class="nhsuk-summary-list">
     <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">Created On</dt>
+      <dt class="nhsuk-summary-list__key">Date created</dt>
       <dd class="nhsuk-summary-list__value">01 Mar 2025</dd>
     </div>
     <div class="nhsuk-summary-list__row">
@@ -27,60 +28,70 @@
     </div>
   </div>
 
-  <h2 class="nhsuk-heading-m">Role description</h2>
-  <p>Assist ward staff with non-clinical tasks, support patients, and improve overall patient experience.</p>
-
+  <h2 class="nhsuk-heading-m">Role actions</h2>
   <div class="nhsuk-button-group">
-    <a href="/design-spike/recruiter-v2/edit-role" class="nhsuk-button">Edit role</a>
-    <a href="/listings/1/close" class="nhsuk-button nhsuk-button--secondary">Close role</a>
+    <a href="/design-spike/recruiter-v2/edit-role" class="nhsuk-link">Edit live listing</a><br>
+    <a href="/design-spike/recruiter-v2/view-listing" target="_blank" class="nhsuk-link">View live listing (opens in a new tab)</a><br>
+    <a href="/design-spike/recruiter-v2/reuse-listing" class="nhsuk-link">Reuse this listing</a><br>
+    <a href="/design-spike/recruiter-v2/close-listing" class="nhsuk-link nhsuk-link--no-visited-state">Close this listing</a>
   </div>
+  <br>
+  <h2 class="nhsuk-heading-m">Applications Received (3)</h2>
 
-  <h2 class="nhsuk-heading-m">Applications received (3)</h2>
-
-  <table class="nhsuk-table">
+  <!-- 📌 Applications Table (With Sorting & Clickable Names) -->
+  <table class="nhsuk-table" id="applications-table">
     <thead>
       <tr>
-        <th>Applicant name</th>
-        <th>Reference</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Actions</th>
+        <th onclick="sortTable(0)" style="cursor: pointer;">Applicant Name <span id="arrow-0">▲</span></th>
+        <th onclick="sortTable(1)" style="cursor: pointer;">Reference <span id="arrow-1">▲</span></th>
+        <th onclick="sortTable(2)" style="cursor: pointer;">Date Applied <span id="arrow-2">▲</span></th>
+        <th onclick="sortTable(3)" style="cursor: pointer;">Status <span id="arrow-3">▲</span></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Jane Doe</td>
+        <td><a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">Jane Doe</a></td>
         <td>REF-12345</td>
         <td>20 Mar 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
-        <td>
-          <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">Review</a>
-          <!-- <a href="#" class="nhsuk-link">Shortlist</a> | 
-          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a> -->
-        </td>
       </tr>
       <tr>
-        <td>Jane Smith</td>
+        <td><a href="#" class="nhsuk-link">Jane Smith</a></td>
         <td>REF-67890</td>
         <td>19 Mar 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--green">Shortlisted</span></td>
-        <td>
-          <a href="#" class="nhsuk-link">View profile</a>
-          <!-- <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a> -->
-        </td>
       </tr>
       <tr>
-        <td>Ali Khan</td>
+        <td><a href="#" class="nhsuk-link">Ali Khan</a></td>
         <td>REF-54321</td>
         <td>18 Mar 2025</td>
         <td><span class="nhsuk-tag nhsuk-tag--grey">Under Review</span></td>
-        <td>
-          <a href="#" class="nhsuk-link">View profile</a>
-          <!-- <a href="#" class="nhsuk-link">Shortlist</a> | 
-          <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Reject</a> -->
-        </td>
       </tr>
     </tbody>
   </table>
+
+  <script>
+    function sortTable(columnIndex) {
+      var table = document.getElementById("applications-table");
+      var rows = Array.from(table.rows).slice(1);
+      var currentArrow = document.getElementById("arrow-" + columnIndex);
+      var isAscending = currentArrow.innerText === "▲";
+
+      var sortedRows = rows.sort((rowA, rowB) => {
+        var cellA = rowA.cells[columnIndex].innerText.toLowerCase();
+        var cellB = rowB.cells[columnIndex].innerText.toLowerCase();
+        
+        if (!isNaN(cellA) && !isNaN(cellB)) {
+          return isAscending ? Number(cellA) - Number(cellB) : Number(cellB) - Number(cellA);
+        }
+        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      });
+
+      // Toggle sorting direction
+      currentArrow.innerText = isAscending ? "▼" : "▲";
+
+      sortedRows.forEach(row => table.appendChild(row));
+    }
+  </script>
 
 {% endblock %}

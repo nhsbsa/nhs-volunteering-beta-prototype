@@ -7,6 +7,14 @@
 
   <p class="nhsuk-body-l">Manage volunteer opportunities, applications, and shortlisted candidates.</p>
 
+<!-- 📌 Simplified Organisation Details Section -->
+<div class="nhsuk-inset-text">
+  <p><strong>Your organisation:</strong> South East NHS Community Volunteers</p>
+  <p><a href="#" class="nhsuk-link">View organisation details</a></p>
+</div>
+
+
+
   <!-- 📌 Key Management Sections -->
   <div class="nhsuk-grid-row">
     
@@ -46,43 +54,78 @@
   </div>
 
   <!-- 📌 List of Live Volunteer Roles -->
-  <h2 class="nhsuk-heading-l">Current volunteer roles</h2>
+  <h2 class="nhsuk-heading-l">Your listings</h2>
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-      <table class="nhsuk-table">
+      <table class="nhsuk-table" id="roles-table">
         <thead>
           <tr>
-            <th>Role</th>
-            <th>Date created</th>
-            <th>Status</th>
-            <th>Applications</th>
-            <th>Actions</th>
+            <th onclick="sortTable(0)" style="cursor: pointer;">Title <span id="arrow-0">▲</span></th>
+            <th onclick="sortTable(1)" style="cursor: pointer;">Date created <span id="arrow-1">▲</span></th>
+            <th onclick="sortTable(2)" style="cursor: pointer;">Closing date <span id="arrow-2">▲</span></th>
+            <th onclick="sortTable(3)" style="cursor: pointer;">Applications received <span id="arrow-3">▲</span></th>
+            <th onclick="sortTable(4)" style="cursor: pointer;">Status <span id="arrow-4">▲</span></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Walk and Talk Volunteer</td>
-            <td>10 March 2025</td>
-            <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
+            <td><a href="/design-spike/recruiter-v2/manage-role">Walk and Talk Volunteer</a><br><span class="nhsuk-body-s">VCBSA-WTV-001</span></td>
+            <td>19 March 2025</td>
+            <td>30 April 2025</td>
             <td>3</td>
-            <td>
-              <!-- <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-button nhsuk-button--secondary nhsuk-button--small">Manage role</a> -->
-              <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-link">Manage role</a>
-            </td>
+            <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
           </tr>
           <tr>
-            <td>Hospital reception volunteer</td>
-            <td>5 March 2025</td>
-            <td><span class="nhsuk-tag nhsuk-tag--grey">Closed</span></td>
-            <td>8</td>
-            <td>
-              <a href="#" class="nhsuk-link">Manage role</a>
-            </td>
+            <td><a href="#">Hospital Reception Volunteer</a><br><span class="nhsuk-body-s">VCBSA-HRV-002</span></td>
+            <td>18 March 2025</td>
+            <td>25 April 2025</td>
+            <td>3</td>
+            <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
           </tr>
+          <tr>
+            <td><a href="#">Ward Support Volunteer</a><br><span class="nhsuk-body-s">VCBSA-WSV-003</span></td>
+            <td>15 March 2025</td>
+            <td>20 April 2025</td>
+            <td>7</td>
+            <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
+          </tr>
+          <tr>
+            <td><a href="#">Check-in and Escort Volunteer</a><br><span class="nhsuk-body-s">VCBSA-CEV-004</span></td>
+            <td>12 March 2025</td>
+            <td>15 April 2025</td>
+            <td>2</td>
+            <td><span class="nhsuk-tag nhsuk-tag--grey">Closed</span></td>
+          </tr>
+
         </tbody>
       </table>
     </div>
   </div>
+
+  <script>
+    function sortTable(columnIndex) {
+      var table = document.getElementById("roles-table");
+      var rows = Array.from(table.rows).slice(1);
+      var currentArrow = document.getElementById("arrow-" + columnIndex);
+      var isAscending = currentArrow.innerText === "▲";
+
+      var sortedRows = rows.sort((rowA, rowB) => {
+        var cellA = rowA.cells[columnIndex].innerText.toLowerCase();
+        var cellB = rowB.cells[columnIndex].innerText.toLowerCase();
+        
+        if (!isNaN(cellA) && !isNaN(cellB)) {
+          return isAscending ? Number(cellA) - Number(cellB) : Number(cellB) - Number(cellA);
+        }
+        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      });
+
+      // Toggle sorting direction
+      currentArrow.innerText = isAscending ? "▼" : "▲";
+
+      sortedRows.forEach(row => table.appendChild(row));
+    }
+  </script>
+  
 
 {% endblock %}

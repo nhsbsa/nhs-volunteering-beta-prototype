@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}Track Your Volunteer Application{% endblock %}
+{% block pageTitle %}Application Tracker{% endblock %}
 
 {% block content %}
-  <!-- <a href="/design-spike/index" class="nhsuk-back-link">Back to Home</a> -->
+  <!-- <a href="/design-spike/volunteer-dashboard" class="nhsuk-back-link">Go back</a> -->
 
   <h1 class="nhsuk-heading-xl">Track your application</h1>
 
-  <p>Check the status of your volunteer application for <strong>Ward volunteer</strong>.</p>
+  <p>Your application is currently under review. We will notify you by email when there are any updates.</p>
 
   <!-- 📌 Progress Bar -->
   <div class="nhsuk-progress-bar">
@@ -15,12 +15,6 @@
       <div class="nhsuk-progress-bar__fill" style="width: 30%;"></div>
     </div>
     <p class="nhsuk-progress-bar__label">30% Complete</p>
-  </div>
-
-  <!-- Current Application Status -->
-  <div class="nhsuk-panel nhsuk-panel--confirmation">
-    <h2 class="nhsuk-panel__title">Your application is currently <strong>Under review</strong></h2>
-    <p class="nhsuk-body">We are reviewing your application. You will receive an update via email.</p>
   </div>
 
   <!-- 📌 Application Progress Cards -->
@@ -48,7 +42,7 @@
     </div>
 
     <div class="nhsuk-grid-column-one-third">
-      <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card nhsuk-card--pending" tabindex="0" role="button" aria-label="Shortlisted - Pending. More details unavailable.">
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-heading-m">Shortlisted</h3>
           <p>If shortlisted, you’ll receive an email with next steps.</p>
@@ -60,7 +54,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-one-third">
-      <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card nhsuk-card--pending" tabindex="0" role="button" aria-label="Approved - Pending. More details unavailable.">
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-heading-m">Approved</h3>
           <p>If approved, you’ll begin the onboarding process.</p>
@@ -70,7 +64,7 @@
     </div>
 
     <div class="nhsuk-grid-column-one-third">
-      <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card nhsuk-card--pending" tabindex="0" role="button" aria-label="Onboarding - Pending. More details unavailable.">
         <div class="nhsuk-card__content">
           <h3 class="nhsuk-heading-m">Onboarding</h3>
           <p>Complete your DBS check, health screening, and training.</p>
@@ -80,14 +74,9 @@
     </div>
   </div>
 
-  <!-- 📌 Actions -->
-  <h2 class="nhsuk-heading-m">Need an update?</h2>
-  <p>If you haven’t received an update, you can request one.</p>
-  <a href="/design-spike/volunteer/v3/request-update" class="nhsuk-button nhsuk-button--secondary">Request an update</a>
-
-  <h2 class="nhsuk-heading-m">Withdraw application</h2>
-  <p>If you no longer wish to proceed, you can withdraw your application.</p>
-  <a href="#" class="nhsuk-button nhsuk-button--red">Withdraw application</a>
+  <!-- 📌 What Happens Next Section -->
+  <h2 class="nhsuk-heading-m">What happens next?</h2>
+  <p>You will receive an email update when your application progresses. If you have any questions, you can <a href="mailto:volunteering@nhs.uk" class="nhsuk-link">contact the volunteering team</a>.</p>
 
   <style>
     /* 📌 NHS Progress Bar Styling */
@@ -112,6 +101,20 @@
       text-align: center;
       font-weight: bold;
       margin-top: 5px;
+    }
+
+    /* 📌 Grey Out Pending Cards (Accessible) */
+    .nhsuk-card--pending {
+      background-color: #e8eaeb;
+      color: #212b32;
+      cursor: not-allowed;
+      border: 1px solid #d8dde0;
+    }
+
+    /* 📌 Ensure Keyboard Focus */
+    .nhsuk-card--pending:focus {
+      outline: 3px solid #005eb8;
+      background-color: #d8dde0;
     }
   </style>
 

@@ -20,7 +20,7 @@
 
 
 <div class="nhsuk-grid-row">
-<div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-column-full">
 
   <div class="nhsuk-back-link">
 
@@ -32,15 +32,19 @@
   </div>
 
 
-  <h1>What is the role of this team member?</h1>
+  <h1>
+    What permissions should this team member have?
+  </h1>
 
   <div class="nhsuk-inset-text">
     <span class="nhsuk-u-visually-hidden">Information: </span>
   
-    <p>Recruiter administrators will be able to do add, remove and manage team members in your organisation.</p>
+    <p>Superusers can manage listings and other team members. Recruiters can only manage listings.</p>
   </div>
 
   <div class="nhsuk-form-group">
+
+    <form action="new-user-check-your-answers">
 
     <fieldset class="nhsuk-fieldset">
   
@@ -49,19 +53,21 @@
         <div class="nhsuk-radios__item">
           <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
           <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-            Recruiter
+            Superuser
           </label>
         </div>
   
         <div class="nhsuk-radios__item">
           <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
           <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-            Recruiter administrator
+            Recruiter
           </label>
         </div>
   
       </div>
     </fieldset>
+
+  </form>
   
   </div>
 <form action="check-change-role">

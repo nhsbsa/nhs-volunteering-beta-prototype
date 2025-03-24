@@ -1,0 +1,336 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="index">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1 class="nhsuk-heading nhsuk-heading-l">Mid and South Essex NHS Foundation Trust</h1>
+
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>To request any changes you are unable to make, contact the NHS Volunteering team at <a href="mailto: nhsvolunteering@nhsbsa.nhs.uk">nhsvolunteering@nhsbsa.nhs.uk</a></p>
+  </div>
+
+  <h2 class="nhsuk-heading nhsuk-heading-l">Organisation details</h2>
+
+  {{ summaryList({
+    rows: [  
+    {
+      key: {
+        text: "Name of organisation"
+      },
+      value: {
+        text: "Mid and South Essex NHS Foundation Trust"
+      },
+      actions: {
+        items: [
+          {
+            href: "trust-name",
+            text: "",
+            visuallyHiddenText: "Location 2"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Website URL"
+      },
+      value: {
+        text: "www.trustwebsite.com"
+      },
+      actions: {
+        items: [
+          {
+            href: "trust-url",
+            text: "Change",
+            visuallyHiddenText: "Location 2"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "<p>Essex</p>
+               <p>SS0 0RY</p>
+               "
+      },
+      actions: {
+        items: [
+          {
+            href: "trust-address",
+            text: "",
+            visuallyHiddenText: "Location 1"
+          }
+        ]
+      }
+    },
+    {
+        key: {
+          text: "About"
+        },
+        value: {
+          html: "<p>Some about information related to this trust.</p>
+
+         <p>Some more about information related to this trust.</p>"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-about",
+              text: "Change",
+              visuallyHiddenText: "Location 1"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Organisation logo"
+        },
+        value: {
+          href: 
+                ""
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-org-logo",
+              text: "",
+              visuallyHiddenText: "Location 3"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Privacy policy"
+        },
+        value: {
+          text: "www.linktoprivacypolicy.com"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-privacy-policy",
+              text: "",
+              visuallyHiddenText: "Location "
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+  <h1 class="nhsuk-heading nhsuk-heading-l">Contact information</h1>
+  <h2 class="nhsuk-heading nhsuk-heading-m">Matt Flegel</h2>
+  {{ summaryList({
+    rows: [  
+      {
+        key: {
+          text: "Telephone Number"
+        },
+        value: {
+          text: 
+                "07555 555 555"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-contact-telephone-number",
+              text: "",
+              visuallyHiddenText: "Location 3"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Email Address"
+        },
+        value: {
+          text: 
+                "matt.flegel@nhs.uk"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-contact-email-address",
+              text: "",
+              visuallyHiddenText: "Location 4"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          text: 
+                "Superuser"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-contact-email-address",
+              text: "",
+              visuallyHiddenText: "Location 4"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+  <h2 class="nhsuk-heading nhsuk-heading-m">Mike Wallace</h2>
+  {{ summaryList({
+    rows: [  
+      {
+        key: {
+          text: "Telephone Number"
+        },
+        value: {
+          text: 
+                "07555 555 555"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-contact-telephone-number",
+              text: "",
+              visuallyHiddenText: "Location 3"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Email Address"
+        },
+        value: {
+          text: 
+                "mike.wallace@nhs.uk"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-contact-email-address",
+              text: "",
+              visuallyHiddenText: "Location 4"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          text: 
+                "Recruiter"
+        },
+        actions: {
+          items: [
+            {
+              href: "trust-contact-email-address",
+              text: "",
+              visuallyHiddenText: "Location 4"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+
+<h1 class="nhsuk-heading nhsuk-heading-l">Sites associated with Mid and South Essex NHS Foundation Trust</h1>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> Basildon University Hospital</h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Nethermayne, Basildon, Essex, SS16 5NL</strong></p>
+<p class="nhsuk-u-margin-top-0">URL: https://www.mse.nhs.uk/get-involved</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2">Broomfield Hospital</h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Court Road, Broomfield, Chelmsford, Essex, CM1 7ET</strong></p>
+<p class="nhsuk-u-margin-top-0">URL: https://www.mse.nhs.uk/get-involved</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2">Prittlewell Chase, Westcliff-on</h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Prittlewell Chase, Westcliff-on-Sea, Essex, SS0 0RY</strong></p>
+<p class="nhsuk-u-margin-top-0">URL: https://www.mse.nhs.uk/get-involved</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2">Southend University Hospital</h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Prittlewell Chase, Westcliff-on-Sea, Essex, SS0 0RY</strong></p>
+<p class="nhsuk-u-margin-top-0">URL: https://www.mse.nhs.uk/get-involved</p>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

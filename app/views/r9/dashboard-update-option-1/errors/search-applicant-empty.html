@@ -38,7 +38,7 @@
     <div class="nhsuk-error-summary__body">
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
         <li>
-          <a href="#name">Enter an applicant name, email address of reference number</a>
+          <a href="#name">Enter an applicant name, email address or reference number</a>
         </li>
       </ul>
     </div>
@@ -55,21 +55,30 @@
         <span class="nhsuk-u-visually-hidden">Error:</span> Enter an applicant name, email address or reference number
       </span>
       <label class="nhsuk-label" for="input-width-30">
-        Enter a name
+        Search by name
       </label>
       <input class="nhsuk-input nhsuk-input--error nhsuk-input--width-30" id="input-width-30" name="postcode" type="text">
-    
+      <div style="margin-top: 20px;">
       <label class="nhsuk-label" for="input-width-30">
-        Enter an email address
+        Search by email address
       </label>
       <input class="nhsuk-input nhsuk-input--error nhsuk-input--width-30" id="input-width-30" name="postcode" type="text">
+    </div>
+    <div style="margin-top: 20px;">
+      <label class="nhsuk-label" for="input-width-30">
+        Search by application reference number
+      </label>
+      <div class="nhsuk-hint" id="example-with-hint-text-hint">
+        For example, V-4TP-BCD
+      </div>
+      <input class="nhsuk-input nhsuk-input--error nhsuk-input--width-30" id="input-width-30" name="postcode" type="text">
+    </div>
+    </div>
 
-    <div style="margin-top: 30px;"><p>or</p></div>
-  
-      <label class="nhsuk-label" for="input-width-30">
-        Enter an application reference number
-      </label>
-      <input class="nhsuk-input nhsuk-input--error nhsuk-input--width-30" id="input-width-30" name="postcode" type="text">
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+    
+      <p>You can only search by either name, email address, or application reference number.</p>
     </div>
   
     <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results-applicant">

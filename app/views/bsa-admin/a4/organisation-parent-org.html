@@ -1,0 +1,75 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "organisation-result",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+        <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Monkwearmouth Hospital</span>
+            Parent organisation
+        </h1>
+
+        <form action="" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+          <div class="nhsuk-hint" id="a1-organisation-contact-name-with-hint-text-hint">
+            This will show on the child organisation summary under <strong>Parent organisation</strong>.
+          </div>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Warning: </span>
+            <p>Changing the parent organisation will change where you find the child organisation.</p>
+          </div>
+
+          <form action="organisation-parent-org-check">
+            <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="bsa-admin-organisation">
+                    Select the parent organisation you want to assign this child organisation to
+                </label>
+                <select class="nhsuk-select" id="bsa-admin-organisation" name="bsa-admin-organisation">
+                  <option value="choose" selected>Select organisation</option>
+                  <option value="Airedale NHS Foundation Trust">Airedale NHS Foundation Trust</option>
+                  <option value="Alder Hey Children’s NHS Foundation Trust">Alder Hey Children’s NHS Foundation Trust</option>
+                  <option value="Barts Health NHS Trust">Barts Health NHS Trust</option>
+                  <option value="Calderdale and Huddersfield NHS Foundation Trust">Calderdale and Huddersfield NHS Foundation Trust</option>
+                  <option value="Coventry and Warwickshire Partnership NHS Trust">Coventry and Warwickshire Partnership NHS Trust</option>
+                  <option value="Dorset County Hospital NHS Foundation Trust">Dorset County Hospital NHS Foundation Trust</option>
+                  <option value="East Cheshire NHS Trust">East Cheshire NHS Trust</option>
+                  <option value="George Eliot Hospital NHS Trust">George Eliot Hospital NHS Trust</option>
+                  <option value="Hampshire Hospitals NHS Foundation Trust">Hampshire Hospitals NHS Foundation Trust</option>
+                  <option value="Homerton Healthcare NHS Foundation Trust">Homerton Healthcare NHS Foundation Trust</option>
+                </select>
+              </div>
+          </form>
+          <form action="organisation-parent-org-check">
+          <button class="nhsuk-button" style="margin-top: 30px;" data-module="nhsuk-button" type="submit">
+            Continue
+          </button>
+          </form>
+          
+        </div>
+    
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

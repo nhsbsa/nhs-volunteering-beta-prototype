@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "organisation-name",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Submit changes to 'Name of child organisation'</span>
+        Check your answers before submitting
+      </h1>
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Child organisation details</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Name of child organisation"
+            },
+            value: {
+              text: "Monkewearmouth Hospital"
+            },
+            actions: {
+              items: [
+                {
+                  href: "organisation-name",
+                  text: "Change",
+                  visuallyHiddenText: "Title"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="organisation-result">
+        <button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit">
+          Submit
+        </button>
+      </form> 
+
+    </div>
+  </div>
+{% endblock %}

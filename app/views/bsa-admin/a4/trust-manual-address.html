@@ -1,0 +1,74 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "trust-address",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+        <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</span>
+            Address
+        </h1>
+
+        <div class="nhsuk-hint" id="a1-organisation-about-with-hint-text-hint">
+          This will show on the parent organisation summary under <strong>'Address'</strong>.
+        </div>
+
+        <form action="trust-address-check" method="post">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-50">
+             Address line 1
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-50" id="input-width-20" name="test-width-20" type="text">
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-50">
+             Address line 2 (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-50" id="input-width-20" name="test-width-20" type="text">
+          </div>
+        
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-20">
+             Town or city
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+        
+        
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-20">
+            County (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+        
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-width-10">
+             Postcode
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+          </div>
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="Continue">Continue</button>
+        
+        </form>
+
+          
+
+    </div>
+  </div>
+
+{% endblock %}

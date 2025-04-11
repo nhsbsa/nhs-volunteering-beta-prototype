@@ -822,6 +822,6 @@ router.post('/r9-contact-details-answer', function (req, res) {
     if (r9DeleteUser === 'no') {
       res.redirect('/r9/user-management-mvp/manage-users')
     } else {
-      res.redirect('/r9/user-management-mvp/deactivate-user-correct-contact-info')
+      res.redirect('/r9/user-management-mvp/manage-users-user-deleted')
     }
   })  

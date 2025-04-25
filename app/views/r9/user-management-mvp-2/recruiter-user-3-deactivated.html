@@ -1,0 +1,119 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="manage-users">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <div class="nhsuk-card" style="border-color:	#005eb8; color:#005eb8;">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading">
+        Team member deactivated
+  
+      </h2>
+
+      <p>We've deactivated <strong>Calum Pickles</strong>. You will need to reactivate this profile if <strong>Calum Pickles</strong> is resuming their use of the service.</p>
+      <p><strong>Calum Pickles</strong> will be deleted from the service after the data retention period ends.</p>
+      <p>Email address: calum.pickles@nhs.uk</p>
+    </div>
+  </div>
+
+
+  <h1>Calum Pickles</h1>
+
+  <table class="nhsuk-table">
+    <tbody class="nhsuk-table__body">
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><strong>Name</strong></td>
+        <td class="nhsuk-table__cell ">Calum Pickles</td>
+        <td class="nhsuk-table__cell "></td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><strong>Email address</strong></td>
+        <td class="nhsuk-table__cell ">calum.pickles@nhs.uk</td>
+        <td class="nhsuk-table__cell "></td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><strong>Phone number</strong></td>
+        <td class="nhsuk-table__cell ">07555 555 555</td>
+        <td class="nhsuk-table__cell "></td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><strong>Role</strong></td>
+        <td class="nhsuk-table__cell ">Recruiter</td>
+        <td class="nhsuk-table__cell "></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form action="manage-users-reactivated-user">
+    <button class="nhsuk-button">Reactivate user</button>
+    </form>
+
+  
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

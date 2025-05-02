@@ -423,6 +423,22 @@ router.post('/v5-equality-questions-answer', function (req, res) {
   }
 })
 
+// V8 Branching for EDI questions 
+
+// equality-questions - if answer is "yes"
+
+router.post('/v8-equality-questions-answer', function (req, res) {
+
+  // Get the answer from session data
+  const v5equalityQuestions = req.session.data['v8-equality-questions']
+
+  if (v5equalityQuestions === 'yes') {
+    res.redirect('/v8/edi/dob')
+  } else {
+    res.redirect('v8/edi/equality-questions-skip')
+  }
+})
+
 // health-conditions - if answer is "yes"
 
 router.post('/v5-health-conditions-answer', function (req, res) {

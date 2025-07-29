@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-  The NHS website - NHS
+  NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -31,14 +31,15 @@
   </div>
 
   <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 5 of 8 </span>
-   Enter your telephone number (optional)</h1>
+   What is your phone number? (optional)</h1>
 <p class="nhsuk-hint">We will only use these details to contact you about this opportunity.</p>
     <form action="availability" method="post">
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="input-width-50">
     Telephone number (optional)
     </label>
-    <input class="nhsuk-input nhsuk-input--width-50" id="v4-volunteer-phone" name="v4-volunteer-phone" type="text" value="{{ data['v4-volunteer-phone'] }}">
+    <p class="nhsuk-hint">For international numbers please include the country code.</p>
+    <input class="nhsuk-input nhsuk-input--width-50" id="v8-volunteer-phone" name="v8-volunteer-phone" type="text" value="{{ data['v8-volunteer-phone'] }}">
 
 
    

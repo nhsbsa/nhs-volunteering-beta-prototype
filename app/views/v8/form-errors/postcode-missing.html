@@ -32,11 +32,12 @@ NHS Volunteering - Search for an opportunity near me
       </p>
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
         <li>
-          <a href="#example-error-1">Enter a full English postcode</a>
+          <a href="#example" id="error-link-postcode">Enter a full English postcode</a>
         </li>
       </ul>
     </div>
   </div>
+  
 
   <div class="nhsuk-back-link">
 
@@ -59,36 +60,58 @@ NHS Volunteering - Search for an opportunity near me
   </div>
   <div class="nhsuk-form-group">
 
-    <fieldset class="nhsuk-fieldset">
-      <label class="nhsuk-label" for="input-width-10">
-       How far from your postcode would you like to search?
-      </label>
-  
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend-m">
+        How far from your postcode would you like to search?
+      </legend>
+    
       <div class="nhsuk-radios">
-  
+        
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-            Up to 5 miles
+          <input class="nhsuk-radios__input" id="radius-3" name="radius" type="radio" value="3" checked="">
+          <label class="nhsuk-label nhsuk-radios__label" for="radius-3">
+            Up to 3 Miles
           </label>
         </div>
-  
+        
+        
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-            Up to 10 miles
+          <input class="nhsuk-radios__input" id="radius-5" name="radius" type="radio" value="5">
+          <label class="nhsuk-label nhsuk-radios__label" for="radius-5">
+            Up to 5 Miles
           </label>
         </div>
+        
+        
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-            Up to 20 miles
+          <input class="nhsuk-radios__input" id="radius-10" name="radius" type="radio" value="10">
+          <label class="nhsuk-label nhsuk-radios__label" for="radius-10">
+            Up to 10 Miles
           </label>
         </div>
-  
+        
+        
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="radius-20" name="radius" type="radio" value="20">
+          <label class="nhsuk-label nhsuk-radios__label" for="radius-20">
+            Up to 20 Miles
+          </label>
+        </div>
+        
+        
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="radius-30" name="radius" type="radio" value="30">
+          <label class="nhsuk-label nhsuk-radios__label" for="radius-30">
+            Up to 30 Miles
+          </label>
+        </div>
+        
       </div>
-    </fieldset>
-  
+      </fieldset>
+    
+    </div>
   </div>
 
   <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">

@@ -4,8 +4,8 @@
     - add custom CSS and JavaScript
 -->
 
-<!-- Extends the layout from /docs/views/template.html -->
-{% extends "template.html" %}
+<!-- Extends the layout from /docs/views/layout.html -->
+{% extends "layout.html" %}
 
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
@@ -15,14 +15,14 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  NHS volunteering
+  NHS Volunteering
 {% endblock %}
 
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
 <header class="nhsuk-header" role="banner">
-  <div class="nhsuk-width-container nhsuk-header__container">
+  <div class="nhsuk-width-container nhsuk-header__container nhsuk-u-margin-bottom-7">
     <div class="nhsuk-header__logo">
       <a class="nhsuk-header__link nhsuk-header__link--service" href="/" aria-label="NHS.UK prototype kit home">
         <svg class="nhsuk-logo nhsuk-logo--white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">

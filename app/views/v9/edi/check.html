@@ -44,7 +44,7 @@
         Name
       </dt>
       <dd class="nhsuk-summary-list__value">
-        {{ data['v20-volunteer-name'] }}
+        {{ data['v9-volunteer-name'] }}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -62,7 +62,7 @@
        Age
       </dt>
       <dd class="nhsuk-summary-list__value">
-       {{ data['v20-volunteer-age'] }}
+       {{ data['v9-volunteer-age'] }}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -81,12 +81,12 @@
       </dt>
       <dd class="nhsuk-summary-list__value">
 
-        {% if data['v20-volunteer-address-line-1'] %}
-        <p> {{ data['v20-volunteer-address-line-1'] }}, {% if data ['v20-volunteer-address-line-2'] %} {{ data['v20-volunteer-address-line-2'] }}, {% endif %} {{ data['v20-volunteer-town'] }}, {% if data ['v20-volunteer-county'] %} {{ data['v20-volunteer-county'] }}, {% endif %} {{ data['v20-volunteer-postcode-2'] }}</p>
-        {% elif data['v20-select-address'] != "My address is not on this list" %}
-        <p>{{ data['v20-select-address'] }}</p>
+        {% if data['v9-volunteer-address-line-1'] %}
+        <p> {{ data['v9-volunteer-address-line-1'] }}, {% if data ['v9-volunteer-address-line-2'] %} {{ data['v9-volunteer-address-line-2'] }}, {% endif %} {{ data['v9-volunteer-town'] }}, {% if data ['v9-volunteer-county'] %} {{ data['v9-volunteer-county'] }}, {% endif %} {{ data['v9-volunteer-postcode-2'] }}</p>
+        {% elif data['v9-select-address'] != "My address is not on this list" %}
+        <p>{{ data['v9-select-address'] }}</p>
         {% else %}
-        <p> {{ data['v20-volunteer-address-line-1'] }}, {% if data ['v20-volunteer-address-line-2'] %} {{ data['v20-volunteer-address-line-2'] }}, {% endif %} {{ data['v20-volunteer-town'] }}, {% if data ['v20-volunteer-county'] %} {{ data['v20-volunteer-county'] }}, {% endif %} {{ data['v20-volunteer-postcode-2'] }}</p>
+        <p> {{ data['v9-volunteer-address-line-1'] }}, {% if data ['v9-volunteer-address-line-2'] %} {{ data['v9-volunteer-address-line-2'] }}, {% endif %} {{ data['v9-volunteer-town'] }}, {% if data ['v9-volunteer-county'] %} {{ data['v9-volunteer-county'] }}, {% endif %} {{ data['v9-volunteer-postcode-2'] }}</p>
         {% endif %}
       </dd>
   
@@ -106,7 +106,7 @@
       </dt>
       <dd class="nhsuk-summary-list__value">
      
-        <p>{{ data['v20-volunteer-email-confirmation'] }}</p>
+        <p>{{ data['v9-volunteer-email-confirmation'] }}</p>
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -125,8 +125,8 @@
       </dt>
       <dd class="nhsuk-summary-list__value">
      
-        {% if data['v20-volunteer-phone'] %}
-        <p>{{ data['v20-volunteer-phone'] }}</p>
+        {% if data['v9-volunteer-phone'] %}
+        <p>{{ data['v9-volunteer-phone'] }}</p>
         {% else %}
         <p>Not provided</p>
         {% endif %}
@@ -152,7 +152,7 @@
        Your availability
       </dt>
       <dd class="nhsuk-summary-list__value">
-        <p>{{ data['v20-volunteer-availability']}}</p>
+        <p>{{ data['v9-volunteer-availability']}}</p>
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -170,7 +170,7 @@
       Support needed
       </dt>
       <dd class="nhsuk-summary-list__value">
-        <p>{{ data['v20-volunteer-support'] }}</p>
+        <p>{{ data['v9-volunteer-support'] }}</p>
         
       </dd>
   
@@ -189,7 +189,7 @@
         About you
       </dt>
       <dd class="nhsuk-summary-list__value">
-       <p>{{ data['v20-volunteer-motivations'] }}</p>
+       <p>{{ data['v9-volunteer-motivations'] }}</p>
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -232,7 +232,7 @@
     </div>
   </div>
 .
-  <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/../v20/application/submitted">
+  <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/../v9/application/submitted">
   Send registration
   </a>
   

@@ -1,0 +1,127 @@
+
+
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="ethnic-group">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+
+  <form action="religion" method="post">
+    
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Which of the following best describes your White background?
+          </h1>
+        </legend>
+    
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="V9-background-white-1" name="V9-background-white" type="radio" value="nhsuk-login">
+            <label class="nhsuk-label nhsuk-radios__label" for="V9-background-white-1">
+              English, Welsh, Scottish, Northern Irish or British
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="V9-background-white-2" name="V9-background-white" type="radio" value="government-verify">
+            <label class="nhsuk-label nhsuk-radios__label" for="V9-background-white-2">
+              Irish
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="V9-background-white-3" name="V9-background-white" type="radio" value="nhsuk-login">
+            <label class="nhsuk-label nhsuk-radios__label" for="V9-background-white-3">
+              Gypsy or Irish Traveller
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="V9-background-white-4" name="V9-background-white" type="radio" value="text" aria-controls="conditional-V9-background-white-4" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="V9-background-white-4">
+              Any other White background
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-V9-background-white-4">
+    
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="mobile">
+                How would you describe your background? (optional)
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+            </div>
+    
+          </div>
+
+          
+
+         
+          <div class="nhsuk-radios__divider">or</div>
+
+          
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="V9-background-white-5" name="V9-background-white" type="radio" value="create-account">
+            <label class="nhsuk-label nhsuk-radios__label" for="V9-background-white-5">
+              Prefer not to say
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+    
+    </div>
+
+  <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+</form>
+
+</div>
+
+
+{% endblock %}
+
+ 
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

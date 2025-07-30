@@ -142,35 +142,35 @@ router.post('/r2-contact-details-answer', function (req, res) {
   })
 
 
-// ROUTES FOR v8 of Volunteering
+// ROUTES FOR V9 of Volunteering
 
   // choose address - if answer is 'my address is not on the list'
 
   router.post('/select-address-answer', function (req, res) {
 
     // Get the answer from session data
-    const v8selectAddress = req.session.data['v8-select-address']
+    const V9selectAddress = req.session.data['V9-select-address']
   
-    if (v8selectAddress === 'My address is not on this list') {
-      res.redirect('/v8/application/manual-address')
+    if (V9selectAddress === 'My address is not on this list') {
+      res.redirect('/V9/application/manual-address')
     } else {
-      res.redirect('/v8/application/email')
+      res.redirect('/V9/application/email')
     }
   })
 
-// ROUTES FOR v8 of Volunteering
+// ROUTES FOR V9 of Volunteering
 
   // choose address - if answer is 'my address is not on the list'
 
-  router.post('/v8-select-address-answer', function (req, res) {
+  router.post('/V9-select-address-answer', function (req, res) {
 
     // Get the answer from session data
-    const v8selectAddress = req.session.data['v8-select-address']
+    const V9selectAddress = req.session.data['V9-select-address']
   
-    if (v8selectAddress === 'My address is not on this list') {
-      res.redirect('/v8/application/manual-address')
+    if (V9selectAddress === 'My address is not on this list') {
+      res.redirect('/V9/application/manual-address')
     } else {
-      res.redirect('/v8/application/email')
+      res.redirect('/V9/application/email')
     }
   })
  
@@ -178,32 +178,32 @@ router.post('/r2-contact-details-answer', function (req, res) {
 
   // choose address - if answer is 'my address is not on the list'
 
-  router.post('/v8-select-address-answer', function (req, res) {
+  router.post('/V9-select-address-answer', function (req, res) {
 
     // Get the answer from session data
-    const v8selectAddress = req.session.data['v8-select-address']
+    const V9selectAddress = req.session.data['V9-select-address']
   
-    if (v8selectAddress === 'My address is not on this list') {
-      res.redirect('/v8/application/manual-address')
+    if (V9selectAddress === 'My address is not on this list') {
+      res.redirect('/V9/application/manual-address')
     } else {
-      res.redirect('/v8/application/email')
+      res.redirect('/V9/application/email')
     }
   })  
 
 
-  // ROUTES FOR V8 of Volunteering
+  // ROUTES FOR V9 of Volunteering
 
   // choose address - if answer is 'my address is not on the list'
 
-  router.post('/v8-select-address-answer', function (req, res) {
+  router.post('/V9-select-address-answer', function (req, res) {
 
     // Get the answer from session data
-    const v8selectAddress = req.session.data['v8-select-address']
+    const V9selectAddress = req.session.data['V9-select-address']
   
-    if (v8selectAddress === 'My address is not on this list') {
-      res.redirect('/v8/application/manual-address')
+    if (V9selectAddress === 'My address is not on this list') {
+      res.redirect('/V9/application/manual-address')
     } else {
-      res.redirect('/v8/application/email')
+      res.redirect('/V9/application/email')
     }
   })  
 
@@ -407,71 +407,71 @@ router.post('/r5-closing-date-answer', function (req, res) {
   }
 })  
 
-// v8 Branching for EDI questions 
+// V9 Branching for EDI questions 
 
 // equality-questions - if answer is "yes"
 
-router.post('/v8-equality-questions-answer', function (req, res) {
+router.post('/V9-equality-questions-answer', function (req, res) {
 
   // Get the answer from session data
-  const v8equalityQuestions = req.session.data['v8-equality-questions']
+  const V9equalityQuestions = req.session.data['V9-equality-questions']
 
-  if (v8equalityQuestions === 'yes') {
-    res.redirect('/v8/edi/dob')
+  if (V9equalityQuestions === 'yes') {
+    res.redirect('/V9/edi/dob')
   } else {
-    res.redirect('v8/edi/equality-questions-skip')
+    res.redirect('V9/edi/equality-questions-skip')
   }
 })
 
-// V8 Branching for EDI questions 
+// V9 Branching for EDI questions 
 
 // equality-questions - if answer is "yes"
 
-router.post('/v8-equality-questions-answer', function (req, res) {
+router.post('/V9-equality-questions-answer', function (req, res) {
 
   // Get the answer from session data
-  const v8equalityQuestions = req.session.data['v8-equality-questions']
+  const V9equalityQuestions = req.session.data['V9-equality-questions']
 
-  if (v8equalityQuestions === 'yes') {
-    res.redirect('/v8/edi/dob')
+  if (V9equalityQuestions === 'yes') {
+    res.redirect('/V9/edi/dob')
   } else {
-    res.redirect('v8/edi/equality-questions-skip')
+    res.redirect('V9/edi/equality-questions-skip')
   }
 })
 
 // health-conditions - if answer is "yes"
 
-router.post('/v8-health-conditions-answer', function (req, res) {
+router.post('/V9-health-conditions-answer', function (req, res) {
 
   // Get the answer from session data
-  const v8healthConditions = req.session.data['v8-health-conditions']
+  const V9healthConditions = req.session.data['V9-health-conditions']
 
-  if (v8healthConditions === 'yes') {
-    res.redirect('/v8/edi/day-activities')
+  if (V9healthConditions === 'yes') {
+    res.redirect('/V9/edi/day-activities')
   } else {
-    res.redirect('v8/edi/ethnic-group')
+    res.redirect('V9/edi/ethnic-group')
   }
 })
 
 // ethnic group branching
 
-router.post('/v8-ethnic-group-answer', function (req, res) {
+router.post('/V9-ethnic-group-answer', function (req, res) {
 
   // Get the answer from session data
-  const v8ethnicGroup = req.session.data['v8-ethnic-group']
+  const V9ethnicGroup = req.session.data['V9-ethnic-group']
 
-  if (v8ethnicGroup === 'white') {
-    res.redirect('/v8/edi/background-white')
-  } else if (v8ethnicGroup === 'mixed-multiple') {
-    res.redirect('v8/edi/background-mixed-multiple')
-  } else if (v8ethnicGroup === 'asian') {
-    res.redirect('v8/edi/background-asian')
-  } else if (v8ethnicGroup === 'black') {
-    res.redirect('v8/edi/background-black')
-  } else if (v8ethnicGroup === 'other-ethnic') {
-    res.redirect('v8/edi/background-other')
+  if (V9ethnicGroup === 'white') {
+    res.redirect('/V9/edi/background-white')
+  } else if (V9ethnicGroup === 'mixed-multiple') {
+    res.redirect('V9/edi/background-mixed-multiple')
+  } else if (V9ethnicGroup === 'asian') {
+    res.redirect('V9/edi/background-asian')
+  } else if (V9ethnicGroup === 'black') {
+    res.redirect('V9/edi/background-black')
+  } else if (V9ethnicGroup === 'other-ethnic') {
+    res.redirect('V9/edi/background-other')
   } else {
-    res.redirect('v8/edi/religion')
+    res.redirect('V9/edi/religion')
   }
 })
 
@@ -774,15 +774,15 @@ router.post('/a3-choose-nhs-org-answer', function (req, res) {
 
     // What kind of opportunity are you looking for? - if "answer is 'An opportunity near me'"
 
-router.post('/v8-opportunity-choice-answer', function (req, res) {
+router.post('/V9-opportunity-choice-answer', function (req, res) {
 
   // Get the answer from session data
-  const v8OpportunitySelection = req.session.data['v8-opportunity-choice']
+  const V9OpportunitySelection = req.session.data['V9-opportunity-choice']
 
-  if (v8OpportunitySelection === 'yes') {
-    res.redirect('/v8/volunteering/postcode-search-v2')
+  if (V9OpportunitySelection === 'yes') {
+    res.redirect('/V9/volunteering/postcode-search-v2')
   } else {
-    res.redirect('/v8/volunteering/results_remote_opportunities')
+    res.redirect('/V9/volunteering/results_remote_opportunities')
   }
 })
 

@@ -1,0 +1,167 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  The NHS website - NHS
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="postcode-search">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1>We can't find any local opportunities near 'LS2 2AP' </h1>
+ 
+ <details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Change how far you want to search from your postcode
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+        <label class="nhsuk-label" for="input-width-10">
+         How far from your postcode would you like to search?
+        </label>
+    
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Up to 3 miles
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Up to 5 miles
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Up to 10 miles
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Up to 20 miles
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Up to 30 miles
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+
+      <button class="nhsuk-button nhsuk-u-margin-top-6">Update results</button>
+    
+    </div>
+  </div>
+</details>
+
+<p class="nhsuk-body nhsuk-u-margin-bottom-0">You can also consider any of the opportunities available across England below.</p>
+
+
+<hr>
+
+<h2>Other volunteering opportunities across England</h2>
+<p>These opportunities are available no matter where you are in England.</p>
+
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="#"> Telephone Befriender</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Any location in England</strong></p>
+<p class="nhsuk-u-margin-top-0">Guys and St Thomas NHS Foundation Trust</p>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+  
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Main responsibilities: offer social interaction and companionship to people experiencing loneliness and isolation</li>
+      <li>You will need basic phone or video call skills</li>
+      <li>You will use your own phone, laptop or tablet</li>
+      <li>Shifts are available from 9am to 9pm, Monday to Sunday</li>
+  </div>
+</div>
+<hr>
+
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="#"> NHS and Care Volunteer Responders</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 "><strong>Any location in England</strong></p>
+
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+   
+   <p>Support the NHS and adult social care across England. There are volunteering activities to suit everyone, whether you would like to volunteer from home or in the community.
+  </p> 
+   <p> Sign up to express your preferred activities and to control when and where you volunteer.
+
+   </p>
+     
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

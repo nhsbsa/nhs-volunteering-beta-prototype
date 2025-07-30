@@ -24,7 +24,6 @@
 .container-white{
 background-color: white;
 color: black;
-padding: 15px;
 margin-bottom: 0px;
 }
 nhsuk-grid-column-full {
@@ -37,9 +36,14 @@ nhsuk-grid-column-full {
   padding-bottom: 0px;
 }
 .app-section__content {
-padding-bottom: 64px;
-padding-top: 64px;
+padding-bottom: 40px;
+padding-top: 40px;
 }
+.nhsuk-grid-column-one-half{
+  padding-bottom: 16px;
+  padding-top: 40px;
+}
+
 
 .role-type-image {
     width: auto;
@@ -58,6 +62,7 @@ padding-top: 64px;
 
 .nhsuk-main-wrapper {
   padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 // styling for hero image

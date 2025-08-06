@@ -6,25 +6,28 @@
   Question page
 {% endblock %}
 
-{% block outerContent %}
-  {{ backLink({
-    "href": "overview-process",
-    "text": "Go back",
-    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
-  }) }}
-{% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="task-list-completed-1" method="post" class="form">
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="../edit-journey/task-list-completed">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <form action="../edit-journey/task-list-completed" method="post" class="form">
 
         <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="200">
           <div class="nhsuk-form-group">
             <h1 class="nhsuk-heading nhsuk-heading-l">
               <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
-              Who will the volunteer report to?
+              Edit who will support the volunteer 
             </h1>
             <div class="nhsuk-hint" id="example-with-hint-text-hint">
               This will show on the opportunity listing under <strong>useful information</strong>.
@@ -38,10 +41,10 @@
               <p class="nhsuk-body">You do not need to name a specific person.</p>
             </div>
 
-            <label class="nhsuk-label" for="r4-opportunity-name">
+            <label class="nhsuk-label" for="r9-opportunity-name">
               Enter a job title
             </label>
-            <input class="nhsuk-input nhsuk-js-character-count" id="r4-opportunity-name" name="r4-opportunity-name" type="text">
+            <input class="nhsuk-input nhsuk-js-character-count" id="r9-opportunity-name" name="r9-opportunity-name" type="text">
             
           </div>
         </div>

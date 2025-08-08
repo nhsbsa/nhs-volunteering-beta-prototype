@@ -1,0 +1,42 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Volunteer Profiles{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
+
+  <h1 class="nhsuk-heading-xl">Volunteer Profiles</h1>
+  <p class="nhsuk-body-l">Track the onboarding progress of all approved volunteers.</p>
+
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Reference Number</th>
+        <th>Email</th>
+        <th>Application Date</th>
+        <th>Onboarding Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>12240-AB</td>
+        <td>johndoe@email.com</td>
+        <td>20 Feb 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">In Progress</span></td>
+        <td><a href="/design-spike/volunteer-profile" class="nhsuk-link">View Profile</a></td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>12241-XY</td>
+        <td>janesmith@email.com</td>
+        <td>15 Feb 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--green">Completed</span></td>
+        <td><a href="#" class="nhsuk-link">View Profile</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

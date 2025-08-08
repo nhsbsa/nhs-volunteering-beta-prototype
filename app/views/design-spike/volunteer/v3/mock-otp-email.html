@@ -1,0 +1,42 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Your One-Time Passcode (OTP){% endblock %}
+
+{% block content %}
+  <h1 class="nhsuk-heading-xl">Simulated email</h1>
+
+  <p>This is a preview of the email a volunteer receives when requesting a one-time passcode (OTP).</p>
+
+  <!-- 📌 Email Frame -->
+  <div class="nhsuk-card nhsuk-u-padding-4 nhsuk-u-background-color-light-grey">
+    <h2 class="nhsuk-heading-m">From: <span class="nhsuk-u-font-weight-normal">no-reply@nhsvolunteers.uk</span></h2>
+    <h2 class="nhsuk-heading-m">Subject: Your NHS Volunteer One-Time Passcode</h2>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+    <p>Dear <strong>John Doe</strong>,</p>
+
+    <p>You recently requested a one-time passcode (OTP) to access your volunteer application.</p>
+
+    <div class="nhsuk-panel nhsuk-panel--confirmation">
+      <h2 class="nhsuk-panel__title">Your One-Time Passcode</h2>
+      <p><strong>246813</strong></p>
+    </div>
+
+    <p>Enter this code on the verification page to securely access your application.</p>
+
+    <p><strong>This code will expire in 10 minutes.</strong> If you didn’t request this, you can ignore this email.</p>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+    <h2 class="nhsuk-heading-m">What happens next?</h2>
+    <p>Go back to the portal and enter your passcode to continue.</p>
+    <a href="/design-spike/volunteer/v3/enter-otp" class="nhsuk-button">Enter OTP</a>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+    <h2 class="nhsuk-heading-m">Need a new code?</h2>
+    <p>If this code has expired, you can <a href="/design-spike/verify-identity">request a new OTP</a>.</p>
+  </div>
+
+{% endblock %}

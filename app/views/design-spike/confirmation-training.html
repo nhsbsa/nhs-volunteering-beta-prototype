@@ -1,0 +1,54 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Confirm Training Completion{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer-profile" class="nhsuk-back-link">Back to Volunteer Profile</a>
+
+  <h1 class="nhsuk-heading-xl">Confirm Training Completion</h1>
+
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">You're about to mark training as complete</h2>
+    <p>Before proceeding, review the training that has been completed for this volunteer, including uploaded certificates.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Completed Training</h2>
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Training Course</th>
+        <th>Completion Date</th>
+        <th>Certificate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Safeguarding Training</td>
+        <td>10 Feb 2025</td>
+        <td><a href="/uploads/safeguarding-certificate.pdf" class="nhsuk-link">View Certificate</a></td>
+      </tr>
+      <tr>
+        <td>Manual Handling</td>
+        <td>15 Feb 2025</td>
+        <td><a href="/uploads/manual-handling-certificate.pdf" class="nhsuk-link">View Certificate</a></td>
+      </tr>
+      <tr>
+        <td>Infection Control</td>
+        <td>18 Feb 2025</td>
+        <td><a href="/uploads/infection-control-certificate.pdf" class="nhsuk-link">View Certificate</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>Once confirmed, the training section will be marked as complete.</li>
+    <li>Additional training records can be updated later if necessary.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/volunteer-profile" class="nhsuk-button">Confirm Completion</a>
+    <a href="/design-spike/volunteer-profile" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Shortlist Candidate{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-back-link">Back to application review</a>
+
+  <h1 class="nhsuk-heading-xl">Shortlist candidate</h1>
+
+  <p>You are about to shortlist <strong>John Doe</strong> for the role of <strong>Ward volunteer</strong>.</p>
+
+  <div class="nhsuk-inset-text">
+    <p>Once shortlisted, the application status will update to <strong>Shortlisted</strong>, and you can proceed to the next stage.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Would you like to notify the applicant?</h2>
+  <p>You can send an optional email to let the applicant know they have been shortlisted.</p>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="email-template">Select an email template:</label>
+    <select class="nhsuk-select" id="email-template" name="email-template" onchange="updateEmailPreview()">
+      <option value="standard" selected>Standard notification</option>
+      <option value="interview">Invite for interview</option>
+      <option value="next-steps">Next steps</option>
+    </select>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Email preview</h2>
+  <div class="nhsuk-card nhsuk-u-padding-3 nhsuk-u-background-color-light-grey" id="email-preview">
+    <p><strong>Subject:</strong> Your volunteer application update</p>
+    <p>Dear John Doe,</p>
+    <p>We are pleased to inform you that your application for the <strong>Ward Volunteer</strong> role has been shortlisted.</p>
+    <p>We will be in touch soon regarding the next steps.</p>
+    <p>Best regards,<br>Recruitment Team</p>
+  </div>
+
+  <textarea id="email-text" class="nhsuk-textarea nhsuk-u-visually-hidden"></textarea>
+
+  <button class="nhsuk-button nhsuk-button--secondary" onclick="copyEmail()">Copy email</button>
+  <a href="/design-spike/recruiter-v2/shortlist-confirmed" class="nhsuk-button">Confirm & update status</a>
+  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+
+  <script>
+    function updateEmailPreview() {
+      let template = document.getElementById("email-template").value;
+      let preview = document.getElementById("email-preview");
+      let emailText = document.getElementById("email-text");
+      let volunteerName = "John Doe"; // Use dynamic name if available
+      let role = "Ward Volunteer"; // Use dynamic role if needed
+
+      let emailTemplates = {
+        "standard": `
+        <p><strong>Subject:</strong> Your Volunteer Application Update</p>
+        <p>Dear ${volunteerName},</p>
+        <p>We are pleased to inform you that your application for the <strong>${role}</strong> role has been shortlisted.</p>
+        <p>We will be in touch soon regarding the next steps.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "interview": `
+        <p><strong>Subject:</strong> Invitation to Interview</p>
+        <p>Dear ${volunteerName},</p>
+        <p>We are pleased to invite you to an interview for the <strong>${role}</strong> role.</p>
+        <p>Please reply to this email to arrange a suitable time.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "next-steps": `
+        <p><strong>Subject:</strong> Next Steps in Your Volunteer Application</p>
+        <p>Dear ${volunteerName},</p>
+        <p>As a shortlisted candidate for the <strong>${role}</strong> role, we wanted to provide you with an update on the next steps.</p>
+        <p>We will be reviewing applications and contacting shortlisted candidates soon.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `
+      };
+
+      preview.innerHTML = emailTemplates[template];
+      emailText.value = emailTemplates[template].replace(/<\/?p>/g, "").replace(/<br>/g, "\n");
+    }
+
+    function copyEmail() {
+      let emailText = document.getElementById("email-text");
+      emailText.select();
+      document.execCommand("copy");
+      alert("Email copied to clipboard! Paste it into your email client.");
+    }
+
+    function confirmShortlist() {
+      alert("Candidate shortlisted! The application status will now be updated.");
+      window.location.href = "/design-spike/shortlist-confirmed";
+    }
+  </script>
+
+{% endblock %}

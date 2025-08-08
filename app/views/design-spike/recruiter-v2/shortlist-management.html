@@ -1,0 +1,40 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Shortlist Management{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Go back</a>
+
+  <h1 class="nhsuk-heading-xl">Shortlist Management</h1>
+
+  <p>Below is a list of all shortlisted candidates. Click "Review" to proceed with their application.</p>
+
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Applicant name</th>
+        <th>Role</th>
+        <th>Date shortlisted</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jane Doe</td>
+        <td>Ward Volunteer</td>
+        <td>5 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td>
+        <td><a href="/design-spike/review-application" class="nhsuk-link">Review</a></td>
+      </tr>
+      <tr>
+        <td>John Smith</td>
+        <td>Hospital Reception Volunteer</td>
+        <td>3 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td>
+        <td><a href="/design-spike/review-application" class="nhsuk-link">Review</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}

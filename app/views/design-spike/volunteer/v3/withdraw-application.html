@@ -1,0 +1,19 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Withdraw Your Application{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer/v3/application-tracker" class="nhsuk-back-link">Back to Application Tracker</a>
+
+  <h1 class="nhsuk-heading-xl">Withdraw Your Application</h1>
+
+  <p>Are you sure you want to withdraw your application for <strong>Ward Volunteer</strong>?</p>
+
+  <p>Once withdrawn, you won’t be able to reapply for this role immediately.</p>
+
+  <form method="post" action="/design-spike/withdraw-confirmed">
+    <button class="nhsuk-button nhsuk-button--red" type="submit">Yes, Withdraw My Application</button>
+    <a href="/design-spike/volunteer/v3/application-tracker" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </form>
+
+{% endblock %}

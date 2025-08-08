@@ -1,0 +1,29 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Confirm Role Status Change{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-back-link">Back to manage role</a>
+
+  <h1 class="nhsuk-heading-xl">Confirm status change</h1>
+
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">Are you sure you want to change the status of this role?</h2>
+    <p>You are about to <strong>close</strong> the role <strong>Ward Support Volunteer</strong>.</p>
+    <p>Once closed:</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>No new applications can be submitted.</li>
+      <li>Existing applications will remain accessible for review.</li>
+      <li>You can reopen the role at any time.</li>
+    </ul>
+  </div>
+
+  <form method="post" action="/design-spike/role-status-updated">
+    <input type="hidden" name="role-id" value="1">
+    <input type="hidden" name="new-status" value="closed">
+
+    <button class="nhsuk-button nhsuk-button--red" type="submit">Yes, close role</button>
+    <a href="/design-spike/recruiter-v2/manage-role" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </form>
+
+{% endblock %}

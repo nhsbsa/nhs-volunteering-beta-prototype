@@ -1,0 +1,97 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Manage Role - Walk and Talk Volunteer{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Go back</a>
+
+  <h1 class="nhsuk-heading-xl">Walk and Talk Volunteer</h1>
+
+  <!-- 📌 Role Details Section -->
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Date created</dt>
+      <dd class="nhsuk-summary-list__value">01 Mar 2025</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Closing date</dt>
+      <dd class="nhsuk-summary-list__value">31 Mar 2025</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Status</dt>
+      <dd class="nhsuk-summary-list__value">
+        <select class="nhsuk-select" id="role-status" name="role-status">
+          <option value="live" selected>Live</option>
+          <option value="closed">Closed</option>
+        </select>
+      </dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Role actions</h2>
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/recruiter-v2/edit-role" class="nhsuk-link">Edit live listing</a><br>
+    <a href="/design-spike/recruiter-v2/view-listing" target="_blank" class="nhsuk-link">View live listing (opens in a new tab)</a><br>
+    <a href="/design-spike/recruiter-v2/reuse-listing" class="nhsuk-link">Reuse this listing</a><br>
+    <a href="/design-spike/recruiter-v2/close-listing" class="nhsuk-link nhsuk-link--no-visited-state">Close this listing</a>
+  </div>
+  <br>
+  <h2 class="nhsuk-heading-m">Applications Received (3)</h2>
+
+  <!-- 📌 Applications Table (With Sorting & Clickable Names) -->
+  <table class="nhsuk-table" id="applications-table">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)" style="cursor: pointer;">Applicant Name <span id="arrow-0">▲</span></th>
+        <th onclick="sortTable(1)" style="cursor: pointer;">Reference <span id="arrow-1">▲</span></th>
+        <th onclick="sortTable(2)" style="cursor: pointer;">Date Applied <span id="arrow-2">▲</span></th>
+        <th onclick="sortTable(3)" style="cursor: pointer;">Status <span id="arrow-3">▲</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">Jane Doe</a></td>
+        <td>REF-12345</td>
+        <td>20 Mar 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
+      </tr>
+      <tr>
+        <td><a href="#" class="nhsuk-link">Jane Smith</a></td>
+        <td>REF-67890</td>
+        <td>19 Mar 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--green">Shortlisted</span></td>
+      </tr>
+      <tr>
+        <td><a href="#" class="nhsuk-link">Ali Khan</a></td>
+        <td>REF-54321</td>
+        <td>18 Mar 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Under Review</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function sortTable(columnIndex) {
+      var table = document.getElementById("applications-table");
+      var rows = Array.from(table.rows).slice(1);
+      var currentArrow = document.getElementById("arrow-" + columnIndex);
+      var isAscending = currentArrow.innerText === "▲";
+
+      var sortedRows = rows.sort((rowA, rowB) => {
+        var cellA = rowA.cells[columnIndex].innerText.toLowerCase();
+        var cellB = rowB.cells[columnIndex].innerText.toLowerCase();
+        
+        if (!isNaN(cellA) && !isNaN(cellB)) {
+          return isAscending ? Number(cellA) - Number(cellB) : Number(cellB) - Number(cellA);
+        }
+        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      });
+
+      // Toggle sorting direction
+      currentArrow.innerText = isAscending ? "▼" : "▲";
+
+      sortedRows.forEach(row => table.appendChild(row));
+    }
+  </script>
+
+{% endblock %}

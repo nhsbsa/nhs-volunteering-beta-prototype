@@ -1,0 +1,99 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Volunteer Profile - John Doe{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer-application" class="nhsuk-back-link">Back to Application</a>
+
+  <h1 class="nhsuk-heading-xl">Volunteer Profile - John Doe</h1>
+  <p class="nhsuk-body-m"><strong>Reference number:</strong> REF-013</p>
+  <p class="nhsuk-body-m"><strong>Approval date:</strong> 20 Feb 2025</p>
+
+  <div class="nhsuk-inset-text">
+    <p>This profile tracks onboarding, training, and other necessary steps before the volunteer starts.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-l">Volunteer Details</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Name</dt>
+      <dd class="nhsuk-summary-list__value">John Doe</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Email</dt>
+      <dd class="nhsuk-summary-list__value">johndoe@email.com</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Phone</dt>
+      <dd class="nhsuk-summary-list__value">07500 123456</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Availability</dt>
+      <dd class="nhsuk-summary-list__value">Monday to Wednesday, 10am - 4pm</dd>
+    </div>
+  </dl>
+
+  <h2 class="nhsuk-heading-m">Onboarding Progress</h2>
+  <p class="nhsuk-body">Track the steps needed before John can start volunteering.</p>
+  
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DBS Check</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Pending</span></td>
+        <td><a href="/design-spike/confirmation-dbs" class="nhsuk-link">Mark as Complete</a></td>
+      </tr>
+      <tr>
+        <td>Training</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">In Progress</span></td>
+        <td><a href="/design-spike/confirmation-training" class="nhsuk-link">Mark as Complete</a></td>
+      </tr>
+      <tr>
+        <td>Start Date Confirmation</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Pending</span></td>
+        <td><a href="#" class="nhsuk-link">Mark as Complete</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="nhsuk-heading-m">Document Uploads</h2>
+  <div class="nhsuk-inset-text">
+    <p>Upload any required documents for verification.</p>
+  </div>
+
+  <form method="post" enctype="multipart/form-data">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="dbs-upload">Upload DBS Certificate</label>
+      <input class="nhsuk-file-upload" id="dbs-upload" name="dbs-upload" type="file">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="training-upload">Upload Training Certificate</label>
+      <input class="nhsuk-file-upload" id="training-upload" name="training-upload" type="file">
+    </div>
+
+    <button class="nhsuk-button nhsuk-button--secondary" type="submit">Upload Documents</button>
+  </form>
+
+  <h2 class="nhsuk-heading-m">Additional Notes</h2>
+  <form method="post">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="custom-notes">Add additional notes (optional)</label>
+      <textarea class="nhsuk-textarea" id="custom-notes" name="custom-notes" rows="4"></textarea>
+    </div>
+    <button class="nhsuk-button nhsuk-button--secondary" type="submit">Save Notes</button>
+  </form>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/volunteer-profiles-list" class="nhsuk-button">Save Progress</a>
+    <a href="/design-spike/recruiter-dashboard" class="nhsuk-button nhsuk-button--secondary">Return to Dashboard</a>
+  </div>
+
+{% endblock %}

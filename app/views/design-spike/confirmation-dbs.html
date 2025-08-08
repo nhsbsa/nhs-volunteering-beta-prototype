@@ -1,0 +1,44 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Confirm DBS Check Completion{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer-profile" class="nhsuk-back-link">Back to Volunteer Profile</a>
+
+  <h1 class="nhsuk-heading-xl">Confirm DBS Check Completion</h1>
+
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">You're about to mark the DBS check as complete</h2>
+    <p>Before proceeding, review the DBS details and supporting documents uploaded for this volunteer.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">DBS Check Details</h2>
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>DBS Type</th>
+        <th>Issue Date</th>
+        <th>Certificate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Enhanced DBS</td>
+        <td>05 Feb 2025</td>
+        <td><a href="/uploads/dbs-certificate.pdf" class="nhsuk-link">View Certificate</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>Once confirmed, the DBS check section will be marked as complete.</li>
+    <li>If further verification is needed, ensure this step is completed before proceeding.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/volunteer-profile" class="nhsuk-button">Confirm Completion</a>
+    <a href="/design-spike/volunteer-profile" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Request More Information{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-back-link">Back to application review</a>
+
+  <h1 class="nhsuk-heading-xl">Request more information</h1>
+
+  <p>You are about to request additional details from <strong>John Doe</strong>. Please select what information is needed, and copy the email template to send via your email client.</p>
+
+  <form id="info-request-form">
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          What information do you need?
+        </legend>
+
+        <div class="nhsuk-checkboxes">
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="missing-experience" name="info-needed" type="checkbox" value="experience">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="missing-experience">More details on relevant experience</label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="academic-reason" name="info-needed" type="checkbox" value="academic">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="academic-reason">Clarification on academic placement requirements</label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="availability" name="info-needed" type="checkbox" value="availability">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="availability">Updated availability for shifts</label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="other" name="info-needed" type="checkbox" value="other">
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="other">Other (please specify)</label>
+          </div>
+        </div>
+
+        <div class="nhsuk-form-group nhsuk-u-margin-top-3">
+          <label class="nhsuk-label" for="other-details">If "Other," please provide details:</label>
+          <textarea class="nhsuk-textarea" id="other-details" name="other-details" rows="3"></textarea>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="email-template">Select an email template:</label>
+      <select class="nhsuk-select" id="email-template" name="email-template" onchange="updateEmailPreview()">
+        <option value="standard" selected>Standard Request</option>
+        <option value="urgent">Urgent follow-up</option>
+        <option value="reminder">Gentle reminder</option>
+      </select>
+    </div>
+  </form>
+
+  <h2 class="nhsuk-heading-m">Email preview</h2>
+  <div class="nhsuk-card nhsuk-u-padding-3 nhsuk-u-background-color-light-grey" id="email-preview">
+    <p><strong>Subject:</strong> Request for more information</p>
+    <p>Dear John Doe,</p>
+    <p>Thank you for your application to volunteer at NHS Trust.</p>
+    <p>Before we can proceed with your application, we require some additional information. Please provide more details on your relevant experience.</p>
+    <p>If you are applying as part of an academic placement, kindly confirm your required work hours and any supervision needs.</p>
+    <p>Please reply to this email with the requested details at your earliest convenience.</p>
+    <p>Best regards,<br>Recruitment Team</p>
+  </div>
+
+  <textarea id="email-text" class="nhsuk-textarea nhsuk-u-visually-hidden"></textarea>
+
+  <button class="nhsuk-button nhsuk-button--secondary" onclick="copyEmail()">Copy email</button>
+  <button class="nhsuk-button" onclick="confirmRequest()">Confirm & update status</button>
+  <a href="/design-spike/recruiter-v2/review-application" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+
+  <script>
+    function updateEmailPreview() {
+      let template = document.getElementById("email-template").value;
+      let preview = document.getElementById("email-preview");
+      let emailText = document.getElementById("email-text");
+      let volunteerName = "John Doe"; // Use dynamic name if available
+      let orgName = "NHS Trust"; // Use dynamic org name if needed
+
+      let emailTemplates = {
+        "standard": `
+        <p><strong>Subject:</strong> Request for More Information</p>
+        <p>Dear ${volunteerName},</p>
+        <p>Thank you for your application to volunteer at ${orgName}.</p>
+        <p>Before we can proceed with your application, we require some additional information. Please provide more details on your relevant experience.</p>
+        <p>If you are applying as part of an academic placement, kindly confirm your required work hours and any supervision needs.</p>
+        <p>Please reply to this email with the requested details at your earliest convenience.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "urgent": `
+        <p><strong>Subject:</strong> URGENT: Additional Information Required</p>
+        <p>Dear ${volunteerName},</p>
+        <p>We urgently require further details to process your application at ${orgName}. Please provide the requested information as soon as possible.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "reminder": `
+        <p><strong>Subject:</strong> Reminder: Additional Information Needed</p>
+        <p>Dear ${volunteerName},</p>
+        <p>This is a gentle reminder that we are waiting for additional details to progress your application at ${orgName}. Please reply at your earliest convenience.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `
+      };
+
+      preview.innerHTML = emailTemplates[template];
+      emailText.value = emailTemplates[template].replace(/<\/?p>/g, "").replace(/<br>/g, "\n");
+    }
+
+    function copyEmail() {
+      let emailText = document.getElementById("email-text");
+      emailText.select();
+      document.execCommand("copy");
+      alert("Email copied to clipboard! Paste it into your email client.");
+    }
+
+    function confirmRequest() {
+      alert("Request sent! The application status will now be updated to 'Information Requested'.");
+      window.location.href = "/design-spike/information-requested";
+    }
+  </script>
+
+{% endblock %}

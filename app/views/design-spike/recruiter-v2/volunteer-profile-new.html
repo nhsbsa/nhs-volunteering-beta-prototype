@@ -1,0 +1,93 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Volunteer Profile - Jane Doe{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Back to Dashboard</a>
+
+  <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Volunteer profile</h1>
+
+  <!-- Key Volunteer Information -->
+  <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-heading-m">Jane Doe</h2>
+      <p><strong>Role:</strong> Walk and Talk volunteer</p>
+      <p><strong>Status:</strong> Onboarding not started</p>
+      <p><strong>Email:</strong> <a href="mailto:janedoe@email.com" class="nhsuk-link">janedoe@email.com</a></p>
+    </div>
+  </div>
+
+  <!-- Onboarding Tracker -->
+  <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card nhsuk-card--feature nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-s">DBS check</h3>
+          <p>No DBS check has been started for this volunteer.</p>
+          <p>Status: <strong>Not Started</strong></p>
+          <a href="/design-spike/recruiter-v2/start-dbs-check" class="nhsuk-button nhsuk-button--secondary">Start DBS check</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card nhsuk-card--feature nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-s">Health check</h3>
+          <p>Health checks are required before volunteering starts.</p>
+          <p>Status: <strong>Not Started</strong></p>
+          <a href="/design-spike/recruiter-v2/request-health-check" class="nhsuk-button nhsuk-button--secondary">Request health check</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-row nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card nhsuk-card--feature nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-s">References</h3>
+          <p>No references have been requested yet.</p>
+          <p>Status: <strong>0/2 Received</strong></p>
+          <a href="/design-spike/recruiter-v2/request-references" class="nhsuk-button nhsuk-button--secondary">Request references</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card nhsuk-card--feature nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-s">Training</h3>
+          <p>Volunteers must complete training before starting.</p>
+          <p>Status: <strong>Not Started</strong></p>
+          <button class="nhsuk-button nhsuk-button--secondary">Assign training</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="nhsuk-card nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-heading-m">Actions</h2>
+      <p>Once onboarding steps are complete, you can move the volunteer forward.</p>
+      <div class="nhsuk-button-group">
+        <button class="nhsuk-button" disabled>Send welcome email</button>
+        <button class="nhsuk-button nhsuk-button--secondary" disabled>Approve for start</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes & Attachments -->
+  <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-heading-m">Notes & Attachments</h2>
+      <p>Use this section to keep notes or upload documents once onboarding starts.</p>
+      <div class="nhsuk-button-group">
+        <button class="nhsuk-button nhsuk-button--secondary" disabled>View notes</button>
+        <button class="nhsuk-button nhsuk-button--secondary" disabled>Upload document</button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

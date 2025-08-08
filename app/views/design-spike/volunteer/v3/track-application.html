@@ -1,0 +1,21 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Track Your Application{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/index" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">Track Your Application</h1>
+
+  <p>Enter your email to receive a secure link to check your application status.</p>
+
+  <form method="post" action="/design-spike/send-tracking-link">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="email">Email address</label>
+      <input class="nhsuk-input" id="email" name="email" type="email" required>
+    </div>
+    <button class="nhsuk-button" type="submit">Send Secure Link</button>
+  </form>
+
+  <p>You’ll receive an email with a secure link to access your application tracker.</p>
+{% endblock %}

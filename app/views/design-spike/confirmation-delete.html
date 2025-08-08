@@ -1,0 +1,29 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Confirm Deletion{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/listing-details" class="nhsuk-back-link">Back to Applications</a>
+
+  <h1 class="nhsuk-heading-xl">Confirm Deletion</h1>
+
+  <div class="nhsuk-warning-callout nhsuk-warning-callout--urgent">
+    <h2 class="nhsuk-warning-callout__label">You're about to delete this application</h2>
+    <p>Deleting this application will permanently remove the applicant from the system.</p>
+    <p><strong>Applicant Name:</strong> Daniel Wilson</p>
+    <p><strong>Reference number:</strong> REF-010</p>
+    <p><strong>Important:</strong> Applications must be reviewed before they can be deleted. If this application has not been reviewed yet, please complete the review process first.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>The application will be permanently deleted.</li>
+    <li>If this was a mistake, you will need to ask the applicant to reapply.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/listing-details" class="nhsuk-button nhsuk-button--red">Confirm and Delete</a>
+    <a href="/design-spike/listing-details" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </div>
+
+{% endblock %}

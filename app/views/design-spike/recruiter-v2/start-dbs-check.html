@@ -1,0 +1,87 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Start DBS Check{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/volunteer-profile-new" class="nhsuk-back-link">Back to Volunteer profile</a>
+
+  <h1 class="nhsuk-heading-xl">Start DBS check</h1>
+
+  <p>You are about to start the DBS check process for <strong>Jane Doe</strong>. The volunteer must receive an email with instructions to complete their DBS application.</p>
+
+  <div class="nhsuk-inset-text">
+    <p>Once requested, the DBS status will change to <strong>In progress</strong> and you will be able to track its completion in the volunteer’s profile.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Select an email template</h2>
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="email-template">
+      Choose the email template to send to the volunteer:
+    </label>
+    <select class="nhsuk-select" id="email-template" name="email-template" onchange="updateEmailPreview()">
+      <option value="standard" selected>Standard request</option>
+      <option value="urgent">Urgent follow-Up</option>
+      <option value="reminder">Gentle reminder</option>
+    </select>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Email preview</h2>
+  <div class="nhsuk-card nhsuk-u-padding-3 nhsuk-u-background-color-light-grey" id="email-preview">
+    <p><strong>Subject:</strong> DBS Check required for your volunteer role</p>
+    <p>Dear John Doe,</p>
+    <p>As part of your onboarding for the Ward Support Volunteer role, you need to complete a DBS check.</p>
+    <p>You will soon receive an email from our DBS processing team with further instructions. Please complete this as soon as possible to avoid delays.</p>
+    <p>If you have any questions, feel free to reply to this email.</p>
+    <p>Best regards,<br>Recruitment Team</p>
+  </div>
+
+  <textarea id="email-text" class="nhsuk-textarea nhsuk-u-visually-hidden"></textarea>
+
+  <button class="nhsuk-button nhsuk-button--secondary" onclick="copyEmail()">Copy email</button>
+  <a href="/design-spike/dbs-check-requested" class="nhsuk-button">Confirm & update status</a>
+  <a href="/design-spike/recruiter-v2/volunteer-profile-new" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+
+  <script>
+    function updateEmailPreview() {
+      let template = document.getElementById("email-template").value;
+      let preview = document.getElementById("email-preview");
+      let emailText = document.getElementById("email-text");
+
+      let emailTemplates = {
+        "standard": `
+        <p><strong>Subject:</strong> DBS Check Required for Your Volunteer Role</p>
+        <p>Dear John Doe,</p>
+        <p>As part of your onboarding for the Ward Support Volunteer role, you need to complete a DBS check.</p>
+        <p>You will soon receive an email from our DBS processing team with further instructions. Please complete this as soon as possible to avoid delays.</p>
+        <p>If you have any questions, feel free to reply to this email.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "urgent": `
+        <p><strong>Subject:</strong> URGENT: Immediate DBS Check Required</p>
+        <p>Dear John Doe,</p>
+        <p>This is a reminder that your DBS check must be completed as soon as possible. Without this, we cannot progress your application.</p>
+        <p>Please complete the DBS check as soon as possible. Let us know if you need any assistance.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `,
+        "reminder": `
+        <p><strong>Subject:</strong> Reminder: DBS Check Required</p>
+        <p>Dear John Doe,</p>
+        <p>Just a friendly reminder that you need to complete your DBS check. Once completed, we can proceed with your volunteer application.</p>
+        <p>If you have already completed it, please disregard this email.</p>
+        <p>Best regards,<br>Recruitment Team</p>
+        `
+      };
+
+      preview.innerHTML = emailTemplates[template];
+      emailText.value = emailTemplates[template].replace(/<\/?p>/g, "").replace(/<br>/g, "\n");
+    }
+
+    function copyEmail() {
+      let emailText = document.getElementById("email-text");
+      emailText.select();
+      document.execCommand("copy");
+      alert("Email copied to clipboard! Paste it into your email client.");
+    }
+  </script>
+
+{% endblock %}

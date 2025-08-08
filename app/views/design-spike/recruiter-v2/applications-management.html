@@ -1,0 +1,160 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Applications Management{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Go back</a>
+
+  <h1 class="nhsuk-heading-xl">Manage applications</h1>
+
+  <p>Review applications, filter by role or status, and take bulk actions.</p>
+
+  <!-- 📌 Filtering & Bulk Actions Section -->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="filter-role">Filter by role:</label>
+        <select class="nhsuk-select" id="filter-role" onchange="filterApplications()">
+          <option value="all" selected>All roles</option>
+          <option value="ward-volunteer">Ward Volunteer</option>
+          <option value="hospital-reception">Hospital Reception Volunteer</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="filter-status">Filter by status:</label>
+        <select class="nhsuk-select" id="filter-status" onchange="filterApplications()">
+          <option value="all" selected>All Statuses</option>
+          <option value="new">New</option>
+          <option value="reviewed">Reviewed</option>
+          <option value="shortlisted">Shortlisted</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="bulk-action">Bulk actions:</label>
+        <select class="nhsuk-select" id="bulk-action">
+          <option value="shortlist">Shortlist selected</option>
+          <option value="approve">Approve selected</option>
+          <option value="reject">Reject selected</option>
+          <option value="request-info">Request more info</option>
+        </select>
+      </div>
+      <button type="button" class="nhsuk-button" onclick="applyBulkAction()">Apply action</button>
+    </div>
+  </div>
+
+  <!-- 📌 Applications Table with Sorting -->
+  <table class="nhsuk-table" id="applications-table">
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="select-all" onclick="toggleSelectAll()"></th>
+        <th onclick="sortTable(0)" style="cursor: pointer;">Applicant Name <span id="arrow-0">▲</span></th>
+        <th onclick="sortTable(1)" style="cursor: pointer;">Role <span id="arrow-1">▲</span></th>
+        <th onclick="sortTable(2)" style="cursor: pointer;">Date Applied <span id="arrow-2">▲</span></th>
+        <th onclick="sortTable(3)" style="cursor: pointer;">Status <span id="arrow-3">▲</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Sample Applications -->
+      <tr data-role="ward-volunteer" data-status="new">
+        <td><input type="checkbox" class="applicant-checkbox"></td>
+        <td><a href="/design-spike/recruiter-v2/review-application" class="nhsuk-link">Jane Doe</a></td>
+        <td>Walk and Talk Volunteer</td>
+        <td>10 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">New</span></td>
+      </tr>
+      <tr data-role="hospital-reception" data-status="reviewed">
+        <td><input type="checkbox" class="applicant-checkbox"></td>
+        <td><a href="#" class="nhsuk-link">John Smith</a></td>
+        <td>Hospital Reception Volunteer</td>
+        <td>8 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td>
+      </tr>
+      <tr data-role="ward-volunteer" data-status="shortlisted">
+        <td><input type="checkbox" class="applicant-checkbox"></td>
+        <td><a href="#" class="nhsuk-link">Emily Brown</a></td>
+        <td>Ward Volunteer</td>
+        <td>7 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--yellow">Shortlisted</span></td>
+      </tr>
+      <tr data-role="hospital-reception" data-status="approved">
+        <td><input type="checkbox" class="applicant-checkbox"></td>
+        <td><a href="#" class="nhsuk-link">Michael Lee</a></td>
+        <td>Hospital Reception Volunteer</td>
+        <td>5 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--green">Approved</span></td>
+      </tr>
+      <tr data-role="ward-volunteer" data-status="rejected">
+        <td><input type="checkbox" class="applicant-checkbox"></td>
+        <td><a href="#" class="nhsuk-link">Sophie Taylor</a></td>
+        <td>Ward Volunteer</td>
+        <td>3 April 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--red">Rejected</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function toggleSelectAll() {
+      let checkboxes = document.querySelectorAll('.applicant-checkbox');
+      let selectAll = document.getElementById('select-all');
+      checkboxes.forEach(checkbox => checkbox.checked = selectAll.checked);
+    }
+
+    function applyBulkAction() {
+      let selectedAction = document.getElementById('bulk-action').value;
+      let selectedApplicants = document.querySelectorAll('.applicant-checkbox:checked');
+
+      if (selectedApplicants.length === 0) {
+        alert("Please select at least one application.");
+        return;
+      }
+
+      let actionText = {
+        "shortlist": "shortlisted",
+        "approve": "approved",
+        "reject": "rejected",
+        "request-info": "sent a request for more information"
+      };
+
+      alert(`${selectedApplicants.length} application(s) have been ${actionText[selectedAction]}.`);
+    }
+
+    function filterApplications() {
+      let selectedRole = document.getElementById('filter-role').value;
+      let selectedStatus = document.getElementById('filter-status').value;
+      let rows = document.querySelectorAll('#applications-table tbody tr');
+
+      rows.forEach(row => {
+        let roleMatch = (selectedRole === "all" || row.getAttribute('data-role') === selectedRole);
+        let statusMatch = (selectedStatus === "all" || row.getAttribute('data-status') === selectedStatus);
+
+        row.style.display = (roleMatch && statusMatch) ? "" : "none";
+      });
+    }
+
+    function sortTable(columnIndex) {
+      let table = document.getElementById("applications-table");
+      let rows = Array.from(table.rows).slice(1);
+      let currentArrow = document.getElementById("arrow-" + columnIndex);
+      let isAscending = currentArrow.innerText === "▲";
+
+      let sortedRows = rows.sort((rowA, rowB) => {
+        let cellA = rowA.cells[columnIndex].innerText.toLowerCase();
+        let cellB = rowB.cells[columnIndex].innerText.toLowerCase();
+        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+      });
+
+      currentArrow.innerText = isAscending ? "▼" : "▲";
+      sortedRows.forEach(row => table.appendChild(row));
+    }
+  </script>
+
+{% endblock %}

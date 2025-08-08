@@ -1,0 +1,68 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Manage References{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/volunteer-profile-new" class="nhsuk-back-link">Back to Volunteer Profile</a>
+
+  <h1 class="nhsuk-heading-xl">Manage References</h1>
+
+  <p>Track and update the status of references for <strong>John Doe</strong>.</p>
+
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Referee Name</th>
+        <th>Email</th>
+        <th>Relationship</th>
+        <th>Status</th>
+        <th>Date Received</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dr. Jane Smith</td>
+        <td><a href="mailto:jane.smith@email.com">jane.smith@email.com</a></td>
+        <td>Previous Manager</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue" id="ref1-status">Requested</span></td>
+        <td id="ref1-date">-</td>
+        <td>
+          <button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" onclick="markReceived(1)">
+            Mark as Received
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>John Williams</td>
+        <td><a href="mailto:john.williams@email.com">john.williams@email.com</a></td>
+        <td>Colleague</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue" id="ref2-status">Requested</span></td>
+        <td id="ref2-date">-</td>
+        <td>
+          <button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small" onclick="markReceived(2)">
+            Mark as Received
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function markReceived(refNumber) {
+      let statusTag = document.getElementById(`ref${refNumber}-status`);
+      let dateField = document.getElementById(`ref${refNumber}-date`);
+      let currentDate = new Date().toLocaleDateString("en-GB");
+
+      statusTag.innerText = "Received";
+      statusTag.classList.remove("nhsuk-tag--blue");
+      statusTag.classList.add("nhsuk-tag--green");
+
+      dateField.innerText = currentDate;
+
+      // Disable the button after marking as received
+      document.querySelector(`[onclick="markReceived(${refNumber})"]`).disabled = true;
+    }
+  </script>
+
+{% endblock %}

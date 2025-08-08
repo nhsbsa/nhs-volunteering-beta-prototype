@@ -1,0 +1,70 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+  <h1 class="nhsuk-heading-xl">Recruiter Dashboard</h1>
+  <p class="nhsuk-body-l">Manage volunteer opportunities and applications within your organisation.</p>
+
+  <h2 class="nhsuk-heading-m">Filter Applications</h2>
+  <a href="/recruiter-dashboard?filter=new" class="nhsuk-button nhsuk-button--secondary">New Applications</a>
+  <a href="/recruiter-dashboard?filter=under-review" class="nhsuk-button nhsuk-button--secondary">Under Review</a>
+  <a href="/recruiter-dashboard?filter=shortlisted" class="nhsuk-button nhsuk-button--secondary">Shortlisted</a>
+
+  <h2 class="nhsuk-heading-m">Organisation Details</h2>
+  <p><strong>Organisation Name:</strong> NHS Trust XYZ</p>
+  <p><a href="/organisation/opportunities" target="_blank">View Available Opportunities</a></p>
+  <p><a href="/organisation/details">View Organisation Details</a></p>
+
+
+  
+
+  <h2 class="nhsuk-heading-m">Manage Listings</h2>
+  <a href="/listings/new" class="nhsuk-button">Create New Listing</a>
+  
+  <table class="nhsuk-table">
+    <thead>
+      <tr>
+        <th>Listing Details</th>
+        <th>Created On</th>
+        <th>Status</th>
+        <th>Applications</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div><strong>Ward Volunteer</strong></div>
+          <div class="nhsuk-body-s">Closing Date: 30 Feb 2025</div>
+          <div class="nhsuk-body-s">Application Ref: 12240-AB</div>
+        </td>
+        <td>15 Feb 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--blue">Live</span></td>
+        <td>
+          12
+          {% if true %} {# Replace 'true' with your condition, e.g., listing.has_new_applications #}
+            <span class="nhsuk-tag nhsuk-tag--green nhsuk-u-ml--2">New</span>
+          {% endif %}
+        </td>
+        <td><a href="listing-details">View</a></td>
+      </tr>
+      <tr>
+        <td>
+          <div><strong>Hospital Reception Assistant</strong></div>
+          <div class="nhsuk-body-s">Closing Date: 15 Mar 2025</div>
+          <div class="nhsuk-body-s">Application Ref: 12240-AB</div>
+        </td>
+        <td>10 Jan 2025</td>
+        <td><span class="nhsuk-tag nhsuk-tag--grey">Closed</span></td>
+        <td>
+          75
+          {% if false %} {# Replace 'false' with your condition if applicable #}
+            <span class="nhsuk-tag nhsuk-tag--green nhsuk-u-ml--2">New</span>
+          {% endif %}
+        </td>
+        <td><a href="#">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

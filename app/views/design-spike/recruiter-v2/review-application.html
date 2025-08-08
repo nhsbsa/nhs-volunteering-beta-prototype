@@ -1,0 +1,126 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Review Application - REF-12345{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/recruiter-v2/recruiter-dashboard" class="nhsuk-back-link">Go back</a>
+
+  <h1 class="nhsuk-heading-xl">Review application</h1>
+
+  <!-- 🛑 Warning for Academic Applicants -->
+  <!-- <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">Important Reminder</h2>
+    <p>Some applicants may be applying to fulfill academic requirements, such as logging work experience hours. 
+    These volunteer roles are not intended for that purpose.</p>
+    <p>If the reason for applying seems academic, consider requesting more information before proceeding.</p>
+  </div> -->
+
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Applicant name</dt>
+      <dd class="nhsuk-summary-list__value">Jane Doe</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Application ref</dt>
+      <dd class="nhsuk-summary-list__value">REF-12345</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Role applied for</dt>
+      <dd class="nhsuk-summary-list__value">Walk and Talk volunteer</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Application date</dt>
+      <dd class="nhsuk-summary-list__value">20 Mar 2025</dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Status</dt>
+      <dd class="nhsuk-summary-list__value">
+        <select class="nhsuk-select" id="application-status" name="application-status">
+          <option value="new" selected>New</option>
+          <option value="under-review">Under review</option>
+          <option value="shortlisted">Shortlisted</option>
+          <option value="approved">Approved</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Applicant details</h2>
+
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Email</dt>
+      <dd class="nhsuk-summary-list__value">
+        <a href="mailto:johndoe@email.com" class="nhsuk-link">janedoe@email.com</a> 
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Phone</dt>
+      <dd class="nhsuk-summary-list__value"><a href="tel:07500123456" class="nhsuk-link">07500 123456</a></dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Address</dt>
+      <dd class="nhsuk-summary-list__value">
+        12 Green Street<br>
+        Manchester<br>
+        M4 1AB
+      </dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Qualifications & Experience</h2>
+
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Qualifications</dt>
+      <dd class="nhsuk-summary-list__value">
+        - First Aid Certified<br>
+        - Previous volunteer at a care home<br>
+        - Safeguarding training completed
+      </dd>
+    </div>
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Experience</dt>
+      <dd class="nhsuk-summary-list__value">3 years supporting elderly patients in a community setting.</dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Reason for applying</h2>
+
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Why do you want to volunteer?</dt>
+      <dd class="nhsuk-summary-list__value">
+        I have always been passionate about supporting vulnerable people, and I believe my experience in patient care will allow me to make a positive impact in a hospital setting.
+      </dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Availability</h2>
+
+  <div class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Availability</dt>
+      <dd class="nhsuk-summary-list__value">Monday to Wednesday, 10am - 4pm</dd>
+    </div>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Internal notes</h2>
+
+  <form method="post" action="/design-spike/application-updated">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="internal-notes">Add notes (visible to recruiters only)</label>
+      <textarea class="nhsuk-textarea" id="internal-notes" name="internal-notes" rows="4"></textarea>
+    </div>
+
+    <h2 class="nhsuk-heading-m">Actions</h2>
+    <div class="nhsuk-button-group">
+      <a href="/design-spike/recruiter-v2/approve-confirmation" class="nhsuk-button">Approve</a>
+      <a href="/design-spike/recruiter-v2/shortlist-confirmation" class="nhsuk-button nhsuk-button--secondary">Shortlist</a>
+      <a href="/design-spike/recruiter-v2/request-more-info" class="nhsuk-button nhsuk-button--secondary">Request more info</a>
+      <button class="nhsuk-button nhsuk-button--secondary" type="submit">Reject</button>
+    </div>
+  </form>
+
+{% endblock %}

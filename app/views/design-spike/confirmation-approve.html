@@ -1,0 +1,30 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Confirm Approval{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/volunteer-application" class="nhsuk-back-link">Back to Application</a>
+
+  <h1 class="nhsuk-heading-xl">Confirm Approval</h1>
+
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">You're about to approve this application</h2>
+    <p>By approving this application, you will create a volunteer profile for:</p>
+    <p><strong>Name:</strong> John Doe</p>
+    <p><strong>Reference number:</strong> REF-013</p>
+    <p>This profile will allow you to track onboarding progress, including DBS checks, training, and start date confirmation.</p>
+  </div>
+
+  <h2 class="nhsuk-heading-m">Next Steps</h2>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>The applicant will be moved to the onboarding stage.</li>
+    <li>You will be able to track their progress.</li>
+    <li>If the application was approved by mistake, you can revoke it from the profile page.</li>
+  </ul>
+
+  <div class="nhsuk-button-group">
+    <a href="/design-spike/volunteer-profile" class="nhsuk-button">Confirm and Create Profile</a>
+    <a href="/design-spike/volunteer-application" class="nhsuk-button nhsuk-button--secondary">Cancel</a>
+  </div>
+
+{% endblock %}

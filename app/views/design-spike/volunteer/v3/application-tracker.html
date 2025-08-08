@@ -1,0 +1,121 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Application Tracker{% endblock %}
+
+{% block content %}
+  <!-- <a href="/design-spike/volunteer-dashboard" class="nhsuk-back-link">Go back</a> -->
+
+  <h1 class="nhsuk-heading-xl">Track your application</h1>
+
+  <p>Your application is currently under review. We will notify you by email when there are any updates.</p>
+
+  <!-- 📌 Progress Bar -->
+  <div class="nhsuk-progress-bar">
+    <div class="nhsuk-progress-bar__background">
+      <div class="nhsuk-progress-bar__fill" style="width: 30%;"></div>
+    </div>
+    <p class="nhsuk-progress-bar__label">30% Complete</p>
+  </div>
+
+  <!-- 📌 Application Progress Cards -->
+  <h2 class="nhsuk-heading-l">Application progress</h2>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-m">Submitted</h3>
+          <p>Your application was submitted on <strong>10 April 2025</strong>.</p>
+          <span class="nhsuk-tag nhsuk-tag--green">✓ Completed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-m">Under review</h3>
+          <p>A recruiter is currently reviewing your application.</p>
+          <span class="nhsuk-tag nhsuk-tag--blue">In Progress</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card nhsuk-card--pending" tabindex="0" role="button" aria-label="Shortlisted - Pending. More details unavailable.">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-m">Shortlisted</h3>
+          <p>If shortlisted, you’ll receive an email with next steps.</p>
+          <span class="nhsuk-tag nhsuk-tag--grey">Pending</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card nhsuk-card--pending" tabindex="0" role="button" aria-label="Approved - Pending. More details unavailable.">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-m">Approved</h3>
+          <p>If approved, you’ll begin the onboarding process.</p>
+          <span class="nhsuk-tag nhsuk-tag--grey">Pending</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-third">
+      <div class="nhsuk-card nhsuk-card--pending" tabindex="0" role="button" aria-label="Onboarding - Pending. More details unavailable.">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-heading-m">Onboarding</h3>
+          <p>Complete your DBS check, health screening, and training.</p>
+          <span class="nhsuk-tag nhsuk-tag--grey">Pending</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📌 What Happens Next Section -->
+  <h2 class="nhsuk-heading-m">What happens next?</h2>
+  <p>You will receive an email update when your application progresses. If you have any questions, you can <a href="mailto:volunteering@nhs.uk" class="nhsuk-link">contact the volunteering team</a>.</p>
+
+  <style>
+    /* 📌 NHS Progress Bar Styling */
+    .nhsuk-progress-bar {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .nhsuk-progress-bar__background {
+      width: 100%;
+      height: 10px;
+      background-color: #d8dde0;
+      border-radius: 5px;
+      position: relative;
+    }
+    .nhsuk-progress-bar__fill {
+      height: 10px;
+      background-color: #005eb8;
+      border-radius: 5px;
+      transition: width 0.3s ease-in-out;
+    }
+    .nhsuk-progress-bar__label {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    /* 📌 Grey Out Pending Cards (Accessible) */
+    .nhsuk-card--pending {
+      background-color: #e8eaeb;
+      color: #212b32;
+      cursor: not-allowed;
+      border: 1px solid #d8dde0;
+    }
+
+    /* 📌 Ensure Keyboard Focus */
+    .nhsuk-card--pending:focus {
+      outline: 3px solid #005eb8;
+      background-color: #d8dde0;
+    }
+  </style>
+
+{% endblock %}

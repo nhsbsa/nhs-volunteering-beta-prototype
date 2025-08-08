@@ -1,0 +1,13 @@
+{% extends "layout_vol_header.html" %}
+
+{% block pageTitle %}Check Your Email{% endblock %}
+
+{% block content %}
+  <a href="/design-spike/index" class="nhsuk-back-link">Back to Home</a>
+
+  <h1 class="nhsuk-heading-xl">Check Your Email</h1>
+
+  <p>We’ve sent a secure link to <strong>{{ email }}</strong>. Click the link in your email to track your application.</p>
+
+  <p>If you don’t receive an email within a few minutes, check your spam folder or request a new link.</p>
+{% endblock %}

@@ -6,13 +6,14 @@
   Question page
 {% endblock %}
 
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      
+
       <div class="nhsuk-back-link">
 
-        <a class="nhsuk-back-link__link" href="../edit-journey/task-list-completed">
+        <a class="nhsuk-back-link__link" href="../edit-journey/contact-details-edit">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
@@ -20,60 +21,45 @@
         </a>
       </div>
 
-      <form action="../edit-journey/contact-details-answer-edit" method="post" class="form">
+      <form action="../edit-journey/task-list-completed" method="post" class="form">
+
+        <h1 class="nhsuk-heading nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
+          Edit the contact details
+        </h1>
+
+        <div class="nhsuk-hint">Volunteers will use these details to contact you about the opportunity.</div>
 
         <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset">
-              <h1 class="nhsuk-heading-l">
-                <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
-                Do you need to edit the contact details?
-              </h1>
-
-              <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
-                This is where you want to receive enquiries about the opportunity. These details will show on the <strong>opportunity listing</strong>.
-              </div>
-
-              <div class="nhsuk-card">
-                <div class="nhsuk-card__content">
-                  <p class="nhsuk-card__description"><strong>Contact: </strong>Jane Pearson</p>
-                <p class="nhsuk-card__description"><strong>Email address: </strong>j.pearson@email.nhs.uk</p>
-                <p class="nhsuk-card__description"><strong>Telephone number: </strong>01234 555666</p>
-                </div>
-            </div>
-            
-          
-              <div class="nhsuk-radios">
-
-                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-                  Select one option
-                </legend>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="r9-contact-details-1" name="r9-contact-details" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="r9-contact-details-1">
-                    Yes, I want to change them
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="r9-contact-details-2" name="r9-contact-details" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="r9-contact-details-2">
-                    No
-                  </label>
-                </div>
-          
-              </div>
-            </fieldset>
-          
+          <label class="nhsuk-label" for="r9-contact-full-name">
+           Contact person
+          </label>
+          <div id="email-hint" class="nhsuk-hint">
+            This could be the name or job title of the volunteering team member
           </div>
+          <input class="nhsuk-input nhsuk-input--width-50" id="r9-contact-full-name" name="r9-contact-full-name" type="text" value="Jane Pearson">  
+        </div>
 
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="r9-contact-email">
+           Email address
+          </label>
+          <div id="email-hint" class="nhsuk-hint">
+            This could be an individual or a team email address
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-50" id="r9-contact-email" name="r9-contact-email" type="text" value="j.pearson@email.nhs.uk">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="r9-contact-phone">
+           Work phone number (optional)
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-50" id="r9-contact-phone" name="r9-contact-phone" type="text" value="01234 555666">
+        </div>
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Continue
+            Update and return to task list
         </button>
-
-
         
 
       </form>

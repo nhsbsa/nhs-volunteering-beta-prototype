@@ -6,28 +6,28 @@
   Question page
 {% endblock %}
 
-{% block outerContent %}
-  {{ backLink({
-    "href": "../task-list-fixed",
-    "text": "Go back",
-    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
-  }) }}
-{% endblock %}
-
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-
       
+      <div class="nhsuk-back-link">
 
-      <form action="/r9-receive-applications-answer" method="post" class="form">
+        <a class="nhsuk-back-link__link" href="../edit-journey/task-list-completed">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <form action="../edit-journey/task-list-completed" method="post" class="form">
 
         <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset">
               <h1 class="nhsuk-heading-l">
-                <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
-                Do you want to receive applications through NHS Volunteering? 
+                <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
+                Change how you want to receive applications through NHS Volunteering
               </h1>
 
               <div class="nhsuk-hint">
@@ -92,12 +92,8 @@
 
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Save and continue
+          Update and return to task list
         </button>
-
-        <p class="nhsuk-body">              
-          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
-        </p>
 
         
 

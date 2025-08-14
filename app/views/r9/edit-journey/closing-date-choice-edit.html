@@ -1,0 +1,84 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="../edit-journey/task-list-completed">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <form action="../edit-journey/closing-date-edit" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <h1 class="nhsuk-heading-l">
+                <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
+                Do you want to set or change the closing date?
+ 
+              </h1>
+
+              <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                This will show as the last date to register for this opportunity.
+              </div>
+
+              <div class="nhsuk-do-dont-list">
+                <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+                <p class="nhsuk-body">You can change the closing date anytime, including after the listing is published.</p>
+                <p class="nhsuk-body">Once it closes, you will need to create a new listing if you want to advertise this opportunity again.</p>  
+              </div>
+            
+          
+              <div class="nhsuk-radios">
+
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                  Select one option
+                </legend>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r9-closing-date-1" name="r9-closing-date" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r9-closing-date-1">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r9-closing-date-2" name="r9-closing-date" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r9-closing-date-2">
+                    No, I don't want a closing date
+                  </label>
+                </div>
+          
+              </div>
+            </fieldset>
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Continue
+        </button>
+
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

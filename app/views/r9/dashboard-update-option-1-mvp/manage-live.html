@@ -44,41 +44,77 @@
   <li><a href="/r9/close-listing-now">Close the listing</a></li>
 </ul>
 
-<h2>Manage Applications</h2>
+<h2  id="received">Manage Applications</h2>
 <div class="nhsuk-button-group ">
   <a href="?filter=new" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">New Applications</a>
   <a href="?filter=reviewed" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">Reviewed</a>
   <a href="?filter=shortlisted" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">Shortlisted</a>
-  <a href="?filter=archived" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">Archived</a>
 </div>
 
-  <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0">
-    <table class="nhsuk-table">
-      <thead>
-        <tr>
-          <th>Applicant Name</th>
-          <th>Application Ref</th>
-          <th>Application Date</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+  <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title" >
+      Contents
+    </h2>
+  
+    <ul class="nhsuk-tabs__list">
+  
+      <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+          Received (12)
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="manage-live-archived#archived">
+          Archived (44)
+        </a>
+      </li>
+  
+    </ul>
+
+    <div class="nhsuk-tabs__panel">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Received</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Applicant Name
+            </th>
+           
+            <th role="columnheader" class="" scope="col">
+              Application Ref
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Application Date
+              </th>
+    
+             <th role="columnheader" class="" scope="col">
+              Status
+             </th>
+
+             <th role="columnheader" class="" scope="col">
+              Actions
+             </th>
+
+          </tr>
+        </thead>
       <tbody>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">John Doe</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-013</a></td><td>13 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="#" class="nhsuk-link--danger">Archive</a></tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Mark Foster</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-012</a></td><td>12 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Emma Carter</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-011</a></td><td>11 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Daniel Wilson</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-010</a></td><td>10 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Olivia Scott</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-009</a></td><td>09 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">James Brown</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-008</a></td><td>08 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a></tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Sarah Evans</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-007</a></td><td>07 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">David Greeen</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-006</a></td><td>06 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Emily White</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-005</a></td><td>05 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
-        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Michael Johnson</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-004</a></td><td>04 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+        <tr><td><a href="../dashboard-update-option-1-mvp/manage-application-1">John Doe</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application-1">REF-013</a></td><td>13 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="#" class="nhsuk-link--danger">Archive</a></tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application-2">Mark Foster</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application-2">REF-012</a></td><td>12 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application-3">Emma Carter</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application-3">REF-011</a></td><td>11 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application-4">Daniel Wilson</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application-4">REF-010</a></td><td>10 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application-5">Olivia Scott</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application-5">REF-009</a></td><td>09 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">James Brown</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-008</a></td><td>08 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a></tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Sarah Evans</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-007</a></td><td>07 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">David Greeen</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-006</a></td><td>06 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Emily White</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-005</a></td><td>05 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="../dashboard-update-option-1-mvp/manage-application">Michael Johnson</a></td><td><a href="../dashboard-update-option-1-mvp/manage-application">REF-004</a></td><td>04 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="#" class="nhsuk-link--danger">Archive</a> </tr>
+          
       </tbody>
     </table>
   </table>
 
-
+</div>
 </div>
 </div>
 

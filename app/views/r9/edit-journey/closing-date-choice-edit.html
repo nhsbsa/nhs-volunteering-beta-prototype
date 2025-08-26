@@ -78,6 +78,20 @@
 
       </form>
 
+      <script>
+        document.querySelector('.form').addEventListener('submit', function(e) {
+          const selected = document.querySelector('input[name="r9-closing-date"]:checked');
+      
+          if (selected && selected.value === 'no') {
+            e.preventDefault(); // Stop the form from submitting normally
+            window.location.href = 'closing-date-changes-confirmation'; // Redirect to your desired page
+          }
+          // Else, allow form to submit normally to /closing-date-answer
+        });
+      </script>
+
+
+
     </div>
   </div>
 

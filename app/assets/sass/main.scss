@@ -363,5 +363,12 @@ padding-top: 40px;
   }
 }
 
-// css for button group
+// css for action link override
 
+.nhsuk-action-link--reverse .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
+    fill: #ffffff !important;
+}
+
+.nhsuk-action-link--reverse .nhsuk-action-link__link:not(.nhsuk-button) {
+    text-decoration: none; 
+}

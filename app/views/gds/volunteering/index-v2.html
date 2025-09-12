@@ -17,57 +17,43 @@
 <!-- Homepage content -->
 {% block content %}
 
-<!-- hero image and "We're here for you" content -->
-<section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description">
-    <script>
-      function randomImage() {
-          var images =[
-            "/images/hero_image.jpg"
-          ];
-          var size = images.length;
-          var x = Math.floor(size * Math.random());
-          var element = document.getElementsByClassName('nhsuk-hero--image');
-          if (element.length > 0) {
-              element[0].style["background-image"] = "url(" + images[x] + ")";
-          }
-      }
-      document.addEventListener("DOMContentLoaded", randomImage);
-  </script>
-   <div class="nhsuk-hero__overlay">
-    <div class="nhsuk-width-container">
-        <div class="nhsuk-grid-column-two-thirds">
-          <div class="nhsuk-hero-content">
-            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Become an NHS volunteer</h1>
-            <p class="nhsuk-body-m nhsuk-u-margin-bottom-0">Discover how you can make an impact on the experience of patients, their families and the NHS.</p>
-            <span class="nhsuk-hero__arrow" aria-hidden="true"></span>
+
+<section class="nhsuk-hero">
+      <div class="nhsuk-width-container nhsuk-hero--border">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-hero__wrapper">
+            <div class="nhsuk-grid-column-full">
+              <h1 class="nhsuk-u-margin-bottom-4" data-test="heading" id="heading">Become an NHS volunteer</h1>
+              <p>Discover how you can make an impact on the experience of patients, their families and the NHS.</p>
+            </div>
+            <section class="nhsuk-section">
+              <div class="nhsuk-width-container">
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full app-section__content search-section">
+                    <div class="nhsuk-u-reading-width">
+                    <h2 data-block-key="gehme">Search for an opportunity</h2>
+                    <p data-block-key="s0tug">
+                     Use a postcode and other criteria to find organisations offering volunteering opportunities.
+                    </p>
+                    <div class="nhsuk-action-link nhsuk-action-link--reverse nhsuk-u-margin-bottom-0">
+                      <a class="nhsuk-action-link__link" href="../volunteering/postcode-search" data-test="search-link">
+                        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" style="fill: #ffffff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                        </svg>
+                        <span class="nhsuk-action-link__text">Go to search</span>
+                      </a>
+                    </div>
+                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
-    </div>
-</section>
-
-
-<!-- Calls to action -->
-<section class="nhsuk-section container-white">
-  <div class="nhsuk-width-container">
-    <div class="nhsuk-grid-row nhsuk-u-margin-top-3 ">
-        <div class="nhsuk-grid-column-full app-section__content">
-          <h2>Search for an opportunity</h2>
-          <p>Use a postcode and other criteria to find organisations offering volunteering opportunities.</p>
-          <div class="nhsuk-action-link nhsuk-u-margin-bottom-0">
-            <a class="nhsuk-action-link__link" href="../volunteering/postcode-search">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-              </svg>
-              <span class="nhsuk-action-link__text">Go to search</span>
-            </a>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
 
 

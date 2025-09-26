@@ -1,0 +1,107 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "review-questions",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+        
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+           
+            <li>
+              <a href="#example-error-1">Select yes if you want to limit the number of applications</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form action="alt-closing-date" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+                  Do you want to limit the number of applications?
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint">You can set a limit for the number of applications you want to receive for your listing.</div>
+
+          
+              <div class="nhsuk-radios nhsuk-radios--conditional nhsuk-form-group--error">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                  Select one option
+                </legend>
+             <span class="nhsuk-error-message" id="example-error-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you want to limit the number of applications
+              </span>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r9-application-limit" name="contact" type="radio" value="phone" aria-controls="conditional-r9-application-limit" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r9-application-limit">
+                    Yes
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-r9-application-limit">
+          
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="input--width-5">
+                      Enter maximum number of applications you want to receive
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-5" id="phone" name="phone" type="text">
+                  </div>
+          
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="r9-application-limit-2" name="contact" type="radio" value="text" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="r9-application-limit-2">
+                    No, I don't want to limit the number of applications
+                  </label>
+                </div>
+          
+              </div>
+
+              
+            </fieldset>
+          
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

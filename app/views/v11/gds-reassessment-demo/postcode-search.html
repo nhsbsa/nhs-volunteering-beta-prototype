@@ -1,0 +1,128 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering - Search for an opportunity near me
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="/volunteering/index">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1>Search for a volunteering opportunity</h1>
+  <form action="results" method="post">
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="input-width-10">
+      Enter a postcode in England
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="postcode" type="text" value="{{ data['postcode'] }}">
+  </div>
+
+  <div class="nhsuk-form-group">
+
+    <fieldset class="nhsuk-fieldset">
+      <label class="nhsuk-label" for="input-width-10">
+       How far from your postcode would you like to search?
+      </label>
+  
+      <div class="nhsuk-radios">
+  
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="3" {{ checked("radius", "3") }} >
+          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            Up to 3 miles
+          </label>
+        </div>
+  
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="5" {{ checked("radius", "5") }}>
+          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            Up to 5 miles
+          </label>
+        </div>
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="10" {{ checked("radius", "10") }}>
+          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            Up to 10 miles
+          </label>
+        </div>
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="20" {{ checked("radius", "20") }}>
+          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            Up to 20 miles
+          </label>
+        </div>
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="30" {{ checked("radius", "30") }}>
+          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            Up to 30 miles
+          </label>
+        </div>
+  
+      </div>
+    </fieldset>
+  
+  </div>
+
+  <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="results">
+    Search
+  </button>
+</form>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

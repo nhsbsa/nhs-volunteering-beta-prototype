@@ -1,0 +1,62 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "location",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add an area name
+      </h1>
+
+      <div class="nhsuk-do-dont-list">
+        <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+        <p class="nhsuk-body">This will be the location of the opportunity shown on your listing.</p>
+        <p class="nhsuk-body">The area name could be the city, county or region.</p>
+        <p class="nhsuk-body">Volunteers will see it below the title of the opportunity.</p>
+      </div>
+
+      <form action="check-location-radius" method="post">
+
+        <div class="nhsuk-form-group">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+            <div class="nhsuk-form-group ">
+              <label class="nhsuk-label" for="a1-trust-url">
+                Enter a name for the area
+              </label>
+              <textarea rows="1" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000">
+
+            </textarea>
+            </div>
+          </div>
+        </div>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="check-location-radius">
+          Save and continue
+        </button>
+              
+            </form>
+
+            <p class="nhsuk-body">              
+              <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+            </p>
+    
+
+    </div>
+  </div>
+{% endblock %}

@@ -25,7 +25,7 @@
 
   <div class="nhsuk-back-link">
 
-    <a class="nhsuk-back-link__link" href="postcode-search-v2">
+    <a class="nhsuk-back-link__link" href="../volunteering/postcode-search">
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
         <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
       </svg>
@@ -40,7 +40,7 @@
 
   <div class="one nhsuk-grid-column-one-third" style="padding-left: 0px;">
    
-    <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-4 nhsuk-u-margin-bottom-2">Filter your search</h2>
+    <h2 class="nhsuk-heading-s">Filter your search</h2>
 
     <!-- distance -->
     <!-- 
@@ -89,7 +89,7 @@
             <input type="hidden" name="skipPhraseSuggester" value="true">
             
             <input type="hidden" name="employerCode" value="">
-            <details class="nhsuk-details nhsuk-expander">
+            <details class="nhsuk-details nhsuk-expander" open>
                 <summary class="nhsuk-details__summary" role="button" aria-controls="distance-details" aria-expanded="false" data-test="distance">
                     <span class="nhsuk-details__summary-text">
                         Distance
@@ -119,22 +119,34 @@
                         <div class="nhsuk-checkboxes__item">
                           <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox" value="true" data-test="covidJobsOnly">
                           <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
-                              Healthcare facility
+                              Hospital, clinic or surgery
                           </label>
                       </div>
                       <div class="nhsuk-checkboxes__item">
                         <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox" value="true" data-test="covidJobsOnly">
                         <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
-                            Community support
+                            Office
                         </label>
                     </div>
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox" value="true" data-test="covidJobsOnly">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
+                          In local community
+                      </label>
+                  </div>
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox" value="true" data-test="covidJobsOnly">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
+                        From home
+                    </label>
+                </div>
                     </div>
                 </div>
             </details>
             <details class="nhsuk-details nhsuk-expander">
                 <summary class="nhsuk-details__summary " role="button" aria-controls="working-pattern-details" aria-expanded="false" data-test="filter-working-pattern">
                     <span class="nhsuk-details__summary-text">
-                        Volunteering for
+                        Volunteering with
                     </span>
                 </summary>
                 <div class="nhsuk-details__text" id="working-pattern-details" aria-hidden="false">
@@ -228,7 +240,7 @@
             <details class="nhsuk-details nhsuk-expander">
               <summary class="nhsuk-details__summary" role="button" aria-controls="distance-details" aria-expanded="false" data-test="distance">
                   <span class="nhsuk-details__summary-text">
-                      Age filter
+                      Your age group
                   </span>
               </summary>
               <div class="nhsuk-details__text" id="distance_wrapper" aria-hidden="false">
@@ -245,7 +257,7 @@
           <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary " role="button" aria-controls="working-pattern-details" aria-expanded="false" data-test="filter-working-pattern">
                 <span class="nhsuk-details__summary-text">
-                    Availability
+                    Your availability
                 </span>
             </summary>
             <div class="nhsuk-details__text" id="working-pattern-details" aria-hidden="false">
@@ -284,7 +296,10 @@
 <div class="nhsuk-grid-column-two-thirds">
 
   <h1>No results found</h1>
- <p class="nhsuk-body">Improve your results by using the search filter to increase the distance from the postcode you entered.</p>
+  <p class="nhsuk-body">Improve your results by:
+    <li>changing the distance from the postcode you entered</li>
+    <li>amending any other filters you have applied</li>
+	 </p>
 
 </div>
 </div>

@@ -377,3 +377,19 @@ padding-top: 40px;
   .app-homepage .nhsuk-sectionv2:nth-of-type(2) {
   padding-top: 0px;
   padding-bottom: 0px;}
+
+// styling for grey button (recruiter MVP) 
+
+.custom-grey-button {
+  background-color: #4c6272 !important; /* NHS dark grey */
+  color: #fff !important;               /* white text */
+  border-color: transparent !important;
+}
+
+/* Optional: Hover and focus states */
+.custom-grey-button:hover,
+.custom-grey-button:focus {
+  background-color: #4c6272 !important; /* darker grey */
+  color: #fff !important;
+}
+

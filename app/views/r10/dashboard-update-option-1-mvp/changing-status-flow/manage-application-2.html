@@ -20,7 +20,7 @@ NHS Volunteering
 <div class="nhsuk-back-link">
 
   <a class="nhsuk-back-link__link"
-    href="/r11/dashboard-update-option-1-mvp/changing-status-flow/manage-live-reviewed-closed">
+    href="/r10/dashboard-update-option-1-mvp/changing-status-flow/manage-live-opportunity-13-reviewed">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
       aria-hidden="true" height="24" width="24">
       <path
@@ -37,8 +37,9 @@ NHS Volunteering
 
     <h1 class="nhsuk-u-margin-bottom-3"> <span class="nhsuk-caption-l">Reference number: V-5r4-2WB</span
         style="text-align: center;"> Walk and talk volunteer application</h1>
-    <p class="nhsuk-body"><strong>Date received:</strong> 12 February 2025 <span
-        class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></p>
+    <p class="nhsuk-body"><strong>Date received:</strong> 24 February 2025 <span
+        class="nhsuk-tag nhsuk-tag--green">New</span></p>
+
     <div class="govuk-warning-text nhsuk-u-margin-bottom-5">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
@@ -58,7 +59,7 @@ NHS Volunteering
           Name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          John Doe
+          Mark Foster
         </dd>
 
 
@@ -157,11 +158,14 @@ NHS Volunteering
 
     <div class="nhsapp-button-group">
 
+      <a href="changing-status-flow/manage-application-1-reviewed" class="nhsuk-button nhsuk-button--primary">Mark as
+        reviewed</a>
       <a href="#" class="nhsuk-button nhsuk-button--secondary">Print this page</a>
-
-
     </div>
+
+
   </div>
+</div>
 
 
 
@@ -182,20 +186,20 @@ NHS Volunteering
 
 
 
-  {% endblock %}
+{% endblock %}
 
 
-  <!-- NHS.UK footer -->
+<!-- NHS.UK footer -->
 
 
 
-  <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
-  {% block pageScripts %}
-  <script>
-    $(document).ready(function () {
-      $('a[href=""], button.nhsuk-search__submit').click(function (e) {
-        e.preventDefault();
-      });
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
     });
-  </script>
-  {% endblock %}
+  });
+</script>
+{% endblock %}

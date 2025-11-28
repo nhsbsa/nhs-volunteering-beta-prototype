@@ -49,8 +49,8 @@ NHS Volunteering
       <li><a href="/r9/close-listing-now">Close the listing</a></li>
     </ul>
 
-    <h2 id="received">Manage Applications</h2>
-    <p class="nhsuk-u-margin-bottom-6"> There are currently no new applications for this opportunity.</p>
+    <h2 id="archived">Manage Applications</h2>
+    <p class="nhsuk-u-margin-bottom-6"> There are currently no reviewed applications for this opportunity.</p>
 
     <div class="nhsuk-tabs" data-module="nhsuk-tabs">
       <h2 class="nhsuk-tabs__title">
@@ -59,14 +59,14 @@ NHS Volunteering
 
       <ul class="nhsuk-tabs__list">
 
-        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-          New (0)
+        <li class="nhsuk-tabs__list-item">
+          <a class="nhsuk-tabs__tab" href="manage-live-empty">
+            New (0)
           </a>
         </li>
 
-        <li class="nhsuk-tabs__list-item">
-          <a class="nhsuk-tabs__tab" href="manage-live-archived-empty">
-            Reviewed (0)
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+          Reviewed (0)
           </a>
         </li>
 
@@ -75,7 +75,7 @@ NHS Volunteering
       <div class="nhsuk-tabs__panel">
 
         <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">New</caption>
+          <caption class="nhsuk-table__caption">Reviewed</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
 
@@ -86,13 +86,18 @@ NHS Volunteering
                 Application Date
               </th>
               <th role="columnheader" class="" scope="col">
+                Reviewed Date
+              </th>
+              <th role="columnheader" class="" scope="col">
                 Status
               </th>
               <th role="columnheader" class="" scope="col">
                 Application details
               </th>
-          </thead>
 
+
+            </tr>
+          </thead>
         </table>
 
       </div>

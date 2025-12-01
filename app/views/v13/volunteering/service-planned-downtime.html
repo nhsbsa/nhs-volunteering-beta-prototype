@@ -1,6 +1,7 @@
-{% extends 'layout_vol_header.html' %}
+{% extends 'layout_vol_header-no-footer-links.html' %}
 
 <!-- some custom css for the home page only -->
+
 
 {% block pageTitle %}
 NHS Volunteering
@@ -9,49 +10,19 @@ NHS Volunteering
 {% block headCSS %}
 <link href="/css/main.css" rel="stylesheet">
 <link href="/css/nhsuk.css" rel="stylesheet">
-
-<style>
-  /* 1. Ensure HTML and BODY take the full viewport height */
-  html,
-  body {
-    height: 100%;
-    /* Important for height calculation */
-    background-color: #f0f4f5 !important;
-  }
-
-  /* 2. Target all primary NHS wrappers and force background color */
-  .nhsuk-main-wrapper,
-  .nhsuk-width-container,
-  #maincontent,
-  #main-content {
-    background-color: #f0f4f5 !important;
-  }
-
-  /* 3. Force the main content container to stretch */
-  #maincontent {
-    height: 100%;
-    /* Fill the parent height */
-    min-height: 100vh;
-    /* Fill at least the viewport height */
-  }
-</style>
 {% endblock %}
 
-
-
-
-
-
-
 <!-- NHS.UK header -->
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
   </div>
 </div>
 
 <!-- Homepage content -->
-{% block footer %}{% endblock %}
 {% block content %}
+
+
 
 <div class="nhsuk-width-container">
   <main class="nhsuk-main-wrapper nhsuk-width-container nhsuk-main-wrapper nhsuk-u-margin-bottom-7" id="maincontent">
@@ -59,17 +30,31 @@ NHS Volunteering
       <main class="nhsuk-main-wrapper nhsuk-main-wrapper--l" id="main-content" role="main">
         <div class="nhsuk-grid-row">
 
-          <h1 class="govuk-heading-l">Service unavailable</h1>
 
+          <h1 class="govuk-heading-l">Service unavailable</h1>
           <p class="nhsuk-body">
             Sorry, the NHS volunteering service is currently unavailable.</p>
-          <p>You will be able to use the service from 10am on Monday 25 November 2025.</p>
+          <p>You will be able to use the service from <strong>10am</strong> on <strong>Monday 25th November
+              2025</strong>.</p>
           </p>
         </div>
     </div>
   </main>
 </div>
+
+
+</div>
+
+</div>
+
 {% endblock %} {# closes main #}
+
+
+
+
+
+
+
 
 
 

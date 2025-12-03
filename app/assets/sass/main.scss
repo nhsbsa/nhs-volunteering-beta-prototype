@@ -381,15 +381,20 @@ padding-top: 40px;
 // styling for grey button (recruiter MVP) 
 
 .custom-grey-button {
-  background-color: #4c6272 !important; /* NHS dark grey */
-  color: #fff !important;               /* white text */
+  background-color: #4c6272 !important;
+  color: #fff !important;               
   border-color: transparent !important;
 }
 
-/* Optional: Hover and focus states */
+// Optional: Hover and focus states 
 .custom-grey-button:hover,
 .custom-grey-button:focus {
-  background-color: #4c6272 !important; /* darker grey */
+  background-color: #4c6272 !important; 
   color: #fff !important;
 }
 
+// Styling for the blue beta banner version
+.div.beta-banner.blue-style {
+  background-color: #2b8cc4;
+  color: #ffffff;
+}

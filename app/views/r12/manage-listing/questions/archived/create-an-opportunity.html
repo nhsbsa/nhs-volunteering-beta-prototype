@@ -1,0 +1,69 @@
+{% extends 'layout_vol_header.html' %}
+
+{% block pageTitle %}
+    Create an opportunity listing
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../task-list-fixed",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h1>
+        Create an opportunity listing
+    </h1>
+
+    <p class="nhsuk-body">The information you enter will help promote your opportunities and motivate potential volunteers to register their interest.</p>
+
+    <h2 class="nhsuk-heading-m">1. Add a preview </h2>
+
+    <p>This is what potential volunteers will see first when they search for opportunities.</p>
+
+    <h2 class="nhsuk-heading-m">2. Fill in the listing</h2>
+
+    <p>You will add:</p>
+
+    <ul>
+    <li>a summary</li>
+    <li>details of the type of person you are looking for</li>
+    <li>an overview of your application process</li>
+    <li>the availability you need</li>
+    <li>the contact details where you want to receive queries about the opportunity</li>
+    </ul>
+
+    <h2 class="nhsuk-heading-m">3. Add locations</h2>
+
+    <p class="nhsuk-body">You can add one or more locations for the opportunity. This will allow potential volunteers can find opportunities that are closest to them.</p>
+
+    <p class="nhsuk-body">You will also be able to select if this is a remote opportunity.</p>
+
+    <h2 class="nhsuk-heading-m">4. Select the application settings</h2>
+
+    <p class="nhsuk-body">You can decide if you want to receive applications through this service or through an external link.</p>
+
+    <p class="nhsuk-body">You will set a closing date for this listing.</p>
+
+    <p class="nhsuk-body">If you receive applications through this service, you can also set a limit to the number of applications.</p>
+
+    <h2 class="nhsuk-heading-m">Guidance on how to create a listing</h2>
+
+    <p class="nhsuk-body">We have added examples and guidance to support you through each step of this task.</p>
+
+    <a href="preview" class="nhsuk-button">
+        Continue
+    </a>
+    <p class="nhsuk-body">              
+        <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+    </p>
+
+    </div>
+
+  </div>
+{% endblock %}

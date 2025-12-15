@@ -1,0 +1,131 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+
+  <h1><span class="nhsuk-caption-xl">NHS Volunteering</span>Mid and South Essex NHS Foundation Trust</h1>
+
+  <hr>
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="all-opportunities/role-profile-1"> Volunteer at Basildon Hospital</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Basildon, SS16 5NL</strong></p>
+<p class="nhsuk-u-margin-top-0">Mid and South Essex NHS Foundation Trust</p>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+   
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Opportunities and responsibilities depend on the organisation's needs
+      </li>
+      <li>A variety of shifts are available</li>
+      <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+  </div>
+</div>
+<hr>
+
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="all-opportunities/role-profile-2"> Walk and talk volunteer</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Chelmsford, CM11 1LS</strong></p>
+<p class="nhsuk-u-margin-top-0">Mid and South Essex NHS Foundation Trust</p>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+ 
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Main responsibilities: encourage people to take part in walking activities around the site and help them along the way
+      </li>
+      <li>Shifts are available from 8am to 1pm, Monday to Friday</li>
+      <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+  </div>
+</div>
+<hr>
+
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="all-opportunities/role-profile-3"> Volunteer at Braintree Community Hospital</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Braintree, CM7 2AL</strong></p>
+<p class="nhsuk-u-margin-top-0">Mid and South Essex NHS Foundation Trust</p>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+   
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>How you will support this organisation will vary according to their needs 
+      </li>
+      <li>A variety of shifts are available</li>
+      <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+  </div>
+</div>
+
+<hr>
+
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="all-opportunities/role-profile-4"> Volunteer at Southend University Hospital</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Southend-on-Sea, SS0 0RY</strong></p>
+<p class="nhsuk-u-margin-top-0">Mid and South Essex NHS Foundation Trust</p>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+   
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>Opportunities and responsibilities depend on the organisation's needs
+      </li>
+      <li>A variety of shifts are available</li>
+      <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

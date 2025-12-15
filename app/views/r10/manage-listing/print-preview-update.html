@@ -24,7 +24,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="/r10/index">
+      <a class="nhsuk-back-link__link" href="/r10/dashboard-update-option-1-mvp/manage-live">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -186,6 +186,14 @@ NHS Volunteering
 
           <div class="nhsuk-checkboxes__item">
             <input class="nhsuk-checkboxes__input" id="v8-volunteer-age-3" name="v8-volunteer-age" type="checkbox"
+              value="16 to 17" {{ checked("v8-volunteer-age", "16 to 17" ) }}>
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="v8-volunteer-age-3">
+              16 to 17
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="v8-volunteer-age-3" name="v8-volunteer-age" type="checkbox"
               value="18 to 20" {{ checked("v8-volunteer-age", "18 to 20" ) }}>
             <label class="nhsuk-label nhsuk-checkboxes__label" for="v8-volunteer-age-3">
               18 to 20
@@ -323,16 +331,13 @@ NHS Volunteering
       </h2>
 
       <ul class="nhsuk-list nhsuk-list--bullet nhsuk-card__description">
-        <li>Need assistive technology, an interpreter or a support person</li>
+        <li>Prefer to have someone you know with you</li>
         <li>Might find it difficult to prove your identity or address</li>
-        <li>Would prefer a phone or video interview</li>
-        <li>Need any other adjustments such as an accessible interview location or parking</li>
+        <li>May need an interpreter or prefer to talk on the phone</li>
+        <li>Need any other adjustments</li>
       </ul>
     </div>
   </div>
-
-
-
 
   <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
 
@@ -408,7 +413,6 @@ NHS Volunteering
       </ul>
     </div>
 
-    <p>Write what you can. You may have an opportunity to discuss this again with the organisation.</p>
     <div class="nhsuk-character-count">
 
       <div class="nhsuk-form-group">
@@ -421,10 +425,6 @@ NHS Volunteering
       </div>
 
     </div>
-
-    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-      Print this page
-    </button>
 
   </div>
 </div>

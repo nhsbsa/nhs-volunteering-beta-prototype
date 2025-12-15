@@ -1,0 +1,99 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "availability",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <form action="/r12/task-list-email-completed" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+            Are these the correct contact details?
+          </h1>
+
+          <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+            These details will be used to update your team about applications.
+          </div>
+
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <p class="nhsuk-card__description"><strong>Contact: </strong>Mike Asparagus</p>
+              <p class="nhsuk-card__description"><strong>Email address: </strong>mike.asparagus@nhs.uk</p>
+            </div>
+          </div>
+
+
+          <div class="nhsuk-radios">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+              Select one option
+            </legend>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r12-email-details-1" name="r12-email-details" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r12-email-details-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r12-email-details-2" name="r12-email-details" type="radio"
+                value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="r12-email-details-2">
+                No, I want to choose someone else
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+    <p class="nhsuk-body">
+      <a href="/r12/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+        later</a>
+    </p>
+
+
+    <script>
+      document.querySelector('.form').addEventListener('submit', function (e) {
+        const selected = document.querySelector('input[name="r12-email-details"]:checked');
+
+        if (selected && selected.value === 'no') {
+          e.preventDefault(); // Stop the form from submitting normally
+          window.location.href = "/r12/questions/change-email-details"; // Redirect to your desired page
+        }
+        // Else, allow form to submit normally to /r12-task-list-email-completed
+      });
+    </script>
+
+
+  </div>
+</div>
+
+{% endblock %}

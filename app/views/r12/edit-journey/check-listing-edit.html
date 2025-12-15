@@ -1,0 +1,423 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../../task-list-completed",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="../edit-journey/task-list-completed">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back
+        </a>
+      </div>
+
+      <h1 class="nhsuk-heading nhsuk-heading-l nhsuk-u-margin-top-4">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Re-publish the listing </span>
+        Check your answers before re-publishing your listing
+      </h1>
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Listing set up</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Title"
+            },
+            value: {
+              text: "Ward support volunteer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "new-name",
+                  text: "Change",
+                  visuallyHiddenText: "Title"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Listing details</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Summary"
+            },
+            value: {
+              html: "<p>Main responsibilities: Help out the nurses on the ward when needed.</p> 
+              <p>Shifts are available from 8am to 1pm, Monday to Friday.</p>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "summary",
+                  text: "Change",
+                  visuallyHiddenText: "Title"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Description of opportunity"
+            },
+            value: {
+              html: "
+              <p>You will support our mental health services team with the running of this activity. You will help maintain and improve the well-being of patients with memory problems or dementia.</p>
+              <p>You will:</p>
+              <ol>
+                <li>encourage people to take part in this therapeutic and social activity</li>
+                <li>meet and greet people as they arrive</li>
+                <li>help people to feel good about themselves</li>
+                <li>direct walkers along the designated route</li>
+              </ol>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "opportunity-description",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Type of person"
+            },
+            value: {
+              html: "<p>This opportunity will suit someone friendly, approachable and enthusiastic.</p>
+              <p>You don't need any previous experience, qualifications or training. All you need is to:</p>
+              <ul>
+              <li>have good people skills and want to chat with people</li>
+              <li>be reliable and be good at time keeping</li>
+              <li>enjoy the outdoors</li>
+              <li>be 16 or over</li>
+              </ul>
+              <p>This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer with us.</p>              "
+            },
+            actions: {
+              items: [
+                {
+                  href: "looking-for",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Application process"
+            },
+            value: {
+              html: "
+              <p>We'll get in touch with you when we review your request. This might take a few weeks.</p>
+              <p>After that, we may book in a chat to get to know you a bit more and walk you through the process.</p>
+              <p>To become a volunteer, you may need to:</p>
+              <ul>
+              <li>provide proof of identity and some utility bills</li>
+              <li>go through a standard or enhanced Disclosure and Barring Service (DBS) and occupational health checks</li>
+              <li>prove your right to work in the UK</li>
+              <li>provide details of your work history</li>
+              <li>give the details of two referees</li>
+              </ul>
+              "
+            },
+            actions: {
+              items: [
+                {
+                  href: "overview-process",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Who will support the volunteer?"
+            },
+            value: {
+              text: "	Volunteer Coordinator"
+            },
+            actions: {
+              items: [
+                {
+                  href: "support-volunteers",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Location of opportunity"
+            },
+            value: {
+              html: "An area with varying locations"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/location",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Area"
+            },
+            value: {
+              html: "Leeds"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/check-location-area-name",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Radius"
+            },
+            value: {
+              html: "10 miles"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/check-location-radius",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Area centre point"
+            },
+            value: {
+              html: "Leeds Art Gallery
+              <br>
+              The Headrow
+              <br>
+              Leeds
+              <br>
+              LS1 3AB"
+            },
+            actions: {
+              items: [
+                {
+                  href: "../edit-journey/broader-locations/location-larger-area",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Availability"
+            },
+            value: {
+              html: "<p>Three hours a week on a Tuesday or Thursday</p>
+              "
+            },
+            actions: {
+              items: [
+                {
+                  href: "availability",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: " <strong>Email: </strong>j.pearson@email.nhs.uk 
+              <br> <strong>Phone number: </strong>01234 555666 "
+            },
+            actions: {
+              items: [
+                {
+                  href: "contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Opportunity tags"
+            },
+            value: {
+              html: "No experience needed 
+              <br>
+              Patient facing
+              <br>
+              Need a criminal record check"
+            },
+            actions: {
+              items: [
+                {
+                  href: "contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Search filters"
+            },
+            value: {
+              html: "
+              <strong>Where is the setting of your opportunity?</strong>
+              <br>
+              Healthcare facility
+              <br>
+              <strong>Who is the volunteer working with?</strong>
+              <br>
+              Older people
+              <br>
+              <strong>What type of volunteering is your opportunity?</strong>
+              <br>
+              With people
+              <br>
+              <strong>What age can your volunteer be?</strong>
+              <br>
+              18 and over
+              <br>
+              <strong>What availability are you looking for?</strong>
+              <br>
+              Weekend
+              "
+            },
+            actions: {
+              items: [
+                {
+                  href: "contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="nhsuk-heading nhsuk-heading-m">Application settings</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "How you want to receive applications"
+            },
+            value: {
+              text: "Yes, I want to receive applications through NHS Volunteering"
+            },
+            actions: {
+              items: [
+                {
+                  href: "recieve-applications",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Application questions"
+            },
+            value: {
+              text: "I understand and agree to include these questions in the application"
+            },
+            actions: {
+              items: [
+                {
+                  href: "review-questions",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Closing date
+                    "
+            },
+            value: {
+              text: 
+                    "15 July 2024"
+            },
+            actions: {
+              items: [
+                {
+                  href: "closing-date",
+                  text: "Change",
+                  visuallyHiddenText: "Location 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2>Before you update this listing</h2>
+      <p>Check you are happy with the changes you have made to this live listing. After you update this listing any existing content you had befre will be replaced.</p>
+
+      <form action="../edit-journey/republish-listing-dashboard-success">
+        <button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit">
+          Update listing
+        </button> 
+        <a href="/r9/preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+          Preview listing
+        </a>
+      </form> 
+      
+
+    </div>
+  </div>
+{% endblock %}

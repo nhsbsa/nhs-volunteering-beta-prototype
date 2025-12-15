@@ -841,3 +841,18 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/r9/user-management-mvp/manage-users-user-deleted')
     }
   })  
+
+
+  // ROUTES FOR R13 recruiter email selection for email updates
+
+  router.post('/r12/questions/email-details', function (req, res) {
+
+    // Get the answer from session data
+    const recruiterEmail = req.session.data['recruiterEmail']
+  
+    if (recruiterEmail === 'Email address not listed') {
+      res.redirect('/r12/questions/email-updates-manual-input')
+    } else {
+      res.redirect('/r12/questions/email-details')
+    }
+  })  

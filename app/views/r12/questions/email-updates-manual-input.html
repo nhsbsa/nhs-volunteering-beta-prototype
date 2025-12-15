@@ -1,0 +1,80 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "contact-details",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+
+    <form action="/r12/task-list-email-completed" method="post" class="form">
+
+      <h1 class="nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+        Enter details of who will get the email notifications
+      </h1>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Please only enter the email address of authorised users.</p>
+      </div>
+
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r12-first-name">
+          First name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-50" id="r12-first-name" name="r12-first-name" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r12-last-name">
+          Last name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-50" id="r12-last-name" name="r12-last-name" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r12-contact-email">
+          Email address
+        </label>
+        <div id="email-hint" class="nhsuk-hint">
+          This could be an individual or a team email address
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-50" id="r12-contact-email" name="r12-contact-email" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r12-contact-email">
+          Confirm email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-50" id="r12-contact-email" name="r12-contact-email" type="text">
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+      <p class="nhsuk-body">
+        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

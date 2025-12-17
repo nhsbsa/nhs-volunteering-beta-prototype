@@ -271,8 +271,9 @@ NHS Volunteering
           <h2>What is your email address?</h2>
 
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="input-width-50">We will only use these details to contact you about this
-              opportunity.</label>
+            <p>We will only use these details to contact you about this
+              opportunity.</p>
+            <label class="nhsuk-label" for="input-width-50">Email address</label>
             <input class="nhsuk-input nhsuk-input--width-50" id="v8-volunteer-name" name="v8-volunteer-name" type="text"
               value="{{ data['v8-volunteer-name'] }}">
           </div>
@@ -282,14 +283,12 @@ NHS Volunteering
 
           <h2>What is your phone number? (optional)</h2>
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="input-width-50">We will only use these details to contact you about this
-              opportunity.
-              <br>
-              <br>
-
-              For international numbers please include the country code.</label>
-            <input class="nhsuk-input nhsuk-input--width-50" id="v8-volunteer-name" name="v8-volunteer-name" type="text"
-              value="{{ data['v8-volunteer-name'] }}">
+            <p>We will only use these details to contact you about this
+              opportunity.</p>
+            <p>For international numbers please include the country code.</p>
+            <label class="nhsuk-label" for="input-width-50">Phone number
+              <input class="nhsuk-input nhsuk-input--width-50" id="v8-volunteer-name" name="v8-volunteer-name"
+                type="text" value="{{ data['v8-volunteer-name'] }}">
           </div>
           <hr>
 
@@ -305,7 +304,7 @@ NHS Volunteering
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="v8-volunteer-availability">
-          What is your availability?
+          Tell us about your availability
         </label>
         <textarea class="nhsuk-textarea" id="v8-volunteer-availability" name="v8-volunteer-availability" rows="10"
           aria-describedby="v8-volunteer-availability-hint">{{ data['v8-volunteer-availability']}}</textarea>
@@ -319,9 +318,8 @@ NHS Volunteering
 <!-- Tell us about any support -->
 <h2>Tell us about any support you might need (optional)</h2>
 <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="input-width-50">We will use this information to ensure we can do our best to provide
-    the support you need for your volunteering
-    activities.</label>
+  <p>We will use this information for any support you might need whilst
+    volunteering.</p>
 
   <div class="nhsuk-card nhsuk-card--feature">
     <div class="nhsuk-card__content nhsuk-card__content--feature">
@@ -416,6 +414,7 @@ NHS Volunteering
     <div class="nhsuk-character-count">
 
       <div class="nhsuk-form-group">
+        <p>Write what you can. You may have an opportunity to discuss this again with the organisation.</p>
         <label class="nhsuk-label" for="v8-volunteer-motivations">
           Tell us why you want to become a volunteer
         </label>

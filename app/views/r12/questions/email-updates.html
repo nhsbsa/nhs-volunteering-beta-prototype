@@ -29,18 +29,12 @@ Question page
             Do you want to set up email notifications for this opportunity?
           </h1>
 
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                More information about email notifications
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-              <p>Email notifications allow someone from your team to receive updates about new applications for this
-                listing.
-              </p>
+          <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+            Email notifications allow someone from your team to receive updates about new applications for this
+            listing.
+          </div>
 
-            </div>
+
           </details>
 
 
@@ -82,21 +76,21 @@ Question page
       <a href="/r12/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
         later</a>
     </p>
-
-
-    <script>
-      document.querySelector('.form').addEventListener('submit', function (e) {
-        const selected = document.querySelector('input[name="r12-email-updates"]:checked');
-
-        if (selected && selected.value === 'no') {
-          e.preventDefault(); // Stop the form from submitting normally
-          window.location.href = "/r12/task-list-email-completed"; // Redirect to your desired page
-        }
-        // Else, allow form to submit normally to /r12-email-updates-answer
-      });
-    </script>
-
   </div>
+
+  <script>
+    document.querySelector('.form').addEventListener('submit', function (e) {
+      const selected = document.querySelector('input[name="r12-email-updates"]:checked');
+
+      if (selected && selected.value === 'no') {
+        e.preventDefault(); // Stop the form from submitting normally
+        window.location.href = "/r12/task-list-email-completed"; // Redirect to your desired page
+      }
+      // Else, allow form to submit normally to /r12-email-updates-answer
+    });
+  </script>
+
+</div>
 </div>
 
 {% endblock %}

@@ -22,14 +22,22 @@ Question page
 
     <form action="/r12/task-list-email-completed" method="post" class="form">
 
+
       <h1 class="nhsuk-heading nhsuk-heading-l">
         <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
-        Enter details of who will get the email notifications
+        Enter new details
       </h1>
 
-      <div id="dob-day-error-hint" class="nhsuk-hint">
-        For example, 31 3 1980
+      <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+        These details will be used to update them about new applications for this listing.
       </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Only enter an authorised email address.</p>
+      </div>
+
+
       <span id="dob-day-error-error" class="nhsuk-error-message">
         <span class="nhsuk-u-visually-hidden">Error:</span> Enter details before saving
       </span>
@@ -60,9 +68,9 @@ Question page
         <label class="nhsuk-label" for="r12-contact-email">
           Email address
         </label>
-        <div id="email-hint" class="nhsuk-hint">
-          This could be an individual or a team email address
-        </div>
+        <span id="last-name-error-error" class="nhsuk-error-message">
+          <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid email address
+        </span>
         <input class="nhsuk-input nhsuk-input--width-50 nhsuk-input--error" id="r12-contact-email"
           name="r12-contact-email" type="text">
       </div>

@@ -856,3 +856,18 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/r12/questions/email-details')
     }
   })  
+
+
+  // ROUTES FOR R13 deactivate user
+
+  router.post('r12-deactivate-user-v2', function (req, res) {
+
+    // Get the answer from session data
+    const recruiterDeactivate = req.session.data['recruiterDeactivate']
+  
+    if (recruiterDeactivate === 'No') {
+      res.redirect('/r12/user-management/recruiter-user-2')
+    } else {
+      res.redirect('/r12/user-management/deactivate-user-confirmation')
+    }
+  })  

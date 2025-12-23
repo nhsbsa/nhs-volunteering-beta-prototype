@@ -36,21 +36,22 @@ NHS Volunteering
 
 
     <h1>Check your answers before submitting</h1>
+
     <h2 class="nhsuk-heading nhsuk-heading-m">Recruiter details</h2>
 
     {{ summaryList({
     rows: [
     {
     key: {
-    text: "Name"
+    text: "Role"
     },
     value: {
-    text: "Fred Lettuce"
+    text: "Superuser"
     },
     actions: {
     items: [
     {
-    href: "change-name",
+    href: "change-role",
     text: "Change",
     visuallyHiddenText: "Title"
     }
@@ -59,7 +60,7 @@ NHS Volunteering
     }
     ]
     }) }}
-    <form action="recruiter-user-2">
+    <form action="recruiter-user-1" method="post">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Submit
       </button>

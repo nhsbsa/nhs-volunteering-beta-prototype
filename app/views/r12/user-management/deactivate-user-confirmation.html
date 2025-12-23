@@ -1,5 +1,4 @@
 {% extends 'layout_vol_header.html' %}
-
 <!-- some custom css for the home page only -->
 
 
@@ -14,7 +13,6 @@ NHS Volunteering
 
 
 
-
 <!-- Homepage content -->
 {% block content %}
 
@@ -24,7 +22,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="manage-users">
+      <a class="nhsuk-back-link__link" href="recruiter-user-2">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -34,55 +32,33 @@ NHS Volunteering
         Go back</a>
     </div>
 
-    <h1>What is the phone number of this user?</h1>
 
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Full phone number
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="text">
+
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h1 class="nhsuk-card__heading">
+          Account deactivated</h1>
+        <p>You have deactivated Fred Lettuce's account.</p>
+      </div>
     </div>
-    <form action="check-change-number">
+
+
+    <h2 class="nhsuk-heading-m">What happens next</h2>
+
+    <p>They'll no longer be able to do the tasks they were assigned to for this organisation.</p>
+
+    <p>You'll need to assign other people to those tasks.</p>
+
+    <form action="/r12/user-management/manage-users-deleted">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Continue
+        Back to manage users
       </button>
-    </form>
+
   </div>
 </div>
+</main>
 
+</form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock %}
-
-
-<!-- NHS.UK footer -->
-
-
-
-<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
-{% block pageScripts %}
-<script>
-  $(document).ready(function () {
-    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
-      e.preventDefault();
-    });
-  });
-</script>
 {% endblock %}

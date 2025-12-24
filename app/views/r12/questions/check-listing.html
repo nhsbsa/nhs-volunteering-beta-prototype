@@ -336,7 +336,6 @@ Check your answers template - NHS.UK prototype kit
     }
     ]
     }) }}
-
     <h2 class="nhsuk-heading nhsuk-heading-m">Application settings</h2>
 
     {{ summaryList({
@@ -377,12 +376,10 @@ Check your answers template - NHS.UK prototype kit
     },
     {
     key: {
-    text: "Closing date
-    "
+    text: "Closing date"
     },
     value: {
-    text:
-    "15 July 2024"
+    text: "15 July 2024"
     },
     actions: {
     items: [
@@ -390,6 +387,31 @@ Check your answers template - NHS.UK prototype kit
     href: "closing-date",
     text: "Change",
     visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Email notifications"
+    },
+    value: {
+    html: "
+    <strong>Do you want to set up email notifications for this opportunity?</strong>
+    <br>
+    Yes
+    <br>
+    <strong>Who will receive the notifications?</strong>
+    <br>
+    mike.asparagus@nhs.uk
+    "
+    },
+    actions: {
+    items: [
+    {
+    href: "notifications",
+    text: "Change",
+    visuallyHiddenText: "email notifications"
     }
     ]
     }
@@ -407,6 +429,7 @@ Check your answers template - NHS.UK prototype kit
     </form>
 
     <p><a href="...">Save and come back later</a></p>
+
 
 
   </div>

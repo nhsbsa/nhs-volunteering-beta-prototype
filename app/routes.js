@@ -871,3 +871,18 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/r12/user-management/deactivate-user-confirmation')
     }
   })  
+
+  
+  // ROUTES FOR R13 radio buttons for change email updates 
+
+  router.post('/r12/questions/change-email-updates', function (req, res) {
+
+    // Get the answer from session data
+    const recruiterChange = req.session.data['recruiterChange']
+  
+    if (recruiterChange === 'No, I want to choose someone else') {
+      res.redirect('/r12/questions/email-updates-answer')
+    } else {
+      res.redirect('/r12/task-list-email-completed')
+    }
+  })

@@ -19,7 +19,7 @@ Question page
   <div class="nhsuk-grid-column-two-thirds">
 
 
-    <form action="/r12/questions/email-updates-answer" method="post" class="form">
+    <form action="/r13/questions/email-updates-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
 
@@ -45,17 +45,17 @@ Question page
             </legend>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="r12-email-updates-1" name="r12-email-updates" type="radio"
+              <input class="nhsuk-radios__input" id="r13-email-updates-1" name="r13-email-updates" type="radio"
                 value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="r12-email-updates-1">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-1">
                 Yes
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="r12-email-updates-2" name="r12-email-updates" type="radio"
-                value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="r12-email-updates">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
+                value="No, I do not want to set up email notifications">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates">
                 No, I do not want to set up email notifications
               </label>
             </div>
@@ -73,23 +73,10 @@ Question page
     </form>
 
     <p class="nhsuk-body">
-      <a href="/r12/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+      <a href="/r13/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
         later</a>
     </p>
   </div>
-
-  <script>
-    document.querySelector('.form').addEventListener('submit', function (e) {
-      const selected = document.querySelector('input[name="r12-email-updates"]:checked');
-
-      if (selected && selected.value === 'no') {
-        e.preventDefault(); // Stop the form from submitting normally
-        window.location.href = "/r12/task-list-email-completed"; // Redirect to your desired page
-      }
-      // Else, allow form to submit normally to /r12-email-updates-answer
-    });
-  </script>
-
 </div>
 </div>
 

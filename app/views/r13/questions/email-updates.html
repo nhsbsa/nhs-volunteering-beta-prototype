@@ -1,0 +1,96 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "receive-applications",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <form action="/r12/questions/email-updates-answer" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+            Do you want to set up email notifications for this opportunity?
+          </h1>
+
+          <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+            Email notifications allow someone from your team to receive updates about new applications for this
+            listing.
+          </div>
+
+
+          </details>
+
+
+          <div class="nhsuk-radios">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+              Select one option
+            </legend>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r12-email-updates-1" name="r12-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r12-email-updates-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r12-email-updates-2" name="r12-email-updates" type="radio"
+                value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="r12-email-updates">
+                No, I do not want to set up email notifications
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+    <p class="nhsuk-body">
+      <a href="/r12/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+        later</a>
+    </p>
+  </div>
+
+  <script>
+    document.querySelector('.form').addEventListener('submit', function (e) {
+      const selected = document.querySelector('input[name="r12-email-updates"]:checked');
+
+      if (selected && selected.value === 'no') {
+        e.preventDefault(); // Stop the form from submitting normally
+        window.location.href = "/r12/task-list-email-completed"; // Redirect to your desired page
+      }
+      // Else, allow form to submit normally to /r12-email-updates-answer
+    });
+  </script>
+
+</div>
+</div>
+
+{% endblock %}

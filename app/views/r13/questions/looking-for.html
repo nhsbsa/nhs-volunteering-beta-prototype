@@ -1,0 +1,103 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "opportunity-description",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        What type of person are you looking for?
+      </h1>
+
+      <form action="overview-process" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-hint" id="r9-preview-with-hint-text-hint">
+            This will show on the opportunity listing under <strong>am I the right person for this?</strong>
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+            <p class="nhsuk-body">You need to include:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>any required experience, qualification or training</li>
+              <li>the type of person you are looking for</li>
+              <li>any age limitations</li>
+            </ul>
+
+            <p><strong>Consider how you can make the service accessible to all </strong></p>
+
+            <p>You should include if:</p>
+
+            <ul class="nhsuk-list--bullet nhsuk-list">
+              <li>there is anything that might impact people with access needs such as walking or standing up for long hours</li>
+              <li>any required access to an electronic device and the level of skills needed</li>
+            </ul>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Example for all types of opportunities 
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nhsuk-body">This opportunity will suit someone friendly, approachable and enthusiastic.</p>
+                <p class="nhsuk-body">You don't need any previous experience, qualifications or training. You should have good people skills and enjoy the outdoors. You need to be reliable and be good at time keeping. </p>
+                <p class="nhsuk-body">You need to be 16 or over to volunteer with us. </p>
+                <p class="nhsuk-body">You will need access to a telephone (for remote opportunities). </p>
+                <p class="nhsuk-body">This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer with us.</p>
+              </div>
+            </details>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="r9-preview">
+              Enter what type of person you are looking for
+            </label>
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+              <div class="nhsuk-form-group ">
+                <!-- to enable rich text, add class of text-editor-2 to textarea element -->
+                <textarea rows="8" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000"></textarea>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+                </p>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
+              </p>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+        
+        <p class="nhsuk-body">              
+          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

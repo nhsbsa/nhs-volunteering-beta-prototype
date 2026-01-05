@@ -1,0 +1,50 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "receive-applications",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-top-8 nhsuk-u-padding-bottom-8">
+
+        <p class="nhsuk-body"><strong>From:</strong> no-reply@nhsvolunteers.uk</p>
+        <p class="nhsuk-body"><strong>Subject:</strong> Application for Walk and Talk Volunteer</p>
+
+        <br>
+
+        <p class="nhsuk-body">Dear Mike Asparagus,</p>
+        <p class="nhsuk-body"><strong>Notification of an application to review</strong></p>
+
+        <p class="nhsuk-body">
+          <strong class="nhsuk-u-font-weight-bold">Role:</strong>
+          <span class="nhsuk-u-font-weight-regular">Walk and Talk Volunteer</span>
+        </p>
+
+        <p class="nhsuk-body"><strong>Reference:</strong> V6PN-OP-90</p>
+        <p class="nhsuk-body"><strong>Location:</strong> Airedale General Hospital</p>
+
+        <p class="nhsuk-body">
+          To review this application, <a href="/r12/dashboard-update-option-1-mvp/manage-live">sign in to your recruiter
+            dashboard.</a>
+        </p>
+
+        <p class="nhsuk-body">Regards,<br>NHS Volunteering team</p>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

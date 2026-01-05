@@ -843,7 +843,7 @@ router.post('/r9-contact-details-answer', function (req, res) {
   })  
 
 
-  // ROUTES FOR R13 recruiter email selection for email updates
+  // ROUTES FOR R12 recruiter email selection for email updates
 
   router.post('/r12/questions/email-details', function (req, res) {
 
@@ -858,7 +858,7 @@ router.post('/r9-contact-details-answer', function (req, res) {
   })  
 
 
-  // ROUTES FOR R13 deactivate user
+  // ROUTES FOR R12 deactivate user
 
   router.post('r12-deactivate-user-v2', function (req, res) {
 
@@ -873,7 +873,7 @@ router.post('/r9-contact-details-answer', function (req, res) {
   })  
 
   
-  // ROUTES FOR R13 radio buttons for change email updates 
+  // ROUTES FOR R12 radio buttons for change email updates 
 
   router.post('/r12/questions/change-email-updates', function (req, res) {
 
@@ -884,5 +884,96 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/r12/questions/email-updates-answer')
     } else {
       res.redirect('/r12/task-list-email-completed')
+    }
+  })
+
+
+  // ROUTES FOR R13 radio buttons for 'do you want to set up email notifications'
+
+  router.post('/r13/questions/email-updates-answer', function (req, res) {
+    const emailUpdates = req.session.data['r13-email-updates']
+  
+    if (emailUpdates === 'No, I do not want to set up email notifications') {
+      // If user selects No, jump to the task list
+      res.redirect('/r13/task-list-email-completed')
+    } else {
+      // If user selects Yes, go to the next question
+      res.redirect('/r13/questions/email-updates-answer')
+    }
+  })
+
+
+  // ROUTES FOR R13 radio buttons for 'who will receive email notifications?'
+
+  router.post('/r13/questions/email-details', function (req, res) {
+    const emailUpdates = req.session.data['r13-email-updates']
+  
+    if (emailUpdates === 'Email address not listed') {
+      
+      res.redirect('/r13/questions/email-updates-manual-input')
+    } else {
+      
+      res.redirect('/r13/questions/email-details')
+    }
+  })
+
+
+  // ROUTES FOR R13 radio buttons for ''
+
+  router.post('/r13/questions/email-details', function (req, res) {
+    const emailUpdates = req.session.data['r12-email-details']
+  
+    if (emailUpdates === 'No') {
+      
+      res.redirect('/r13/questions/email-updates-answer')
+    } else {
+      
+      res.redirect('/r13/task-list-email-completed')
+    }
+  })
+
+
+  // ROUTES FOR R13 radio buttons for 'choose someone else'
+
+  router.post('/r13/task-list-email-completed', function (req, res) {
+    const emailUpdates = req.session.data['r13-email-check']
+  
+    if (emailUpdates === 'No, I want to choose someone else') {
+      
+      res.redirect('/r13/questions/email-updates-answer')
+    } else {
+      
+      res.redirect('/r13/task-list-email-completed')
+    }
+  })
+
+
+  // ROUTES FOR R13 radio buttons for 'choose someone else person2'
+
+  router.post('/r13/confirm-arjun-details', function (req, res) {
+    const emailUpdates = req.session.data['r13-email-2-check']
+  
+    if (emailUpdates === 'No, I want to choose someone else') {
+      
+      res.redirect('/r13/questions/email-updates-answer')
+    } else {
+      
+      res.redirect('/r13/task-list-email-completed')
+    }
+  })
+
+
+  
+  // ROUTES FOR R13 radio buttons for 'edit email settings'
+
+  router.post('/r13/task-list-email-completed-post-edit', function (req, res) {
+    const emailUpdates = req.session.data['r13-edit-email']
+  
+    if (emailUpdates === 'No, I want to choose someone else') {
+      
+      res.redirect('/r13/questions/email-updates-answer')
+    } else {
+      
+      res.redirect('/r13/task-list-email-completed')
     }
   })

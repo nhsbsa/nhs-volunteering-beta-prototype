@@ -977,3 +977,19 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/r13/task-list-email-completed')
     }
   })
+
+
+  // ROUTES FOR R12 'change role superuser'
+
+  router.post('/r12/user-management/check-change-role-superuser', function (req, res) {
+    const emailUpdates = req.session.data['r12-change-role']
+  
+    if (emailUpdates === 'Recruiter') {
+      
+      res.redirect('/r12/user-management/change-role-recruiter')
+    } else {
+      
+      res.redirect('/r12/user-management/check-change-role-superuser')
+    }
+  })
+

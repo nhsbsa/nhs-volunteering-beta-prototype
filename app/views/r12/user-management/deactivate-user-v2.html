@@ -18,7 +18,7 @@ NHS Volunteering
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/r12/user-management/deactivate-user-confirmation" method="post" class="form">
+    <form action="/r12/user-management/manage-users-confirm" method="post" class="form">
 
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
@@ -27,6 +27,10 @@ NHS Volunteering
               Are you sure you want to deactivate Fred Lettuce's account?
             </h1>
           </legend>
+
+          <div class="nhsuk-hint">
+            If you deactivate this account, you will need to assign other users to do the tasks they were assigned to.
+          </div>
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
@@ -63,7 +67,7 @@ NHS Volunteering
 
     if (selected && selected.value === 'no') {
       e.preventDefault(); // Prevents going to the 'confirmation' page
-      window.location.href = "/r12/user-management/recruiter-user-2"; // Redirects back
+      window.location.href = "r12/user-management/recruiter-user-2"; // Redirects back
     }
   });
 </script>

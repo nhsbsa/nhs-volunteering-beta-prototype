@@ -993,3 +993,35 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+
+  // ROUTES FOR R12 'no' to 'are you sure you want to deactivate Fred Lettuce?'
+
+  router.post('/r12/user-management/deactivate-user-confirmation', function (req, res) {
+    const deactivateFred = req.session.data['r12-deactivate-user-v2']
+  
+    if (deactivateFred === 'no') {
+      res.redirect('/r12/user-management/manage-users')
+    } else if (deactivateFred === 'yes') {
+      res.redirect('/r12/user-management/deactivate-user-confirmation')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/r12/user-management/deactivate-user-v2')
+    }
+  })
+
+
+  // ROUTES FOR R12 'no' to 'are you sure you want to deactivate Emma Pepper?'
+
+  router.post('/r12/user-management/deactivate-superuser-error', function (req, res) {
+    const deactivateEmma = req.session.data['r12-deactivate-user-EP']
+  
+    if (deactivateEmma === 'no') {
+      res.redirect('/r12/user-management/manage-users-confirm')
+    } else if (deactivateEmma === 'yes') {
+      res.redirect('/r12/user-management/deactivate-superuser-error')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/r12/user-management/deactivate-user-EP')
+    }
+  })
+

@@ -34,13 +34,15 @@ NHS Volunteering
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="deactivate-yes" name="deactivate-user" type="radio" value="yes">
+              <input class="nhsuk-radios__input" id="deactivate-yes" name="r12-deactivate-user-EP" type="radio"
+                value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="deactivate-yes">
                 Yes
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="deactivate-no" name="deactivate-user" type="radio" value="no">
+              <input class="nhsuk-radios__input" id="deactivate-no" name="r12-deactivate-user-EP" type="radio"
+                value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="deactivate-no">
                 No
               </label>
@@ -58,17 +60,4 @@ NHS Volunteering
   </div>
 </div>
 
-<script>
-  // The script now finds the form because it has the class 'form'
-  document.querySelector('.form').addEventListener('submit', function (e) {
-
-    // Updated to match the name 'deactivate-user' used in the HTML above
-    const selected = document.querySelector('input[name="deactivate-user"]:checked');
-
-    if (selected && selected.value === 'no') {
-      e.preventDefault(); // Prevents going to the 'confirmation' page
-      window.location.href = "/r12/user-management/recruiter-user-2"; // Redirects back
-    }
-  });
-</script>
 {% endblock %}

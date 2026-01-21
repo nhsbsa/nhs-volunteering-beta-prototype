@@ -3,85 +3,95 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Question page
 {% endblock %}
 
 {% block outerContent %}
-  {{ backLink({
-    "href": "summary",
-    "text": "Go back",
-    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
-  }) }}
+{{ backLink({
+"href": "summary",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
 {% endblock %}
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-      
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-heading-l">
-            <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
-            Add a description of the opportunity
-        </h1>
 
-        <form action="looking-for" method="post" class="form">
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+      Add a description of the opportunity
+    </h1>
 
-        <div class="nhsuk-form-group">
+    <form action="looking-for" method="post" class="form">
 
-          <div class="nhsuk-do-dont-list">
-            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
-            <p class="nhsuk-body">Your description should include an overview of the opportunity and the main tasks involved.</p>
-            <p class="nhsuk-body">If you are not advertising a specific opportunity you can include details of the range of opportunities you offer.</p>
-            <p class="nhsuk-body">You do not need to add any information about your organisation.</p>
+      <div class="nhsuk-form-group">
 
-            <details class="nhsuk-details">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  How you might describe the opportunity
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                <p class="nhsuk-body">You will support our mental health services team with the running of the walk and talk activity.</p>
-                <p class="nhsuk-body">You will encourage people to take part in this therapeutic and social activity. You will meet and greet people as they arrive and direct walkers along the designated route.</p>
-                
-              </div>
-            </details>
-          </div>
+        <div class="nhsuk-do-dont-list">
+          <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+          <p class="nhsuk-body">Your description should include an overview of the opportunity and the main tasks
+            involved.</p>
+          <p class="nhsuk-body">If you are not advertising a specific opportunity you can include details of the range
+            of opportunities you offer.</p>
+          <p class="nhsuk-body">You do not need to add any information about your organisation.</p>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="r9-summary">
-              Enter a description of the opportunity
-            </label>
-            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
-              <div class="nhsuk-form-group ">
-                <!-- to enable rich text, add class of text-editor-2 to textarea element -->
-                <textarea rows="8" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000"></textarea>
-                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
-                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
-                </p>
-                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
-                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
-              </p>
-              </div>
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                How you might describe the opportunity
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p class="nhsuk-body">You will support our mental health services team with the running of the walk and
+                talk activity.</p>
+              <p class="nhsuk-body">You will encourage people to take part in this therapeutic and social activity. You
+                will meet and greet people as they arrive and direct walkers along the designated route.</p>
+
             </div>
-          </div>
-
-          
+          </details>
         </div>
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Save and continue
-        </button>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="r9-summary">
+            Enter a description of the opportunity
+          </label>
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+            <div class="nhsuk-form-group ">
+              <!-- to enable rich text, add class of text-editor-2 to textarea element -->
+              <textarea rows="8"
+                class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-1000"></textarea>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining">
+                You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+              </p>
+              <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message">
+                You have <span class="nhsuk-character-count-toomany"></span> characters too many
+              </p>
+            </div>
+          </div>
+        </div>
 
-        <p class="nhsuk-body">              
-          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
-        </p>
-    
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>If you have copied and pasted text, check it looks okay before continuing as sometimes formatting errors
+            can occur.</p>
+        </div>
 
-        
+      </div>
 
-      </form>
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
 
-    </div>
+      <p class="nhsuk-body">
+        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+
+
+
+    </form>
+
   </div>
+</div>
 
 {% endblock %}

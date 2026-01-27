@@ -3,85 +3,98 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Question page
 {% endblock %}
 
 {% block outerContent %}
-  {{ backLink({
-    "href": "support-volunteers",
-    "text": "Go back",
-    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
-  }) }}
+{{ backLink({
+"href": "support-volunteers",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/r9-location-answer" method="post">
-    
-        <div class="nhsuk-form-group">
-    
-          <fieldset class="nhsuk-fieldset">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">
-                <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
-                Where is this opportunity?
-              </h1>
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <form action="/r9-location-answer" method="post">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+              Where is this opportunity?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>If your opportunity is remote then you may receive applications from anywhere in England.</p>
+          </div>
+
+
+
+          <div class="nhsuk-radios">
+
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+              Select one option
             </legend>
 
-            <div class="nhsuk-inset-text">
-              <span class="nhsuk-u-visually-hidden">Information: </span>
-              <p>If your opportunity is remote then you may receive applications from anywhere in England.</p>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-location-1" name="r9-location" type="radio" value="postcode">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-location-1">
+                One or more fixed locations
+              </label>
             </div>
 
-            
-        
-            <div class="nhsuk-radios">
-
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-                Select one option
-              </legend>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="r9-location-1" name="r9-location" type="radio" value="postcode">
-                <label class="nhsuk-label nhsuk-radios__label" for="r9-location-1">
-                  One or more fixed locations
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="r9-location-2" name="r9-location" type="radio" value="area">
-                <label class="nhsuk-label nhsuk-radios__label" for="r9-location-2">
-                  An area with varying locations
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__divider">or</div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="r9-location-3" name="r9-location" type="radio" value="location-larger-area">
-                <label class="nhsuk-label nhsuk-radios__label" for="r9-location-3">
-                  The volunteer can do this remotely from their home
-                </label>
-              </div>
-        
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-location-2" name="r9-location" type="radio" value="area">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-location-2">
+                An area with varying locations
+              </label>
             </div>
-          </fieldset>
 
-          
-        
-        </div>
+            <div class="nhsuk-radios__divider">or</div>
 
-        
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-location-3" name="r9-location" type="radio"
+                value="location-larger-area">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-location-3">
+                The volunteer can do this remotely from their home
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+
+
+      </div>
+
+
       <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Save and continue</button>
     </form>
 
-    <p class="nhsuk-body">              
+    <p class="nhsuk-body">
       <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
     </p>
 
-    </div>
   </div>
+</div>
 
 {% endblock %}

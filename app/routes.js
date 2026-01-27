@@ -1025,3 +1025,19 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+
+  // ROUTES FOR V13 support questions
+
+  router.post('/v13/application/additional-support-v2a', function (req, res) {
+    const deactivateEmma = req.session.data['v13-additional-support-v2']
+  
+    if (deactivateEmma === 'yes') {
+      res.redirect('/v13/application/additional-support')
+    } else if (deactivateEmma === 'no') {
+      res.redirect('/v13/application/motivations')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/v13/application/additional-support-v2a')
+    }
+  })
+

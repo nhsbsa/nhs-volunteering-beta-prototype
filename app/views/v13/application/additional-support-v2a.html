@@ -33,39 +33,45 @@ NHS Volunteering
         Go back</a>
     </div>
 
+    <form action="/v13/application/additional-support-v2a" method="post">
 
-    <h1> <span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 8</span> Do you need any support?</h1>
+      <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 8</span>
+        Do you need any support?
+      </h1>
 
-    <div class="nhsuk-form-group">
-      <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
 
-        </legend>
-        <div id="example-hints-hint" class="nhsuk-hint">
-          Select 1 option
-        </div>
-        <div class="nhsuk-radios" data-module="nhsuk-radios">
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-hints" name="exampleHints" type="radio" value="email">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-hints">
-              Yes
-            </label>
+          <div id="example-hints-hint" class="nhsuk-hint">
+            Select 1 option
           </div>
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-hints-2" name="exampleHints" type="radio" value="phone">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-              No
-            </label>
+
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="support-yes" name="v13-additional-support-v2" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="support-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="support-no" name="v13-additional-support-v2" type="radio"
+                value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="support-no">
+                No
+              </label>
+            </div>
+
           </div>
-        </div>
-      </fieldset>
-    </div>
+        </fieldset>
+      </div>
 
+      <button class="nhsuk-button" type="submit">Continue</button>
 
-    <button class="nhsuk-button" type="submit">Continue</button>
-
-  </div>
-
+    </form>
 
 
 
@@ -85,17 +91,19 @@ NHS Volunteering
 
 
 
-  {% endblock %}
+
+
+    {% endblock %}
 
 
 
-  <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
-  {% block pageScripts %}
-  <script>
-    $(document).ready(function () {
-      $('a[href=""], button.nhsuk-search__submit').click(function (e) {
-        e.preventDefault();
+    <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+    {% block pageScripts %}
+    <script>
+      $(document).ready(function () {
+        $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+          e.preventDefault();
+        });
       });
-    });
-  </script>
-  {% endblock %}
+    </script>
+    {% endblock %}

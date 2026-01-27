@@ -3,85 +3,98 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Question page
 {% endblock %}
 
 {% block outerContent %}
-  {{ backLink({
-    "href": "availability",
-    "text": "Go back",
-    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
-  }) }}
+{{ backLink({
+"href": "availability",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-      
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/r9-contact-details-answer" method="post" class="form">
+    <div class="nhsuk-back-link">
 
-        <div class="nhsuk-form-group">
+      <a class="nhsuk-back-link__link" href="">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
 
-            <fieldset class="nhsuk-fieldset">
-              <h1 class="nhsuk-heading-l">
-                <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
-                Are these the correct contact details?
-              </h1>
+    <form action="/r9-contact-details-answer" method="post" class="form">
 
-              <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
-                Volunteers will use these details to contact you about the opportunity.
-              </div>
+      <div class="nhsuk-form-group">
 
-              <div class="nhsuk-card">
-                <div class="nhsuk-card__content">
-                  <p class="nhsuk-card__description"><strong>Contact: </strong>Jane Pearson</p>
-                <p class="nhsuk-card__description"><strong>Email address: </strong>j.pearson@email.nhs.uk</p>
-                <p class="nhsuk-card__description"><strong>Telephone number: </strong>01234 555666</p>
-                </div>
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+            Are these the correct contact details?
+          </h1>
+
+          <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+            Volunteers will use these details to contact you about the opportunity.
+          </div>
+
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <p class="nhsuk-card__description"><strong>Contact: </strong>Jane Pearson</p>
+              <p class="nhsuk-card__description"><strong>Email address: </strong>j.pearson@email.nhs.uk</p>
+              <p class="nhsuk-card__description"><strong>Telephone number: </strong>01234 555666</p>
             </div>
-            
-          
-              <div class="nhsuk-radios">
-
-                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-                  Select one option
-                </legend>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="r9-contact-details-1" name="r9-contact-details" type="radio" value="yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="r9-contact-details-1">
-                    Yes
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="r9-contact-details-2" name="r9-contact-details" type="radio" value="no">
-                  <label class="nhsuk-label nhsuk-radios__label" for="r9-contact-details-2">
-                    No, I want to change them
-                  </label>
-                </div>
-          
-              </div>
-            </fieldset>
-          
           </div>
 
 
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-            Save and continue
-        </button>
+          <div class="nhsuk-radios">
 
-        <p class="nhsuk-body">              
-          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
-        </p>
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+              Select one option
+            </legend>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-contact-details-1" name="r9-contact-details" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-contact-details-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-contact-details-2" name="r9-contact-details" type="radio"
+                value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-contact-details-2">
+                No, I want to change them
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
 
 
-        
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
 
-      </form>
+      <p class="nhsuk-body">
+        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
 
-    </div>
+
+
+
+    </form>
+
   </div>
+</div>
 
 {% endblock %}

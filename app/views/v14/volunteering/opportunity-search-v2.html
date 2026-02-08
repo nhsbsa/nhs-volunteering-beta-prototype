@@ -1,0 +1,171 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering - Search for an opportunity near me
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+<!-- Homepage content -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/v11/volunteering/index">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+
+
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-3">
+      Search for a volunteering opportunity
+    </h1>
+    <form action="../results/results-v2" method="post">
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="postcode">
+              Postcode
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-full" id="postcode" name="postcode" type="text">
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="distance">
+              Distance from your postcode
+            </label>
+            <select class="nhsuk-select nhsuk-u-width-full" id="distance" name="distance">
+              <option value="3">Up to 3 miles</option>
+              <option value="5" selected>Up to 5 miles</option>
+              <option value="10">Up to 10 miles</option>
+              <option value="10">Up to 20 miles</option>
+              <option value="10">Up to 30 miles</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <p>
+        <a href="javascript:void(0);" id="toggle-link" class="nhsuk-link nhsuk-u-font-weight-bold">
+          More search options
+        </a>
+      </p>
+
+      <div id="extra-filters" style="display: none;" class="nhsuk-u-margin-top-4">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              Opportunity type
+            </legend>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-1" name="type" type="checkbox" value="admin">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-1">Admin</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Driving</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Gardening and DIY</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Maternity and breast feeding</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">NHS Fundraising</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">NHS Retail</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Palliative care</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Social Media</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Stores and warehouse</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Telephone</label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="clinical">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="type-2">Trustee</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <script>
+        // This function runs the moment the link is clicked
+        document.getElementById('toggle-link').onclick = function () {
+          var content = document.getElementById('extra-filters');
+          var link = document.getElementById('toggle-link');
+
+          if (content.style.display === "none") {
+            content.style.display = "block";
+            link.innerHTML = "Fewer search options";
+          } else {
+            content.style.display = "none";
+            link.innerHTML = "More search options";
+          }
+          return false; // Prevents the page from jumping to the top
+        };
+      </script>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="../results/results-v2">
+        Search
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

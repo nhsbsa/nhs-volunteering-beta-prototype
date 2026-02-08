@@ -1,0 +1,67 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Change the page title here -->
+    <h1>
+      Volunteer search
+    </h1>
+
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+    <p class="nhsuk-lede-text">
+      Prototypes for J20 & J22 epics.
+    </p>
+
+    <hr>
+  </div>
+</div>
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h2>Concepts</h2>
+    <p class="nhsuk-body"><a href="/v14/volunteering/index">Concept 1: Search for postcode</a></p>
+    <p class="nhsuk-body"><a href="/v14/volunteering/index-concept-2">Concept 2: Search for organisation name</a></p>
+    <p class="nhsuk-body"><a href="/v14/volunteering/index-concept-3">Concept 3: Search by organisation name or
+        postcode</a></p>
+    <p class="nhsuk-body"><a href="/v14/volunteering/index-concept-4">Concept 4: Search by opportunity type</a></p>
+  </div>
+</div>
+
+
+
+
+
+<!-- End of content -->
+
+
+{% endblock %}

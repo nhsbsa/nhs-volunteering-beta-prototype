@@ -1,0 +1,151 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering - Search for an opportunity near me
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-back-link">
+
+  <a class="nhsuk-back-link__link" href="/v11/volunteering/index">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true" height="24" width="24">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+
+
+
+
+<div>
+  <main id="maincontent" class="nhsuk-main-wrapper" role="main">
+    <div class="nhsuk-hero" role="search">
+      <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row-full searchRibbon" id="searchFilterRibbon">
+          <form method="post" id="search_form">
+            <input type="hidden" name="_csrf" value="kePg6Z0j-mStkmuNl0_9t7TWQ6feX9TzB7vo">
+            <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-grid-column-full nhsuk-u-padding-top-5">
+                <legend class="nhsuk-heading-l" id="heading">
+                  <h1>Search for a volunteering oportunity</h1>
+                </legend>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold white-text" for="keyword"
+                    id="keyword-label">What?</label>
+                  <div class="nhsuk-u-font-size-14 nhsuk-hint-white" id="keyword-hint">Opportunity title or
+                    organisation name
+                  </div>
+                  <input name="keyword" id="keyword" class="nhsuk-input nhsuk-u--width-full" type="search"
+                    data-test="search-jobTitle-input" aria-label="Search What? For example, job title or skills">
+                </div>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold white-text" for="location"
+                    id="location-label">Where?</label>
+                  <div class="nhsuk-u-font-size-14 nhsuk-hint-white" id="location-hint">Postcode</div>
+                  <div id="autocomplete-container">
+
+                    <div class="autocomplete__wrapper">
+                      <div class="autocomplete__status"
+                        style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
+                        <div id="location__status--A" role="status" aria-atomic="true" aria-live="polite"></div>
+                        <div id="location__status--B" role="status" aria-atomic="true" aria-live="polite"></div>
+                      </div><input aria-describedby="location__assistiveHint" aria-expanded="false"
+                        aria-controls="location__listbox" aria-autocomplete="list" autocomplete="off"
+                        class="nhsuk-input nhsuk-u--width-full" id="location" name="location" placeholder=""
+                        type="search" role="combobox" data-test="search-location-input"
+                        aria-label="Search Where? For example, a postcode, town or city, search text field">
+                      <ul aria-labelledby="location" id="location__listbox" role="listbox"
+                        class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden"></ul><span
+                        id="location__assistiveHint" style="display: none;">When autocomplete results are available
+                        use
+                        up and down arrows to review and enter to select. Touch device users, explore by touch or
+                        with
+                        swipe gestures.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-u-font-weight-bold white-text" for="distance"
+                    id="distance-label">Distance</label>
+                  <div class="nhsuk-u-font-size-14 nhsuk-hint-whiten  hsuk-grid-column-full" id="distance-hint">
+                    Select
+                    the distance</div>
+                  <select class="nhsuk-select nhsuk-grid-column-full select-width100" id="distance" name="distance"
+                    data-test="search-distance-input" aria-label="Search Distance, Select the distance" disabled="">
+                    <option value="3">Up to 3 Miles</option>
+                    <option value="5">Up to 5 Miles</option>
+                    <option value="10">Up to 10 Miles</option>
+                    <option value="20">Up to 20 Miles</option>
+                    <option value="30">Up to 30 Miles</option>
+                    <option selected="" value="">All locations</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <form action="/v14/results/results-concept-3" method="post" id="search_form">
+              <fieldset class="nhsuk-fieldset">
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-one-third">
+                    &nbsp;
+                  </div>
+
+                  <div class="nhsuk-grid-column-two-thirds nhsuk-u-text-align-right nhsuk-u-padding-right-5">
+                    <a href="" class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-right-2" id="clearFilters">
+                      Clear filters
+                    </a>
+                    <input class="nhsuk-button" type="submit" id="search" value="Search">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+
+
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
+
+</main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

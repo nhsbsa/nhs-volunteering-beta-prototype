@@ -1,0 +1,499 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-width-container">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/v14/volunteering/opportunity-search">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+      <div class="content">
+
+
+
+        <div class="one nhsuk-grid-column-one-third" style="padding-left: 0px;">
+
+          <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-4 nhsuk-u-margin-bottom-2">Filter your search</h2>
+
+          <!-- distance -->
+          <!-- 
+   <details class="nhsuk-details nhsuk-expander" open>
+
+   <summary class="nhsuk-details__summary">
+   <span class="nhsuk-details__summary-text">
+    Distance
+   </span>
+   </summary>
+   <div class="nhsuk-details__text">
+
+     <select  class="nhsuk-select" id="select-1" name="distance" >
+       <option value="1">This area only</option>
+       <option value="2">within 5 miles</option>
+       <option value="3" selected>within 10 miles</option>
+       <option value="4">within 20 miles</option>
+       <option value="5">within 30 miles</option>
+       <option value="6">within 50 miles</option>
+       <option value="7">All locations</option>
+     </select>
+
+
+   </details>
+       -->
+
+
+
+          <!-- salary -->
+
+          <div id="refineFilter">
+
+
+            <form method="post" href="results_filtered">
+              <fieldset class="nhsuk-fieldset">
+                <input type="hidden" name="_csrf" value="U5sCV0ms-Aogdeo1--P-X6vSEF1yr5OWrca0">
+                <input type="hidden" name="keyword" value="volunteer">
+                <input type="hidden" name="location" value="Ls74jw">
+                <input type="hidden" name="salaryFrom" value="">
+                <input type="hidden" name="salaryTo" value="">
+                <input type="hidden" name="" value="">
+                <input type="hidden" name="sort" value="">
+                <input type="hidden" name="jobReference" value="">
+                <input type="hidden" name="employer" value="">
+
+                <input type="hidden" name="skipPhraseSuggester" value="true">
+
+                <input type="hidden" name="employerCode" value="">
+                <details class="nhsuk-details nhsuk-expander" open>
+                  <summary class="nhsuk-details__summary" role="button" aria-controls="distance-details"
+                    aria-expanded="false" data-test="distance">
+                    <span class="nhsuk-details__summary-text">
+                      Distance
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="distance_wrapper" aria-hidden="false">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-u-visually-hidden" for="distance"> Distance </label>
+                      <select class="nhsuk-select" id="distance" name="distance" data-test="search-distance-input">
+                        <option value="3">Up to 3 miles</option>
+                        <option value="5" selected>Up to 5 miles</option>
+                        <option value="10">Up to 10 miles</option>
+                        <option value="20">Up to 20 miles</option>
+                        <option value="30">Up to 30 miles</option>
+                      </select>
+                    </div>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary" role="button" aria-controls="covid-jobs-only"
+                    aria-expanded="false" data-test="filter-covid-only">
+                    <span class="nhsuk-details__summary-text">
+                      Volunteer setting
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="covid-only-details" aria-hidden="false">
+                    <div class="nhsuk-checkboxes">
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox"
+                          value="true" data-test="covidJobsOnly">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
+                          Hospital, clinic or surgery
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox"
+                          value="true" data-test="covidJobsOnly">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
+                          In local community
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox"
+                          value="true" data-test="covidJobsOnly">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
+                          Office
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="covidJobsOnly" name="covidJobsOnly" type="checkbox"
+                          value="true" data-test="covidJobsOnly">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="covidJobsOnly">
+                          Remote, from home
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary " role="button" aria-controls="working-pattern-details"
+                    aria-expanded="false" data-test="filter-working-pattern">
+                    <span class="nhsuk-details__summary-text">
+                      Volunteering with
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="working-pattern-details" aria-hidden="false">
+                    <div class="nhsuk-checkboxes">
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Children
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Older people
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          People that need mental health support
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          People with physical disabilities
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          People with learning disabilities
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander" open>
+                  <summary class="nhsuk-details__summary " role="button" aria-controls="working-pattern-details"
+                    aria-expanded="false" data-test="filter-working-pattern">
+                    <span class="nhsuk-details__summary-text">
+                      Type of volunteering
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="working-pattern-details" aria-hidden="false">
+                    <div class="nhsuk-checkboxes">
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Admin
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Driving
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Gardening and DIY
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Maternity and Breast feeding
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          NHS Fundraising
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          NHS Retail
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Palliative Care
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Social Media
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Stores and Warehouse
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Telephone
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Trustee
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary" role="button" aria-controls="distance-details"
+                    aria-expanded="false" data-test="distance">
+                    <span class="nhsuk-details__summary-text">
+                      Your age group
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="distance_wrapper" aria-hidden="false">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-u-visually-hidden" for="distance"> Distance </label>
+                      <select class="nhsuk-select" id="distance" name="distance" data-test="search-distance-input">
+                        <option value="3">Select one</option>
+                        <option value="3">Under 18</option>
+                        <option value="10">18 and over</option>
+                      </select>
+                    </div>
+                  </div>
+                </details>
+                <details class="nhsuk-details nhsuk-expander">
+                  <summary class="nhsuk-details__summary " role="button" aria-controls="working-pattern-details"
+                    aria-expanded="false" data-test="filter-working-pattern">
+                    <span class="nhsuk-details__summary-text">
+                      Your availability
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="working-pattern-details" aria-hidden="false">
+                    <div class="nhsuk-checkboxes">
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Weekday
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="working-pattern-full-time" name="workingPattern"
+                          type="checkbox" value="full-time" data-test="working-pattern-full-time">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="working-pattern-full-time">
+                          Weekend
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+
+              </fieldset>
+              <a href="" class="nhsuk-button">
+                Apply filters
+              </a>
+              <p>
+                <a href="results" data-test="filter-clear">Clear filters
+                </a>
+              </p>
+            </form>
+
+          </div>
+
+
+        </div>
+
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <h1>Volunteering opportunities near LS9 6EP</h1>
+          <p class="nhsuk-body">Closest results listed first.</p>
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.5 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-2"> Trolley Volunteer,
+              Beckett Wing, St James's Hospital</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS9 7TF</strong></p>
+          <p class="nhsuk-u-margin-top-0">Leeds Hospitals Charity</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a criminal record check
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Patient facing
+              </strong>
+            </td>
+          </div>
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>If you love talking, providing a listening ear, and can be a warm and friendly face, this is the
+                  role for you!
+                </li>
+                <li>Our Trolley service improves the patient and family experience when in hospital and provides
+                  practical support to
+                  individuals and families who are facing increased financial hardship while in hospital.</li>
+                <li>Please be aware it is an active role that requires lots of walking and pushing a trolley</li>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.5 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Welcome Volunteer
+              (Bexley Wing) St James's Hospital</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS9 7TF</strong></p>
+          <p class="nhsuk-u-margin-top-0">Leeds Hospitals Charity</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Patient facing
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a criminal record check
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>If you love talking, making conversation can be a warm, friendly and welcoming face, this is the
+                  role for you!
+                </li>
+                <li>Our Welcome Volunteers help us improve the experience of arriving at the hospital. As a Welcome
+                  Volunteer you will
+                  provide a friendly and welcoming face, represent Leeds Hospitals Charity, and direct visitors where
+                  they need to go,
+                  helping them feel at ease in an unfamiliar environment.</li>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">1.4 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Trolley Volunteer,
+              Chapel Allerton Hospital</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS7 4SA</strong></p>
+          <p class="nhsuk-u-margin-top-0">Leeds Hospitals Charity</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Patient facing
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a criminal record check
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Our Trolley service is fully funded by Leeds Hospitals Charity and free for patients and families to
+                  access. In this
+                  role you will be visiting wards in Chapel Allerton Hospital with the trolley which provides snacks,
+                  toiletries and other
+                  useful items. You will provide a friendly and welcoming face and represent Leeds Hospitals Charity.
+                </li>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

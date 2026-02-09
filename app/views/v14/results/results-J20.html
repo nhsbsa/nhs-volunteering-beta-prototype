@@ -25,7 +25,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="/v14/volunteering/organisation-search">
+      <a class="nhsuk-back-link__link" href="../volunteering/postcode-search">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -45,6 +45,35 @@ NHS Volunteering
 
           <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-4 nhsuk-u-margin-bottom-2">Filter your search</h2>
 
+          <!-- distance -->
+          <!-- 
+   <details class="nhsuk-details nhsuk-expander" open>
+
+   <summary class="nhsuk-details__summary">
+   <span class="nhsuk-details__summary-text">
+    Distance
+   </span>
+   </summary>
+   <div class="nhsuk-details__text">
+
+     <select  class="nhsuk-select" id="select-1" name="distance" >
+       <option value="1">This area only</option>
+       <option value="2">within 5 miles</option>
+       <option value="3" selected>within 10 miles</option>
+       <option value="4">within 20 miles</option>
+       <option value="5">within 30 miles</option>
+       <option value="6">within 50 miles</option>
+       <option value="7">All locations</option>
+     </select>
+
+
+   </details>
+       -->
+
+
+
+          <!-- salary -->
+
           <div id="refineFilter">
 
 
@@ -63,7 +92,25 @@ NHS Volunteering
                 <input type="hidden" name="skipPhraseSuggester" value="true">
 
                 <input type="hidden" name="employerCode" value="">
-                </summary>
+                <details class="nhsuk-details nhsuk-expander" open>
+                  <summary class="nhsuk-details__summary" role="button" aria-controls="distance-details"
+                    aria-expanded="false" data-test="distance">
+                    <span class="nhsuk-details__summary-text">
+                      Distance
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text" id="distance_wrapper" aria-hidden="false">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-u-visually-hidden" for="distance"> Distance </label>
+                      <select class="nhsuk-select" id="distance" name="distance" data-test="search-distance-input">
+                        <option value="3">Up to 3 miles</option>
+                        <option value="5" selected>Up to 5 miles</option>
+                        <option value="10">Up to 10 miles</option>
+                        <option value="20">Up to 20 miles</option>
+                        <option value="50">Up to 30 miles</option>
+                      </select>
+                    </div>
+                  </div>
                 </details>
                 <details class="nhsuk-details nhsuk-expander">
                   <summary class="nhsuk-details__summary" role="button" aria-controls="covid-jobs-only"
@@ -276,10 +323,11 @@ NHS Volunteering
 
         <div class="nhsuk-grid-column-two-thirds">
 
-          <h1>Volunteering opportunities that match your search criteria</h1>
+          <h1>Volunteering opportunities near LS9 6EP</h1>
+          <p class="nhsuk-body">Closest results listed first. Showing results up to 5 miles away.</p>
           <hr>
 
-
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.5 miles away</p>
           <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-2"> Trolley Volunteer,
               Beckett Wing, St James's Hospital</a></h2>
           <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS9 7TF</strong></p>
@@ -312,6 +360,7 @@ NHS Volunteering
 
           <hr>
 
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.5 miles away</p>
           <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Welcome Volunteer
               (Bexley Wing) St James's Hospital</a></h2>
           <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS9 7TF</strong></p>
@@ -346,6 +395,7 @@ NHS Volunteering
 
           <hr>
 
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">1.4 miles away</p>
           <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Trolley Volunteer,
               Chapel Allerton Hospital</a></h2>
           <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS7 4SA</strong></p>
@@ -376,6 +426,264 @@ NHS Volunteering
             </div>
           </div>
 
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">1.8miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Sands Hospital
+              Liason Volunteer</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS1 3EX</strong></p>
+          <p class="nhsuk-u-margin-top-0">Sands</p>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>As a Sands volunteer you will have a real opportunity to make a difference and influence the
+                  bereavement care services
+                  for pregnancy and baby loss.
+                </li>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">3.7 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Aphasia Cafe
+              Volunteer</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Bradford BD4 7JD, Wakefield WF2
+              8QR, LEEDS LS26 0PG</strong></p>
+          <p class="nhsuk-u-margin-top-0">Aphasia Support</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Patient facing
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a criminal record check
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                No experience needed
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>As an Aphasia Café volunteer, you'll play a key part in creating a warm and welcoming space for
+                  people with Aphasia and
+                  their loved ones
+                </li>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">3.8 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> PeerTalk - Support
+              Group Facilitator - Leeds</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds LS6 3QT</strong></p>
+          <p class="nhsuk-u-margin-top-0">PeerTalk</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                No experience needed
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>PeerTalk groups are for people living with depression, anxiety and similar psychological distress.
+
+                  The volunteer Support Group Facilitators ensure that the groups function well using listening and
+                  facilitation skills.
+                  Facilitators do not offer advice or counsel as it those who attend the group who are there to support
+                  each other
+
+                  PeerTalk in Leeds meets every Tuesday between 6.30 - 8.00pm
+                </li>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">
+          <h2><strong>Other opportunities</strong></p>
+          </h2>
+          <p>These organisations are outside of your search criteria, but they may have opportunities in various
+            locations in your
+            area.</p>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">7.6 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Dementia Care Home
+              Support Volunteer with Wakefield Hospice</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Care facilities and home visits
+              in the Wakefield area.</strong></p>
+          <p class="nhsuk-u-margin-top-0">Wakefield Hospice</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Patient facing
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a car
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a criminal record
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <strong>Summary of Role:</strong>
+                <p>To support the Hospice Dementia Care Home Support volunteer team in ensuring people using the service
+                  are comforted,
+                  safe and cared for during your visit.
+
+                  Team work is essential and tasks may include:
+
+                  · Listen and talk with the person, supporting them in activities and reminiscence therapy (Training is
+                  provided)
+                </p>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">7.5 miles away</p>
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-1"> Activity
+              Volunteer</a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Wakefield WF2 9AF, Wakefield WF1
+              3SP</strong></p>
+          <p class="nhsuk-u-margin-top-0">South West Yorkshire Partnership NHS Foundation Trust</p>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Engage with participants
+                </li>
+                <li>Assist in activities such as games</li>
+                <li>Assist alongside OT staff in service user events to enhance the service user experience (if
+                  volunteering on ward)</li>
+                <li>Run a small group alongside other staff</li>
+                <li>Contribute to ideas for activities</li>
+                <li>Prepare for activities and events</li>
+                <li>Comply with all safety and security aspects of the role</li>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">
+          <h2><strong>Other opportunities across England</strong></p>
+          </h2>
+          <p>These opportunities are available no matter where you are in England</p>
+
+          <hr>
+
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-canine-befriender"> Age
+              UK Silver Line Helpline Volunteer </a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Any location in England</strong>
+          </p>
+          <p class="nhsuk-u-margin-top-0">Age UK</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                No experience needed
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                From home
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>Are you able to listen with empathy, understanding and without judgement?</li>
+                <li>If so, you could play an important role as a volunteer for The Silver Line Helpline by offering
+                  friendship over the phone to an older person day or night that may feel lonely, isolated and in need
+                  of support. We are always in need of dedicated volunteers to joun our growing service.</li>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="../volunteering/role-profile-canine-befriender">
+              Helpline Volunteer </a></h2>
+          <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Any location in England</strong>
+          </p>
+          <p class="nhsuk-u-margin-top-0">Deafblind UK</p>
+          <div class="nhsuk-u-margin-top-4">
+            <td class="nhsuk-table__cell" style="margin-top: -10px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                No experience needed
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                Need a criminal record check
+              </strong>
+            </td>
+            <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px;">
+              <strong class="nhsuk-tag nhsuk-tag--blue">
+                From home
+              </strong>
+            </td>
+          </div>
+
+          <div class="nhsuk-card" style="margin-top: 30px;">
+            <div class="nhsuk-card__content">
+
+              <ul class="nhsuk-list nhsuk-list--bullet">
+                <p>In this role, you will be assisting with the incoming calls coming into the Deafblind UK National
+                  Helpline. Duties would
+                  be varied ranging from dealing with basic incoming contact, updating our information library or
+                  carrying out research to
+                  support our work helping those with sight and hearing loss.
+
+                  Shifts are available from 9am to 5pm, Monday to Friday.</p>
+            </div>
+          </div>
+
+          <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+            <ul class="nhsuk-list nhsuk-pagination__list">
+              <li class="nhsuk-pagination-item--next">
+                <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="">
+                  <span class="nhsuk-pagination__title">Next</span>
+                  <span class="nhsuk-u-visually-hidden">:</span>
+                  <span class="nhsuk-pagination__page">Page 2 of 3</span>
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    aria-hidden="true" width="34" height="34">
+                    <path
+                      d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z">
+                    </path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
 

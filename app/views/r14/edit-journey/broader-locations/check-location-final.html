@@ -1,0 +1,115 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "location-larger-area",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
+        Check your location
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="check-location-area-name">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Radius
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            10 miles
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="check-location-radius">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area centre point
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds Art Gallery
+            <br>
+            The Headrow 
+            <br>
+            Leeds
+            <br>
+            LS1 3AB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="location-larger-area">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            An example of what your opportunity looks like in the search results
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+      <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.8 miles away</p>
+<h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="role-profile-2">Community First Responder</a></h2>
+<p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>East Kent</strong></p>
+<p class="nhsuk-u-margin-top-0">East Kent Hospitals University NHS Foundation Trust</p>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+   
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>You must hold a valid UK driving licence</li>
+      <li>You will be required to drive across a 10 mile radius</li>
+      <li>Everyone is welcome to volunteer but we would encourage people to do it long-term</li>
+  </div>
+</div>
+        </div>
+        </details>
+        <form action="tags" method="post">
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="tags">
+        Update and return to task list
+      </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

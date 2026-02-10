@@ -33,19 +33,29 @@ NHS Volunteering - Search for an opportunity near me
 
     <h1>Search for a volunteering opportunity</h1>
     <form action="/v14/results/results-concept-2" method="post">
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-50">
-          Enter an organisation name
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-50" id="input-width-50" name="organisation-name" type="text"
-          value="{{ data['organisation-name'] }}">
-      </div>
+
+      <form action="../results/results-v2" method="post">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-10">
+            Enter a postcode in England
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="postcode" type="text"
+            value="{{ data['postcode'] }}">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-50">
+            Enter an organisation name
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-50" id="input-width-50" name="organisation-name" type="text"
+            value="{{ data['organisation-name'] }}">
+        </div>
 
 
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/v14/results/results-concept-2">
-        Search
-      </button>
-    </form>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/v14/results/results-concept-2">
+          Search
+        </button>
+      </form>
 
 
   </div>

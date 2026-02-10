@@ -1,0 +1,155 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+  <h1 class="nhsuk-u-margin-bottom-3"><span class="nhsuk-caption-l">Listing reference number: 12240-AB</span> Ward support volunteer <span class="nhsuk-tag">Live</span></h1>
+  
+  <p class="nhsuk-u-margin-bottom-3">Listing URL: http://volunteering.nhs.uk/opportunity-listing/12240-AB</p>
+  <p class="nhsuk-u-margin-bottom-3">Date published: 9 January 2025</p>
+  <p class="nhsuk-u-margin-bottom-3">Volunteer details will only be stored in accordance with our <a href="../../v8/privacy-policy">privacy policy</a>.</p>
+<h2>What you can do</h2>
+<ul class="nhsuk-list">
+  <li><a href="../task-list-completed">Edit live listing</a></li>
+  <li><a href="preview">View live listing (opens in a new tab)</a></li>
+  <li><a href="print-preview">View a printable application form for this listing (opens in a new tab)</a></li>
+  <li><a href="reuse-listing-interstitial">Reuse this listing</a></li>
+  <li><a href="/r9/close-listing-now">Close the listing</a></li>
+</ul>
+
+<h2  id="received">Manage Applications</h2>
+<div class="nhsuk-button-group ">
+  <a href="?filter=new" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">New Applications</a>
+  <a href="?filter=reviewed" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">Reviewed</a>
+  <a href="?filter=shortlisted" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-4">Shortlisted</a>
+</div>
+
+  <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title" >
+      Contents
+    </h2>
+  
+    <ul class="nhsuk-tabs__list">
+  
+      <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+          Received (12)
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="manage-live-archived#archived">
+          Archived (44)
+        </a>
+      </li>
+  
+    </ul>
+
+    <div class="nhsuk-tabs__panel">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Received</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Applicant Name
+            </th>
+           
+            <th role="columnheader" class="" scope="col">
+              Application Ref
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Application Date
+              </th>
+    
+             <th role="columnheader" class="" scope="col">
+              Status
+             </th>
+
+             <th role="columnheader" class="" scope="col">
+              Actions
+             </th>
+
+          </tr>
+        </thead>
+      <tbody>
+        <tr><td><a href="">John Doe</a></td><td>REF-013</td><td>13 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="" class="nhsuk-link--danger">Archive</a></tr>
+          <tr><td><a href="">Mark Foster</a></td><td>REF-012</td><td>12 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="">Emma Carter</a></td><td>REF-011</td><td>11 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="">Olivia Scott</a></td><td>REF-009</td><td>09 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td> <a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="">James Brown</a></td><td>REF-008</td><td>08 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="" class="nhsuk-link--danger">Archive</a></tr>
+          <tr><td><a href="">Sarah Evans</a></td><td>REF-007</td><td>07 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--grey">Reviewed</span></td><td><a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="">David Green</a></td><td>REF-006</td><td>06 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--blue">Shortlisted</span></td><td><a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="">Emily White</a></td><td>REF-005</td><td>05 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          <tr><td><a href="">Michael Johnson</a></td><td>REF-004</td><td>04 Feb 2025</td><td><span class="nhsuk-tag nhsuk-tag--green">New</span></td><td><a href="" class="nhsuk-link--danger">Archive</a> </tr>
+          
+      </tbody>
+    </table>
+  </table>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

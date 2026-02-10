@@ -1,0 +1,173 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+
+  <h1>Your dashboard</h1>
+
+  <p>You can use your dashboard to create, edit and reuse listings. You can also review your applications.</p>
+    
+    <h3>Your organisation is Mid and South Essex NHS Foundation Trust</h3>
+    <p><a href="recruiter-trust-details">View your organisation's details</a></p>
+    <p><a href="all-opportunities">View your organisation's opportunities (opens in a new tab)</a></p>  
+  
+  <div></div>
+
+  <div style="margin-bottom: -50px;">
+  <a class="nhsuk-button", style="margin-top: 30px;", href="start-page">Create new listing</a>
+</div>
+<div style="margin-bottom: -50px;">
+  <a class="nhsuk-button nhsuk-button--secondary", style="margin-top: 30px;", href="search-listing">Search for a listing</a>
+</div>
+<div>
+  <a class="nhsuk-button nhsuk-button--secondary", style="margin-top: 30px;", href="search-applicant">Search for an applicant</a>
+</div>
+  <h2>Your listings</h2>
+
+  <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title">
+      Contents
+    </h2>
+  
+    <ul class="nhsuk-tabs__list">
+  
+      <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+        <a class="nhsuk-tabs__tab" href="#active">
+          Published (0)
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="#closed">
+          Closed (0)
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="#draft">
+          Draft (0)
+        </a>
+      </li>
+  
+    </ul>
+  
+    <div class="nhsuk-tabs__panel" id="active">
+  
+    
+      
+          <p>There are no published listings.</p>
+          
+    </div>
+  
+    <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="closed">
+
+          <p>There are no closed listings.</p>
+
+    </div>
+  
+    <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="draft">
+  
+      <p>There are no draft listings.</p>
+  
+    </div>
+  
+    <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="past-year">
+  
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Past year</caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Case manager
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Cases opened
+            </th>
+            <th role="columnheader" class=" nhsuk-table__header--numeric" scope="col">
+              Cases closed
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">David Francis</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1380</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1472</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Paul Farmer</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1129</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1083</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Rita Patel</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1539</td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">1265</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

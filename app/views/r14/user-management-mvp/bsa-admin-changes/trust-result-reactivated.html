@@ -1,0 +1,341 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="results">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <div class="nhsuk-card" style="border-color:	#005eb8; color:#005eb8;">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading">
+        Team member reactivated
+  
+      </h2>
+
+      <p>We've reactivated <strong>Matt Flegel</strong>.</p>
+      <p>Email address: matt.flegel@nhs.uk</p>
+    </div>
+  </div>
+
+  <h1 class="nhsuk-heading-l">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</h1>
+
+  <h2 class="nhsuk-heading nhsuk-heading-m">Primary organisation details</h2>
+
+      {{ summaryList({
+        rows: [  
+        {
+          key: {
+            text: "Has this organisation been onboarded?"
+          },
+          value: {
+            text: "No"
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-onboarding-status",
+                text: "",
+                visuallyHiddenText: "Location 1"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Is this an NHS organisation?"
+          },
+          value: {
+            text: "Yes"
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-hospital-identify",
+                text: "Change",
+                visuallyHiddenText: "Location 1"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Name of organisation"
+          },
+          value: {
+            text: "Cumbria Northumberland Tyne and Wear NHS Foundation Trust"
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-name",
+                text: "Change",
+                visuallyHiddenText: "Location 2"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "URL"
+          },
+          value: {
+            text: "www.trustwebsite.com"
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-url",
+                text: "Change",
+                visuallyHiddenText: "Location 2"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "<p>Jubilee Rd</p>
+                   <p>Newcastle upon Tyne</p>
+                   <p>NE3 3XT</p>
+                   "
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-address",
+                text: "Change",
+                visuallyHiddenText: "Location 1"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Privacy policy"
+          },
+          value: {
+            text: "www.linktoprivacypolicy.com"
+          },
+          actions: {
+            items: [
+              {
+                href: "trust-privacy-policy",
+                text: "Change",
+                visuallyHiddenText: "Location "
+              }
+            ]
+          }
+        },
+        {
+            key: {
+              text: "About"
+            },
+            value: {
+              html: "<p>Some about information related to this trust.</p>
+
+             <p>Some more about information related to this trust.</p>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "trust-about",
+                  text: "Change",
+                  visuallyHiddenText: "Location 1"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Organisation logo"
+            },
+            value: {
+              href: 
+                    ""
+            },
+            actions: {
+              items: [
+                {
+                  href: "trust-org-logo",
+                  text: "Change",
+                  visuallyHiddenText: "Location 3"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h1 class="nhsuk-heading nhsuk-heading-l">Contact information</h1>
+
+      <table class="nhsuk-table">
+        <h2 class="nhsuk-heading nhsuk-heading-m">Matt Flegel</h2>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Telephone number</th>
+            <td class="nhsuk-table__cell">07555 555 555</td>
+            <td class="nhsuk-table__cell"></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Email address</th>
+            <td class="nhsuk-table__cell">matt.flegel@nhs.uk</td>
+            <td class="nhsuk-table__cell"></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Role</th>
+            <td class="nhsuk-table__cell" style="text-align: left;">Superuser</td>
+            <td class="nhsuk-table__cell"></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Status</th>
+            <td class="nhsuk-table__cell"><strong class="nhsuk-tag nhsuk-tag--green">Active</strong></td>
+            <td class="nhsuk-table__cell"><a href="#">Deactivate user</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="nhsuk-table">
+        <h2 class="nhsuk-heading nhsuk-heading-m">Mike Wallace</h2>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Telephone number</th>
+            <td class="nhsuk-table__cell">07555 555 555</td>
+            <td class="nhsuk-table__cell"></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Email address</th>
+            <td class="nhsuk-table__cell">mike.wallace@nhs.uk</td>
+            <td class="nhsuk-table__cell"></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Role</th>
+            <td class="nhsuk-table__cell" style="text-align: left;">Recruiter</td>
+            <td class="nhsuk-table__cell"></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="row">Status</th>
+            <td class="nhsuk-table__cell"><strong class="nhsuk-tag">Invited</strong></td>
+            <td class="nhsuk-table__cell"><a href="#">Cancel invitation</a><div><a href="#"> Resend invitation</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+<h1 class="nhsuk-heading nhsuk-heading-l">Secondary organisations that belong to Cumbria Northumberland Tyne and Wear NHS Foundation Trust</h1>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Acklam Road Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Acklam Road, Middlesborough, TS5 4EE</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Carleton Clinic</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Cumwhinton Drive, Carlisle, CA1 3SX</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Ferndene</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Moor Road, Prudhoe, Northumberland, NE42 5PB</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Hopewood Park</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Waterworks Road, Sunderland, SR2 0NB</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Monkwearmouth Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Newcastle Road, Sunderland, SR5 1NB</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Northgate Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Northgate Hospital, Morpeth, Northumberland, NE61 3BP</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">St. George’s Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>St Georges Park, Morpeth, Northumberland, NE61 2NU</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">St. Nicholas Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Jubilee Road, Gosforth, Newcastle Upon Tyne, NE3 3XT</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+
+<hr>
+
+<h3 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="organisation-result">Walkergate Park Hospital</a></h3>
+<p class="nhsuk-body-m nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Benfield Road, Newcastle Upon Tyne, NE6 4QD</strong></p>
+<p class="nhsuk-u-margin-top-0">Cumbria Northumberland Tyne and Wear NHS Foundation Trust</p>
+            
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "alt-closing-date",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r13/questions/email-details" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+            Who will receive email notifications?
+          </h1>
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-4" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-4">
+                ava.miller@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-4" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-4">
+                donald.apple@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-1" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-1">
+                emma.pepper@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-2">
+                fred.lettuce@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-2">
+                gustavo.bean@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-2">
+                hattie.tomato@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-2">
+                kenji.onion@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-2">
+                mateo.corn@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-3" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-3">
+                mike.asparagus@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-3" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-3">
+                priya.kale@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-4" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-4">
+                ricky.cabbage@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-4" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-4">
+                rohan.orange@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-4" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-4">
+                sanjay.pear@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-4" name="r13-email-updates" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-4">
+                talia.courgette@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__divider">or</div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-5" name="r13-email-updates" type="radio"
+                value="Email address not listed">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-5">
+                Email address not listed
+              </label>
+            </div>
+
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+    <p class="nhsuk-body">
+      <a href="/r13/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+        later</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

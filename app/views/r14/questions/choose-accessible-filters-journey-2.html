@@ -18,7 +18,7 @@ Question page
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="../task-list-all-sections-completed" method="post">
+    <form action="/r14/task-list-all-sections-completed-journey-2" method="post">
 
       <div class="nhsuk-form-group">
 
@@ -26,19 +26,15 @@ Question page
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
               <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
-              Choose search filters for your opportunity
+              How accessible is this opportunity?
             </h1>
           </legend>
 
           <div class="nhsuk-do-dont-list">
             <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
-            <p class="nhsuk-body">Search filters help users find more specific results.</p>
-            <p class="nhsuk-body">Select any of options below which are relevant to your opportunity to help volunteers
-              find your listing.</p>
-            <p class="nhsuk-body">For example, if you needed someone to help tidy the gardens of a hospital on the
-              weekend you might select 'Healthcare facility', 'Gardening and DIY' and 'Weekend' for your filters.</p>
-            <p class="nhsuk-body">The volunteer won't see how you define it, it only helps them in finding relevant
-              opportunities.</p>
+            <p class="nhsuk-body">It's important to inform volunteers how accessible your facilities are before they
+              apply. Any of the features you select
+              here will appear on your opportunity listing.</p>
           </div>
 
           <form action="check-location-final" method="post">
@@ -46,8 +42,6 @@ Question page
             <div class="nhsuk-form-group">
 
               <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-
-                <h2>Where is the setting of your opportunity?</h2>
 
                 <div class="nhsuk-hint" id="example-hint">
                   Select any that apply
@@ -58,28 +52,42 @@ Question page
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                      Hospital, clinic or surgery
+                      Step-free access
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      In local community
+                      Assistive listening
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      Office
+                      Guide dog friendly
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="remote">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      Remote, from home
+                      Accessible toilet
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="remote">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      Accessible parking bays
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="remote">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      Quiet room
                     </label>
                   </div>
 
@@ -95,290 +103,28 @@ Question page
 
                 </div>
 
-                <div style="margin-top: 50px;">
-                  <h2>Who is the volunteer supporting?</h2>
-
-                  <div class="nhsuk-hint" id="example-hint">
-                    Select any that apply
-                  </div>
-
-                  <div class="nhsuk-checkboxes">
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        Children
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        Young people
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Older people
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        People that need mental health support
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        People with physical disabilities
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        People with learning disabilities
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__divider">or</div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        None of these
-                      </label>
-                    </div>
-
-
-                  </div>
-
-                </div>
-
-                <div style="margin-top: 50px;">
-                  <h2>What type of volunteering is your opportunity?</h2>
-
-                  <div class="nhsuk-hint" id="example-hint">
-                    Select any that apply
-                  </div>
-
-                  <div class="nhsuk-checkboxes">
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        Admin
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Driving
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Gardening and DIY
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Maternity and breast feeding
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        NHS Fundraising
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        NHS Retail
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Palliative care
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Social media
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Stores and warehouse
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Telephone
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Trustee
-                      </label>
-                    </div>
-
-
-
-
-
-
-
-                    <div class="nhsuk-checkboxes__divider">or</div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        None of these
-                      </label>
-                    </div>
-
-
-                  </div>
-                </div>
-
-                <div style="margin-top: 50px;">
-                  <h2>What age can your volunteer be?</h2>
-
-                  <div class="nhsuk-hint" id="example-hint">
-                    Select any that apply
-                  </div>
-
-                  <div class="nhsuk-checkboxes">
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        16 to 17
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        18 to 20
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        21 and over
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__divider">or</div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Any of these
-                      </label>
-                    </div>
-
-
-                  </div>
-
-                  <div style="margin-top: 50px;">
-
-                    <h2>What availability are you looking for?</h2>
-
-                    <div class="nhsuk-hint" id="example-hint">
-                      Select any that apply
-                    </div>
-
-                    <div class="nhsuk-checkboxes">
-
-                      <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                          value="email">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                          Weekday
-                        </label>
-                      </div>
-
-                      <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                          value="phone">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                          Weekend
-                        </label>
-                      </div>
-
-
-
-                    </div>
-
-                  </div>
-                </div>
-
-              </fieldset>
-
             </div>
 
-
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
-              Save and continue
-            </button>
-
-          </form>
-
-
-          <p class="nhsuk-body">
-            <a href="../task-list-fixed-journey-2" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
-              later</a>
-          </p>
       </div>
+  </div>
 
-      {% endblock %}
+  </fieldset>
+
+</div>
+
+
+<button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+  Save and continue
+</button>
+
+</form>
+
+
+<p class="nhsuk-body">
+  <a href="/r14/task-list-fixed-journey-2" class="nhsuk-link nhsuk-link--no-visited-state">Save and
+    come back
+    later</a>
+</p>
+</div>
+
+{% endblock %}

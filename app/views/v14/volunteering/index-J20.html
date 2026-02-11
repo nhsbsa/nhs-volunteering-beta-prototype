@@ -1,0 +1,168 @@
+{% extends 'layout.html' %}
+
+<!-- some custom css for the home page only -->
+{% set containerClasses = 'app-width-container--full' %}
+{% set mainClasses = 'app-main-wrapper--no-padding app-homepage' %}
+
+{% block pageTitle %}
+NHS Volunteering - Homepage
+{% endblock %}
+
+
+{%block main %}
+<div class="nhsuk-width-container app-width-container--full">
+  <main class="nhsuk-main-wrapper app-main-wrapper--no-padding app-homepage top nhsuk-u-margin-bottom-0"
+    id="maincontent" role="main">
+
+
+
+    <!-- Homepage content -->
+    {% block content %}
+
+
+    <section class="nhsuk-hero">
+      <div class="nhsuk-width-container nhsuk-hero--border">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-hero__wrapper">
+            <div class="nhsuk-grid-column-full">
+              <h1 class="nhsuk-u-margin-bottom-4" data-test="heading" id="heading">Become an NHS volunteer</h1>
+              <p>Discover how you can make an impact on the experience of patients, their families and the NHS.</p>
+            </div>
+    </section>
+
+    <section class="nhsuk-sectionv2:nth-of-type(2) container-white">
+      <div class="nhsuk-width-container" class="nhsuk-padding-2">
+        <div class="nhsuk-grid-row nhsuk-u-margin-top-0 ">
+          <div class="nhsuk-grid-column-full app-section__content">
+            <h2>Search for an opportunity</h2>
+            <p>Use a postcode and other criteria to find organisations offering volunteering opportunities.</p>
+            <div class="nhsuk-action-link nhsuk-u-margin-bottom-0">
+              <a class="nhsuk-action-link__link" href="/v14/volunteering/postcode-search-J20">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+                  </path>
+                </svg>
+                <span class="nhsuk-action-link__text">Go to search</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Being a volunteer -->
+    <section class="nhsuk-section">
+      <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half app-section__content">
+            <div class="nhsuk-u-reading-width">
+              <h2>What it is like to be an NHS volunteer</h2>
+              <p>There are many reasons why you may decide to volunteer within the NHS.</p>
+              <p>As an NHS volunteer, you can:</p>
+              <ul>
+                <li>make a positive contribution to the experience of patients and their families</li>
+                <li>do something for the benefit of your local community</li>
+                <li>get a sense of accomplishment and a positive outlook on life</li>
+                <li>do something worthwhile and meaningful to you.</li>
+              </ul>
+
+              <p>Whether you’re retired, studying, or considering a change in career, volunteering is a great way to
+                learn new skills and
+                discover new possibilities.</p>
+
+              <p>You will get support from dedicated teams who welcome volunteers from all walks of life and
+                backgrounds.</p>
+
+
+
+            </div>
+
+          </div>
+
+          <div class="nhsuk-grid-column-one-half app-section__content">
+
+            <div class="nhsuk-card  nhsuk-card--clickable  ">
+              <img class="nhsuk-card__img" src="/images/How-you-can-help-high-res.jpg" alt="">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading"><a class="nhsuk-link--no-visited-state"
+                    href="/v13/role-categories/view-types">
+                    How you can help</a></h3>
+
+                <p class="nhsuk-card__description">Find out about different types of volunteering.<br><br></p>
+              </div>
+            </div>
+
+
+            <div class="nhsuk-card  nhsuk-card--clickable  ">
+              <img class="nhsuk-card__img" src="/images/what-our-volunteers-say-highres.jpg" alt="">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading"><a class="nhsuk-link--no-visited-state"
+                    href="../volunteering/what-our-volunteers-say">
+                    What our volunteers say</a></h3>
+
+                <p class="nhsuk-card__description">We have asked some of our volunteers what they think about
+                  volunteering with the NHS.<br><br></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+</div>
+</main>
+
+
+{%endblock%}
+
+
+<!-- Register as an advertiser -->
+
+<section class="nhsuk-section container-white ">
+  <div class="nhsuk-width-container ">
+    <div class="nhsuk-grid-row nhsuk-u-margin-top-0">
+      <div class="nhsuk-grid-column-full app-section__content nhsuk-u-margin-bottom-4">
+        <h2>Advertise volunteering opportunities</h2>
+        <p>NHS Volunteering is open to NHS organisations and community organisations that offer roles supporting NHS
+          priorities. To advertise your opportunities, you'll need to complete an application
+          form to
+          open an
+          account.</p>
+        <div class="nhsuk-action-link nhsuk-u-margin-bottom-0">
+          <a class="nhsuk-action-link__link" href="https://www.nhsbsa.nhs.uk/about-nhs-volunteering">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+              </path>
+            </svg>
+            <span class="nhsuk-action-link__text">Find out more</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

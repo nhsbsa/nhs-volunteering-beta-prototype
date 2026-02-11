@@ -6,14 +6,6 @@
 Task list
 {% endblock %}
 
-{% block outerContent %}
-{{ backLink({
-"href": "index",
-"text": "Go back to dashboard",
-"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
-}) }}
-{% endblock %}
-
 
 {% block content %}
 
@@ -21,21 +13,24 @@ Task list
 
   <div class="nhsuk-grid-column-two-thirds">
 
-    <h1 class="nhsuk-heading nhsuk-heading-xl">
-      <span class="nhsuk-caption-l nhsuk-caption--top">Reference number 49208-AB</span>
-      {% if data['r2-opportunity-name'] %}
-      {{ data['r2-opportunity-name'] }}
-      {% else %}
-      Walk and talk volunteer
-      {% endif %}
-      <span class="nhsuk-tag nhsuk-tag--yellow">Draft</span>
-    </h1>
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/r9/index">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back to dashboard</a>
+    </div>
+
+    <h1><span class="nhsuk-caption-l">Reference number: 49208-AB</span> Walk and talk volunteer <span
+        class="nhsuk-tag nhsuk-tag--yellow">Draft</span></h1>
 
     <p>You need to complete all tasks before you can advertise your opportunity.</p>
     <p class="nhsuk-u-margin-bottom-7">You can save your progress and return to it later.</p>
-
     <p class="nhsuk-body">You have completed 2 of 4 sections.</p>
-
     <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
     <ol class="app-task-list">
       <li>
@@ -45,7 +40,7 @@ Task list
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/new-name" aria-describedby="practice-details-not-started">
+              <a href="#">
                 Add a title
               </a>
             </span>
@@ -60,7 +55,15 @@ Task list
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/summary" aria-describedby="company-information-completed">
+              <a href="./questions/preview">
+                Add a search result preview
+              </a>
+            </span>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="./questions/summary">
                 Add a summary
               </a>
             </span>
@@ -68,23 +71,15 @@ Task list
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/opportunity-description" aria-describedby="company-information-completed">
-                Add a description of the opportunity
+              <a href="./questions/looking-for">
+                Specify the person you are looking for
               </a>
             </span>
             <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/looking-for" aria-describedby="company-information-completed">
-                What type of person you are looking for
-              </a>
-            </span>
-            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="questions/overview-process" aria-describedby="contact-details-completed">
+              <a href="./questions/overview-process">
                 Add an overview of the application process
               </a>
             </span>
@@ -92,7 +87,7 @@ Task list
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/support-volunteers">
+              <a href="./questions/support-volunteers">
                 Add who will support the volunteer
               </a>
             </span>
@@ -100,48 +95,51 @@ Task list
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/location">
+              <a href="./questions/remote">
                 Add locations
               </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/availability">
+              <a href="./questions/availability">
                 Add availability requirements
               </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/contact-details">
+              <a href="./questions/contact-details">
                 Set the contact details
               </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/tags">
+              <a href="./questions/tags">
                 Add opportunity tags
               </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/choose-search-filters">
+              <a href="./questions/choose-search-filters">
                 Choose search filters
               </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/r14/questions/choose-accessible-filters-journey-2">
+                Choose accessible features and facilities
+              </a>
+            </span>
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
         </ul>
       </li>
@@ -166,14 +164,6 @@ Task list
             </span>
             <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
           </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="/r13/questions/email-updates">
-                Set up email notifications
-              </a>
-            </span>
-            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
-          </li>
         </ul>
       </li>
       <li>
@@ -183,14 +173,17 @@ Task list
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              Check your answers and publish the listing
+              <a href="./questions/check-listing">
+                Check your answers and publish the listing
+              </a>
             </span>
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Cannot start
-              yet</strong>
+            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="practice-staff-started">Not
+              started</strong>
           </li>
         </ul>
       </li>
     </ol>
+
     <form action="are-you-sure-delete">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit"
         style="background-color:	#d5281b;  box-shadow: 0 4px 0 #212b32">

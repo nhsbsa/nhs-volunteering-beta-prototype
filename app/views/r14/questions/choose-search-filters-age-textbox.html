@@ -298,113 +298,63 @@ Question page
                   <h2>What age can your volunteer be?</h2>
 
                   <div class="nhsuk-hint" id="example-hint">
-                    Select any that apply
+                    Please enter the minimum age
                   </div>
-
-                  <div class="nhsuk-checkboxes">
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        14+
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        16+
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        18+
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        21+
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                        value="email">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                        25+
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__divider">or</div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                        value="phone">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                        Any of these
-                      </label>
-                    </div>
-
-
-                  </div>
-
-                  <div style="margin-top: 50px;">
-
-                    <h2>What availability are you looking for?</h2>
-
-                    <div class="nhsuk-hint" id="example-hint">
-                      Select any that apply
-                    </div>
-
-                    <div class="nhsuk-checkboxes">
-
-                      <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox"
-                          value="email">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                          Weekday
-                        </label>
-                      </div>
-
-                      <div class="nhsuk-checkboxes__item">
-                        <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox"
-                          value="phone">
-                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                          Weekend
-                        </label>
-                      </div>
-
-
-
-                    </div>
-
+                  <div class="nhsuk-form-group">
+                    <input class="nhsuk-input" id="full-name" name="fullName" type="text">
                   </div>
                 </div>
 
-              </fieldset>
 
             </div>
 
+            <div style="margin-top: 50px;">
 
-            <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
-              Save and continue
-            </button>
+              <h2>What availability are you looking for?</h2>
 
-          </form>
+              <div class="nhsuk-hint" id="example-hint">
+                Select any that apply
+              </div>
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Weekday
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    Weekend
+                  </label>
+                </div>
 
 
-          <p class="nhsuk-body">
-            <a href="../task-list-fixed-journey-2" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
-              later</a>
-          </p>
+
+              </div>
+
+            </div>
       </div>
 
-      {% endblock %}
+      </fieldset>
+
+  </div>
+
+
+  <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+    Save and continue
+  </button>
+
+  </form>
+
+
+  <p class="nhsuk-body">
+    <a href="../task-list-fixed-journey-2" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+      later</a>
+  </p>
+</div>
+
+{% endblock %}

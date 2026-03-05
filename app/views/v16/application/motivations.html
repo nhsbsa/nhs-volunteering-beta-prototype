@@ -1,0 +1,164 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="support">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 8 of 8 </span>
+      Tell us why you want to become a volunteer</h1>
+
+
+
+    <div class="nhsuk-do-dont-list">
+      <h3 class="nhsuk-do-dont-list__label">Tell us about</h3>
+      <ul class="nhsuk-list nhsuk-list--tick" role="list">
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Why you are applying for this opportunity
+        </li>
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Any relevant experience you might have
+        </li>
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Your interests and hobbies
+        </li>
+      </ul>
+    </div>
+
+    <div class="nhsuk-do-dont-list">
+      <h3 class="nhsuk-do-dont-list__label">Tips on how to write your answer</h3>
+      <ul class="nhsuk-list nhsuk-list--tick" role="list">
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Keep it informal - this is your moment to show your qualities and character
+        </li>
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Break your answers into short sentences
+        </li>
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Keep it short and simple - it shouldn't feel like writing a job application
+        </li>
+      </ul>
+    </div>
+
+    <details class="nhsuk-details nhsuk-u-margin-bottom-6">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          If you need help with this question
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>Write what you can. You may have an opportunity to discuss this again with the organisation. You can also <a
+            href="support">go back</a> to tell us that you need support.</p>
+
+      </div>
+    </details>
+    <form action="check" method="post">
+
+      <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="v8-volunteer-motivations">
+            Tell us why you want to become a volunteer
+          </label>
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v8-volunteer-motivations"
+            name="v8-volunteer-motivations" rows="5"
+            aria-describedby="v8-volunteer-motivations-hint">{{ data['v8-volunteer-motivations']}}</textarea>
+        </div>
+
+        <div class="nhsuk-hint nhsuk-character-count__message" id="v8-volunteer-motivations-info">
+          You can enter up to 500 characters
+        </div>
+
+      </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button>
+    </form>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% endblock %}
+
+
+
+  <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+  {% block pageScripts %}
+  <script>
+    $(document).ready(function () {
+      $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+  {% endblock %}

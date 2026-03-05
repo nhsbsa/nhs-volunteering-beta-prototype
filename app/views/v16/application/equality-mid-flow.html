@@ -41,66 +41,59 @@ NHS Volunteering
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
 
-        <h1>Do you want to answer some questions for our equality and diversity monitoring?</h1>
+        <form action="/v16/application/equality-mid-flow" method="post">
 
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
+          <h1>Do you want to answer some questions for our equality and diversity monitoring?</h1>
 
-            <div class="nhsuk-inset-text">
-              <span class="nhsuk-u-visually-hidden">Information: </span>
-              <p>Your information will help us improve our service and meet the different needs of our users.</a>
-              </p>
-            </div>
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Your information will help us improve our service and meet the different needs of our users.</p>
+          </div>
 
-
+          <div class="nhsuk-form-group">
             <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-hint" id="availability-hint">
+                <p>These questions are optional. Your answers will not affect your application.</p>
+              </div>
 
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="equality-yes" name="v16-equality-mid-flow" type="radio"
+                    value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="equality-yes">
+                    Yes, answer the equality questions (takes 2 minutes)
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="equality-no" name="v16-equality-mid-flow" type="radio"
+                    value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="equality-no">
+                    No, skip these questions
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Why do we ask these questions?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p class="nhsuk-body">We only ask these questions to monitor who uses the service. We will share this
+                information with NHS England for reporting and improvement purposes only.</p>
+            </div>
+          </details>
+
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+
+        </form>
+      </div>
+    </div>
   </main>
-  <div class="nhsuk-form-group">
-
-
-    <div class="nhsuk-hint" id="availability-hint">
-      <p>These questions are optional. Your answers will not affect your application.</p>
-    </div>
-
-    <div class="nhsuk-radios">
-
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="gds-equality-questions-1" name="gds-equality-questions" type="radio"
-          value="yes">
-        <label class="nhsuk-label nhsuk-radios__label" for="gds-equality-questions-1">
-          Yes, answer the equality questions (takes 2 minutes)
-        </label>
-      </div>
-
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="gds-equality-questions-2" name="gds-equality-questions" type="radio"
-          value="no">
-        <label class="nhsuk-label nhsuk-radios__label" for="gds-equality-questions-2">
-          No, skip the equality questions
-        </label>
-      </div>
-
-    </div>
-    </fieldset>
-
-  </div>
-
-  <details class="nhsuk-details">
-    <summary class="nhsuk-details__summary">
-      <span class="nhsuk-details__summary-text">
-        Why do we ask these questions?
-      </span>
-    </summary>
-    <div class="nhsuk-details__text">
-      <p class="nhsuk-body">We only ask these questions to monitor who uses the service. We will share this information
-        with NHS England for reporting and improvement purposes only.</p>
-    </div>
-  </details>
-
-  <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit" href="/v16/edi/dob">Continue</button>
-  </form>
-</div>
 </div>
 
 

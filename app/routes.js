@@ -1056,3 +1056,19 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+
+  // ROUTES FOR V16 equality questions
+
+  router.post('/v16/application/equality-mid-flow', function (req, res) {
+    const equalityInflow = req.session.data['v16-equality-mid-flow']
+  
+    if (equalityInflow === 'yes') {
+      res.redirect('/v16/edi/dob')
+    } else if (equalityInflow === 'no') {
+      res.redirect('/v16/application/check')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/v16/application/equality-mid-flow')
+    }
+  })
+

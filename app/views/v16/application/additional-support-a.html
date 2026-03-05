@@ -33,20 +33,19 @@ NHS Volunteering
         Go back</a>
     </div>
 
-    <h1> <span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 8</span> Do you need any additional support?</h1>
+    <h1> <span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 8</span> Do you need any support to attend an
+      interview?</h1>
 
-    <form action="/v13/application/additional-support-v2a" method="post">
 
+    <div class="nhsuk-hint">
+      We will use this information to provide any support you might need to attend any interviews.</div>
 
+    <form action="/v16/application/additional-support-a" method="post">
+
+      <br>
 
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
-
-          <div class="nhsuk-hint" id="availability-hint">
-            <p>We will use this information to ensure we can do our best to provide the support you need for your
-              volunteering
-              activities or for any interviews.</p>
-          </div>
 
           <div id="example-hints-hint" class="nhsuk-hint">
             Select 1 option
@@ -55,18 +54,18 @@ NHS Volunteering
           <div class="nhsuk-radios" data-module="nhsuk-radios">
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="support-yes" name="v13-additional-support-v2" type="radio"
+              <input class="nhsuk-radios__input" id="support-yes" name="v16-additional-support-a" type="radio"
                 value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="support-yes">
-                Yes
+                Yes, I need support to attend an interview
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="support-no" name="v13-additional-support-v2" type="radio"
+              <input class="nhsuk-radios__input" id="support-no" name="v16-additional-support-a" type="radio"
                 value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="support-no">
-                No
+                No, I don't need support to attend an interview
               </label>
             </div>
 
@@ -75,9 +74,7 @@ NHS Volunteering
       </div>
 
       <button class="nhsuk-button" type="submit">Continue</button>
-
     </form>
-
 
 
 

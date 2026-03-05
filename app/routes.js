@@ -1041,3 +1041,18 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+  // ROUTES FOR V16 support questions
+
+  router.post('/v16/application/additional-support-a', function (req, res) {
+    const needSupport = req.session.data['v16-additional-support-a']
+  
+    if (needSupport === 'yes') {
+      res.redirect('/v16/application/additional-support-b')
+    } else if (needSupport === 'no') {
+      res.redirect('/v16/application/motivations')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/v16/application/additional-support-a')
+    }
+  })
+

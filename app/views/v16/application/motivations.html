@@ -101,24 +101,25 @@ NHS Volunteering
       </summary>
       <div class="nhsuk-details__text">
         <p>Write what you can. You may have an opportunity to discuss this again with the organisation. You can also <a
-            href="support">go back</a> to tell us that you need support.</p>
+            href="/v16/application/additional-support-a">go back</a> to tell us that you need support.</p>
 
       </div>
     </details>
-    <form action="/v16/application/equality-mid-flow" method="post">
+    <form action="/v16/application/equality-mid-flow" method="get">
 
       <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="v8-volunteer-motivations">
+          <label class="nhsuk-label" for="v16-volunteer-motivations">
             Tell us why you want to become a volunteer
           </label>
-          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v8-volunteer-motivations"
-            name="v8-volunteer-motivations" rows="5"
-            aria-describedby="v8-volunteer-motivations-hint">{{ data['v8-volunteer-motivations']}}</textarea>
+
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v16-volunteer-motivations"
+            name="v16-volunteer-motivations" rows="5"
+            aria-describedby="v16-volunteer-motivations-hint">{{ data['v16-volunteer-motivations'] }}</textarea>
         </div>
 
-        <div class="nhsuk-hint nhsuk-character-count__message" id="v8-volunteer-motivations-info">
+        <div class="nhsuk-hint nhsuk-character-count__message" id="v16-volunteer-motivations-info">
           You can enter up to 500 characters
         </div>
 
@@ -126,7 +127,6 @@ NHS Volunteering
 
       <button class="nhsuk-button" type="submit">Continue</button>
     </form>
-
   </div>
 
 

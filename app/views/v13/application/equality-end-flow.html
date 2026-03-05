@@ -1,0 +1,120 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+<!-- NHS.UK header -->
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/v12/results/results-v2">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back to results</a>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper nhsuk-main-wrapper--l" id="main-content" role="main">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <h1>We have received your application</h1>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <p class="nhsuk-body">Before you finish using the service, we’d like to ask some equality questions.</p>
+            <p class="nhsuk-body">Your information will help us improve our service and meet the different needs of our
+              users.</p>
+            <form action="/v13/volunteering/index-unhappy-path" method="post">
+              <div class="nhsuk-form-group">
+
+
+                <fieldset class="nhsuk-fieldset">
+
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    Do you want to answer some questions for our equality and diversity monitoring?
+                  </legend>
+  </main>
+  <div class="nhsuk-form-group">
+    <div class="nhsuk-body">
+      <p>These questions are optional. Your answers will not affect your application.</p>
+    </div>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="gds-equality-questions-1" name="gds-equality-questions" type="radio"
+          value="yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="gds-equality-questions-1">
+          Yes, answer the equality questions (takes 2 minutes)
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="gds-equality-questions-2" name="gds-equality-questions" type="radio"
+          value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="gds-equality-questions-2">
+          No, skip the equality questions
+        </label>
+      </div>
+
+    </div>
+    </fieldset>
+
+  </div>
+
+  <details class="nhsuk-details">
+    <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+        Why do we ask these questions?
+      </span>
+    </summary>
+    <div class="nhsuk-details__text">
+      <p class="nhsuk-body">We only ask these questions to monitor who uses the service. We will share this information
+        with NHS England for reporting and improvement purposes only.</p>
+    </div>
+  </details>
+
+  <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit"
+    href="/v13/volunteering/index-unhappy-path">Continue</button>
+  </form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

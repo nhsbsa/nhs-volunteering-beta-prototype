@@ -47,6 +47,7 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['v8-volunteer-name'] }}
+          <p>Not provided</p>
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -65,6 +66,7 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
           {{ data['v8-volunteer-age'] }}
+          <p>Not provided</p>
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -96,6 +98,7 @@ NHS Volunteering
             ['v8-volunteer-county'] %} {{ data['v8-volunteer-county'] }}, {% endif %} {{ data['v8-volunteer-postcode-2']
             }}</p>
           {% endif %}
+          <p>Not provided</p>
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -115,6 +118,7 @@ NHS Volunteering
         <dd class="nhsuk-summary-list__value">
 
           <p>{{ data['v8-volunteer-email-confirmation'] }}</p>
+          <p>Not provided</p>
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -161,6 +165,7 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
           <p>{{ data['v8-volunteer-availability']}}</p>
+          <p>Not provided</p>
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -179,6 +184,7 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
           <p>{{ data['v8-volunteer-support'] }}</p>
+          <p>Not provided</p>
 
         </dd>
 
@@ -198,6 +204,7 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
           <p>{{ data['v8-volunteer-motivations'] }}</p>
+          <p>Not provided</p>
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -210,10 +217,33 @@ NHS Volunteering
 
       </div>
 
+    </dl>
 
+    <h2>Equality questions</h2>
+    <dl class="nhsuk-summary-list">
 
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Chosen to provide equality responses
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>{{ data['v16-application-equality']}}</p>
+          <p>Yes</p>
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="/v16/application/equality-mid-flow">
+            Change<span class="nhsuk-u-visually-hidden"> equality </span>
+          </a>
+
+        </dd>
+
+      </div>
 
     </dl>
+
+
 
     <div class="nhsuk-card">
       <div class="nhsuk-card__content">
@@ -223,8 +253,8 @@ NHS Volunteering
         </h3>
         <p>I confirm that:</p>
         <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>I have read, understood and accept the <a href="">terms and conditions (opens in a new tab)</a> and the <a
-              href="">privacy policy (opens in a new tab)</a>.
+          <li>I have read, understood and accept the <a href="">terms and conditions (opens in a new tab)</a> and the
+            <a href="">privacy policy (opens in a new tab)</a>.
           </li>
           <li>the information I have provided is true and correct to the best of my knowledge</li>
         </ul>

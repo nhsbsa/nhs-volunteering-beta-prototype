@@ -1,0 +1,129 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/v16/application/equality-mid-flow">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+    <span class="nhsuk-caption-l nhsuk-caption--top">Step 1 of 9 </span>
+    <form action="/v16/edi/health-conditions" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            Would you like to enter your date of birth?
+          </legend>
+          <div class="nhsuk-hint" id="example-hint">
+            For example, 24 5 1983
+          </div>
+
+          <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">
+
+
+            <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="dob-yes" name="dob" type="radio" value="yes"
+                  aria-controls="conditional-dob-content" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="dob-yes">
+                  Yes, I will enter my date of birth
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-dob-content">
+                <div class="nhsuk-form-group">
+                  <div class="nhsuk-date-input" id="dob-input">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">Day</label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day"
+                          name="dob-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">Month</label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month"
+                          name="dob-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">Year</label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year"
+                          name="dob-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="dob-no" name="dob" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="dob-no">
+                  Prefer not to say
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+    </form>
+
+  </div>
+
+  <script src="/nhsuk-frontend/nhsuk.min.js"></script>
+  <script src="/js/nhsuk.min.js"></script>
+
+  <script>
+    // This function tries every known way to start the NHS logic
+    function startNHS() {
+      try {
+        if (typeof window.nhsuk_initAll === 'function') {
+          window.nhsuk_initAll();
+          console.log("NHS logic started via nhsuk_initAll");
+        } else if (window.NHSUK && typeof window.NHSUK.initAll === 'function') {
+          window.NHSUK.initAll();
+          console.log("NHS logic started via NHSUK.initAll");
+        }
+      } catch (err) {
+        console.error("Failed to start NHS logic:", err);
+      }
+    }
+
+    // Run it immediately and also when the page fully loads
+    startNHS();
+    window.onload = startNHS;
+  </script>
+
+  {% endblock %}

@@ -40,90 +40,51 @@ NHS Volunteering
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             Would you like to enter your date of birth?
           </legend>
-          <div class="nhsuk-hint" id="example-hint">
-            For example, 24 5 1983
+
+          <div id="date-of-birth-hint" class="nhsuk-hint">
+            For example, 31 3 1980 – if you prefer not to say, continue without entering any information
           </div>
-
-          <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">
-
-
-            <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">
-
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="dob-yes" name="dob" type="radio" value="yes"
-                  aria-controls="conditional-dob-content" aria-expanded="false">
-                <label class="nhsuk-label nhsuk-radios__label" for="dob-yes">
-                  Yes, I will enter my date of birth
+          <div class="nhsuk-date-input" id="date-of-birth">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day">
+                  Day
                 </label>
-              </div>
-
-              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-dob-content">
-                <div class="nhsuk-form-group">
-                  <div class="nhsuk-date-input" id="dob-input">
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">Day</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day"
-                          name="dob-day" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">Month</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month"
-                          name="dob-month" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="nhsuk-date-input__item">
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">Year</label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year"
-                          name="dob-year" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="dob-no" name="dob" type="radio" value="no">
-                <label class="nhsuk-label nhsuk-radios__label" for="dob-no">
-                  Prefer not to say
-                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day"
+                  name="date-of-birth-day" type="text" autocomplete="bday-day" inputmode="numeric">
               </div>
             </div>
-
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-month">
+                  Month
+                </label>
+                <input class="nhsuk-input govuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month"
+                  name="date-of-birth-month" type="text" autocomplete="bday-month" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year"
+                  name="date-of-birth-year" type="text" autocomplete="bday-year" inputmode="numeric">
+              </div>
+            </div>
           </div>
         </fieldset>
       </div>
 
-      <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
-    </form>
 
   </div>
+  </fieldset>
+</div>
 
-  <script src="/nhsuk-frontend/nhsuk.min.js"></script>
-  <script src="/js/nhsuk.min.js"></script>
+<button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+</form>
 
-  <script>
-    // This function tries every known way to start the NHS logic
-    function startNHS() {
-      try {
-        if (typeof window.nhsuk_initAll === 'function') {
-          window.nhsuk_initAll();
-          console.log("NHS logic started via nhsuk_initAll");
-        } else if (window.NHSUK && typeof window.NHSUK.initAll === 'function') {
-          window.NHSUK.initAll();
-          console.log("NHS logic started via NHSUK.initAll");
-        }
-      } catch (err) {
-        console.error("Failed to start NHS logic:", err);
-      }
-    }
+</div>
 
-    // Run it immediately and also when the page fully loads
-    startNHS();
-    window.onload = startNHS;
-  </script>
 
-  {% endblock %}
+{% endblock %}

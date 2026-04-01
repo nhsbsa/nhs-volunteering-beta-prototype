@@ -24,7 +24,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="/v16/application/equality-mid-flow">
+      <a class="nhsuk-back-link__link" href="/v18/index">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -34,7 +34,7 @@ NHS Volunteering
         Go back</a>
     </div>
     <span class="nhsuk-caption-l nhsuk-caption--top">Step 1 of 9 </span>
-    <form action="/v16/edi/health-conditions" method="post">
+    <form action="" method="post">
 
 
       <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
@@ -45,7 +45,7 @@ NHS Volunteering
 
           <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
             <li>
-              <a href="#dob-day-error-month">Date of birth must include a month.</a>
+              <a href="#dob-day-error-year">Date of birth must be in the past.</a>
             </li>
 
 
@@ -68,16 +68,16 @@ NHS Volunteering
             For example, 31 3 1980
           </div>
           <span class="nhsuk-error-message" id="dob-day-error-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Date of birth must include a month
+            <span class="nhsuk-u-visually-hidden">Error:</span> Date of birth must be in the past
           </span>
           <div class="nhsuk-date-input" id="dob-day-error">
             <div class="nhsuk-date-input__item">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day">
+                <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-error-day">
                   Day
                 </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day"
-                  name="date-of-birth-day" type="text" value="16" inputmode="numeric">
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error"
+                  id="dob-day-error-day" name="dob-day-error[day]" type="text" value="15" inputmode="numeric">
               </div>
             </div>
             <div class="nhsuk-date-input__item">
@@ -86,16 +86,16 @@ NHS Volunteering
                   Month
                 </label>
                 <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error"
-                  id="dob-day-error-month" name="dob-day-error[month]" type="text" value="" inputmode="numeric">
+                  id="dob-day-error-month" name="dob-day-error[month]" type="text" value="3" inputmode="numeric">
               </div>
             </div>
             <div class="nhsuk-date-input__item">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year">
+                <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-error-year">
                   Year
                 </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year"
-                  name="date-of-birth-year" type="text" value="1960" inputmode="numeric">
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error"
+                  id="dob-day-error-year" name="dob-day-error[year]" type="text" value="2084" inputmode="numeric">
               </div>
             </div>
           </div>

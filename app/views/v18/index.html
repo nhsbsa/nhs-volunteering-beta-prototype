@@ -1,0 +1,62 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <p class="nhsuk-lede-text">
+      Prototype updates recommended from [J23] content review.
+    </p>
+
+    <hr>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h3>Screens</h3>
+    <p class="nhsuk-body"><a href="/v18/index-GDS">Homepage</a></p>
+    <p class="nhsuk-body"><a href="/v18/what-our-volunteers-say">What our volunteers say</a></p>
+    <p class="nhsuk-body"><a href="/v18/age">What is your age</a></p>
+    <p class="nhsuk-body"><a href="/v18/dob-past-error">EDI error pages: DOB in the past</a></p>
+    <p class="nhsuk-body"><a href="/v18/dob-partially-invalid-error">EDI error pages: DOB partially missing</a></p>
+    <p class="nhsuk-body"><a href="/v18/dob-incorrect-date-error">EDI error pages: DOB incorrect date</a></p>
+
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+<!-- End of content -->
+
+
+{% endblock %}

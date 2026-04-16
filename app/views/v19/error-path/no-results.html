@@ -1,0 +1,143 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+<!-- NHS.UK header -->
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="postcode-search">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1>Volunteering opportunities near LS1 1XX</h1>
+ <p class="nhsuk-body">Closest listed first. Showing results up to 5 miles away.</p>
+
+<hr>
+<h2 class="nhsuk-link"> <a href="role-profile-1">Walk and Talk volunteer - Airedale Trust</a></h2>
+<p class="">0.7 miles away</p>
+<span class="nhsuk-tag">Walking required</span>
+
+
+<div class="container-white nhsuk-u-margin-top-3">
+  <p class="nhsuk-body nhsuk-u-padding-top-3 nhsuk-u-padding-left-3">What you need to know about the opportunity:</p>
+  <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-padding-left-6">
+  <li>Main responsibilities are to help run a walking group for people with dementia, and support service users to participate in social activities</li>
+  <li>You will be volunteering for 3 hours a week, on Tuesdays or Thursdays</li>
+  <li>You will be based in Airedale Hospital, Steeton, BD23 9QB</li>
+
+</ul>
+</div>
+
+<hr>
+<h2 class="nhsuk-link"> <a href="">Opportunities at Leeds Teaching Hospitals NHS Trust</a> </h2>
+<p class="">0.9 miles away</p>
+
+<div class="container-white nhsuk-u-margin-top-3">
+  <p class="nhsuk-body nhsuk-u-padding-top-3 nhsuk-u-padding-left-3">You need to apply on the trust website for this opportunity</p>
+
+</div>
+
+
+<hr>
+
+<h2 class="nhsuk-link"> <a href="">Patient support volunteer - Bradford Teaching Hospitals NHS Trust</a></h2>
+<p class="">1.6 miles away</p>
+<span class="nhsuk-tag">Customer service</span>
+
+
+<div class="container-white nhsuk-u-margin-top-3">
+  <p class="nhsuk-body nhsuk-u-padding-top-3 nhsuk-u-padding-left-3">What you need to know about the opportunity:</p>
+  <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-padding-left-6">
+  <li>Main responsibilities are communicating with patients, offering refreshments and offering assistance to wheelchair users</li>
+  <li>Volunteering hours are flexible for this opportunity</li>
+  <li>You will be based in Bradford Royal Infirmary, BD4 1NA</li>
+
+</ul>
+</div>
+ 
+  
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list nhsuk-footer__list--three-columns">
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS sites</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">NHS App</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">About us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Contact us</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Profile editor login</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Site map</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Accessibility statement</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Our policies</a></li>
+        <li class="nhsuk-footer__list-item"><a href="" class="nhsuk-footer__list-item-link">Cookies</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

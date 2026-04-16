@@ -1,0 +1,126 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="availability">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+    <h1> <span class="nhsuk-caption-l nhsuk-caption--top">Step 7 of 8</span> Do you need any interview support?</h1>
+
+
+    <div class="nhsuk-hint">
+      We can provide most forms of support if you attend an interview. Some organisations cannot offer all forms of
+      support.</div>
+
+    <div class="nhsuk-card nhsuk-card--feature">
+      <div class="nhsuk-card__content nhsuk-card__content--feature">
+        <h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-heading-m">
+          Tell us if you
+
+        </h2>
+
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-card__description">
+          <li>need assistive technology, an interpreter or a support person</li>
+          <li>might find it difficult to prove your identity or address</li>
+          <li>would prefer a phone or video interview</li>
+          <li>need any other adjustments, such as accessible parking</li>
+        </ul>
+      </div>
+    </div>
+
+    <form action="/v19/application/additional-support-a" method="post">
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
+
+          <div id="example-hints-hint" class="nhsuk-hint">
+            Select one
+          </div>
+
+          <div class="nhsuk-radios" data-module="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="support-yes" name="v16-additional-support-a" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="support-yes">
+                Yes, I need interview support
+
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="support-no" name="v16-additional-support-a" type="radio"
+                value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="support-no">
+                No, I do not need interview support
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button" type="submit">Continue</button>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
+
+
+
+    <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+    {% block pageScripts %}
+    <script>
+      $(document).ready(function () {
+        $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+    {% endblock %}

@@ -1072,3 +1072,33 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+  // ROUTES FOR V19 support questions
+
+  router.post('/v19/application/additional-support-a', function (req, res) {
+    const needSupport = req.session.data['v19-additional-support-a']
+  
+    if (needSupport === 'yes') {
+      res.redirect('/v19/application/additional-support-b')
+    } else if (needSupport === 'no') {
+      res.redirect('/v19/application/motivations')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/v19/application/additional-support-a')
+    }
+  })
+
+  
+  // ROUTES FOR V19 equality questions
+
+  router.post('/v19/application/equality-mid-flow', function (req, res) {
+    const equalityInflow = req.session.data['v19-equality-mid-flow']
+  
+    if (equalityInflow === 'yes') {
+      res.redirect('/v19/edi/dob')
+    } else if (equalityInflow === 'no') {
+      res.redirect('/v19/application/check')
+    } else {
+      // Handle the case where no selection was made (e.g., reload page)
+      res.redirect('/v19/application/equality-mid-flow')
+    }
+  })

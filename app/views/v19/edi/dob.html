@@ -1,0 +1,92 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/v16/application/equality-mid-flow">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+    <span class="nhsuk-caption-l nhsuk-caption--top">Step 1 of 9 </span>
+    <form action="/v19/edi/health-conditions" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            Would you like to enter your date of birth?
+          </legend>
+
+          <div id="date-of-birth-hint" class="nhsuk-hint">
+
+            <p>If you prefer not to say, continue without entering any information</p>
+            For example, 31 3 1980
+          </div>
+          <div class="nhsuk-date-input" id="date-of-birth">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-of-birth-day"
+                  name="date-of-birth-day" type="text" autocomplete="bday-day" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-month">
+                  Month
+                </label>
+                <input class="nhsuk-input govuk-date-input__input nhsuk-input--width-2" id="date-of-birth-month"
+                  name="date-of-birth-month" type="text" autocomplete="bday-month" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="date-of-birth-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="date-of-birth-year"
+                  name="date-of-birth-year" type="text" autocomplete="bday-year" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+  </div>
+  </fieldset>
+</div>
+
+<button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+</form>
+
+</div>
+
+
+{% endblock %}

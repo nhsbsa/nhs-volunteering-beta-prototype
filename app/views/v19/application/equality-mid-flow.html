@@ -1,0 +1,103 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+<!-- NHS.UK header -->
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="/v16/application/motivations">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper nhsuk-main-wrapper--l" id="main-content" role="main">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+
+        <form action="/v19/application/equality-mid-flow" method="post">
+
+          <h1>Do you want to answer some equality and diversity questions?</h1>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Your answers will not be seen by the organisation advertising the opportunity. They will be used for
+              monitoring only and do not affect your
+              application.
+              We will collect this information to help make volunteering more inclusive.</p>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-hint" id="availability-hint">
+                <p>The questions are optional, you can skip any you'd prefer not to answer.</p>
+              </div>
+
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="equality-yes" name="v19-equality-mid-flow" type="radio"
+                    value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="equality-yes">
+                    Yes, answer the equality questions (takes about 2 minutes)
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="equality-no" name="v19-equality-mid-flow" type="radio"
+                    value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="equality-no">
+                    No, skip the equality questions
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

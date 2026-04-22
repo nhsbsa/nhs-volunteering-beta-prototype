@@ -1,0 +1,53 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">Enter the code</h1>
+      </legend>
+
+      <div class="nhsuk-hint">
+        We have sent you a single-use 6-digit code to the mobile phone number ending in 923.
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="code">Enter the 6-digit code</label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="code" name="code" type="text" inputmode="numeric">
+      </div>
+    </fieldset>
+
+    <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">Not received your code?</span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>It can take a few minutes for the code to arrive.[Further information on what to do]
+        </p>
+      </div>
+    </details>
+
+    <button class="nhsuk-button" type="submit">Continue</button>
+
+  </div>
+</div>
+
+{% endblock %}

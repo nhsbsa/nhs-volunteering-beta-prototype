@@ -1102,3 +1102,62 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/v19/application/equality-mid-flow')
     }
   })
+
+
+  // Route for R17 MFA selection
+router.post('/r17/set-up-auth', function (req, res) {
+  
+  // Get the value from the radio buttons
+  const mfaMethod = req.session.data['mfaMethod']
+
+  if (mfaMethod === 'email') {
+    res.redirect('/r17/email-code')
+  } else if (mfaMethod === 'text') {
+    res.redirect('/r17/sms-code')
+  } else if (mfaMethod === 'app') {
+    res.redirect('/r17/auth-app-set-up')
+  } else {
+    // Optional: send back to the same page if nothing is selected
+    res.redirect('/r17/set-up-auth')
+  }
+
+})
+
+// Route for R17 MFA app y/n
+router.post('/r17/auth-app-router', function (req, res) {
+  
+  const hasApp = req.session.data['hasApp']
+
+  if (hasApp === 'yes') {
+    // User already has the app, go to the code entry page
+    res.redirect('/r17/auth-code')
+  } else if (hasApp === 'no') {
+    // User doesn't have the app, go to the setup/QR code page
+    res.redirect('/r17/add-auth-app')
+  } else {
+    // Fallback if they click continue without selecting an option
+    res.redirect('/r17/add-auth-app')
+  }
+
+})
+
+
+// Route for R17 MFA selection EU
+router.post('/r17/set-up-auth-EU', function (req, res) {
+  
+  // Get the value from the radio buttons
+  const mfaMethod = req.session.data['mfaMethod']
+
+  if (mfaMethod === 'email') {
+    res.redirect('/r17/email-code-EU')
+  } else if (mfaMethod === 'text') {
+    res.redirect('/r17/sms-code-EU')
+  } else if (mfaMethod === 'app') {
+    res.redirect('/r17/auth-code')
+  } else {
+    // Optional: send back to the same page if nothing is selected
+    res.redirect('/r17/set-up-auth')
+  }
+
+})
+

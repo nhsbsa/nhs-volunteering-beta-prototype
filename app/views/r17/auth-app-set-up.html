@@ -1,0 +1,95 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r17/auth-app-router" method="post">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Do you have an authenticator app?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-hint" id="mfa-hint">
+            You have chosen to use an authenticator app to make your account more secure. </div>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="auth-app-yes" name="hasApp" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="auth-app-yes">
+                I already have an authenticator app
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="auth-app-no" name="hasApp" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="auth-app-no">
+                I do not have an authenticator app
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__conditional" id="panel-no-app"
+              style="display: none; margin-left: 38px; border-left: 4px solid #d8dde0; padding-left: 15px; margin-top: 10px;">
+              <p>Use your smartphone or tablet to download a free authenticator app, for example Microsoft
+                Authenticator.</p>
+              <ol class="nhsuk-list nhsuk-list--number">
+                <li>Open your phone's app store</li>
+                <li>Search for 'authenticator app'</li>
+                <li>Choose and install an app</li>
+              </ol>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button nhsuk-u-margin-top-5" type="submit">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+</div>
+
+<script>
+  document.addEventListener('change', function (event) {
+    if (event.target.name === 'hasApp') {
+      const revealPanel = document.getElementById('panel-no-app');
+
+      // If the user selects "no", show the panel. Otherwise, hide it.
+      if (event.target.value === 'no') {
+        revealPanel.style.display = 'block';
+      } else {
+        revealPanel.style.display = 'none';
+      }
+    }
+  });
+</script>
+
+{% endblock %}

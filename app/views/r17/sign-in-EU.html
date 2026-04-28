@@ -19,30 +19,27 @@ Task list
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">Enter the code from
-          your authenticator app</h1>
+        <h1 class="nhsuk-fieldset__heading">
+          Sign in to NHS Volunteering
+        </h1>
       </legend>
 
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="code">Enter the 6-digit code</label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="code" name="code" type="text" inputmode="numeric">
+        <label class="nhsuk-label" for="email">Enter your email address</label>
+        <input class="nhsuk-input" id="email" name="email" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="password">Enter your password</label>
+        <input class="nhsuk-input" id="password" name="password" type="password">
       </div>
     </fieldset>
 
-    <details class="nhsuk-details nhsuk-u-margin-bottom-5">
-      <summary class="nhsuk-details__summary">
-        <span class="nhsuk-details__summary-text">I cannot enter the code</span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <p>If you cannot see the code, you may need to go back and try a different authentication method.
-        </p>
-      </div>
-    </details>
+    <p><a href="#" class="nhsuk-link">Forgot your password?</a></p>
 
-    <a href="/r17/mfa-complete">
+    <a href="/r17/set-up-auth-EU">
       <button class="nhsuk-button" type="button">
         Continue
       </button></a>

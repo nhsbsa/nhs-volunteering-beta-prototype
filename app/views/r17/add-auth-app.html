@@ -15,7 +15,6 @@ Task list
 {% endblock %}
 
 
-
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
@@ -29,10 +28,11 @@ Task list
           </h1>
         </legend>
 
-        <div class="nhsuk-hint">
-          <p>Open the authenticator app. Scan the QR code using the app, not the camera on your smartphone or tablet.
-          </p>
-        </div>
+        <ol class="nhsuk-list nhsuk-list--number">
+          <li>Open the authenticator app</li>
+          <li>Scan the QR code below using the authenticator app</li>
+          <li>Follow any on screen instructions in the authenticator app</li>
+        </ol>
 
         <div class="qr-code-container nhsuk-u-margin-bottom-6 nhsuk-u-margin-top-4"
           style="text-align: center; background-color: #f0f4f5; padding: 20px; border: 1px solid #d8dde0; max-width: 240px;">
@@ -58,12 +58,11 @@ Task list
 
       </fieldset>
 
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+      <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
         Continue
       </button>
 
     </form>
 
   </div>
-</div>
-{% endblock %}
+</div> {% endblock %}

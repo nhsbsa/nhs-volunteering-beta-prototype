@@ -1,0 +1,73 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r17/mfa-complete" method="post">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Check your email
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+          <p>We have sent an email to <strong>joebloggs@nhsv.gov.uk</strong>.</p>
+          <p>It contains a single-use code to access
+            your account.
+          </p>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="password">Enter the 6-digit code</label>
+            <input class="nhsuk-input" id="email-code" name="email-code" type="email-code">
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                I haven't received an email
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>If you do not receive the email:
+              </p>
+              <ul>
+                <li>check your junk or spam folder
+                </li>
+                <li>check your internet connection
+                </li>
+                <li><a href="#">request a new code</a></li>
+                <li><a href="/r17/set-up-auth">try another authentication method</a></li>
+              </ul>
+            </div>
+          </details>
+
+      </fieldset>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

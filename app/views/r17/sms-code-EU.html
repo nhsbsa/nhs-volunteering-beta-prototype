@@ -1,0 +1,70 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r17/mfa-complete" method="post">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Check your mobile phone
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+          <p>We have sent a 6-digit security code to <strong>07787846325</strong>.</p>
+          <p>The code may take a few minutes to arrive and is valid for 5 minutes.</p>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="mfa-code">
+            Enter the 6-digit code
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="mfa-code" name="mfa-code" type="text"
+            inputmode="numeric">
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received the code?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you have not received the text, you can:</p>
+            <ul>
+              <li><a href="#">request a new code</a></li>
+              <li><a href="/r17/set-up-auth-EU">try another authentication method</a></li>
+            </ul>
+          </div>
+        </details>
+
+      </fieldset>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

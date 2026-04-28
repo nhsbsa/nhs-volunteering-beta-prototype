@@ -1,0 +1,55 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "receive-applications",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-top-8 nhsuk-u-padding-bottom-8">
+
+        <p class="nhsuk-body"><strong>From:</strong> no-reply@nhsvolunteers.uk</p>
+        <p class="nhsuk-body"><strong>Subject:</strong> Set-up multi-factor authentication for NHS Volunteering</p>
+
+        <br>
+
+        <p>Dear [Full name]</p>
+
+        <p class="nhsuk-body">
+          <span class="nhsuk-u-font-weight-regular">You have registered your account as a recruiter for NHS
+            Volunteering.</span>
+        </p>
+
+        <p class="nhsuk-body"><strong>Confirm your account</strong></p>
+
+        <p>To use your account, you need to create a password, and confirm your account using an authentication method.
+          This keeps
+          your account secure.</p>
+
+        <p>This will take around 5 to 10 minutes, and must be completed before you can access your account.</p>
+
+        <p>Your link will expire in 24 hours.</p>
+
+        <p class="nhsuk-body">
+          <a href="/r17/create-password">Click here to create your new password and confirm your account</a>
+        </p>
+
+        <p class="nhsuk-body">Regards,<br><strong>NHS Volunteering team</strong></p>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

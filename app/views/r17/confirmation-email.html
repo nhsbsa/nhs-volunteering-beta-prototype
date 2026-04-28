@@ -1,0 +1,66 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "receive-applications",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-top-8 nhsuk-u-padding-bottom-8">
+
+        <p class="nhsuk-body"><strong>From:</strong> no-reply@nhsvolunteers.uk</p>
+        <p class="nhsuk-body"><strong>Subject:</strong> Multi-factor authentication complete for NHS Volunteering</p>
+
+        <br>
+
+        <p>Dear [Full name]</p>
+
+        <p class="nhsuk-body">
+          <span class="nhsuk-u-font-weight-regular">You have successfully set up multi-factor authentication for your
+            NHS
+            Volunteering account.</span>
+        </p>
+
+        <p class="nhsuk-body"><strong>What's changed</strong></p>
+
+        <ul>
+          <li>You will now receive a text message code when you sign in
+          </li>
+          <li>This adds an extra layer of protection to your account
+          </li>
+        </ul>
+
+        <p class="nhsuk-body"><strong>What to do next</strong></p>
+
+        <ul>
+          <li>You can <a href="/r17/sign-in-EU">add another sign-in method</a> at any time
+            (recommended)
+          </li>
+          <li>Or sign in and continue using NHS Volunteering as normal
+          </li>
+        </ul>
+
+
+        <p class="nhsuk-body">
+          <a href="/r17/sign-in-EU">Sign in to your NHS Volunteering account</a>
+        </p>
+
+        <p class="nhsuk-body">Regards,<br><strong>NHS Volunteering team</strong></p>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

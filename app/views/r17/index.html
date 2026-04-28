@@ -1,0 +1,32 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h3>Screens</h3>
+    <p class="nhsuk-body"><a href="/r17/invitation-email">New user</a></p>
+    <p class="nhsuk-body"><a href="/r17/sign-in-EU">Existing user</a></p>
+
+  </div>
+</div>
+
+
+{% endblock %}

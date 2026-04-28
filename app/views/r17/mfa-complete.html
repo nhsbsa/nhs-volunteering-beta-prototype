@@ -19,32 +19,30 @@ Task list
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          Sign in to NHS Volunteering
+          You have set up multi-factor authentication
         </h1>
       </legend>
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="email">Enter your email address</label>
-        <input class="nhsuk-input" id="email" name="email" type="text">
+      <div class="nhsuk-hint nhsuk-u-margin-bottom-6">
+        This will help keep your account secure. You will be asked to confirm your identity each time you sign in.
       </div>
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="password">Enter your password</label>
-        <input class="nhsuk-input" id="password" name="password" type="password">
-      </div>
+      <form action="/r17/index-dashboard-update-option-1" method="post">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Go to NHS dashboard
+        </button>
+      </form>
+
+      <p class="nhsuk-body">
+        <a class="nhsuk-link nhsuk-link--no-visited-state" href="/logout-url">Log out</a>
+      </p>
+
     </fieldset>
-
-    <p><a href="#" class="nhsuk-link">Forgot your password?</a></p>
-
-    <a href="/r17/set-up-auth">
-      <button class="nhsuk-button" type="button">
-        Continue
-      </button></a>
 
   </div>
 </div>
-
 {% endblock %}

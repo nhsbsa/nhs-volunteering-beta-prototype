@@ -1,0 +1,69 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r17/auth-code" method="post">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Add NHS Volunteering to your authenticator app
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+          <p>Open the authenticator app. Scan the QR code using the app, not the camera on your smartphone or tablet.
+          </p>
+        </div>
+
+        <div class="qr-code-container nhsuk-u-margin-bottom-6 nhsuk-u-margin-top-4"
+          style="text-align: center; background-color: #f0f4f5; padding: 20px; border: 1px solid #d8dde0; max-width: 240px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+            alt="Example QR Code" style="width: 100%; height: auto; display: block;">
+          <p class="nhsuk-body-s nhsuk-u-margin-top-2 nhsuk-u-secondary-text-color"><strong>Example QR Code</strong></p>
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I cannot scan the QR code
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you cannot scan the QR code:</p>
+            <ul>
+              <li>check the brightness on your smartphone or tablet camera</li>
+              <li>check your camera permissions</li>
+            </ul>
+          </div>
+        </details>
+
+      </fieldset>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

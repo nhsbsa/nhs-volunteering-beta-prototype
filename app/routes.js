@@ -1153,7 +1153,7 @@ router.post('/r17/set-up-auth-EU', function (req, res) {
   } else if (mfaMethod === 'text') {
     res.redirect('/r17/sms-code-EU')
   } else if (mfaMethod === 'app') {
-    res.redirect('/r17/auth-code')
+    res.redirect('/r17/auth-code-EU')
   } else {
     // Optional: send back to the same page if nothing is selected
     res.redirect('/r17/set-up-auth')

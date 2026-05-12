@@ -1,0 +1,69 @@
+{% extends 'layout_vol_header-no-footer-links.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+<!-- NHS.UK header -->
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+  </div>
+</div>
+
+<!-- Homepage content -->
+{% block content %}
+
+
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper nhsuk-width-container nhsuk-main-wrapper nhsuk-u-margin-bottom-7" id="maincontent">
+    <div class="nhsuk-width-container">
+      <main class="nhsuk-main-wrapper nhsuk-main-wrapper--l" id="main-content" role="main">
+
+
+        <h1 class="govuk-heading-l">You have already applied to this opportunity</h1>
+        <p class="nhsuk-body">
+          This email address has already been used to apply for this opportunity. Go back to the <a>search page</a> to
+          look for a different opportunity.</p>
+        <p>If you need contact details for this opportunity, you will find them in the opportunity listing.</p>
+        </p>
+    </div>
+</div>
+</main>
+</div>
+
+
+</div>
+
+</div>
+
+{% endblock %} {# closes main #}
+
+
+
+
+
+
+
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

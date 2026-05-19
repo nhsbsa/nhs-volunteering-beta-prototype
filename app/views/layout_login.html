@@ -9,32 +9,32 @@
 
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
-  <link href="/css/main.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
 {% endblock %}
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  NHS Volunteering
+NHS Volunteering
 {% endblock %}
 
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-  <header></header>
+<header></header>
 {% endblock %}
 
 <!-- Edit the footer -->
 
 
 {% block footer %}
-  <footer></footer>
+<footer></footer>
 {% endblock %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    <!-- Custom JavaScript files can be added to this file -->
-    {% include "includes/scripts.html" %}
-    <!-- For adding page specific JavsScript -->
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
+{% block scripts %}
+<!-- Custom JavaScript files can be added to this file -->
+{% include "includes/scripts.html" %}
+<!-- For adding page specific JavsScript -->
+{% block pageScripts %}{% endblock %}
+{% endblock %}
 {% endblock %}

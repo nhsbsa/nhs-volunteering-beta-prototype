@@ -1,0 +1,50 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-card__heading nhsuk-heading-l">
+      You have set up multi-factor authentication
+    </h1>
+
+    <br>
+
+    <h2 class="nhsuk-heading-m">What happens next</h2>
+
+
+    <p class="nhsuk-body">
+      This will help keep your account secure. You will be asked to confirm your identity each time you sign in.
+    </p>
+
+    <div class="nhsuk-u-margin-top-8">
+      <form action="/r18/index-dashboard-update-option-1" method="post">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Go to NHS Volunteering
+        </button>
+      </form>
+
+      <p class="nhsuk-body">
+        <a class="nhsuk-link nhsuk-link--no-visited-state" href="">Log out</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

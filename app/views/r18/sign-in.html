@@ -1,0 +1,50 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Sign in to NHS Volunteering
+        </h1>
+      </legend>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="email">Enter your email address</label>
+        <input class="nhsuk-input" id="email" name="email" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="password">Enter your password</label>
+        <input class="nhsuk-input" id="password" name="password" type="password">
+      </div>
+    </fieldset>
+
+    <p><a href="#" class="nhsuk-link">Forgotten your password?</a></p>
+
+    <a href="/r18/set-up-auth">
+      <button class="nhsuk-button" type="button">
+        Continue
+      </button></a>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1161,3 +1161,61 @@ router.post('/r17/set-up-auth-EU', function (req, res) {
 
 })
 
+
+// Route for R18 MFA selection
+router.post('/r18/set-up-auth', function (req, res) {
+  
+  // Get the value from the radio buttons
+  const mfaMethod = req.session.data['mfaMethod']
+
+  if (mfaMethod === 'email') {
+    res.redirect('/r18/email-code')
+  } else if (mfaMethod === 'text') {
+    res.redirect('/r18/sms-code')
+  } else if (mfaMethod === 'app') {
+    res.redirect('/r18/auth-app-set-up')
+  } else {
+    // Optional: send back to the same page if nothing is selected
+    res.redirect('/r18/set-up-auth')
+  }
+
+})
+
+// Route for R18 MFA app y/n
+router.post('/r18/auth-app-router', function (req, res) {
+  
+  const hasApp = req.session.data['hasApp']
+
+  if (hasApp === 'yes') {
+    // User already has the app, go to the code entry page
+    res.redirect('/r18/auth-code')
+  } else if (hasApp === 'no') {
+    // User doesn't have the app, go to the setup/QR code page
+    res.redirect('/r18/add-auth-app')
+  } else {
+    // Fallback if they click continue without selecting an option
+    res.redirect('/r18/add-auth-app')
+  }
+
+})
+
+
+// Route for R18 MFA selection EU
+router.post('/r18/set-up-auth-EU', function (req, res) {
+  
+  // Get the value from the radio buttons
+  const mfaMethod = req.session.data['mfaMethod']
+
+  if (mfaMethod === 'email') {
+    res.redirect('/r18/email-code-EU')
+  } else if (mfaMethod === 'text') {
+    res.redirect('/r18/sms-code-EU')
+  } else if (mfaMethod === 'app') {
+    res.redirect('/r18/auth-code-EU')
+  } else {
+    // Optional: send back to the same page if nothing is selected
+    res.redirect('/r18/set-up-auth')
+  }
+
+})
+

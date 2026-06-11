@@ -1,0 +1,41 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header.html' %}
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1>
+      Results pages
+    </h1>
+
+    <h3>Post content testing [H8]</h3>
+
+    <p class="nhsuk-lede-text">
+      Changes to the content for area-based location opportunities.</p>
+
+    <p class="nhsuk-body">These are currently described as 'Other Opportunities' in live, however we have
+      changed the content to: These opportunities may have different locations based on the requirements of the role.
+      This means that some of them may still be within your search area. For example, some may involve travelling to
+      different places.</p>
+
+    <p class="nhsuk-body"><a href="/v23/results-all">All results</a></p>
+    <p class="nhsuk-body"><a href="/v23/results-other-opps">Other opportunities</a></p>
+    <hr>
+  </div>
+</div>
+
+
+{% endblock %}

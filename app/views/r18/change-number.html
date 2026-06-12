@@ -37,14 +37,29 @@ NHS Volunteering
     <h1>What is the phone number of this user?</h1>
 
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Phone number
+      <label class="nhsuk-label" for="bsa-admin-telephone">
+        Mobile number (optional)
       </label>
       <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
-        We recommend using a mobile number, which you can also use to authenticate your account
+        We recommend providing the recruiter's mobile number. This means they can receive text messages to
+        authenticate their
+        account
       </div>
-      <input class="nhsuk-input" id="example" name="example" type="text">
+      <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel"
+        aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
     </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="bsa-admin-telephone">
+        Phone number (optional)
+      </label>
+      <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
+        This can be used as contact information on the recruiter's adverts
+      </div>
+      <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel"
+        aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
+    </div>
+
     <form action="check-change-number">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Continue

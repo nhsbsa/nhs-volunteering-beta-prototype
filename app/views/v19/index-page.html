@@ -1,0 +1,36 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header_recruiter.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "index",
+"text": "Go back to dashboard",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h3>Journeys</h3>
+    <p class="nhsuk-body"><a href="/v19/volunteering/index">End to end application journey</a></p>
+    <h3>DOB errors</h3>
+    <p class="nhsuk-body"><a href="/v19/edi/dob-incorrect-date-error">DOB incorrect date</a></p>
+    <p class="nhsuk-body"><a href="/v19/edi/dob-partially-invalid-error">DOB month missing</a></p>
+    <p class="nhsuk-body"><a href="/v19/edi/dob-partially-missing">DOB month & year missing</a>
+    </p>
+    <p class="nhsuk-body"><a href="/v19/edi/dob-past-error">DOB in the past</a></p>
+  </div>
+</div>
+
+
+{% endblock %}

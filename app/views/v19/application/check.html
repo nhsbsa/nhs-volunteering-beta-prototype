@@ -23,15 +23,21 @@ NHS Volunteering
   <div class="nhsuk-grid-column-three-quarters">
 
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
-
-      <a class="nhsuk-back-link__link" href="/v19/edi/equality-questions-submitted">
-        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          aria-hidden="true" height="24" width="24">
-          <path
-            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-          </path>
-        </svg>
-        Go back</a>
+      {% if data['v19-equality-mid-flow'] == 'no' %}
+      <!-- Where Journey B should go back to -->
+      <a class="nhsuk-back-link__link" href="/v19/application/equality-mid-flow">
+        {% else %}
+        <!-- Where Journey A goes back to (Your original working link) -->
+        <a class="nhsuk-back-link__link" href="/v19/edi/equality-questions-submitted">
+          {% endif %}
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+          </svg>
+          Go back
+        </a>
     </div>
 
     <h1>Check your answers before sending your application</h1>
@@ -227,22 +233,24 @@ NHS Volunteering
           Equality questions answered
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p>{{ data['v16-application-equality']}}</p>
+          {% if data['v19-equality-mid-flow'] == 'no' %}
+          <p>No</p>
+          {% elif data['v19-equality-mid-flow'] == 'yes' %}
           <p>Yes</p>
+          {% else %}
+          <p>No</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
 
-          <a href="/v16/application/equality-mid-flow">
-            Change<span class="nhsuk-u-visually-hidden"> equality </span>
+          <a href="/v19/application/equality-mid-flow">
+            Change<span class="nhsuk-u-visually-hidden"> equality questions </span>
           </a>
 
         </dd>
-
       </div>
-
     </dl>
-
 
 
     <div class="nhsuk-card">
@@ -253,7 +261,8 @@ NHS Volunteering
         </h3>
         <p>I confirm that:</p>
         <ul class="nhsuk-list nhsuk-list--bullet">
-          <li>I have read, understood and accept the <a href="">terms and conditions (opens in a new tab)</a> and the
+          <li>I have read, understood and accept the <a href="">terms and conditions (opens in a new tab)</a> and
+            the
             <a href="">privacy policy (opens in a new tab)</a>.
           </li>
           <li>the information I have provided is true and correct to the best of my knowledge</li>

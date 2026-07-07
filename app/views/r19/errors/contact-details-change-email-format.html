@@ -1,0 +1,95 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "contact-details",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+        
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+            <li>
+              <a href="#r9-contact-email"> Enter an email address in the correct format, like name@example.com</a>
+            </li>
+        
+            
+          </ul>
+        </div>
+      </div>
+
+      
+
+      <form action="../task-list-fixed" method="post" class="form">
+
+        <h1 class="nhsuk-heading nhsuk-heading-l">
+          <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+          Change the contact details
+        </h1>
+
+        <div class="nhsuk-hint">Volunteers will use these details to contact you about the opportunity.</div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="r9-contact-full-name">
+           Contact person
+          </label>
+
+          <div id="email-hint" class="nhsuk-hint">
+            This could be the name or job title of the volunteering team member
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-50" id="r9-contact-full-name" name="r9-contact-full-name" type="text">
+        </div>
+
+        <div class="nhsuk-form-group nhsuk-form-group--error">
+          <label class="nhsuk-label" for="r9-contact-email">
+           Email address
+          </label>
+
+          <span class="nhsuk-error-message" id="example-error-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
+          </span>
+          <div id="email-hint" class="nhsuk-hint">
+            This could be an individual or a team email address
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-50" id="r9-contact-email" name="r9-contact-email" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="r9-contact-phone">
+           Work telephone number (optional)
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-50" id="r9-contact-phone" name="r9-contact-phone" type="text">
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

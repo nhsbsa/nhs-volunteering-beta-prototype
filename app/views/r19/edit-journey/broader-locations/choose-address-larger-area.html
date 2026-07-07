@@ -1,0 +1,138 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "location-larger-area",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+    <h1 class="nhsuk-heading nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Edit an opportunity listing</span>
+      Select an address
+    </h1>
+    </legend>
+    
+    
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>The volunteer will not see this address when looking at the opportunity.</p>
+    </div>
+
+   <p>2 addresses found for 'Leeds Art Gallery' and 'LS1 3AB'</p>
+
+    <form action="/r9-choose-address-answer" method="post">
+
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+            <p class="nhsuk-fieldset__heading">
+              Select one option
+            </p>
+          </legend>
+      
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-choose-address-1" name="r9-choose-address" type="radio" value="AE">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-choose-address-1">
+                Leeds Art Gallery, The Headrow, Leeds, LS1 3AB
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-choose-address-2" name="r9-choose-address" type="radio" value="Broomfield">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-choose-address-2">
+                Leeds Central Library, The Headrow, Leeds, LS1 3AB
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__divider">or</div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r9-choose-address-4" name="r9-choose-address" type="radio" value="not-listed">
+              <label class="nhsuk-label nhsuk-radios__label" for="r9-choose-address-4">
+                The address is not on this list
+              </label>
+            </div>
+
+            
+    
+      
+          </div>
+        </fieldset>
+      
+      </div>
+
+
+
+
+  
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+      <p><a href="...">Return to task list</a></p>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'layout_vol_header.html' %}
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+<!-- Homepage content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r12/user-management/deactivate-user-confirmation-EP" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Are you sure you want to deactivate Emma Pepper's account?
+            </h1>
+          </legend>
+
+
+
+          <main class="nhsuk-main-wrapper" id="maincontent">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-two-thirds">
+                <form action="/form-handler" method="post" novalidate>
+
+                  <div class="nhsuk-error-summary" data-module="nhsuk-error-summary">
+                    <div role="alert">
+                      <h2 class="nhsuk-error-summary__title">
+                        There is a problem
+                      </h2>
+                      <div class="nhsuk-error-summary__body">
+                        <ul class="nhsuk-list nhsuk-error-summary__list">
+                          <li>
+                            <a href="#dob-errors-year">There should
+                              be a minimum of 1 superuser on the account</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="deactivate-yes" name="deactivate-user" type="radio"
+                        value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="deactivate-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="deactivate-no" name="deactivate-user" type="radio"
+                        value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="deactivate-no">
+                        No
+                      </label>
+                    </div>
+                  </div>
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  // The script now finds the form because it has the class 'form'
+  document.querySelector('.form').addEventListener('submit', function (e) {
+
+    // Updated to match the name 'deactivate-user' used in the HTML above
+    const selected = document.querySelector('input[name="deactivate-user"]:checked');
+
+    if (selected && selected.value === 'no') {
+      e.preventDefault(); // Prevents going to the 'confirmation' page
+      window.location.href = "/r12/user-management/recruiter-user-2"; // Redirects back
+    }
+  });
+</script>
+{% endblock %}

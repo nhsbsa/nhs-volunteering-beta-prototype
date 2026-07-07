@@ -1,0 +1,88 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "receive-applications",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <form action="/r13/task-list-email-completed-post-edit" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+            Do you want to keep the same settings for email notifications?
+          </h1>
+
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+              <p class="nhsuk-card__description"><strong>Email address: </strong>mike.asparagus@nhs.uk</p>
+            </div>
+          </div>
+
+
+          </details>
+
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-1" name="r13-edit-email" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-1">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-edit-email" type="radio"
+                value="No, I want to choose someone else">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-2">
+                No, I want to choose a different email address
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r13-email-updates-3" name="r13-edit-email" type="radio"
+                value="Turn off email notifications">
+              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-3">
+                Turn off email notifications
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+    <p class="nhsuk-body">
+      <a href="/r13/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+        later</a>
+    </p>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

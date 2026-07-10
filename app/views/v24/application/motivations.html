@@ -22,13 +22,14 @@ NHS Volunteering
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
+
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
-      {% if data['v19-additional-support-a'] == 'no' %}
+      {% if data['v24-additional-support-a'] == 'no' %}
       <!-- Where Journey B should go back to -->
-      <a class="nhsuk-back-link__link" href="/v19/application/additional-support-a">
+      <a class="nhsuk-back-link__link" href="/v24/application/additional-support-a">
         {% else %}
         <!-- Where Journey A goes back to (Your original working link) -->
-        <a class="nhsuk-back-link__link" href="/v19/application/additional-support-b">
+        <a class="nhsuk-back-link__link" href="/v24/application/additional-support-b">
           {% endif %}
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
             aria-hidden="true" height="24" width="24">
@@ -109,11 +110,11 @@ NHS Volunteering
       </summary>
       <div class="nhsuk-details__text">
         <p>Write what you can. You may have an opportunity to discuss this again with the organisation. You can also <a
-            href="/v19/application/additional-support-a">go back</a> to tell us that you need support.</p>
+            href="../application/additional-support-a">go back</a> to tell us that you need support.</p>
 
       </div>
     </details>
-    <form action="/v19/application/equality-mid-flow" method="get">
+    <form action="../application/equality-mid-flow" method="get">
 
       <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="500">
 
@@ -122,12 +123,12 @@ NHS Volunteering
             Tell us why you want to become a volunteer
           </label>
 
-          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v16-volunteer-motivations"
-            name="v16-volunteer-motivations" rows="5"
-            aria-describedby="v16-volunteer-motivations-hint">{{ data['v16-volunteer-motivations'] }}</textarea>
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="v24-volunteer-motivations"
+            name="v24-volunteer-motivations" rows="5"
+            aria-describedby="v24-volunteer-motivations-hint">{{ data['v24-volunteer-motivations'] }}</textarea>
         </div>
 
-        <div class="nhsuk-hint nhsuk-character-count__message" id="v16-volunteer-motivations-info">
+        <div class="nhsuk-hint nhsuk-character-count__message" id="v24-volunteer-motivations-info">
           You can enter up to 500 characters
         </div>
 

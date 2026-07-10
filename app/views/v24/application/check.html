@@ -23,12 +23,12 @@ NHS Volunteering
   <div class="nhsuk-grid-column-three-quarters">
 
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
-      {% if data['v19-equality-mid-flow'] == 'no' %}
+      {% if data['v24-equality-mid-flow'] == 'no' %}
       <!-- Where Journey B should go back to -->
-      <a class="nhsuk-back-link__link" href="/v19/application/equality-mid-flow">
+      <a class="nhsuk-back-link__link" href="/v24/application/equality-mid-flow">
         {% else %}
         <!-- Where Journey A goes back to (Your original working link) -->
-        <a class="nhsuk-back-link__link" href="/v19/edi/equality-questions-submitted">
+        <a class="nhsuk-back-link__link" href="/v24/edi/equality-questions-submitted">
           {% endif %}
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
             aria-hidden="true" height="24" width="24">
@@ -143,8 +143,8 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
 
-          {% if data['v8-volunteer-phone'] %}
-          <p>{{ data['v8-volunteer-phone'] }}</p>
+          {% if data['v24-volunteer-phone'] %}
+          <p>{{ data['v24-volunteer-phone'] }}</p>
           {% else %}
           <p>Not provided</p>
           {% endif %}
@@ -170,7 +170,7 @@ NHS Volunteering
           Your availability
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p>{{ data['v8-volunteer-availability']}}</p>
+          <p>{{ data['v24-volunteer-availability']}}</p>
           <p>Not provided</p>
         </dd>
 
@@ -189,7 +189,7 @@ NHS Volunteering
           Support needed
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p>{{ data['v8-volunteer-support'] }}</p>
+          <p>{{ data['v24-volunteer-support'] }}</p>
           <p>Not provided</p>
 
         </dd>
@@ -209,7 +209,7 @@ NHS Volunteering
           Why you want to volunteer
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p>{{ data['v8-volunteer-motivations'] }}</p>
+          <p>{{ data['v24-volunteer-motivations'] }}</p>
           <p>Not provided</p>
         </dd>
 
@@ -233,9 +233,9 @@ NHS Volunteering
           Equality questions answered
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['v19-equality-mid-flow'] == 'no' %}
+          {% if data['v24-equality-mid-flow'] == 'no' %}
           <p>No</p>
-          {% elif data['v19-equality-mid-flow'] == 'yes' %}
+          {% elif data['v24-equality-mid-flow'] == 'yes' %}
           <p>Yes</p>
           {% else %}
           <p>No</p>
@@ -280,7 +280,7 @@ NHS Volunteering
       </div>
     </div>
 
-    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/v19/application/submitted">
+    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="../application/submitted">
       Send application
     </a>
 

@@ -1219,3 +1219,34 @@ router.post('/r18/set-up-auth-EU', function (req, res) {
 
 })
 
+
+// ROUTES FOR V24 support questions
+
+router.post('/v24/application/additional-support-a', function (req, res) {
+  const needSupport = req.session.data['v24-additional-support-a']
+
+  if (needSupport === 'yes') {
+    res.redirect('/v24/application/additional-support-b')
+  } else if (needSupport === 'no') {
+    res.redirect('/v24/application/motivations')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v24/application/additional-support-a')
+  }
+})
+
+
+// ROUTES FOR V24 equality questions
+
+router.post('/v24/application/equality-mid-flow', function (req, res) {
+  const equalityInflow = req.session.data['v24-equality-mid-flow']
+
+  if (equalityInflow === 'yes') {
+    res.redirect('/v24/edi/dob')
+  } else if (equalityInflow === 'no') {
+    res.redirect('/v24/application/check')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v24/application/equality-mid-flow')
+  }
+})

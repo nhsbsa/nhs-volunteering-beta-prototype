@@ -978,52 +978,51 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+  // ROUTES FOR: deactivate user journey (for all versions)
 
-  // ROUTES FOR R12 'change role superuser'
+// 1. FOR DEACTIVATE FRED
+router.post('/:version/user-management/deactivate-user-confirmation', function (req, res) {
+  const version = req.params.version
+  const sessionKey = `${version}-deactivate-user-v2`
+  const deactivateFred = req.session.data[sessionKey]
 
-  router.post('/r12/user-management/check-change-role-superuser', function (req, res) {
-    const emailUpdates = req.session.data['r12-change-role']
-  
-    if (emailUpdates === 'Recruiter') {
-      
-      res.redirect('/r12/user-management/change-role-recruiter')
-    } else {
-      
-      res.redirect('/r12/user-management/check-change-role-superuser')
-    }
-  })
+  if (deactivateFred === 'no') {
+    res.redirect(`/${version}/user-management/manage-users`)
+  } else if (deactivateFred === 'yes') {
+    res.redirect(`/${version}/user-management/deactivate-user-confirmation`)
+  } else {
+    res.redirect(`/${version}/user-management/deactivate-user-v2`)
+  }
+})
 
+// 2. FOR CHANGE SUPERVISOR
+router.post('/:version/user-management/check-change-role-superuser', function (req, res) {
+  const version = req.params.version
+  const sessionKey = `${version}-change-role`
+  const emailUpdates = req.session.data[sessionKey]
 
-  // ROUTES FOR R12 'no' to 'are you sure you want to deactivate Fred Lettuce?'
+  if (emailUpdates === 'Recruiter') {
+    res.redirect(`/${version}/user-management/change-role-recruiter`)
+  } else {
+    res.redirect(`/${version}/user-management/check-change-role-superuser`)
+  }
+})
 
-  router.post('/r12/user-management/deactivate-user-confirmation', function (req, res) {
-    const deactivateFred = req.session.data['r12-deactivate-user-v2']
-  
-    if (deactivateFred === 'no') {
-      res.redirect('/r12/user-management/manage-users')
-    } else if (deactivateFred === 'yes') {
-      res.redirect('/r12/user-management/deactivate-user-confirmation')
-    } else {
-      // Handle the case where no selection was made (e.g., reload page)
-      res.redirect('/r12/user-management/deactivate-user-v2')
-    }
-  })
+// 3. FOR DEACTIVATE EMMA
+router.post('/:version/user-management/deactivate-superuser-error', function (req, res) {
+  const version = req.params.version
+  const sessionKey = `${version}-deactivate-user-EP`
+  const deactivateEmma = req.session.data[sessionKey]
 
+  if (deactivateEmma === 'no') {
+    res.redirect(`/${version}/user-management/manage-users-confirm`)
+  } else if (deactivateEmma === 'yes') {
+    res.redirect(`/${version}/user-management/deactivate-superuser-error`)
+  } else {
+    res.redirect(`/${version}/user-management/deactivate-user-EP`)
+  }
+})
 
-  // ROUTES FOR R12 'no' to 'are you sure you want to deactivate Emma Pepper?'
-
-  router.post('/r12/user-management/deactivate-superuser-error', function (req, res) {
-    const deactivateEmma = req.session.data['r12-deactivate-user-EP']
-  
-    if (deactivateEmma === 'no') {
-      res.redirect('/r12/user-management/manage-users-confirm')
-    } else if (deactivateEmma === 'yes') {
-      res.redirect('/r12/user-management/deactivate-superuser-error')
-    } else {
-      // Handle the case where no selection was made (e.g., reload page)
-      res.redirect('/r12/user-management/deactivate-user-EP')
-    }
-  })
 
 
   // ROUTES FOR V13 support questions
@@ -1251,51 +1250,3 @@ router.post('/v24/application/equality-mid-flow', function (req, res) {
   }
 })
 
-
-
-// ROUTES FOR R19 'change role superuser'
-
-router.post('/r19/user-management/check-change-role-superuser', function (req, res) {
-  const emailUpdates = req.session.data['r19-change-role']
-
-  if (emailUpdates === 'Recruiter') {
-    
-    res.redirect('/r19/user-management/change-role-recruiter')
-  } else {
-    
-    res.redirect('/r19/user-management/check-change-role-superuser')
-  }
-})
-
-
-// ROUTES FOR R19 'no' to 'are you sure you want to deactivate Fred Lettuce?'
-
-router.post('/:version/user-management/deactivate-user-confirmation', function (req, res) {
-  const version = req.params.version
-
-  const deactivateFred = req.session.data['deactivate-user-v2']
-
-  if (deactivateFred === 'no') {
-    res.redirect(`/${version}/user-management/manage-users`)
-  } else if (deactivateFred === 'yes') {
-    res.redirect(`/${version}/user-management/deactivate-user-confirmation`)
-  } else {
-    res.redirect(`/${version}/user-management/deactivate-user-v2`)
-  }
-})
-
-
-// ROUTES FOR R19 'no' to 'are you sure you want to deactivate Emma Pepper?'
-
-router.post('/r19/user-management/deactivate-superuser-error', function (req, res) {
-  const deactivateEmma = req.session.data['r19-deactivate-user-EP']
-
-  if (deactivateEmma === 'no') {
-    res.redirect('/r19/user-management/manage-users-confirm')
-  } else if (deactivateEmma === 'yes') {
-    res.redirect('/r19/user-management/deactivate-superuser-error')
-  } else {
-    // Handle the case where no selection was made (e.g., reload page)
-    res.redirect('/r19/user-management/deactivate-user-EP')
-  }
-})

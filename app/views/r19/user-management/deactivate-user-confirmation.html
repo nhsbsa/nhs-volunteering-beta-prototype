@@ -22,7 +22,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="recruiter-user-2">
+      <a class="nhsuk-back-link__link" href="manage-users-confirm">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -39,26 +39,32 @@ NHS Volunteering
       <div class="nhsuk-card__content">
         <h1 class="nhsuk-card__heading">
           Account deactivated</h1>
-        <p>You have deactivated Fred Lettuce's account.</p>
       </div>
     </div>
 
 
     <h2 class="nhsuk-heading-m">What happens next</h2>
 
-    <p>They'll no longer be able to do the tasks they were assigned to for this organisation.</p>
+    <p>Fred Lettuce's account has been deactivated. You will receive a confirmation email.</p>
 
-    <p>You'll need to assign other people to those tasks.</p>
 
-    <form action="/r12/user-management/manage-users-deleted">
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Back to manage users
+    <form action="../user-management/manage-users-confirm">
+
+      <button class="nhsuk-button nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-3" data-module="nhsuk-button"
+        type="submit">
+        Manage team members
       </button>
 
+      <p class="nhsuk-u-margin-top-3">
+        <a href="../dashboard-update-option-1-mvp/index-dashboard-update-option-1"
+          class="nhsuk-link nhsuk-body-m">Return to your dashboard</a>
+      </p>
+
+    </form>
+
   </div>
-</div>
-</main>
+  </main>
 
-</form>
 
-{% endblock %}
+  {% endblock %}
+  {% endblock %}

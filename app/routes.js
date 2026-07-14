@@ -1250,3 +1250,52 @@ router.post('/v24/application/equality-mid-flow', function (req, res) {
     res.redirect('/v24/application/equality-mid-flow')
   }
 })
+
+
+
+// ROUTES FOR R19 'change role superuser'
+
+router.post('/r19/user-management/check-change-role-superuser', function (req, res) {
+  const emailUpdates = req.session.data['r19-change-role']
+
+  if (emailUpdates === 'Recruiter') {
+    
+    res.redirect('/r19/user-management/change-role-recruiter')
+  } else {
+    
+    res.redirect('/r19/user-management/check-change-role-superuser')
+  }
+})
+
+
+// ROUTES FOR R19 'no' to 'are you sure you want to deactivate Fred Lettuce?'
+
+router.post('/:version/user-management/deactivate-user-confirmation', function (req, res) {
+  const version = req.params.version
+
+  const deactivateFred = req.session.data['deactivate-user-v2']
+
+  if (deactivateFred === 'no') {
+    res.redirect(`/${version}/user-management/manage-users`)
+  } else if (deactivateFred === 'yes') {
+    res.redirect(`/${version}/user-management/deactivate-user-confirmation`)
+  } else {
+    res.redirect(`/${version}/user-management/deactivate-user-v2`)
+  }
+})
+
+
+// ROUTES FOR R19 'no' to 'are you sure you want to deactivate Emma Pepper?'
+
+router.post('/r19/user-management/deactivate-superuser-error', function (req, res) {
+  const deactivateEmma = req.session.data['r19-deactivate-user-EP']
+
+  if (deactivateEmma === 'no') {
+    res.redirect('/r19/user-management/manage-users-confirm')
+  } else if (deactivateEmma === 'yes') {
+    res.redirect('/r19/user-management/deactivate-superuser-error')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/r19/user-management/deactivate-user-EP')
+  }
+})

@@ -1,0 +1,70 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../questions/address",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        No results found for
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Building number or name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Fantasy building
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="../questions/address">Change<span class="nhsuk-u-visually-hidden">Change building number or name</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            CM1 1XV
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="../questions/address">Change<span class="nhsuk-u-visually-hidden"> Change postcode</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+
+      <p class="nhsuk-body">              
+        <a href="../questions/manual-address" class="nhsuk-link nhsuk-link--no-visited-state">Enter address manually</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "../task-list-fixed",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="availability" method="post">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+              Define your opportunity
+            </h1>
+          </legend>
+
+          <div class="nhsuk-do-dont-list">
+            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+            <p class="nhsuk-body">Defining your opportunity will help volunteers in filtering opportunities that are
+              relevant to them.</p>
+            <p class="nhsuk-body">For example, if you need a volunteer to be in possession of a valid UK driving
+              licence, you can select 'You need to have a full UK driving licence'.</p>
+            <p class="nhsuk-body">The volunteer won't see how you define it, it only helps them in finding the relevant
+              opportunities for themselves.</p>
+          </div>
+
+          <form action="check-location-final" method="post">
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+
+                <div class="nhsuk-hint" id="example-hint">
+                  Select all options that are relevant to you.
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                      The volunteer doesn't need any experience
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      The volunteer needs to have a car
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                      The volunteer needs a UK driving licence
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
+                      value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      The volunteer wants to work in a garden
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
+                      value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                      The volunteer wants to work in a garden
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+              Save and continue
+            </button>
+
+          </form>
+
+
+          <p class="nhsuk-body">
+            <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+          </p>
+      </div>
+
+      {% endblock %}

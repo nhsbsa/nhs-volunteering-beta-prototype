@@ -1,0 +1,113 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "alt-closing-date",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+        
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+           
+            <li>
+              <a href="#example-error-1">Closing date must be in the future</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <form action="../task-list-fixed" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+                  Enter a closing date
+                </h1>
+              </legend>
+
+              <div class="nhsuk-hint" id="example-hint">
+                <p class="nhsuk-body">This will show as the last date to apply for this opportunity.</p>
+              </div>
+
+              <div class="nhsuk-do-dont-list">
+                <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+                <p class="nhsuk-body">You can choose a listing date up to one year away from today.</p>
+                <p class="nhsuk-body">The listing will close at 23:59 on the day you choose.</p>
+
+            </div>  
+
+              <div class="nhsuk-date-input nhsuk-form-group--error" id="example">
+              
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                Enter a date
+                </legend>
+                <span class="nhsuk-error-message" id="example-error-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Closing date must be in the future
+                </span>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--error nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--error nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--error nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          
+          
+          </div>
+
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Save and continue
+        </button>
+        <p class="nhsuk-body">              
+          <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+
+        
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

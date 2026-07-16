@@ -1,0 +1,108 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "../task-list-completed",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+            <li>
+              <a href="#name">Enter a summary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+      <h1 class="nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add a summary
+      </h1>
+
+      <form action="opportunity-description" method="post" class="form">
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-hint" id="r9-preview-with-hint-text-hint">
+            These are brief details of the opportunity. They will appear below the title in the search results.
+          </div>
+
+          <div class="nhsuk-do-dont-list">
+            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+            <p class="nhsuk-body">You need to include:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet" role="list">
+              <li>the main responsibilities of the role you are advertising for</li>
+              <li>the shifts that a volunteer might be asked to do</li>
+            </ul>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  What a volunteer will see
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <h3 class=" nhsuk-heading-l nhsuk-u-margin-bottom-2">Walk and talk volunteer</h3>
+                <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds, LS3 8GL</strong></p>
+                <p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
+                <p class="nhsuk-body">Main responsibilities: to encourage people to take part in walking activities around the site and help them along the way.</p>
+                <p class="nhsuk-body">Shifts are available from 8am to 1pm, Monday to Friday.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="nhsuk-form-group nhsuk-form-group--error">
+            <label class="nhsuk-label" for="r9-preview">
+              Enter a summary
+            </label>
+            <span class="nhsuk-error-message" id="name-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Enter a summary
+            </span>
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="400">
+              <div class="nhsuk-form-group nhsuk-form-group--error">
+                <!-- to enable rich text, add class of text-editor-2 to textarea element -->
+                <textarea rows="8" class="nhsuk-textarea nhsuk-textarea-character-count nhsuk-textarea-character-count-max-400 nhsuk-input--error"></textarea>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-remaining" >
+                    You have <span class="nhsuk-character-count-remaining"></span> characters remaining
+                </p>
+                <p class="nhsuk-hint nhsuk-hint-character-count nhsuk-hint-character-count-toomany govuk-error-message" >
+                  You have <span class="nhsuk-character-count-toomany"></span> characters too many
+              </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+
+        <p class="nhsuk-body">              
+          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        </p>
+        
+
+      </form>
+
+    </div>
+  </div>
+  
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block outerContent %}
+  {{ backLink({
+    "href": "check-location-radius",
+    "text": "Go back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      
+
+      <h1 class=" nhsuk-heading nhsuk-heading-l">
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        Add opportunity tags
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area centre point
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds Art Gallery
+            <br>
+            The Headrow 
+            <br>
+            Leeds
+            <br>
+            LS1 3AB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="location-larger-area">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Area
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Leeds
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="check-location-area-name">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Radius
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            10 miles
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <ul class="nhsuk-summary-list__actions-list">
+              <li class="nhsuk-summary-list__actions-list-item">
+                <a href="check-location-radius">Change<span class="nhsuk-u-visually-hidden"> Change location 1</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+
+      <form action="check-location-final" method="post">
+
+        <div class="nhsuk-form-group">
+      
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+      
+            <div class="nhsuk-hint" id="example-hint">
+              Select all options that are relevant to you.
+            </div>
+      
+            <div class="nhsuk-checkboxes">
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  This opportunity covers a large area
+                </label>
+              </div>
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                  This opportunity requires you to have your own car
+                </label>
+              </div>
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                  This opportunity requires a background check
+                </label>
+              </div>
+      
+            </div>
+          </fieldset>
+      
+        </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Save and continue
+        </button>
+      
+      </form>
+
+
+            <p class="nhsuk-body">              
+              <a href="../task-list-fixed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+            </p>
+    
+
+    </div>
+  </div>
+{% endblock %}

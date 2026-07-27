@@ -243,8 +243,9 @@ NHS Volunteering
                 <p class="nhsuk-hint" id="v25-filter-hint">Select all that apply</p>
 
                 <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
+                  <fieldset class="govuk-fieldset" aria-describedby="v25-filter-distance-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Distance</legend>
+                    <p class="nhsuk-hint" id="v25-filter-distance-hint">Distance does not apply to remote opportunities</p>
                     <div class="govuk-radios govuk-radios--small">
                       {% for value, label in distanceLabels %}
                       <div class="govuk-radios__item">

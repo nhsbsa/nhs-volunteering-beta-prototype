@@ -57,6 +57,8 @@ const appViews = [
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages'),
+  path.join(__dirname, 'node_modules/govuk-frontend/dist'),
+  path.join(__dirname, 'node_modules/@ministryofjustice/frontend'),
 ];
 
 const nunjucksConfig = {
@@ -166,6 +168,9 @@ app.set('trust proxy', 1);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
+app.use('/moj-assets', express.static(path.join(__dirname, 'node_modules/@ministryofjustice/frontend/moj/assets')));
+app.use('/moj-frontend', express.static(path.join(__dirname, 'node_modules/@ministryofjustice/frontend/moj')));
+app.use('/govuk-frontend', express.static(path.join(__dirname, 'node_modules/govuk-frontend/dist/govuk')));
 
 // Use custom application routes
 app.use('/', routes);

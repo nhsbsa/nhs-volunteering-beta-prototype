@@ -1,0 +1,164 @@
+// MOJ Frontend, compiled to public/css/moj.css. Link this stylesheet only on pages
+// that use moj- components (e.g. the v25 results filter) so MOJ styles don't bleed
+// into the rest of the NHS prototype.
+//
+// Only the MOJ component shell (moj-filter panel, tags, action bar) is used —
+// form controls, buttons and typography inside the filter are NHS Design System
+// components styled by the kit's own nhsuk css.
+//
+// $moj-font-family points the MOJ styles at the NHS font stack — GDS Transport is
+// not licensed for use outside GOV.UK (and with it absent, no @font-face is
+// emitted). $moj-assets-path matches the express static mount in app.js.
+
+@use "node_modules/nhsuk-frontend/packages/core/settings/colours" as nhsuk;
+
+@use "node_modules/@ministryofjustice/frontend/moj/all" with (
+  $moj-font-family: ("Frutiger W01", Arial, sans-serif),
+  $moj-assets-path: "/moj-assets/"
+);
+
+// NHS restyle of the MOJ filter shell (Aqib-directed, 21 Jul 2026), following the
+// visual language of live NHS filter UIs researched in docs/nhs-filter-research.md
+// (NHS Jobs "Refine your search" sidebar, nhs.uk find-a-pharmacy filter):
+// white surfaces, NHS grey borders, NHS blue tags — GOV.UK greys/blacks replaced.
+
+// Outlined panel on the page's pale grey background (no white fill): a grey
+// outline box around the whole panel, blue-underlined heading, and the
+// Selected filters area as a white card for contrast
+// 3-tier NHS scheme — pale NHS Blue tint variant (trialling vs the solid-blue
+// header): header uses the NHS Tag component's own colour recipe (80% blue tint
+// background, 30% blue shade text) → white selected area → pale grey options.
+// Real border rather than MOJ's inset box-shadow — children paint over an inset
+// shadow but can't cover a border.
+.moj-filter {
+  background-color: #ffffff;
+  border: 1px solid nhsuk.$color_nhsuk-grey-4;
+  box-shadow: none;
+}
+
+// NHS focus colours on the panel focus state (the toggle script gives the panel
+// tabindex="-1" so it can receive focus when opened on mobile — MOJ paints that
+// state GOV.UK yellow #ffdd00; recolour to the NHS focus yellow/black)
+.moj-filter:focus {
+  box-shadow: 0 -2px nhsuk.$color_nhsuk-yellow, 0 4px nhsuk.$color_nhsuk-black;
+}
+
+.moj-filter__close:focus {
+  background-color: nhsuk.$color_nhsuk-yellow;
+  box-shadow: 0 -2px nhsuk.$color_nhsuk-yellow, 0 4px nhsuk.$color_nhsuk-black;
+}
+
+// All-white panel (Aqib, 21 Jul): the NHS Blue rule under the header carries
+// the branding; tiers are separated by lines rather than fills
+.moj-filter__header {
+  background-color: #ffffff;
+  box-shadow: none;
+  border-bottom: 4px solid nhsuk.$color_nhsuk-blue;
+  padding: 12px 16px;
+}
+
+.moj-filter__content {
+  padding: 0;
+}
+
+// Pale NHS Blue selected-filters section — nhsuk-tint at 90% (one step lighter
+// than the Tag component's 80% recipe), separated from the options by the divider
+.moj-filter__selected {
+  background-color: nhsuk.nhsuk-tint(nhsuk.$color_nhsuk-blue, 90%);
+  box-shadow: none;
+  border: 0;
+  border-bottom: 1px solid nhsuk.$color_nhsuk-grey-4;
+}
+
+// Heading row as flex: "Selected filters" left, "Clear" right on the same line
+// (replaces MOJ's font-size-0 justify hack, which wraps in narrow sidebars)
+.moj-filter__selected-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.moj-filter__selected-heading::after {
+  content: none;
+}
+
+// MOJ draws its own inset border around the options area (plus a -1px collapse
+// hack) — the panel outline replaces it; padding gives space above Apply filters
+.moj-filter__options {
+  box-shadow: none;
+  margin-top: 0;
+  padding: 16px;
+}
+
+// Tags: NHS blue link-styled chips instead of MOJ's black-bordered tags
+a.moj-filter__tag,
+a.moj-filter__tag:link,
+a.moj-filter__tag:visited {
+  background-color: #ffffff;
+  border: 1px solid nhsuk.$color_nhsuk-blue;
+  color: nhsuk.$color_nhsuk-blue;
+}
+
+a.moj-filter__tag:hover {
+  background-color: nhsuk.$color_nhsuk-blue;
+  color: #ffffff;
+}
+
+a.moj-filter__tag:focus {
+  background-color: #ffeb3b;
+  border-color: #212b32;
+  color: #212b32;
+}
+
+// Small checkboxes/radios in the filter: govuk-frontend's documented --small
+// variant (the same one MOJ's filter examples use; NHS DS has no small variant).
+// Font settings keep it in the NHS stack.
+$govuk-font-family: "Frutiger W01", Arial, sans-serif;
+$govuk-assets-path: "/moj-assets/";
+
+@import "node_modules/govuk-frontend/dist/govuk/base";
+@import "node_modules/govuk-frontend/dist/govuk/objects/index";
+@import "node_modules/govuk-frontend/dist/govuk/components/fieldset/index";
+@import "node_modules/govuk-frontend/dist/govuk/components/label/index";
+@import "node_modules/govuk-frontend/dist/govuk/components/checkboxes/index";
+@import "node_modules/govuk-frontend/dist/govuk/components/radios/index";
+
+// Mobile action bar: MOJ floats the Show/Hide button right (designed to sit
+// beside sort controls we don't have), which made the results copy wrap around
+// it — full-width row instead, separator stripped
+.moj-action-bar__filter {
+  display: block;
+  float: none;
+}
+
+.moj-action-bar__filter::after {
+  content: none;
+}
+
+// The injected Close button inside the panel is redundant when the Show/Hide
+// toggle covers both states (as on DfE's Find apprenticeship training) — the
+// container div must stay in the markup (the toggle script requires it)
+.moj-filter__close {
+  display: none;
+}
+
+// Mobile: space between the opened panel and the Show/Hide button below it, and
+// full-width Apply buttons inside the panel (nhsuk-button has no full-width
+// modifier in v9 — govuk buttons do this natively on mobile, NHS ones don't)
+@media (max-width: 61.865em) {
+  .moj-filter {
+    margin-bottom: 24px;
+  }
+
+  .moj-filter .nhsuk-button {
+    width: 100%;
+  }
+}
+
+// The panel is always visible at desktop widths — the injected Show/Hide filter
+// toggle is only for mobile/tablet (matches bigModeMediaQuery in the page script)
+@media (min-width: 61.875em) {
+  .moj-action-bar__filter {
+    display: none;
+  }
+}

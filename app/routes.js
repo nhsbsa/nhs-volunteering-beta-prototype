@@ -1250,3 +1250,115 @@ router.post('/v24/application/equality-mid-flow', function (req, res) {
   }
 })
 
+
+// ROUTES FOR V25 support questions
+
+router.post('/v25/application/additional-support-a', function (req, res) {
+  const needSupport = req.session.data['v25-additional-support-a']
+
+  if (needSupport === 'yes') {
+    res.redirect('/v25/application/additional-support-b')
+  } else if (needSupport === 'no') {
+    res.redirect('/v25/application/motivations')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v25/application/additional-support-a')
+  }
+})
+
+
+// ROUTES FOR V25 equality questions
+
+router.post('/v25/application/equality-mid-flow', function (req, res) {
+  const equalityInflow = req.session.data['v25-equality-mid-flow']
+
+  if (equalityInflow === 'yes') {
+    res.redirect('/v25/edi/dob')
+  } else if (equalityInflow === 'no') {
+    res.redirect('/v25/application/check')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v25/application/equality-mid-flow')
+  }
+})
+
+// ROUTES FOR V25 results filter panel (K5)
+// GET handlers for the Selected filters remove/clear links. Query params are
+// prefixed with _ so the kit's auto-store-data middleware ignores them.
+
+router.get('/v25/results/remove-filter', function (req, res) {
+  const name = req.query._name
+  const value = req.query._value
+  // Distance included: a chosen (non-default) distance is removable and falls
+  // back to the 5-mile default; the default itself renders as plain text
+  const allowed = ['v25-filter-distance', 'v25-filter-setting', 'v25-filter-with', 'v25-filter-type', 'v25-filter-age', 'v25-filter-availability']
+
+  if (allowed.includes(name)) {
+    const current = req.session.data[name]
+    if (Array.isArray(current)) {
+      req.session.data[name] = current.filter((item) => item !== value)
+      if (req.session.data[name].length === 0) {
+        delete req.session.data[name]
+      }
+    } else if (value === undefined || current === value) {
+      delete req.session.data[name]
+    }
+  }
+
+  res.redirect('/v25/results/results')
+})
+
+router.get('/v25/results/clear-filters', function (req, res) {
+  // Clear resets everything removable, including a chosen distance (which
+  // falls back to the 5-mile default)
+  const filterKeys = ['v25-filter-distance', 'v25-filter-setting', 'v25-filter-with', 'v25-filter-type', 'v25-filter-age', 'v25-filter-availability']
+  filterKeys.forEach(function (key) {
+    delete req.session.data[key]
+  })
+
+  res.redirect('/v25/results/results')
+})
+
+// V25 results filtering (K5): renders the results page with the opportunity
+// list filtered against session filter state. Data: app/data/opportunities.js.
+// Logic (agreed 22 Jul 2026): OR within a filter group, AND across groups;
+// distance applies to located roles only (remote roles always pass, so a
+// remote-only setting filter naturally shows just the remote section);
+// sort is closest first; no pagination.
+
+const v25Opportunities = require('./data/opportunities')
+
+router.get('/v25/results/results', function (req, res) {
+  const data = req.session.data
+  const toArray = (value) => (Array.isArray(value) ? value : (value ? [value] : []))
+  const intersects = (a, b) => a.some((item) => b.includes(item))
+
+  const distance = parseFloat(data['v25-filter-distance'] || '5')
+  const settings = toArray(data['v25-filter-setting'])
+  const audiences = toArray(data['v25-filter-with'])
+  const types = toArray(data['v25-filter-type'])
+  const age = data['v25-filter-age']
+  const availability = toArray(data['v25-filter-availability'])
+
+  const matched = v25Opportunities.filter(function (opp) {
+    if (opp.locationType !== 'remote' && opp.distanceMiles !== null && opp.distanceMiles > distance) return false
+    if (settings.length && !intersects(settings, opp.setting)) return false
+    if (audiences.length && !intersects(audiences, opp.audiences)) return false
+    if (types.length && !intersects(types, opp.types)) return false
+    // unstated minAge is treated as 18+; roles marked 16 are under-18-friendly.
+    // 18-and-over matches everything (adults can do 16+ roles too)
+    if (age === 'under-18' && (opp.minAge === null || opp.minAge >= 18)) return false
+    if (availability.length && !intersects(availability, opp.availability)) return false
+    return true
+  })
+
+  res.render('v25/results/results.html', {
+    v25Results: {
+      local: matched.filter((o) => o.locationType === 'local').sort((a, b) => a.distanceMiles - b.distanceMiles),
+      varied: matched.filter((o) => o.locationType === 'varied'),
+      remote: matched.filter((o) => o.locationType === 'remote'),
+      count: matched.length,
+      miles: data['v25-filter-distance'] || '5'
+    }
+  })
+})

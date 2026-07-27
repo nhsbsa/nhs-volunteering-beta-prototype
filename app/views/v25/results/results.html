@@ -375,10 +375,13 @@ NHS Volunteering
 
         {% if v25Results.count %}
 
+        {% set hasLocatedResults = v25Results.local.length or v25Results.varied.length %}
         <p class="nhsuk-body-l nhsuk-u-margin-bottom-1"><strong>{{ v25Results.count }}
             {{ "opportunity" if v25Results.count == 1 else "opportunities" }} found</strong></p>
+        {% if hasLocatedResults %}
         <p class="nhsuk-body">Sorted by closest first, up to {{ v25Results.miles }} miles away.</p>
-        <hr class="nhsuk-u-margin-top-0">
+        {% endif %}
+        <hr{% if hasLocatedResults %} class="nhsuk-u-margin-top-0"{% endif %}>
 
         {% for opp in v25Results.local %}
         {{ opportunityItem(opp) }}

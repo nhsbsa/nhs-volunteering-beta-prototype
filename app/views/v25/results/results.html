@@ -167,6 +167,11 @@ NHS Volunteering
 
                 </div>
 
+                {# Distance is hidden when the setting filter is remote-only — it does not
+                   apply to remote opportunities, so showing it here would contradict the
+                   result set. It reappears as soon as the remote tag is removed. #}
+                {% set remoteOnlySetting = settingSelected.length == 1 and "remote" in settingSelected %}
+                {% if not remoteOnlySetting %}
                 <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Distance</h3>
                 {% if distanceValue != "5" %}
                 <ul class="moj-filter-tags">
@@ -176,6 +181,7 @@ NHS Volunteering
                 </ul>
                 {% else %}
                 <p class="nhsuk-body-s nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">{{ distanceLabels[distanceValue] }}</p>
+                {% endif %}
                 {% endif %}
 
                 {% if settingSelected.length %}

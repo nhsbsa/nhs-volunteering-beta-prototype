@@ -120,6 +120,11 @@ NHS Volunteering
         {% set distanceValue = data['v25-filter-distance'] or "5" %}
         {% set settingRaw = data['v25-filter-setting'] %}
         {% if settingRaw is string %}{% set settingSelected = [settingRaw] %}{% elif settingRaw %}{% set settingSelected = settingRaw %}{% else %}{% set settingSelected = [] %}{% endif %}
+        {# Distance does not apply to remote opportunities, so when the setting filter is
+           remote-only the Distance entry in Selected filters is hidden and no distance
+           radio is checked. The stored value persists in the session and both reappear
+           as soon as the remote tag is removed or another setting is selected. #}
+        {% set remoteOnlySetting = settingSelected.length == 1 and "remote" in settingSelected %}
         {% set withRaw = data['v25-filter-with'] %}
         {% if withRaw is string %}{% set withSelected = [withRaw] %}{% elif withRaw %}{% set withSelected = withRaw %}{% else %}{% set withSelected = [] %}{% endif %}
         {% set typeRaw = data['v25-filter-type'] %}
@@ -167,10 +172,6 @@ NHS Volunteering
 
                 </div>
 
-                {# Distance is hidden when the setting filter is remote-only — it does not
-                   apply to remote opportunities, so showing it here would contradict the
-                   result set. It reappears as soon as the remote tag is removed. #}
-                {% set remoteOnlySetting = settingSelected.length == 1 and "remote" in settingSelected %}
                 {% if not remoteOnlySetting %}
                 <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Distance</h3>
                 {% if distanceValue != "5" %}
@@ -257,7 +258,7 @@ NHS Volunteering
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="v25-filter-distance-{{ loop.index }}"
                           name="v25-filter-distance" type="radio" value="{{ value }}"
-                          {{ "checked" if distanceValue == value }}>
+                          {{ "checked" if distanceValue == value and not remoteOnlySetting }}>
                         <label class="govuk-label govuk-radios__label" for="v25-filter-distance-{{ loop.index }}">
                           {{ label }}
                         </label>

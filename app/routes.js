@@ -902,6 +902,59 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+  // ROUTES FOR R20 pre-application questions
+
+  // work out the next selected question page, or the task list if none are left
+  function r20NextPreApplicationPage(data, current) {
+
+    let selected = data['r20-pre-application-questions'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+
+    const order = ['age', 'licence', 'distance']
+    const pages = {
+      'age': '/r20/questions/pre-application-minimum-age',
+      'licence': '/r20/questions/pre-application-licence',
+      'distance': '/r20/questions/pre-application-distance'
+    }
+
+    for (const question of order.slice(order.indexOf(current) + 1)) {
+      if (selected.includes(question)) {
+        return pages[question]
+      }
+    }
+    return '/r20/task-list-pre-app-completed'
+  }
+
+  router.post('/r20-pre-application-questions-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20preApplication = req.session.data['r20-pre-application']
+
+    if (r20preApplication === 'yes') {
+      res.redirect('/r20/questions/select-pre-application-questions')
+    } else {
+      res.redirect('/r20/task-list-pre-app-completed')
+    }
+  })
+
+  router.post('/r20-select-pre-application-questions-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, null))
+  })
+
+  router.post('/r20-pre-application-minimum-age-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, 'age'))
+  })
+
+  router.post('/r20-pre-application-licence-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, 'licence'))
+  })
+
+  router.post('/r20-pre-application-distance-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, 'distance'))
+  })
+
   // ROUTES FOR R12 recruiter email selection for email updates
 
   router.post('/r12/questions/email-details', function (req, res) {

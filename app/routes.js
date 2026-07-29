@@ -843,6 +843,65 @@ router.post('/r9-contact-details-answer', function (req, res) {
   })  
 
 
+  // ROUTES FOR R20 create an opportunity journey
+
+  router.post('/r20-contact-details-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20contactDetails = req.session.data['r9-contact-details']
+
+    if (r20contactDetails === 'no') {
+      res.redirect('/r20/questions/contact-details-change')
+    } else {
+      res.redirect('/r20/questions/tags')
+    }
+  })
+
+  router.post('/r20-receive-applications-answer', function (req, res) {
+
+    res.redirect('/r20/questions/alt-closing-date')
+  })
+
+  router.post('/r20-closing-date-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20closingDate = req.session.data['r9-closing-date']
+
+    if (r20closingDate === 'yes') {
+      res.redirect('/r20/questions/alt-closing-date-answer')
+    } else {
+      res.redirect('/r20/task-list-completed')
+    }
+  })
+
+  // choose address - if "the address is not listed here"
+
+  router.post('/r20-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20chooseAddress = req.session.data['r9-choose-address']
+
+    if (r20chooseAddress === 'not-listed') {
+      res.redirect('/r20/questions/manual-address')
+    } else {
+      res.redirect('/r20/questions/another-location')
+    }
+  })
+
+  // add another location - if "answer is yes"
+
+  router.post('/r20-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20anotherLocation = req.session.data['r9-another-location']
+
+    if (r20anotherLocation === 'yes') {
+      res.redirect('/r20/questions/address')
+    } else {
+      res.redirect('/r20/questions/check-location')
+    }
+  })
+
   // ROUTES FOR R12 recruiter email selection for email updates
 
   router.post('/r12/questions/email-details', function (req, res) {

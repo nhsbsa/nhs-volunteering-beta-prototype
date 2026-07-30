@@ -5,6 +5,15 @@
 @import 'components/list-border';
 @import 'components/related-nav';
 
+// Conditional reveal border: the current NHS design system uses
+// $nhsuk-secondary-border-colour (grey-3, #aeb7bd); the pinned nhsuk-frontend
+// 9.6.3 still ships the darker $nhsuk-form-border-color. Remove this override
+// when nhsuk-frontend is upgraded past v9.
+.nhsuk-checkboxes__conditional,
+.nhsuk-radios__conditional {
+  border-left-color: $color_nhsuk-grey-3;
+}
+
 
 
 ///////////////////////////////////////////

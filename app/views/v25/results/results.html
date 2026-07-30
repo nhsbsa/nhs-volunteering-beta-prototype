@@ -60,13 +60,33 @@ NHS Volunteering
 
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-        <h1>Volunteering opportunities near LS9 6EP</h1>
+        {% set headingSearchLocation = data['v25-search-location'] %}
+        {% set headingRemoteOnly = headingSearchLocation == "remote" or (headingSearchLocation
+        and "remote" in headingSearchLocation and "in-person" not in headingSearchLocation) %}
+        {% if headingRemoteOnly %}
+        <h1 class="nhsuk-u-margin-bottom-3">{{ v25Results.count }} remote, from home
+          {{ "opportunity" if v25Results.count == 1 else "opportunities" }}</h1>
+        {% else %}
+        <h1 class="nhsuk-u-margin-bottom-3">{{ v25Results.count }}
+          {{ "opportunity" if v25Results.count == 1 else "opportunities" }} near
+          {{ data['postcode'] or 'LS9 6EP' }}</h1>
+        {% endif %}
+
+        {% set hasLocatedResults = v25Results.local.length or v25Results.varied.length %}
+        {% set remoteOnlyIntro = headingRemoteOnly and v25Results.remote.length %}
+        {% if v25Results.count %}
+        {% if hasLocatedResults %}
+        <p class="nhsuk-body">Sorted by closest first, up to {{ v25Results.miles }} miles away.</p>
+        {% elif remoteOnlyIntro %}
+        <p class="nhsuk-body">These opportunities are available for volunteering from home, anywhere in England.</p>
+        {% endif %}
+        {% endif %}
       </div>
     </div>
 
-    <div class="nhsuk-grid-row">
+    <div class="moj-filter-layout">
 
-      <div class="nhsuk-grid-column-one-third">
+      <div class="moj-filter-layout__filter nhsuk-u-margin-bottom-7">
 
         {# Option value → label maps (labels are the original page copy) #}
         {% set distanceLabels = {
@@ -380,6 +400,7 @@ NHS Volunteering
                           {{ label }}
                         </label>
                       </div>
+                      {% endif %}
                       {% endfor %}
                     </div>
                   </fieldset>
@@ -399,7 +420,6 @@ NHS Volunteering
                           {{ label }}
                         </label>
                       </div>
-                      {% endif %}
                       {% endfor %}
                     </div>
                   </fieldset>
@@ -496,7 +516,7 @@ NHS Volunteering
 
       </div>
 
-      <div class="nhsuk-grid-column-two-thirds">
+      <div class="moj-filter-layout__content">
 
         <div class="moj-action-bar nhsuk-u-margin-bottom-3">
           <div class="moj-action-bar__filter"></div>
@@ -504,14 +524,10 @@ NHS Volunteering
 
         {% if v25Results.count %}
 
-        {% set hasLocatedResults = v25Results.local.length or v25Results.varied.length %}
+        {# Count moved into the page h1, hidden here for now
         <p class="nhsuk-body-l nhsuk-u-margin-bottom-1"><strong>{{ v25Results.count }}
             {{ "opportunity" if v25Results.count == 1 else "opportunities" }} found</strong></p>
-        {% if hasLocatedResults %}
-        <p class="nhsuk-body">Sorted by closest first, up to {{ v25Results.miles }} miles away.</p>
-        {% endif %}
-        <hr{% if hasLocatedResults %} class="nhsuk-u-margin-top-0"{% endif %}>
-
+        #}
         {% for opp in v25Results.local %}
         {{ opportunityItem(opp) }}
         {% if not loop.last or v25Results.varied.length or v25Results.remote.length %}
@@ -536,10 +552,14 @@ NHS Volunteering
         {% endif %}
 
         {% if v25Results.remote.length %}
+        {# For a remote-only search the h1 already says remote, and the intro line
+           moves to the top of the results where the sorted by line normally sits #}
+        {% if not headingRemoteOnly %}
         <h2>Remote, from home opportunities</h2>
         <p>These opportunities are available for volunteering from home, anywhere in England.</p>
 
         <hr>
+        {% endif %}
 
         {% for opp in v25Results.remote %}
         {{ opportunityItem(opp) }}
@@ -591,11 +611,14 @@ NHS Volunteering
   // MOJ components check for the govuk-frontend "supported" body class
   document.body.classList.add('govuk-frontend-supported')
 
+  // Initialise govuk-frontend components (the conditional reveal in the filter panel)
+  GOVUKFrontend.initAll()
+
   // startHidden: false — the default (true) hides the panel on load even in big
   // mode, and the desktop layout has no toggle button to bring it back
   new MOJFrontend.FilterToggleButton(document.querySelector('[data-module="moj-filter"]'), {
     startHidden: false,
-    bigModeMediaQuery: '(min-width: 61.875em)',
+    bigModeMediaQuery: '(min-width: 48.0625em)',
     toggleButton: {
       showText: 'Show filter',
       hideText: 'Hide filter',

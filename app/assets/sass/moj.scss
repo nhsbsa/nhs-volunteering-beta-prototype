@@ -120,6 +120,7 @@ $govuk-assets-path: "/moj-assets/";
 @import "node_modules/govuk-frontend/dist/govuk/objects/index";
 @import "node_modules/govuk-frontend/dist/govuk/components/fieldset/index";
 @import "node_modules/govuk-frontend/dist/govuk/components/label/index";
+@import "node_modules/govuk-frontend/dist/govuk/components/input/index";
 @import "node_modules/govuk-frontend/dist/govuk/components/checkboxes/index";
 @import "node_modules/govuk-frontend/dist/govuk/components/radios/index";
 
@@ -145,7 +146,7 @@ $govuk-assets-path: "/moj-assets/";
 // Mobile: space between the opened panel and the Show/Hide button below it, and
 // full-width Apply buttons inside the panel (nhsuk-button has no full-width
 // modifier in v9 — govuk buttons do this natively on mobile, NHS ones don't)
-@media (max-width: 61.865em) {
+@media (max-width: 48.0525em) {
   .moj-filter {
     margin-bottom: 24px;
   }
@@ -156,9 +157,19 @@ $govuk-assets-path: "/moj-assets/";
 }
 
 // The panel is always visible at desktop widths — the injected Show/Hide filter
-// toggle is only for mobile/tablet (matches bigModeMediaQuery in the page script)
-@media (min-width: 61.875em) {
+// toggle is only for mobile/tablet (matches bigModeMediaQuery in the page script,
+// and the moj-filter-layout float breakpoint so the panel never hides while its
+// column still reserves space)
+@media (min-width: 48.0625em) {
   .moj-action-bar__filter {
     display: none;
+  }
+
+  // Cap the filter column at a third of the layout (MOJ's default 260-385px
+  // takes around 40% of the NHS width container; a third matches the nhsuk
+  // grid column the panel sat in before adopting moj-filter-layout)
+  .moj-filter-layout__filter {
+    min-width: 0;
+    max-width: 33.33%;
   }
 }

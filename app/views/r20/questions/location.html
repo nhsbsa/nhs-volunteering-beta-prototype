@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Where is this opportunity? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -18,14 +18,16 @@ Question page
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/r20/task-list-location-completed" method="post">
+    <form action="availability" method="post">
+
+      <input type="hidden" name="r20-task-location-complete" value="true">
 
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
               Where is this opportunity?
             </h1>
           </legend>
@@ -79,7 +81,7 @@ Question page
     </form>
 
     <p class="nhsuk-body">
-      <a href="/r20/task-list-location-completed" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+      <a href="/r20/task-list?r20-task-location-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
         later</a>
     </p>
 

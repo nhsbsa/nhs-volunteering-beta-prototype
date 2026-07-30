@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Do you want to set a closing date? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -71,25 +71,13 @@
         </button>
 
         <p class="nhsuk-body">              
-          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+          <a href="../task-list?r20-task-closing-date-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
         </p>
 
 
         
 
       </form>
-
-      <script>
-        document.querySelector('.form').addEventListener('submit', function(e) {
-          const selected = document.querySelector('input[name="r9-closing-date"]:checked');
-      
-          if (selected && selected.value === 'no') {
-            e.preventDefault(); // Stop the form from submitting normally
-            window.location.href = 'closing-date-changes-confirmation'; // Redirect to your desired page
-          }
-          // Else, allow form to submit normally to /r9-closing-date-answer
-        });
-      </script>
 
     </div>
   </div>

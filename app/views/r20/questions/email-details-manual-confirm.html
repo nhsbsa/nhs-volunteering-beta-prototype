@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Are these the correct details? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -19,7 +19,9 @@ Question page
   <div class="nhsuk-grid-column-two-thirds">
 
 
-    <form action="/r20/task-list-email-completed" method="post" class="form">
+    <form action="/r20/task-list" method="post" class="form">
+
+      <input type="hidden" name="r20-task-email-complete" value="true">
 
       <div class="nhsuk-form-group">
 
@@ -75,7 +77,7 @@ Question page
     </form>
 
     <p class="nhsuk-body">
-      <a href="/r20/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+      <a href="/r20/task-list?r20-task-email-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
         later</a>
     </p>
 
@@ -86,9 +88,9 @@ Question page
 
         if (selected && selected.value === 'no') {
           e.preventDefault(); // Stop the form from submitting normally
-          window.location.href = "/r12/questions/email-updates-answer"; // Redirect to your desired page
+          window.location.href = "/r20/questions/email-updates-answer"; // Redirect to your desired page
         }
-        // Else, allow form to submit normally to /r12-task-list-email-completed
+        // Else, allow form to submit normally to /r20/task-list
       });
     </script>
 

@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Enter a title for the opportunity listing - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
   {{ backLink({
-    "href": "../task-list-completed",
+    "href": "../task-list",
     "text": "Go back",
     "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
   }) }}
@@ -18,7 +18,9 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="../task-list-completed" method="post" class="form">
+      <form action="../task-list" method="post" class="form">
+
+        <input type="hidden" name="r20-task-title-complete" value="true">
 
         <div class="nhsuk-form-group">
           <h1 class="nhsuk-heading nhsuk-heading-l">

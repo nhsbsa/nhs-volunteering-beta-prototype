@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Do you want to receive applications through NHS Volunteering? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -21,6 +21,8 @@
       
 
       <form action="/r20-receive-applications-answer" method="post" class="form">
+
+        <input type="hidden" name="r20-task-receive-complete" value="true">
 
         <div class="nhsuk-form-group">
 
@@ -96,7 +98,7 @@
         </button>
 
         <p class="nhsuk-body">              
-          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+          <a href="../task-list?r20-task-receive-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
         </p>
 
         

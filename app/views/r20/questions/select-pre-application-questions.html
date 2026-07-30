@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Select the pre-application questions - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -41,9 +41,6 @@ Question page
           <p class="nhsuk-body">Make sure any questions you use are necessary and comply with your organisation's
             volunteer recruitment policies.</p>
 
-          <p class="nhsuk-body">If you're unsure, read <a href="#"
-              class="nhsuk-link nhsuk-link--no-visited-state">how to use pre-application questions</a>.</p>
-
           <div class="nhsuk-checkboxes">
 
             <input type="hidden" name="r20-pre-application-questions" value="_unchecked">
@@ -52,7 +49,7 @@ Question page
               <input class="nhsuk-checkboxes__input" id="r20-pre-application-questions-1"
                 name="r20-pre-application-questions" type="checkbox" value="age">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-pre-application-questions-1">
-                Are you [age] or over?
+                Are you [age] or older?
               </label>
             </div>
 
@@ -60,7 +57,7 @@ Question page
               <input class="nhsuk-checkboxes__input" id="r20-pre-application-questions-2"
                 name="r20-pre-application-questions" type="checkbox" value="licence">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-pre-application-questions-2">
-                Do you have a [name] licence?
+                Do you have a valid [name] licence?
               </label>
             </div>
 
@@ -68,7 +65,7 @@ Question page
               <input class="nhsuk-checkboxes__input" id="r20-pre-application-questions-3"
                 name="r20-pre-application-questions" type="checkbox" value="distance">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-pre-application-questions-3">
-                Do you live within [distance] of [location]?
+                Do you live or work within [distance] miles of [postcode]?
               </label>
             </div>
 
@@ -83,7 +80,7 @@ Question page
       </button>
 
       <p class="nhsuk-body">
-        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        <a href="../task-list?r20-task-pre-application-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
       </p>
 
     </form>

@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Enter the name of the required licence - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -36,7 +36,7 @@ Question page
           </div>
           <div class="nhsuk-date-input__item">
             <input class="nhsuk-input nhsuk-input--width-10" id="r20-pre-application-licence-name"
-              name="r20-pre-application-licence-name" type="text">
+              name="r20-pre-application-licence-name" type="text" aria-label="Licence name">
           </div>
           <div class="nhsuk-date-input__item">
             <label class="nhsuk-label" for="r20-pre-application-licence-name">licence?</label>
@@ -49,7 +49,7 @@ Question page
       </button>
 
       <p class="nhsuk-body">
-        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        <a href="../task-list?r20-task-pre-application-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
       </p>
 
     </form>

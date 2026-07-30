@@ -853,6 +853,7 @@ router.post('/r9-contact-details-answer', function (req, res) {
     if (r20contactDetails === 'no') {
       res.redirect('/r20/questions/contact-details-change')
     } else {
+      req.session.data['r20-task-contact-complete'] = 'true'
       res.redirect('/r20/questions/tags')
     }
   })
@@ -870,7 +871,8 @@ router.post('/r9-contact-details-answer', function (req, res) {
     if (r20closingDate === 'yes') {
       res.redirect('/r20/questions/alt-closing-date-answer')
     } else {
-      res.redirect('/r20/task-list-completed')
+      req.session.data['r20-task-closing-date-complete'] = 'true'
+      res.redirect('/r20/questions/email-updates')
     }
   })
 
@@ -924,7 +926,8 @@ router.post('/r9-contact-details-answer', function (req, res) {
         return pages[question]
       }
     }
-    return '/r20/task-list-pre-app-completed'
+    data['r20-pre-application-complete'] = 'true'
+    return '/r20/questions/support-volunteers'
   }
 
   router.post('/r20-pre-application-questions-answer', function (req, res) {
@@ -933,9 +936,11 @@ router.post('/r9-contact-details-answer', function (req, res) {
     const r20preApplication = req.session.data['r20-pre-application']
 
     if (r20preApplication === 'yes') {
+      req.session.data['r20-pre-application-complete'] = ''
       res.redirect('/r20/questions/select-pre-application-questions')
     } else {
-      res.redirect('/r20/task-list-pre-app-completed')
+      req.session.data['r20-pre-application-complete'] = 'true'
+      res.redirect('/r20/questions/support-volunteers')
     }
   })
 

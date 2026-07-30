@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Is this the correct email address? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -19,7 +19,9 @@ Question page
   <div class="nhsuk-grid-column-two-thirds">
 
 
-    <form action="/r13/task-list-email-completed" method="post" class="form">
+    <form action="/r20/task-list" method="post" class="form">
+
+      <input type="hidden" name="r20-task-email-complete" value="true">
 
       <div class="nhsuk-form-group">
 
@@ -69,7 +71,7 @@ Question page
     </form>
 
     <p class="nhsuk-body">
-      <a href="/r13/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+      <a href="/r20/task-list?r20-task-email-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
         later</a>
     </p>
 

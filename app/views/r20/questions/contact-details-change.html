@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Question page
+Change the contact details - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -22,8 +22,10 @@
 
       <form action="tags" method="post" class="form">
 
+        <input type="hidden" name="r20-task-contact-complete" value="true">
+
         <h1 class="nhsuk-heading nhsuk-heading-l">
-          <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+          <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
           Change the contact details
         </h1>
 
@@ -61,7 +63,7 @@
         </button>
 
         <p class="nhsuk-body">              
-          <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+          <a href="../task-list?r20-task-contact-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
         </p>
         
 

@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Do you want to set up email notifications for this opportunity? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -19,7 +19,7 @@ Question page
   <div class="nhsuk-grid-column-two-thirds">
 
 
-    <form action="/r13/questions/email-updates-answer" method="post" class="form">
+    <form action="/r20/questions/email-updates-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
 
@@ -69,7 +69,7 @@ Question page
     </form>
 
     <p class="nhsuk-body">
-      <a href="/r13/task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+      <a href="/r20/task-list?r20-task-email-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
         later</a>
     </p>
   </div>

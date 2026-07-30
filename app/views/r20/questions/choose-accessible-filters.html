@@ -1,0 +1,127 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+How accessible is this opportunity? - NHS Volunteering
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+"href": "choose-search-filters",
+"text": "Go back",
+"classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="../task-list" method="post">
+
+      <input type="hidden" name="r20-task-accessible-complete" value="true">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="r20-accessible-features-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+              How accessible is this opportunity?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-do-dont-list">
+            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+            <p class="nhsuk-body">It's important to tell volunteers how accessible your facilities are before they
+              apply. The features you select here will appear in the opportunity listing.</p>
+            <p class="nhsuk-body">Make it clear in the opportunity description if any features are not always available
+              for this role.</p>
+          </div>
+
+          <div class="nhsuk-hint" id="r20-accessible-features-hint">
+            Select any that apply
+          </div>
+
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-1" name="r20-accessible-features"
+                type="checkbox" value="Step-free access">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-1">
+                Step-free access
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-2" name="r20-accessible-features"
+                type="checkbox" value="Assistive listening">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-2">
+                Assistive listening
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-3" name="r20-accessible-features"
+                type="checkbox" value="Guide dog friendly">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-3">
+                Guide dog friendly
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-4" name="r20-accessible-features"
+                type="checkbox" value="Accessible toilet">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-4">
+                Accessible toilet
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-5" name="r20-accessible-features"
+                type="checkbox" value="Accessible parking bays">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-5">
+                Accessible parking bays
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-6" name="r20-accessible-features"
+                type="checkbox" value="Quiet room">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-6">
+                Quiet room
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__divider">or</div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r20-accessible-features-7" name="r20-accessible-features"
+                type="checkbox" value="None of these">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-accessible-features-7">
+                None of these
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+        Save and continue
+      </button>
+
+      <p class="nhsuk-body">
+        <a href="../task-list?r20-task-accessible-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save
+          and come back later</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

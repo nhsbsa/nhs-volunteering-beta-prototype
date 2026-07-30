@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+What availability are you looking for? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -22,8 +22,10 @@ Question page
 
     <form action="contact-details" method="post" class="form">
 
+      <input type="hidden" name="r20-task-availability-complete" value="true">
+
       <h1 class="nhsuk-heading nhsuk-heading-l" for="example">
-        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+        <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
         What availability are you looking for?
       </h1>
       <div class="nhsuk-hint" id="example-hint">
@@ -93,7 +95,7 @@ Question page
       </button>
 
       <p class="nhsuk-body">
-        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        <a href="../task-list?r20-task-availability-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
       </p>
 
 

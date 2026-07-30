@@ -33,59 +33,98 @@ NHS Volunteering - Search for an opportunity near me
 
     <h1>Search for a volunteering opportunity</h1>
     <form action="../results/results" method="post">
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-10">
-          Enter a postcode in England
-        </label>
-
-        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="postcode" type="text"
-          value="{{ data['postcode'] or 'LS9 6EP' }}">
-      </div>
 
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset">
-          <label class="nhsuk-label" for="input-width-10">
-            How far from your postcode would you like to search?
-          </label>
+          <legend class="nhsuk-fieldset__legend">
+            Select where you want the opportunity to be based.
+          </legend>
 
-          <div class="nhsuk-radios">
+          {% set inPersonChecked = checked('v25-search-location', 'in-person') %}
+          <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="radius" type="radio" value="3" {{
-                checked("radius", "3" ) }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Up to 3 miles
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="v25-search-location-1" name="v25-search-location"
+                type="checkbox" value="remote" {{ checked('v25-search-location', 'remote') }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="v25-search-location-1">
+                Remote, from home
               </label>
             </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="radius-5" name="radius" type="radio" value="5" checked>
-              <label class="nhsuk-label nhsuk-radios__label" for="radius-5" selected>
-                Up to 5 miles
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="v25-search-location-2" name="v25-search-location"
+                type="checkbox" value="in-person" data-aria-controls="conditional-v25-search-location-2"
+                {{ inPersonChecked }}>
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="v25-search-location-2">
+                In person
               </label>
             </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="10" {{
-                checked("radius", "10" ) }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Up to 10 miles
-              </label>
-            </div>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="20" {{
-                checked("radius", "20" ) }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Up to 20 miles
-              </label>
-            </div>
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="radius" type="radio" value="30" {{
-                checked("radius", "30" ) }}>
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Up to 30 miles
-              </label>
+            <div class="nhsuk-checkboxes__conditional
+              {%- if not inPersonChecked %} nhsuk-checkboxes__conditional--hidden{% endif %}"
+              id="conditional-v25-search-location-2">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="postcode">
+                  Enter a postcode in England
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text"
+                  autocomplete="postal-code" value="{{ data['postcode'] }}">
+              </div>
+
+              <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend">
+                    How far from the postcode would you like to search?
+                  </legend>
+
+                  <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="radius-3" name="v25-filter-distance" type="radio" value="3" {{
+                        checked("v25-filter-distance", "3" ) }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="radius-3">
+                        Up to 3 miles
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="radius-5" name="v25-filter-distance" type="radio" value="5" {{
+                        checked("v25-filter-distance", "5" ) }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="radius-5">
+                        Up to 5 miles
+                      </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="radius-10" name="v25-filter-distance" type="radio" value="10" {{
+                        checked("v25-filter-distance", "10" ) }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="radius-10">
+                        Up to 10 miles
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="radius-20" name="v25-filter-distance" type="radio" value="20" {{
+                        checked("v25-filter-distance", "20" ) }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="radius-20">
+                        Up to 20 miles
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="radius-30" name="v25-filter-distance" type="radio" value="30" {{
+                        checked("v25-filter-distance", "30" ) }}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="radius-30">
+                        Up to 30 miles
+                      </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+
+              </div>
+
             </div>
 
           </div>
@@ -93,7 +132,7 @@ NHS Volunteering - Search for an opportunity near me
 
       </div>
 
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="../results/results">
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Search
       </button>
     </form>
@@ -127,6 +166,14 @@ NHS Volunteering - Search for an opportunity near me
 
 <!-- JavaScript hack to do nothing if search button or link href="" clicked -->
 {% block pageScripts %}
+<script>
+  // The installed nhsuk-frontend release reads aria-controls; newer releases
+  // (and the service manual examples) use data-aria-controls, so map it across
+  document.querySelectorAll('[data-aria-controls]').forEach(function (input) {
+    input.setAttribute('aria-controls', input.getAttribute('data-aria-controls'))
+  })
+</script>
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
 <script>
   $(document).ready(function () {
     $('a[href=""], button.nhsuk-search__submit').click(function (e) {

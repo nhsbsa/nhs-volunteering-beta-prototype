@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Enter new details - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -20,7 +20,9 @@ Question page
 
 
 
-    <form action="/r12/task-list-email-completed" method="post" class="form">
+    <form action="/r20/task-list" method="post" class="form">
+
+      <input type="hidden" name="r20-task-email-complete" value="true">
 
 
       <h1 class="nhsuk-heading nhsuk-heading-l">
@@ -80,7 +82,7 @@ Question page
       </button>
 
       <p class="nhsuk-body">
-        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        <a href="../task-list?r20-task-email-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
       </p>
 
     </form>

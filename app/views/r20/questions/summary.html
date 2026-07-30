@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Add a summary - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
 {{ backLink({
-"href": "../task-list-completed",
+"href": "../task-list",
 "text": "Go back",
 "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
 }) }}
@@ -19,7 +19,7 @@ Question page
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="/r13/task-list-fixed">
+      <a class="nhsuk-back-link__link" href="/r20/task-list">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -31,11 +31,13 @@ Question page
 
 
     <h1 class="nhsuk-heading-l">
-      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
       Add a summary
     </h1>
 
-    <form action="../task-list-completed" method="post" class="form">
+    <form action="opportunity-description" method="post" class="form">
+
+      <input type="hidden" name="r20-task-summary-complete" value="true">
 
       <div class="nhsuk-form-group">
 

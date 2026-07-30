@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Check your answers template - NHS.UK prototype kit
+Check your answers before publishing your listing - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
 {{ backLink({
-"href": "../../task-list-completed",
+"href": "../task-list",
 "text": "Go back",
 "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0"
 }) }}
@@ -48,6 +48,74 @@ Check your answers template - NHS.UK prototype kit
     }) }}
 
     <h2 class="nhsuk-heading nhsuk-heading-m">Listing details</h2>
+
+    {% set preApplicationSelected = data['r20-pre-application-questions'] or [] %}
+    {% set preApplicationQuestionsHtml %}
+    {% if data['r20-pre-application'] == 'yes' %}
+    {% if 'age' in preApplicationSelected %}
+    <p>Are you {{ data['r20-pre-application-age'] or '18' }} or older?</p>
+    {% endif %}
+    {% if 'licence' in preApplicationSelected %}
+    <p>Do you have a valid {{ data['r20-pre-application-licence-name'] or 'driving' }} licence?</p>
+    {% endif %}
+    {% if 'distance' in preApplicationSelected %}
+    <p>Do you live or work within {{ data['r20-pre-application-distance-miles'] or '20' }} miles of {{
+      data['r20-pre-application-distance-postcode'] or 'AB1 2CD' }}?</p>
+    {% endif %}
+    {% else %}
+    No
+    {% endif %}
+    {% endset %}
+
+    {% set filterSetting = [data['r20-filter-setting']] if data['r20-filter-setting'] is string else
+    data['r20-filter-setting'] %}
+    {% set filterSupporting = [data['r20-filter-supporting']] if data['r20-filter-supporting'] is string else
+    data['r20-filter-supporting'] %}
+    {% set filterType = [data['r20-filter-type']] if data['r20-filter-type'] is string else data['r20-filter-type'] %}
+    {% set filterAges = [data['r20-filter-ages']] if data['r20-filter-ages'] is string else data['r20-filter-ages'] %}
+    {% set filterAvailability = [data['r20-filter-availability']] if data['r20-filter-availability'] is string else
+    data['r20-filter-availability'] %}
+
+    {% set accessibleFeatures = [data['r20-accessible-features']] if data['r20-accessible-features'] is string else
+    data['r20-accessible-features'] %}
+
+    {% set accessibleFeaturesHtml %}
+    {% if not accessibleFeatures %}
+    {% set accessibleFeatures = ['Step-free access', 'Accessible toilet', 'Accessible parking bays'] %}
+    {% endif %}
+    {{ accessibleFeatures | join('<br>') | safe }}
+    {% endset %}
+
+    {% set opportunityTags = [data['r20-tags']] if data['r20-tags'] is string else data['r20-tags'] %}
+
+    {% set opportunityTagsHtml %}
+    {% if not opportunityTags %}
+    {% set opportunityTags = ['No experience needed', 'Public facing', 'Background check will take place'] %}
+    {% endif %}
+    {{ opportunityTags | join('<br>') | safe }}
+    {% endset %}
+
+    {% set searchFiltersHtml %}
+    <strong>Where is the setting of your opportunity?</strong>
+    <br>
+    {{ filterSetting | join('<br>') | safe if filterSetting else 'Hospital, hospice or other care facility' }}
+    <br>
+    <strong>Who is the volunteer supporting?</strong>
+    <br>
+    {{ filterSupporting | join('<br>') | safe if filterSupporting else 'Older people' }}
+    <br>
+    <strong>What type of volunteering is your opportunity?</strong>
+    <br>
+    {{ filterType | join('<br>') | safe if filterType else 'Gardening and DIY' }}
+    <br>
+    <strong>Which ages is this opportunity suitable for?</strong>
+    <br>
+    {{ filterAges | join('<br>') | safe if filterAges else '18 and over' }}
+    <br>
+    <strong>When do you need volunteers to be available?</strong>
+    <br>
+    {{ filterAvailability | join('<br>') | safe if filterAvailability else 'Weekend' }}
+    {% endset %}
 
     {{ summaryList({
     rows: [
@@ -145,6 +213,23 @@ Check your answers template - NHS.UK prototype kit
     href: "overview-process",
     text: "Change",
     visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Pre-application questions"
+    },
+    value: {
+    html: preApplicationQuestionsHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "pre-application-questions",
+    text: "Change",
+    visuallyHiddenText: "Pre-application questions"
     }
     ]
     }
@@ -281,18 +366,14 @@ Check your answers template - NHS.UK prototype kit
     text: "Opportunity tags"
     },
     value: {
-    html: "No experience needed
-    <br>
-    Patient facing
-    <br>
-    Need a criminal record check"
+    html: opportunityTagsHtml
     },
     actions: {
     items: [
     {
-    href: "contact-details",
+    href: "tags",
     text: "Change",
-    visuallyHiddenText: "Location 2"
+    visuallyHiddenText: "Opportunity tags"
     }
     ]
     }
@@ -302,34 +383,31 @@ Check your answers template - NHS.UK prototype kit
     text: "Search filters"
     },
     value: {
-    html: "
-    <strong>Where is the setting of your opportunity?</strong>
-    <br>
-    Healthcare facility
-    <br>
-    <strong>Who is the volunteer working with?</strong>
-    <br>
-    Older people
-    <br>
-    <strong>What type of volunteering is your opportunity?</strong>
-    <br>
-    With people
-    <br>
-    <strong>What age can your volunteer be?</strong>
-    <br>
-    18 and over
-    <br>
-    <strong>What availability are you looking for?</strong>
-    <br>
-    Weekend
-    "
+    html: searchFiltersHtml
     },
     actions: {
     items: [
     {
-    href: "contact-details",
+    href: "choose-search-filters",
     text: "Change",
-    visuallyHiddenText: "Location 2"
+    visuallyHiddenText: "Search filters"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Accessible features and facilities"
+    },
+    value: {
+    html: accessibleFeaturesHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "choose-accessible-filters",
+    text: "Change",
+    visuallyHiddenText: "Accessible features and facilities"
     }
     ]
     }
@@ -423,7 +501,7 @@ Check your answers template - NHS.UK prototype kit
       <button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit">
         Publish listing
       </button>
-      <a href="/r9/preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+      <a href="/r20/preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
         Preview listing
       </a>
     </form>

@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+What type of person are you looking for? - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -20,11 +20,13 @@ Question page
 
 
     <h1 class="nhsuk-heading-l">
-      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
       What type of person are you looking for?
     </h1>
 
     <form action="overview-process" method="post" class="form">
+
+      <input type="hidden" name="r20-task-looking-for-complete" value="true">
 
       <div class="nhsuk-form-group">
         <div class="nhsuk-hint" id="r9-preview-with-hint-text-hint">
@@ -101,7 +103,7 @@ Question page
       </button>
 
       <p class="nhsuk-body">
-        <a href="../task-list-in-progress" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+        <a href="../task-list?r20-task-looking-for-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
       </p>
 
     </form>

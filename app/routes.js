@@ -843,6 +843,123 @@ router.post('/r9-contact-details-answer', function (req, res) {
   })  
 
 
+  // ROUTES FOR R20 create an opportunity journey
+
+  router.post('/r20-contact-details-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20contactDetails = req.session.data['r9-contact-details']
+
+    if (r20contactDetails === 'no') {
+      res.redirect('/r20/questions/contact-details-change')
+    } else {
+      req.session.data['r20-task-contact-complete'] = 'true'
+      res.redirect('/r20/questions/tags')
+    }
+  })
+
+  router.post('/r20-receive-applications-answer', function (req, res) {
+
+    res.redirect('/r20/questions/alt-closing-date')
+  })
+
+  router.post('/r20-closing-date-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20closingDate = req.session.data['r9-closing-date']
+
+    if (r20closingDate === 'yes') {
+      res.redirect('/r20/questions/alt-closing-date-answer')
+    } else {
+      req.session.data['r20-task-closing-date-complete'] = 'true'
+      res.redirect('/r20/questions/email-updates')
+    }
+  })
+
+  // choose address - if "the address is not listed here"
+
+  router.post('/r20-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20chooseAddress = req.session.data['r9-choose-address']
+
+    if (r20chooseAddress === 'not-listed') {
+      res.redirect('/r20/questions/manual-address')
+    } else {
+      res.redirect('/r20/questions/another-location')
+    }
+  })
+
+  // add another location - if "answer is yes"
+
+  router.post('/r20-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20anotherLocation = req.session.data['r9-another-location']
+
+    if (r20anotherLocation === 'yes') {
+      res.redirect('/r20/questions/address')
+    } else {
+      res.redirect('/r20/questions/check-location')
+    }
+  })
+
+  // ROUTES FOR R20 pre-application questions
+
+  // work out the next selected question page, or the task list if none are left
+  function r20NextPreApplicationPage(data, current) {
+
+    let selected = data['r20-pre-application-questions'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+
+    const order = ['age', 'licence', 'distance']
+    const pages = {
+      'age': '/r20/questions/pre-application-minimum-age',
+      'licence': '/r20/questions/pre-application-licence',
+      'distance': '/r20/questions/pre-application-distance'
+    }
+
+    for (const question of order.slice(order.indexOf(current) + 1)) {
+      if (selected.includes(question)) {
+        return pages[question]
+      }
+    }
+    data['r20-pre-application-complete'] = 'true'
+    return '/r20/questions/support-volunteers'
+  }
+
+  router.post('/r20-pre-application-questions-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r20preApplication = req.session.data['r20-pre-application']
+
+    if (r20preApplication === 'yes') {
+      req.session.data['r20-pre-application-complete'] = ''
+      res.redirect('/r20/questions/select-pre-application-questions')
+    } else {
+      req.session.data['r20-pre-application-complete'] = 'true'
+      res.redirect('/r20/questions/support-volunteers')
+    }
+  })
+
+  router.post('/r20-select-pre-application-questions-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, null))
+  })
+
+  router.post('/r20-pre-application-minimum-age-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, 'age'))
+  })
+
+  router.post('/r20-pre-application-licence-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, 'licence'))
+  })
+
+  router.post('/r20-pre-application-distance-answer', function (req, res) {
+    res.redirect(r20NextPreApplicationPage(req.session.data, 'distance'))
+  })
+
   // ROUTES FOR R12 recruiter email selection for email updates
 
   router.post('/r12/questions/email-details', function (req, res) {
@@ -1291,7 +1408,7 @@ router.get('/v25/results/remove-filter', function (req, res) {
   const value = req.query._value
   // Distance included: a chosen (non-default) distance is removable and falls
   // back to the 5-mile default; the default itself renders as plain text
-  const allowed = ['v25-filter-distance', 'v25-filter-setting', 'v25-filter-with', 'v25-filter-type', 'v25-filter-age', 'v25-filter-availability']
+  const allowed = ['v25-filter-distance', 'v25-filter-setting', 'v25-filter-with', 'v25-filter-type', 'v25-filter-age', 'v25-filter-availability', 'v25-filter-access', 'v25-search-location']
 
   if (allowed.includes(name)) {
     const current = req.session.data[name]
@@ -1311,7 +1428,7 @@ router.get('/v25/results/remove-filter', function (req, res) {
 router.get('/v25/results/clear-filters', function (req, res) {
   // Clear resets everything removable, including a chosen distance (which
   // falls back to the 5-mile default)
-  const filterKeys = ['v25-filter-distance', 'v25-filter-setting', 'v25-filter-with', 'v25-filter-type', 'v25-filter-age', 'v25-filter-availability']
+  const filterKeys = ['v25-filter-distance', 'v25-filter-setting', 'v25-filter-with', 'v25-filter-type', 'v25-filter-age', 'v25-filter-availability', 'v25-filter-access', 'v25-search-location']
   filterKeys.forEach(function (key) {
     delete req.session.data[key]
   })
@@ -1340,15 +1457,30 @@ router.get('/v25/results/results', function (req, res) {
   const age = data['v25-filter-age']
   const availability = toArray(data['v25-filter-availability'])
 
+  // Where the opportunity is based, chosen on the postcode search page.
+  // Nothing selected means no preference, so both kinds show
+  const searchLocation = toArray(data['v25-search-location'])
+  const remoteWanted = !searchLocation.length || searchLocation.includes('remote')
+  const inPersonWanted = !searchLocation.length || searchLocation.includes('in-person')
+
   const matched = v25Opportunities.filter(function (opp) {
+    if (opp.locationType === 'remote' && !remoteWanted) return false
+    if (opp.locationType !== 'remote' && !inPersonWanted) return false
     if (opp.locationType !== 'remote' && opp.distanceMiles !== null && opp.distanceMiles > distance) return false
     if (settings.length && !intersects(settings, opp.setting)) return false
     if (audiences.length && !intersects(audiences, opp.audiences)) return false
     if (types.length && !intersects(types, opp.types)) return false
-    // unstated minAge is treated as 18+; roles marked 16 are under-18-friendly.
-    // 18-and-over matches everything (adults can do 16+ roles too)
-    if (age === 'under-18' && (opp.minAge === null || opp.minAge >= 18)) return false
-    if (availability.length && !intersects(availability, opp.availability)) return false
+    // Age options are 13-17 (specific age) or 18-and-over. Unstated minAge is
+    // treated as 18+; 18-and-over matches everything (adults can do 16+ roles too)
+    if (age && age !== '18-and-over') {
+      const roleMinAge = opp.minAge === null ? 18 : opp.minAge
+      if (parseInt(age, 10) < roleMinAge) return false
+    }
+    // Opportunity data only maps weekday/weekend availability so far; the
+    // Morning/Afternoon/Evening options and the accessible features filter are
+    // panel-only until those attributes are added to app/data/opportunities.js
+    const dayAvailability = availability.filter((value) => ['weekday', 'weekend'].includes(value))
+    if (dayAvailability.length && !intersects(dayAvailability, opp.availability)) return false
     return true
   })
 

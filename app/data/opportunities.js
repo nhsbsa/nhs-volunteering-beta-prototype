@@ -21,7 +21,7 @@ module.exports = [
     audiences: [],
     minAge: 21,
     availability: ['weekday'],
-    tags: ['Need a criminal record check', 'No experience needed', 'Public facing', 'Suitable from age 21', 'Evening availability'],
+    tags: ['Background check will take place', 'No experience needed', 'Public facing', 'Suitable from age 21', 'Evening availability'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
       <li>If you enjoy connecting with people, listening, and offering a friendly face, this role is for you.</li>
       <li>Our Trolley Service supports patients and families in hospital by providing comfort, conversation,
@@ -44,7 +44,7 @@ module.exports = [
     audiences: [],
     minAge: 16, // under-18-friendly (Aqib-approved inference, 22 Jul 2026)
     availability: [],
-    tags: ['No experience needed', 'Experience with computers', 'Need a criminal record check'],
+    tags: ['No experience needed', 'Experience with computers', 'Background check will take place'],
     descriptionHtml: `<p>As an Aphasia Café volunteer, you'll help create a warm, welcoming, and supportive space for people
       living with Aphasia and their loved ones.
       You'll encourage conversation, connection, and confidence in a friendly community setting.
@@ -66,7 +66,7 @@ module.exports = [
     audiences: ['life-limiting-illness'],
     minAge: null,
     availability: [],
-    tags: ['Public facing', 'Need a car', 'Need a criminal record check'],
+    tags: ['Public facing', 'Need a car', 'Background check will take place'],
     descriptionHtml: `<p>We are looking for a volunteer to support another volunteer in delivering a<strong> monthly 1.5-hour
         support session</strong> for people navigating menopause after a cancer diagnosis.
       Sessions will take place in meeting rooms, cancer support centres, or community venues, providing a safe
@@ -106,7 +106,7 @@ module.exports = [
     audiences: ['older-people'],
     minAge: 25,
     availability: ['weekday', 'weekend'],
-    tags: ['Need a criminal record check', 'Public facing', 'No experience needed', 'Suitable from age 25', 'Experience of computers'],
+    tags: ['Background check will take place', 'Public facing', 'No experience needed', 'Suitable from age 25', 'Experience of computers'],
     descriptionHtml: `<p>Young onset dementia refers to <strong>any form of dementia diagnosed before the age of 65</strong>.
       <br>
       <br>
@@ -161,7 +161,7 @@ module.exports = [
     audiences: ['older-people'],
     minAge: 16, // under-18-friendly (Aqib-approved inference, 22 Jul 2026)
     availability: [],
-    tags: ['Public facing', 'Need a car', 'Need a criminal record check'],
+    tags: ['Public facing', 'Need a car', 'Background check will take place'],
     descriptionHtml: `<p><strong>Summary of Role:</strong></p>
     <p>To support the Hospice Dementia Care Home Support volunteer team in ensuring people using the service
       are comforted, safe and cared for during your visit.
@@ -230,7 +230,7 @@ module.exports = [
     audiences: ['physical-disabilities'],
     minAge: 21,
     availability: ['weekday'],
-    tags: ['No experience needed', 'Need a criminal record check', 'Suitable for over age 21'],
+    tags: ['No experience needed', 'Background check will take place', 'Suitable for over age 21'],
     descriptionHtml: `<p>In this role, you will be assisting with the incoming calls coming into the Deafblind UK National
       Helpline. Duties would be varied ranging from dealing with basic incoming contact, updating our
       information library or carrying out research to support our work helping those with sight and hearing

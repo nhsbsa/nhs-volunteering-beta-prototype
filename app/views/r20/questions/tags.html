@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Question page
+Add opportunity tags - NHS Volunteering
 {% endblock %}
 
 {% block outerContent %}
@@ -20,12 +20,14 @@ Question page
 
     <form action="choose-search-filters" method="post">
 
+      <input type="hidden" name="r20-task-tags-complete" value="true">
+
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity listing</span>
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
               Add opportunity tags
             </h1>
           </legend>
@@ -59,7 +61,7 @@ Question page
                 <div style="margin-top: 5px;">
                   <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px; padding-left: 30px;">
                     <strong class="nhsuk-tag nhsuk-tag--blue">
-                      Need a criminal record check
+                      Background check will take place
                     </strong>
                   </td>
                 </div>
@@ -88,98 +90,101 @@ Question page
 
                 <div class="nhsuk-checkboxes">
 
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-1" name="r20-tags" type="checkbox"
+                      value="Background check will take place">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-1">
+                      Background check will take place
+                    </label>
+                  </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-2" name="r20-tags" type="checkbox"
+                      value="Evening availability">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-2">
                       Evening availability
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                      No experience needed
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-3" name="r20-tags" type="checkbox"
+                      value="Experience needed">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-3">
                       Experience needed
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Public facing
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Need a car
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Need a driving licence
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Need a criminal record check
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-4" name="r20-tags" type="checkbox"
+                      value="Experience with computers">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-4">
                       Experience with computers
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-5" name="r20-tags" type="checkbox"
+                      value="No experience needed">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-5">
+                      No experience needed
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-6" name="r20-tags" type="checkbox"
+                      value="Need a car">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-6">
+                      Need a car
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-7" name="r20-tags" type="checkbox"
+                      value="Need a driving licence">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-7">
+                      Need a driving licence
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-8" name="r20-tags" type="checkbox"
+                      value="Public facing">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-8">
+                      Public facing
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-9" name="r20-tags" type="checkbox"
+                      value="Suitable from age 13">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-9">
+                      Suitable from age 13
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-10" name="r20-tags" type="checkbox"
+                      value="Suitable from age 16">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-10">
                       Suitable from age 16
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Suitable from age 21
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox"
-                      value="text message">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                      Suitable from age 25
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-11" name="r20-tags" type="checkbox"
+                      value="Suitable from age 18">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-11">
+                      Suitable from age 18
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__divider">or</div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="symptoms-5" name="symptoms" type="checkbox" value="none"
-                      data-checkbox-exclusive data-checkbox-exclusive-group="symptoms-list">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="symptoms-5">
+                    <input class="nhsuk-checkboxes__input" id="r20-tags-12" name="r20-tags"
+                      type="checkbox" value="I don't want to use any tags"
+                      data-checkbox-exclusive data-checkbox-exclusive-group="r20-tags">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r20-tags-12">
                       I don't want to use any tags
                     </label>
                   </div>
@@ -197,7 +202,7 @@ Question page
 
 
           <p class="nhsuk-body">
-            <a href="../task-list" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+            <a href="../task-list?r20-task-tags-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
           </p>
       </div>
 

@@ -1494,3 +1494,74 @@ router.get('/v25/results/results', function (req, res) {
     }
   })
 })
+
+// ROUTES FOR V25 pre-application questions
+// Volunteer answers the questions the recruiter selected in the r20
+// pre-application task, in the same session. Any "no" stops the application;
+// "yes" continues to the next selected question, or the application start
+// page once none are left. If the recruiter journey hasn't been done in this
+// session, all 3 questions ask with fallback values.
+
+function v25NextPreApplicationPage(data, current) {
+
+  let selected = data['r20-pre-application-questions']
+  if (selected === undefined) {
+    selected = ['age', 'licence', 'distance']
+  }
+  if (!Array.isArray(selected)) {
+    selected = [selected]
+  }
+
+  const order = ['age', 'licence', 'distance']
+  const pages = {
+    'age': '/v25/pre-application/age',
+    'licence': '/v25/pre-application/driving-licence',
+    'distance': '/v25/pre-application/distance'
+  }
+
+  for (const question of order.slice(order.indexOf(current) + 1)) {
+    if (selected.includes(question)) {
+      return pages[question]
+    }
+  }
+  return '/v25/application/start'
+}
+
+router.post('/v25/pre-application/age', function (req, res) {
+  const answer = req.session.data['v25-pre-application-age']
+
+  if (answer === 'yes') {
+    res.redirect(v25NextPreApplicationPage(req.session.data, 'age'))
+  } else if (answer === 'no') {
+    res.redirect('/v25/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v25/pre-application/age')
+  }
+})
+
+router.post('/v25/pre-application/driving-licence', function (req, res) {
+  const answer = req.session.data['v25-pre-application-licence']
+
+  if (answer === 'yes') {
+    res.redirect(v25NextPreApplicationPage(req.session.data, 'licence'))
+  } else if (answer === 'no') {
+    res.redirect('/v25/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v25/pre-application/driving-licence')
+  }
+})
+
+router.post('/v25/pre-application/distance', function (req, res) {
+  const answer = req.session.data['v25-pre-application-distance']
+
+  if (answer === 'yes') {
+    res.redirect(v25NextPreApplicationPage(req.session.data, 'distance'))
+  } else if (answer === 'no') {
+    res.redirect('/v25/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v25/pre-application/distance')
+  }
+})

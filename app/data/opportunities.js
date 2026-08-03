@@ -1,6 +1,9 @@
 // V25 results filtering (K5): the 14 unique opportunities from the v24/v25 results
 // pages (pages 2/3 duplicated Silver Line and Deafblind — deduplicated here).
-// Titles, locations, orgs, tags and descriptions are VERBATIM page copy.
+// Titles, locations, orgs and descriptions are VERBATIM page copy.
+// tags must only use values a recruiter can pick in r20/questions/tags.html,
+// and minAge only values from "Which ages is this opportunity suitable for?"
+// in r20/questions/choose-search-filters.html (13-17 or 18 and over).
 // Filter attributes (setting/types/audiences/minAge/availability) are inferred
 // from that copy — the inference log and flagged guesses live in
 // docs/opportunity-attribute-mapping.md, pending Aqib's sign-off.
@@ -19,9 +22,9 @@ module.exports = [
     setting: ['hospital'],
     types: ['trolley'],
     audiences: [],
-    minAge: 21,
+    minAge: 18,
     availability: ['weekday'],
-    tags: ['Background check will take place', 'No experience needed', 'Public facing', 'Suitable from age 21', 'Evening availability'],
+    tags: ['Background check will take place', 'No experience needed', 'Public facing', 'Suitable from age 18', 'Evening availability'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
       <li>If you enjoy connecting with people, listening, and offering a friendly face, this role is for you.</li>
       <li>Our Trolley Service supports patients and families in hospital by providing comfort, conversation,
@@ -104,9 +107,9 @@ module.exports = [
     setting: ['community'],
     types: [],
     audiences: ['older-people'],
-    minAge: 25,
+    minAge: 18,
     availability: ['weekday', 'weekend'],
-    tags: ['Background check will take place', 'Public facing', 'No experience needed', 'Suitable from age 25', 'Experience of computers'],
+    tags: ['Background check will take place', 'Public facing', 'No experience needed', 'Suitable from age 18', 'Experience with computers'],
     descriptionHtml: `<p>Young onset dementia refers to <strong>any form of dementia diagnosed before the age of 65</strong>.
       <br>
       <br>
@@ -137,9 +140,9 @@ module.exports = [
     setting: ['hospital'],
     types: ['companionship'],
     audiences: ['life-limiting-illness', 'older-people'],
-    minAge: 21,
+    minAge: 18,
     availability: [],
-    tags: ['Public facing', 'Suitable from age 21', 'Need a car'],
+    tags: ['Public facing', 'Suitable from age 18', 'Need a car'],
     descriptionHtml: `<p>Support hospice dementia volunteers by offering:</p>
     <ul class="nhsuk-list nhsuk-list--bullet">
       <li>comfort</li>
@@ -228,9 +231,9 @@ module.exports = [
     setting: ['remote'],
     types: ['telephone'],
     audiences: ['physical-disabilities'],
-    minAge: 21,
+    minAge: 18,
     availability: ['weekday'],
-    tags: ['No experience needed', 'Background check will take place', 'Suitable for over age 21'],
+    tags: ['No experience needed', 'Background check will take place', 'Suitable from age 18'],
     descriptionHtml: `<p>In this role, you will be assisting with the incoming calls coming into the Deafblind UK National
       Helpline. Duties would be varied ranging from dealing with basic incoming contact, updating our
       information library or carrying out research to support our work helping those with sight and hearing
@@ -250,7 +253,7 @@ module.exports = [
     audiences: [],
     minAge: 16, // under-18-friendly (Aqib-approved inference, 22 Jul 2026)
     availability: ['weekday', 'weekend'],
-    tags: ['No experience required'],
+    tags: ['No experience needed'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
       <li>How you will support this organisation will vary according to their needs</li>
       <li>A variety of shifts are available</li>

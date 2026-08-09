@@ -19,9 +19,25 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
-/// 
-/// 
+///
+///
 //
+
+// Skip link override: nhsuk-frontend positions the skip link absolutely over
+// the header, so when focused at high zoom (150% to 400%) it covers the logo
+// (WCAG 1.4.10 reflow check). Show it in normal document flow instead, so it
+// pushes the header down, matching the GOV.UK design system skip link.
+// position: relative (not static) keeps the NHS black bottom focus line
+// (a box-shadow) painting above the header; top/left reset the component's
+// absolute offsets, which would otherwise shift a relative element.
+// Remove if a future nhsuk-frontend adopts in-flow behaviour.
+.nhsuk-skip-link:focus {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+}
 
 // styling for back-link
 .nhsuk-back-link {

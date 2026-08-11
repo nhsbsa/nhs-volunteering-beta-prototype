@@ -52,8 +52,11 @@ NHS Volunteering
           Name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['v8-volunteer-name'] }}
+          {% if data['v8-volunteer-name'] %}
+          <p>{{ data['v8-volunteer-name'] }}</p>
+          {% else %}
           <p>Not provided</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -71,8 +74,11 @@ NHS Volunteering
           Age
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['v8-volunteer-age'] }}
+          {% if data['v8-volunteer-age'] %}
+          <p>{{ data['v8-volunteer-age'] }}</p>
+          {% else %}
           <p>Not provided</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -96,15 +102,11 @@ NHS Volunteering
             data['v8-volunteer-address-line-2'] }}, {% endif %} {{ data['v8-volunteer-town'] }}, {% if data
             ['v8-volunteer-county'] %} {{ data['v8-volunteer-county'] }}, {% endif %} {{ data['v8-volunteer-postcode-2']
             }}</p>
-          {% elif data['v8-select-address'] != "My address is not on this list" %}
+          {% elif data['v8-select-address'] and data['v8-select-address'] != "My address is not on this list" %}
           <p>{{ data['v8-select-address'] }}</p>
           {% else %}
-          <p> {{ data['v8-volunteer-address-line-1'] }}, {% if data ['v8-volunteer-address-line-2'] %} {{
-            data['v8-volunteer-address-line-2'] }}, {% endif %} {{ data['v8-volunteer-town'] }}, {% if data
-            ['v8-volunteer-county'] %} {{ data['v8-volunteer-county'] }}, {% endif %} {{ data['v8-volunteer-postcode-2']
-            }}</p>
-          {% endif %}
           <p>Not provided</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -123,8 +125,11 @@ NHS Volunteering
         </dt>
         <dd class="nhsuk-summary-list__value">
 
+          {% if data['v8-volunteer-email-confirmation'] %}
           <p>{{ data['v8-volunteer-email-confirmation'] }}</p>
+          {% else %}
           <p>Not provided</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -170,8 +175,11 @@ NHS Volunteering
           Your availability
         </dt>
         <dd class="nhsuk-summary-list__value">
+          {% if data['v25-volunteer-availability'] %}
           <p>{{ data['v25-volunteer-availability']}}</p>
+          {% else %}
           <p>Not provided</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -186,17 +194,44 @@ NHS Volunteering
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
+          Interview support needed
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['v25-additional-support-a'] == 'yes' %}
+          <p>Yes</p>
+          {% elif data['v25-additional-support-a'] == 'no' %}
+          <p>No</p>
+          {% else %}
+          <p>Not provided</p>
+          {% endif %}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="additional-support-a">
+            Change<span class="nhsuk-u-visually-hidden"> interview support </span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
           Support needed
         </dt>
         <dd class="nhsuk-summary-list__value">
+          {% if data['v25-volunteer-support'] %}
           <p>{{ data['v25-volunteer-support'] }}</p>
+          {% else %}
           <p>Not provided</p>
+          {% endif %}
 
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
 
-          <a href="support">
+          <a href="additional-support-b">
             Change<span class="nhsuk-u-visually-hidden"> support needed </span>
           </a>
 
@@ -209,8 +244,11 @@ NHS Volunteering
           Why you want to volunteer
         </dt>
         <dd class="nhsuk-summary-list__value">
+          {% if data['v25-volunteer-motivations'] %}
           <p>{{ data['v25-volunteer-motivations'] }}</p>
+          {% else %}
           <p>Not provided</p>
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">

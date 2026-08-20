@@ -1,0 +1,50 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header_recruiter.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Enter the code from your authenticator app
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "/r21/add-auth-app",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">Enter the code from your authenticator app</h1>
+
+    <form action="/r21/mfa-complete" method="post">
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="code">Enter the 6-digit code</label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="code" name="code" type="text" inputmode="numeric"
+          autocomplete="one-time-code">
+      </div>
+
+      <details class="nhsuk-details nhsuk-u-margin-bottom-5">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">Not able to enter the code?</span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>You can log in and <a href="/r21/sign-in">try a different sign-in method</a>.</p>
+        </div>
+      </details>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

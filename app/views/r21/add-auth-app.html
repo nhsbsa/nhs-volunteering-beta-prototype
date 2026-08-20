@@ -1,0 +1,61 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header_recruiter.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Add NHS Volunteering to your authenticator app
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "/r21/auth-app-set-up",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r21/auth-code" method="post">
+
+      <h1 class="nhsuk-heading-l">Add NHS Volunteering to your authenticator app</h1>
+
+        <ol class="nhsuk-list nhsuk-list--number">
+          <li>Open the authenticator app</li>
+          <li>Scan the QR code below using the authenticator app</li>
+          <li>Follow any on-screen instructions in your chosen authenticator app as these may vary between apps.</li>
+        </ol>
+
+        <figure class="nhsuk-image nhsuk-u-width-one-third">
+          <img class="nhsuk-image__img"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+            alt="Example QR code">
+          <figcaption class="nhsuk-image__caption">Example QR Code</figcaption>
+        </figure>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not able to scan the QR code?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you cannot scan the QR code:</p>
+            <ul>
+              <li>check the brightness on your smartphone or tablet camera</li>
+              <li>check your camera permissions</li>
+            </ul>
+          </div>
+        </details>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div> {% endblock %}

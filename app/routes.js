@@ -1336,6 +1336,67 @@ router.post('/r18/set-up-auth-EU', function (req, res) {
 })
 
 
+// ROUTES FOR R21 MFA (baselined from r18, session keys prefixed r21-)
+
+// Route for R21 MFA selection
+router.post('/r21/set-up-auth', function (req, res) {
+
+  const mfaMethod = req.session.data['r21-mfa-method']
+
+  if (mfaMethod === 'email') {
+    res.redirect('/r21/email-code')
+  } else if (mfaMethod === 'text') {
+    res.redirect('/r21/sms-code')
+  } else if (mfaMethod === 'app') {
+    res.redirect('/r21/auth-app-set-up')
+  } else {
+    res.redirect('/r21/set-up-auth')
+  }
+
+})
+
+// Route for R21 MFA app y/n
+// New users always go via the QR page, whether or not they already have an authenticator app
+router.post('/r21/auth-app-router', function (req, res) {
+
+  res.redirect('/r21/add-auth-app')
+
+})
+
+// Route for R21 MFA selection EU
+router.post('/r21/set-up-auth-EU', function (req, res) {
+
+  const mfaMethod = req.session.data['r21-mfa-method']
+
+  if (mfaMethod === 'email') {
+    res.redirect('/r21/email-code-EU')
+  } else if (mfaMethod === 'text') {
+    res.redirect('/r21/sms-code-EU')
+  } else if (mfaMethod === 'app') {
+    res.redirect('/r21/auth-app-set-up-EU')
+  } else {
+    res.redirect('/r21/set-up-auth-EU')
+  }
+
+})
+
+// Route for R21 MFA app y/n EU
+// "yes" = Azure system validation check passes (NHSV already set up in app), so the QR page is skipped
+router.post('/r21/auth-app-router-EU', function (req, res) {
+
+  const hasApp = req.session.data['r21-has-app']
+
+  if (hasApp === 'yes') {
+    res.redirect('/r21/auth-code-EU')
+  } else if (hasApp === 'no') {
+    res.redirect('/r21/add-auth-app-EU')
+  } else {
+    res.redirect('/r21/add-auth-app-EU')
+  }
+
+})
+
+
 // ROUTES FOR V24 support questions
 
 router.post('/v24/application/additional-support-a', function (req, res) {

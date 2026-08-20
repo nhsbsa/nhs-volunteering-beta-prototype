@@ -1,4 +1,5 @@
 // Core dependencies
+require('dotenv').config();
 const gulp = require('gulp');
 
 // External dependencies

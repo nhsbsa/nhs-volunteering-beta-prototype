@@ -1,0 +1,40 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header_recruiter.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+MFA journeys
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h2>MFA journeys</h2>
+
+    <h3>New user</h3>
+    <p class="nhsuk-body"><a href="/r21/invitation-email?r21-has-mobile=yes">New user who has provided mobile phone
+        number to their
+        account</a></p>
+    <p class="nhsuk-body"><a href="/r21/invitation-email?r21-has-mobile=no">New user who has NOT provided mobile phone
+        number to their account</a></p>
+
+    <h3>Existing user</h3>
+    <p class="nhsuk-body"><a href="/r21/sign-in-EU?r21-has-mobile=yes">Existing user who has provided mobile phone
+        number to their
+        account</a></p>
+    <p class="nhsuk-body"><a href="/r21/sign-in-EU?r21-has-mobile=no">Existing user who has NOT provided mobile phone
+        number to their account</a></p>
+
+    <h3>Dev</h3>
+    <p class="nhsuk-body"><a href="/r21/new-user-details">New user details</a></p>
+    <p class="nhsuk-body"><a href="/r21/change-number">Change phone number</a></p>
+  </div>
+</div>
+
+
+{% endblock %}

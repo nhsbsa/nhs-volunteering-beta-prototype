@@ -1,0 +1,41 @@
+{% extends 'layout_vol_header_recruiter.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Multi-factor authentication complete for NHS Volunteering
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-card">
+      <div class="nhsuk-card__content nhsuk-u-padding-top-8 nhsuk-u-padding-bottom-8">
+
+        <p class="nhsuk-body"><strong>From:</strong> no-reply@nhsvolunteers.uk</p>
+        <p class="nhsuk-body"><strong>Subject:</strong> Multi-factor authentication complete for NHS Volunteering</p>
+
+        <p class="nhsuk-u-margin-top-6">Dear [Full name]</p>
+
+        <p class="nhsuk-body">
+          <span class="nhsuk-u-font-weight-regular">You have successfully set up multi-factor authentication for your
+            NHS
+            Volunteering account.</span>
+        </p>
+        <p>This adds an extra layer of security every time you sign in.</p>
+
+
+        <p class="nhsuk-body"><strong>What to do next</strong></p>
+
+        <p class="nhsuk-body">
+          <a href="/r21/sign-in-EU">Sign in to your NHS Volunteering account</a>
+        </p>
+
+        <p class="nhsuk-body">Regards,<br><strong>NHS Volunteering team</strong></p>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

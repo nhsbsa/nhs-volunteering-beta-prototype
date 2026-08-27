@@ -1847,15 +1847,19 @@ router.get('/v26/results/results', function (req, res) {
     if (settings.length && !intersects(settings, opp.setting)) return false
     if (audiences.length && !intersects(audiences, opp.audiences)) return false
     if (types.length && !intersects(types, opp.types)) return false
-    // Age options are 13-17 (specific age) or 18-and-over. Unstated minAge is
-    // treated as 18+; 18-and-over matches everything (adults can do 16+ roles too)
+    // Age options are brackets: 13-15, 16-17 or 18-and-over (post-UR iteration,
+    // Aug 2026). Unstated minAge is treated as 18+; a bracket matches when the
+    // role's minimum age is at or below the top of the bracket, and 18-and-over
+    // matches everything (adults can do 16+ roles too)
     if (age && age !== '18-and-over') {
       const roleMinAge = opp.minAge === null ? 18 : opp.minAge
-      if (parseInt(age, 10) < roleMinAge) return false
+      const bracketTop = { '13-15': 15, '16-17': 17 }[age] || 0
+      if (bracketTop < roleMinAge) return false
     }
     // Opportunity data only maps weekday/weekend availability so far; the
-    // Morning/Afternoon/Evening options and the accessible features filter are
-    // panel-only until those attributes are added to app/data/opportunities.js
+    // Morning/Afternoon/Evening/Flexible options and the accessible features
+    // filter are panel-only until those attributes are added to
+    // app/data/opportunities-v26.js
     const dayAvailability = availability.filter((value) => ['weekday', 'weekend'].includes(value))
     if (dayAvailability.length && !intersects(dayAvailability, opp.availability)) return false
     return true

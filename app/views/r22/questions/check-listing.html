@@ -89,7 +89,7 @@ Check your answers before publishing your listing - NHS Volunteering
 
     {% set opportunityTagsHtml %}
     {% if not opportunityTags %}
-    {% set opportunityTags = ['No experience needed', 'Public facing', 'Background check will take place'] %}
+    {% set opportunityTags = ['No experience needed', 'Public facing', 'DBS check will take place'] %}
     {% endif %}
     {{ opportunityTags | join('<br>') | safe }}
     {% endset %}

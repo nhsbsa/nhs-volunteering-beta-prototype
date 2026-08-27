@@ -1,0 +1,129 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+  <div class="nhsuk-back-link">
+
+    <a class="nhsuk-back-link__link" href="name">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <h1><span class="nhsuk-caption-l nhsuk-caption--top">Step 2 of 8</span>
+    What is your age?</h1>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-2">
+      We will only use this information to find the right opportunity for you.
+    </div>
+
+  <form action="address" method="post">
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+      
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v8-volunteer-age-1" name="v8-volunteer-age" type="radio" value="Under 16 years" {{ checked("v8-volunteer-age", "Under 16 years") }}>
+            <label class="nhsuk-label nhsuk-radios__label" for="v8-volunteer-age-1">
+            Under 16 years
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v8-volunteer-age-2" name="v8-volunteer-age" type="radio" value="16 to 17" {{ checked("v8-volunteer-age", "16 to 17") }}>
+            <label class="nhsuk-label nhsuk-radios__label" for="v8-volunteer-age-2">
+            16 to 17
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v8-volunteer-age-3" name="v8-volunteer-age" type="radio" value="18 to 20" {{ checked("v8-volunteer-age", "18 to 20") }}>
+            <label class="nhsuk-label nhsuk-radios__label" for="v8-volunteer-age-3">
+            18 to 20
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v8-volunteer-age-4" name="v8-volunteer-age" type="radio" value="21 years and over" {{ checked("v8-volunteer-age", "21 years and over") }}>
+            <label class="nhsuk-label nhsuk-radios__label" for="v8-volunteer-age-4">
+            21 years and over
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__divider">or</div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="v8-volunteer-age-5" name="v8-volunteer-age" type="radio" value="Prefer not to say" {{ checked("v8-volunteer-age", "Prefer not to say") }}>
+            <label class="nhsuk-label nhsuk-radios__label" for="v8-volunteer-age-5">
+              Prefer not to say
+            </label>
+          </div>
+    
+    
+        </div>
+      </fieldset>
+    
+    </div>
+
+  <button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">Continue</button>
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

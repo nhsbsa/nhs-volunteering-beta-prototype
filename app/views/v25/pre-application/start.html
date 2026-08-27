@@ -28,9 +28,9 @@ NHS Volunteering
         Go back</a>
     </div>
 
-    {# Questions the recruiter selected in the r20 pre-application task. If the
+    {# Questions the recruiter selected in the r22 pre-application task. If the
        recruiter journey hasn't been done in this session, all 3 show #}
-    {% set preAppSelected = data['r20-pre-application-questions'] %}
+    {% set preAppSelected = data['r22-pre-application-questions'] %}
     {% if preAppSelected is undefined %}
     {% set preAppSelected = ['age', 'licence', 'distance'] %}
     {% elif preAppSelected is string %}
@@ -50,7 +50,7 @@ NHS Volunteering
       <li>location</li>
       {% endif %}
       {% if 'licence' in preAppSelected %}
-      <li>{{ data['r20-pre-application-licence-name'] or 'driving' }} licence</li>
+      <li>{{ data['r22-pre-application-licence-name'] or 'driving' }} licence</li>
       {% endif %}
     </ul>
 

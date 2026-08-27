@@ -1,0 +1,64 @@
+{% extends 'layout_vol_header.html' %}
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+<!-- Homepage content -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="../user-management/deactivate-superuser-error" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Are you sure you want to deactivate this team member?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-hint">
+            If you deactivate Emma Pepper, they will no longer have access to the recruiter dashboard or their
+            account.
+          </div>
+
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="deactivate-yes" name="r19-deactivate-user-EP" type="radio"
+                value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="deactivate-yes">
+                Yes
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="deactivate-no" name="r19-deactivate-user-EP" type="radio"
+                value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="deactivate-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

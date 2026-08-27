@@ -14,7 +14,7 @@
 {% block head %}
 <link href="/css/main.css" rel="stylesheet">
 <link href="/css/nhsuk.css" rel="stylesheet">
-{% if currentUrl and currentUrl.startsWith('/r20/') %}
+{% if currentUrl and (currentUrl.startsWith('/r20/') or currentUrl.startsWith('/r22/')) %}
 <link href="/css/nhsuk-v10-header.css" rel="stylesheet">
 {% endif %}
 {% endblock %}
@@ -25,10 +25,10 @@ NHS Volunteering
 {% endblock %}
 
 {% block header %}
-{% if currentUrl and currentUrl.startsWith('/r20/') %}
+{% if currentUrl and (currentUrl.startsWith('/r20/') or currentUrl.startsWith('/r22/')) %}
 <!-- NVPB-3673: recruiter pages get the NHS DS logged-in header (nhsuk-frontend
      v10 account pattern) so Log out stays visible at all viewport widths.
-     Styles come from /css/nhsuk-v10-header.css, linked above for /r20/ only. -->
+     Styles come from /css/nhsuk-v10-header.css, linked above for /r20/ and /r22/ only. -->
 <header class="nhsuk-header" data-module="nhsuk-header" role="banner">
   <div class="nhsuk-header__container nhsuk-width-container">
     <div class="nhsuk-header__service">
@@ -43,7 +43,7 @@ NHS Volunteering
     <nav class="nhsuk-header__account" aria-label="Account">
       <ul class="nhsuk-header__account-list">
         <li class="nhsuk-header__account-item">
-          <a class="nhsuk-header__account-link" href="/r20/login">Log out</a>
+          <a class="nhsuk-header__account-link" href="{{ '/r22/login' if currentUrl.startsWith('/r22/') else '/r20/login' }}">Log out</a>
         </li>
       </ul>
     </nav>

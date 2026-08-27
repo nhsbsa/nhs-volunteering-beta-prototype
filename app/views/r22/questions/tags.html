@@ -1,0 +1,206 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Add opportunity tags - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "../task-list",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="choose-search-filters" method="post">
+
+      <input type="hidden" name="r22-task-tags-complete" value="true">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+              Add opportunity tags
+            </h1>
+          </legend>
+
+          <div class="nhsuk-do-dont-list">
+            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+            <p class="nhsuk-body">Adding tags to your opportunity listing will help volunteers see important
+              information.</p>
+            <p class="nhsuk-body">You can select up to 5 tags.</p>
+            <p class="nhsuk-body">This is an example of what your tags will look like.</p>
+
+            <div class="nhsuk-details__text">
+              <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">0.8 miles away</p>
+              <h2 class="nhsuk-link nhsuk-u-margin-bottom-2"> <a href="role-profile-2">Patient transport driver</a></h2>
+              <p class="nhsuk-body-l nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>Leeds</strong></p>
+              <p class="nhsuk-u-margin-top-0">Leeds Teaching Hospitals NHS Foundation Trust</p>
+
+              <div class="nhsuk-u-margin-top-2">
+                <td class="nhsuk-table__cell" style="margin-top: -10px;">
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                    Need a car
+                  </strong>
+                </td>
+                <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px; padding-left: 30px;">
+                  <strong class="nhsuk-tag nhsuk-tag--blue">
+                    No experience needed
+                  </strong>
+                </td>
+                <div style="margin-top: 5px;">
+                  <td class="nhsuk-table__cell" style="margin-top: 30px; margin-bottom: 30px; padding-left: 30px;">
+                    <strong class="nhsuk-tag nhsuk-tag--blue">
+                      Background check will take place
+                    </strong>
+                  </td>
+                </div>
+
+
+                <div class="nhsuk-card" style="margin-top: 20px; margin-bottom: 0px;">
+                  <div class="nhsuk-card__content">
+                    <p>You will drive disabled, elderly, sick or vulnerable people to and from outpatient clinics, day
+                      care centres and routine hospital admissions.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <form action="check-location-final" method="post">
+
+            <div class="nhsuk-form-group" style="margin-top: 30px;">
+
+              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+
+                <div class="nhsuk-hint" id="example-hint">
+                  Select up to 5 tags that you want to use in your listing.
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-1" name="r22-tags" type="checkbox"
+                      value="Background check will take place">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-1">
+                      Background check will take place
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-2" name="r22-tags" type="checkbox"
+                      value="Evening availability">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-2">
+                      Evening availability
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-3" name="r22-tags" type="checkbox"
+                      value="Experience needed">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-3">
+                      Experience needed
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-4" name="r22-tags" type="checkbox"
+                      value="Experience with computers">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-4">
+                      Experience with computers
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-5" name="r22-tags" type="checkbox"
+                      value="No experience needed">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-5">
+                      No experience needed
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-6" name="r22-tags" type="checkbox"
+                      value="Need a car">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-6">
+                      Need a car
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-7" name="r22-tags" type="checkbox"
+                      value="Need a driving licence">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-7">
+                      Need a driving licence
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-8" name="r22-tags" type="checkbox"
+                      value="Public facing">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-8">
+                      Public facing
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-9" name="r22-tags" type="checkbox"
+                      value="Suitable from age 13">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-9">
+                      Suitable from age 13
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-10" name="r22-tags" type="checkbox"
+                      value="Suitable from age 16">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-10">
+                      Suitable from age 16
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-11" name="r22-tags" type="checkbox"
+                      value="Suitable from age 18">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-11">
+                      Suitable from age 18
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__divider">or</div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-tags-12" name="r22-tags"
+                      type="checkbox" value="I don't want to use any tags"
+                      data-checkbox-exclusive data-checkbox-exclusive-group="r22-tags">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-tags-12">
+                      I don't want to use any tags
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+
+            <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+              Save and continue
+            </button>
+
+          </form>
+
+
+          <p class="nhsuk-body">
+            <a href="../task-list?r22-task-tags-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+          </p>
+      </div>
+
+      {% endblock %}

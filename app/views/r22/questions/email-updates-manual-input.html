@@ -38,17 +38,17 @@ Enter email address - NHS Volunteering
 
 
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="r13-contact-email">
+        <label class="nhsuk-label" for="r22-email-recipient">
           Email address
         </label>
-        <input class="nhsuk-input nhsuk-input--width-50" id="r13-contact-email" name="r13-contact-email" type="text">
+        <input class="nhsuk-input nhsuk-input--width-50" id="r22-email-recipient" name="r22-email-recipient" type="email" autocomplete="email" spellcheck="false" value="{{ data['r22-email-recipient'] if data['r22-email-recipient'] != 'Email address not listed' }}">
       </div>
 
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="r13-contact-email-confirm">
+        <label class="nhsuk-label" for="r22-email-recipient-confirm">
           Confirm email address
         </label>
-        <input class="nhsuk-input nhsuk-input--width-50" id="r13-contact-email" name="r13-contact-email" type="text">
+        <input class="nhsuk-input nhsuk-input--width-50" id="r22-email-recipient-confirm" name="r22-email-recipient-confirm" type="email" autocomplete="email" spellcheck="false">
       </div>
 
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">

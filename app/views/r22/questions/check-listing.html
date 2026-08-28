@@ -74,6 +74,21 @@ Check your answers before publishing your listing - NHS Volunteering
     {% set filterAges = [data['r22-filter-ages']] if data['r22-filter-ages'] is string else data['r22-filter-ages'] %}
     {% set filterAvailability = [data['r22-filter-availability']] if data['r22-filter-availability'] is string else
     data['r22-filter-availability'] %}
+    {% set emailUpdatesRaw = data['r22-email-updates'] %}
+    {% if emailUpdatesRaw is string %}{% set emailUpdatesList = [emailUpdatesRaw] %}{% elif emailUpdatesRaw %}{% set emailUpdatesList = emailUpdatesRaw %}{% else %}{% set emailUpdatesList = [] %}{% endif %}
+    {% set emailUpdates = [] %}
+    {% for value in emailUpdatesList %}{% if value and value != '_unchecked' %}{% set _ = emailUpdates.push(value) %}{% endif %}{% endfor %}
+    {% if not emailUpdates | length %}{% set emailUpdates = ['Yes, weekly summary email'] %}{% endif %}
+    {% set emailUpdatesHtml %}
+    {% for value in emailUpdates %}
+    <p>{{ value }}</p>
+    {% endfor %}
+    {% endset %}
+    {% set emailRecipientRow = {
+    key: { text: "Who will receive email updates" },
+    value: { text: data['r22-email-recipient'] or "mike.asparagus@nhs.uk" },
+    actions: { items: [ { href: "email-updates-answer", text: "Change", visuallyHiddenText: "Who will receive email updates" } ] }
+    } if 'No email updates' not in emailUpdates else false %}
 
     {% set accessibleFeatures = [data['r22-accessible-features']] if data['r22-accessible-features'] is string else
     data['r22-accessible-features'] %}
@@ -470,29 +485,22 @@ Check your answers before publishing your listing - NHS Volunteering
     },
     {
     key: {
-    text: "Email notifications"
+    text: "Email updates"
     },
     value: {
-    html: "
-    <strong>Do you want to set up email notifications for this opportunity?</strong>
-    <br>
-    Yes
-    <br>
-    <strong>Who will receive the notifications?</strong>
-    <br>
-    mike.asparagus@nhs.uk
-    "
+    html: emailUpdatesHtml
     },
     actions: {
     items: [
     {
-    href: "/r13/questions/change-email-updates",
+    href: "email-updates",
     text: "Change",
-    visuallyHiddenText: "email notifications"
+    visuallyHiddenText: "Email updates"
     }
     ]
     }
-    }
+    },
+    emailRecipientRow
     ]
     }) }}
 

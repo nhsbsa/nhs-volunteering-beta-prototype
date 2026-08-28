@@ -1021,6 +1021,47 @@ router.post('/r9-contact-details-answer', function (req, res) {
     }
   })
 
+  // ROUTES FOR R22 email updates (post-UR iteration Aug 2026: checkboxes for
+  // per-application, weekly summary, both, or the exclusive No email updates).
+  // No email updates completes the task; any yes goes on to choose who receives them
+
+  router.post('/r22-email-updates-answer', function (req, res) {
+
+    let selected = req.session.data['r22-email-updates'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+
+    if (selected.length && selected.every((value) => value === 'No email updates')) {
+      req.session.data['r22-task-email-complete'] = 'true'
+      res.redirect('/r22/task-list')
+    } else {
+      res.redirect('/r22/questions/email-updates-answer')
+    }
+  })
+
+  // Who will receive email updates: the email address is stored as the value;
+  // "Email address not listed" goes to manual entry
+  router.post('/r22-email-recipient-answer', function (req, res) {
+
+    if (req.session.data['r22-email-recipient'] === 'Email address not listed') {
+      res.redirect('/r22/questions/email-updates-manual-input')
+    } else {
+      res.redirect('/r22/questions/email-details')
+    }
+  })
+
+  // Is this the correct email address: No goes back to choose someone else
+  router.post('/r22-email-check-answer', function (req, res) {
+
+    if (req.session.data['r22-email-check'] === 'No, I want to choose someone else') {
+      res.redirect('/r22/questions/email-updates-answer')
+    } else {
+      req.session.data['r22-task-email-complete'] = 'true'
+      res.redirect('/r22/task-list')
+    }
+  })
+
   // ROUTES FOR R22 pre-application questions
 
   // work out the next selected question page, or the task list if none are left

@@ -18,9 +18,7 @@ Is this the correct email address? - NHS Volunteering
   <div class="nhsuk-grid-column-two-thirds">
 
 
-    <form action="/r22/task-list" method="post" class="form">
-
-      <input type="hidden" name="r22-task-email-complete" value="true">
+    <form action="/r22-email-check-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
 
@@ -36,7 +34,7 @@ Is this the correct email address? - NHS Volunteering
 
           <div class="nhsuk-card">
             <div class="nhsuk-card__content">
-              <p class="nhsuk-card__description"><strong>Email address: </strong>mike.asparagus@nhs.uk</p>
+              <p class="nhsuk-card__description"><strong>Email address: </strong>{{ data['r22-email-recipient'] or 'mike.asparagus@nhs.uk' }}</p>
             </div>
           </div>
 
@@ -44,16 +42,16 @@ Is this the correct email address? - NHS Volunteering
           <div class="nhsuk-radios">
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="r13-email-check-1" name="r13-email-check" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-check-1">
+              <input class="nhsuk-radios__input" id="r22-email-check-1" name="r22-email-check" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-check-1">
                 Yes
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="r13-email-check-2" name="r13-email-check" type="radio"
+              <input class="nhsuk-radios__input" id="r22-email-check-2" name="r22-email-check" type="radio"
                 value="No, I want to choose someone else">
-              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-check-2">
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-check-2">
                 No, I want to choose a different email address
               </label>
             </div>

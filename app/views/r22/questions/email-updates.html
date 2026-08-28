@@ -3,7 +3,7 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Do you want to set up email notifications for this opportunity? - NHS Volunteering
+Do you want to set up email updates for this opportunity? - NHS Volunteering
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,44 +18,54 @@ Do you want to set up email notifications for this opportunity? - NHS Volunteeri
   <div class="nhsuk-grid-column-two-thirds">
 
 
-    <form action="/r22/questions/email-updates-answer" method="post" class="form">
+    <form action="/r22-email-updates-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
 
-        <fieldset class="nhsuk-fieldset">
+        <fieldset class="nhsuk-fieldset" aria-describedby="r22-email-updates-hint">
           <h1 class="nhsuk-heading-l">
             <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
-            Do you want to set up email notifications for this opportunity?
+            Do you want to set up email updates for this opportunity?
           </h1>
 
-          <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
-            Email notifications allow someone from your team to receive weekly updates about new applications for this
-            listing.
+          <div class="nhsuk-hint" id="r22-email-updates-hint">
+            Select all that apply
           </div>
 
+          <div class="nhsuk-checkboxes">
+            <input type="hidden" name="r22-email-updates" value="_unchecked">
 
-          </details>
-
-
-          <div class="nhsuk-radios">
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="r13-email-updates-1" name="r13-email-updates" type="radio"
-                value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates-1">
-                Yes
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r22-email-updates-1" name="r22-email-updates" type="checkbox"
+                value="Yes, email updates every time someone applies" {{ checked("r22-email-updates", "Yes, email updates every time someone applies") }}
+                data-checkbox-exclusive-group="r22-email-updates">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-email-updates-1">
+                Yes, email updates every time someone applies
               </label>
             </div>
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="r13-email-updates-2" name="r13-email-updates" type="radio"
-                value="No, I do not want to set up email notifications">
-              <label class="nhsuk-label nhsuk-radios__label" for="r13-email-updates">
-                No, I do not want to set up email notifications
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r22-email-updates-2" name="r22-email-updates" type="checkbox"
+                value="Yes, weekly summary email" {{ checked("r22-email-updates", "Yes, weekly summary email") }}
+                data-checkbox-exclusive-group="r22-email-updates">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-email-updates-2">
+                Yes, weekly summary email
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__divider">or</div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r22-email-updates-3" name="r22-email-updates" type="checkbox"
+                value="No email updates" {{ checked("r22-email-updates", "No email updates") }} data-checkbox-exclusive
+                data-checkbox-exclusive-group="r22-email-updates">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-email-updates-3">
+                No email updates
               </label>
             </div>
 
           </div>
+
         </fieldset>
 
       </div>
@@ -73,6 +83,7 @@ Do you want to set up email notifications for this opportunity? - NHS Volunteeri
     </p>
   </div>
 </div>
-</div>
+
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
 
 {% endblock %}

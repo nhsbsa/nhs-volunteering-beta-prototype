@@ -1,0 +1,173 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Who will receive email updates? - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "alt-closing-date",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/r22-email-recipient-answer" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <h1 class="nhsuk-heading-l">
+            <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
+            Who will receive email updates?
+          </h1>
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-1" name="r22-email-recipient" type="radio"
+                value="ava.miller@nhs.uk" {{ checked("r22-email-recipient", "ava.miller@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-1">
+                ava.miller@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-2" name="r22-email-recipient" type="radio"
+                value="donald.apple@nhs.uk" {{ checked("r22-email-recipient", "donald.apple@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-2">
+                donald.apple@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-3" name="r22-email-recipient" type="radio"
+                value="emma.pepper@nhs.uk" {{ checked("r22-email-recipient", "emma.pepper@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-3">
+                emma.pepper@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-4" name="r22-email-recipient" type="radio"
+                value="fred.lettuce@nhs.co.uk" {{ checked("r22-email-recipient", "fred.lettuce@nhs.co.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-4">
+                fred.lettuce@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-5" name="r22-email-recipient" type="radio"
+                value="gustavo.bean@nhs.co.uk" {{ checked("r22-email-recipient", "gustavo.bean@nhs.co.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-5">
+                gustavo.bean@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-6" name="r22-email-recipient" type="radio"
+                value="hattie.tomato@nhs.co.uk" {{ checked("r22-email-recipient", "hattie.tomato@nhs.co.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-6">
+                hattie.tomato@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-7" name="r22-email-recipient" type="radio"
+                value="kenji.onion@nhs.co.uk" {{ checked("r22-email-recipient", "kenji.onion@nhs.co.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-7">
+                kenji.onion@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-8" name="r22-email-recipient" type="radio"
+                value="mateo.corn@nhs.co.uk" {{ checked("r22-email-recipient", "mateo.corn@nhs.co.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-8">
+                mateo.corn@nhs.co.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-9" name="r22-email-recipient" type="radio"
+                value="mike.asparagus@nhs.uk" {{ checked("r22-email-recipient", "mike.asparagus@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-9">
+                mike.asparagus@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-10" name="r22-email-recipient" type="radio"
+                value="priya.kale@nhs.uk" {{ checked("r22-email-recipient", "priya.kale@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-10">
+                priya.kale@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-11" name="r22-email-recipient" type="radio"
+                value="ricky.cabbage@nhs.uk" {{ checked("r22-email-recipient", "ricky.cabbage@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-11">
+                ricky.cabbage@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-12" name="r22-email-recipient" type="radio"
+                value="rohan.orange@nhs.uk" {{ checked("r22-email-recipient", "rohan.orange@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-12">
+                rohan.orange@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-13" name="r22-email-recipient" type="radio"
+                value="sanjay.pear@nhs.uk" {{ checked("r22-email-recipient", "sanjay.pear@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-13">
+                sanjay.pear@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-14" name="r22-email-recipient" type="radio"
+                value="talia.courgette@nhs.uk" {{ checked("r22-email-recipient", "talia.courgette@nhs.uk") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-14">
+                talia.courgette@nhs.uk
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__divider">or</div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-email-recipient-15" name="r22-email-recipient" type="radio"
+                value="Email address not listed" {{ checked("r22-email-recipient", "Email address not listed") }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-email-recipient-15">
+                Email address not listed
+              </label>
+            </div>
+
+
+          </div>
+        </fieldset>
+
+      </div>
+
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
+
+    </form>
+
+    <p class="nhsuk-body">
+      <a href="/r22/task-list?r22-task-email-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back
+        later</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

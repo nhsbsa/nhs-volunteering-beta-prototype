@@ -960,6 +960,164 @@ router.post('/r9-contact-details-answer', function (req, res) {
     res.redirect(r20NextPreApplicationPage(req.session.data, 'distance'))
   })
 
+  // ROUTES FOR R22 create an opportunity journey
+
+  router.post('/r22-contact-details-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r22contactDetails = req.session.data['r9-contact-details']
+
+    if (r22contactDetails === 'no') {
+      res.redirect('/r22/questions/contact-details-change')
+    } else {
+      req.session.data['r22-task-contact-complete'] = 'true'
+      res.redirect('/r22/questions/tags')
+    }
+  })
+
+  router.post('/r22-receive-applications-answer', function (req, res) {
+
+    res.redirect('/r22/questions/alt-closing-date')
+  })
+
+  router.post('/r22-closing-date-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r22closingDate = req.session.data['r9-closing-date']
+
+    if (r22closingDate === 'yes') {
+      res.redirect('/r22/questions/alt-closing-date-answer')
+    } else {
+      req.session.data['r22-task-closing-date-complete'] = 'true'
+      res.redirect('/r22/questions/email-updates')
+    }
+  })
+
+  // choose address - if "the address is not listed here"
+
+  router.post('/r22-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r22chooseAddress = req.session.data['r9-choose-address']
+
+    if (r22chooseAddress === 'not-listed') {
+      res.redirect('/r22/questions/manual-address')
+    } else {
+      res.redirect('/r22/questions/another-location')
+    }
+  })
+
+  // add another location - if "answer is yes"
+
+  router.post('/r22-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r22anotherLocation = req.session.data['r9-another-location']
+
+    if (r22anotherLocation === 'yes') {
+      res.redirect('/r22/questions/address')
+    } else {
+      res.redirect('/r22/questions/check-location')
+    }
+  })
+
+  // ROUTES FOR R22 email updates (post-UR iteration Aug 2026: checkboxes for
+  // per-application, weekly summary, both, or the exclusive No email updates).
+  // No email updates completes the task; any yes goes on to choose who receives them
+
+  router.post('/r22-email-updates-answer', function (req, res) {
+
+    let selected = req.session.data['r22-email-updates'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+
+    if (selected.length && selected.every((value) => value === 'No email updates')) {
+      req.session.data['r22-task-email-complete'] = 'true'
+      res.redirect('/r22/task-list')
+    } else {
+      res.redirect('/r22/questions/email-updates-answer')
+    }
+  })
+
+  // Who will receive email updates: the email address is stored as the value;
+  // "Email address not listed" goes to manual entry
+  router.post('/r22-email-recipient-answer', function (req, res) {
+
+    if (req.session.data['r22-email-recipient'] === 'Email address not listed') {
+      res.redirect('/r22/questions/email-updates-manual-input')
+    } else {
+      res.redirect('/r22/questions/email-details')
+    }
+  })
+
+  // Is this the correct email address: No goes back to choose someone else
+  router.post('/r22-email-check-answer', function (req, res) {
+
+    if (req.session.data['r22-email-check'] === 'No, I want to choose someone else') {
+      res.redirect('/r22/questions/email-updates-answer')
+    } else {
+      req.session.data['r22-task-email-complete'] = 'true'
+      res.redirect('/r22/task-list')
+    }
+  })
+
+  // ROUTES FOR R22 pre-application questions
+
+  // work out the next selected question page, or the task list if none are left
+  function r22NextPreApplicationPage(data, current) {
+
+    let selected = data['r22-pre-application-questions'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+
+    const order = ['age', 'licence', 'distance']
+    const pages = {
+      'age': '/r22/questions/pre-application-minimum-age',
+      'licence': '/r22/questions/pre-application-licence',
+      'distance': '/r22/questions/pre-application-distance'
+    }
+
+    for (const question of order.slice(order.indexOf(current) + 1)) {
+      if (selected.includes(question)) {
+        return pages[question]
+      }
+    }
+    data['r22-pre-application-complete'] = 'true'
+    return '/r22/questions/support-volunteers'
+  }
+
+  router.post('/r22-pre-application-questions-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r22preApplication = req.session.data['r22-pre-application']
+
+    if (r22preApplication === 'yes') {
+      req.session.data['r22-pre-application-complete'] = ''
+      res.redirect('/r22/questions/select-pre-application-questions')
+    } else {
+      req.session.data['r22-pre-application-complete'] = 'true'
+      res.redirect('/r22/questions/support-volunteers')
+    }
+  })
+
+  router.post('/r22-select-pre-application-questions-answer', function (req, res) {
+    res.redirect(r22NextPreApplicationPage(req.session.data, null))
+  })
+
+  router.post('/r22-pre-application-minimum-age-answer', function (req, res) {
+    res.redirect(r22NextPreApplicationPage(req.session.data, 'age'))
+  })
+
+  router.post('/r22-pre-application-licence-answer', function (req, res) {
+    res.redirect(r22NextPreApplicationPage(req.session.data, 'licence'))
+  })
+
+  router.post('/r22-pre-application-distance-answer', function (req, res) {
+    res.redirect(r22NextPreApplicationPage(req.session.data, 'distance'))
+  })
+
   // ROUTES FOR R12 recruiter email selection for email updates
 
   router.post('/r12/questions/email-details', function (req, res) {
@@ -1624,5 +1782,208 @@ router.post('/v25/pre-application/distance', function (req, res) {
   } else {
     // Handle the case where no selection was made (e.g., reload page)
     res.redirect('/v25/pre-application/distance')
+  }
+})
+
+
+// ROUTES FOR V26 support questions
+
+router.post('/v26/application/additional-support-a', function (req, res) {
+  const needSupport = req.session.data['v26-additional-support-a']
+
+  if (needSupport === 'yes') {
+    res.redirect('/v26/application/additional-support-b')
+  } else if (needSupport === 'no') {
+    res.redirect('/v26/application/motivations')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/application/additional-support-a')
+  }
+})
+
+
+// ROUTES FOR V26 equality questions
+
+router.post('/v26/application/equality-mid-flow', function (req, res) {
+  const equalityInflow = req.session.data['v26-equality-mid-flow']
+
+  if (equalityInflow === 'yes') {
+    res.redirect('/v26/edi/dob')
+  } else if (equalityInflow === 'no') {
+    res.redirect('/v26/application/check')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/application/equality-mid-flow')
+  }
+})
+
+// ROUTES FOR V26 results filter panel (K5)
+// GET handlers for the Selected filters remove/clear links. Query params are
+// prefixed with _ so the kit's auto-store-data middleware ignores them.
+
+router.get('/v26/results/remove-filter', function (req, res) {
+  const name = req.query._name
+  const value = req.query._value
+  // Distance included: a chosen (non-default) distance is removable and falls
+  // back to the 5-mile default; the default itself renders as plain text
+  const allowed = ['v26-filter-distance', 'v26-filter-setting', 'v26-filter-with', 'v26-filter-type', 'v26-filter-age', 'v26-filter-availability', 'v26-filter-access', 'v26-search-location']
+
+  if (allowed.includes(name)) {
+    const current = req.session.data[name]
+    if (Array.isArray(current)) {
+      req.session.data[name] = current.filter((item) => item !== value)
+      if (req.session.data[name].length === 0) {
+        delete req.session.data[name]
+      }
+    } else if (value === undefined || current === value) {
+      delete req.session.data[name]
+    }
+  }
+
+  res.redirect('/v26/results/results')
+})
+
+router.get('/v26/results/clear-filters', function (req, res) {
+  // Clear resets everything removable, including a chosen distance (which
+  // falls back to the 5-mile default)
+  const filterKeys = ['v26-filter-distance', 'v26-filter-setting', 'v26-filter-with', 'v26-filter-type', 'v26-filter-age', 'v26-filter-availability', 'v26-filter-access', 'v26-search-location']
+  filterKeys.forEach(function (key) {
+    delete req.session.data[key]
+  })
+
+  res.redirect('/v26/results/results')
+})
+
+// V26 results filtering (K5): renders the results page with the opportunity
+// list filtered against session filter state. Data: app/data/opportunities.js.
+// Logic (agreed 22 Jul 2026): OR within a filter group, AND across groups;
+// distance applies to located roles only (remote roles always pass, so a
+// remote-only setting filter naturally shows just the remote section);
+// sort is closest first; no pagination.
+
+const v26Opportunities = require('./data/opportunities-v26')
+
+router.get('/v26/results/results', function (req, res) {
+  const data = req.session.data
+  const toArray = (value) => (Array.isArray(value) ? value : (value ? [value] : []))
+  const intersects = (a, b) => a.some((item) => b.includes(item))
+
+  const distance = parseFloat(data['v26-filter-distance'] || '5')
+  const settings = toArray(data['v26-filter-setting'])
+  const audiences = toArray(data['v26-filter-with'])
+  const types = toArray(data['v26-filter-type'])
+  const age = data['v26-filter-age']
+  const availability = toArray(data['v26-filter-availability'])
+
+  // Where the opportunity is based, chosen on the postcode search page.
+  // Nothing selected means no preference, so both kinds show
+  const searchLocation = toArray(data['v26-search-location'])
+  const remoteWanted = !searchLocation.length || searchLocation.includes('remote')
+  const inPersonWanted = !searchLocation.length || searchLocation.includes('in-person')
+
+  const matched = v26Opportunities.filter(function (opp) {
+    if (opp.locationType === 'remote' && !remoteWanted) return false
+    if (opp.locationType !== 'remote' && !inPersonWanted) return false
+    if (opp.locationType !== 'remote' && opp.distanceMiles !== null && opp.distanceMiles > distance) return false
+    if (settings.length && !intersects(settings, opp.setting)) return false
+    if (audiences.length && !intersects(audiences, opp.audiences)) return false
+    if (types.length && !intersects(types, opp.types)) return false
+    // Age options are brackets: 13-15, 16-17 or 18-and-over (post-UR iteration,
+    // Aug 2026). Unstated minAge is treated as 18+; a bracket matches when the
+    // role's minimum age is at or below the top of the bracket, and 18-and-over
+    // matches everything (adults can do 16+ roles too)
+    if (age && age !== '18-and-over') {
+      const roleMinAge = opp.minAge === null ? 18 : opp.minAge
+      const bracketTop = { '13-15': 15, '16-17': 17 }[age] || 0
+      if (bracketTop < roleMinAge) return false
+    }
+    // Opportunity data only maps weekday/weekend availability so far; the
+    // Morning/Afternoon/Evening/Flexible options and the accessible features
+    // filter are panel-only until those attributes are added to
+    // app/data/opportunities-v26.js
+    const dayAvailability = availability.filter((value) => ['weekday', 'weekend'].includes(value))
+    if (dayAvailability.length && !intersects(dayAvailability, opp.availability)) return false
+    return true
+  })
+
+  res.render('v26/results/results.html', {
+    v26Results: {
+      local: matched.filter((o) => o.locationType === 'local').sort((a, b) => a.distanceMiles - b.distanceMiles),
+      varied: matched.filter((o) => o.locationType === 'varied'),
+      remote: matched.filter((o) => o.locationType === 'remote'),
+      count: matched.length,
+      miles: data['v26-filter-distance'] || '5'
+    }
+  })
+})
+
+// ROUTES FOR V26 pre-application questions
+// Volunteer answers the questions the recruiter selected in the r22
+// pre-application task, in the same session. Any "no" stops the application;
+// "yes" continues to the next selected question, or the application start
+// page once none are left. If the recruiter journey hasn't been done in this
+// session, all 3 questions ask with fallback values.
+
+function v26NextPreApplicationPage(data, current) {
+
+  let selected = data['r22-pre-application-questions']
+  if (selected === undefined) {
+    selected = ['age', 'licence', 'distance']
+  }
+  if (!Array.isArray(selected)) {
+    selected = [selected]
+  }
+
+  const order = ['age', 'licence', 'distance']
+  const pages = {
+    'age': '/v26/pre-application/age',
+    'licence': '/v26/pre-application/driving-licence',
+    'distance': '/v26/pre-application/distance'
+  }
+
+  for (const question of order.slice(order.indexOf(current) + 1)) {
+    if (selected.includes(question)) {
+      return pages[question]
+    }
+  }
+  return '/v26/application/start'
+}
+
+router.post('/v26/pre-application/age', function (req, res) {
+  const answer = req.session.data['v26-pre-application-age']
+
+  if (answer === 'yes') {
+    res.redirect(v26NextPreApplicationPage(req.session.data, 'age'))
+  } else if (answer === 'no') {
+    res.redirect('/v26/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/pre-application/age')
+  }
+})
+
+router.post('/v26/pre-application/driving-licence', function (req, res) {
+  const answer = req.session.data['v26-pre-application-licence']
+
+  if (answer === 'yes') {
+    res.redirect(v26NextPreApplicationPage(req.session.data, 'licence'))
+  } else if (answer === 'no') {
+    res.redirect('/v26/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/pre-application/driving-licence')
+  }
+})
+
+router.post('/v26/pre-application/distance', function (req, res) {
+  const answer = req.session.data['v26-pre-application-distance']
+
+  if (answer === 'yes') {
+    res.redirect(v26NextPreApplicationPage(req.session.data, 'distance'))
+  } else if (answer === 'no') {
+    res.redirect('/v26/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/pre-application/distance')
   }
 })

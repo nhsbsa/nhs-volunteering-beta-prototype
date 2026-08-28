@@ -1,0 +1,433 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Choose search filters for your opportunity - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "../task-list",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="choose-accessible-filters" method="post">
+
+      <input type="hidden" name="r22-task-filters-complete" value="true">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+              Choose search filters for your opportunity
+            </h1>
+          </legend>
+
+          <div class="nhsuk-do-dont-list">
+            <h2 class="nhsuk-do-dont-list__label">Guidance</h2>
+            <p class="nhsuk-body">Search filters help users find more specific results.</p>
+            <p class="nhsuk-body">Select filters which are relevant to your opportunity.</p>
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="r22-filter-setting-hint">
+
+              <h2>Where is the setting of your opportunity?</h2>
+
+              <div class="nhsuk-hint" id="r22-filter-setting-hint">
+                Select all that apply
+              </div>
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="r22-filter-setting-1" name="r22-filter-setting"
+                    type="checkbox" value="Hospital, hospice or other care facility">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-setting-1">
+                    Hospital, hospice or other care facility
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="r22-filter-setting-2" name="r22-filter-setting"
+                    type="checkbox" value="In local community">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-setting-2">
+                    In local community
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="r22-filter-setting-3" name="r22-filter-setting"
+                    type="checkbox" value="Office">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-setting-3">
+                    Office
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__divider">or</div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="r22-filter-setting-5" name="r22-filter-setting"
+                    type="checkbox" value="None of these">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-setting-5">
+                    None of these
+                  </label>
+                </div>
+
+
+              </div>
+
+              <div style="margin-top: 50px;">
+                <h2>Who is the volunteer supporting?</h2>
+
+                <div class="nhsuk-hint" id="r22-filter-supporting-hint">
+                  Select all that apply
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-1" name="r22-filter-supporting"
+                      type="checkbox" value="Children">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-1">
+                      Children
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-2" name="r22-filter-supporting"
+                      type="checkbox" value="Young people">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-2">
+                      Young people
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-3" name="r22-filter-supporting"
+                      type="checkbox" value="Older people">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-3">
+                      Older people
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-4" name="r22-filter-supporting"
+                      type="checkbox" value="Families">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-4">
+                      Families
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-5" name="r22-filter-supporting"
+                      type="checkbox" value="People that need mental health support">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-5">
+                      People that need mental health support
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-6" name="r22-filter-supporting"
+                      type="checkbox" value="People with physical disabilities">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-6">
+                      People with physical disabilities
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-7" name="r22-filter-supporting"
+                      type="checkbox" value="People with learning disabilities">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-7">
+                      People with learning disabilities
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-8" name="r22-filter-supporting"
+                      type="checkbox" value="People with a life-limiting illness">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-8">
+                      People with a life-limiting illness
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__divider">or</div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-supporting-9" name="r22-filter-supporting"
+                      type="checkbox" value="None of these">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-supporting-9">
+                      None of these
+                    </label>
+                  </div>
+
+
+                </div>
+
+              </div>
+
+              <div style="margin-top: 50px;">
+                <h2>What type of volunteering is your opportunity?</h2>
+
+                <div class="nhsuk-hint" id="r22-filter-type-hint">
+                  Select all that apply
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-1" name="r22-filter-type"
+                      type="checkbox" value="Admin">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-1">
+                      Admin
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-2" name="r22-filter-type"
+                      type="checkbox" value="Driving">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-2">
+                      Driving
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-3" name="r22-filter-type"
+                      type="checkbox" value="Gardening and DIY">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-3">
+                      Gardening and DIY
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-4" name="r22-filter-type"
+                      type="checkbox" value="Maternity and postnatal support">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-4">
+                      Maternity and postnatal support
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-5" name="r22-filter-type"
+                      type="checkbox" value="Meet and greet">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-5">
+                      Meet and greet
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-6" name="r22-filter-type"
+                      type="checkbox" value="NHS Fundraising">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-6">
+                      NHS Fundraising
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-7" name="r22-filter-type"
+                      type="checkbox" value="NHS Retail">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-7">
+                      NHS Retail
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-8" name="r22-filter-type"
+                      type="checkbox" value="Patient companionship">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-8">
+                      Patient companionship
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-9" name="r22-filter-type"
+                      type="checkbox" value="Social media">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-9">
+                      Social media
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-10" name="r22-filter-type"
+                      type="checkbox" value="Stockroom and warehouse">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-10">
+                      Stockroom and warehouse
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-11" name="r22-filter-type"
+                      type="checkbox" value="Telephone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-11">
+                      Telephone
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-12" name="r22-filter-type"
+                      type="checkbox" value="Trolley volunteer">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-12">
+                      Trolley volunteer
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-13" name="r22-filter-type"
+                      type="checkbox" value="Trustee">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-13">
+                      Trustee
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-14" name="r22-filter-type"
+                      type="checkbox" value="With people">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-14">
+                      With people
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__divider">or</div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-type-15" name="r22-filter-type"
+                      type="checkbox" value="None of these">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-type-15">
+                      None of these
+                    </label>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div style="margin-top: 50px;">
+                <h2>Which age groups is this opportunity suitable for?</h2>
+
+                <p class="nhsuk-body">Volunteers may need to be a certain age to meet the requirements of the
+                  opportunity.</p>
+
+                <div class="nhsuk-hint" id="r22-filter-ages-hint">
+                  Select all that apply.
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-ages-1" name="r22-filter-ages"
+                      type="checkbox" value="13 to 15 years of age">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-ages-1">
+                      13 to 15 years of age
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-ages-2" name="r22-filter-ages"
+                      type="checkbox" value="16 to 17 years of age">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-ages-2">
+                      16 to 17 years of age
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-ages-3" name="r22-filter-ages"
+                      type="checkbox" value="18 and over">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-ages-3">
+                      18 and over
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div style="margin-top: 50px;">
+
+                <h2>When do you need volunteers to be available?</h2>
+
+                <div class="nhsuk-hint" id="r22-filter-availability-hint">
+                  Select all that apply.
+                </div>
+
+                <div class="nhsuk-checkboxes">
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-availability-1"
+                      name="r22-filter-availability" type="checkbox" value="Morning">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-availability-1">
+                      Morning
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-availability-2"
+                      name="r22-filter-availability" type="checkbox" value="Afternoon">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-availability-2">
+                      Afternoon
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-availability-3"
+                      name="r22-filter-availability" type="checkbox" value="Evening">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-availability-3">
+                      Evening
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-availability-4"
+                      name="r22-filter-availability" type="checkbox" value="Weekday">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-availability-4">
+                      Weekday
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-availability-5"
+                      name="r22-filter-availability" type="checkbox" value="Weekend">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-availability-5">
+                      Weekend
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="r22-filter-availability-6"
+                      name="r22-filter-availability" type="checkbox" value="Flexible">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-filter-availability-6">
+                      Flexible
+                    </label>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+
+
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit" style="margin-top: 30px;">
+            Save and continue
+          </button>
+
+
+          <p class="nhsuk-body">
+            <a href="../task-list?r22-task-filters-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+          </p>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

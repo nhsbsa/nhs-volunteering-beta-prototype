@@ -1,0 +1,637 @@
+{% extends 'v26/v26_layout.html' %}
+
+<!-- K5: filter panel uses the MOJ Filter component structure (moj-frontend v8,
+     public/css/moj.css) with NHS Design System form controls and buttons inside.
+     Filters are wired to the kit's auto-store session data: selections persist,
+     the Selected filters tags render from session state, and remove/clear links
+     go through the V25 GET handlers at the bottom of app/routes.js.
+     Mobile/tablet: MOJ FilterToggleButton hides the panel behind a "Show filter"
+     button (injected into .moj-action-bar__filter) so results appear first;
+     the toggle is hidden at desktop widths (see app/assets/sass/moj.scss). -->
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block head %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+<link href="/css/moj.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+{% macro opportunityItem(opp) %}
+{% if opp.locationType == 'local' %}
+<p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">{{ opp.distanceMiles }} miles away</p>
+{% endif %}
+<h2 class="nhsuk-link nhsuk-heading-m nhsuk-u-margin-bottom-2"> <a href="{{ opp.href }}"> {{ opp.title }}</a></h2>
+<p class="nhsuk-body nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>{{ opp.location }}</strong></p>
+<p class="nhsuk-u-margin-top-0">{{ opp.org }}</p>
+{% if opp.tags.length %}
+<div class="nhsuk-u-margin-top-4">
+  {% for tag in opp.tags %}
+  <strong class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-1">{{ tag }}</strong>
+  {% endfor %}
+</div>
+{% endif %}
+<div class="nhsuk-card nhsuk-u-margin-top-2">
+  <div class="nhsuk-card__content">
+    {{ opp.descriptionHtml | safe }}
+  </div>
+</div>
+{% endmacro %}
+
+<div class="nhsuk-width-container">
+
+  <div class="nhsuk-back-link nhsuk-u-margin-top-4">
+    <a class="nhsuk-back-link__link" href="../volunteering/postcode-search">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        aria-hidden="true" height="24" width="24">
+        <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+        </path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        {% set headingSearchLocation = data['v26-search-location'] %}
+        {% set headingRemoteOnly = headingSearchLocation == "remote" or (headingSearchLocation
+        and "remote" in headingSearchLocation and "in-person" not in headingSearchLocation) %}
+        {% if headingRemoteOnly %}
+        <h1 class="nhsuk-u-margin-bottom-3">{{ v26Results.count }} remote, from home
+          {{ "opportunity" if v26Results.count == 1 else "opportunities" }}</h1>
+        {% else %}
+        <h1 class="nhsuk-u-margin-bottom-3">{{ v26Results.count }}
+          {{ "opportunity" if v26Results.count == 1 else "opportunities" }} near
+          {{ data['postcode'] or 'LS9 6EP' }}</h1>
+        {% endif %}
+
+        {% set hasLocatedResults = v26Results.local.length or v26Results.varied.length %}
+        {% set remoteOnlyIntro = headingRemoteOnly and v26Results.remote.length %}
+        {% if v26Results.count %}
+        {% if hasLocatedResults %}
+        <p class="nhsuk-body">Sorted by closest first, up to {{ v26Results.miles }} miles away.</p>
+        {% elif remoteOnlyIntro %}
+        <p class="nhsuk-body">These opportunities are available for volunteering from home, anywhere in England.</p>
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="moj-filter-layout">
+
+      <div class="moj-filter-layout__filter nhsuk-u-margin-bottom-7">
+
+        {# Option value → label maps (labels are the original page copy) #}
+        {% set distanceLabels = {
+          "3": "Up to 3 miles",
+          "5": "Up to 5 miles",
+          "10": "Up to 10 miles",
+          "20": "Up to 20 miles",
+          "30": "Up to 30 miles"
+        } %}
+        {% set settingLabels = {
+          "hospital": "Hospital, hospice or other care facility",
+          "community": "In local community",
+          "office": "Office",
+          "remote": "Remote, from home"
+        } %}
+        {% set withLabels = {
+          "children": "Children",
+          "young-people": "Young people",
+          "older-people": "Older people",
+          "families": "Families",
+          "mental-health": "People that need mental health support",
+          "physical-disabilities": "People with physical disabilities",
+          "learning-disabilities": "People with learning disabilities",
+          "life-limiting-illness": "People with a life-limiting illness"
+        } %}
+        {% set typeLabels = {
+          "admin": "Admin",
+          "driving": "Driving",
+          "gardening": "Gardening and DIY",
+          "maternity": "Maternity and postnatal support",
+          "meet-and-greet": "Meet and greet",
+          "fundraising": "NHS Fundraising",
+          "retail": "NHS Retail",
+          "companionship": "Patient companionship",
+          "social-media": "Social media",
+          "stores": "Stockroom and warehouse",
+          "telephone": "Telephone",
+          "trolley": "Trolley volunteer",
+          "trustee": "Trustee",
+          "with-people": "With people"
+        } %}
+        {% set ageLabels = {
+          "13-15": "13 to 15 years of age",
+          "16-17": "16 to 17 years of age",
+          "18-and-over": "18 and over"
+        } %}
+        {% set availabilityLabels = {
+          "morning": "Morning",
+          "afternoon": "Afternoon",
+          "evening": "Evening",
+          "weekday": "Weekday",
+          "weekend": "Weekend",
+          "flexible": "Flexible"
+        } %}
+        {% set searchLocationLabels = {
+          "remote": "Remote, from home",
+          "in-person": "In person"
+        } %}
+        {% set accessLabels = {
+          "step-free": "Step-free access",
+          "assistive-listening": "Assistive listening",
+          "guide-dog": "Guide dog friendly",
+          "accessible-toilet": "Accessible toilet",
+          "accessible-parking": "Accessible parking bays",
+          "quiet-room": "Quiet room"
+        } %}
+
+        {# Session values — checkbox groups arrive as a string (one) or array (many) #}
+        {# A distance the user actually picked shows as a removable tag, even 5 miles;
+           when nothing is chosen (or filters are cleared) 5 miles shows as the default #}
+        {% set distanceChosen = data['v26-filter-distance'] %}
+        {% set distanceValue = distanceChosen or "5" %}
+        {% set settingRaw = data['v26-filter-setting'] %}
+        {% if settingRaw is string %}{% set settingSelected = [settingRaw] %}{% elif settingRaw %}{% set settingSelected = settingRaw %}{% else %}{% set settingSelected = [] %}{% endif %}
+        {# Distance does not apply to remote opportunities, so when the setting filter is
+           remote-only the Distance entry in Selected filters is hidden and no distance
+           radio is checked. The stored value persists in the session and both reappear
+           as soon as the remote tag is removed or another setting is selected. #}
+        {% set remoteOnlySetting = settingSelected.length == 1 and "remote" in settingSelected %}
+        {% set withRaw = data['v26-filter-with'] %}
+        {% if withRaw is string %}{% set withSelected = [withRaw] %}{% elif withRaw %}{% set withSelected = withRaw %}{% else %}{% set withSelected = [] %}{% endif %}
+        {% set typeRaw = data['v26-filter-type'] %}
+        {% if typeRaw is string %}{% set typeSelected = [typeRaw] %}{% elif typeRaw %}{% set typeSelected = typeRaw %}{% else %}{% set typeSelected = [] %}{% endif %}
+        {% set availabilityRaw = data['v26-filter-availability'] %}
+        {% if availabilityRaw is string %}{% set availabilitySelected = [availabilityRaw] %}{% elif availabilityRaw %}{% set availabilitySelected = availabilityRaw %}{% else %}{% set availabilitySelected = [] %}{% endif %}
+        {% set ageSelected = data['v26-filter-age'] %}
+        {% set accessRaw = data['v26-filter-access'] %}
+        {% if accessRaw is string %}{% set accessSelected = [accessRaw] %}{% elif accessRaw %}{% set accessSelected = accessRaw %}{% else %}{% set accessSelected = [] %}{% endif %}
+        {% set searchLocationRaw = data['v26-search-location'] %}
+        {% if searchLocationRaw is string %}{% set searchLocationSelected = [searchLocationRaw] %}{% elif searchLocationRaw %}{% set searchLocationSelected = searchLocationRaw %}{% else %}{% set searchLocationSelected = [] %}{% endif %}
+        {% set inPersonSelected = "in-person" in searchLocationSelected %}
+        {# Distance is meaningless for a remote-only search, so hide it in Selected filters #}
+        {% set remoteOnlySearch = "remote" in searchLocationSelected and not inPersonSelected %}
+
+        <form method="get" action="results">
+
+          <!-- Copy note: "Selected filters" and "Show filter"/"Hide filter" are MOJ component
+               defaults, pending content design review — all other wording is from the original
+               page or Aqib-approved. ("Remove this filter" is a visually-hidden screen reader
+               label, kept for WCAG link-purpose — the tag's X is CSS-only and invisible to AT;
+               not user-facing copy.) -->
+          <div class="moj-filter" data-module="moj-filter">
+
+            <div class="moj-filter__header">
+
+              <div class="moj-filter__header-title">
+                <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Filter</h2>
+              </div>
+
+              <div class="moj-filter__header-action">
+              </div>
+
+            </div>
+
+            <div class="moj-filter__content">
+
+              {% set anyFilters = distanceChosen or settingSelected.length or withSelected.length or typeSelected.length or ageSelected or availabilitySelected.length or accessSelected.length or searchLocationSelected.length %}
+              <div class="moj-filter__selected">
+
+                <div class="moj-filter__selected-heading">
+
+                  <div class="moj-filter__heading-title">
+                    <h2 class="nhsuk-heading-m">Selected filters</h2>
+                  </div>
+
+                  <div class="moj-filter__heading-action">
+                    {% if anyFilters %}
+                    <p class="nhsuk-u-margin-bottom-0"><a href="/v26/results/clear-filters">Clear</a></p>
+                    {% endif %}
+                  </div>
+
+                </div>
+
+                {% if searchLocationSelected.length %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Location</h3>
+
+                <ul class="moj-filter-tags">
+                  {% for value in searchLocationSelected %}
+                  <li><a class="moj-filter__tag"
+                      href="/v26/results/remove-filter?_name=v26-search-location&_value={{ value }}"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ searchLocationLabels[value] }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if not remoteOnlySetting and not remoteOnlySearch %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Distance</h3>
+                {% if distanceChosen %}
+                <ul class="moj-filter-tags">
+                  <li><a class="moj-filter__tag" href="/v26/results/remove-filter?_name=v26-filter-distance"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span>
+                      {{ distanceLabels[distanceValue] }}</a></li>
+                </ul>
+                {% else %}
+                <p class="nhsuk-body-s nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-0">{{ distanceLabels[distanceValue] }}</p>
+                {% endif %}
+                {% endif %}
+
+                {% if settingSelected.length %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Volunteer setting</h3>
+
+                <ul class="moj-filter-tags">
+                  {% for value in settingSelected %}
+                  <li><a class="moj-filter__tag"
+                      href="/v26/results/remove-filter?_name=v26-filter-setting&_value={{ value }}"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ settingLabels[value] }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if withSelected.length %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Volunteering with</h3>
+
+                <ul class="moj-filter-tags">
+                  {% for value in withSelected %}
+                  <li><a class="moj-filter__tag" href="/v26/results/remove-filter?_name=v26-filter-with&_value={{ value }}"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ withLabels[value] }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if typeSelected.length %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Type of volunteering</h3>
+
+                <ul class="moj-filter-tags">
+                  {% for value in typeSelected %}
+                  <li><a class="moj-filter__tag" href="/v26/results/remove-filter?_name=v26-filter-type&_value={{ value }}"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ typeLabels[value] }}</a></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if ageSelected %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your age group</h3>
+
+                <ul class="moj-filter-tags">
+                  <li><a class="moj-filter__tag" href="/v26/results/remove-filter?_name=v26-filter-age"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ ageLabels[ageSelected] }}</a></li>
+                </ul>
+                {% endif %}
+
+                {% if availabilitySelected.length %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your availability</h3>
+
+                <ul class="moj-filter-tags">
+                  {% for value in availabilitySelected %}
+                  <li><a class="moj-filter__tag"
+                      href="/v26/results/remove-filter?_name=v26-filter-availability&_value={{ value }}"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ availabilityLabels[value] }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if accessSelected.length %}
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Accessible features and facilities</h3>
+
+                <ul class="moj-filter-tags">
+                  {% for value in accessSelected %}
+                  <li><a class="moj-filter__tag"
+                      href="/v26/results/remove-filter?_name=v26-filter-access&_value={{ value }}"><span
+                        class="nhsuk-u-visually-hidden">Remove this filter</span> {{ accessLabels[value] }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+
+              </div>
+
+              <div class="moj-filter__options">
+
+                <button type="submit" class="nhsuk-button" data-module="nhsuk-button">Apply filters</button>
+
+                <p class="nhsuk-hint" id="v26-filter-hint">Select all that apply</p>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Location</legend>
+                    <input type="hidden" name="v26-search-location" value="_unchecked">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-search-location-1" name="v26-search-location"
+                          type="checkbox" value="remote" {{ checked('v26-search-location', 'remote') }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="v26-search-location-1">
+                          Remote, from home
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-search-location-2" name="v26-search-location"
+                          type="checkbox" value="in-person" data-aria-controls="conditional-v26-search-location-2"
+                          {{ checked('v26-search-location', 'in-person') }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="v26-search-location-2">
+                          In person
+                        </label>
+                      </div>
+
+                      <div class="govuk-checkboxes__conditional
+                        {%- if not inPersonSelected %} govuk-checkboxes__conditional--hidden{% endif %}"
+                        id="conditional-v26-search-location-2">
+
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="postcode">
+                            Postcode
+                          </label>
+                          <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text"
+                            autocomplete="postal-code" value="{{ data['postcode'] }}">
+                        </div>
+
+                        <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Distance</legend>
+                            <div class="govuk-radios govuk-radios--small">
+                              {% for value, label in distanceLabels %}
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="v26-filter-distance-{{ loop.index }}"
+                                  name="v26-filter-distance" type="radio" value="{{ value }}"
+                                  {{ "checked" if distanceValue == value and not remoteOnlySetting }}>
+                                <label class="govuk-label govuk-radios__label"
+                                  for="v26-filter-distance-{{ loop.index }}">
+                                  {{ label }}
+                                </label>
+                              </div>
+                              {% endfor %}
+                            </div>
+                          </fieldset>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="v26-filter-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Volunteer setting</legend>
+                    <input type="hidden" name="v26-filter-setting" value="_unchecked">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                      {% for value, label in settingLabels %}
+                      {# Remote, from home hidden for now - covered by the Location group above #}
+                      {% if value != "remote" %}
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-filter-setting-{{ loop.index }}"
+                          name="v26-filter-setting" type="checkbox" value="{{ value }}"
+                          {{ checked('v26-filter-setting', value) }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="v26-filter-setting-{{ loop.index }}">
+                          {{ label }}
+                        </label>
+                      </div>
+                      {% endif %}
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="v26-filter-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Volunteering with</legend>
+                    <input type="hidden" name="v26-filter-with" value="_unchecked">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                      {% for value, label in withLabels %}
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-filter-with-{{ loop.index }}"
+                          name="v26-filter-with" type="checkbox" value="{{ value }}"
+                          {{ checked('v26-filter-with', value) }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="v26-filter-with-{{ loop.index }}">
+                          {{ label }}
+                        </label>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="v26-filter-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Type of volunteering</legend>
+                    <input type="hidden" name="v26-filter-type" value="_unchecked">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                      {% for value, label in typeLabels %}
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-filter-type-{{ loop.index }}"
+                          name="v26-filter-type" type="checkbox" value="{{ value }}"
+                          {{ checked('v26-filter-type', value) }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="v26-filter-type-{{ loop.index }}">
+                          {{ label }}
+                        </label>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Your age group</legend>
+                    <div class="govuk-radios govuk-radios--small">
+                      {% for value, label in ageLabels %}
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="v26-filter-age-{{ loop.index }}" name="v26-filter-age"
+                          type="radio" value="{{ value }}" {{ checked('v26-filter-age', value) }}>
+                        <label class="govuk-label govuk-radios__label" for="v26-filter-age-{{ loop.index }}">
+                          {{ label }}
+                        </label>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="v26-filter-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Your availability</legend>
+                    <input type="hidden" name="v26-filter-availability" value="_unchecked">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                      {% for value, label in availabilityLabels %}
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-filter-availability-{{ loop.index }}"
+                          name="v26-filter-availability" type="checkbox" value="{{ value }}"
+                          {{ checked('v26-filter-availability', value) }}>
+                        <label class="govuk-label govuk-checkboxes__label"
+                          for="v26-filter-availability-{{ loop.index }}">
+                          {{ label }}
+                        </label>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="v26-filter-access-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Accessible features and
+                      facilities</legend>
+                    <div class="nhsuk-hint" id="v26-filter-access-hint">These may vary for each role. Check with the
+                      recruiter if you need specific support.</div>
+                    <input type="hidden" name="v26-filter-access" value="_unchecked">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                      {% for value, label in accessLabels %}
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="v26-filter-access-{{ loop.index }}"
+                          name="v26-filter-access" type="checkbox" value="{{ value }}"
+                          {{ checked('v26-filter-access', value) }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="v26-filter-access-{{ loop.index }}">
+                          {{ label }}
+                        </label>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <button type="submit" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-1"
+                  data-module="nhsuk-button">Apply filters</button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar nhsuk-u-margin-bottom-3">
+          <div class="moj-action-bar__filter"></div>
+        </div>
+
+        {% if v26Results.count %}
+
+        {# Count moved into the page h1, hidden here for now
+        <p class="nhsuk-body-l nhsuk-u-margin-bottom-1"><strong>{{ v26Results.count }}
+            {{ "opportunity" if v26Results.count == 1 else "opportunities" }} found</strong></p>
+        #}
+        {% for opp in v26Results.local %}
+        {{ opportunityItem(opp) }}
+        {% if not loop.last or v26Results.varied.length or v26Results.remote.length %}
+        <hr>
+        {% endif %}
+        {% endfor %}
+
+        {% if v26Results.varied.length %}
+        <h2>Opportunities with varied locations</h2>
+        <p>These opportunities may have different locations based on the requirements of the role. This means that
+          some of them may still be within your search area. For example, some may involve travelling to different
+          places.</p>
+
+        <hr>
+
+        {% for opp in v26Results.varied %}
+        {{ opportunityItem(opp) }}
+        {% if not loop.last or v26Results.remote.length %}
+        <hr>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if v26Results.remote.length %}
+        {# For a remote-only search the h1 already says remote, and the intro line
+           moves to the top of the results where the sorted by line normally sits #}
+        {% if not headingRemoteOnly %}
+        <h2>Remote, from home opportunities</h2>
+        <p>These opportunities are available for volunteering from home, anywhere in England.</p>
+
+        <hr>
+        {% endif %}
+
+        {% for opp in v26Results.remote %}
+        {{ opportunityItem(opp) }}
+        {% if not loop.last %}
+        <hr>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% else %}
+
+        <h2>No results found</h2>
+
+        <p>Improve your results by:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>changing the distance from the postcode you entered</li>
+          <li>amending any other filters you have applied</li>
+        </ul>
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link"
+            href="https://volunteering.england.nhs.uk/volunteer/other-ways-you-can-support-the-nhs?from=results">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v25H0z" fill="none"></path>
+              <path
+                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+              </path>
+            </svg>
+            <span class="nhsuk-action-link__text">Other ways you can help the NHS</span>
+          </a>
+        </div>
+
+        {% endif %}
+
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script src="/govuk-frontend/all.bundle.js"></script>
+<script src="/moj-frontend/all.bundle.js"></script>
+<script>
+  // MOJ components check for the govuk-frontend "supported" body class
+  document.body.classList.add('govuk-frontend-supported')
+
+  // Initialise govuk-frontend components (the conditional reveal in the filter panel)
+  GOVUKFrontend.initAll()
+
+  // startHidden: false — the default (true) hides the panel on load even in big
+  // mode, and the desktop layout has no toggle button to bring it back
+  new MOJFrontend.FilterToggleButton(document.querySelector('[data-module="moj-filter"]'), {
+    startHidden: false,
+    bigModeMediaQuery: '(min-width: 48.0625em)',
+    toggleButton: {
+      showText: 'Show filter',
+      hideText: 'Hide filter',
+      classes: 'nhsuk-button nhsuk-button--secondary'
+    }
+  })
+</script>
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

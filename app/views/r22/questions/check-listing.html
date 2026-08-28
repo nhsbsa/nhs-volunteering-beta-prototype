@@ -1,0 +1,522 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Check your answers before publishing your listing - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "../task-list",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-heading nhsuk-heading-l nhsuk-u-margin-top-4">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Publish the listing </span>
+      Check your answers before publishing your listing
+    </h1>
+
+    <h2 class="nhsuk-heading nhsuk-heading-m">Listing set up</h2>
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "Title"
+    },
+    value: {
+    text: "Ward support volunteer"
+    },
+    actions: {
+    items: [
+    {
+    href: "new-name",
+    text: "Change",
+    visuallyHiddenText: "Title"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
+
+    <h2 class="nhsuk-heading nhsuk-heading-m">Listing details</h2>
+
+    {% set preApplicationSelected = data['r22-pre-application-questions'] or [] %}
+    {% set preApplicationQuestionsHtml %}
+    {% if data['r22-pre-application'] == 'yes' %}
+    {% if 'age' in preApplicationSelected %}
+    <p>Are you {{ data['r22-pre-application-age'] or '18' }} or older?</p>
+    {% endif %}
+    {% if 'licence' in preApplicationSelected %}
+    <p>Do you have a valid {{ data['r22-pre-application-licence-name'] or 'driving' }} licence?</p>
+    {% endif %}
+    {% if 'distance' in preApplicationSelected %}
+    <p>Do you live or work within {{ data['r22-pre-application-distance-miles'] or '20' }} miles of {{
+      data['r22-pre-application-distance-postcode'] or 'AB1 2CD' }}?</p>
+    {% endif %}
+    {% else %}
+    No
+    {% endif %}
+    {% endset %}
+
+    {% set filterSetting = [data['r22-filter-setting']] if data['r22-filter-setting'] is string else
+    data['r22-filter-setting'] %}
+    {% set filterSupporting = [data['r22-filter-supporting']] if data['r22-filter-supporting'] is string else
+    data['r22-filter-supporting'] %}
+    {% set filterType = [data['r22-filter-type']] if data['r22-filter-type'] is string else data['r22-filter-type'] %}
+    {% set filterAges = [data['r22-filter-ages']] if data['r22-filter-ages'] is string else data['r22-filter-ages'] %}
+    {% set filterAvailability = [data['r22-filter-availability']] if data['r22-filter-availability'] is string else
+    data['r22-filter-availability'] %}
+    {% set emailUpdatesRaw = data['r22-email-updates'] %}
+    {% if emailUpdatesRaw is string %}{% set emailUpdatesList = [emailUpdatesRaw] %}{% elif emailUpdatesRaw %}{% set emailUpdatesList = emailUpdatesRaw %}{% else %}{% set emailUpdatesList = [] %}{% endif %}
+    {% set emailUpdates = [] %}
+    {% for value in emailUpdatesList %}{% if value and value != '_unchecked' %}{% set _ = emailUpdates.push(value) %}{% endif %}{% endfor %}
+    {% if not emailUpdates | length %}{% set emailUpdates = ['Yes, weekly summary email'] %}{% endif %}
+    {% set emailUpdatesHtml %}
+    {% for value in emailUpdates %}
+    <p>{{ value }}</p>
+    {% endfor %}
+    {% endset %}
+    {% set emailRecipientRow = {
+    key: { text: "Who will receive email updates" },
+    value: { text: data['r22-email-recipient'] or "mike.asparagus@nhs.uk" },
+    actions: { items: [ { href: "email-updates-answer", text: "Change", visuallyHiddenText: "Who will receive email updates" } ] }
+    } if 'No email updates' not in emailUpdates else false %}
+
+    {% set accessibleFeatures = [data['r22-accessible-features']] if data['r22-accessible-features'] is string else
+    data['r22-accessible-features'] %}
+
+    {% set accessibleFeaturesHtml %}
+    {% if not accessibleFeatures %}
+    {% set accessibleFeatures = ['Step-free access', 'Accessible toilet', 'Accessible parking bays'] %}
+    {% endif %}
+    {{ accessibleFeatures | join('<br>') | safe }}
+    {% endset %}
+
+    {% set opportunityTags = [data['r22-tags']] if data['r22-tags'] is string else data['r22-tags'] %}
+
+    {% set opportunityTagsHtml %}
+    {% if not opportunityTags %}
+    {% set opportunityTags = ['No experience needed', 'Public facing', 'DBS check will take place'] %}
+    {% endif %}
+    {{ opportunityTags | join('<br>') | safe }}
+    {% endset %}
+
+    {% set searchFiltersHtml %}
+    <strong>Where is the setting of your opportunity?</strong>
+    <br>
+    {{ filterSetting | join('<br>') | safe if filterSetting else 'Hospital, hospice or other care facility' }}
+    <br>
+    <strong>Who is the volunteer supporting?</strong>
+    <br>
+    {{ filterSupporting | join('<br>') | safe if filterSupporting else 'Older people' }}
+    <br>
+    <strong>What type of volunteering is your opportunity?</strong>
+    <br>
+    {{ filterType | join('<br>') | safe if filterType else 'Gardening and DIY' }}
+    <br>
+    <strong>Which ages is this opportunity suitable for?</strong>
+    <br>
+    {{ filterAges | join('<br>') | safe if filterAges else '18 and over' }}
+    <br>
+    <strong>When do you need volunteers to be available?</strong>
+    <br>
+    {{ filterAvailability | join('<br>') | safe if filterAvailability else 'Weekend' }}
+    {% endset %}
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "Summary"
+    },
+    value: {
+    html: "<p>Main responsibilities: Help out the nurses on the ward when needed.</p>
+    <p>Shifts are available from 8am to 1pm, Monday to Friday.</p>"
+    },
+    actions: {
+    items: [
+    {
+    href: "summary",
+    text: "Change",
+    visuallyHiddenText: "Title"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Description of opportunity"
+    },
+    value: {
+    html: "
+    <p>You will support our mental health services team with the running of this activity. You will help maintain and
+      improve the well-being of patients with memory problems or dementia.</p>
+    <p>You will:</p>
+    <ol>
+      <li>encourage people to take part in this therapeutic and social activity</li>
+      <li>meet and greet people as they arrive</li>
+      <li>help people to feel good about themselves</li>
+      <li>direct walkers along the designated route</li>
+    </ol>"
+    },
+    actions: {
+    items: [
+    {
+    href: "opportunity-description",
+    text: "Change",
+    visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Type of person"
+    },
+    value: {
+    html: "<p>This opportunity will suit someone friendly, approachable and enthusiastic.</p>
+    <p>You don't need any previous experience, qualifications or training. All you need is to:</p>
+    <ul>
+      <li>have good people skills and want to chat with people</li>
+      <li>be reliable and be good at time keeping</li>
+      <li>enjoy the outdoors</li>
+      <li>be 16 or over</li>
+    </ul>
+    <p>This opportunity requires some walking. If this doesn't suit you, we can discuss other ways you can volunteer
+      with us.</p> "
+    },
+    actions: {
+    items: [
+    {
+    href: "looking-for",
+    text: "Change",
+    visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Application process"
+    },
+    value: {
+    html: "
+    <p>We'll get in touch with you when we review your request. This might take a few weeks.</p>
+    <p>After that, we may book in a chat to get to know you a bit more and walk you through the process.</p>
+    <p>To become a volunteer, you may need to:</p>
+    <ul>
+      <li>provide proof of identity and some utility bills</li>
+      <li>go through a standard or enhanced Disclosure and Barring Service (DBS) and occupational health checks</li>
+      <li>prove your right to work in the UK</li>
+      <li>provide details of your work history</li>
+      <li>give the details of two referees</li>
+    </ul>
+    "
+    },
+    actions: {
+    items: [
+    {
+    href: "overview-process",
+    text: "Change",
+    visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Pre-application questions"
+    },
+    value: {
+    html: preApplicationQuestionsHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "pre-application-questions",
+    text: "Change",
+    visuallyHiddenText: "Pre-application questions"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Who will support the volunteer"
+    },
+    value: {
+    text: " Volunteer Coordinator"
+    },
+    actions: {
+    items: [
+    {
+    href: "support-volunteers",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Where is this opportunity?"
+    },
+    value: {
+    html: "An area with varying locations"
+    },
+    actions: {
+    items: [
+    {
+    href: "../edit-journey/broader-locations/location",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Area"
+    },
+    value: {
+    html: "Leeds"
+    },
+    actions: {
+    items: [
+    {
+    href: "../edit-journey/broader-locations/check-location-area-name",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Radius"
+    },
+    value: {
+    html: "10 miles"
+    },
+    actions: {
+    items: [
+    {
+    href: "../edit-journey/broader-locations/check-location-radius",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Area centre point"
+    },
+    value: {
+    html: "Leeds Art Gallery
+    <br>
+    The Headrow
+    <br>
+    Leeds
+    <br>
+    LS1 3AB"
+    },
+    actions: {
+    items: [
+    {
+    href: "../edit-journey/broader-locations/location-larger-area",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Availability"
+    },
+    value: {
+    html: "<p>Three hours a week on a Tuesday or Thursday</p>
+    "
+    },
+    actions: {
+    items: [
+    {
+    href: "availability",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Contact details"
+    },
+    value: {
+    html: " <strong>Email: </strong>j.pearson@email.nhs.uk
+    <br> <strong>Phone number: </strong>01234 555666 "
+    },
+    actions: {
+    items: [
+    {
+    href: "contact-details",
+    text: "Change",
+    visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Opportunity tags"
+    },
+    value: {
+    html: opportunityTagsHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "tags",
+    text: "Change",
+    visuallyHiddenText: "Opportunity tags"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Search filters"
+    },
+    value: {
+    html: searchFiltersHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "choose-search-filters",
+    text: "Change",
+    visuallyHiddenText: "Search filters"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Accessible features and facilities"
+    },
+    value: {
+    html: accessibleFeaturesHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "choose-accessible-filters",
+    text: "Change",
+    visuallyHiddenText: "Accessible features and facilities"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
+    <h2 class="nhsuk-heading nhsuk-heading-m">Application settings</h2>
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "How you want to receive applications"
+    },
+    value: {
+    text: "Yes, I want to receive applications through NHS Volunteering"
+    },
+    actions: {
+    items: [
+    {
+    href: "recieve-applications",
+    text: "Change",
+    visuallyHiddenText: "Location 1"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Application questions"
+    },
+    value: {
+    text: "I understand and agree to include these questions in the application"
+    },
+    actions: {
+    items: [
+    {
+    href: "review-questions",
+    text: "Change",
+    visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Closing date"
+    },
+    value: {
+    text: "15 July 2024"
+    },
+    actions: {
+    items: [
+    {
+    href: "closing-date",
+    text: "Change",
+    visuallyHiddenText: "Location 2"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Email updates"
+    },
+    value: {
+    html: emailUpdatesHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "email-updates",
+    text: "Change",
+    visuallyHiddenText: "Email updates"
+    }
+    ]
+    }
+    },
+    emailRecipientRow
+    ]
+    }) }}
+
+    <form action="../questions/listing-dashboard-success-email">
+      <button class="nhsuk-button nhsuk-u-margin-right-4" data-module="nhsuk-button" type="submit">
+        Publish listing
+      </button>
+      <a href="/r22/preview" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+        Preview listing
+      </a>
+    </form>
+
+    <p><a href="...">Save and come back later</a></p>
+
+
+
+  </div>
+</div>
+{% endblock %}

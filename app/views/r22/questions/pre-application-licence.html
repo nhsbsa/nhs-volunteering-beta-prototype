@@ -1,0 +1,57 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Enter the name of the required licence - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "select-pre-application-questions",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+      Enter the name of the required licence
+    </h1>
+
+    <p class="nhsuk-body">Enter the name of the licence required for the opportunity.</p>
+
+    <form action="/r22-pre-application-licence-answer" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-date-input">
+          <div class="nhsuk-date-input__item">
+            <label class="nhsuk-label" for="r22-pre-application-licence-name">Do you have a valid</label>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <input class="nhsuk-input nhsuk-input--width-10" id="r22-pre-application-licence-name"
+              name="r22-pre-application-licence-name" type="text" aria-label="Licence name">
+          </div>
+          <div class="nhsuk-date-input__item">
+            <label class="nhsuk-label" for="r22-pre-application-licence-name">licence?</label>
+          </div>
+        </div>
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+      <p class="nhsuk-body">
+        <a href="../task-list?r22-task-pre-application-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

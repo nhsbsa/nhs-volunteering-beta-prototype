@@ -6,9 +6,15 @@
 Who will support the volunteer? - NHS Volunteering
 {% endblock %}
 
+{% set preAppSelectedForBack = data['r22-pre-application-questions'] or [] %}
+{% if preAppSelectedForBack is string %}{% set preAppSelectedForBack = [preAppSelectedForBack] %}{% endif %}
+{% set preAppBackHref = 'select-pre-application-questions' %}
+{% if 'age' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-minimum-age' %}{% endif %}
+{% if 'licence' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-licence' %}{% endif %}
+{% if 'distance' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-distance' %}{% endif %}
 {% block beforeContent %}
   {{ backLink({
-    "href": "pre-application-questions",
+    "href": preAppBackHref,
     "text": "Go back"
   }) }}
 {% endblock %}

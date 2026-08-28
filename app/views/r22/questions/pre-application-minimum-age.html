@@ -25,23 +25,25 @@ Enter the minimum age required - NHS Volunteering
     <p class="nhsuk-body">Make sure any age restriction is necessary and complies with your organisation's volunteer
       recruitment policies and equality legislation.</p>
 
-    <p class="nhsuk-body">Enter the minimum age required for the opportunity.</p>
-
     <form action="/r22-pre-application-minimum-age-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
-        <div class="nhsuk-date-input">
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-age">Are you</label>
-          </div>
-          <div class="nhsuk-date-input__item">
-            <input class="nhsuk-input nhsuk-input--width-2" id="r22-pre-application-age"
-              name="r22-pre-application-age" type="text" inputmode="numeric" aria-label="Minimum age">
-          </div>
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-age">or older?</label>
-          </div>
+        <label class="nhsuk-label" for="r22-pre-application-age">
+          Minimum age
+        </label>
+        <div class="nhsuk-input__wrapper">
+          <input class="nhsuk-input nhsuk-input--width-2" id="r22-pre-application-age"
+            name="r22-pre-application-age" type="text" inputmode="numeric"
+            aria-describedby="r22-pre-application-age-preview"
+            value="{{ data['r22-pre-application-age'] }}">
+          <div class="nhsuk-input__suffix" aria-hidden="true">years</div>
         </div>
+      </div>
+
+      <div class="nhsuk-inset-text" id="r22-pre-application-age-preview" data-preview>
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Applicants will be asked:</p>
+        <p><strong>Are you <span data-preview-value="r22-pre-application-age" data-preview-default="[age]">{{ data['r22-pre-application-age'] or '[age]' }}</span> or older?</strong></p>
       </div>
 
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -57,4 +59,8 @@ Enter the minimum age required - NHS Volunteering
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/pre-application-preview.js"></script>
 {% endblock %}

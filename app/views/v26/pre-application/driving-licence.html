@@ -2,7 +2,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Do you have a valid {{ data['r22-pre-application-licence-name'] or 'driving' }} licence? - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -12,13 +12,18 @@ NHS Volunteering
 
 
 {% block content %}
+{% set preAppBack = data['r22-pre-application-questions'] %}
+{% if preAppBack is undefined %}{% set preAppBack = ['age', 'licence', 'distance'] %}{% elif preAppBack is string %}{% set preAppBack = [preAppBack] %}{% endif %}
+{% set preAppBackHref = '/v26/pre-application/start' %}
+{% if 'age' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/age' %}{% endif %}
+
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
 
-      <a class="nhsuk-back-link__link" href="javascript:history.back()">
+      <a class="nhsuk-back-link__link" href="{{ preAppBackHref }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path

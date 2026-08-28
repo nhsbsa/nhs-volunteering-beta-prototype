@@ -3,12 +3,17 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Enter a maximum distance from the opportunity's postcode - NHS Volunteering
+Enter a maximum distance or travel time from the opportunity - NHS Volunteering
 {% endblock %}
 
+{% set preAppSelectedForBack = data['r22-pre-application-questions'] or [] %}
+{% if preAppSelectedForBack is string %}{% set preAppSelectedForBack = [preAppSelectedForBack] %}{% endif %}
+{% set preAppBackHref = 'select-pre-application-questions' %}
+{% if 'age' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-minimum-age' %}{% endif %}
+{% if 'licence' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-licence' %}{% endif %}
 {% block beforeContent %}
 {{ backLink({
-"href": "select-pre-application-questions",
+"href": preAppBackHref,
 "text": "Go back"
 }) }}
 {% endblock %}
@@ -19,36 +24,103 @@ Enter a maximum distance from the opportunity's postcode - NHS Volunteering
 
     <h1 class="nhsuk-heading-l">
       <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
-      Enter a maximum distance from the opportunity's postcode
+      Enter a maximum distance or travel time from the opportunity
     </h1>
 
-    <p class="nhsuk-body">Enter the maximum distance the volunteer can live or work from the opportunity's postcode, such as 20
-      miles. Consider how easily the volunteer might be able to get to the location.</p>
+    {% set limitType = data['r22-pre-application-distance-type'] %}
 
     <form action="/r22-pre-application-distance-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
-        <div class="nhsuk-date-input">
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-distance-miles">Do you live or work within</label>
-          </div>
-          <div class="nhsuk-date-input__item">
-            <input class="nhsuk-input nhsuk-input--width-2" id="r22-pre-application-distance-miles"
-              name="r22-pre-application-distance-miles" type="text" inputmode="numeric"
-              aria-label="Distance in miles">
-          </div>
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-distance-postcode">miles of</label>
-          </div>
-          <div class="nhsuk-date-input__item">
-            <input class="nhsuk-input nhsuk-input--width-10" id="r22-pre-application-distance-postcode"
-              name="r22-pre-application-distance-postcode" type="text" aria-label="Postcode"
-              autocomplete="postal-code">
-          </div>
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-distance-postcode">?</label>
-          </div>
+        <label class="nhsuk-label" for="r22-pre-application-distance-postcode">
+          Opportunity location
+        </label>
+        <div class="nhsuk-hint" id="r22-pre-application-distance-postcode-hint">
+          For example, a postcode, a hospital name or a town
         </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="r22-pre-application-distance-postcode"
+          name="r22-pre-application-distance-postcode" type="text"
+          aria-describedby="r22-pre-application-distance-postcode-hint"
+          value="{{ data['r22-pre-application-distance-postcode'] }}">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" aria-describedby="r22-pre-application-distance-type-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            What type of limit do you want to set?
+          </legend>
+          <div class="nhsuk-hint" id="r22-pre-application-distance-type-hint">
+            Consider how easily the volunteer might be able to get to the location.
+          </div>
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-pre-application-distance-type-1"
+                name="r22-pre-application-distance-type" type="radio" value="distance"
+                aria-controls="conditional-r22-pre-application-distance-type-1"
+                aria-expanded="{{ 'true' if limitType == 'distance' else 'false' }}"
+                {{ 'checked' if limitType == 'distance' }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-pre-application-distance-type-1">
+                Distance
+              </label>
+            </div>
+            <div class="nhsuk-radios__conditional {{ '' if limitType == 'distance' else 'nhsuk-radios__conditional--hidden' }}"
+              id="conditional-r22-pre-application-distance-type-1">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="r22-pre-application-distance-miles">
+                  Maximum distance
+                </label>
+                <div class="nhsuk-input__wrapper">
+                  <input class="nhsuk-input nhsuk-input--width-3" id="r22-pre-application-distance-miles"
+                    name="r22-pre-application-distance-miles" type="text" inputmode="numeric"
+                    aria-describedby="r22-pre-application-distance-miles-preview"
+                    value="{{ data['r22-pre-application-distance-miles'] }}">
+                  <div class="nhsuk-input__suffix" aria-hidden="true">miles</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-pre-application-distance-type-2"
+                name="r22-pre-application-distance-type" type="radio" value="time"
+                aria-controls="conditional-r22-pre-application-distance-type-2"
+                aria-expanded="{{ 'true' if limitType == 'time' else 'false' }}"
+                {{ 'checked' if limitType == 'time' }}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-pre-application-distance-type-2">
+                Travel time
+              </label>
+            </div>
+            <div class="nhsuk-radios__conditional {{ '' if limitType == 'time' else 'nhsuk-radios__conditional--hidden' }}"
+              id="conditional-r22-pre-application-distance-type-2">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="r22-pre-application-distance-minutes">
+                  Maximum travel time
+                </label>
+                <div class="nhsuk-input__wrapper">
+                  <input class="nhsuk-input nhsuk-input--width-3" id="r22-pre-application-distance-minutes"
+                    name="r22-pre-application-distance-minutes" type="text" inputmode="numeric"
+                    aria-describedby="r22-pre-application-distance-minutes-preview"
+                    value="{{ data['r22-pre-application-distance-minutes'] }}">
+                  <div class="nhsuk-input__suffix" aria-hidden="true">minutes</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-inset-text" id="r22-pre-application-distance-miles-preview" data-preview data-preview-radio="r22-pre-application-distance-type" data-preview-radio-value="distance"{{ ' hidden' if limitType and limitType != 'distance' }}>
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Applicants will be asked:</p>
+        <p><strong>Do you live or work within <span data-preview-value="r22-pre-application-distance-miles" data-preview-default="[distance]">{{ data['r22-pre-application-distance-miles'] or '[distance]' }}</span> miles of <span data-preview-value="r22-pre-application-distance-postcode" data-preview-default="[location]">{{ data['r22-pre-application-distance-postcode'] or '[location]' }}</span>?</strong></p>
+      </div>
+
+      <div class="nhsuk-inset-text" id="r22-pre-application-distance-minutes-preview" data-preview data-preview-radio="r22-pre-application-distance-type" data-preview-radio-value="time"{{ ' hidden' if limitType and limitType != 'time' }}>
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Applicants will be asked:</p>
+        <p><strong>Can you get to <span data-preview-value="r22-pre-application-distance-postcode" data-preview-default="[location]">{{ data['r22-pre-application-distance-postcode'] or '[location]' }}</span> within <span data-preview-value="r22-pre-application-distance-minutes" data-preview-default="[travel time]">{{ data['r22-pre-application-distance-minutes'] or '[travel time]' }}</span> minutes?</strong></p>
       </div>
 
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -64,4 +136,9 @@ Enter a maximum distance from the opportunity's postcode - NHS Volunteering
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/pre-application-preview.js"></script>
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
 {% endblock %}

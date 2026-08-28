@@ -6,9 +6,13 @@
 Enter the name of the required licence - NHS Volunteering
 {% endblock %}
 
+{% set preAppSelectedForBack = data['r22-pre-application-questions'] or [] %}
+{% if preAppSelectedForBack is string %}{% set preAppSelectedForBack = [preAppSelectedForBack] %}{% endif %}
+{% set preAppBackHref = 'select-pre-application-questions' %}
+{% if 'age' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-minimum-age' %}{% endif %}
 {% block beforeContent %}
 {{ backLink({
-"href": "select-pre-application-questions",
+"href": preAppBackHref,
 "text": "Go back"
 }) }}
 {% endblock %}
@@ -22,23 +26,22 @@ Enter the name of the required licence - NHS Volunteering
       Enter the name of the required licence
     </h1>
 
-    <p class="nhsuk-body">Enter the name of the licence required for the opportunity.</p>
-
     <form action="/r22-pre-application-licence-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
-        <div class="nhsuk-date-input">
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-licence-name">Do you have a valid</label>
-          </div>
-          <div class="nhsuk-date-input__item">
-            <input class="nhsuk-input nhsuk-input--width-10" id="r22-pre-application-licence-name"
-              name="r22-pre-application-licence-name" type="text" aria-label="Licence name">
-          </div>
-          <div class="nhsuk-date-input__item">
-            <label class="nhsuk-label" for="r22-pre-application-licence-name">licence?</label>
-          </div>
-        </div>
+        <label class="nhsuk-label" for="r22-pre-application-licence-name">
+          Licence name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="r22-pre-application-licence-name"
+          name="r22-pre-application-licence-name" type="text"
+          aria-describedby="r22-pre-application-licence-name-preview"
+          value="{{ data['r22-pre-application-licence-name'] }}">
+      </div>
+
+      <div class="nhsuk-inset-text" id="r22-pre-application-licence-name-preview" data-preview>
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Applicants will be asked:</p>
+        <p><strong>Do you have a valid <span data-preview-value="r22-pre-application-licence-name" data-preview-default="[name]">{{ data['r22-pre-application-licence-name'] or '[name]' }}</span> licence?</strong></p>
       </div>
 
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
@@ -54,4 +57,8 @@ Enter the name of the required licence - NHS Volunteering
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/pre-application-preview.js"></script>
 {% endblock %}

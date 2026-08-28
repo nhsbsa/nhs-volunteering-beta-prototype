@@ -1088,20 +1088,6 @@ router.post('/r9-contact-details-answer', function (req, res) {
     return '/r22/questions/support-volunteers'
   }
 
-  router.post('/r22-pre-application-questions-answer', function (req, res) {
-
-    // Get the answer from session data
-    const r22preApplication = req.session.data['r22-pre-application']
-
-    if (r22preApplication === 'yes') {
-      req.session.data['r22-pre-application-complete'] = ''
-      res.redirect('/r22/questions/select-pre-application-questions')
-    } else {
-      req.session.data['r22-pre-application-complete'] = 'true'
-      res.redirect('/r22/questions/support-volunteers')
-    }
-  })
-
   router.post('/r22-select-pre-application-questions-answer', function (req, res) {
     res.redirect(r22NextPreApplicationPage(req.session.data, null))
   })
@@ -1923,6 +1909,24 @@ router.get('/v26/results/results', function (req, res) {
 // "yes" continues to the next selected question, or the application start
 // page once none are left. If the recruiter journey hasn't been done in this
 // session, all 3 questions ask with fallback values.
+
+// Volunteers only see the pre-application start page when the recruiter
+// selected at least one question; "none" (or an empty selection) goes straight
+// to the application. An unset selection means the recruiter journey hasn't
+// been done, so all 3 questions show
+router.get('/v26/pre-application/start', function (req, res, next) {
+  let selected = req.session.data['r22-pre-application-questions']
+  if (selected === undefined) {
+    return next()
+  }
+  if (!Array.isArray(selected)) {
+    selected = [selected]
+  }
+  if (!['age', 'licence', 'distance'].some((question) => selected.includes(question))) {
+    return res.redirect('/v26/application/start')
+  }
+  next()
+})
 
 function v26NextPreApplicationPage(data, current) {
 

@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-Select the pre-application questions - NHS Volunteering
+Ask pre-application questions - NHS Volunteering
 {% endblock %}
 
 {% block beforeContent %}
 {{ backLink({
-"href": "pre-application-questions",
+"href": "overview-process",
 "text": "Go back"
 }) }}
 {% endblock %}
@@ -17,26 +17,32 @@ Select the pre-application questions - NHS Volunteering
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+      Ask pre-application questions
+    </h1>
+
+    <p class="nhsuk-body">You can choose to ask applicants questions to check whether they meet the essential
+      requirements for the role.</p>
+
+    <p class="nhsuk-body">Applicants who do not meet the requirements will not be able to continue with their
+      application, and will need to start again.</p>
+
+    <p class="nhsuk-body">Make sure any questions you ask are necessary and comply with your organisation's
+      volunteer recruitment policies.</p>
+
     <form action="/r22-select-pre-application-questions-answer" method="post" class="form">
 
       <div class="nhsuk-form-group">
 
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
-              Select the pre-application questions
-            </h1>
+        <fieldset class="nhsuk-fieldset" aria-describedby="r22-pre-application-questions-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Which pre-application questions do you want to ask?
           </legend>
 
-          <p class="nhsuk-body">Select questions that check whether applicants meet the requirements for this volunteer
-            role.</p>
-
-          <p class="nhsuk-body">Applicants who do not meet the requirements will not be able to continue with their
-            application, and will need to start again.</p>
-
-          <p class="nhsuk-body">Make sure any questions you use are necessary and comply with your organisation's
-            volunteer recruitment policies.</p>
+          <div class="nhsuk-hint" id="r22-pre-application-questions-hint">
+            Select all that apply
+          </div>
 
           <div class="nhsuk-checkboxes">
 
@@ -44,7 +50,8 @@ Select the pre-application questions - NHS Volunteering
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="r22-pre-application-questions-1"
-                name="r22-pre-application-questions" type="checkbox" value="age">
+                name="r22-pre-application-questions" type="checkbox" value="age"
+                data-checkbox-exclusive-group="r22-pre-application-questions">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-pre-application-questions-1">
                 Are you [age] or older?
               </label>
@@ -52,7 +59,8 @@ Select the pre-application questions - NHS Volunteering
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="r22-pre-application-questions-2"
-                name="r22-pre-application-questions" type="checkbox" value="licence">
+                name="r22-pre-application-questions" type="checkbox" value="licence"
+                data-checkbox-exclusive-group="r22-pre-application-questions">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-pre-application-questions-2">
                 Do you have a valid [name] licence?
               </label>
@@ -60,9 +68,21 @@ Select the pre-application questions - NHS Volunteering
 
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="r22-pre-application-questions-3"
-                name="r22-pre-application-questions" type="checkbox" value="distance">
+                name="r22-pre-application-questions" type="checkbox" value="distance"
+                data-checkbox-exclusive-group="r22-pre-application-questions">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-pre-application-questions-3">
-                Do you live or work within [distance] miles of [postcode]?
+                Do you live or work within [distance] miles of [location]? or Can you get to [location] within [travel time] minutes?
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__divider">or</div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r22-pre-application-questions-4"
+                name="r22-pre-application-questions" type="checkbox" value="none"
+                data-checkbox-exclusive data-checkbox-exclusive-group="r22-pre-application-questions">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r22-pre-application-questions-4">
+                I do not want to ask any pre-application questions
               </label>
             </div>
 
@@ -85,4 +105,8 @@ Select the pre-application questions - NHS Volunteering
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
 {% endblock %}

@@ -17,6 +17,13 @@ NHS Volunteering
 
 <!-- Homepage content -->
 {% block content %}
+{% set preAppBack = data['r22-pre-application-questions'] %}
+{% if preAppBack is undefined %}{% set preAppBack = ['age', 'licence', 'distance'] %}{% elif preAppBack is string %}{% set preAppBack = [preAppBack] %}{% endif %}
+{% set preAppBackHref = '/v26/volunteering/role-profile-2' %}
+{% if 'age' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/age' %}{% endif %}
+{% if 'licence' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/driving-licence' %}{% endif %}
+{% if 'distance' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/distance' %}{% endif %}
+
 
 
 <div class="nhsuk-grid-row">
@@ -24,7 +31,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
 
-      <a class="nhsuk-back-link__link" href="javascript:history.back()">
+      <a class="nhsuk-back-link__link" href="{{ preAppBackHref }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path

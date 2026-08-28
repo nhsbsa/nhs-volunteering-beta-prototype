@@ -87,13 +87,13 @@ Task list
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/pre-application-questions">
+              <a href="questions/select-pre-application-questions">
                 Add pre-application questions
               </a>
             </span>
             {% if data['r22-pre-application-complete'] %}
             <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
-            {% elif data['r22-pre-application'] %}
+            {% elif data['r22-task-pre-application-in-progress'] %}
             <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__task-tag" id="company-information-completed">In
               progress</strong>
             {% else %}

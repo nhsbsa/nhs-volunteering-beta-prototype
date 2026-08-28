@@ -50,7 +50,7 @@ Check your answers before publishing your listing - NHS Volunteering
 
     {% set preApplicationSelected = data['r22-pre-application-questions'] or [] %}
     {% set preApplicationQuestionsHtml %}
-    {% if data['r22-pre-application'] == 'yes' %}
+    {% if preApplicationSelected | length and 'none' not in preApplicationSelected %}
     {% if 'age' in preApplicationSelected %}
     <p>Are you {{ data['r22-pre-application-age'] or '18' }} or older?</p>
     {% endif %}
@@ -58,8 +58,13 @@ Check your answers before publishing your listing - NHS Volunteering
     <p>Do you have a valid {{ data['r22-pre-application-licence-name'] or 'driving' }} licence?</p>
     {% endif %}
     {% if 'distance' in preApplicationSelected %}
+    {% if data['r22-pre-application-distance-type'] == 'time' %}
+    <p>Can you get to {{ data['r22-pre-application-distance-postcode'] or 'AB1 2CD' }} within {{
+      data['r22-pre-application-distance-minutes'] or '30' }} minutes?</p>
+    {% else %}
     <p>Do you live or work within {{ data['r22-pre-application-distance-miles'] or '20' }} miles of {{
       data['r22-pre-application-distance-postcode'] or 'AB1 2CD' }}?</p>
+    {% endif %}
     {% endif %}
     {% else %}
     No
@@ -241,7 +246,7 @@ Check your answers before publishing your listing - NHS Volunteering
     actions: {
     items: [
     {
-    href: "pre-application-questions",
+    href: "select-pre-application-questions",
     text: "Change",
     visuallyHiddenText: "Pre-application questions"
     }

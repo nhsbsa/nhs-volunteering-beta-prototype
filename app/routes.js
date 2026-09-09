@@ -1803,6 +1803,23 @@ router.post('/v26/application/equality-mid-flow', function (req, res) {
   }
 })
 
+// ROUTES FOR V26 EDI ethnic group branching
+// Every group except Prefer not to say goes to the single dynamic background page,
+// which picks its heading and options from gds-ethnic-group in session.
+
+router.post('/v26/edi/ethnic-group', function (req, res) {
+  const ethnicGroup = req.session.data['gds-ethnic-group']
+
+  if (ethnicGroup === 'prefer-not-say') {
+    res.redirect('/v26/edi/religion')
+  } else if (ethnicGroup) {
+    res.redirect('/v26/edi/background')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/edi/ethnic-group')
+  }
+})
+
 // ROUTES FOR V26 results filter panel (K5)
 // GET handlers for the Selected filters remove/clear links. Query params are
 // prefixed with _ so the kit's auto-store-data middleware ignores them.

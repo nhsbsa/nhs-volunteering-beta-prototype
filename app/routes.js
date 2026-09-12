@@ -1803,11 +1803,30 @@ router.post('/v26/application/equality-mid-flow', function (req, res) {
   }
 })
 
+// ROUTES FOR V26 EDI health conditions branching
+// Handlers live on -answer paths, not the page paths: the previous page's form
+// posts to the page path, and a handler there would branch on stale session data.
+// Only Yes goes on to the day activities question. No and Prefer not to say
+// skip straight to ethnic group.
+
+router.post('/v26/edi/health-conditions-answer', function (req, res) {
+  const healthConditions = req.session.data['gds-health-conditions']
+
+  if (healthConditions === 'yes') {
+    res.redirect('/v26/edi/day-activities')
+  } else if (healthConditions) {
+    res.redirect('/v26/edi/ethnic-group')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v26/edi/health-conditions')
+  }
+})
+
 // ROUTES FOR V26 EDI ethnic group branching
 // Every group except Prefer not to say goes to the single dynamic background page,
 // which picks its heading and options from gds-ethnic-group in session.
 
-router.post('/v26/edi/ethnic-group', function (req, res) {
+router.post('/v26/edi/ethnic-group-answer', function (req, res) {
   const ethnicGroup = req.session.data['gds-ethnic-group']
 
   if (ethnicGroup === 'prefer-not-say') {

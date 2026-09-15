@@ -18,7 +18,8 @@ NHS Volunteering
 <!-- Homepage content -->
 {% block content %}
 
-{# Single dynamic background page. Heading and options come from the ethnic group chosen on ethnic-group.html #}
+{# Single dynamic background page. Heading and options come from the ethnic group chosen on ethnic-group.html.
+   Other ethnic group never reaches this page: its optional free-text field sits on ethnic-group.html, matching production. #}
 {% set ethnicGroup = data['gds-ethnic-group'] %}
 
 {% if ethnicGroup == 'mixed-multiple' %}
@@ -33,13 +34,9 @@ NHS Volunteering
   {% set backgroundHeading = "Which of the following best describes your Black, African, Caribbean or Black British background?" %}
   {% set backgroundOptions = ["African", "Caribbean"] %}
   {% set backgroundOther = "Any other Black, African or Caribbean background" %}
-{% elif ethnicGroup == 'other-ethnic' %}
-  {% set backgroundHeading = "Which of the following best describes your background?" %}
-  {% set backgroundOptions = ["Arab"] %}
-  {% set backgroundOther = "Any other ethnic group" %}
 {% else %}
   {% set backgroundHeading = "Which of the following best describes your White background?" %}
-  {% set backgroundOptions = ["English, Welsh, Scottish, Northern Irish or British", "Irish", "Gypsy or Irish Traveller"] %}
+  {% set backgroundOptions = ["English, Welsh, Scottish, Northern Irish or British", "Irish"] %}
   {% set backgroundOther = "Any other White background" %}
 {% endif %}
 

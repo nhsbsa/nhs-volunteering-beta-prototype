@@ -1823,13 +1823,15 @@ router.post('/v26/edi/health-conditions-answer', function (req, res) {
 })
 
 // ROUTES FOR V26 EDI ethnic group branching
-// Every group except Prefer not to say goes to the single dynamic background page,
-// which picks its heading and options from gds-ethnic-group in session.
+// White, Mixed, Asian and Black go to the single dynamic background page, which
+// picks its heading and options from gds-ethnic-group in session. Other ethnic
+// group has its optional free-text field on the ethnic group page itself (as in
+// production), so it skips the background page along with Prefer not to say.
 
 router.post('/v26/edi/ethnic-group-answer', function (req, res) {
   const ethnicGroup = req.session.data['gds-ethnic-group']
 
-  if (ethnicGroup === 'prefer-not-say') {
+  if (ethnicGroup === 'prefer-not-say' || ethnicGroup === 'other-ethnic') {
     res.redirect('/v26/edi/religion')
   } else if (ethnicGroup) {
     res.redirect('/v26/edi/background')

@@ -48,7 +48,7 @@ NHS Volunteering
             </h1>
           </legend>
 
-          <div class="nhsuk-radios">
+          <div class="nhsuk-radios nhsuk-radios--conditional">
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="gds-ethnic-group-1" name="gds-ethnic-group" type="radio"
@@ -84,10 +84,24 @@ NHS Volunteering
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="gds-ethnic-group-5" name="gds-ethnic-group" type="radio"
-                value="other-ethnic">
+                value="other-ethnic" aria-controls="conditional-gds-ethnic-group-5" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="gds-ethnic-group-5">
                 Other ethnic group
               </label>
+            </div>
+
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+              id="conditional-gds-ethnic-group-5">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="gds-ethnic-group-other-description">
+                  How would you describe your background? (optional)
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="gds-ethnic-group-other-description"
+                  name="gds-ethnic-group-other-description" type="text"
+                  value="{{ data['gds-ethnic-group-other-description'] }}">
+              </div>
+
             </div>
 
             <div class="nhsuk-radios__divider">or</div>
@@ -110,6 +124,7 @@ NHS Volunteering
 
   </div>
 
+  <script src="/nhsuk-frontend/nhsuk.min.js"></script>
 
   {% endblock %}
 

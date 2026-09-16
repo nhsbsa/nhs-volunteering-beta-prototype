@@ -66,6 +66,7 @@ Ask pre-application questions - NHS Volunteering
               </label>
             </div>
 
+            {% if data['r9-location'] != 'area' and data['r9-location'] != 'location-larger-area' %}
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="r22-pre-application-questions-3"
                 name="r22-pre-application-questions" type="checkbox" value="distance"
@@ -74,6 +75,7 @@ Ask pre-application questions - NHS Volunteering
                 Do you live or work within [distance] miles of [location]? or Can you get to [location] within [travel time] minutes?
               </label>
             </div>
+            {% endif %}
 
             <div class="nhsuk-checkboxes__divider">or</div>
 

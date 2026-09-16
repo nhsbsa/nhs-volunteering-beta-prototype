@@ -1064,12 +1064,37 @@ router.post('/r9-contact-details-answer', function (req, res) {
 
   // ROUTES FOR R22 pre-application questions
 
+  // the distance question only applies to fixed locations. With no location
+  // answer in the session (stakeholders clicking through) it stays available
+  function r22DistanceQuestionAllowed(data) {
+    return !['area', 'location-larger-area'].includes(data['r9-location'])
+  }
+
+  // location answer: varying locations or remote drops any stored distance
+  // selection so the check answers page and volunteer side follow suit
+  router.post('/r22-location-answer', function (req, res) {
+    const data = req.session.data
+    if (!r22DistanceQuestionAllowed(data)) {
+      let selected = data['r22-pre-application-questions']
+      if (selected !== undefined) {
+        if (!Array.isArray(selected)) {
+          selected = [selected]
+        }
+        data['r22-pre-application-questions'] = selected.filter((question) => question !== 'distance')
+      }
+    }
+    res.redirect('/r22/questions/availability')
+  })
+
   // work out the next selected question page, or the task list if none are left
   function r22NextPreApplicationPage(data, current) {
 
     let selected = data['r22-pre-application-questions'] || []
     if (!Array.isArray(selected)) {
       selected = [selected]
+    }
+    if (!r22DistanceQuestionAllowed(data)) {
+      selected = selected.filter((question) => question !== 'distance')
     }
 
     const order = ['age', 'licence', 'distance']

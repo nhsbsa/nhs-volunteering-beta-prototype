@@ -17,9 +17,8 @@ NHS Volunteering
 
 <!-- Homepage content -->
 {% block content %}
-{% set preAppBack = data['r22-pre-application-questions'] %}
-{% if preAppBack is undefined %}{% set preAppBack = ['age', 'licence', 'distance'] %}{% elif preAppBack is string %}{% set preAppBack = [preAppBack] %}{% endif %}
-{% set preAppBackHref = '/v26/volunteering/role-profile-2' %}
+{% set preAppBack = v26PreApp.selected %}
+{% set preAppBackHref = v26PreApp.profileHref %}
 {% if 'age' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/age' %}{% endif %}
 {% if 'licence' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/driving-licence' %}{% endif %}
 {% if 'distance' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/distance' %}{% endif %}
@@ -67,7 +66,7 @@ NHS Volunteering
     <h2 class="nhsuk-heading-s">If you need help with the application</h2>
 
 
-    <p><a href="/v26/volunteering/role-profile-2">Go back to the opportunity page</a> and contact the organisation to
+    <p><a href="{{ v26PreApp.profileHref }}">Go back to the opportunity page</a> and contact the organisation to
       discuss what support is available. They might offer paper forms or help you complete the online form.</p>
 
 

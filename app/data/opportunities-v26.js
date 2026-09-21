@@ -1,6 +1,8 @@
 // V26 results filtering (K5): the 14 unique opportunities from the v24/v25/v26 results
 // pages (pages 2/3 duplicated Silver Line and Deafblind — deduplicated here).
 // Titles, locations, orgs and descriptions are VERBATIM page copy.
+// Opportunities added since (Sept 2026 onwards) use content supplied by Aqib
+// and have their own role profile page in v26/volunteering.
 // tags must only use values a recruiter can pick in r22/questions/tags.html,
 // and minAge only values from "Which ages is this opportunity suitable for?"
 // in r22/questions/choose-search-filters.html (13-17 or 18 and over).
@@ -23,7 +25,7 @@ module.exports = [
     types: ['trolley'],
     audiences: [],
     minAge: 18,
-    availability: ['weekday'],
+    availability: ['weekday', 'afternoon', 'evening'], // Monday to Friday afternoons; Evening availability tag
     tags: ['DBS check will take place', 'No experience needed', 'Public facing', 'Suitable from age 18', 'Evening availability'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
       <li>If you enjoy connecting with people, listening, and offering a friendly face, this role is for you.</li>
@@ -57,6 +59,159 @@ module.exports = [
     </p>`
   },
   {
+    id: 'volunteer-car-driver-leeds',
+    title: 'Volunteer Car Driver',
+    href: '../volunteering/role-profile-volunteer-car-driver',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 18, licence: 'driving' },
+    location: 'Leeds, LS10 2QW',
+    org: 'Voluntary Action Leeds',
+    locationType: 'local',
+    // assigned (LS10 from LS9), flagged for review
+    distanceMiles: 2.2,
+    setting: ['community'],
+    types: ['driving'],
+    audiences: [],
+    minAge: 18,
+    availability: ['weekday', 'weekend', 'flexible'],
+    tags: ['DBS check will take place', 'Need a car', 'Need a driving licence', 'Public facing', 'Suitable from age 18'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you enjoy driving and meeting new people, this role could be for you.</li>
+      <li>Volunteer Car Drivers help patients attend healthcare appointments by providing transport using their
+        own vehicle. You'll offer a friendly, reliable service that helps people access the care and support
+        they need.</li>
+      <li>Flexible volunteering hours are available throughout the week, making it easy to fit volunteering
+        around your existing commitments.</li>
+    </ul>`
+  },
+  {
+    id: 'emergency-department-volunteer',
+    title: 'Emergency Department Volunteer',
+    href: '../volunteering/role-profile-emergency-department-volunteer',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 18 },
+    location: 'Leeds, LS1 3EX',
+    org: 'Southmead Hospital',
+    locationType: 'local',
+    // assigned (LS1 from LS9)
+    distanceMiles: 1.5,
+    setting: ['hospital'],
+    types: ['meet-and-greet', 'with-people'],
+    audiences: [],
+    minAge: 18,
+    availability: ['weekday', 'weekend', 'evening'],
+    tags: ['DBS check will take place', 'No experience needed', 'Public facing', 'Evening availability', 'Suitable from age 18'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you enjoy helping people and can remain calm in busy environments, this role could be for you.</li>
+      <li>Emergency Department Volunteers support patients and visitors by providing directions, answering
+        questions and offering reassurance while they wait.</li>
+      <li>Evening and weekend shifts are available, providing a rewarding opportunity to support patient
+        experience in a fast-paced setting.</li>
+    </ul>`
+  },
+  {
+    id: 'community-befriender-volunteer',
+    title: 'Community Befriender Volunteer',
+    href: '../volunteering/role-profile-community-befriender-volunteer',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 21 },
+    location: 'Leeds, LS18 4LB',
+    org: 'Leeds Community Central',
+    locationType: 'local',
+    // assigned (Horsforth from LS9)
+    distanceMiles: 4.6,
+    setting: ['community'],
+    types: ['companionship', 'with-people'],
+    audiences: [],
+    minAge: 18, // profile says 21 or over; 18 is the highest age the filters support
+    availability: ['flexible', 'morning', 'afternoon'], // Flexible daytime hours
+    // no age tag: recruiter tags stop at "Suitable from age 18", which would contradict the profile
+    tags: ['DBS check will take place', 'No experience needed', 'Public facing'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you enjoy listening and building positive relationships, this role could be for you.</li>
+      <li>Community Befriender Volunteers provide companionship and social support to people who may be
+        feeling isolated through regular visits, phone calls or community meetups.</li>
+      <li>Flexible daytime volunteering is available, helping people feel more connected to their local
+        community.</li>
+    </ul>`
+  },
+  {
+    id: 'volunteer-visitor-guide',
+    title: 'Volunteer Visitor Guide',
+    href: '../volunteering/role-profile-volunteer-visitor-guide',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 18, distance: { miles: 20, postcode: 'LS1 2TW' } },
+    location: 'Leeds, LS1 2TW',
+    org: "Queen's Medical Centre",
+    locationType: 'local',
+    // assigned (LS1 from LS9)
+    distanceMiles: 1.4,
+    setting: ['hospital'],
+    types: ['meet-and-greet', 'with-people'],
+    audiences: [],
+    minAge: 18,
+    availability: ['morning', 'afternoon'],
+    tags: ['No experience needed', 'Public facing', 'Suitable from age 18'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you enjoy helping people and giving directions, this role could be for you.</li>
+      <li>Volunteer Visitor Guides welcome patients and visitors to the hospital, helping them find wards,
+        clinics and departments across the site.</li>
+      <li>Volunteers must live within 20 miles of the hospital and be available for at least one regular
+        shift each week.</li>
+    </ul>`
+  },
+  {
+    id: 'hospital-volunteer-buddy',
+    title: 'Hospital Volunteer Buddy',
+    href: '../volunteering/role-profile-hospital-volunteer-buddy',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 18 },
+    location: 'Leeds, LS7 4SA',
+    org: 'Leeds Royal Infirmary',
+    locationType: 'local',
+    // assigned (LS7 from LS9)
+    distanceMiles: 2.1,
+    setting: ['hospital'],
+    types: ['with-people'],
+    audiences: [],
+    minAge: 18,
+    availability: ['weekday', 'flexible'],
+    tags: ['Experience needed', 'Experience with computers', 'Suitable from age 18'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you have previous volunteering experience and enjoy supporting others, this role could be for you.</li>
+      <li>Hospital Volunteer Buddies help new volunteers settle into their role, answer questions and signpost
+        them to the right support and resources.</li>
+      <li>Regular weekday volunteering is available, helping create a welcoming and inclusive experience for
+        new volunteers.</li>
+    </ul>`
+  },
+  {
+    id: 'hospital-youth-volunteer',
+    title: 'Hospital Youth Volunteer',
+    href: '../volunteering/role-profile-hospital-youth-volunteer',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 16 },
+    location: 'Leeds, LS7 4SA',
+    org: 'Leeds Royal Infirmary',
+    locationType: 'local',
+    // assigned, same site as hospital-volunteer-buddy so same distance
+    distanceMiles: 2.1,
+    setting: ['hospital'],
+    types: ['meet-and-greet', 'admin', 'with-people'],
+    audiences: [],
+    minAge: 16,
+    availability: ['weekday', 'afternoon', 'evening'], // After school, evenings and school holidays
+    tags: ['No experience needed', 'Public facing', 'Evening availability', 'Suitable from age 16'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you're interested in gaining experience and supporting your local hospital, this role could be
+        for you.</li>
+      <li>Hospital Youth Volunteers help welcome visitors, support events and assist with non-clinical
+        activities under staff supervision.</li>
+      <li>After-school, evening and holiday shifts are available, providing valuable experience while making a
+        positive difference to patients and visitors.</li>
+    </ul>`
+  },
+  {
     id: 'menopause-cancer-support',
     title: 'Community Support Group Session Volunteer',
     href: '../volunteering/role-profile-1',
@@ -88,7 +243,7 @@ module.exports = [
     types: [],
     audiences: ['mental-health'],
     minAge: null,
-    availability: ['weekday'],
+    availability: ['weekday', 'evening'], // Tuesdays, 6.30-8pm
     tags: ['No experience needed'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
       <li>PeerTalk groups support people living with depression, anxiety, and emotional distress.</li>
@@ -211,7 +366,7 @@ module.exports = [
     types: ['telephone'],
     audiences: ['older-people'],
     minAge: null,
-    availability: ['weekday', 'weekend'],
+    availability: ['weekday', 'weekend', 'morning', 'afternoon', 'evening'], // day or night
     tags: ['Experience with computers'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
       <li>Are you able to listen with empathy, understanding and without judgement?</li>
@@ -232,7 +387,7 @@ module.exports = [
     types: ['telephone'],
     audiences: ['physical-disabilities'],
     minAge: 18,
-    availability: ['weekday'],
+    availability: ['weekday', 'morning', 'afternoon'], // 9am to 5pm, Monday to Friday
     tags: ['No experience needed', 'DBS check will take place', 'Suitable from age 18'],
     descriptionHtml: `<p>In this role, you will be assisting with the incoming calls coming into the Deafblind UK National
       Helpline. Duties would be varied ranging from dealing with basic incoming contact, updating our
@@ -294,32 +449,12 @@ module.exports = [
     types: ['companionship'],
     audiences: ['older-people'],
     minAge: null,
-    availability: [],
+    availability: ['flexible'], // This role is flexible
     tags: [],
     descriptionHtml: `<p>As a Befriender, you'll visit a homebound, isolated client in <strong>Calderdale</strong>
       and <strong>Huddersfield</strong> offering companionship and friendship. By spending
       just 1 hour a week, you'll make a meaningful impact on their life, helping reduce
       loneliness and improve their wellbeing. This role is flexible, fitting around both you
       and the client. It's a truly rewarding opportunity to make a difference.</p>`
-  },
-  {
-    id: 'volunteer-car-driver',
-    title: 'Volunteer Car Driver',
-    href: '#',
-    location: 'Rochdale, OL16 1QN',
-    org: 'Northern Care Alliance NHS Foundation Trust',
-    locationType: 'local',
-    distanceMiles: 29.6,
-    setting: ['community'],
-    types: ['driving'],
-    audiences: [],
-    minAge: null,
-    availability: [],
-    tags: [],
-    descriptionHtml: `<p>Assisting to take our passengers to hospital in your own car to Rochdale, Bury, and
-      Stockport. Passengers can get in and out of a car without assistance, transport is
-      normally a return journey. Volunteers are not expected to get people into the hospital,
-      etc. It is helpful if someone can help once a month or once a week, we work around
-      volunteers.</p>`
   }
 ]

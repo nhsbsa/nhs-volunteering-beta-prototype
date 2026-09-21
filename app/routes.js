@@ -1946,12 +1946,9 @@ router.get('/v26/results/results', function (req, res) {
       const bracketTop = { '13-15': 15, '16-17': 17 }[age] || 0
       if (bracketTop < roleMinAge) return false
     }
-    // Opportunity data only maps weekday/weekend availability so far; the
-    // Morning/Afternoon/Evening/Flexible options and the accessible features
-    // filter are panel-only until those attributes are added to
-    // app/data/opportunities-v26.js
-    const dayAvailability = availability.filter((value) => ['weekday', 'weekend'].includes(value))
-    if (dayAvailability.length && !intersects(dayAvailability, opp.availability)) return false
+    // The accessible features filter is panel-only until that attribute is
+    // added to app/data/opportunities-v26.js
+    if (availability.length && !intersects(availability, opp.availability)) return false
     return true
   })
 
@@ -1973,18 +1970,54 @@ router.get('/v26/results/results', function (req, res) {
 // page once none are left. If the recruiter journey hasn't been done in this
 // session, all 3 questions ask with fallback values.
 
+// Which opportunity the volunteer is applying for. The Apply link on a role
+// profile passes ?v26-opportunity=<id> (auto-stored in the session), which
+// sets the caption, title and links back to the profile. The questions and
+// their values come from the recruiter's r22 pre-application task when that
+// journey has been done in the same session, for every opportunity. If it
+// hasn't, the opportunity's own preApplication values in
+// app/data/opportunities-v26.js are used, and role-profile-2 (no values of
+// its own) asks all 3 questions with fallback values
+function v26PreApplication(data) {
+  const opp = v26Opportunities.find((o) => o.id === data['v26-opportunity'])
+  const own = (opp && opp.preApplication) || null
+  const ownDistance = (own && own.distance) || {}
+
+  let selected = data['r22-pre-application-questions']
+  if (selected === undefined) {
+    selected = own
+      ? ['age', 'licence', 'distance'].filter((question) => own[question] !== undefined)
+      : ['age', 'licence', 'distance']
+  }
+  if (!Array.isArray(selected)) {
+    selected = [selected]
+  }
+
+  return {
+    title: own ? opp.title : 'Volunteer at St James Hospital',
+    caption: own ? opp.title + ' application' : "Volunteer at St. James' Hospital application",
+    profileHref: own ? opp.href.replace('..', '/v26') : '/v26/volunteering/role-profile-2',
+    selected: selected,
+    age: data['r22-pre-application-age'] || String((own && own.age) || '18'),
+    licenceName: data['r22-pre-application-licence-name'] || (own && own.licence) || 'driving',
+    distanceType: data['r22-pre-application-distance-type'],
+    distanceMiles: data['r22-pre-application-distance-miles'] || String(ownDistance.miles || '20'),
+    distanceMinutes: data['r22-pre-application-distance-minutes'] || '30',
+    distancePostcode: data['r22-pre-application-distance-postcode'] || ownDistance.postcode || 'LS9 7TF'
+  }
+}
+
+router.use(['/v26/pre-application', '/v26/application'], function (req, res, next) {
+  res.locals.v26PreApp = v26PreApplication(req.session.data)
+  next()
+})
+
 // Volunteers only see the pre-application start page when the recruiter
 // selected at least one question; "none" (or an empty selection) goes straight
 // to the application. An unset selection means the recruiter journey hasn't
 // been done, so all 3 questions show
 router.get('/v26/pre-application/start', function (req, res, next) {
-  let selected = req.session.data['r22-pre-application-questions']
-  if (selected === undefined) {
-    return next()
-  }
-  if (!Array.isArray(selected)) {
-    selected = [selected]
-  }
+  const selected = v26PreApplication(req.session.data).selected
   if (!['age', 'licence', 'distance'].some((question) => selected.includes(question))) {
     return res.redirect('/v26/application/start')
   }
@@ -1993,13 +2026,7 @@ router.get('/v26/pre-application/start', function (req, res, next) {
 
 function v26NextPreApplicationPage(data, current) {
 
-  let selected = data['r22-pre-application-questions']
-  if (selected === undefined) {
-    selected = ['age', 'licence', 'distance']
-  }
-  if (!Array.isArray(selected)) {
-    selected = [selected]
-  }
+  const selected = v26PreApplication(data).selected
 
   const order = ['age', 'licence', 'distance']
   const pages = {

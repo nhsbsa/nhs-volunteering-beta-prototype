@@ -18,7 +18,7 @@ Before you apply for this opportunity - NHS Volunteering
 
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
 
-      <a class="nhsuk-back-link__link" href="/v26/volunteering/role-profile-2">
+      <a class="nhsuk-back-link__link" href="{{ v26PreApp.profileHref }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -28,16 +28,11 @@ Before you apply for this opportunity - NHS Volunteering
         Go back</a>
     </div>
 
-    {# Questions the recruiter selected in the r22 pre-application task. If the
-       recruiter journey hasn't been done in this session, all 3 show #}
-    {% set preAppSelected = data['r22-pre-application-questions'] %}
-    {% if preAppSelected is undefined %}
-    {% set preAppSelected = ['age', 'licence', 'distance'] %}
-    {% elif preAppSelected is string %}
-    {% set preAppSelected = [preAppSelected] %}
-    {% endif %}
+    {# Questions for the opportunity being applied for, resolved by
+       v26PreApplication() in routes.js #}
+    {% set preAppSelected = v26PreApp.selected %}
 
-    <h1><span class="nhsuk-caption-l nhsuk-caption--top">Volunteer at St. James' Hospital application</span>
+    <h1><span class="nhsuk-caption-l nhsuk-caption--top">{{ v26PreApp.caption }}</span>
       Before you apply for this opportunity</h1>
 
     <p>We need to check you meet the minimum requirements for this opportunity. We'll ask questions about your:</p>
@@ -50,7 +45,7 @@ Before you apply for this opportunity - NHS Volunteering
       <li>location</li>
       {% endif %}
       {% if 'licence' in preAppSelected %}
-      <li>{{ data['r22-pre-application-licence-name'] or 'driving' }} licence</li>
+      <li>{{ v26PreApp.licenceName }} licence</li>
       {% endif %}
     </ul>
 

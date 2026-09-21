@@ -2,7 +2,7 @@
 
 
 {% block pageTitle %}
-{% if data['r22-pre-application-distance-type'] == 'time' %}Can you get to {{ data['r22-pre-application-distance-postcode'] or 'LS9 7TF' }} within {{ data['r22-pre-application-distance-minutes'] or '30' }} minutes?{% else %}Do you live or work within {{ data['r22-pre-application-distance-miles'] or '20' }} miles of {{ data['r22-pre-application-distance-postcode'] or 'LS9 7TF' }}?{% endif %} - NHS Volunteering
+{% if v26PreApp.distanceType == 'time' %}Can you get to {{ v26PreApp.distancePostcode }} within {{ v26PreApp.distanceMinutes }} minutes?{% else %}Do you live or work within {{ v26PreApp.distanceMiles }} miles of {{ v26PreApp.distancePostcode }}?{% endif %} - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -12,8 +12,7 @@
 
 
 {% block content %}
-{% set preAppBack = data['r22-pre-application-questions'] %}
-{% if preAppBack is undefined %}{% set preAppBack = ['age', 'licence', 'distance'] %}{% elif preAppBack is string %}{% set preAppBack = [preAppBack] %}{% endif %}
+{% set preAppBack = v26PreApp.selected %}
 {% set preAppBackHref = '/v26/pre-application/start' %}
 {% if 'age' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/age' %}{% endif %}
 {% if 'licence' in preAppBack %}{% set preAppBackHref = '/v26/pre-application/driving-licence' %}{% endif %}
@@ -40,13 +39,13 @@
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              <span class="nhsuk-caption-l nhsuk-caption--top">Volunteer at St. James' Hospital application</span>
-              {% if data['r22-pre-application-distance-type'] == 'time' %}
-              Can you get to {{ data['r22-pre-application-distance-postcode'] or 'LS9 7TF' }} within
-              {{ data['r22-pre-application-distance-minutes'] or '30' }} minutes?
+              <span class="nhsuk-caption-l nhsuk-caption--top">{{ v26PreApp.caption }}</span>
+              {% if v26PreApp.distanceType == 'time' %}
+              Can you get to {{ v26PreApp.distancePostcode }} within
+              {{ v26PreApp.distanceMinutes }} minutes?
               {% else %}
-              Do you live or work within {{ data['r22-pre-application-distance-miles'] or '20' }} miles of
-              {{ data['r22-pre-application-distance-postcode'] or 'LS9 7TF' }}?
+              Do you live or work within {{ v26PreApp.distanceMiles }} miles of
+              {{ v26PreApp.distancePostcode }}?
               {% endif %}
             </h1>
           </legend>

@@ -1970,14 +1970,17 @@ router.get('/v26/results/results', function (req, res) {
 // page once none are left. If the recruiter journey hasn't been done in this
 // session, all 3 questions ask with fallback values.
 
-// Which opportunity the volunteer is applying for. The Apply link on a role
-// profile passes ?v26-opportunity=<id> (auto-stored in the session), which
-// sets the caption, title and links back to the profile. The questions and
+// Which opportunity the volunteer is applying for. The results listing and
+// the Apply link on a role profile pass ?v26-opportunity=<id> (auto-stored in
+// the session), which sets the caption, title and links back to the profile
+// for any opportunity in app/data/opportunities-v26.js, including the ones
+// that share a placeholder profile such as role-profile-1. The questions and
 // their values come from the recruiter's r22 pre-application task when that
 // journey has been done in the same session, for every opportunity. If it
-// hasn't, the opportunity's own preApplication values in
-// app/data/opportunities-v26.js are used, and role-profile-2 (no values of
-// its own) asks all 3 questions with fallback values
+// hasn't, the opportunity's own preApplication values are used; a known
+// opportunity without any goes straight to the application, and an unknown
+// id (role-profile-2 passes "default") asks all 3 questions with fallback
+// values
 function v26PreApplication(data) {
   const opp = v26Opportunities.find((o) => o.id === data['v26-opportunity'])
   const own = (opp && opp.preApplication) || null
@@ -1985,18 +1988,22 @@ function v26PreApplication(data) {
 
   let selected = data['r22-pre-application-questions']
   if (selected === undefined) {
-    selected = own
-      ? ['age', 'licence', 'distance'].filter((question) => own[question] !== undefined)
-      : ['age', 'licence', 'distance']
+    if (own) {
+      selected = ['age', 'licence', 'distance'].filter((question) => own[question] !== undefined)
+    } else if (opp) {
+      selected = []
+    } else {
+      selected = ['age', 'licence', 'distance']
+    }
   }
   if (!Array.isArray(selected)) {
     selected = [selected]
   }
 
   return {
-    title: own ? opp.title : 'Volunteer at St James Hospital',
-    caption: own ? opp.title + ' application' : "Volunteer at St. James' Hospital application",
-    profileHref: own ? opp.href.replace('..', '/v26') : '/v26/volunteering/role-profile-2',
+    title: opp ? opp.title : 'Volunteer at St James Hospital',
+    caption: opp ? opp.title + ' application' : "Volunteer at St. James' Hospital application",
+    profileHref: opp ? opp.href.replace('..', '/v26') : '/v26/volunteering/role-profile-2',
     selected: selected,
     age: data['r22-pre-application-age'] || String((own && own.age) || '18'),
     licenceName: data['r22-pre-application-licence-name'] || (own && own.licence) || 'driving',

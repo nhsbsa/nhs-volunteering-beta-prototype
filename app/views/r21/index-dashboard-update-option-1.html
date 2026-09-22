@@ -873,10 +873,12 @@ NHS Volunteering
       </ul>
     </nav>
 
+    {% if data['r21-journey'] != 'existing' %}
     <hr>
 
     <h2 class="nhsuk-heading-xs nhsuk-u-secondary-text-color">Prototype only</h2>
     <p class="nhsuk-body-s"><a href="/r21/confirmation-email">Multi-factor authentication confirmation email</a></p>
+    {% endif %}
 
   </div>
 </div>

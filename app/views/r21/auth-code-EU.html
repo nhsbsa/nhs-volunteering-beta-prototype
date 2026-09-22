@@ -6,22 +6,6 @@
 Enter the code from your authenticator app - NHS Volunteering
 {% endblock %}
 
-{% block beforeContent %}
-{% if data['r21-has-app'] == 'yes' %}
-{{ backLink({
-"href": "/r21/auth-app-set-up-EU",
-"text": "Go back"
-}) }}
-{% else %}
-{{ backLink({
-"href": "/r21/add-auth-app-EU",
-"text": "Go back"
-}) }}
-{% endif %}
-{% endblock %}
-
-
-
 
 {% block content %}
 <div class="nhsuk-grid-row">

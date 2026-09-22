@@ -26,7 +26,7 @@ NHS Volunteering
 {% if opp.locationType == 'local' %}
 <p class="nhsuk-body nhsuk-body-s nhsuk-u-margin-bottom-0">{{ opp.distanceMiles }} miles away</p>
 {% endif %}
-<h2 class="nhsuk-link nhsuk-heading-m nhsuk-u-margin-bottom-2"> <a href="{{ opp.href }}"> {{ opp.title }}</a></h2>
+<h2 class="nhsuk-link nhsuk-heading-m nhsuk-u-margin-bottom-2"> <a href="{{ opp.href }}{% if opp.href != '#' %}?v26-opportunity={{ opp.id }}{% endif %}"> {{ opp.title }}</a></h2>
 <p class="nhsuk-body nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0"><strong>{{ opp.location }}</strong></p>
 <p class="nhsuk-u-margin-top-0">{{ opp.org }}</p>
 {% if opp.tags.length %}

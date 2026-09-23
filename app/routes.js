@@ -1507,6 +1507,18 @@ router.post('/r18/set-up-auth-EU', function (req, res) {
 
 // ROUTES FOR R21 MFA (baselined from r18, session keys prefixed r21-)
 
+// Route for R21 sign in (new user)
+// Clears any MFA answers left in the session by an earlier journey, so the choose method page is always shown
+// Not /r21/sign-in itself: create-password and forgot-password-new-password post there to reach the sign-in page
+router.post('/r21/sign-in-router', function (req, res) {
+
+  delete req.session.data['r21-mfa-method']
+  delete req.session.data['r21-has-app']
+
+  res.redirect('/r21/set-up-auth')
+
+})
+
 // Route for R21 MFA selection
 router.post('/r21/set-up-auth', function (req, res) {
 
@@ -1532,15 +1544,31 @@ router.post('/r21/auth-app-router', function (req, res) {
 
 })
 
+// Route for R21 sign in EU
+// Clears any MFA answers left in the session by an earlier journey, so the choose method page is always shown
+router.post('/r21/sign-in-EU', function (req, res) {
+
+  delete req.session.data['r21-mfa-method']
+  delete req.session.data['r21-has-app']
+
+  res.redirect('/r21/set-up-auth-EU')
+
+})
+
 // Route for R21 MFA selection EU
+// r21-app-registered=yes (set from the dev index) = existing user already registered to use an authenticator app
+// on NHS Volunteering, so the "Do you have an authenticator app?" page is skipped and they go straight to enter the code
 router.post('/r21/set-up-auth-EU', function (req, res) {
 
   const mfaMethod = req.session.data['r21-mfa-method']
+  const appRegistered = req.session.data['r21-app-registered']
 
   if (mfaMethod === 'email') {
     res.redirect('/r21/email-code-EU')
   } else if (mfaMethod === 'text') {
     res.redirect('/r21/sms-code-EU')
+  } else if (mfaMethod === 'app' && appRegistered === 'yes') {
+    res.redirect('/r21/auth-code-EU')
   } else if (mfaMethod === 'app') {
     res.redirect('/r21/auth-app-set-up-EU')
   } else {

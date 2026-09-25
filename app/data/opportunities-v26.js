@@ -14,26 +14,27 @@
 
 module.exports = [
   {
-    id: 'trolley-st-james',
-    title: "Trolley Volunteer, Beckett Wing, St James's Hospital",
-    href: '../volunteering/role-profile-2',
+    id: 'trolley-volunteer',
+    title: 'Trolley Volunteer',
+    href: '../volunteering/role-profile-trolley-volunteer',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 18 },
     location: 'Leeds, LS9 7TF',
-    org: 'Leeds Hospitals Charity',
+    org: "St James's University Hospital",
     locationType: 'local',
     distanceMiles: 0.5,
     setting: ['hospital'],
-    types: ['trolley'],
+    types: ['trolley', 'companionship', 'with-people'],
     audiences: [],
     minAge: 18,
-    availability: ['weekday', 'afternoon', 'evening'], // Monday to Friday afternoons; Evening availability tag
-    tags: ['DBS check will take place', 'No experience needed', 'Public facing', 'Suitable from age 18', 'Evening availability'],
+    availability: ['weekday', 'afternoon'], // Monday to Friday afternoons
+    tags: ['DBS check will take place', 'No experience needed', 'Public facing', 'Suitable from age 18'],
     descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
-      <li>If you enjoy connecting with people, listening, and offering a friendly face, this role is for you.</li>
-      <li>Our Trolley Service supports patients and families in hospital by providing comfort, conversation,
-        refreshments, and small essentials during difficult times. The service also helps people facing
-        financial hardship, ensuring support is available when it is needed most.</li>
-      <li>Shifts run <strong>Monday to Friday afternoons</strong>, offering a flexible and rewarding way to
-        make a genuine difference in your community.</li>
+      <li>If you enjoy connecting with people, listening and offering a friendly face, this role could be for you.</li>
+      <li>Our Trolley Service supports patients and visitors by providing refreshments, conversation and
+        companionship during their hospital stay.</li>
+      <li>Monday to Friday afternoon shifts offer a rewarding way to make a positive difference to patients and
+        families.</li>
     </ul>`
   },
   {
@@ -212,30 +213,35 @@ module.exports = [
     </ul>`
   },
   {
-    id: 'menopause-cancer-support',
+    id: 'community-support-group-session-volunteer',
     title: 'Community Support Group Session Volunteer',
-    href: '../volunteering/role-profile-1',
-    location: 'Leeds',
+    href: '../volunteering/role-profile-community-support-group-session-volunteer',
+    // pre-application questions asked after Apply when no r22 recruiter journey is in the session
+    preApplication: { age: 18 },
+    location: 'Community venues across Leeds',
     org: 'Menopause and Cancer',
-    locationType: 'local',
+    locationType: 'varied',
+    // filtering only, never displayed (Leeds community venues from LS9)
     distanceMiles: 3.5,
     setting: ['community'],
-    types: [],
-    audiences: ['life-limiting-illness'],
-    minAge: null,
-    availability: [],
-    tags: ['Public facing', 'Need a car', 'DBS check will take place'],
-    descriptionHtml: `<p>We are looking for a volunteer to support another volunteer in delivering a<strong> monthly 1.5-hour
-        support session</strong> for people navigating menopause after a cancer diagnosis.
-      Sessions will take place in meeting rooms, cancer support centres, or community venues, providing a safe
-      and welcoming space for support, discussion, and shared experiences.
-      Experience of working in a supporting role is required.</p>`
+    types: ['with-people'],
+    audiences: ['life-limiting-illness'], // people navigating menopause following a cancer diagnosis
+    minAge: 18,
+    availability: [], // One 1.5-hour session each month: no day or time stated
+    tags: ['DBS check will take place', 'Experience needed', 'Public facing', 'Need a car', 'Suitable from age 18'],
+    descriptionHtml: `<ul class="nhsuk-list nhsuk-list--bullet">
+      <li>If you have experience supporting people in group or community settings, this role could be for you.</li>
+      <li>Community Support Group Session Volunteers help deliver monthly support sessions for people navigating
+        menopause following a cancer diagnosis.</li>
+      <li>Sessions take place at community venues across Leeds, providing a welcoming space where people can
+        connect, share experiences and access peer support.</li>
+    </ul>`
   },
   {
     id: 'peertalk-facilitator',
     title: 'PeerTalk - Support Group Facilitator - Leeds',
     href: '../volunteering/role-profile-1',
-    location: 'Leeds LS8 3QT',
+    location: 'Leeds, LS8 3QT',
     org: 'PeerTalk',
     locationType: 'local',
     distanceMiles: 3.8,

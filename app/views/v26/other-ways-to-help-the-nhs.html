@@ -24,7 +24,8 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="role-categories/view-types">
+      {# _from is set by the results pages' link here; underscore keeps it out of the session #}
+      <a class="nhsuk-back-link__link" href="{% if '_from=results_empty' in currentPage %}results/results_empty{% elif '_from=results' in currentPage %}results/results{% else %}role-categories/view-types{% endif %}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path

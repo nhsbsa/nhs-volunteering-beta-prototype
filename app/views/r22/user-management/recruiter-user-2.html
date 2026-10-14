@@ -24,7 +24,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="manage-users">
+      <a class="nhsuk-back-link__link" href="{{ data['r22-um-back'] or 'manage-users' }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -50,8 +50,13 @@ NHS Volunteering
           <td class="nhsuk-table__cell "></td>
         </tr>
         <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell"><strong>Mobile number</strong></td>
+          <td class="nhsuk-table__cell ">{{ data['r22-um-user-2-mobile'] or "Not provided" }}</td>
+          <td class="nhsuk-table__cell "><a href="change-number">Change</a></td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
           <td class="nhsuk-table__cell"><strong>Phone number</strong></td>
-          <td class="nhsuk-table__cell ">07555 555 555</td>
+          <td class="nhsuk-table__cell ">{{ data['r22-um-user-2-phone'] or "Not provided" }}</td>
           <td class="nhsuk-table__cell "><a href="change-number">Change</a></td>
         </tr>
         <tr role="row" class="nhsuk-table__row">

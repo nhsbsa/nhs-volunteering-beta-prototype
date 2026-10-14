@@ -26,39 +26,22 @@ Register an organisation with NHS Volunteering - Check your answers
     </h1>
 
     <h2>
-      Organisation details
+      Team member details
     </h2>
 
     {{ summaryList({
     rows: [
     {
     key: {
-    text: "Organisation name"
-    },
-    value: {
-    text: "Airedale NHS Foundation Trust"
-    },
-    actions: {
-    items: [
-    {
-    href: "organisation",
-    text: "Change",
-    visuallyHiddenText: "organisation name"
-    }
-    ]
-    }
-    },
-    {
-    key: {
     text: "Full name"
     },
     value: {
-    text: "James Pearson"
+    text: data['bsa-admin-full-name'] or "James Pearson"
     },
     actions: {
     items: [
     {
-    href: "details",
+    href: "new-user-details",
     text: "Change",
     visuallyHiddenText: "full name"
     }
@@ -70,12 +53,12 @@ Register an organisation with NHS Volunteering - Check your answers
     text: "Email address"
     },
     value: {
-    text: "j.pearson@email.nhs.uk"
+    text: data['bsa-admin-email-address'] or "j.pearson@email.nhs.uk"
     },
     actions: {
     items: [
     {
-    href: "details",
+    href: "new-user-details",
     text: "Change",
     visuallyHiddenText: "email address"
     }
@@ -84,17 +67,49 @@ Register an organisation with NHS Volunteering - Check your answers
     },
     {
     key: {
-    text: "Work telephone number"
+    text: "Mobile number"
     },
     value: {
-    text: "01234 555666"
+    text: data['r22-mobile-number'] or "Not provided"
     },
     actions: {
     items: [
     {
-    href: "details",
+    href: "new-user-details",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Phone number"
+    },
+    value: {
+    text: data['r22-phone-number'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "new-user-details",
     text: "Change",
     visuallyHiddenText: "phone number"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Role"
+    },
+    value: {
+    text: data['r22-um-role'] or "Superuser"
+    },
+    actions: {
+    items: [
+    {
+    href: "new-user-select-privilege",
+    text: "Change"
     }
     ]
     }
@@ -102,9 +117,12 @@ Register an organisation with NHS Volunteering - Check your answers
     ]
     }) }}
 
-    <a href="manage-users" class="nhsuk-button">
-      Submit
-    </a>
+    <form action="manage-users" method="post">
+      <input type="hidden" name="r22-um-user-added" value="yes">
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Submit
+      </button>
+    </form>
 
   </div>
 </div>

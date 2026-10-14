@@ -36,31 +36,30 @@ What is the phone number of this user? - NHS Volunteering
 
     <h1>What is the phone number of this user?</h1>
 
+    <form action="check-change-number">
+
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="bsa-admin-telephone">
+      <label class="nhsuk-label" for="r21-mobile-number">
         Mobile number (optional)
       </label>
-      <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
-        We recommend providing the recruiter's mobile number. This means they can receive text messages to
-        authenticate their
-        account
+      <div id="r21-mobile-number-hint" class="nhsuk-hint">
+        We'll use this number to send security codes if the user chooses text message as their additional sign-in method
       </div>
-      <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel"
-        aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
+      <input class="nhsuk-input" id="r21-mobile-number" name="r21-mobile-number" type="tel"
+        aria-describedby="r21-mobile-number-hint" autocomplete="tel">
     </div>
 
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="bsa-admin-telephone">
+      <label class="nhsuk-label" for="r21-phone-number">
         Phone number (optional)
       </label>
-      <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
-        This can be used as contact information on the recruiter's adverts
+      <div id="r21-phone-number-hint" class="nhsuk-hint">
+        We'll use this number as contact information on the recruiter's adverts
       </div>
-      <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel"
-        aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
+      <input class="nhsuk-input" id="r21-phone-number" name="r21-phone-number" type="tel"
+        aria-describedby="r21-phone-number-hint" autocomplete="tel">
     </div>
 
-    <form action="check-change-number">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Continue
       </button>

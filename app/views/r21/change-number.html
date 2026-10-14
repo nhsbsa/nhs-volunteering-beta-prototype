@@ -1,10 +1,16 @@
 {% extends 'layout_vol_header.html' %}
 
+{#- Error state: the error page sets r21Error and extends this page. Values are example inputs that trigger each error. #}
+{%- set error = {
+  mobile: { text: 'Enter a valid mobile number', value: '07700 9001AB' },
+  phone: { text: 'Phone number must be 15 characters or less', value: '0151 5588 6666 7777' }
+} if r21Error else false %}
+
 <!-- some custom css for the home page only -->
 
 
 {% block pageTitle %}
-Enter the team member's mobile and phone number - NHS Volunteering
+{{ "Error: " if error }}Enter the team member's mobile and phone number - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -34,33 +40,55 @@ Enter the team member's mobile and phone number - NHS Volunteering
         Go back</a>
     </div>
 
+    {% if error %}
+    <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+      <div class="nhsuk-error-summary__body">
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+          <li><a href="#r21-mobile-number">{{ error.mobile.text }}</a></li>
+          <li><a href="#r21-phone-number">{{ error.phone.text }}</a></li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
     <h1>Enter the team member's mobile and phone number</h1>
 
     <form action="check-change-number">
 
-    <div class="nhsuk-form-group">
+    <div class="nhsuk-form-group{% if error.mobile %} nhsuk-form-group--error{% endif %}">
       <label class="nhsuk-label" for="r21-mobile-number">
         Mobile number (optional)
       </label>
       <div id="r21-mobile-number-hint" class="nhsuk-hint">
         We'll use this number to send security codes if the user chooses text message as their additional sign-in method. Enter a UK number, for example 07700 900123 or +44 7700 900123.
       </div>
-      <input class="nhsuk-input" id="r21-mobile-number" name="r21-mobile-number" type="tel"
-        aria-describedby="r21-mobile-number-hint" autocomplete="tel">
+      {% if error.mobile %}
+      <span class="nhsuk-error-message" id="r21-mobile-number-error">
+        <span class="nhsuk-u-visually-hidden">Error:</span> {{ error.mobile.text }}
+      </span>
+      {% endif %}
+      <input class="nhsuk-input{% if error.mobile %} nhsuk-input--error{% endif %}" id="r21-mobile-number" name="r21-mobile-number" type="tel"
+        aria-describedby="r21-mobile-number-hint{% if error.mobile %} r21-mobile-number-error{% endif %}" autocomplete="tel"{% if error %} value="{{ error.mobile.value }}"{% endif %}>
     </div>
 
-    <div class="nhsuk-form-group">
+    <div class="nhsuk-form-group{% if error.phone %} nhsuk-form-group--error{% endif %}">
       <label class="nhsuk-label" for="r21-phone-number">
         Phone number (optional)
       </label>
       <div id="r21-phone-number-hint" class="nhsuk-hint">
         We'll use this number as contact information on the recruiter's adverts
       </div>
-      <input class="nhsuk-input" id="r21-phone-number" name="r21-phone-number" type="tel"
-        aria-describedby="r21-phone-number-hint" autocomplete="tel">
+      {% if error.phone %}
+      <span class="nhsuk-error-message" id="r21-phone-number-error">
+        <span class="nhsuk-u-visually-hidden">Error:</span> {{ error.phone.text }}
+      </span>
+      {% endif %}
+      <input class="nhsuk-input{% if error.phone %} nhsuk-input--error{% endif %}" id="r21-phone-number" name="r21-phone-number" type="tel"
+        aria-describedby="r21-phone-number-hint{% if error.phone %} r21-phone-number-error{% endif %}" autocomplete="tel"{% if error %} value="{{ error.phone.value }}"{% endif %}>
     </div>
 
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+      <button class="nhsuk-button" data-module="nhsuk-button" type="button">
         Continue
       </button>
     </form>
@@ -86,6 +114,10 @@ Enter the team member's mobile and phone number - NHS Volunteering
 
 
 
+
+{% if error %}
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
+{% endif %}
 {% endblock %}
 
 

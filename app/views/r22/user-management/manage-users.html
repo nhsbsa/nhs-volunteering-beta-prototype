@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Manage team members - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -41,7 +41,7 @@ NHS Volunteering
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
 
-        <h1 class="nhsuk-u-margin-bottom-3">Manage team members</h1>
+        <h1>Manage team members</h1>
 
         <p class="nhsuk-body-m">
           Add, remove and assign permissions to team members in the service.
@@ -62,58 +62,51 @@ NHS Volunteering
 
         <h2 class="nhsuk-heading-m">Your users</h2>
 
-        <table class="nhsuk-table">
-          <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-              <th role="columnheader" class="" scope="col">
-                Name
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Email address
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Role
-              </th>
-              <th role="columnheader" class="" scope="col">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Emma Pepper</td>
-              <td class="nhsuk-table__cell">emma.pepper@nhs.uk</td>
-              <td class="nhsuk-table__cell ">Superuser</td>
-              <td class="nhsuk-table__cell"><a href="recruiter-user-1">View team member</a></td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Fred Lettuce</td>
-              <td class="nhsuk-table__cell">fred.lettuce@nhs.uk</td>
-              <td class="nhsuk-table__cell ">Recruiter</td>
-              <td class="nhsuk-table__cell "><a href="recruiter-user-2">View team member</a></td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Rickie Cabbage (You)</td>
-              <td class="nhsuk-table__cell ">rickie.cabbage@nhs.uk</a></td>
-              <td class="nhsuk-table__cell">Recruiter</td>
-              <td class="nhsuk-table__cell "><a href="recruiter-user-3">View team member</a></td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">Sarah Onion</td>
-              <td class="nhsuk-table__cell">sarah.onion@nhs.uk</td>
-              <td class="nhsuk-table__cell ">Recruiter</td>
-              <td class="nhsuk-table__cell"><a href="">View team member</a></td>
-            </tr>
-            {% if data['r22-um-user-added'] == 'yes' %}
-            <tr role="row" class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">{{ data['bsa-admin-full-name'] or "James Pearson" }}</td>
-              <td class="nhsuk-table__cell">{{ data['bsa-admin-email-address'] or "j.pearson@email.nhs.uk" }}</td>
-              <td class="nhsuk-table__cell">{{ data['r22-um-role'] or "Superuser" }}</td>
-              <td class="nhsuk-table__cell"><a href="recruiter-user-new">View team member</a></td>
-            </tr>
-            {% endif %}
-          </tbody>
-        </table>
+        {%- set userRows = [
+          [
+            { header: "Name", text: "Emma Pepper" },
+            { header: "Email address", text: "emma.pepper@nhs.uk" },
+            { header: "Role", text: "Superuser" },
+            { header: "Actions", html: '<a href="recruiter-user-1">View team member</a>' }
+          ],
+          [
+            { header: "Name", text: "Fred Lettuce" },
+            { header: "Email address", text: "fred.lettuce@nhs.uk" },
+            { header: "Role", text: "Recruiter" },
+            { header: "Actions", html: '<a href="recruiter-user-2">View team member</a>' }
+          ],
+          [
+            { header: "Name", text: "Rickie Cabbage (You)" },
+            { header: "Email address", text: "rickie.cabbage@nhs.uk" },
+            { header: "Role", text: "Recruiter" },
+            { header: "Actions", html: '<a href="recruiter-user-3">View team member</a>' }
+          ],
+          [
+            { header: "Name", text: "Sarah Onion" },
+            { header: "Email address", text: "sarah.onion@nhs.uk" },
+            { header: "Role", text: "Recruiter" },
+            { header: "Actions", html: '<a href="">View team member</a>' }
+          ]
+        ] %}
+        {%- if data['r22-um-user-added'] == 'yes' %}
+        {%- set userRows = userRows.concat([[
+          { header: "Name", text: data['bsa-admin-full-name'] or "James Pearson" },
+          { header: "Email address", text: data['bsa-admin-email-address'] or "j.pearson@email.nhs.uk" },
+          { header: "Role", text: data['r22-um-role'] or "Superuser" },
+          { header: "Actions", html: '<a href="recruiter-user-new">View team member</a>' }
+        ]]) %}
+        {%- endif %}
+
+        {{ table({
+          responsive: true,
+          head: [
+            { text: "Name" },
+            { text: "Email address" },
+            { text: "Role" },
+            { text: "Actions" }
+          ],
+          rows: userRows
+        }) }}
 
       </div>
     </div>

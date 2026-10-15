@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+{{ data['bsa-admin-full-name'] or "James Pearson" }} - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -37,40 +37,87 @@ NHS Volunteering
 
     <h1>{{ data['bsa-admin-full-name'] or "James Pearson" }}</h1>
 
-    <table class="nhsuk-table">
-      <tbody class="nhsuk-table__body">
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell"><strong>Name</strong></td>
-          <td class="nhsuk-table__cell ">{{ data['bsa-admin-full-name'] or "James Pearson" }}</td>
-          <td class="nhsuk-table__cell "><a href="change-name">Change</a></td>
-        </tr>
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell"><strong>Email address</strong></td>
-          <td class="nhsuk-table__cell ">{{ data['bsa-admin-email-address'] or "j.pearson@email.nhs.uk" }}</td>
-          <td class="nhsuk-table__cell "></td>
-        </tr>
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell"><strong>Mobile number</strong></td>
-          <td class="nhsuk-table__cell ">{{ data['r22-mobile-number'] or "Not provided" }}</td>
-          <td class="nhsuk-table__cell "><a href="change-number">Change</a></td>
-        </tr>
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell"><strong>Phone number</strong></td>
-          <td class="nhsuk-table__cell ">{{ data['r22-phone-number'] or "Not provided" }}</td>
-          <td class="nhsuk-table__cell "><a href="change-number">Change</a></td>
-        </tr>
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell"><strong>Role</strong></td>
-          <td class="nhsuk-table__cell ">{{ data['r22-um-role'] or "Superuser" }}</td>
-          <td class="nhsuk-table__cell "><a href="change-role">Change</a></td>
-        </tr>
-      </tbody>
-    </table>
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "Name"
+    },
+    value: {
+    text: data['bsa-admin-full-name'] or "James Pearson"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-name",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Email address"
+    },
+    value: {
+    text: data['bsa-admin-email-address'] or "j.pearson@email.nhs.uk"
+    }
+    },
+    {
+    key: {
+    text: "Mobile number"
+    },
+    value: {
+    text: data['r22-mobile-number'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Phone number"
+    },
+    value: {
+    text: data['r22-phone-number'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Role"
+    },
+    value: {
+    text: data['r22-um-role'] or "Superuser"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-role",
+    text: "Change"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
 
     <form action="../user-management/deactivate-user-v2">
-      <button class="nhsuk-button"
-        style="background-color:#d5281b; box-shadow: 0 4px 0 #212b32; margin-bottom: 30px;">Deactivate team
-        member</button>
+      <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
+        Deactivate team member
+      </button>
     </form>
 
     <p><a href="recruiter-activities">View recruiter activities</a></p>

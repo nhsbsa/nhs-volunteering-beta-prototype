@@ -1,7 +1,7 @@
 {% extends 'layout_vol_header.html' %}
 
 {% block pageTitle %}
-Register an organisation with NHS Volunteering - Check your answers
+Check your answers - NHS Volunteering
 {% endblock %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
@@ -21,11 +21,11 @@ Register an organisation with NHS Volunteering - Check your answers
         Go back</a>
     </div>
 
-    <h1 class="nhsuk-u-margin-top-4">
+    <h1 class="nhsuk-heading-l">
       Check your answers
     </h1>
 
-    <h2>
+    <h2 class="nhsuk-heading-m">
       Team member details
     </h2>
 
@@ -76,7 +76,8 @@ Register an organisation with NHS Volunteering - Check your answers
     items: [
     {
     href: "new-user-details",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "mobile number"
     }
     ]
     }
@@ -109,7 +110,8 @@ Register an organisation with NHS Volunteering - Check your answers
     items: [
     {
     href: "new-user-select-privilege",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "role"
     }
     ]
     }

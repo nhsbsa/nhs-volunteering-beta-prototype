@@ -2128,7 +2128,7 @@ const teamMemberNumberKeys = {
   '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', startPhone: '07555 555 555' },
   'new': { mobile: 'mobile-number', phone: 'phone-number' }
 }
-const teamListPages = ['manage-users', 'manage-users-confirm', 'manage-users-ricky-su']
+const teamListPages = ['manage-users', 'manage-users-confirm', 'manage-users-ricky-su', 'manage-users-rickie-su']
 
 router.get('/:version/user-management/recruiter-user-:id', function (req, res, next) {
   const { version, id } = req.params

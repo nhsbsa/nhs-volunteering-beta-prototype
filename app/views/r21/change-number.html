@@ -1,10 +1,16 @@
 {% extends 'layout_vol_header.html' %}
 
+{#- Error state: the error page sets r21Error and extends this page. Values are example inputs that trigger each error. #}
+{%- set error = {
+  mobile: { text: 'Enter a valid mobile number', value: '07700 9001AB' },
+  phone: { text: 'Phone number must be 15 characters or less', value: '0151 5588 6666 7777' }
+} if r21Error else false %}
+
 <!-- some custom css for the home page only -->
 
 
 {% block pageTitle %}
-What is the phone number of this user? - NHS Volunteering
+{{ "Error: " if error }}Enter the team member's mobile and phone number - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -34,34 +40,55 @@ What is the phone number of this user? - NHS Volunteering
         Go back</a>
     </div>
 
-    <h1>What is the phone number of this user?</h1>
-
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="bsa-admin-telephone">
-        Mobile number (optional)
-      </label>
-      <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
-        We recommend providing the recruiter's mobile number. This means they can receive text messages to
-        authenticate their
-        account
+    {% if error %}
+    <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+      <div class="nhsuk-error-summary__body">
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+          <li><a href="#r21-mobile-number">{{ error.mobile.text }}</a></li>
+          <li><a href="#r21-phone-number">{{ error.phone.text }}</a></li>
+        </ul>
       </div>
-      <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel"
-        aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
     </div>
+    {% endif %}
 
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="bsa-admin-telephone">
-        Phone number (optional)
-      </label>
-      <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
-        This can be used as contact information on the recruiter's adverts
-      </div>
-      <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel"
-        aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
-    </div>
+    <h1>Enter the team member's mobile and phone number</h1>
 
     <form action="check-change-number">
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+
+    <div class="nhsuk-form-group{% if error.mobile %} nhsuk-form-group--error{% endif %}">
+      <label class="nhsuk-label" for="r21-mobile-number">
+        Mobile number (optional)
+      </label>
+      <div id="r21-mobile-number-hint" class="nhsuk-hint">
+        We'll use this number to send security codes if the user chooses text message as their additional sign-in method. Enter a UK number, for example 07700 900123.
+      </div>
+      {% if error.mobile %}
+      <span class="nhsuk-error-message" id="r21-mobile-number-error">
+        <span class="nhsuk-u-visually-hidden">Error:</span> {{ error.mobile.text }}
+      </span>
+      {% endif %}
+      <input class="nhsuk-input{% if error.mobile %} nhsuk-input--error{% endif %}" id="r21-mobile-number" name="r21-mobile-number" type="tel"
+        aria-describedby="r21-mobile-number-hint{% if error.mobile %} r21-mobile-number-error{% endif %}" autocomplete="tel"{% if error %} value="{{ error.mobile.value }}"{% endif %}>
+    </div>
+
+    <div class="nhsuk-form-group{% if error.phone %} nhsuk-form-group--error{% endif %}">
+      <label class="nhsuk-label" for="r21-phone-number">
+        Phone number (optional)
+      </label>
+      <div id="r21-phone-number-hint" class="nhsuk-hint">
+        We'll use this number as contact information on the recruiter's adverts
+      </div>
+      {% if error.phone %}
+      <span class="nhsuk-error-message" id="r21-phone-number-error">
+        <span class="nhsuk-u-visually-hidden">Error:</span> {{ error.phone.text }}
+      </span>
+      {% endif %}
+      <input class="nhsuk-input{% if error.phone %} nhsuk-input--error{% endif %}" id="r21-phone-number" name="r21-phone-number" type="tel"
+        aria-describedby="r21-phone-number-hint{% if error.phone %} r21-phone-number-error{% endif %}" autocomplete="tel"{% if error %} value="{{ error.phone.value }}"{% endif %}>
+    </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="button">
         Continue
       </button>
     </form>
@@ -87,6 +114,10 @@ What is the phone number of this user? - NHS Volunteering
 
 
 
+
+{% if error %}
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
+{% endif %}
 {% endblock %}
 
 

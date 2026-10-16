@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Enter the team member's mobile and phone number - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -24,7 +24,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="manage-users">
+      <a class="nhsuk-back-link__link" href="{{ 'recruiter-user-' + data['r22-um-editing'] if data['r22-um-editing'] else 'manage-users' }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -34,15 +34,32 @@ NHS Volunteering
         Go back</a>
     </div>
 
-    <h1>What is the phone number of this user?</h1>
+    <h1>Enter the team member's mobile and phone number</h1>
 
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Full phone number
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="text">
-    </div>
-    <form action="check-change-number">
+    <form action="check-change-number" method="post">
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r22-um-edit-mobile">
+          Mobile number (optional)
+        </label>
+        <div id="r22-um-edit-mobile-hint" class="nhsuk-hint">
+          We'll use this number to send security codes if the user chooses text message as their additional sign-in method. Enter a UK number, for example 07700 900123.
+        </div>
+        <input class="nhsuk-input" id="r22-um-edit-mobile" name="r22-um-edit-mobile" type="tel"
+          aria-describedby="r22-um-edit-mobile-hint" autocomplete="tel" value="{{ data['r22-um-edit-mobile'] }}">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r22-um-edit-phone">
+          Phone number (optional)
+        </label>
+        <div id="r22-um-edit-phone-hint" class="nhsuk-hint">
+          We'll use this number as contact information on the recruiter's adverts
+        </div>
+        <input class="nhsuk-input" id="r22-um-edit-phone" name="r22-um-edit-phone" type="tel"
+          aria-describedby="r22-um-edit-phone-hint" autocomplete="tel" value="{{ data['r22-um-edit-phone'] }}">
+      </div>
+
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Continue
       </button>

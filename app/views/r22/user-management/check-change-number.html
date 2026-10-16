@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Check your answers - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -24,7 +24,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="change-name">
+      <a class="nhsuk-back-link__link" href="change-number">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -35,32 +35,49 @@ NHS Volunteering
     </div>
 
 
-    <h1>Check your answers before submitting</h1>
+    <h1 class="nhsuk-heading-l">Check your answers</h1>
 
-    <h2 class="nhsuk-heading nhsuk-heading-m">Recruiter details</h2>
+    <h2 class="nhsuk-heading-m">Team member details</h2>
 
     {{ summaryList({
     rows: [
     {
     key: {
-    text: "Phone number"
+    text: "Mobile number"
     },
     value: {
-    text: "07555 555 555"
+    text: data['r22-um-edit-mobile'] or "Not provided"
     },
     actions: {
     items: [
     {
     href: "change-number",
     text: "Change",
-    visuallyHiddenText: "Title"
+    visuallyHiddenText: "mobile number"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Phone number"
+    },
+    value: {
+    text: data['r22-um-edit-phone'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change",
+    visuallyHiddenText: "phone number"
     }
     ]
     }
     }
     ]
     }) }}
-    <form action="recruiter-user-2">
+    <form action="check-change-number-answer" method="post">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Submit
       </button>

@@ -1,0 +1,164 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+{{ data['bsa-admin-full-name'] or "James Pearson" }} - NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="{{ data['r22-um-back'] or 'manage-users' }}">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+
+    <h1>{{ data['bsa-admin-full-name'] or "James Pearson" }}</h1>
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "Name"
+    },
+    value: {
+    text: data['bsa-admin-full-name'] or "James Pearson"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-name",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Email address"
+    },
+    value: {
+    text: data['bsa-admin-email-address'] or "j.pearson@email.nhs.uk"
+    }
+    },
+    {
+    key: {
+    text: "Mobile number"
+    },
+    value: {
+    text: data['r22-mobile-number'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Phone number"
+    },
+    value: {
+    text: data['r22-phone-number'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Role"
+    },
+    value: {
+    text: data['r22-um-role'] or "Superuser"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-role",
+    text: "Change"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
+
+    <form action="../user-management/deactivate-user-v2">
+      <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
+        Deactivate team member
+      </button>
+    </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

@@ -2116,3 +2116,93 @@ router.post('/v26/pre-application/distance', function (req, res) {
     res.redirect('/v26/pre-application/distance')
   }
 })
+
+// MANAGE TEAM MEMBER NUMBERS (from R22, version taken from the URL so copied releases keep working)
+// Each profile page remembers which team member is being edited, which team list it was opened from
+// (for its Go back link) and loads their numbers into the change number journey.
+// Existing team members start with the phone number their profile showed before; the new team member
+// uses the numbers from the add team member journey. Session keys are prefixed with the release, e.g. r22-um-user-1-mobile.
+const teamMemberNumberKeys = {
+  '1': { mobile: 'um-user-1-mobile', phone: 'um-user-1-phone', startPhone: '07555 555 666' },
+  '2': { mobile: 'um-user-2-mobile', phone: 'um-user-2-phone', startPhone: '07555 555 555' },
+  '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', startPhone: '07555 555 555' },
+  'new': { mobile: 'mobile-number', phone: 'phone-number' }
+}
+const teamListPages = ['manage-users', 'manage-users-confirm', 'manage-users-ricky-su', 'manage-users-rickie-su']
+
+router.get('/:version/user-management/recruiter-user-:id', function (req, res, next) {
+  const { version, id } = req.params
+  const keys = teamMemberNumberKeys[id]
+
+  if (!keys) {
+    return next()
+  }
+
+  const data = req.session.data
+  // The kit has already copied session data into res.locals.data for this request, so update both
+  const setData = (key, value) => {
+    data[key] = value
+    res.locals.data[key] = value
+  }
+  const mobileKey = `${version}-${keys.mobile}`
+  const phoneKey = `${version}-${keys.phone}`
+
+  if (data[phoneKey] === undefined && keys.startPhone) {
+    setData(phoneKey, keys.startPhone)
+  }
+
+  // Go back returns to whichever team list the profile was opened from; returning from
+  // the change number journey keeps the list it was first opened from
+  const referrerPage = (req.get('Referer') || '').split('?')[0].split('/').pop()
+  if (teamListPages.includes(referrerPage)) {
+    setData(`${version}-um-back`, referrerPage)
+  }
+
+  setData(`${version}-um-editing`, id)
+  setData(`${version}-um-edit-mobile`, data[mobileKey] || '')
+  setData(`${version}-um-edit-phone`, data[phoneKey] || '')
+
+  next()
+})
+
+// Check your answers Submit saves the edited numbers to that team member and returns to their profile
+router.post('/:version/user-management/check-change-number-answer', function (req, res) {
+  const { version } = req.params
+  const data = req.session.data
+  const id = data[`${version}-um-editing`]
+  const keys = teamMemberNumberKeys[id]
+
+  if (!keys) {
+    return res.redirect(`/${version}/user-management/manage-users`)
+  }
+
+  data[`${version}-${keys.mobile}`] = data[`${version}-um-edit-mobile`] || ''
+  data[`${version}-${keys.phone}`] = data[`${version}-um-edit-phone`] || ''
+
+  res.redirect(`/${version}/user-management/recruiter-user-${id}`)
+})
+
+// ADD TEAM MEMBER GO BACK LINKS (from R22, version taken from the URL)
+// When a create journey page is opened from a Change link on check your answers, its Go back link
+// returns to check your answers; otherwise it uses the page's normal Go back link.
+const addTeamMemberPages = {
+  'new-user-details': 'um-details-back',
+  'new-user-select-privilege': 'um-privilege-back'
+}
+
+router.get('/:version/user-management/:page', function (req, res, next) {
+  const { version, page } = req.params
+  const backKey = addTeamMemberPages[page]
+
+  if (!backKey) {
+    return next()
+  }
+
+  const referrerPage = (req.get('Referer') || '').split('?')[0].split('/').pop()
+  const back = referrerPage === 'new-user-check-your-answers' ? 'new-user-check-your-answers' : ''
+
+  req.session.data[`${version}-${backKey}`] = back
+  res.locals.data[`${version}-${backKey}`] = back
+
+  next()
+})

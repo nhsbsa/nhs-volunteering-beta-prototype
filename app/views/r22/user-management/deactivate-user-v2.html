@@ -15,6 +15,8 @@ NHS Volunteering
 
 <!-- Homepage content -->
 {% block content %}
+{#- Fred and the new team member share these deactivate pages, so show whichever profile they came from #}
+{%- set deactivateName = (data['bsa-admin-full-name'] or "James Pearson") if data['r22-um-editing'] == 'new' else (data['r22-um-user-2-name'] or "Fred Lettuce") %}
 
 
 <div class="nhsuk-grid-row">
@@ -25,11 +27,11 @@ NHS Volunteering
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">Are you sure you want to deactivate Fred Lettuce's account?</h1>
+            <h1 class="nhsuk-fieldset__heading">Are you sure you want to deactivate {{ deactivateName }}'s account?</h1>
           </legend>
 
           <div class="nhsuk-hint">
-            If you deactivate Fred Lettuce, they will no longer have access to the recruiter dashboard or their
+            If you deactivate {{ deactivateName }}, they will no longer have access to the recruiter dashboard or their
             account.
           </div>
 

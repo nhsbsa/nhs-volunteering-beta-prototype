@@ -15,6 +15,8 @@ NHS Volunteering
 
 <!-- Homepage content -->
 {% block content %}
+{#- Fred and the new team member share these deactivate pages, so show whichever profile they came from #}
+{%- set deactivateName = (data['bsa-admin-full-name'] or "James Pearson") if data['r22-um-editing'] == 'new' else (data['r22-um-user-2-name'] or "Fred Lettuce") %}
 
 
 <div class="nhsuk-grid-row">
@@ -45,7 +47,7 @@ NHS Volunteering
 
     <h2 class="nhsuk-heading-m">What happens next</h2>
 
-    <p>Fred Lettuce's account has been deactivated. You will receive a confirmation email.</p>
+    <p>{{ deactivateName }}'s account has been deactivated. You will receive a confirmation email.</p>
 
 
     <form action="../user-management/manage-users-confirm">

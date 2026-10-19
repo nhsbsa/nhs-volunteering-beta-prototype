@@ -41,7 +41,7 @@ NHS Volunteering
           <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l">You cannot deactivate this team member</h1>
             <p class="govuk-body">
-              You cannot deactivate Emma Pepper. This is because they are the only superuser on this account.
+              You cannot deactivate {{ data['r22-um-user-1-name'] or "Emma Pepper" }}. This is because they are the only superuser on this account.
             </p>
             <p>Before you can deactivate this team member you to need to add at least one superuser to this account.</p>
 

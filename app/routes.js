@@ -2128,22 +2128,29 @@ const teamMemberNumberKeys = {
   '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', startPhone: '07555 555 555' },
   'new': { mobile: 'mobile-number', phone: 'phone-number' }
 }
+// Rickie's profile after their permissions change is the same team member
+teamMemberNumberKeys['3-role-change'] = teamMemberNumberKeys['3']
 const teamListPages = ['manage-users', 'manage-users-confirm', 'manage-users-ricky-su', 'manage-users-rickie-su']
 
 router.get('/:version/user-management/recruiter-user-:id', function (req, res, next) {
   const { version, id } = req.params
   const keys = teamMemberNumberKeys[id]
-
-  if (!keys) {
-    return next()
-  }
-
   const data = req.session.data
   // The kit has already copied session data into res.locals.data for this request, so update both
   const setData = (key, value) => {
     data[key] = value
     res.locals.data[key] = value
   }
+
+  // The change name, number and permissions pages Go back and Submit to whichever profile page they were opened from,
+  // and the change name page starts empty for each team member
+  setData(`${version}-um-profile`, `recruiter-user-${id}`)
+  setData(`${version}-um-edit-name`, '')
+
+  if (!keys) {
+    return next()
+  }
+
   const mobileKey = `${version}-${keys.mobile}`
   const phoneKey = `${version}-${keys.phone}`
 
@@ -2185,6 +2192,7 @@ router.post('/:version/user-management/check-change-number-answer', function (re
 // ADD TEAM MEMBER GO BACK LINKS (from R22, version taken from the URL)
 // When a create journey page is opened from a Change link on check your answers, its Go back link
 // returns to check your answers; otherwise it uses the page's normal Go back link.
+// The first page also remembers which team list Add team member was clicked on, for its Go back link.
 const addTeamMemberPages = {
   'new-user-details': 'um-details-back',
   'new-user-select-privilege': 'um-privilege-back'
@@ -2200,6 +2208,11 @@ router.get('/:version/user-management/:page', function (req, res, next) {
 
   const referrerPage = (req.get('Referer') || '').split('?')[0].split('/').pop()
   const back = referrerPage === 'new-user-check-your-answers' ? 'new-user-check-your-answers' : ''
+
+  if (page === 'new-user-details' && teamListPages.includes(referrerPage)) {
+    req.session.data[`${version}-um-back`] = referrerPage
+    res.locals.data[`${version}-um-back`] = referrerPage
+  }
 
   req.session.data[`${version}-${backKey}`] = back
   res.locals.data[`${version}-${backKey}`] = back

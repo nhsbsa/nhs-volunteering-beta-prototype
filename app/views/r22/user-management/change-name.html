@@ -24,7 +24,7 @@ NHS Volunteering
 
     <div class="nhsuk-back-link">
 
-      <a class="nhsuk-back-link__link" href="manage-users">
+      <a class="nhsuk-back-link__link" href="{{ data['r22-um-profile'] or 'manage-users' }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -37,13 +37,13 @@ NHS Volunteering
 
     <h1>What is the name of this user?</h1>
 
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Full name
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="text">
-    </div>
-    <form action="check-change-name">
+    <form action="check-change-name" method="post">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r22-um-edit-name">
+          Full name
+        </label>
+        <input class="nhsuk-input" id="r22-um-edit-name" name="r22-um-edit-name" type="text" value="{{ data['r22-um-edit-name'] }}">
+      </div>
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="check-change-name">
         Continue
       </button>

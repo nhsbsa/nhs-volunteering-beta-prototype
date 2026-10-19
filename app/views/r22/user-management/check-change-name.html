@@ -45,7 +45,7 @@ NHS Volunteering
     text: "Name"
     },
     value: {
-    text: "Fred Lettuce"
+    text: data['r22-um-edit-name']
     },
     actions: {
     items: [
@@ -59,7 +59,7 @@ NHS Volunteering
     }
     ]
     }) }}
-    <form action="recruiter-user-2">
+    <form action="{{ data['r22-um-profile'] or 'manage-users' }}">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Submit
       </button>

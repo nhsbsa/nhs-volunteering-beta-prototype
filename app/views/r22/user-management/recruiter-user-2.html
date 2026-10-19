@@ -50,7 +50,8 @@
     items: [
     {
     href: "change-name",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "full name"
     }
     ]
     }
@@ -74,7 +75,8 @@
     items: [
     {
     href: "change-number",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "mobile number"
     }
     ]
     }
@@ -90,7 +92,8 @@
     items: [
     {
     href: "change-number",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "phone number"
     }
     ]
     }
@@ -100,13 +103,14 @@
     text: "Role"
     },
     value: {
-    text: "Recruiter"
+    text: data['r22-um-user-2-role'] or "Recruiter"
     },
     actions: {
     items: [
     {
     href: "change-role",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "role"
     }
     ]
     }

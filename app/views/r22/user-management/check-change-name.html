@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Check your answers - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -35,8 +35,8 @@ NHS Volunteering
     </div>
 
 
-    <h1>Check your answers before submitting</h1>
-    <h2 class="nhsuk-heading nhsuk-heading-m">Recruiter details</h2>
+    <h1 class="nhsuk-heading-xl">Check your answers</h1>
+    <h2 class="nhsuk-heading-m">Team member details</h2>
 
     {{ summaryList({
     rows: [
@@ -52,7 +52,7 @@ NHS Volunteering
     {
     href: "change-name",
     text: "Change",
-    visuallyHiddenText: "Title"
+    visuallyHiddenText: "full name"
     }
     ]
     }

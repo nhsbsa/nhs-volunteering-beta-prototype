@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+What permissions should this team member have? - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -35,43 +35,44 @@ NHS Volunteering
     </div>
 
 
-    <h1>What permissions should this team member have?</h1>
 
+    <form action="check-change-role" method="post">
+      <div class="nhsuk-form-group">
 
+        <fieldset class="nhsuk-fieldset">
 
-    <div class="nhsuk-inset-text">
-      <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>Superusers can manage listings and other team members. Recruiters can only manage listings. You can have up to
-        5
-        superusers.</p>
-    </div>
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">What permissions should this team member have?</h1>
+          </legend>
 
-    <div class="nhsuk-form-group">
-
-      <fieldset class="nhsuk-fieldset">
-
-        <div class="nhsuk-radios">
-
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-              Superuser
-            </label>
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Superusers can manage listings and other team members. Recruiters can only manage listings. You can have up to
+              5
+              superusers.</p>
           </div>
 
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-              Recruiter
-            </label>
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-um-edit-role" name="r22-um-edit-role" type="radio" value="Superuser"{% if data['r22-um-edit-role'] == 'Superuser' %} checked{% endif %}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-um-edit-role">
+                Superuser
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="r22-um-edit-role-2" name="r22-um-edit-role" type="radio" value="Recruiter"{% if data['r22-um-edit-role'] == 'Recruiter' %} checked{% endif %}>
+              <label class="nhsuk-label nhsuk-radios__label" for="r22-um-edit-role-2">
+                Recruiter
+              </label>
+            </div>
+
           </div>
+        </fieldset>
 
-        </div>
-      </fieldset>
-
-    </div>
-    <form action="check-change-role">
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit" href="check-change-name">
+      </div>
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Continue
       </button>
     </form>

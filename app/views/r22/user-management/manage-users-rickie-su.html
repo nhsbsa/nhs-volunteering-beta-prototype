@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Manage team members - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -76,9 +76,10 @@ NHS Volunteering
             <th role="columnheader" class="" scope="col">
               Role
             </th>
+            {# Status column hidden for now (Oct 2026)
             <th role="columnheader" class="" scope="col">
               Status
-            </th>
+            </th> #}
             <th role="columnheader" class="" scope="col">
               Actions
             </th>
@@ -89,44 +90,48 @@ NHS Volunteering
             <td class="nhsuk-table__cell">{{ data['r22-um-user-1-name'] or "Emma Pepper" }}</td>
             <td class="nhsuk-table__cell">emma.pepper@nhs.uk</td>
             <td class="nhsuk-table__cell ">Superuser</td>
+            {#
             <td class="nhsuk-table__cell">
               <strong class="nhsuk-tag nhsuk-tag--green">
                 Active
               </strong>
-            </td>
+            </td> #}
             <td class="nhsuk-table__cell"><a href="recruiter-user-1">View team member</a></td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">{{ data['r22-um-user-2-name'] or "Fred Lettuce" }}</td>
             <td class="nhsuk-table__cell">fred.lettuce@nhs.uk</td>
-            <td class="nhsuk-table__cell ">Recruiter</td>
+            <td class="nhsuk-table__cell ">{{ data['r22-um-user-2-role'] or "Recruiter" }}</td>
+            {#
             <td class="nhsuk-table__cell">
               <strong class="nhsuk-tag nhsuk-tag--grey">
                 Deactivated
               </strong>
-            </td>
-            <td class="nhsuk-table__cell "><a href="recruiter-user-2-deactivated">View team member</a></td>
+            </td> #}
+            <td class="nhsuk-table__cell "><a href="recruiter-user-2">View team member</a></td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">{{ data['r22-um-user-3-name'] or "Rickie Cabbage" }} (You)</td>
             <td class="nhsuk-table__cell ">rickie.cabbage@nhs.uk</a></td>
-            <td class="nhsuk-table__cell">Superuser</td>
+            <td class="nhsuk-table__cell">{{ data['r22-um-user-3-role'] or "Superuser" }}</td>
+            {#
             <td class="nhsuk-table__cell">
               <strong class="nhsuk-tag nhsuk-tag--green">
                 Active
               </strong>
-            </td>
+            </td> #}
             <td class="nhsuk-table__cell "><a href="recruiter-user-3">View team member</a></td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">Sarah Onion</td>
             <td class="nhsuk-table__cell">sarah.onion@nhs.uk</td>
             <td class="nhsuk-table__cell ">Recruiter</td>
+            {#
             <td class="nhsuk-table__cell">
               <strong class="nhsuk-tag nhsuk-tag--green">
                 Active
               </strong>
-            </td>
+            </td> #}
             <td class="nhsuk-table__cell"><a href="">View team member</a></td>
           </tr>
         </tbody>

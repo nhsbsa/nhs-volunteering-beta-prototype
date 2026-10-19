@@ -52,7 +52,8 @@
     items: [
     {
     href: "change-name",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "full name"
     }
     ]
     }
@@ -76,7 +77,8 @@
     items: [
     {
     href: "change-number",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "mobile number"
     }
     ]
     }
@@ -92,7 +94,8 @@
     items: [
     {
     href: "change-number",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "phone number"
     }
     ]
     }
@@ -102,13 +105,14 @@
     text: "Role"
     },
     value: {
-    text: "Superuser"
+    text: data['r22-um-user-1-role'] or "Superuser"
     },
     actions: {
     items: [
     {
     href: "../user-management/change-role-superuser",
-    text: "Change"
+    text: "Change",
+    visuallyHiddenText: "role"
     }
     ]
     }

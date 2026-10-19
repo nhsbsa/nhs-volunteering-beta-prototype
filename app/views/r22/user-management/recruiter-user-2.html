@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-Fred Lettuce - NHS Volunteering
+{{ data['r22-um-user-2-name'] or "Fred Lettuce" }} - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -35,7 +35,7 @@ Fred Lettuce - NHS Volunteering
     </div>
 
 
-    <h1>Fred Lettuce</h1>
+    <h1>{{ data['r22-um-user-2-name'] or "Fred Lettuce" }}</h1>
 
     {{ summaryList({
     rows: [
@@ -44,7 +44,7 @@ Fred Lettuce - NHS Volunteering
     text: "Name"
     },
     value: {
-    text: "Fred Lettuce"
+    text: data['r22-um-user-2-name'] or "Fred Lettuce"
     },
     actions: {
     items: [

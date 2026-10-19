@@ -2121,11 +2121,11 @@ router.post('/v26/pre-application/distance', function (req, res) {
 // Each profile page remembers which team member is being edited, which team list it was opened from
 // (for its Go back link) and loads their numbers into the change number journey.
 // Existing team members start with the phone number their profile showed before; the new team member
-// uses the numbers from the add team member journey. Session keys are prefixed with the release, e.g. r22-um-user-1-mobile.
+// uses the numbers and name from the add team member journey. Session keys are prefixed with the release, e.g. r22-um-user-1-mobile.
 const teamMemberNumberKeys = {
-  '1': { mobile: 'um-user-1-mobile', phone: 'um-user-1-phone', startPhone: '07555 555 666' },
-  '2': { mobile: 'um-user-2-mobile', phone: 'um-user-2-phone', startPhone: '07555 555 555' },
-  '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', startPhone: '07555 555 555' },
+  '1': { mobile: 'um-user-1-mobile', phone: 'um-user-1-phone', name: 'um-user-1-name', startPhone: '07555 555 666' },
+  '2': { mobile: 'um-user-2-mobile', phone: 'um-user-2-phone', name: 'um-user-2-name', startPhone: '07555 555 555' },
+  '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', name: 'um-user-3-name', startPhone: '07555 555 555' },
   'new': { mobile: 'mobile-number', phone: 'phone-number' }
 }
 // Rickie's profile after their permissions change is the same team member
@@ -2185,6 +2185,26 @@ router.post('/:version/user-management/check-change-number-answer', function (re
 
   data[`${version}-${keys.mobile}`] = data[`${version}-um-edit-mobile`] || ''
   data[`${version}-${keys.phone}`] = data[`${version}-um-edit-phone`] || ''
+
+  res.redirect(`/${version}/user-management/recruiter-user-${id}`)
+})
+
+// Check your answers Submit saves the edited name to that team member and returns to their profile.
+// The new team member's name is kept in the add team member journey's key.
+router.post('/:version/user-management/check-change-name-answer', function (req, res) {
+  const { version } = req.params
+  const data = req.session.data
+  const id = data[`${version}-um-editing`]
+  const keys = teamMemberNumberKeys[id]
+
+  if (!keys) {
+    return res.redirect(`/${version}/user-management/manage-users`)
+  }
+
+  const name = data[`${version}-um-edit-name`]
+  if (name) {
+    data[keys.name ? `${version}-${keys.name}` : 'bsa-admin-full-name'] = name
+  }
 
   res.redirect(`/${version}/user-management/recruiter-user-${id}`)
 })

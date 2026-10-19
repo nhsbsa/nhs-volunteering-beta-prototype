@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-Rickie Cabbage - NHS Volunteering
+{{ data['r22-um-user-3-name'] or "Rickie Cabbage" }} - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -36,7 +36,7 @@ Rickie Cabbage - NHS Volunteering
 
 
     <h1>
-      Rickie Cabbage
+      {{ data['r22-um-user-3-name'] or "Rickie Cabbage" }}
     </h1>
 
 
@@ -47,7 +47,7 @@ Rickie Cabbage - NHS Volunteering
     text: "Name"
     },
     value: {
-    text: "Rickie Cabbage"
+    text: data['r22-um-user-3-name'] or "Rickie Cabbage"
     },
     actions: {
     items: [

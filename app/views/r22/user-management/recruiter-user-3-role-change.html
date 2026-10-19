@@ -36,7 +36,7 @@ NHS Volunteering
 
 
     <h1 class="nhsuk-u-margin-bottom-2">
-      Rickie Cabbage
+      {{ data['r22-um-user-3-name'] or "Rickie Cabbage" }}
     </h1>
     <p class="nhsuk-u-margin-bottom-5"><strong class="nhsuk-tag nhsuk-tag--green">Active</strong></p>
 
@@ -45,7 +45,7 @@ NHS Volunteering
       <tbody class="nhsuk-table__body">
         <tr role="row" class="nhsuk-table__row">
           <td class="nhsuk-table__cell"><strong>Name</strong></td>
-          <td class="nhsuk-table__cell ">Rickie Cabbage</td>
+          <td class="nhsuk-table__cell ">{{ data['r22-um-user-3-name'] or "Rickie Cabbage" }}</td>
           <td class="nhsuk-table__cell "><a href="change-name">Change</a></td>
         </tr>
         <tr role="row" class="nhsuk-table__row">

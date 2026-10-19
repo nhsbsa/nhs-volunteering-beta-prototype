@@ -4,7 +4,7 @@
 
 
 {% block pageTitle %}
-NHS Volunteering
+Check your answers - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -35,9 +35,9 @@ NHS Volunteering
     </div>
 
 
-    <h1>Check your answers before submitting</h1>
+    <h1 class="nhsuk-heading-xl">Check your answers</h1>
 
-    <h2 class="nhsuk-heading nhsuk-heading-m">Recruiter details</h2>
+    <h2 class="nhsuk-heading-m">Team member details</h2>
 
     {{ summaryList({
     rows: [
@@ -46,21 +46,21 @@ NHS Volunteering
     text: "Role"
     },
     value: {
-    text: "Superuser"
+    text: data['r22-um-edit-role']
     },
     actions: {
     items: [
     {
     href: "change-role-rickie",
     text: "Change",
-    visuallyHiddenText: "Title"
+    visuallyHiddenText: "role"
     }
     ]
     }
     }
     ]
     }) }}
-    <form action="../user-management/recruiter-user-3-role-change" method="post">
+    <form action="check-change-role-answer" method="post">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
         Submit
       </button>

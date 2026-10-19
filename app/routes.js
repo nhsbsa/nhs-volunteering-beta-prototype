@@ -2117,19 +2117,20 @@ router.post('/v26/pre-application/distance', function (req, res) {
   }
 })
 
-// MANAGE TEAM MEMBER NUMBERS (from R22, version taken from the URL so copied releases keep working)
+// MANAGE TEAM MEMBER NUMBERS, NAMES AND ROLES (from R22, version taken from the URL so copied releases keep working)
 // Each profile page remembers which team member is being edited, which team list it was opened from
-// (for its Go back link) and loads their numbers into the change number journey.
-// Existing team members start with the phone number their profile showed before; the new team member
-// uses the numbers and name from the add team member journey. Session keys are prefixed with the release, e.g. r22-um-user-1-mobile.
+// (for its Go back link) and loads their details into the change number, name and permissions journeys.
+// Existing team members start with the phone number, name and role their profile showed before; the new team member
+// uses the details from the add team member journey. Session keys are prefixed with the release, e.g. r22-um-user-1-mobile.
+// Rickie's permissions change returns to the profile page designed for it (rolePage).
 const teamMemberNumberKeys = {
-  '1': { mobile: 'um-user-1-mobile', phone: 'um-user-1-phone', name: 'um-user-1-name', startPhone: '07555 555 666' },
-  '2': { mobile: 'um-user-2-mobile', phone: 'um-user-2-phone', name: 'um-user-2-name', startPhone: '07555 555 555' },
-  '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', name: 'um-user-3-name', startPhone: '07555 555 555' },
-  'new': { mobile: 'mobile-number', phone: 'phone-number' }
+  '1': { mobile: 'um-user-1-mobile', phone: 'um-user-1-phone', name: 'um-user-1-name', role: 'um-user-1-role', startPhone: '07555 555 666', startName: 'Emma Pepper', startRole: 'Superuser' },
+  '2': { mobile: 'um-user-2-mobile', phone: 'um-user-2-phone', name: 'um-user-2-name', role: 'um-user-2-role', startPhone: '07555 555 555', startName: 'Fred Lettuce', startRole: 'Recruiter' },
+  '3': { mobile: 'um-user-3-mobile', phone: 'um-user-3-phone', name: 'um-user-3-name', role: 'um-user-3-role', startPhone: '07555 555 555', startName: 'Rickie Cabbage', startRole: 'Recruiter', rolePage: 'recruiter-user-3-role-change' },
+  'new': { mobile: 'mobile-number', phone: 'phone-number', role: 'um-role', startName: 'James Pearson', startRole: 'Superuser' }
 }
-// Rickie's profile after their permissions change is the same team member
-teamMemberNumberKeys['3-role-change'] = teamMemberNumberKeys['3']
+// Rickie's profile after their permissions change is the same team member, shown as a superuser
+teamMemberNumberKeys['3-role-change'] = { ...teamMemberNumberKeys['3'], startRole: 'Superuser' }
 const teamListPages = ['manage-users', 'manage-users-confirm', 'manage-users-ricky-su', 'manage-users-rickie-su']
 
 router.get('/:version/user-management/recruiter-user-:id', function (req, res, next) {
@@ -2142,10 +2143,8 @@ router.get('/:version/user-management/recruiter-user-:id', function (req, res, n
     res.locals.data[key] = value
   }
 
-  // The change name, number and permissions pages Go back and Submit to whichever profile page they were opened from,
-  // and the change name page starts empty for each team member
+  // The change name, number and permissions pages Go back and Submit to whichever profile page they were opened from
   setData(`${version}-um-profile`, `recruiter-user-${id}`)
-  setData(`${version}-um-edit-name`, '')
 
   if (!keys) {
     return next()
@@ -2168,6 +2167,10 @@ router.get('/:version/user-management/recruiter-user-:id', function (req, res, n
   setData(`${version}-um-editing`, id)
   setData(`${version}-um-edit-mobile`, data[mobileKey] || '')
   setData(`${version}-um-edit-phone`, data[phoneKey] || '')
+  // The change name page starts with the name the profile shows
+  setData(`${version}-um-edit-name`, data[keys.name ? `${version}-${keys.name}` : 'bsa-admin-full-name'] || keys.startName)
+  // The change permissions page starts with the role the profile shows
+  setData(`${version}-um-edit-role`, data[`${version}-${keys.role}`] || keys.startRole)
 
   next()
 })
@@ -2207,6 +2210,25 @@ router.post('/:version/user-management/check-change-name-answer', function (req,
   }
 
   res.redirect(`/${version}/user-management/recruiter-user-${id}`)
+})
+
+// Check your answers Submit saves the chosen role to that team member and returns to their profile
+router.post('/:version/user-management/check-change-role-answer', function (req, res) {
+  const { version } = req.params
+  const data = req.session.data
+  const id = data[`${version}-um-editing`]
+  const keys = teamMemberNumberKeys[id]
+
+  if (!keys) {
+    return res.redirect(`/${version}/user-management/manage-users`)
+  }
+
+  const role = data[`${version}-um-edit-role`]
+  if (role) {
+    data[`${version}-${keys.role}`] = role
+  }
+
+  res.redirect(`/${version}/user-management/${keys.rolePage || `recruiter-user-${id}`}`)
 })
 
 // ADD TEAM MEMBER GO BACK LINKS (from R22, version taken from the URL)

@@ -2,8 +2,11 @@
 <!-- some custom css for the home page only -->
 
 
+{#- Fred and the new team member share these deactivate pages, so show whichever profile they came from #}
+{%- set deactivateName = (data['bsa-admin-full-name'] or "James Pearson") if data['r22-um-editing'] == 'new' else (data['r22-um-user-2-name'] or "Fred Lettuce") %}
+
 {% block pageTitle %}
-NHS Volunteering
+Are you sure you want to deactivate {{ deactivateName }}'s account? - NHS Volunteering
 {% endblock %}
 
 {% block headCSS %}
@@ -15,8 +18,6 @@ NHS Volunteering
 
 <!-- Homepage content -->
 {% block content %}
-{#- Fred and the new team member share these deactivate pages, so show whichever profile they came from #}
-{%- set deactivateName = (data['bsa-admin-full-name'] or "James Pearson") if data['r22-um-editing'] == 'new' else (data['r22-um-user-2-name'] or "Fred Lettuce") %}
 
 
 <div class="nhsuk-grid-row">

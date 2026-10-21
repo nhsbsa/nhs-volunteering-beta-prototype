@@ -1,4 +1,4 @@
-// Live preview of the applicant-facing question on the recruiter (r20/r22) pre-application pages.
+// Live preview of the applicant-facing question on the recruiter (r20/r22/r23) pre-application pages.
 // Follows the character count approach: the visible preview updates as you type,
 // a visually hidden aria-live="polite" copy is updated one second after typing stops.
 

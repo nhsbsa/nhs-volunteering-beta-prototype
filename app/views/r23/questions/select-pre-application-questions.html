@@ -1,0 +1,114 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Ask pre-application questions - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "overview-process",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+      Ask pre-application questions
+    </h1>
+
+    <p class="nhsuk-body">You can choose to ask applicants questions to check whether they meet the essential
+      requirements for the role.</p>
+
+    <p class="nhsuk-body">Applicants who do not meet the requirements will not be able to continue with their
+      application, and will need to start again.</p>
+
+    <p class="nhsuk-body">Make sure any questions you ask are necessary and comply with your organisation's
+      volunteer recruitment policies.</p>
+
+    <form action="/r23-select-pre-application-questions-answer" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="r23-pre-application-questions-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            Which pre-application questions do you want to ask?
+          </legend>
+
+          <div class="nhsuk-hint" id="r23-pre-application-questions-hint">
+            Select all that apply
+          </div>
+
+          <div class="nhsuk-checkboxes">
+
+            <input type="hidden" name="r23-pre-application-questions" value="_unchecked">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r23-pre-application-questions-1"
+                name="r23-pre-application-questions" type="checkbox" value="age"
+                data-checkbox-exclusive-group="r23-pre-application-questions">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-1">
+                Are you [age] or older?
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r23-pre-application-questions-2"
+                name="r23-pre-application-questions" type="checkbox" value="licence"
+                data-checkbox-exclusive-group="r23-pre-application-questions">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-2">
+                Do you have a valid [name] licence?
+              </label>
+            </div>
+
+            {% if data['r9-location'] != 'area' and data['r9-location'] != 'location-larger-area' %}
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r23-pre-application-questions-3"
+                name="r23-pre-application-questions" type="checkbox" value="distance"
+                data-checkbox-exclusive-group="r23-pre-application-questions">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-3">
+                Do you live or work within [distance] miles of [location]? or Can you get to [location] within [travel time] minutes?
+              </label>
+            </div>
+            {% endif %}
+
+            <div class="nhsuk-checkboxes__divider">or</div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="r23-pre-application-questions-4"
+                name="r23-pre-application-questions" type="checkbox" value="none"
+                data-checkbox-exclusive data-checkbox-exclusive-group="r23-pre-application-questions">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-4">
+                I do not want to ask any pre-application questions
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+      <p class="nhsuk-body">
+        <a href="../task-list?r23-task-pre-application-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
+{% endblock %}

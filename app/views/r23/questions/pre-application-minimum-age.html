@@ -1,0 +1,66 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Enter the minimum age required - NHS Volunteering
+{% endblock %}
+
+{% block beforeContent %}
+{{ backLink({
+"href": "select-pre-application-questions",
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+      Enter the minimum age required
+    </h1>
+
+    <p class="nhsuk-body">Make sure any age restriction is necessary and complies with your organisation's volunteer
+      recruitment policies and equality legislation.</p>
+
+    <form action="/r23-pre-application-minimum-age-answer" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r23-pre-application-age">
+          Minimum age
+        </label>
+        <div class="nhsuk-input__wrapper">
+          <input class="nhsuk-input nhsuk-input--width-2" id="r23-pre-application-age"
+            name="r23-pre-application-age" type="text" inputmode="numeric"
+            aria-describedby="r23-pre-application-age-preview"
+            value="{{ data['r23-pre-application-age'] }}">
+          <div class="nhsuk-input__suffix" aria-hidden="true">years</div>
+        </div>
+      </div>
+
+      <div class="nhsuk-inset-text" id="r23-pre-application-age-preview" data-preview>
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Applicants will be asked:</p>
+        <p><strong>Are you <span data-preview-value="r23-pre-application-age" data-preview-default="[age]">{{ data['r23-pre-application-age'] or '[age]' }}</span> or older?</strong></p>
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+      <p class="nhsuk-body">
+        <a href="../task-list?r23-task-pre-application-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/pre-application-preview.js"></script>
+{% endblock %}

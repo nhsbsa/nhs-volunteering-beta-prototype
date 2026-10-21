@@ -1,0 +1,170 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+{{ data['r23-um-user-3-name'] or "Rickie Cabbage" }} - NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-back-link">
+
+      <a class="nhsuk-back-link__link" href="../user-management/manage-users-rickie-su">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" height="24" width="24">
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          </path>
+        </svg>
+        Go back</a>
+    </div>
+
+
+    <h1>
+      {{ data['r23-um-user-3-name'] or "Rickie Cabbage" }}
+    </h1>
+
+
+    {{ summaryList({
+    rows: [
+    {
+    key: {
+    text: "Name"
+    },
+    value: {
+    text: data['r23-um-user-3-name'] or "Rickie Cabbage"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-name",
+    text: "Change",
+    visuallyHiddenText: "full name"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Email address"
+    },
+    value: {
+    text: "rickie.cabbage@nhs.uk"
+    }
+    },
+    {
+    key: {
+    text: "Mobile number"
+    },
+    value: {
+    text: data['r23-um-user-3-mobile'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change",
+    visuallyHiddenText: "mobile number"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Phone number"
+    },
+    value: {
+    text: data['r23-um-user-3-phone'] or "Not provided"
+    },
+    actions: {
+    items: [
+    {
+    href: "change-number",
+    text: "Change",
+    visuallyHiddenText: "phone number"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Role"
+    },
+    value: {
+    text: data['r23-um-user-3-role'] or "Superuser"
+    },
+    actions: {
+    items: [
+    {
+    href: "../user-management/change-role-rickie",
+    text: "Change",
+    visuallyHiddenText: "role"
+    }
+    ]
+    }
+    }
+    ]
+    }) }}
+
+    {# Deactivate hidden until after the MFA release (PO, Oct 2026)
+    <form action="../user-management/deactivate-user-v3">
+      <button class="nhsuk-button nhsuk-button--warning" data-module="nhsuk-button" type="submit">
+        Deactivate team member
+      </button>
+    </form> #}
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

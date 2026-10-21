@@ -1,0 +1,64 @@
+{% extends 'layout_vol_header.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Enter the name of the required licence - NHS Volunteering
+{% endblock %}
+
+{% set preAppSelectedForBack = data['r23-pre-application-questions'] or [] %}
+{% if preAppSelectedForBack is string %}{% set preAppSelectedForBack = [preAppSelectedForBack] %}{% endif %}
+{% set preAppBackHref = 'select-pre-application-questions' %}
+{% if 'age' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-minimum-age' %}{% endif %}
+{% block beforeContent %}
+{{ backLink({
+"href": preAppBackHref,
+"text": "Go back"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+      Enter the name of the required licence
+    </h1>
+
+    <form action="/r23-pre-application-licence-answer" method="post" class="form">
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="r23-pre-application-licence-name">
+          Licence name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="r23-pre-application-licence-name"
+          name="r23-pre-application-licence-name" type="text"
+          aria-describedby="r23-pre-application-licence-name-preview"
+          value="{{ data['r23-pre-application-licence-name'] }}">
+      </div>
+
+      <div class="nhsuk-inset-text" id="r23-pre-application-licence-name-preview" data-preview>
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Applicants will be asked:</p>
+        <p><strong>Do you have a valid <span data-preview-value="r23-pre-application-licence-name" data-preview-default="[name]">{{ data['r23-pre-application-licence-name'] or '[name]' }}</span> licence?</strong></p>
+      </div>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+      <p class="nhsuk-body">
+        <a href="../task-list?r23-task-pre-application-in-progress=true" class="nhsuk-link nhsuk-link--no-visited-state">Save and come back later</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/js/pre-application-preview.js"></script>
+{% endblock %}

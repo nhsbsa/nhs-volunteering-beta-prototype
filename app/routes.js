@@ -1129,6 +1129,175 @@ router.post('/r9-contact-details-answer', function (req, res) {
     res.redirect(r22NextPreApplicationPage(req.session.data, 'distance'))
   })
 
+  // ROUTES FOR R23 create an opportunity journey
+
+  router.post('/r23-contact-details-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r23contactDetails = req.session.data['r9-contact-details']
+
+    if (r23contactDetails === 'no') {
+      res.redirect('/r23/questions/contact-details-change')
+    } else {
+      req.session.data['r23-task-contact-complete'] = 'true'
+      res.redirect('/r23/questions/tags')
+    }
+  })
+
+  router.post('/r23-receive-applications-answer', function (req, res) {
+
+    res.redirect('/r23/questions/alt-closing-date')
+  })
+
+  router.post('/r23-closing-date-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r23closingDate = req.session.data['r9-closing-date']
+
+    if (r23closingDate === 'yes') {
+      res.redirect('/r23/questions/alt-closing-date-answer')
+    } else {
+      req.session.data['r23-task-closing-date-complete'] = 'true'
+      res.redirect('/r23/questions/email-updates')
+    }
+  })
+
+  // choose address - if "the address is not listed here"
+
+  router.post('/r23-choose-address-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r23chooseAddress = req.session.data['r9-choose-address']
+
+    if (r23chooseAddress === 'not-listed') {
+      res.redirect('/r23/questions/manual-address')
+    } else {
+      res.redirect('/r23/questions/another-location')
+    }
+  })
+
+  // add another location - if "answer is yes"
+
+  router.post('/r23-another-location-answer', function (req, res) {
+
+    // Get the answer from session data
+    const r23anotherLocation = req.session.data['r9-another-location']
+
+    if (r23anotherLocation === 'yes') {
+      res.redirect('/r23/questions/address')
+    } else {
+      res.redirect('/r23/questions/check-location')
+    }
+  })
+
+  // ROUTES FOR R23 email updates (post-UR iteration Aug 2026: checkboxes for
+  // per-application, weekly summary, both, or the exclusive No email updates).
+  // No email updates completes the task; any yes goes on to choose who receives them
+
+  router.post('/r23-email-updates-answer', function (req, res) {
+
+    let selected = req.session.data['r23-email-updates'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+
+    if (selected.length && selected.every((value) => value === 'No email updates')) {
+      req.session.data['r23-task-email-complete'] = 'true'
+      res.redirect('/r23/task-list')
+    } else {
+      res.redirect('/r23/questions/email-updates-answer')
+    }
+  })
+
+  // Who will receive email updates: the email address is stored as the value;
+  // "Email address not listed" goes to manual entry
+  router.post('/r23-email-recipient-answer', function (req, res) {
+
+    if (req.session.data['r23-email-recipient'] === 'Email address not listed') {
+      res.redirect('/r23/questions/email-updates-manual-input')
+    } else {
+      res.redirect('/r23/questions/email-details')
+    }
+  })
+
+  // Is this the correct email address: No goes back to choose someone else
+  router.post('/r23-email-check-answer', function (req, res) {
+
+    if (req.session.data['r23-email-check'] === 'No, I want to choose someone else') {
+      res.redirect('/r23/questions/email-updates-answer')
+    } else {
+      req.session.data['r23-task-email-complete'] = 'true'
+      res.redirect('/r23/task-list')
+    }
+  })
+
+  // ROUTES FOR R23 pre-application questions
+
+  // the distance question only applies to fixed locations. With no location
+  // answer in the session (stakeholders clicking through) it stays available
+  function r23DistanceQuestionAllowed(data) {
+    return !['area', 'location-larger-area'].includes(data['r9-location'])
+  }
+
+  // location answer: varying locations or remote drops any stored distance
+  // selection so the check answers page and volunteer side follow suit
+  router.post('/r23-location-answer', function (req, res) {
+    const data = req.session.data
+    if (!r23DistanceQuestionAllowed(data)) {
+      let selected = data['r23-pre-application-questions']
+      if (selected !== undefined) {
+        if (!Array.isArray(selected)) {
+          selected = [selected]
+        }
+        data['r23-pre-application-questions'] = selected.filter((question) => question !== 'distance')
+      }
+    }
+    res.redirect('/r23/questions/availability')
+  })
+
+  // work out the next selected question page, or the task list if none are left
+  function r23NextPreApplicationPage(data, current) {
+
+    let selected = data['r23-pre-application-questions'] || []
+    if (!Array.isArray(selected)) {
+      selected = [selected]
+    }
+    if (!r23DistanceQuestionAllowed(data)) {
+      selected = selected.filter((question) => question !== 'distance')
+    }
+
+    const order = ['age', 'licence', 'distance']
+    const pages = {
+      'age': '/r23/questions/pre-application-minimum-age',
+      'licence': '/r23/questions/pre-application-licence',
+      'distance': '/r23/questions/pre-application-distance'
+    }
+
+    for (const question of order.slice(order.indexOf(current) + 1)) {
+      if (selected.includes(question)) {
+        return pages[question]
+      }
+    }
+    data['r23-pre-application-complete'] = 'true'
+    return '/r23/questions/support-volunteers'
+  }
+
+  router.post('/r23-select-pre-application-questions-answer', function (req, res) {
+    res.redirect(r23NextPreApplicationPage(req.session.data, null))
+  })
+
+  router.post('/r23-pre-application-minimum-age-answer', function (req, res) {
+    res.redirect(r23NextPreApplicationPage(req.session.data, 'age'))
+  })
+
+  router.post('/r23-pre-application-licence-answer', function (req, res) {
+    res.redirect(r23NextPreApplicationPage(req.session.data, 'licence'))
+  })
+
+  router.post('/r23-pre-application-distance-answer', function (req, res) {
+    res.redirect(r23NextPreApplicationPage(req.session.data, 'distance'))
+  })
+
   // ROUTES FOR R12 recruiter email selection for email updates
 
   router.post('/r12/questions/email-details', function (req, res) {
@@ -2114,6 +2283,299 @@ router.post('/v26/pre-application/distance', function (req, res) {
   } else {
     // Handle the case where no selection was made (e.g., reload page)
     res.redirect('/v26/pre-application/distance')
+  }
+})
+
+
+// ROUTES FOR V27 support questions
+
+router.post('/v27/application/additional-support-a', function (req, res) {
+  const needSupport = req.session.data['v27-additional-support-a']
+
+  if (needSupport === 'yes') {
+    res.redirect('/v27/application/additional-support-b')
+  } else if (needSupport === 'no') {
+    res.redirect('/v27/application/motivations')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/application/additional-support-a')
+  }
+})
+
+
+// ROUTES FOR V27 equality questions
+
+router.post('/v27/application/equality-mid-flow', function (req, res) {
+  const equalityInflow = req.session.data['v27-equality-mid-flow']
+
+  if (equalityInflow === 'yes') {
+    res.redirect('/v27/edi/dob')
+  } else if (equalityInflow === 'no') {
+    res.redirect('/v27/application/check')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/application/equality-mid-flow')
+  }
+})
+
+// ROUTES FOR V27 EDI health conditions branching
+// Handlers live on -answer paths, not the page paths: the previous page's form
+// posts to the page path, and a handler there would branch on stale session data.
+// Only Yes goes on to the day activities question. No and Prefer not to say
+// skip straight to ethnic group.
+
+router.post('/v27/edi/health-conditions-answer', function (req, res) {
+  const healthConditions = req.session.data['gds-health-conditions']
+
+  if (healthConditions === 'yes') {
+    res.redirect('/v27/edi/day-activities')
+  } else if (healthConditions) {
+    res.redirect('/v27/edi/ethnic-group')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/edi/health-conditions')
+  }
+})
+
+// ROUTES FOR V27 EDI ethnic group branching
+// White, Mixed, Asian and Black go to the single dynamic background page, which
+// picks its heading and options from gds-ethnic-group in session. Other ethnic
+// group has its optional free-text field on the ethnic group page itself (as in
+// production), so it skips the background page along with Prefer not to say.
+
+router.post('/v27/edi/ethnic-group-answer', function (req, res) {
+  const ethnicGroup = req.session.data['gds-ethnic-group']
+
+  if (ethnicGroup === 'prefer-not-say' || ethnicGroup === 'other-ethnic') {
+    res.redirect('/v27/edi/religion')
+  } else if (ethnicGroup) {
+    res.redirect('/v27/edi/background')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/edi/ethnic-group')
+  }
+})
+
+// ROUTES FOR V27 results filter panel (K5)
+// GET handlers for the Selected filters remove/clear links. Query params are
+// prefixed with _ so the kit's auto-store-data middleware ignores them.
+
+router.get('/v27/results/remove-filter', function (req, res) {
+  const name = req.query._name
+  const value = req.query._value
+  // Distance included: a chosen (non-default) distance is removable and falls
+  // back to the 5-mile default; the default itself renders as plain text
+  const allowed = ['v27-filter-distance', 'v27-filter-setting', 'v27-filter-with', 'v27-filter-type', 'v27-filter-age', 'v27-filter-availability', 'v27-filter-access', 'v27-search-location']
+
+  if (allowed.includes(name)) {
+    const current = req.session.data[name]
+    if (Array.isArray(current)) {
+      req.session.data[name] = current.filter((item) => item !== value)
+      if (req.session.data[name].length === 0) {
+        delete req.session.data[name]
+      }
+    } else if (value === undefined || current === value) {
+      delete req.session.data[name]
+    }
+  }
+
+  res.redirect('/v27/results/results')
+})
+
+router.get('/v27/results/clear-filters', function (req, res) {
+  // Clear resets everything removable, including a chosen distance (which
+  // falls back to the 5-mile default)
+  const filterKeys = ['v27-filter-distance', 'v27-filter-setting', 'v27-filter-with', 'v27-filter-type', 'v27-filter-age', 'v27-filter-availability', 'v27-filter-access', 'v27-search-location']
+  filterKeys.forEach(function (key) {
+    delete req.session.data[key]
+  })
+
+  res.redirect('/v27/results/results')
+})
+
+// V27 results filtering (K5): renders the results page with the opportunity
+// list filtered against session filter state. Data: app/data/opportunities.js.
+// Logic (agreed 22 Jul 2026): OR within a filter group, AND across groups;
+// distance applies to located roles only (remote roles always pass, so a
+// remote-only setting filter naturally shows just the remote section);
+// sort is closest first; no pagination.
+
+const v27Opportunities = require('./data/opportunities-v27')
+
+router.get('/v27/results/results', function (req, res) {
+  const data = req.session.data
+  const toArray = (value) => (Array.isArray(value) ? value : (value ? [value] : []))
+  const intersects = (a, b) => a.some((item) => b.includes(item))
+
+  const distance = parseFloat(data['v27-filter-distance'] || '5')
+  const settings = toArray(data['v27-filter-setting'])
+  const audiences = toArray(data['v27-filter-with'])
+  const types = toArray(data['v27-filter-type'])
+  const age = data['v27-filter-age']
+  const availability = toArray(data['v27-filter-availability'])
+
+  // Where the opportunity is based, chosen on the postcode search page.
+  // Nothing selected means no preference, so both kinds show
+  const searchLocation = toArray(data['v27-search-location'])
+  const remoteWanted = !searchLocation.length || searchLocation.includes('remote')
+  const inPersonWanted = !searchLocation.length || searchLocation.includes('in-person')
+
+  const matched = v27Opportunities.filter(function (opp) {
+    if (opp.locationType === 'remote' && !remoteWanted) return false
+    if (opp.locationType !== 'remote' && !inPersonWanted) return false
+    if (opp.locationType !== 'remote' && opp.distanceMiles !== null && opp.distanceMiles > distance) return false
+    if (settings.length && !intersects(settings, opp.setting)) return false
+    if (audiences.length && !intersects(audiences, opp.audiences)) return false
+    if (types.length && !intersects(types, opp.types)) return false
+    // Age options are brackets: 13-15, 16-17 or 18-and-over (post-UR iteration,
+    // Aug 2026). Unstated minAge is treated as 18+; a bracket matches when the
+    // role's minimum age is at or below the top of the bracket, and 18-and-over
+    // matches everything (adults can do 16+ roles too)
+    if (age && age !== '18-and-over') {
+      const roleMinAge = opp.minAge === null ? 18 : opp.minAge
+      const bracketTop = { '13-15': 15, '16-17': 17 }[age] || 0
+      if (bracketTop < roleMinAge) return false
+    }
+    // The accessible features filter is panel-only until that attribute is
+    // added to app/data/opportunities-v27.js
+    if (availability.length && !intersects(availability, opp.availability)) return false
+    return true
+  })
+
+  res.render('v27/results/results.html', {
+    v27Results: {
+      local: matched.filter((o) => o.locationType === 'local').sort((a, b) => a.distanceMiles - b.distanceMiles),
+      varied: matched.filter((o) => o.locationType === 'varied'),
+      remote: matched.filter((o) => o.locationType === 'remote'),
+      count: matched.length,
+      miles: data['v27-filter-distance'] || '5'
+    }
+  })
+})
+
+// ROUTES FOR V27 pre-application questions
+// Volunteer answers the questions the recruiter selected in the r23
+// pre-application task, in the same session. Any "no" stops the application;
+// "yes" continues to the next selected question, or the application start
+// page once none are left. If the recruiter journey hasn't been done in this
+// session, all 3 questions ask with fallback values.
+
+// Which opportunity the volunteer is applying for. The results listing and
+// the Apply link on a role profile pass ?v27-opportunity=<id> (auto-stored in
+// the session), which sets the caption, title and links back to the profile
+// for any opportunity in app/data/opportunities-v27.js, including the ones
+// that share a placeholder profile such as role-profile-1. The questions and
+// their values come from the recruiter's r23 pre-application task when that
+// journey has been done in the same session, for every opportunity. If it
+// hasn't, the opportunity's own preApplication values are used; a known
+// opportunity without any goes straight to the application, and an unknown
+// id (role-profile-2 passes "default") asks all 3 questions with fallback
+// values
+function v27PreApplication(data) {
+  const opp = v27Opportunities.find((o) => o.id === data['v27-opportunity'])
+  const own = (opp && opp.preApplication) || null
+  const ownDistance = (own && own.distance) || {}
+
+  let selected = data['r23-pre-application-questions']
+  if (selected === undefined) {
+    if (own) {
+      selected = ['age', 'licence', 'distance'].filter((question) => own[question] !== undefined)
+    } else if (opp) {
+      selected = []
+    } else {
+      selected = ['age', 'licence', 'distance']
+    }
+  }
+  if (!Array.isArray(selected)) {
+    selected = [selected]
+  }
+
+  return {
+    title: opp ? opp.title : 'Volunteer at St James Hospital',
+    caption: opp ? opp.title + ' application' : "Volunteer at St. James' Hospital application",
+    profileHref: opp ? opp.href.replace('..', '/v27') : '/v27/volunteering/role-profile-2',
+    selected: selected,
+    age: data['r23-pre-application-age'] || String((own && own.age) || '18'),
+    licenceName: data['r23-pre-application-licence-name'] || (own && own.licence) || 'driving',
+    distanceType: data['r23-pre-application-distance-type'],
+    distanceMiles: data['r23-pre-application-distance-miles'] || String(ownDistance.miles || '20'),
+    distanceMinutes: data['r23-pre-application-distance-minutes'] || '30',
+    distancePostcode: data['r23-pre-application-distance-postcode'] || ownDistance.postcode || 'LS9 7TF'
+  }
+}
+
+router.use(['/v27/pre-application', '/v27/application'], function (req, res, next) {
+  res.locals.v27PreApp = v27PreApplication(req.session.data)
+  next()
+})
+
+// Volunteers only see the pre-application start page when the recruiter
+// selected at least one question; "none" (or an empty selection) goes straight
+// to the application. An unset selection means the recruiter journey hasn't
+// been done, so all 3 questions show
+router.get('/v27/pre-application/start', function (req, res, next) {
+  const selected = v27PreApplication(req.session.data).selected
+  if (!['age', 'licence', 'distance'].some((question) => selected.includes(question))) {
+    return res.redirect('/v27/application/start')
+  }
+  next()
+})
+
+function v27NextPreApplicationPage(data, current) {
+
+  const selected = v27PreApplication(data).selected
+
+  const order = ['age', 'licence', 'distance']
+  const pages = {
+    'age': '/v27/pre-application/age',
+    'licence': '/v27/pre-application/driving-licence',
+    'distance': '/v27/pre-application/distance'
+  }
+
+  for (const question of order.slice(order.indexOf(current) + 1)) {
+    if (selected.includes(question)) {
+      return pages[question]
+    }
+  }
+  return '/v27/application/start'
+}
+
+router.post('/v27/pre-application/age', function (req, res) {
+  const answer = req.session.data['v27-pre-application-age']
+
+  if (answer === 'yes') {
+    res.redirect(v27NextPreApplicationPage(req.session.data, 'age'))
+  } else if (answer === 'no') {
+    res.redirect('/v27/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/pre-application/age')
+  }
+})
+
+router.post('/v27/pre-application/driving-licence', function (req, res) {
+  const answer = req.session.data['v27-pre-application-licence']
+
+  if (answer === 'yes') {
+    res.redirect(v27NextPreApplicationPage(req.session.data, 'licence'))
+  } else if (answer === 'no') {
+    res.redirect('/v27/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/pre-application/driving-licence')
+  }
+})
+
+router.post('/v27/pre-application/distance', function (req, res) {
+  const answer = req.session.data['v27-pre-application-distance']
+
+  if (answer === 'yes') {
+    res.redirect(v27NextPreApplicationPage(req.session.data, 'distance'))
+  } else if (answer === 'no') {
+    res.redirect('/v27/pre-application/stopped')
+  } else {
+    // Handle the case where no selection was made (e.g., reload page)
+    res.redirect('/v27/pre-application/distance')
   }
 })
 

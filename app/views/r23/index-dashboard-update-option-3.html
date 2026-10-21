@@ -1,0 +1,344 @@
+{% extends 'layout_vol_header.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+  NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+
+
+<!-- Homepage content -->
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-full">
+
+
+  <h1>Your dashboard</h1>
+
+  <p>You can use your dashboard to create, edit and reuse listings. You can also review your applications.</p>
+    
+    <h3>Your organisation is Mid and South Essex NHS Foundation Trust</h3>
+    <p><a href="recruiter-trust-details">View your organisation's details</a></p>
+    <p><a href="all-opportunities">View your organisation's opportunities (opens in a new tab)</a></p>  
+  
+  <div></div>
+
+  <a class="nhsuk-button", style="margin-top: 30px;", href="start-page">Create new listing</a>
+
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="select-1">
+      Select which listings you want to view
+    </label>
+    <select class="nhsuk-select" id="select-1" name="select-1">
+      <option value="1" selected>Live listings</option>
+      <option value="2">Closed listings</option>
+      <option value="3">Draft listings</option>
+    </select>
+  </div>
+
+  <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+    Show listings
+  </button>
+
+  <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6">
+    <caption class="nhsuk-table__caption-">Your 'Live' listings</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Title
+        </th>
+       
+        <th role="columnheader" class="" scope="col">
+          Date created
+        </th>
+        <th role="columnheader" class="" scope="col">
+           Closing date
+          </th>
+
+          <th role="columnheader" class="" scope="col">
+            Applications received 
+           </th>
+      </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+  
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live">Opportunity listing title</span> Opportunity name 1</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>12240-AB</span>
+        </td>
+      
+
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>9 May 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>29 October 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>None
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live">Opportunity listing title</span> Opportunity name 2</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>17840-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>5 May 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>29 October 2024
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>5
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 3</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>8
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 4</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 5</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 6</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 7</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 8</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 9</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 10</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 11</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 12</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 13</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 14</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row"></tr>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading"><a href="manage-listing/manage-live-external">Opportunity listing title</span> Opportunity name 15</a>
+          <span class="nhsuk-hint"><span class="nhsuk-u-visually-hidden">Reference number:</span>77625-AB</span>
+        </td>
+       
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Date created </span>13 March 2024
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Closing date </span>30 September 2025
+          </td>
+          <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Applications received </span>12
+          </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

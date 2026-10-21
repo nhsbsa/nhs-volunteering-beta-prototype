@@ -6,10 +6,17 @@
 Check your mobile phone - NHS Volunteering
 {% endblock %}
 
+{% block head %}
+{{ super() }}
+<link href="/css/nhsuk-v10-notification-banner.css" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+
+    {% set resendCodeSuccess = "New code has been sent to your mobile phone" %}
+    {% include "includes/r21-resend-code-banner.html" %}
 
     <form action="/r21/index-dashboard-update-option-1" method="post">
 
@@ -37,7 +44,7 @@ Check your mobile phone - NHS Volunteering
           <div class="nhsuk-details__text">
             <p>If you have not received a text, you can:</p>
             <ul>
-              <li><a href="#">request a new code</a></li>
+              <li><button class="app-button-link" id="request-new-code" type="button" data-resend-code>request a new code</button></li>
               <li><a href="/r21/set-up-auth-EU">try another authentication method</a></li>
             </ul>
           </div>
@@ -51,4 +58,6 @@ Check your mobile phone - NHS Volunteering
 
   </div>
 </div>
+
+<script src="/js/resend-code.js"></script>
 {% endblock %}

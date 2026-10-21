@@ -1,0 +1,11 @@
+// NHS Design System notification banner from nhsuk-frontend v10 (npm alias
+// "nhsuk-frontend-v10"), compiled to public/css/nhsuk-v10-notification-banner.css
+// and linked per page by the R21 code pages that have "request a new code" (success
+// banner shown after a new code is sent). The kit stays on v9 css, which has no
+// notification banner.
+//
+// The component imports only core/settings, core/tools and core/helpers (mixins
+// and variables, no css output), so it is used directly rather than vendored like
+// nhsuk-v10-header.scss.
+
+@use "node_modules/nhsuk-frontend-v10/dist/nhsuk/components/notification-banner";

@@ -424,3 +424,18 @@ padding-top: 40px;
   padding: 16px 0;
   background-color: #fff;
 }
+// Button styled as a link, for in-page actions that sit where a link would
+// (R21 "request a new code" in the code pages' expander, which resends the code
+// without leaving the page, so it is a button for screen readers and keyboards).
+// No NHS, GOV.UK or MOJ component covers this; agreed exception to the
+// no-custom-CSS rule, Oct 2026. Resets the browser button styles, then applies
+// the same nhsuk link mixin as <a> elements (colour, underline, hover, focus).
+.app-button-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  @include nhsuk-link-style-default;
+}

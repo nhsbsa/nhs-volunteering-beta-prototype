@@ -1,0 +1,69 @@
+{% extends 'layout_vol_header-no-footer-links.html' %}
+
+<!-- some custom css for the home page only -->
+
+
+{% block pageTitle %}
+NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+<!-- NHS.UK header -->
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+  </div>
+</div>
+
+<!-- Homepage content -->
+{% block content %}
+
+
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper nhsuk-width-container nhsuk-main-wrapper nhsuk-u-margin-bottom-7" id="maincontent">
+    <div class="nhsuk-width-container">
+      <main class="nhsuk-main-wrapper nhsuk-main-wrapper--l" id="main-content" role="main">
+
+
+        <h1 class="govuk-heading-l">Service unavailable</h1>
+        <p class="nhsuk-body">
+          Due to technical issues, the NHS Volunteering service is currently unavailable.</p>
+        <p>We are working hard to resolve the issues as a priority.</p>
+        <p>We apologise for any inconvenience this may cause and thank you for your patience.</p>
+        </p>
+    </div>
+</div>
+</main>
+</div>
+
+
+</div>
+
+</div>
+
+{% endblock %} {# closes main #}
+
+
+
+
+
+
+
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

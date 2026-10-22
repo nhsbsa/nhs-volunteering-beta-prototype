@@ -1,0 +1,47 @@
+{% extends 'v27/v27_layout.html' %}
+
+
+{% block pageTitle %}
+We have stopped your application - NHS Volunteering
+{% endblock %}
+
+{% block headCSS %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <h1 class="nhsuk-u-margin-top-5"><span class="nhsuk-caption-l nhsuk-caption--top">{{ v27PreApp.caption }}</span>
+      We have stopped your application</h1>
+
+    <p>This is because of your answers to the pre-application questions. You do not meet the minimum requirements of
+      the opportunity.</p>
+
+    <p>If you think you have answered any questions incorrectly, and you do meet the minimum requirements of the
+      opportunity, contact the recruiter using the details on the advert.</p>
+
+    <a class="nhsuk-button nhsuk-u-margin-top-3" href="/v27/results/results">Return to search results</a>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

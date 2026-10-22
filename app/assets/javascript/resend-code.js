@@ -10,16 +10,18 @@
 // focused, as the NHS DS error summary JS does on page load. Its link moves focus
 // back to the button.
 // Either one replaces whatever is showing, so a repeat press is announced again.
-// Prototype only: there is no real wait. Presses alternate, starting with the
-// error (the first code was just sent when the page opened), so the next press
-// after the error shows the success banner.
+// The wait is 60 seconds from the last code sent (the first code was sent when the
+// page opened). The too soon error says how many seconds are left at the time of
+// the press. It is not a live countdown: the number only changes on the next press.
 //
 // Lockout (all resends used): every press shows the lockout error summary. Its link
-// moves focus back to the button, like the too soon error.
+// moves focus back to the button, like the too soon error, and its "Try another
+// authentication method" link moves focus to that link in the expander. Pages
+// without that link drop the item. The 15 minutes never counts down.
 //
 // The R21 index links open a page with a message already showing:
-// ?resend=too-soon (next press shows success), ?resend=sent (next press shows the
-// too soon error) or ?resend=lockout (stays locked out).
+// ?resend=too-soon, ?resend=sent (both start the 60 seconds from page load) or
+// ?resend=lockout (stays locked out).
 
 (function () {
   var button = document.querySelector('[data-resend-code]')
@@ -31,7 +33,8 @@
 
   var state = new URLSearchParams(window.location.search).get('resend')
   var lockedOut = state === 'lockout'
-  var tooSoon = true
+  var waitSeconds = 60
+  var lastSent = Date.now()
 
   function show(template) {
     var message = template.content.firstElementChild.cloneNode(true)
@@ -46,32 +49,42 @@
     return message
   }
 
-  function showError(template, target) {
+  // Each error link goes to the element its href names, opening the expander first.
+  // A link whose element is not on the page is dropped.
+  function showError(template) {
     var summary = show(template)
-    var link = summary.querySelector('a')
-    link.setAttribute('href', '#' + target.id)
-    link.addEventListener('click', function (event) {
-      event.preventDefault()
-      target.closest('details').open = true
-      target.focus()
+    summary.querySelectorAll('a').forEach(function (link) {
+      var target = document.getElementById(link.getAttribute('href').slice(1))
+      if (!target) {
+        link.closest('li').remove()
+        return
+      }
+      link.addEventListener('click', function (event) {
+        event.preventDefault()
+        target.closest('details').open = true
+        target.focus()
+      })
     })
   }
 
   function press() {
     if (lockedOut) {
-      showError(lockoutTemplate, button)
+      showError(lockoutTemplate)
       return
     }
-    if (tooSoon) {
-      showError(errorTemplate, button)
+    var secondsLeft = Math.ceil(waitSeconds - (Date.now() - lastSent) / 1000)
+    if (secondsLeft > 0) {
+      errorTemplate.content.querySelector('[data-resend-code-wait]').textContent =
+        secondsLeft + (secondsLeft === 1 ? ' second' : ' seconds')
+      showError(errorTemplate)
     } else {
+      lastSent = Date.now()
       show(successTemplate)
     }
-    tooSoon = !tooSoon
   }
 
   button.addEventListener('click', press)
 
-  if (state === 'sent') tooSoon = false
+  if (state === 'sent') lastSent -= waitSeconds * 1000
   if (state === 'lockout' || state === 'too-soon' || state === 'sent') press()
 })()

@@ -1,0 +1,72 @@
+{% extends 'layout_vol_header.html' %}
+
+{% block pageTitle %}
+Register an organisation with NHS Volunteering - Recruiter details
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="manage-users">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <h1>
+        Enter team member details
+      </h1>
+
+      <form action="new-user-select-privilege">
+        
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="bsa-admin-full-name">
+              Full name
+            </label>
+            <input class="nhsuk-input" id="bsa-admin-full-name" name="bsa-admin-full-name" type="text">
+            </div>
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="bsa-admin-email-address">
+                Email address
+              </label>
+              <input class="nhsuk-input" id="bsa-admin-email-address" name="bsa-admin-email-address" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="bsa-admin-email-address-confirmed">
+                Confirm email address
+              </label>
+              <input class="nhsuk-input" id="bsa-admin-email-address-confirmed" name="bsa-admin-email-address-confirmed" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="bsa-admin-telephone">
+                Work telephone number
+              </label>
+              <div id="bsa-admin-telephone-hint" class="nhsuk-hint">
+                For example, 01632960001, 07700900982 or +448081570192  
+              </div>
+              <input class="nhsuk-input" id="bsa-admin-telephone" name="bsa-admin-telephone" type="tel" aria-describedby="bsa-admin-telephone-hint" autocomplete="tel">
+            </div>
+
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+            
+              <p>Do not use a shared inbox email address.</p>
+            </div>
+
+          <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+            Continue
+        </button>
+      </form>
+
+    </div>  
+
+  </div>
+{% endblock %}

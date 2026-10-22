@@ -1,7 +1,10 @@
 <!-- Messages for "request a new code" (R21 code pages). The mount is empty until
      the button is pressed, then /js/resend-code.js copies in the success banner
      (new code sent) or an error summary (pressed too soon, or locked out with
-     ?resend=lockout) and focuses it.
+     ?resend=lockout) and focuses it. The too soon wait is filled in with the
+     seconds left at the time of the press. Lockout items go to their
+     link in the expander; pages without a "try another authentication method"
+     link drop that item.
      Copy from content design (Oct 2026). Pages set resendCodeSuccess before the
      include, wording matched to the method (email or mobile phone). -->
 <div data-resend-code-mount></div>
@@ -21,7 +24,7 @@
     <h2 class="nhsuk-error-summary__title" id="error-summary-title">There is a problem</h2>
     <div class="nhsuk-error-summary__body">
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-        <li><a href="#request-new-code">You must wait 2 minutes before requesting a new code</a></li>
+        <li><a href="#request-new-code">You must wait <span data-resend-code-wait>60 seconds</span> before requesting a new code</a></li>
       </ul>
     </div>
   </div>
@@ -30,8 +33,10 @@
   <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert">
     <h2 class="nhsuk-error-summary__title" id="error-summary-title">There is a problem</h2>
     <div class="nhsuk-error-summary__body">
+      <p>You have requested too many codes. You can:</p>
       <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
-        <li><a href="#request-new-code">You have requested too many codes. You can request a new code in 15 minutes.</a></li>
+        <li><a href="#request-new-code">Request a new code in 15 minutes</a></li>
+        <li><a href="#try-another-method">Try another authentication method</a></li>
       </ul>
     </div>
   </div>

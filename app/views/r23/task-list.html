@@ -18,12 +18,12 @@ Task list
 
 {% set section1Complete = data['r23-task-title-complete'] or data['r9-opportunity-name'] %}
 {% set section2Complete = data['r23-task-summary-complete'] and data['r23-task-description-complete'] and
-data['r23-task-looking-for-complete'] and data['r23-task-overview-complete'] and data['r23-pre-application-complete']
+data['r23-task-looking-for-complete'] and data['r23-task-overview-complete']
 and data['r23-task-support-complete'] and data['r23-task-location-complete'] and
 data['r23-task-availability-complete'] and data['r23-task-contact-complete'] and data['r23-task-tags-complete'] and
-data['r23-task-filters-complete'] and data['r23-task-accessible-complete'] %}
-{% set section3Complete = data['r23-task-receive-complete'] and data['r23-task-closing-date-complete'] and
-data['r23-task-email-complete'] %}
+data['r23-task-filters-complete'] %}
+{% set section3Complete = data['r23-pre-application-complete'] and data['r23-task-receive-complete'] and
+data['r23-task-closing-date-complete'] and data['r23-task-email-complete'] %}
 {% set completedSections = (1 if section1Complete else 0) + (1 if section2Complete else 0) + (1 if section3Complete
 else 0) %}
 
@@ -176,22 +176,6 @@ else 0) %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/select-pre-application-questions">
-                Add pre-application questions
-              </a>
-            </span>
-            {% if data['r23-pre-application-complete'] %}
-            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
-            {% elif data['r23-task-pre-application-in-progress'] %}
-            <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__task-tag" id="company-information-completed">In
-              progress</strong>
-            {% else %}
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
-            {% endif %}
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
               <a href="questions/availability">
                 Add availability requirements
               </a>
@@ -224,22 +208,6 @@ else 0) %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="questions/tags">
-                Add opportunity tags
-              </a>
-            </span>
-            {% if data['r23-task-tags-complete'] %}
-            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
-            {% elif data['r23-task-tags-in-progress'] %}
-            <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__task-tag" id="company-information-completed">In
-              progress</strong>
-            {% else %}
-            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
-              started</strong>
-            {% endif %}
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
               <a href="questions/choose-search-filters">
                 Choose search filters
               </a>
@@ -256,6 +224,23 @@ else 0) %}
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
+              <a href="questions/tags">
+                Add opportunity tags
+              </a>
+            </span>
+            {% if data['r23-task-tags-complete'] %}
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            {% elif data['r23-task-tags-in-progress'] %}
+            <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__task-tag" id="company-information-completed">In
+              progress</strong>
+            {% else %}
+            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
+              started</strong>
+            {% endif %}
+          </li>
+          {# Accessible features hidden for UR round 3 (NVPB-4446), remove the comment tags to bring it back
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
               <a href="questions/choose-accessible-filters">
                 Choose accessible features and facilities
               </a>
@@ -270,6 +255,7 @@ else 0) %}
               started</strong>
             {% endif %}
           </li>
+          #}
         </ul>
       </li>
       <li>
@@ -277,6 +263,22 @@ else 0) %}
           <span class="app-task-list__section-number">3. </span> Select application settings
         </h2>
         <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="questions/select-pre-application-questions">
+                Add pre-application questions
+              </a>
+            </span>
+            {% if data['r23-pre-application-complete'] %}
+            <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
+            {% elif data['r23-task-pre-application-in-progress'] %}
+            <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__task-tag" id="company-information-completed">In
+              progress</strong>
+            {% else %}
+            <strong class="nhsuk-tag nhsuk-tag--grey app-task-list__task-tag" id="company-information-completed">Not
+              started</strong>
+            {% endif %}
+          </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="questions/recieve-applications">

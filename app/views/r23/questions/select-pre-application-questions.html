@@ -8,7 +8,7 @@ Ask pre-application questions - NHS Volunteering
 
 {% block beforeContent %}
 {{ backLink({
-"href": "overview-process",
+"href": "../task-list",
 "text": "Go back"
 }) }}
 {% endblock %}
@@ -18,7 +18,7 @@ Ask pre-application questions - NHS Volunteering
   <div class="nhsuk-grid-column-two-thirds">
 
     <h1 class="nhsuk-heading-l">
-      <span class="nhsuk-caption-l nhsuk-caption--top">Create an opportunity advert</span>
+      <span class="nhsuk-caption-l nhsuk-caption--top">Select application settings</span>
       Ask pre-application questions
     </h1>
 
@@ -53,7 +53,7 @@ Ask pre-application questions - NHS Volunteering
                 name="r23-pre-application-questions" type="checkbox" value="age"
                 data-checkbox-exclusive-group="r23-pre-application-questions">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-1">
-                Are you [age] or older?
+                Minimum age requirement
               </label>
             </div>
 
@@ -62,7 +62,7 @@ Ask pre-application questions - NHS Volunteering
                 name="r23-pre-application-questions" type="checkbox" value="licence"
                 data-checkbox-exclusive-group="r23-pre-application-questions">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-2">
-                Do you have a valid [name] licence?
+                Licence requirement (such as driving licence)
               </label>
             </div>
 
@@ -72,7 +72,7 @@ Ask pre-application questions - NHS Volunteering
                 name="r23-pre-application-questions" type="checkbox" value="distance"
                 data-checkbox-exclusive-group="r23-pre-application-questions">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-pre-application-questions-3">
-                Do you live or work within [distance] miles of [location]? or Can you get to [location] within [travel time] minutes?
+                Location requirement
               </label>
             </div>
             {% endif %}

@@ -95,6 +95,8 @@ Check your answers before publishing your listing - NHS Volunteering
     actions: { items: [ { href: "email-updates-answer", text: "Change", visuallyHiddenText: "Who will receive email updates" } ] }
     } if 'No email updates' not in emailUpdates else false %}
 
+    {# Accessible features hidden for UR round 3 (NVPB-4446), set to true to bring the row back #}
+    {% set showAccessibleFeatures = false %}
     {% set accessibleFeatures = [data['r23-accessible-features']] if data['r23-accessible-features'] is string else
     data['r23-accessible-features'] %}
 
@@ -121,15 +123,15 @@ Check your answers before publishing your listing - NHS Volunteering
     <br>
     <strong>Who is the volunteer supporting?</strong>
     <br>
-    {{ filterSupporting | join('<br>') | safe if filterSupporting else 'Older people' }}
+    {{ filterSupporting | join('<br>') | safe if filterSupporting else 'Senior citizens' }}
     <br>
     <strong>What type of volunteering is your opportunity?</strong>
     <br>
-    {{ filterType | join('<br>') | safe if filterType else 'Gardening and DIY' }}
+    {{ filterType | join('<br>') | safe if filterType else 'Manual labour (DIY, gardening, warehouse)' }}
     <br>
-    <strong>Which ages is this opportunity suitable for?</strong>
+    <strong>Which age groups is this opportunity suitable for?</strong>
     <br>
-    {{ filterAges | join('<br>') | safe if filterAges else '18 and over' }}
+    {{ filterAges | join('<br>') | safe if filterAges else '18 years and over' }}
     <br>
     <strong>When do you need volunteers to be available?</strong>
     <br>
@@ -329,23 +331,6 @@ Check your answers before publishing your listing - NHS Volunteering
     },
     {
     key: {
-    text: "Pre-application questions"
-    },
-    value: {
-    html: preApplicationQuestionsHtml
-    },
-    actions: {
-    items: [
-    {
-    href: "select-pre-application-questions",
-    text: "Change",
-    visuallyHiddenText: "Pre-application questions"
-    }
-    ]
-    }
-    },
-    {
-    key: {
     text: "Availability"
     },
     value: {
@@ -382,23 +367,6 @@ Check your answers before publishing your listing - NHS Volunteering
     },
     {
     key: {
-    text: "Opportunity tags"
-    },
-    value: {
-    html: opportunityTagsHtml
-    },
-    actions: {
-    items: [
-    {
-    href: "tags",
-    text: "Change",
-    visuallyHiddenText: "Opportunity tags"
-    }
-    ]
-    }
-    },
-    {
-    key: {
     text: "Search filters"
     },
     value: {
@@ -410,6 +378,23 @@ Check your answers before publishing your listing - NHS Volunteering
     href: "choose-search-filters",
     text: "Change",
     visuallyHiddenText: "Search filters"
+    }
+    ]
+    }
+    },
+    {
+    key: {
+    text: "Opportunity tags"
+    },
+    value: {
+    html: opportunityTagsHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "tags",
+    text: "Change",
+    visuallyHiddenText: "Opportunity tags"
     }
     ]
     }
@@ -430,13 +415,30 @@ Check your answers before publishing your listing - NHS Volunteering
     }
     ]
     }
-    }
+    } if showAccessibleFeatures else false
     ]
     }) }}
     <h2 class="nhsuk-heading nhsuk-heading-m">Application settings</h2>
 
     {{ summaryList({
     rows: [
+    {
+    key: {
+    text: "Pre-application questions"
+    },
+    value: {
+    html: preApplicationQuestionsHtml
+    },
+    actions: {
+    items: [
+    {
+    href: "select-pre-application-questions",
+    text: "Change",
+    visuallyHiddenText: "Pre-application questions"
+    }
+    ]
+    }
+    },
     {
     key: {
     text: "How you want to receive applications"

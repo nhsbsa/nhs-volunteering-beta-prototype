@@ -1140,7 +1140,7 @@ router.post('/r9-contact-details-answer', function (req, res) {
       res.redirect('/r23/questions/contact-details-change')
     } else {
       req.session.data['r23-task-contact-complete'] = 'true'
-      res.redirect('/r23/questions/tags')
+      res.redirect('/r23/questions/choose-search-filters')
     }
   })
 
@@ -1255,7 +1255,8 @@ router.post('/r9-contact-details-answer', function (req, res) {
     res.redirect('/r23/questions/availability')
   })
 
-  // work out the next selected question page, or the task list if none are left
+  // work out the next selected question page, or receive applications (next
+  // task in Select application settings) if none are left
   function r23NextPreApplicationPage(data, current) {
 
     let selected = data['r23-pre-application-questions'] || []
@@ -1279,7 +1280,7 @@ router.post('/r9-contact-details-answer', function (req, res) {
       }
     }
     data['r23-pre-application-complete'] = 'true'
-    return '/r23/questions/support-volunteers'
+    return '/r23/questions/recieve-applications'
   }
 
   router.post('/r23-select-pre-application-questions-answer', function (req, res) {
@@ -2402,6 +2403,12 @@ router.get('/v27/results/clear-filters', function (req, res) {
 
 const v27Opportunities = require('./data/opportunities-v27')
 
+// Postcode search unhappy path (postcode-search?_unhappy=true): the search
+// returns nothing, so it lands on the results page's own "No results found" state
+router.post('/v27-postcode-search-unhappy-path-answer', function (req, res) {
+  res.redirect('/v27/results/results?_empty=true')
+})
+
 router.get('/v27/results/results', function (req, res) {
   const data = req.session.data
   const toArray = (value) => (Array.isArray(value) ? value : (value ? [value] : []))
@@ -2420,7 +2427,11 @@ router.get('/v27/results/results', function (req, res) {
   const remoteWanted = !searchLocation.length || searchLocation.includes('remote')
   const inPersonWanted = !searchLocation.length || searchLocation.includes('in-person')
 
+  // ?_empty=true (unhappy path) forces the zero results state
+  const forceEmpty = req.query._empty === 'true'
+
   const matched = v27Opportunities.filter(function (opp) {
+    if (forceEmpty) return false
     if (opp.locationType === 'remote' && !remoteWanted) return false
     if (opp.locationType !== 'remote' && !inPersonWanted) return false
     if (opp.locationType !== 'remote' && opp.distanceMiles !== null && opp.distanceMiles > distance) return false

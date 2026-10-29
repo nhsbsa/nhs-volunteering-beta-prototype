@@ -98,40 +98,32 @@ NHS Volunteering
         } %}
         {% set settingLabels = {
           "hospital": "Hospital, hospice or other care facility",
-          "community": "In local community",
+          "community": "In the local community",
           "office": "Office",
+          "outdoors": "Outdoors",
           "remote": "Remote, from home"
         } %}
         {% set withLabels = {
-          "children": "Children",
-          "young-people": "Young people",
-          "older-people": "Older people",
+          "children-young-people": "Children and young people",
+          "adults": "Adults",
+          "senior-citizens": "Senior citizens",
           "families": "Families",
-          "mental-health": "People that need mental health support",
-          "physical-disabilities": "People with physical disabilities",
-          "learning-disabilities": "People with learning disabilities",
+          "disabilities": "People with disabilities",
+          "mental-health": "People needing mental health support",
           "life-limiting-illness": "People with a life-limiting illness"
         } %}
         {% set typeLabels = {
-          "admin": "Admin",
-          "driving": "Driving",
-          "gardening": "Gardening and DIY",
-          "maternity": "Maternity and postnatal support",
-          "meet-and-greet": "Meet and greet",
-          "fundraising": "NHS Fundraising",
-          "retail": "NHS Retail",
-          "companionship": "Patient companionship",
-          "social-media": "Social media",
-          "stores": "Stockroom and warehouse",
-          "telephone": "Telephone",
-          "trolley": "Trolley volunteer",
-          "trustee": "Trustee",
-          "with-people": "With people"
+          "supporting-people": "Supporting patients and people",
+          "admin-digital": "Administration and digital",
+          "driving-transport": "Driving and transport",
+          "manual-labour": "Manual labour (DIY, gardening, warehouse)",
+          "retail-fundraising": "NHS Retail and fundraising",
+          "trustee-governance": "Trustee and governance"
         } %}
         {% set ageLabels = {
-          "13-15": "13 to 15 years of age",
-          "16-17": "16 to 17 years of age",
-          "18-and-over": "18 and over"
+          "13-15": "13 to 15 years",
+          "16-17": "16 to 17 years",
+          "18-and-over": "18 years and over"
         } %}
         {% set availabilityLabels = {
           "morning": "Morning",
@@ -203,7 +195,7 @@ NHS Volunteering
 
             <div class="moj-filter__content">
 
-              {% set anyFilters = distanceChosen or settingSelected.length or withSelected.length or typeSelected.length or ageSelected or availabilitySelected.length or accessSelected.length or searchLocationSelected.length %}
+              {% set anyFilters = distanceChosen or settingSelected.length or withSelected.length or typeSelected.length or ageSelected or availabilitySelected.length or searchLocationSelected.length %}
               <div class="moj-filter__selected">
 
                 <div class="moj-filter__selected-heading">
@@ -270,7 +262,7 @@ NHS Volunteering
                 {% endif %}
 
                 {% if typeSelected.length %}
-                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Type of volunteering</h3>
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Volunteering type</h3>
 
                 <ul class="moj-filter-tags">
                   {% for value in typeSelected %}
@@ -281,7 +273,7 @@ NHS Volunteering
                 {% endif %}
 
                 {% if ageSelected %}
-                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your age group</h3>
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Volunteer age restriction</h3>
 
                 <ul class="moj-filter-tags">
                   <li><a class="moj-filter__tag" href="/v27/results/remove-filter?_name=v27-filter-age"><span
@@ -290,7 +282,7 @@ NHS Volunteering
                 {% endif %}
 
                 {% if availabilitySelected.length %}
-                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your availability</h3>
+                <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Volunteer availability</h3>
 
                 <ul class="moj-filter-tags">
                   {% for value in availabilitySelected %}
@@ -302,6 +294,7 @@ NHS Volunteering
                 </ul>
                 {% endif %}
 
+                {# Accessible features hidden for UR round 3 (NVPB-4446), remove the comment tags to bring it back
                 {% if accessSelected.length %}
                 <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Accessible features and facilities</h3>
 
@@ -314,6 +307,7 @@ NHS Volunteering
                   {% endfor %}
                 </ul>
                 {% endif %}
+                #}
 
               </div>
 
@@ -426,7 +420,7 @@ NHS Volunteering
 
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="v27-filter-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Type of volunteering</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Volunteering type</legend>
                     <input type="hidden" name="v27-filter-type" value="_unchecked">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                       {% for value, label in typeLabels %}
@@ -445,7 +439,7 @@ NHS Volunteering
 
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Your age group</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Volunteer age restriction</legend>
                     <div class="govuk-radios govuk-radios--small">
                       {% for value, label in ageLabels %}
                       <div class="govuk-radios__item">
@@ -462,7 +456,7 @@ NHS Volunteering
 
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="v27-filter-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Your availability</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Volunteer availability</legend>
                     <input type="hidden" name="v27-filter-availability" value="_unchecked">
                     <div class="govuk-checkboxes govuk-checkboxes--small">
                       {% for value, label in availabilityLabels %}
@@ -480,6 +474,7 @@ NHS Volunteering
                   </fieldset>
                 </div>
 
+                {# Accessible features hidden for UR round 3 (NVPB-4446), remove the comment tags to bring it back
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="v27-filter-access-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Accessible features and
@@ -501,6 +496,7 @@ NHS Volunteering
                     </div>
                   </fieldset>
                 </div>
+                #}
 
                 <button type="submit" class="nhsuk-button nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-1"
                   data-module="nhsuk-button">Apply filters</button>

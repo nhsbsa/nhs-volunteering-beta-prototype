@@ -17,7 +17,7 @@ Choose search filters for your opportunity - NHS Volunteering
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="choose-accessible-filters" method="post">
+    <form action="tags" method="post">
 
       <input type="hidden" name="r23-task-filters-complete" value="true">
 
@@ -59,9 +59,9 @@ Choose search filters for your opportunity - NHS Volunteering
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="r23-filter-setting-2" name="r23-filter-setting"
-                    type="checkbox" value="In local community">
+                    type="checkbox" value="In the local community">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-setting-2">
-                    In local community
+                    In the local community
                   </label>
                 </div>
 
@@ -70,6 +70,14 @@ Choose search filters for your opportunity - NHS Volunteering
                     type="checkbox" value="Office">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-setting-3">
                     Office
+                  </label>
+                </div>
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="r23-filter-setting-4" name="r23-filter-setting"
+                    type="checkbox" value="Outdoors">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-setting-4">
+                    Outdoors
                   </label>
                 </div>
 
@@ -97,25 +105,25 @@ Choose search filters for your opportunity - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-1" name="r23-filter-supporting"
-                      type="checkbox" value="Children">
+                      type="checkbox" value="Children and young people">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-1">
-                      Children
+                      Children and young people
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-2" name="r23-filter-supporting"
-                      type="checkbox" value="Young people">
+                      type="checkbox" value="Adults">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-2">
-                      Young people
+                      Adults
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-3" name="r23-filter-supporting"
-                      type="checkbox" value="Older people">
+                      type="checkbox" value="Senior citizens">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-3">
-                      Older people
+                      Senior citizens
                     </label>
                   </div>
 
@@ -129,32 +137,24 @@ Choose search filters for your opportunity - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-5" name="r23-filter-supporting"
-                      type="checkbox" value="People that need mental health support">
+                      type="checkbox" value="People with disabilities">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-5">
-                      People that need mental health support
+                      People with disabilities
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-6" name="r23-filter-supporting"
-                      type="checkbox" value="People with physical disabilities">
+                      type="checkbox" value="People needing mental health support">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-6">
-                      People with physical disabilities
+                      People needing mental health support
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-7" name="r23-filter-supporting"
-                      type="checkbox" value="People with learning disabilities">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-7">
-                      People with learning disabilities
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-8" name="r23-filter-supporting"
                       type="checkbox" value="People with a life-limiting illness">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-8">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-7">
                       People with a life-limiting illness
                     </label>
                   </div>
@@ -162,16 +162,15 @@ Choose search filters for your opportunity - NHS Volunteering
                   <div class="nhsuk-checkboxes__divider">or</div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-9" name="r23-filter-supporting"
+                    <input class="nhsuk-checkboxes__input" id="r23-filter-supporting-8" name="r23-filter-supporting"
                       type="checkbox" value="None of these">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-9">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-supporting-8">
                       None of these
                     </label>
                   </div>
 
 
                 </div>
-
               </div>
 
               <div style="margin-top: 50px;">
@@ -185,122 +184,58 @@ Choose search filters for your opportunity - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-type-1" name="r23-filter-type"
-                      type="checkbox" value="Admin">
+                      type="checkbox" value="Supporting patients and people">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-1">
-                      Admin
+                      Supporting patients and people
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-type-2" name="r23-filter-type"
-                      type="checkbox" value="Driving">
+                      type="checkbox" value="Administration and digital">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-2">
-                      Driving
+                      Administration and digital
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-type-3" name="r23-filter-type"
-                      type="checkbox" value="Gardening and DIY">
+                      type="checkbox" value="Driving and transport">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-3">
-                      Gardening and DIY
+                      Driving and transport
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-type-4" name="r23-filter-type"
-                      type="checkbox" value="Maternity and postnatal support">
+                      type="checkbox" value="Manual labour (DIY, gardening, warehouse)">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-4">
-                      Maternity and postnatal support
+                      Manual labour (DIY, gardening, warehouse)
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-type-5" name="r23-filter-type"
-                      type="checkbox" value="Meet and greet">
+                      type="checkbox" value="NHS Retail and fundraising">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-5">
-                      Meet and greet
+                      NHS Retail and fundraising
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-type-6" name="r23-filter-type"
-                      type="checkbox" value="NHS Fundraising">
+                      type="checkbox" value="Trustee and governance">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-6">
-                      NHS Fundraising
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-7" name="r23-filter-type"
-                      type="checkbox" value="NHS Retail">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-7">
-                      NHS Retail
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-8" name="r23-filter-type"
-                      type="checkbox" value="Patient companionship">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-8">
-                      Patient companionship
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-9" name="r23-filter-type"
-                      type="checkbox" value="Social media">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-9">
-                      Social media
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-10" name="r23-filter-type"
-                      type="checkbox" value="Stockroom and warehouse">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-10">
-                      Stockroom and warehouse
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-11" name="r23-filter-type"
-                      type="checkbox" value="Telephone">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-11">
-                      Telephone
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-12" name="r23-filter-type"
-                      type="checkbox" value="Trolley volunteer">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-12">
-                      Trolley volunteer
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-13" name="r23-filter-type"
-                      type="checkbox" value="Trustee">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-13">
-                      Trustee
-                    </label>
-                  </div>
-
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-14" name="r23-filter-type"
-                      type="checkbox" value="With people">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-14">
-                      With people
+                      Trustee and governance
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__divider">or</div>
 
                   <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-15" name="r23-filter-type"
+                    <input class="nhsuk-checkboxes__input" id="r23-filter-type-7" name="r23-filter-type"
                       type="checkbox" value="None of these">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-15">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-type-7">
                       None of these
                     </label>
                   </div>
@@ -315,6 +250,8 @@ Choose search filters for your opportunity - NHS Volunteering
                 <p class="nhsuk-body">Volunteers may need to be a certain age to meet the requirements of the
                   opportunity.</p>
 
+                <p class="nhsuk-body">If you want to stop volunteers who do not meet the age requirements from applying, you can add a pre-application question later.</p>
+
                 <div class="nhsuk-hint" id="r23-filter-ages-hint">
                   Select all that apply.
                 </div>
@@ -323,29 +260,33 @@ Choose search filters for your opportunity - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-ages-1" name="r23-filter-ages"
-                      type="checkbox" value="13 to 15 years of age">
+                      type="checkbox" value="13 to 15 years">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-ages-1">
-                      13 to 15 years of age
+                      13 to 15 years
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-ages-2" name="r23-filter-ages"
-                      type="checkbox" value="16 to 17 years of age">
+                      type="checkbox" value="16 to 17 years">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-ages-2">
-                      16 to 17 years of age
+                      16 to 17 years
                     </label>
                   </div>
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-filter-ages-3" name="r23-filter-ages"
-                      type="checkbox" value="18 and over">
+                      type="checkbox" value="18 years and over">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-filter-ages-3">
-                      18 and over
+                      18 years and over
                     </label>
                   </div>
 
                 </div>
+
+                {# hidden for UR round 3 (NVPB-4447), remove the comment tags to bring it back
+                <p class="nhsuk-body nhsuk-u-margin-top-4">This means volunteers can filter opportunities based on their age.</p>
+                #}
               </div>
 
               <div style="margin-top: 50px;">

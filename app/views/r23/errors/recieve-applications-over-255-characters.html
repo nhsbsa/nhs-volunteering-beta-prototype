@@ -6,9 +6,16 @@
   Question page
 {% endblock %}
 
+{% set preAppSelectedForBack = data['r23-pre-application-questions'] or [] %}
+{% if preAppSelectedForBack is string %}{% set preAppSelectedForBack = [preAppSelectedForBack] %}{% endif %}
+{% set preAppBackHref = '/r23/questions/select-pre-application-questions' %}
+{% if 'age' in preAppSelectedForBack %}{% set preAppBackHref = '/r23/questions/pre-application-minimum-age' %}{% endif %}
+{% if 'licence' in preAppSelectedForBack %}{% set preAppBackHref = '/r23/questions/pre-application-licence' %}{% endif %}
+{# the flow skips the distance question for varying or remote locations (r23DistanceQuestionAllowed in routes.js) #}
+{% if 'distance' in preAppSelectedForBack and data['r9-location'] != 'area' and data['r9-location'] != 'location-larger-area' %}{% set preAppBackHref = '/r23/questions/pre-application-distance' %}{% endif %}
 {% block beforeContent %}
   {{ backLink({
-    "href": "../task-list",
+    "href": preAppBackHref,
     "text": "Go back"
   }) }}
 {% endblock %}

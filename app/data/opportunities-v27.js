@@ -24,8 +24,8 @@ module.exports = [
     locationType: 'local',
     distanceMiles: 0.5,
     setting: ['hospital'],
-    types: ['trolley', 'companionship', 'with-people'],
-    audiences: [],
+    types: ['supporting-people'],
+    audiences: ['adults'],
     minAge: 18,
     availability: ['weekday', 'afternoon'], // Monday to Friday afternoons
     tags: ['DBS check will take place', 'No experience needed', 'Public facing', 'Suitable from age 18'],
@@ -71,8 +71,8 @@ module.exports = [
     // assigned (LS10 from LS9), flagged for review
     distanceMiles: 2.2,
     setting: ['community'],
-    types: ['driving'],
-    audiences: [],
+    types: ['driving-transport'],
+    audiences: ['adults'],
     minAge: 18,
     availability: ['weekday', 'weekend', 'flexible'],
     tags: ['DBS check will take place', 'Need a car', 'Need a driving licence', 'Public facing', 'Suitable from age 18'],
@@ -97,8 +97,8 @@ module.exports = [
     // assigned (LS1 from LS9)
     distanceMiles: 1.5,
     setting: ['hospital'],
-    types: ['meet-and-greet', 'with-people'],
-    audiences: [],
+    types: ['supporting-people'],
+    audiences: ['adults'],
     minAge: 18,
     availability: ['weekday', 'weekend', 'evening'],
     tags: ['DBS check will take place', 'No experience needed', 'Public facing', 'Evening availability', 'Suitable from age 18'],
@@ -122,7 +122,7 @@ module.exports = [
     // assigned (Horsforth from LS9)
     distanceMiles: 4.6,
     setting: ['community'],
-    types: ['companionship', 'with-people'],
+    types: ['supporting-people'],
     audiences: [],
     minAge: 18, // profile says 21 or over; 18 is the highest age the filters support
     availability: ['flexible', 'morning', 'afternoon'], // Flexible daytime hours
@@ -148,8 +148,8 @@ module.exports = [
     // assigned (LS1 from LS9)
     distanceMiles: 1.4,
     setting: ['hospital'],
-    types: ['meet-and-greet', 'with-people'],
-    audiences: [],
+    types: ['supporting-people'],
+    audiences: ['adults'],
     minAge: 18,
     availability: ['morning', 'afternoon'],
     tags: ['No experience needed', 'Public facing', 'Suitable from age 18'],
@@ -173,8 +173,8 @@ module.exports = [
     // assigned (LS7 from LS9)
     distanceMiles: 2.1,
     setting: ['hospital'],
-    types: ['with-people'],
-    audiences: [],
+    types: ['supporting-people'],
+    audiences: ['adults'],
     minAge: 18,
     availability: ['weekday', 'flexible'],
     tags: ['Experience needed', 'Experience with computers', 'Suitable from age 18'],
@@ -198,7 +198,7 @@ module.exports = [
     // assigned, same site as hospital-volunteer-buddy so same distance
     distanceMiles: 2.1,
     setting: ['hospital'],
-    types: ['meet-and-greet', 'admin', 'with-people'],
+    types: ['supporting-people', 'admin-digital'],
     audiences: [],
     minAge: 16,
     availability: ['weekday', 'afternoon', 'evening'], // After school, evenings and school holidays
@@ -224,8 +224,8 @@ module.exports = [
     // filtering only, never displayed (Leeds community venues from LS9)
     distanceMiles: 3.5,
     setting: ['community'],
-    types: ['with-people'],
-    audiences: ['life-limiting-illness'], // people navigating menopause following a cancer diagnosis
+    types: ['supporting-people'],
+    audiences: ['adults', 'life-limiting-illness'], // people navigating menopause following a cancer diagnosis
     minAge: 18,
     availability: [], // One 1.5-hour session each month: no day or time stated
     tags: ['DBS check will take place', 'Experience needed', 'Public facing', 'Need a car', 'Suitable from age 18'],
@@ -265,9 +265,9 @@ module.exports = [
     org: 'Leeds Teaching Hospitals NHS Foundation Trust',
     locationType: 'local',
     distanceMiles: 4.1,
-    setting: ['community'],
+    setting: ['community', 'outdoors'],
     types: [],
-    audiences: ['older-people'],
+    audiences: ['adults', 'senior-citizens'],
     minAge: 18,
     availability: ['weekday', 'weekend'],
     tags: ['DBS check will take place', 'Public facing', 'No experience needed', 'Suitable from age 18', 'Experience with computers'],
@@ -299,8 +299,8 @@ module.exports = [
     locationType: 'local',
     distanceMiles: 4.9,
     setting: ['hospital'],
-    types: ['companionship'],
-    audiences: ['life-limiting-illness', 'older-people'],
+    types: ['supporting-people'],
+    audiences: ['adults', 'life-limiting-illness', 'senior-citizens'],
     minAge: 18,
     availability: [],
     tags: ['Public facing', 'Suitable from age 18', 'Need a car'],
@@ -321,8 +321,8 @@ module.exports = [
     // filtering only, never displayed — assigned (Wakefield area from LS9), flagged for review
     distanceMiles: 9.8,
     setting: ['hospital', 'community'],
-    types: ['companionship'],
-    audiences: ['older-people'],
+    types: ['supporting-people'],
+    audiences: ['senior-citizens'],
     minAge: 16, // under-18-friendly (Aqib-approved inference, 22 Jul 2026)
     availability: [],
     tags: ['Public facing', 'Need a car', 'DBS check will take place'],
@@ -369,8 +369,8 @@ module.exports = [
     locationType: 'remote',
     distanceMiles: null,
     setting: ['remote'],
-    types: ['telephone'],
-    audiences: ['older-people'],
+    types: ['supporting-people'],
+    audiences: ['senior-citizens'],
     minAge: null,
     availability: ['weekday', 'weekend', 'morning', 'afternoon', 'evening'], // day or night
     tags: ['Experience with computers'],
@@ -390,8 +390,8 @@ module.exports = [
     locationType: 'remote',
     distanceMiles: null,
     setting: ['remote'],
-    types: ['telephone'],
-    audiences: ['physical-disabilities'],
+    types: ['supporting-people'],
+    audiences: ['adults', 'disabilities'],
     minAge: 18,
     availability: ['weekday', 'morning', 'afternoon'], // 9am to 5pm, Monday to Friday
     tags: ['No experience needed', 'DBS check will take place', 'Suitable from age 18'],
@@ -431,7 +431,7 @@ module.exports = [
     locationType: 'remote',
     distanceMiles: null,
     setting: ['remote'],
-    types: ['trustee'],
+    types: ['trustee-governance'],
     audiences: [],
     minAge: null,
     availability: [],
@@ -452,8 +452,8 @@ module.exports = [
     locationType: 'local',
     distanceMiles: 15.8,
     setting: ['community'],
-    types: ['companionship'],
-    audiences: ['older-people'],
+    types: ['supporting-people'],
+    audiences: ['senior-citizens'],
     minAge: null,
     availability: ['flexible'], // This role is flexible
     tags: [],

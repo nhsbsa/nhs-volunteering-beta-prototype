@@ -14,6 +14,9 @@ NHS Volunteering - Search for an opportunity near me
 
 
 <!-- Homepage content -->
+{# ?_unhappy=true (from index-unhappy-path) sends the search to the no results state #}
+{% set unhappyPath = '_unhappy=true' in currentPage %}
+
 {% block content %}
 
 <div class="nhsuk-grid-row">
@@ -21,7 +24,7 @@ NHS Volunteering - Search for an opportunity near me
 
     <div class="nhsuk-back-link nhsuk-u-margin-top-4">
 
-      <a class="nhsuk-back-link__link" href="../volunteering/index">
+      <a class="nhsuk-back-link__link" href="{{ 'index-unhappy-path' if unhappyPath else '../volunteering/index' }}">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
           aria-hidden="true" height="24" width="24">
           <path
@@ -32,7 +35,7 @@ NHS Volunteering - Search for an opportunity near me
     </div>
 
     <h1>Search for a volunteering opportunity</h1>
-    <form action="../results/results" method="post">
+    <form action="{{ '/v27-postcode-search-unhappy-path-answer' if unhappyPath else '../results/results' }}" method="post">
 
       <div class="nhsuk-form-group">
 

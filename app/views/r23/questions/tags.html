@@ -17,7 +17,7 @@ Add opportunity tags - NHS Volunteering
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="choose-search-filters" method="post">
+    <form action="../task-list" method="post">
 
       <input type="hidden" name="r23-task-tags-complete" value="true">
 
@@ -85,11 +85,19 @@ Add opportunity tags - NHS Volunteering
                   Select up to 5 tags that you want to use in your listing.
                 </div>
 
+                {# pre-tick the age tag for the youngest age group chosen on the search filters page, or age 16 if none was chosen #}
+                {% set filterAges = data['r23-filter-ages'] or [] %}
+                {% if '13 to 15 years' in filterAges %}{% set preTickedAgeTag = 'Suitable from age 13' %}
+                {% elif '16 to 17 years' in filterAges %}{% set preTickedAgeTag = 'Suitable from age 16' %}
+                {% elif '18 years and over' in filterAges %}{% set preTickedAgeTag = 'Suitable from age 18' %}
+                {% else %}{% set preTickedAgeTag = 'Suitable from age 16' %}
+                {% endif %}
+
                 <div class="nhsuk-checkboxes">
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-1" name="r23-tags" type="checkbox"
-                      value="DBS check will take place">
+                      value="DBS check will take place" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-1">
                       DBS check will take place
                     </label>
@@ -97,7 +105,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-2" name="r23-tags" type="checkbox"
-                      value="Evening availability">
+                      value="Evening availability" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-2">
                       Evening availability
                     </label>
@@ -105,7 +113,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-3" name="r23-tags" type="checkbox"
-                      value="Experience needed">
+                      value="Experience needed" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-3">
                       Experience needed
                     </label>
@@ -113,7 +121,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-4" name="r23-tags" type="checkbox"
-                      value="Experience with computers">
+                      value="Experience with computers" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-4">
                       Experience with computers
                     </label>
@@ -121,7 +129,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-5" name="r23-tags" type="checkbox"
-                      value="No experience needed">
+                      value="No experience needed" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-5">
                       No experience needed
                     </label>
@@ -129,7 +137,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-6" name="r23-tags" type="checkbox"
-                      value="Need a car">
+                      value="Need a car" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-6">
                       Need a car
                     </label>
@@ -137,7 +145,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-7" name="r23-tags" type="checkbox"
-                      value="Need a driving licence">
+                      value="Need a driving licence" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-7">
                       Need a driving licence
                     </label>
@@ -145,7 +153,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-8" name="r23-tags" type="checkbox"
-                      value="Public facing">
+                      value="Public facing" data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-8">
                       Public facing
                     </label>
@@ -153,7 +161,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-9" name="r23-tags" type="checkbox"
-                      value="Suitable from age 13">
+                      value="Suitable from age 13" {{ 'checked' if preTickedAgeTag == 'Suitable from age 13' }} data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-9">
                       Suitable from age 13
                     </label>
@@ -161,7 +169,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-10" name="r23-tags" type="checkbox"
-                      value="Suitable from age 16">
+                      value="Suitable from age 16" {{ 'checked' if preTickedAgeTag == 'Suitable from age 16' }} data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-10">
                       Suitable from age 16
                     </label>
@@ -169,7 +177,7 @@ Add opportunity tags - NHS Volunteering
 
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="r23-tags-11" name="r23-tags" type="checkbox"
-                      value="Suitable from age 18">
+                      value="Suitable from age 18" {{ 'checked' if preTickedAgeTag == 'Suitable from age 18' }} data-checkbox-exclusive-group="r23-tags">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="r23-tags-11">
                       Suitable from age 18
                     </label>
@@ -204,3 +212,7 @@ Add opportunity tags - NHS Volunteering
       </div>
 
       {% endblock %}
+
+{% block pageScripts %}
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
+{% endblock %}

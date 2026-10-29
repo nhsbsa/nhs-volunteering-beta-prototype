@@ -6,9 +6,16 @@
 Do you want to receive applications through NHS Volunteering? - NHS Volunteering
 {% endblock %}
 
+{% set preAppSelectedForBack = data['r23-pre-application-questions'] or [] %}
+{% if preAppSelectedForBack is string %}{% set preAppSelectedForBack = [preAppSelectedForBack] %}{% endif %}
+{% set preAppBackHref = 'select-pre-application-questions' %}
+{% if 'age' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-minimum-age' %}{% endif %}
+{% if 'licence' in preAppSelectedForBack %}{% set preAppBackHref = 'pre-application-licence' %}{% endif %}
+{# the flow skips the distance question for varying or remote locations (r23DistanceQuestionAllowed in routes.js) #}
+{% if 'distance' in preAppSelectedForBack and data['r9-location'] != 'area' and data['r9-location'] != 'location-larger-area' %}{% set preAppBackHref = 'pre-application-distance' %}{% endif %}
 {% block beforeContent %}
   {{ backLink({
-    "href": "../task-list",
+    "href": preAppBackHref,
     "text": "Go back"
   }) }}
 {% endblock %}

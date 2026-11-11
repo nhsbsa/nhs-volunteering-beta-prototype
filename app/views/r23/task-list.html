@@ -16,7 +16,7 @@ Task list
 
 {% block content %}
 
-{% set section1Complete = data['r23-task-title-complete'] or data['r9-opportunity-name'] %}
+{% set section1Complete = data['r23-task-title-complete'] or data['r23-opportunity-name'] %}
 {% set section2Complete = data['r23-task-summary-complete'] and data['r23-task-description-complete'] and
 data['r23-task-looking-for-complete'] and data['r23-task-overview-complete']
 and data['r23-task-support-complete'] and data['r23-task-location-complete'] and
@@ -33,8 +33,8 @@ else 0) %}
 
     <h1 class="nhsuk-u-margin-bottom-2 nhsuk-heading nhsuk-heading-xl">
       <span class="nhsuk-caption-l nhsuk-caption--top">Reference number 49208-AB</span>
-      {% if data['r9-opportunity-name'] %}
-      {{ data['r9-opportunity-name'] }}
+      {% if data['r23-opportunity-name'] %}
+      {{ data['r23-opportunity-name'] }}
       {% elif data['r2-opportunity-name'] %}
       {{ data['r2-opportunity-name'] }}
       {% else %}
@@ -61,7 +61,7 @@ else 0) %}
                 Add a title
               </a>
             </span>
-            {% if data['r23-task-title-complete'] or data['r9-opportunity-name'] %}
+            {% if data['r23-task-title-complete'] or data['r23-opportunity-name'] %}
             <strong class="nhsuk-tag app-task-list__task-tag" id="company-information-completed">Completed</strong>
             {% elif data['r23-task-title-in-progress'] %}
             <strong class="nhsuk-tag nhsuk-tag--yellow app-task-list__task-tag" id="company-information-completed">In

@@ -18,6 +18,28 @@
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
+
+// K12 sandbox homepage (to be 2): NHS form controls inside the blue hero.
+// The design system has no reverse (on blue) checkbox, so the hero's white
+// text makes the checkbox tick white on its white box. Scoped to the hero
+// search form only.
+.app-hero-search {
+  .nhsuk-checkboxes__label::after {
+    color: $color_nhsuk-black;
+  }
+}
+
+// K12 sandbox homepage (to be 2c): Postcode, Distance and the remote checkbox
+// on one row while they fit; the checkbox wraps below the fields when there is
+// no room. Layout only, component styles untouched. The NHS grid cannot do this
+// (its columns change at one fixed width, and the select's 23ex min-width
+// overflows a quarter column). Approved by Aqib 10 Nov 2026.
+.app-hero-search__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 32px;
+}
 ///////////////////////////////////////////
 ///
 ///

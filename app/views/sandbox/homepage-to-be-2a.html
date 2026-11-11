@@ -1,0 +1,271 @@
+{% extends 'v19/v19_layout.html' %}
+
+<!-- some custom css for the home page only -->
+{% set containerClasses = 'app-width-container--full' %}
+{% set mainClasses = 'app-main-wrapper--no-padding app-homepage' %}
+
+{% block pageTitle %}
+NHS Volunteering - Homepage
+{% endblock %}
+
+
+{% block head %}
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/nhsuk.css" rel="stylesheet">
+<!-- v10 action link styles for the reverse variant on the blue hero (kit stays on v9) -->
+<link href="/css/nhsuk-v10-action-link.css" rel="stylesheet">
+{% endblock %}
+
+{%block main %}
+<div class="nhsuk-width-container app-width-container--full">
+  <main class="nhsuk-main-wrapper app-main-wrapper--no-padding app-homepage top nhsuk-u-margin-bottom-0"
+    id="maincontent" role="main">
+
+
+    <!-- Homepage content -->
+    {% block content %}
+
+
+    <!-- NHS DS hero markup (v9 hero template). To-be 2a: search in the hero, distance as a select.
+         Fields stacked in the two-thirds column; labels and options are the V27 results filter's
+         (Postcode, Distance, Up to X miles) so the hero matches the filter people land on. Remote checkbox label is Aqib's copy -->
+    {% set distance = data['v27-filter-distance'] or '5' %}
+    <section class="nhsuk-hero">
+      <div class="nhsuk-width-container nhsuk-hero--border">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            <div class="nhsuk-hero__wrapper">
+              <h1 class="nhsuk-hero__heading" data-test="heading" id="heading">Become an NHS volunteer</h1>
+              <p class="nhsuk-body-l">Discover how you can make an impact on the experience of patients, their families and the NHS.</p>
+              <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-4">Search for an opportunity</h2>
+              <form class="app-hero-search" action="/v27/results/results" method="post" id="hero-search">
+                <!-- _unchecked clears any earlier location choice in the session (as the results filter does).
+                     A postcode means an in person search; the script below drops this when the postcode is blank,
+                     so ticking only Remote gives remote only, as on the postcode search page -->
+                <input type="hidden" name="v27-search-location" value="_unchecked">
+                <input type="hidden" name="v27-search-location" value="in-person" id="hero-in-person">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-label--s" for="postcode">
+                    Postcode
+                  </label>
+                  <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text"
+                    autocomplete="postal-code" value="{{ data['postcode'] }}">
+                </div>
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-label--s" for="v27-filter-distance">
+                    Distance
+                  </label>
+                  <select class="nhsuk-select" id="v27-filter-distance" name="v27-filter-distance">
+                    <option value="3"{% if distance == '3' %} selected{% endif %}>Up to 3 miles</option>
+                    <option value="5"{% if distance == '5' %} selected{% endif %}>Up to 5 miles</option>
+                    <option value="10"{% if distance == '10' %} selected{% endif %}>Up to 10 miles</option>
+                    <option value="20"{% if distance == '20' %} selected{% endif %}>Up to 20 miles</option>
+                    <option value="30"{% if distance == '30' %} selected{% endif %}>Up to 30 miles</option>
+                  </select>
+                </div>
+                <div class="nhsuk-form-group">
+                  <div class="nhsuk-checkboxes">
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="v27-search-location-remote" name="v27-search-location"
+                        type="checkbox" value="remote" {{ checked('v27-search-location', 'remote') }}>
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="v27-search-location-remote">
+                        Show me remote from home opportunities
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="nhsuk-button nhsuk-button--reverse nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Being a volunteer -->
+    <section class="nhsuk-section">
+      <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row">
+          <!-- Text in two-thirds (reading width), "What our volunteers say" card beside it in one-third (merged in from to be 4) -->
+          <div class="nhsuk-grid-column-two-thirds app-section__content nhsuk-u-margin-bottom-0">
+              <h2>What it is like to be an NHS volunteer</h2>
+              <p>There are many reasons why you may decide to volunteer within the NHS.</p>
+              <p>As an NHS volunteer, you can:</p>
+              <ul>
+                <li>make a positive contribution to the experience of patients and their families</li>
+                <li>do something for the benefit of your local community</li>
+                <li>get a sense of accomplishment and a positive outlook on life</li>
+                <li>do something worthwhile and meaningful to you.</li>
+              </ul>
+
+              <p>Whether you’re retired, studying or considering a change in career, volunteering is a great way to
+                learn new skills and
+                discover new possibilities. You can volunteer in person or take part in some opportunities remotely from home.</p>
+
+              <p>You will get support from dedicated teams who welcome volunteers from all walks of life and
+                backgrounds.</p>
+          </div>
+          <div class="nhsuk-grid-column-one-third app-section__content">
+            <div class="nhsuk-card nhsuk-card--clickable">
+              <img class="nhsuk-card__img" src="/images/what-our-volunteers-say-highres.jpg" alt="">
+              <div class="nhsuk-card__content">
+                <h3 class="nhsuk-card__heading">
+                  <a class="nhsuk-link--no-visited-state" href="/v27/volunteering/what-our-volunteers-say">
+                    What our volunteers say
+                  </a>
+                </h3>
+                <p class="nhsuk-card__description">We have asked some of our volunteers what they think about volunteering with the NHS.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Sandbox range option: "How you can help" types from /v27/role-categories/view-types as NHS primary cards with chevrons (hub page pattern) -->
+          <div class="nhsuk-grid-column-full">
+            <h2>How you can help</h2>
+          <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content nhsuk-card__content--primary">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="/v27/role-categories/community">Support your community</a>
+                  </h3>
+                  <p class="nhsuk-card__description">Become an active member of your community and make a positive impact on the health of your neighbours</p>
+                  <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path d="M11.667 9.229L15.438 13"/></g></svg>
+                </div>
+              </div>
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content nhsuk-card__content--primary">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="/v27/role-categories/patient-facing">Provide companionship and assist with patient recreation</a>
+                  </h3>
+                  <p class="nhsuk-card__description">Improve the comfort of patients during their stay and lift their spirits through a range of creative activities</p>
+                  <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path d="M11.667 9.229L15.438 13"/></g></svg>
+                </div>
+              </div>
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content nhsuk-card__content--primary">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="/v27/role-categories/charity">Support NHS charities and fundraising</a>
+                  </h3>
+                  <p class="nhsuk-card__description">Join NHS charities that help support and fund services for our patients, visitors and staff</p>
+                  <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path d="M11.667 9.229L15.438 13"/></g></svg>
+                </div>
+              </div>
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content nhsuk-card__content--primary">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="/v27/role-categories/admin">Assist with admin tasks</a>
+                  </h3>
+                  <p class="nhsuk-card__description">Assist staff with general desk tasks to improve volunteering activities</p>
+                  <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path d="M11.667 9.229L15.438 13"/></g></svg>
+                </div>
+              </div>
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content nhsuk-card__content--primary">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="/v27/role-categories/clinical">Support the delivery of clinical care</a>
+                  </h3>
+                  <p class="nhsuk-card__description">Contribute to activities that improve the physical and mental health of patients</p>
+                  <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path d="M11.667 9.229L15.438 13"/></g></svg>
+                </div>
+              </div>
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item nhsuk-u-padding-top-0 nhsuk-u-padding-bottom-0">
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content nhsuk-card__content--primary">
+                  <h3 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="/v27/role-categories/remote">Take part in opportunities from home</a>
+                  </h3>
+                  <p class="nhsuk-card__description">Make a difference from a distance. You may need a phone or a computer and some basic tech skills</p>
+                  <svg class="nhsuk-icon" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true" focusable="false"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path d="M11.667 9.229L15.438 13"/></g></svg>
+                </div>
+              </div>
+            </li>
+          </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+</main>
+
+
+{% endblock %}
+
+<!-- Register as an advertiser -->
+
+<section class="nhsuk-section container-white ">
+  <div class="nhsuk-width-container ">
+    <div class="nhsuk-grid-row nhsuk-u-margin-top-0">
+      <div class="nhsuk-grid-column-two-thirds app-section__content nhsuk-u-margin-bottom-7">
+        <h2>Advertise volunteering opportunities</h2>
+        <p>NHS Volunteering is open to NHS and community organisations that offer roles supporting people's health and
+          social care. To join and advertise your opportunities, you will need to complete an account opening form.</p>
+        <!-- v10 action link markup: this page loads the v10 action link css for the hero, which doubles the indent on the old v9 div/a markup -->
+        <a class="nhsuk-action-link nhsuk-u-margin-bottom-0" href="https://www.nhsbsa.nhs.uk/help-and-support-recruiters">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v25H0z" fill="none"></path>
+              <path
+                d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+              </path>
+            </svg>
+          <span class="nhsuk-action-link__text">Find out more</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
+{% block pageScripts %}
+<script>
+  // Hero search: a blank postcode means no in person search, so only send "in-person" when a postcode is given
+  document.getElementById('hero-search').addEventListener('submit', function () {
+    document.getElementById('hero-in-person').disabled = !document.getElementById('postcode').value.trim()
+  })
+</script>
+
+<script>
+  $(document).ready(function () {
+    $('a[href=""], button.nhsuk-search__submit').click(function (e) {
+      e.preventDefault();
+    });
+  });
+</script>
+{% endblock %}

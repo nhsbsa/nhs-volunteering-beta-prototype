@@ -1,0 +1,127 @@
+// NHS Design System action link from nhsuk-frontend v10 (npm alias
+// "nhsuk-frontend-v10"), compiled to public/css/nhsuk-v10-action-link.css and
+// linked per page where the reverse action link (nhsuk-action-link--reverse,
+// for blue backgrounds such as the hero) is needed. The kit stays on v9 css,
+// which has no reverse action link.
+//
+// Vendored copy of dist/nhsuk/components/action-link/_index.scss with the
+// import block changed: the forwarded core/styles/icons is REMOVED because it
+// emits v10 .nhsuk-icon styles that override the kit's v9 icons. Only
+// core/settings, core/tools and core/helpers are kept (no css output).
+//
+// To update: copy the body of _index.scss from a newer v10 release below this
+// import block and re-check it compiles.
+
+@use "sass:math";
+@use "node_modules/nhsuk-frontend-v10/dist/nhsuk/core/settings" as *;
+@use "node_modules/nhsuk-frontend-v10/dist/nhsuk/core/tools" as *;
+@use "node_modules/nhsuk-frontend-v10/dist/nhsuk/core/helpers" as *;
+////
+/// Action link component
+///
+/// 1. Display inline-block so top and bottom margins are respected.
+/// 2. Add sufficient space between icon and text.
+/// 3. Position is relative so the arrow icon can display absolute.
+/// 4. Text decoration none used to override default <a> styling.
+///
+/// @group components/action-link
+////
+
+@include nhsuk-exports("nhsuk/components/action-link") {
+  $_small-icon-size: nhsuk-px-to-rem($nhsuk-icon-size);
+  $_small-icon-spacing: math.div($_small-icon-size, 10);
+
+  $_large-icon-size: nhsuk-px-to-rem(36px);
+  $_large-icon-spacing: math.div($_large-icon-size, 10);
+
+  .nhsuk-action-link {
+    box-sizing: border-box;
+    display: inline-block; // [1]
+
+    position: relative; // [3]
+
+    padding-left: $_small-icon-size + $_small-icon-spacing; // [2]
+
+    border: 0;
+
+    background: none;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    &:not(:focus):hover {
+      .nhsuk-action-link__text {
+        text-decoration: underline; // [4]
+      }
+    }
+
+    @include nhsuk-font(22, $weight: bold, $line-height: $_small-icon-size);
+    @include nhsuk-link-style-default;
+    @include nhsuk-link-style-no-underline;
+
+    @include nhsuk-responsive-margin(6, "bottom");
+
+    @media print {
+      @include nhsuk-link-style-text($nhsuk-print-text-colour);
+    }
+
+    @media #{nhsuk-from-breakpoint(tablet)} {
+      padding-left: $_large-icon-size + $_large-icon-spacing; // [2]
+      line-height: nhsuk-line-height($_large-icon-size, $font-size: 22px);
+    }
+
+    &:focus .nhsuk-u-secondary-text-colour,
+    &:hover .nhsuk-u-secondary-text-colour,
+    &:active .nhsuk-u-secondary-text-colour {
+      // stylelint-disable-next-line declaration-no-important
+      color: currentcolor !important;
+    }
+
+    .nhsuk-icon {
+      position: absolute;
+      left: -$_small-icon-spacing;
+
+      // Integration glue (not in the v10 source): v10's base icon size comes
+      // from core/styles/icons, which is not imported here, so the kit's v9
+      // .nhsuk-icon size (34px) would apply on mobile and overlap the text.
+      width: $_small-icon-size;
+      height: $_small-icon-size;
+
+      @media #{nhsuk-from-breakpoint(tablet)} {
+        left: -$_large-icon-spacing;
+        width: $_large-icon-size;
+        height: $_large-icon-size;
+      }
+    }
+
+    &:not(:focus) .nhsuk-icon,
+    &:not(:focus):hover .nhsuk-icon,
+    &:not(:focus):active .nhsuk-icon {
+      fill: nhsuk-colour("green");
+
+      @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+        fill: ButtonText;
+      }
+    }
+  }
+
+  .nhsuk-action-link--reverse {
+    @include nhsuk-link-style-reverse;
+
+    .nhsuk-u-secondary-text-colour {
+      // stylelint-disable-next-line declaration-no-important
+      color: $nhsuk-reverse-secondary-text-colour !important;
+    }
+
+    &:not(:focus) .nhsuk-icon,
+    &:not(:focus):hover .nhsuk-icon,
+    &:not(:focus):active .nhsuk-icon {
+      fill: $nhsuk-reverse-text-colour;
+
+      @media screen and (forced-colors: active), (-ms-high-contrast: active) {
+        fill: ButtonText;
+      }
+    }
+  }
+}

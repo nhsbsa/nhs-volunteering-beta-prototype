@@ -1,0 +1,50 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout_vol_header_recruiter.html' %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Error: Sign in to NHS Volunteering - NHS Volunteering
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+      <div class="nhsuk-error-summary__body">
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+          <li><a href="#email">You must enter a valid email address and password</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="nhsuk-heading-l">Sign in to NHS Volunteering</h1>
+
+    <form>
+
+      <div class="nhsuk-form-group nhsuk-form-group--error">
+        <label class="nhsuk-label" for="email">Enter your email address</label>
+        <span class="nhsuk-error-message" id="email-error">
+          <span class="nhsuk-u-visually-hidden">Error:</span> You must enter a valid email address and password
+        </span>
+        <input class="nhsuk-input nhsuk-input--error" id="email" name="email" type="email" spellcheck="false" autocomplete="email" aria-describedby="email-error">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="password">Enter your password</label>
+        <input class="nhsuk-input" id="password" name="password" type="password" autocomplete="current-password">
+      </div>
+
+      <p><a href="/r21/forgot-password-email" class="nhsuk-link">Forgotten your password?</a></p>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="button">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+<script src="/nhsuk-frontend/nhsuk.min.js"></script>
+{% endblock %}
